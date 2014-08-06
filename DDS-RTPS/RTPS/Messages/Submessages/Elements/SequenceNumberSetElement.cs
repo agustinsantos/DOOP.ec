@@ -23,6 +23,13 @@ namespace Rtps.Messages.Submessages.Elements
         public SequenceNumberSet()
         { }
 
+        public SequenceNumberSet(int base_, int[] set)
+        {
+            this.numBits = set.Length * 32;
+            this.base_ = new SequenceNumber(base_);
+            this.set_ = set;
+        }
+
         public SequenceNumberSet(SequenceNumber base_, int numBits, int[] set)
         {
             this.numBits = numBits;
