@@ -11,6 +11,8 @@ namespace Rtps.Structure.Types
     /// </summary>
     public class GuidPrefix
     {
+        public const int GUID_PREFIX_SIZE = 12;
+
         public static readonly GuidPrefix GUIDPREFIX_UNKNOWN =
             new GuidPrefix(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
 

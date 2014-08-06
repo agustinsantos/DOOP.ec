@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 namespace Rtps.Messages.Submessages.Elements
 {
 
@@ -8,7 +9,7 @@ namespace Rtps.Messages.Submessages.Elements
         public readonly static short PID_SENTINEL = 1;
         public readonly static short PID_PAD = 0;
 
-        public Parameter[] Value;
+        public List<Parameter> Value;
         private int size = 0;
 
         public int Size
@@ -20,13 +21,13 @@ namespace Rtps.Messages.Submessages.Elements
         public ParameterList()
         { }
 
-        public ParameterList(Parameter[] values)
+        public ParameterList(List<Parameter> values)
         {
             this.Value = values;
             // set the size of the encoded element
-            for (int i = 0; i < values.Length; i++)
+            for (int i = 0; i < values.Count; i++)
             {
-                size += (4 + values.Length);
+                size += (4 + values.Count);
             }
             // PID_SENTINEL (2 bytes) + 2 ignored bytes
             size += 4;

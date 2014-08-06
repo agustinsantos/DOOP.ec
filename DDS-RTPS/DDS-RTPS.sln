@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTPS", "RTPS\RTPS.csproj", "{350002AB-E6EB-48FE-8E43-4988E923206B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDS", "DDS\DDS.csproj", "{69644A78-9BD8-4074-8EA8-2C7D1A96D15C}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleDDS", "Examples\ExampleDDS\ExampleDDS.csproj", "{7748E78C-074A-4F34-806E-17CD17B65CBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{EE95F05C-44F0-4C9E-90A7-227AB469BA0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doop-ec", "RTPS-Impl\Doop-ec.csproj", "{51BB643C-96ED-472E-B80B-723254599BC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +29,10 @@ Global
 		{7748E78C-074A-4F34-806E-17CD17B65CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7748E78C-074A-4F34-806E-17CD17B65CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7748E78C-074A-4F34-806E-17CD17B65CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51BB643C-96ED-472E-B80B-723254599BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51BB643C-96ED-472E-B80B-723254599BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51BB643C-96ED-472E-B80B-723254599BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51BB643C-96ED-472E-B80B-723254599BC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

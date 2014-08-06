@@ -1,4 +1,5 @@
 
+using rtps.messages.elements;
 using Rtps.Messages.Submessages.Elements;
 using Rtps.Messages.Types;
 using Rtps.Structure.Types;
@@ -36,7 +37,7 @@ namespace Rtps.Messages.Submessages
             this.writerId = writerId;
             this.writerSN = new SequenceNumber(seqNum);
 
-            if (inlineQosParams != null && inlineQosParams.Value.Length > 0)
+            if (inlineQosParams != null && inlineQosParams.Value.Count > 0)
             {
                 Header.FlagsValue |= 0x2;
                 this.inlineQosParams = inlineQosParams;
@@ -199,6 +200,12 @@ namespace Rtps.Messages.Submessages
             }
         }
 #endif
+
+        public Flags ExtraFlags
+        {
+            get { return extraFlags; }
+            set { extraFlags = value; }
+        }
 
         public override string ToString()
         {

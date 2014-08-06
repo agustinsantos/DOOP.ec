@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51BB643C-96ED-472E-B80B-723254599BC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Doopec</RootNamespace>
+    <AssemblyName>Doopec</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Libs\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mina.NET">
+      <HintPath>..\Libs\Mina.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Encoders\IEncoder.cs" />
+    <Compile Include="Encoders\RTPS\AckNackEncoder.cs" />
+    <Compile Include="Encoders\BufferUtils.cs" />
+    <Compile Include="Encoders\RTPS\DataFragEncoder.cs" />
+    <Compile Include="Encoders\RTPS\DataSubMessageEncoder.cs" />
+    <Compile Include="Encoders\RTPS\EntityIdEncoder.cs" />
+    <Compile Include="Encoders\RTPS\GapEncoder.cs" />
+    <Compile Include="Encoders\RTPS\GuidPrefixEncoder.cs" />
+    <Compile Include="Encoders\RTPS\HeaderEncoder.cs" />
+    <Compile Include="Encoders\RTPS\HeartbeatEncoder.cs" />
+    <Compile Include="Encoders\RTPS\HeartbeatFragEncoder.cs" />
+    <Compile Include="Encoders\RTPS\InfoDestinationEncoder.cs" />
+    <Compile Include="Encoders\RTPS\InfoReplyEncoder.cs" />
+    <Compile Include="Encoders\RTPS\InfoReplyIp4Encoder.cs" />
+    <Compile Include="Encoders\RTPS\InfoSourceEncoder.cs" />
+    <Compile Include="Encoders\RTPS\InfoTimestampEncoder.cs" />
+    <Compile Include="Encoders\RTPS\LocatorEncoder.cs" />
+    <Compile Include="Encoders\RTPS\LocatorUDPv4Encoder.cs" />
+    <Compile Include="Encoders\RTPS\MessageEncoder.cs" />
+    <Compile Include="Encoders\RTPS\MessageStaticEncoder.cs" />
+    <Compile Include="Encoders\RTPS\NackFragEncoder.cs" />
+    <Compile Include="Encoders\RTPS\PadEncoder.cs" />
+    <Compile Include="Encoders\RTPS\ParameterEncoder.cs" />
+    <Compile Include="Encoders\RTPS\ParameterListEncoder.cs" />
+    <Compile Include="Encoders\RTPS\ProtocolIdEncoder.cs" />
+    <Compile Include="Encoders\RTPS\ProtocolVersionEncoder.cs" />
+    <Compile Include="Encoders\RTPS\Sentinel.cs" />
+    <Compile Include="Encoders\RTPS\SequenceNumberEncoder.cs" />
+    <Compile Include="Encoders\RTPS\SequenceNumberSetEncoder.cs" />
+    <Compile Include="Encoders\RTPS\StatusInfoEncoder.cs" />
+    <Compile Include="Encoders\RTPS\SubMessageEncoder.cs" />
+    <Compile Include="Encoders\RTPS\SubMessageHeaderEncoder.cs" />
+    <Compile Include="Encoders\RTPS\TimeEncoder.cs" />
+    <Compile Include="Encoders\RTPS\VendorIdEncoder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTPS\RTPS.csproj">
+      <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
+      <Name>RTPS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

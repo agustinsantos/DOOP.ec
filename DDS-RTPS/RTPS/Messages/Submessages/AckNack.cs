@@ -86,10 +86,8 @@ namespace Rtps.Messages.Submessages
         /// </summary>
         public EntityId ReaderId
         {
-            get
-            {
-                return readerId;
-            }
+            get { return readerId; }
+            set { readerId = value; }
         }
 
         /// <summary>
@@ -100,10 +98,8 @@ namespace Rtps.Messages.Submessages
         /// </summary>
         public EntityId WriterId
         {
-            get
-            {
-                return writerId;
-            }
+            get { return writerId; }
+            set { writerId = value; }
         }
 
         /// <summary>
@@ -115,10 +111,8 @@ namespace Rtps.Messages.Submessages
         /// </summary>
         public SequenceNumberSet ReaderSNState
         {
-            get
-            {
-                return readerSNState;
-            }
+            get { return readerSNState; }
+            set { readerSNState = value; }
         }
 
         /// <summary>
@@ -128,12 +122,9 @@ namespace Rtps.Messages.Submessages
         /// </summary>
         public int Count
         {
-            get
-            {
-                return count;
-            }
+            get { return count; }
+            set { count = value; }
         }
-
 
         public override string ToString()
         {

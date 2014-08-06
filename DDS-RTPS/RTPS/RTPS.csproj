@@ -77,6 +77,7 @@
     <Compile Include="Messages\Submessages\Elements\FragmentNumberSet.cs" />
     <Compile Include="Messages\Submessages\Elements\GuidPrefixElement.cs" />
     <Compile Include="Messages\Submessages\Elements\LocatorList.cs" />
+    <Compile Include="Messages\Submessages\Elements\LocatorUDPv4.cs" />
     <Compile Include="Messages\Submessages\Elements\Parameter.cs" />
     <Compile Include="Messages\Submessages\Elements\ParameterList.cs" />
     <Compile Include="Messages\Submessages\Elements\ProtocolIdElement.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Messages\Submessages\Elements\SerializedData.cs" />
     <Compile Include="Messages\Submessages\Elements\SerializedDataFragment.cs" />
     <Compile Include="Messages\Submessages\Elements\SerializedPayload.cs" />
+    <Compile Include="Messages\Submessages\Elements\StatusInfo.cs" />
     <Compile Include="Messages\Submessages\Elements\TimestampElement.cs" />
     <Compile Include="Messages\Submessages\Elements\VendorIdElement.cs" />
     <Compile Include="Messages\Submessages\Gap.cs" />
