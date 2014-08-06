@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69644A78-9BD8-4074-8EA8-2C7D1A96D15C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDS</RootNamespace>
+    <AssemblyName>DDS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConversionUtils\BigDecimal.cs" />
+    <Compile Include="ConversionUtils\CharSequence.cs" />
+    <Compile Include="ConversionUtils\Class.cs" />
+    <Compile Include="ConversionUtils\EventListener.cs" />
+    <Compile Include="ConversionUtils\EventObject.cs" />
+    <Compile Include="ConversionUtils\TimeUnit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="omg\dds\core\AlreadyClosedException.cs" />
+    <Compile Include="omg\dds\core\Bootstrap.cs" />
+    <Compile Include="omg\dds\core\Condition.cs" />
+    <Compile Include="omg\dds\core\DDSException.cs" />
+    <Compile Include="omg\dds\core\DDSObject.cs" />
+    <Compile Include="omg\dds\core\DomainEntity.cs" />
+    <Compile Include="omg\dds\core\Duration.cs" />
+    <Compile Include="omg\dds\core\Entity.cs" />
+    <Compile Include="omg\dds\core\EntityQos.cs" />
+    <Compile Include="omg\dds\core\GuardCondition.cs" />
+    <Compile Include="omg\dds\core\IllegalOperationException.cs" />
+    <Compile Include="omg\dds\core\ImmutablePolicyException.cs" />
+    <Compile Include="omg\dds\core\InconsistentPolicyException.cs" />
+    <Compile Include="omg\dds\core\InstanceHandle.cs" />
+    <Compile Include="omg\dds\core\modifiable\ModifiableDuration.cs" />
+    <Compile Include="omg\dds\core\modifiable\ModifiableEntityQos.cs" />
+    <Compile Include="omg\dds\core\modifiable\ModifiableInstanceHandle.cs" />
+    <Compile Include="omg\dds\core\modifiable\ModifiableTime.cs" />
+    <Compile Include="omg\dds\core\modifiable\ModifiableValue.cs" />
+    <Compile Include="omg\dds\core\NotEnabledException.cs" />
+    <Compile Include="omg\dds\core\OutOfResourcesException.cs" />
+    <Compile Include="omg\dds\core\policy\DataRepresentationQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\DeadlineQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\DestinationOrderQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\DurabilityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\DurabilityServiceQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\EntityFactoryQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\GroupDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\HistoryQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\LatencyBudgetQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\LifespanQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\LivelinessQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableDataRepresentationQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableDeadlineQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableDestinationOrderQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableDurabilityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableDurabilityServiceQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableEntityFactoryQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableGroupDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableHistoryQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableLatencyBudgetQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableLifespanQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableLivelinessQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableOwnershipQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableOwnershipStrengthQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiablePartitionQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiablePresentationQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableReaderDataLifecycleQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableReliabilityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableResourceLimitsQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableTimeBasedFilterQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableTopicDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableTransportPriorityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableTypeConsistencyEnforcementQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableUserDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\modifiable\ModifiableWriterDataLifecycleQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\OwnershipQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\OwnershipStrengthQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\PartitionQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\PresentationQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\QosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\QosPolicyCount.cs" />
+    <Compile Include="omg\dds\core\policy\ReaderDataLifecycleQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\ReliabilityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\ResourceLimitsQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\TimeBasedFilterQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\TopicDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\TransportPriorityQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\TypeConsistencyEnforcementQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\UserDataQosPolicy.cs" />
+    <Compile Include="omg\dds\core\policy\WriterDataLifecycleQosPolicy.cs" />
+    <Compile Include="omg\dds\core\PreconditionNotMetException.cs" />
+    <Compile Include="omg\dds\core\ServiceConfigurationException.cs" />
+    <Compile Include="omg\dds\core\ServiceInitializationException.cs" />
+    <Compile Include="omg\dds\core\StatusCondition.cs" />
+    <Compile Include="omg\dds\core\status\DataAvailableStatus.cs" />
+    <Compile Include="omg\dds\core\status\DataOnReadersStatus.cs" />
+    <Compile Include="omg\dds\core\status\InconsistentTopicStatus.cs" />
+    <Compile Include="omg\dds\core\status\LivelinessChangedStatus.cs" />
+    <Compile Include="omg\dds\core\status\LivelinessLostStatus.cs" />
+    <Compile Include="omg\dds\core\status\OfferedDeadlineMissedStatus.cs" />
+    <Compile Include="omg\dds\core\status\OfferedIncompatibleQosStatus.cs" />
+    <Compile Include="omg\dds\core\status\PublicationMatchedStatus.cs" />
+    <Compile Include="omg\dds\core\status\RequestedDeadlineMissedStatus.cs" />
+    <Compile Include="omg\dds\core\status\RequestedIncompatibleQosStatus.cs" />
+    <Compile Include="omg\dds\core\status\SampleLostStatus.cs" />
+    <Compile Include="omg\dds\core\status\SampleRejectedStatus.cs" />
+    <Compile Include="omg\dds\core\status\Status.cs" />
+    <Compile Include="omg\dds\core\status\SubscriptionMatchedStatus.cs" />
+    <Compile Include="omg\dds\core\Time.cs" />
+    <Compile Include="omg\dds\core\Value.cs" />
+    <Compile Include="omg\dds\core\WaitSet.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipant.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipantAdapter.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipantFactory.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipantFactoryQos.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipantListener.cs" />
+    <Compile Include="omg\dds\domain\DomainParticipantQos.cs" />
+    <Compile Include="omg\dds\domain\modifiable\ModifiableDomainParticipantFactoryQos.cs" />
+    <Compile Include="omg\dds\domain\modifiable\ModifiableDomainParticipantQos.cs" />
+    <Compile Include="omg\dds\domain\package-info.cs" />
+    <Compile Include="omg\dds\pub\DataWriter.cs" />
+    <Compile Include="omg\dds\pub\DataWriterAdapter.cs" />
+    <Compile Include="omg\dds\pub\DataWriterListener.cs" />
+    <Compile Include="omg\dds\pub\DataWriterQos.cs" />
+    <Compile Include="omg\dds\pub\modifiable\ModifiableDataWriterQos.cs" />
+    <Compile Include="omg\dds\pub\modifiable\ModifiablePublisherQos.cs" />
+    <Compile Include="omg\dds\pub\package-info.cs" />
+    <Compile Include="omg\dds\pub\Publisher.cs" />
+    <Compile Include="omg\dds\pub\PublisherAdapter.cs" />
+    <Compile Include="omg\dds\pub\PublisherListener.cs" />
+    <Compile Include="omg\dds\pub\PublisherQos.cs" />
+    <Compile Include="omg\dds\sub\DataReader.cs" />
+    <Compile Include="omg\dds\sub\DataReaderAdapter.cs" />
+    <Compile Include="omg\dds\sub\DataReaderListener.cs" />
+    <Compile Include="omg\dds\sub\DataReaderQos.cs" />
+    <Compile Include="omg\dds\sub\InstanceState.cs" />
+    <Compile Include="omg\dds\sub\modifiable\ModifiableDataReaderQos.cs" />
+    <Compile Include="omg\dds\sub\modifiable\ModifiableSubscriberQos.cs" />
+    <Compile Include="omg\dds\sub\package-info.cs" />
+    <Compile Include="omg\dds\sub\QueryCondition.cs" />
+    <Compile Include="omg\dds\sub\ReadCondition.cs" />
+    <Compile Include="omg\dds\sub\Sample.cs" />
+    <Compile Include="omg\dds\sub\SampleState.cs" />
+    <Compile Include="omg\dds\sub\Subscriber.cs" />
+    <Compile Include="omg\dds\sub\SubscriberAdapter.cs" />
+    <Compile Include="omg\dds\sub\SubscriberListener.cs" />
+    <Compile Include="omg\dds\sub\SubscriberQos.cs" />
+    <Compile Include="omg\dds\sub\ViewState.cs" />
+    <Compile Include="omg\dds\topic\BuiltinTopicKey.cs" />
+    <Compile Include="omg\dds\topic\ContentFilteredTopic.cs" />
+    <Compile Include="omg\dds\topic\modifiable\ModifiableTopicQos.cs" />
+    <Compile Include="omg\dds\topic\MultiTopic.cs" />
+    <Compile Include="omg\dds\topic\package-info.cs" />
+    <Compile Include="omg\dds\topic\ParticipantBuiltinTopicData.cs" />
+    <Compile Include="omg\dds\topic\PublicationBuiltinTopicData.cs" />
+    <Compile Include="omg\dds\topic\SubscriptionBuiltinTopicData.cs" />
+    <Compile Include="omg\dds\topic\Topic.cs" />
+    <Compile Include="omg\dds\topic\TopicAdapter.cs" />
+    <Compile Include="omg\dds\topic\TopicBuiltinTopicData.cs" />
+    <Compile Include="omg\dds\topic\TopicDescription.cs" />
+    <Compile Include="omg\dds\topic\TopicListener.cs" />
+    <Compile Include="omg\dds\topic\TopicQos.cs" />
+    <Compile Include="omg\dds\type\BitBound.cs" />
+    <Compile Include="omg\dds\type\BitSet.cs" />
+    <Compile Include="omg\dds\type\builtin\BytesDataReader.cs" />
+    <Compile Include="omg\dds\type\builtin\BytesDataWriter.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedBytes.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedBytesDataReader.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedBytesDataWriter.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedString.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedStringDataReader.cs" />
+    <Compile Include="omg\dds\type\builtin\KeyedStringDataWriter.cs" />
+    <Compile Include="omg\dds\type\builtin\StringDataReader.cs" />
+    <Compile Include="omg\dds\type\builtin\StringDataWriter.cs" />
+    <Compile Include="omg\dds\type\dynamic\AnnotationDescriptor.cs" />
+    <Compile Include="omg\dds\type\dynamic\DynamicData.cs" />
+    <Compile Include="omg\dds\type\dynamic\DynamicDataFactory.cs" />
+    <Compile Include="omg\dds\type\dynamic\DynamicType.cs" />
+    <Compile Include="omg\dds\type\dynamic\DynamicTypeFactory.cs" />
+    <Compile Include="omg\dds\type\dynamic\DynamicTypeMember.cs" />
+    <Compile Include="omg\dds\type\dynamic\MemberDescriptor.cs" />
+    <Compile Include="omg\dds\type\dynamic\modifiable\ModifiableAnnotationDescriptor.cs" />
+    <Compile Include="omg\dds\type\dynamic\modifiable\ModifiableMemberDescriptor.cs" />
+    <Compile Include="omg\dds\type\dynamic\modifiable\ModifiableTypeDescriptor.cs" />
+    <Compile Include="omg\dds\type\dynamic\TypeDescriptor.cs" />
+    <Compile Include="omg\dds\type\Extensibility.cs" />
+    <Compile Include="omg\dds\type\ID.cs" />
+    <Compile Include="omg\dds\type\Key.cs" />
+    <Compile Include="omg\dds\type\MustUnderstand.cs" />
+    <Compile Include="omg\dds\type\Nested.cs" />
+    <Compile Include="omg\dds\type\Optional.cs" />
+    <Compile Include="omg\dds\type\SerializeAs.cs" />
+    <Compile Include="omg\dds\type\Shared.cs" />
+    <Compile Include="omg\dds\type\TypeKind.cs" />
+    <Compile Include="omg\dds\type\typeobject\AliasType.cs" />
+    <Compile Include="omg\dds\type\typeobject\AnnotationMember.cs" />
+    <Compile Include="omg\dds\type\typeobject\AnnotationMemberValue.cs" />
+    <Compile Include="omg\dds\type\typeobject\AnnotationType.cs" />
+    <Compile Include="omg\dds\type\typeobject\AnnotationUsage.cs" />
+    <Compile Include="omg\dds\type\typeobject\AnnotationUsageMember.cs" />
+    <Compile Include="omg\dds\type\typeobject\ArrayType.cs" />
+    <Compile Include="omg\dds\type\typeobject\Bit.cs" />
+    <Compile Include="omg\dds\type\typeobject\BitSetType.cs" />
+    <Compile Include="omg\dds\type\typeobject\CollectionType.cs" />
+    <Compile Include="omg\dds\type\typeobject\EnumeratedConstant.cs" />
+    <Compile Include="omg\dds\type\typeobject\EnumerationType.cs" />
+    <Compile Include="omg\dds\type\typeobject\MapType.cs" />
+    <Compile Include="omg\dds\type\typeobject\Member.cs" />
+    <Compile Include="omg\dds\type\typeobject\MemberFlag.cs" />
+    <Compile Include="omg\dds\type\typeobject\MemberProperty.cs" />
+    <Compile Include="omg\dds\type\typeobject\Module.cs" />
+    <Compile Include="omg\dds\type\typeobject\SequenceType.cs" />
+    <Compile Include="omg\dds\type\typeobject\StringType.cs" />
+    <Compile Include="omg\dds\type\typeobject\StructureType.cs" />
+    <Compile Include="omg\dds\type\typeobject\Type.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeFlag.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeId.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeLibrary.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeLibraryElement.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeObject.cs" />
+    <Compile Include="omg\dds\type\typeobject\TypeProperty.cs" />
+    <Compile Include="omg\dds\type\typeobject\UnionMember.cs" />
+    <Compile Include="omg\dds\type\typeobject\UnionType.cs" />
+    <Compile Include="omg\dds\type\TypeSupport.cs" />
+    <Compile Include="omg\dds\type\UnionDiscriminator.cs" />
+    <Compile Include="omg\dds\type\UnionMember.cs" />
+    <Compile Include="omg\dds\type\Value.cs" />
+    <Compile Include="omg\dds\type\Verbatim.cs" />
+    <Compile Include="omg\dds\type\VerbatimGroup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OMG-LICENSE" />
+    <None Include="OMG-NOTICE" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

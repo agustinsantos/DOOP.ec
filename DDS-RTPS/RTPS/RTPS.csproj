@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{350002AB-E6EB-48FE-8E43-4988E923206B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rtps</RootNamespace>
+    <AssemblyName>RTPS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavior\ChangeForReader.cs" />
+    <Compile Include="Behavior\ChangeFromWriter.cs" />
+    <Compile Include="Behavior\ReaderLocator.cs" />
+    <Compile Include="Behavior\ReaderProxy.cs" />
+    <Compile Include="Behavior\StatefulReader.cs" />
+    <Compile Include="Behavior\StatefulWriter.cs" />
+    <Compile Include="Behavior\StatelessReader.cs" />
+    <Compile Include="Behavior\StatelessWriter.cs" />
+    <Compile Include="Behavior\Types\ChangeForReaderStatusKind.cs" />
+    <Compile Include="Behavior\Types\ChangeFromWriterStatusKind.cs" />
+    <Compile Include="Behavior\Types\ParticipantMessageData.cs" />
+    <Compile Include="Behavior\WriterProxy.cs" />
+    <Compile Include="Discovery\Spdp\ParticipantProxy.cs" />
+    <Compile Include="Discovery\Spdp\SPDPdiscoveredParticipantData.cs" />
+    <Compile Include="Messages\Header.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Messages\Receiver.cs" />
+    <Compile Include="Messages\SubMessage.cs" />
+    <Compile Include="Messages\SubMessageElement.cs" />
+    <Compile Include="Messages\SubMessageHeader.cs" />
+    <Compile Include="Messages\Submessages\AckNack.cs" />
+    <Compile Include="Messages\Submessages\Data.cs" />
+    <Compile Include="Messages\Submessages\DataFrag.cs" />
+    <Compile Include="Messages\Submessages\Elements\CDREncapsulation.cs" />
+    <Compile Include="Messages\Submessages\Elements\CountElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\DataEncapsulation.cs" />
+    <Compile Include="Messages\Submessages\Elements\EntityIdElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\FragmentNumberElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\FragmentNumberSet.cs" />
+    <Compile Include="Messages\Submessages\Elements\GuidPrefixElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\LocatorList.cs" />
+    <Compile Include="Messages\Submessages\Elements\Parameter.cs" />
+    <Compile Include="Messages\Submessages\Elements\ParameterList.cs" />
+    <Compile Include="Messages\Submessages\Elements\ProtocolIdElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\ProtocolVersionElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\SequenceNumberElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\SequenceNumberSetElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\SerializedData.cs" />
+    <Compile Include="Messages\Submessages\Elements\SerializedDataFragment.cs" />
+    <Compile Include="Messages\Submessages\Elements\SerializedPayload.cs" />
+    <Compile Include="Messages\Submessages\Elements\TimestampElement.cs" />
+    <Compile Include="Messages\Submessages\Elements\VendorIdElement.cs" />
+    <Compile Include="Messages\Submessages\Gap.cs" />
+    <Compile Include="Messages\Submessages\Heartbeat.cs" />
+    <Compile Include="Messages\Submessages\HeartbeatFrag.cs" />
+    <Compile Include="Messages\Submessages\InfoDestination.cs" />
+    <Compile Include="Messages\Submessages\InfoReply.cs" />
+    <Compile Include="Messages\Submessages\InfoReplyIp4.cs" />
+    <Compile Include="Messages\Submessages\InfoSource.cs" />
+    <Compile Include="Messages\Submessages\InfoTimestamp.cs" />
+    <Compile Include="Messages\Submessages\NackFrag.cs" />
+    <Compile Include="Messages\Submessages\Pad.cs" />
+    <Compile Include="Messages\Types\Count.cs" />
+    <Compile Include="Messages\Types\Flags.cs" />
+    <Compile Include="Messages\Types\FragmentNumber.cs" />
+    <Compile Include="Messages\Types\ParameterId.cs" />
+    <Compile Include="Messages\Types\ProtocolId.cs" />
+    <Compile Include="Messages\Types\SubMessageKind.cs" />
+    <Compile Include="Messages\Types\Time.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structure\Types\Data.cs" />
+    <Compile Include="Structure\Types\InstanceHandle.cs" />
+    <Compile Include="Structure\Types\Locator.cs" />
+    <Compile Include="Structure\Types\ProtocolVersion.cs" />
+    <Compile Include="Structure\Types\ReliabilityKind.cs" />
+    <Compile Include="Structure\Types\SequenceNumber.cs" />
+    <Compile Include="Structure\ChangeKind.cs" />
+    <Compile Include="Structure\Types\TopicKind.cs" />
+    <Compile Include="Structure\Types\VendorId.cs" />
+    <Compile Include="Utils\ArrayEqualityComparer.cs" />
+    <Compile Include="Utils\NumberSet.cs" />
+    <Compile Include="Utils\RTPSConfigSection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Structure\CacheChange.cs" />
+    <Compile Include="Structure\HistoryCache.cs" />
+    <Compile Include="Structure\Endpoint.cs" />
+    <Compile Include="Structure\Entity.cs" />
+    <Compile Include="Structure\Participant.cs" />
+    <Compile Include="Structure\Reader.cs" />
+    <Compile Include="Structure\Writer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Structure\Types\EntityId.cs" />
+    <Compile Include="Structure\Types\GUID.cs" />
+    <Compile Include="Structure\Types\GuidPrefix.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Discovery\Sedp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavior\Types\Duration.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
