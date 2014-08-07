@@ -83,6 +83,10 @@
     <Compile Include="Encoders\RTPS\TimeEncoder.cs" />
     <Compile Include="Encoders\RTPS\VendorIdEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transport\IReceiver.cs" />
+    <Compile Include="Transport\ITransmitter.cs" />
+    <Compile Include="Transport\UDPReceiver.cs" />
+    <Compile Include="Transport\UDPTransmitter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RTPS\RTPS.csproj">
