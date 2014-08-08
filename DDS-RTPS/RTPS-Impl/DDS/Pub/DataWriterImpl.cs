@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using DDS.ConversionUtils;
+using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
 using System;
@@ -39,7 +40,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void waitForAcknowledgments(long maxWait, DDS.ConversionUtils.TimeUnit unit)
+        public void waitForAcknowledgments(long maxWait,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -89,7 +90,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.InstanceHandle registerInstance(TYPE instanceData, long sourceTimestamp, DDS.ConversionUtils.TimeUnit unit)
+        public org.omg.dds.core.InstanceHandle registerInstance(TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -109,7 +110,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void unregisterInstance(org.omg.dds.core.InstanceHandle handle, TYPE instanceData, long sourceTimestamp, DDS.ConversionUtils.TimeUnit unit)
+        public void unregisterInstance(org.omg.dds.core.InstanceHandle handle, TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -124,7 +125,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void write(TYPE instanceData, long sourceTimestamp, DDS.ConversionUtils.TimeUnit unit)
+        public void write(TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -139,7 +140,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void write(TYPE instanceData, org.omg.dds.core.InstanceHandle handle, long sourceTimestamp, DDS.ConversionUtils.TimeUnit unit)
+        public void write(TYPE instanceData, org.omg.dds.core.InstanceHandle handle, long sourceTimestamp,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -159,7 +160,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void dispose(org.omg.dds.core.InstanceHandle instanceHandle, TYPE instanceData, long sourceTimestamp, DDS.ConversionUtils.TimeUnit unit)
+        public void dispose(org.omg.dds.core.InstanceHandle instanceHandle, TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }

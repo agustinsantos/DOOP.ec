@@ -1,4 +1,6 @@
-﻿using org.omg.dds.domain;
+﻿using Doopec.DDS.Utils;
+using org.omg.dds.core;
+using org.omg.dds.domain;
 using System;
 using System.Collections.Generic;
 
@@ -20,7 +22,7 @@ namespace Doopec.Dds.Domain
             // Check inconsistent qos
             // Check if repository exists for domainId
             // Check if Guid is not GUID_UNKNOWN
-            DomainParticipantImpl dp =  new DomainParticipantImpl();
+            DomainParticipantImpl dp = new DomainParticipantImpl();
 
             // Add dp to participants
             //participants_.Add();
@@ -49,22 +51,37 @@ namespace Doopec.Dds.Domain
 
         public override DomainParticipantFactoryQos getQos()
         {
-            throw new NotImplementedException();
+            return qos_;
         }
 
         public override void setQos(DomainParticipantFactoryQos qos)
         {
-            throw new NotImplementedException();
+            if (QosHelper.IsValid(qos) && QosHelper.IsConsistent(qos))
+            {
+                if (!(qos_ == qos) && QosHelper.IsChangeable(qos_, qos))
+                    qos_ = qos;
+            }
+            else
+            {
+                throw new InconsistentPolicyException();
+            }
         }
 
         public override DomainParticipantQos getDefaultParticipantQos()
         {
-            throw new NotImplementedException();
+            return this.default_participant_qos_;
         }
 
         public override void setDefaultParticipantQos(DomainParticipantQos qos)
         {
-            throw new NotImplementedException();
+            if (QosHelper.IsValid(qos) && QosHelper.IsConsistent(qos))
+            {
+                this.default_participant_qos_ = qos;
+            }
+            else
+            {
+                throw new InconsistentPolicyException();
+            }
         }
 
         public override void setDefaultParticipantQos(string qosLibraryName, string qosProfileName)
@@ -78,13 +95,13 @@ namespace Doopec.Dds.Domain
         }
 
         #region Fields
-         DomainParticipantFactoryQos qos_;
+        DomainParticipantFactoryQos qos_;
 
         /// The default qos value of DomainParticipant.
-         DomainParticipantQos default_participant_qos_;
+        DomainParticipantQos default_participant_qos_;
 
         /// The collection of domain participants.
-         IDictionary<long, ISet<DomainParticipant>> participants_;
+        IDictionary<long, ISet<DomainParticipant>> participants_ = new Dictionary<long, ISet<DomainParticipant>>();
         #endregion
     }
 }

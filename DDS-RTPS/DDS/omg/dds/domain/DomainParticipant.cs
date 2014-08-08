@@ -120,17 +120,26 @@ namespace org.omg.dds.domain
         Subscriber getBuiltinSubscriber();
 
 
-        // --- Create Topic with implicit TypeSupport: ---------------------------
-
+        /// <summary>
+        /// Create a new topic with implicit TypeSupport
+        /// </summary>
         Topic<TYPE> createTopic<TYPE>(string topicName);
- 
-        /**
-         * Create a new topic.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+
+
+        /// <summary>
+        /// Create a new topic.
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topicName"></param>
+        /// <param name="type"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">
+        ///             Of which status changes the listener should be
+        ///             notified. A null collection signifies all status
+        ///             changes
+        ///     </param>
+        /// <returns></returns>
         Topic<TYPE> createTopic<TYPE>(
                string topicName,
                Type type,

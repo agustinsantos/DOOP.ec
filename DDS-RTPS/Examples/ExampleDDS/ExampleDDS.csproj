@@ -59,6 +59,10 @@
       <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
       <Name>DDS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\RTPS-Impl\Doop-ec.csproj">
+      <Project>{51bb643c-96ed-472e-b80b-723254599bc3}</Project>
+      <Name>Doop-ec</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="org\omg\example\dds\helloworld\Greeting.cs" />

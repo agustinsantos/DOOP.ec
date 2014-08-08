@@ -1,4 +1,5 @@
 ﻿
+using DDS.ConversionUtils;
 using Doopec.Dds.Domain;
 using org.omg.dds.core;
 using System;
@@ -38,7 +39,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration, DDS.ConversionUtils.TimeUnit unit)
+        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -53,7 +54,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time, DDS.ConversionUtils.TimeUnit units)
+        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time,  TimeUnit units)
         {
             throw new NotImplementedException();
         }

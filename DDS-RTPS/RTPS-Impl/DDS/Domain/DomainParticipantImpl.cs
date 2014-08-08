@@ -1,6 +1,7 @@
 ﻿using Doopec.Dds.Pub;
 using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
+using Mina.Filter.Statistic;
 using org.omg.dds.core;
 using org.omg.dds.core.modifiable;
 using org.omg.dds.domain;
@@ -89,6 +90,7 @@ namespace Doopec.Dds.Domain
         }
         public Topic<TYPE> createTopic<TYPE>(string topicName)
         {
+            //DomainParticipant.TOPIC_QOS_DEFAULT, null,  StatusMask.STATUS_MASK_NONE
             throw new NotImplementedException();
         }
 
@@ -139,7 +141,7 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout, DDS.ConversionUtils.TimeUnit unit)
+        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -376,5 +378,11 @@ namespace Doopec.Dds.Domain
         #endregion
 
 
+
+
+        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout, global::DDS.ConversionUtils.TimeUnit unit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

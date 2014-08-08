@@ -1,4 +1,5 @@
-﻿using org.omg.dds.sub;
+﻿using DDS.ConversionUtils;
+using org.omg.dds.sub;
 using org.omg.dds.topic;
 using System;
 using System.Collections.Generic;
@@ -91,7 +92,7 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public void waitForHistoricalData(long maxWait, DDS.ConversionUtils.TimeUnit unit)
+        public void waitForHistoricalData(long maxWait,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }

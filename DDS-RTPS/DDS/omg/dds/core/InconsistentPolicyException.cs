@@ -18,20 +18,24 @@
 
 namespace org.omg.dds.core
 {
-    public abstract class InconsistentPolicyException : DDSException
+    public class InconsistentPolicyException : DDSException
     {
 
         // -----------------------------------------------------------------------
         // Object Life Cycle
         // -----------------------------------------------------------------------
 
-        protected InconsistentPolicyException()
+        public InconsistentPolicyException()
         {
         }
 
-        protected InconsistentPolicyException(string message)
+        public InconsistentPolicyException(string message)
             : base(message)
         {
         }
+
+        public override Bootstrap getBootstrap()
+        { throw new System.NotImplementedException(); }
+
     }
 }

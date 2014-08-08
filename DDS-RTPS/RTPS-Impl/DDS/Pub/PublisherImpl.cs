@@ -1,4 +1,5 @@
-﻿using org.omg.dds.domain;
+﻿using DDS.ConversionUtils;
+using org.omg.dds.domain;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
 using System;
@@ -161,7 +162,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void waitForAcknowledgments(long maxWait, DDS.ConversionUtils.TimeUnit unit)
+        public void waitForAcknowledgments(long maxWait,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }

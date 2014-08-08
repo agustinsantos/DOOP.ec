@@ -24,24 +24,21 @@ using System.Collections.Generic;
 
 namespace org.omg.dds.domain
 {
-
-    /**
-     * The sole purpose of this class is to allow the creation and destruction of
-     * {@link DomainParticipant} objects. DomainParticipantFactory itself has no
-     * factory. It is a pre-existing per-{@link Bootstrap} singleton object that
-     * can be accessed by means of the {@link #getInstance(Bootstrap)} operation
-     * on the DomainParticipantFactory.
-     */
+    /// <summary>
+    /// The sole purpose of this class is to allow the creation and destruction of
+    ///  {@link DomainParticipant} objects. DomainParticipantFactory itself has no
+    ///  factory. It is a pre-existing per-{@link Bootstrap} singleton object that
+    ///  can be accessed by means of the {@link #getInstance(Bootstrap)} operation
+    ///  on the DomainParticipantFactory.
+    /// </summary>
     public abstract class DomainParticipantFactory : DDSObject
     {
-        // -----------------------------------------------------------------------
-        // Singleton Access
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Singleton Access
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the
+        ///                  object will belong.</param>
+        /// <returns></returns>
         public static DomainParticipantFactory getInstance(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().getParticipantFactory();
@@ -94,10 +91,10 @@ namespace org.omg.dds.domain
         public abstract void setQos(DomainParticipantFactoryQos qos);
 
         public abstract DomainParticipantQos getDefaultParticipantQos();
+
         public abstract void setDefaultParticipantQos(DomainParticipantQos qos);
-        public abstract void setDefaultParticipantQos(
-                string qosLibraryName,
-                string qosProfileName);
+
+        public abstract void setDefaultParticipantQos(string qosLibraryName, string qosProfileName);
 
 
         public abstract Bootstrap getBootstrap();
