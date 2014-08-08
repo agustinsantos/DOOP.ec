@@ -34,7 +34,7 @@ namespace org.omg.dds.pub
     public interface Publisher : DomainEntity<Publisher,
                          DomainParticipant,
                          PublisherListener,
-                         PublisherQos> 
+                         PublisherQos>
     {
         // --- Create (any) DataWriter: ------------------------------------------
 

@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace org.omg.dds.core
 {
     // TODO: Este interface no tiene todo lo que debería tener segun la especificacion
-    public interface Entity : DDSObject
+    public interface IEntity : DDSObject
     {
     }
 
@@ -35,7 +35,7 @@ namespace org.omg.dds.core
     /// <typeparam name="SELF">The most-derived DDS-standard interface implemented by this entity.</typeparam>
     /// <typeparam name="LISTENER">The listener interface appropriate for this entity.</typeparam>
     /// <typeparam name="QOS">The QoS interface appropriate for this entity.</typeparam>
-    public interface Entity<SELF, LISTENER, QOS> : Entity
+    public interface Entity<SELF, LISTENER, QOS> : IEntity
         where SELF : Entity<SELF, LISTENER, QOS>
         where LISTENER : EventListener
         where QOS : EntityQos
@@ -62,7 +62,7 @@ namespace org.omg.dds.core
         /// <param name="qos"></param>
         void setQos(QOS qos);
 
-         /// <summary>
+        /// <summary>
         /// Set the QoS to that specified in the given QoS profile in the given
         /// QoS library
         /// </summary>

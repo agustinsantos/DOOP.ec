@@ -27,8 +27,10 @@ using org.omg.dds.core.modifiable;
 
 namespace org.omg.dds.sub
 {
+    public interface IDataReader : IDomainEntity
+    { }
 
-    public interface DataReader<TYPE> : DomainEntity<DataReader<TYPE>,
+    public interface DataReader<TYPE> : IDataReader, DomainEntity<DataReader<TYPE>,
                                              Subscriber,
                                              DataReaderListener<TYPE>,
                                              DataReaderQos>

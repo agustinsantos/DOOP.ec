@@ -48,6 +48,7 @@ namespace org.omg.dds.sub
                DataReaderListener<TYPE> listener,
                ICollection<Type> statuses);
 
+
         /**
          * Create a new data reader.
          * 
@@ -56,10 +57,10 @@ namespace org.omg.dds.sub
          *                  changes.
          */
         DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic,
-               string qosLibraryName,
-               string qosProfileName,
-               DataReaderListener<TYPE> listener,
-               ICollection<Type> statuses);
+                                               string qosLibraryName,
+                                               string qosProfileName,
+                                               DataReaderListener<TYPE> listener,
+                                               ICollection<Type> statuses);
 
 
         // --- Create DataReader of built-in bytes type: -------------------------

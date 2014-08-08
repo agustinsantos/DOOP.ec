@@ -22,6 +22,9 @@ using DDS.ConversionUtils;
 
 namespace org.omg.dds.topic
 {
+    public interface ITopicListener  : EventListener
+    {
+    }
 
     public interface TopicListener<TYPE> : EventListener
     {

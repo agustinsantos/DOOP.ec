@@ -24,6 +24,11 @@ using System;
 
 namespace org.omg.dds.topic
 {
+    public interface ITopicDescription : DDSObject
+    {
+        string Name { get; set; }
+        Type Type { get; }
+    }
 
     /**
      * This interface is the base for {@link Topic}, {@link ContentFilteredTopic},
@@ -39,7 +44,7 @@ namespace org.omg.dds.topic
      *                  or subscribed by the readers and writers that use this
      *                  topic description.
      */
-    public interface TopicDescription<TYPE> : DDSObject
+    public interface TopicDescription<TYPE> : ITopicDescription, DDSObject
     {
         /**
          * @return  the type parameter if this object's class.

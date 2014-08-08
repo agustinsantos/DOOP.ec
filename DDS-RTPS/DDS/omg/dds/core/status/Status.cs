@@ -40,7 +40,7 @@ namespace org.omg.dds.core.status
     public abstract class Status<SELF, SOURCE>
      : EventObject, ModifiableValue<SELF, SELF>
         where SELF : Status<SELF, SOURCE>
-        where SOURCE : Entity
+        where SOURCE : IEntity
     {
 
         // -----------------------------------------------------------------------

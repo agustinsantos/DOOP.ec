@@ -22,6 +22,8 @@ using org.omg.dds.domain;
 
 namespace org.omg.dds.core
 {
+    public interface IDomainEntity : IEntity
+    { }
 
     /**
      * DomainEntity is the abstract base class for all DCPS entities, except for
@@ -36,9 +38,9 @@ namespace org.omg.dds.core
      * @param <LISTENER>    The listener interface appropriate for this entity.
      * @param <QOS>         The QoS interface appropriate for this entity.
      */
-    public interface DomainEntity<SELF,  PARENT, LISTENER, QOS> : Entity<SELF, LISTENER, QOS>
+    public interface DomainEntity<SELF, PARENT, LISTENER, QOS> : Entity<SELF, LISTENER, QOS>
         where SELF : Entity<SELF, LISTENER, QOS>
-        where PARENT : Entity
+        where PARENT : IEntity
         where LISTENER : EventListener
         where QOS : EntityQos
     {

@@ -123,8 +123,7 @@ namespace org.omg.dds.domain
         // --- Create Topic with implicit TypeSupport: ---------------------------
 
         Topic<TYPE> createTopic<TYPE>(string topicName);
-        Topic<TYPE> createTopic<TYPE>(string topicName, Type type);
-
+ 
         /**
          * Create a new topic.
          * 

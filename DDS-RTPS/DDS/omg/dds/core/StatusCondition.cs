@@ -35,7 +35,7 @@ namespace org.omg.dds.core
      *                      associated.
      */
     public interface StatusCondition<ENTITY> : Condition
-        where ENTITY : Entity
+        where ENTITY : IEntity
     {
         ICollection<Type> getEnabledStatuses(ICollection<Type> statuses);
 

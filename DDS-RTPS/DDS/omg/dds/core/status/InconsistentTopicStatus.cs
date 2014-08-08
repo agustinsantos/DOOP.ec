@@ -22,18 +22,11 @@ using org.omg.dds.topic;
 
 namespace org.omg.dds.core.status
 {
+    public interface IInconsistentTopicStatus
+    { }
 
-    public abstract class InconsistentTopicStatus<TYPE>
-     : Status<InconsistentTopicStatus<TYPE>, Topic<TYPE>>
+    public abstract class InconsistentTopicStatus<TYPE> : Status<InconsistentTopicStatus<TYPE>, Topic<TYPE>>, IInconsistentTopicStatus
     {
-        // -----------------------------------------------------------------------
-        // Constants
-        // -----------------------------------------------------------------------
-
-        private const long serialVersionUID = 4436349983298916816L;
-
-
-
         // -----------------------------------------------------------------------
         // Object Life Cycle
         // -----------------------------------------------------------------------

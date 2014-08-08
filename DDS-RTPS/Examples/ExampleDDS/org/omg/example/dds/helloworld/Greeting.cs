@@ -27,9 +27,12 @@ namespace org.omg.example.dds.helloworld
             this.value = value;
         }
 
-        public string getValue()
+        public string Value
         {
-            return value;
+            get
+            {
+                return this.value;
+            }
         }
     }
 }

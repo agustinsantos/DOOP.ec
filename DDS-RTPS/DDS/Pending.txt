@@ -1,0 +1,71 @@
+﻿One of the biggest problems with the API is the use of the Generic types
+For instance, how to mix generic classes in a generic list (needed to store a list of topics)??
+A solution is there: http://www.roelvanlisdonk.nl/?p=1707
+
+I'll try to do the same for ITopic 
+
+From this page:
+If you create a class like Setting<T>, you might think you can create a generic list, like:
+List<Setting<T>> List = new List<Setting<T>>();
+,but this is not possible in .Net 4.0. If you want objects of type Setting<int> mixed with objects of type  Setting<bool> in one List<T> you must define a none generic base class Setting, like:
+    public class Setting
+    {
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_name)) { 
+                   throw new ApplicationException("Property [Name] in class [Setting] is null or empty"); }
+                return _name;
+            }
+            set { _name = value; }
+        }
+    }
+    [Serializable]
+    public class Setting<T> : Setting
+    {
+        private T _value;
+        public T Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+            }
+        }
+        public Type Type
+        {
+            get
+            {
+                return typeof(T);
+            }
+        }
+
+        /// <summary>
+        /// Define a default constructor for serialization purposes
+        /// </summary>
+        public Setting()
+        {
+        }
+    }
+Then you can mix generic types in the generic list like:
+List<Setting> list = new List<Setting>
+{
+    new Setting<int>{Name = "Timeout", Value = 1000},
+    new Setting<bool>{Name = "ImportEnabled", Value = true}
+};
+You can get an element of this list by using the method:
+public T GetSetting<T>(string name, List<Setting> list)
+{     T result;
+    Setting<T> setting = (Setting<T>)Convert.ChangeType(
+                         list.Single(s => s.Name.Equals(name)), typeof(Setting<T>), null);
+    result = setting.Value;
+
+    return result;
+}
+To call the method use:
+int timeout = GetSetting<int>("Timeout", list);

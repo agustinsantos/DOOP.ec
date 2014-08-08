@@ -23,6 +23,8 @@ using org.omg.dds.domain;
 
 namespace org.omg.dds.topic
 {
+    public interface ITopic : ITopicDescription, IDomainEntity
+    { }
 
     /**
      * Topic is the most basic description of the data to be published and
@@ -46,7 +48,8 @@ namespace org.omg.dds.topic
     public interface Topic<TYPE> : TopicDescription<TYPE>, DomainEntity<Topic<TYPE>,
                                                  DomainParticipant,
                                                  TopicListener<TYPE>,
-                                                 TopicQos>
+                                                 TopicQos>,
+                                                    ITopic
     {
         InconsistentTopicStatus<TYPE> getInconsistentTopicStatus(InconsistentTopicStatus<TYPE> status);
     }

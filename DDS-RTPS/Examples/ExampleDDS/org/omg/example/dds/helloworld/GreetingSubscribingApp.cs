@@ -50,7 +50,7 @@ namespace org.omg.example.dds.helloworld
 
             Subscriber sub = dp.createSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
-            DataReader<Greeting> dr = sub.createDataReader(tp,
+            DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
                                                             sub.getDefaultDataReaderQos(),
                                                             ls,
                                                             null /* all status changes */);

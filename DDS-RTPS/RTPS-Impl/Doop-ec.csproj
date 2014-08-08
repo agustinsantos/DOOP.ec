@@ -48,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DDS\Core\BootstrapImpl.cs" />
+    <Compile Include="DDS\Pub\DataWriterImpl.cs" />
+    <Compile Include="DDS\Pub\PublisherImpl.cs" />
+    <Compile Include="DDS\Domain\DomainParticipantFactoryImpl.cs" />
+    <Compile Include="DDS\Domain\DomainParticipantImpl.cs" />
+    <Compile Include="DDS\Sub\DataReaderImpl.cs" />
+    <Compile Include="DDS\Sub\SubscriberImpl.cs" />
+    <Compile Include="DDS\Topic\TopicImpl.cs" />
     <Compile Include="Encoders\IEncoder.cs" />
     <Compile Include="Encoders\RTPS\AckNackEncoder.cs" />
     <Compile Include="Encoders\BufferUtils.cs" />
@@ -89,6 +97,10 @@
     <Compile Include="Transport\UDPTransmitter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDS\DDS.csproj">
+      <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
+      <Name>DDS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RTPS\RTPS.csproj">
       <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
       <Name>RTPS</Name>

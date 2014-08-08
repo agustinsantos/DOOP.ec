@@ -24,14 +24,15 @@ using org.omg.dds.core.status;
 using org.omg.dds.topic;
 using System.Collections.Generic;
 using org.omg.dds.core.modifiable;
+using System;
 
 namespace org.omg.dds.pub
 {
 
     public interface DataWriter<TYPE> : DomainEntity<DataWriter<TYPE>,
-                                                     Publisher,
-                                                     DataWriterListener<TYPE>,
-                                                     DataWriterQos>
+                                        Publisher,
+                                        DataWriterListener<TYPE>,
+                                        DataWriterQos>
     {
         /**
          * @return  the type parameter if this object's class.

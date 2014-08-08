@@ -30,12 +30,12 @@ namespace org.omg.example.dds.helloworld
     {
         public static void RunExample(string[] args)
         {
-            DomainParticipantFactory factory =
-                DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.createParticipant();
 
             // Implicitly create TypeSupport and register type:
             Topic<Greeting> tp = dp.createTopic<Greeting>("My Topic");
+
             // OR explicitly create TypeSupport, registered with default name:
             // Topic<Greeting> tp = dp.createTopic(
             //         "My Topic",
