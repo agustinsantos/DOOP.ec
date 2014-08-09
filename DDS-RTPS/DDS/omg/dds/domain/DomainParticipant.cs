@@ -141,11 +141,11 @@ namespace org.omg.dds.domain
         ///     </param>
         /// <returns></returns>
         Topic<TYPE> createTopic<TYPE>(
-               string topicName,
-               Type type,
-               TopicQos qos,
-               TopicListener<TYPE> listener,
-               ICollection<Type> statuses);
+                                       string topicName,
+                                       Type type,
+                                       TopicQos qos,
+                                       TopicListener<TYPE> listener,
+                                       ICollection<Type> statuses);
 
         /**
          * Create a new topic.
@@ -154,20 +154,18 @@ namespace org.omg.dds.domain
          *                  notified. A null collection signifies all status
          *                  changes.
          */
-        Topic<TYPE> createTopic<TYPE>(
-               string topicName,
-               Type type,
-               string qosLibraryName,
-               string qosProfileName,
-               TopicListener<TYPE> listener,
-               ICollection<Type> statuses);
+        Topic<TYPE> createTopic<TYPE>( string topicName,
+                                       string qosLibraryName,
+                                       string qosProfileName,
+                                       TopicListener<TYPE> listener,
+                                       ICollection<Type> statuses);
 
 
         // --- Create Topic with explicit TypeSupport: ---------------------------
 
         Topic<TYPE> createTopic<TYPE>(
-               string topicName,
-               TypeSupport<TYPE> type);
+                                       string topicName,
+                                       TypeSupport<TYPE> type);
 
         /**
          * Create a new topic.
@@ -177,11 +175,11 @@ namespace org.omg.dds.domain
          *                  changes.
          */
         Topic<TYPE> createTopic<TYPE>(
-               string topicName,
-               TypeSupport<TYPE> type,
-               TopicQos qos,
-               TopicListener<TYPE> listener,
-               ICollection<Type> statuses);
+                                       string topicName,
+                                       TypeSupport<TYPE> type,
+                                       TopicQos qos,
+                                       TopicListener<TYPE> listener,
+                                       ICollection<Type> statuses);
 
         /**
          * Create a new topic.
@@ -191,12 +189,12 @@ namespace org.omg.dds.domain
          *                  changes.
          */
         Topic<TYPE> createTopic<TYPE>(
-               string topicName,
-               TypeSupport<TYPE> type,
-               string qosLibraryName,
-               string qosProfileName,
-               TopicListener<TYPE> listener,
-               ICollection<Type> statuses);
+                                       string topicName,
+                                       TypeSupport<TYPE> type,
+                                       string qosLibraryName,
+                                       string qosProfileName,
+                                       TopicListener<TYPE> listener,
+                                       ICollection<Type> statuses);
 
 
         // --- Other operations: -------------------------------------------------

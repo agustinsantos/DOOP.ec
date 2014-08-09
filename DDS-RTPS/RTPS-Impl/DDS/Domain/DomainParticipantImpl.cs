@@ -79,19 +79,16 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public ITopic createTopic(string topicName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ITopic createTopic(string topicName, Type type)
-        {
-            throw new NotImplementedException();
-        }
         public Topic<TYPE> createTopic<TYPE>(string topicName)
         {
             //DomainParticipant.TOPIC_QOS_DEFAULT, null,  StatusMask.STATUS_MASK_NONE
-            throw new NotImplementedException();
+            // look for this topic. Check id it already exists
+            // raise exception if it does exist.
+
+            // Not exists another topic qith the same name
+            Topic<TYPE> topic = new TopicImpl<TYPE>( topicName, null, null, this);
+            AddTopic(topic);
+            return topic;
         }
 
 
@@ -100,26 +97,11 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, Type type, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
+        public Topic<TYPE> createTopic<TYPE>(string topicName, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public ITopic createTopic(string topicName, Type type, TopicQos qos, ITopicListener listener, ICollection<Type> statuses)
-        {
-            // look for this topic. Check id it already exists
-            // raise exception if it does exist.
-
-            // Not exists another topic qith the same name
-            ITopic topic = new TopicImpl(type, topicName, qos, listener, this);
-            AddTopic(topic);
-            return topic;
-        }
-
-        public ITopic createTopic(string topicName, Type type, string qosLibraryName, string qosProfileName, ITopicListener listener, ICollection<Type> statuses)
-        {
-            throw new NotImplementedException();
-        }
 
         public Topic<TYPE> createTopic<TYPE>(string topicName, TypeSupport<TYPE> type)
         {

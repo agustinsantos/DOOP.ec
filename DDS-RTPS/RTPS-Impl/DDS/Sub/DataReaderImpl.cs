@@ -11,7 +11,13 @@ namespace Doopec.Dds.Sub
         TopicDescription<TYPE> topic_;
         Subscriber pub_;
 
-        public DataReaderImpl(Subscriber pub, TopicDescription<TYPE> topic)
+        public DataReaderImpl(Subscriber pub, TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        {
+            pub_ = pub;
+            topic_ = topic;
+        }
+            
+            public DataReaderImpl(Subscriber pub, TopicDescription<TYPE> topic)
         {
             pub_ = pub;
             topic_ = topic;

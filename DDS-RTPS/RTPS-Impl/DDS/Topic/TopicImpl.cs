@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Doopec.Dds.Topic
 {
-    internal class TopicImpl : ITopic
+    internal class TopicImpl<TYPE> : Topic<TYPE>
     {
         private string topicName;
         private Type type;
@@ -16,9 +16,9 @@ namespace Doopec.Dds.Topic
         private ITopicListener listener;
         private DomainParticipant parent;
 
-        public TopicImpl(Type type, string topicName, TopicQos qos, ITopicListener listener, DomainParticipantImpl participant)
+        public TopicImpl( string topicName, TopicQos qos, ITopicListener listener, DomainParticipantImpl participant)
         {
-            this.type = type;
+            this.type = typeof(TYPE);
             this.topicName = topicName;
             this.qos = qos;
             this.listener = listener;
@@ -124,6 +124,26 @@ namespace Doopec.Dds.Topic
         public Type Type
         {
             get { return type; }
+        }
+
+        public InconsistentTopicStatus<TYPE> getInconsistentTopicStatus(InconsistentTopicStatus<TYPE> status)
+        {
+            throw new NotImplementedException();
+        }
+
+        TopicListener<TYPE> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.getListener()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setListener(TopicListener<TYPE> listener)
+        {
+            throw new NotImplementedException();
+        }
+
+        StatusCondition<Topic<TYPE>> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.getStatusCondition()
+        {
+            throw new NotImplementedException();
         }
     }
 }

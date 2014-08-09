@@ -26,59 +26,70 @@ namespace org.omg.dds.sub
 
     public interface DataReaderQos : EntityQos<DataReaderQos, ModifiableDataReaderQos>
     {
-        /**
-         * @return the durability
-         */
+        /// <summary>
+        /// return the durability
+        /// </summary>
+        /// <returns></returns>
         DurabilityQosPolicy getDurability();
 
-        /**
-         * @return the deadline
-         */
+        /// <summary>
+        /// return the deadline
+        /// </summary>
+        /// <returns></returns>
         DeadlineQosPolicy getDeadline();
 
-        /**
-         * @return the latencyBudget
-         */
+        /// <summary>
+        /// return the latencyBudget
+        /// </summary>
+        /// <returns></returns>
         LatencyBudgetQosPolicy getLatencyBudget();
 
-        /**
-         * @return the liveliness
-         */
+        /// <summary>
+        /// return the liveliness
+        /// </summary>
+        /// <returns></returns>
         LivelinessQosPolicy getLiveliness();
 
-        /**
-         * @return the destinationOrder
-         */
+        /// <summary>
+        /// return the destinationOrder
+        /// </summary>
+        /// <returns></returns>
         DestinationOrderQosPolicy getDestinationOrder();
 
-        /**
-         * @return the history
-         */
+        /// <summary>
+        /// return the history
+        /// </summary>
+        /// <returns></returns>
         HistoryQosPolicy getHistory();
 
-        /**
-         * @return the resourceLimits
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ResourceLimitsQosPolicy getResourceLimits();
 
-        /**
-         * @return the userData
-         */
+        /// <summary>
+        /// return the userData
+        /// </summary>
+        /// <returns></returns>
         UserDataQosPolicy getUserData();
 
-        /**
-         * @return the ownership
-         */
+        /// <summary>
+        /// return the ownership
+        /// </summary>
+        /// <returns></returns>
         OwnershipQosPolicy getOwnership();
 
-        /**
-         * @return the timeBasedFilter
-         */
+        /// <summary>
+        /// return the timeBasedFilter
+        /// </summary>
+        /// <returns></returns>
         TimeBasedFilterQosPolicy getTimeBasedFilter();
 
-        /**
-         * @return the readerDataLifecycle
-         */
+        /// <summary>
+        /// return the readerDataLifecycle
+        /// </summary>
+        /// <returns></returns>
         ReaderDataLifecycleQosPolicy getReaderDataLifecycle();
 
         DataRepresentationQosPolicy getRepresentation();

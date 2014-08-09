@@ -1,6 +1,7 @@
 ﻿using org.omg.dds.domain;
 using org.omg.dds.sub;
 using org.omg.dds.topic;
+using org.omg.dds.type.builtin;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Doopec.Dds.Sub
         private DataReaderQos dataReaderqos;
         private SubscriberListener listener;
         private IList datawriters;
-
+        
         public SubscriberImpl(SubscriberQos qos, SubscriberListener listener, DomainParticipant dp)
         {
             this.qos = qos;
@@ -32,72 +33,75 @@ namespace Doopec.Dds.Sub
             return dw;
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(org.omg.dds.topic.TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        {
+            DataReader<TYPE> dw = null;
+            dw = new DataReaderImpl<TYPE>(this, topic, qos, listener, statuses);
+            datawriters.Add(dw);
+            return dw;
+        }
+
+        public DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(org.omg.dds.topic.TopicDescription<TYPE> topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataReader createBytesDataReader(org.omg.dds.topic.TopicDescription<byte[]> topic)
+        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic, DataReaderQos qos, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataReader createBytesDataReader(org.omg.dds.topic.TopicDescription<byte[]> topic, DataReaderQos qos, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
+        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic, string qosLibraryName, string qosProfileName, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataReader createBytesDataReader(org.omg.dds.topic.TopicDescription<byte[]> topic, string qosLibraryName, string qosProfileName, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
+        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataReader createKeyedBytesDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.KeyedBytes> topic)
+        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, DataReaderQos qos, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataReader createKeyedBytesDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.KeyedBytes> topic, DataReaderQos qos, DataReaderListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
+        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataReader createKeyedBytesDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataReaderListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
+        public stringDataReader createstringDataReader(TopicDescription<string> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataReader createstringDataReader(org.omg.dds.topic.TopicDescription<string> topic)
+        public stringDataReader createstringDataReader(TopicDescription<string> topic, DataReaderQos qos, DataReaderListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataReader createstringDataReader(org.omg.dds.topic.TopicDescription<string> topic, DataReaderQos qos, DataReaderListener<string> listener, ICollection<Type> statuses)
+        public stringDataReader createstringDataReader(TopicDescription<string> topic, string qosLibraryName, string qosProfileName, DataReaderListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataReader createstringDataReader(org.omg.dds.topic.TopicDescription<string> topic, string qosLibraryName, string qosProfileName, DataReaderListener<string> listener, ICollection<Type> statuses)
+        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataReader createKeyedstringDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.Keyedstring> topic)
+        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic, DataReaderQos qos, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataReader createKeyedstringDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.Keyedstring> topic, DataReaderQos qos, DataReaderListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
-        {
-            throw new NotImplementedException();
-        }
-
-        public org.omg.dds.type.builtin.KeyedstringDataReader createKeyedstringDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.Keyedstring> topic, string qosLibraryName, string qosProfileName, DataReaderListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
+        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic, string qosLibraryName, string qosProfileName, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
@@ -107,27 +111,27 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> lookupDataReader<TYPE>(org.omg.dds.topic.TopicDescription<TYPE> topicName)
+        public DataReader<TYPE> lookupDataReader<TYPE>(TopicDescription<TYPE> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataReader lookupBytesDataReader(org.omg.dds.topic.TopicDescription<byte[]> topicName)
+        public BytesDataReader lookupBytesDataReader(TopicDescription<byte[]> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataReader lookupKeyedBytesDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.KeyedBytes> topicName)
+        public KeyedBytesDataReader lookupKeyedBytesDataReader(TopicDescription<KeyedBytes> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataReader lookupstringDataReader(org.omg.dds.topic.TopicDescription<string> topicName)
+        public stringDataReader lookupstringDataReader(TopicDescription<string> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataReader lookupKeyedstringDataReader(org.omg.dds.topic.TopicDescription<org.omg.dds.type.builtin.Keyedstring> topicName)
+        public KeyedstringDataReader lookupKeyedstringDataReader(TopicDescription<Keyedstring> topicName)
         {
             throw new NotImplementedException();
         }
@@ -164,12 +168,12 @@ namespace Doopec.Dds.Sub
 
         public DataReaderQos getDefaultDataReaderQos()
         {
-            throw new NotImplementedException();
+            return this.dataReaderqos;
         }
 
         public void setDefaultDataReaderQos(DataReaderQos qos)
         {
-            throw new NotImplementedException();
+            this.dataReaderqos = qos;
         }
 
         public void setDefaultDataReaderQos(string qosLibraryName, string qosProfileName)
@@ -177,7 +181,7 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public void copyFromTopicQos(DataReaderQos dst, org.omg.dds.topic.TopicQos src)
+        public void copyFromTopicQos(DataReaderQos dst, TopicQos src)
         {
             throw new NotImplementedException();
         }
@@ -248,18 +252,18 @@ namespace Doopec.Dds.Sub
         }
 
 
-        public DataReader<TYPE> createDataReader<TYPE>(org.omg.dds.topic.ITopicDescription topic)
+        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic)
         {
             throw new NotImplementedException();
         }
 
 
-        public DataReader<TYPE> createDataReader<TYPE>(org.omg.dds.topic.ITopicDescription topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(org.omg.dds.topic.ITopicDescription topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }

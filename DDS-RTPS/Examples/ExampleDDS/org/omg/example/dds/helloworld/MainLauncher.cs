@@ -10,8 +10,8 @@ namespace org.omg.example.dds.helloworld
     {
         public static void Main(string[] args)
         {
-            GreetingSubscribingApp.RunExample(args);
-           // GreetingPublishingApp.RunExample(args);
+           // GreetingSubscribingApp.RunExample(args);
+           GreetingPublishingApp.RunExample(args);
            // QosExample.RunExample(args);
         }
     }

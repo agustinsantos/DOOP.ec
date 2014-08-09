@@ -1,4 +1,4 @@
-﻿using Doopec.Utils.Network.Encoders.Rtps;
+﻿using Doopec.Rtps.Encoders;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mina.Core.Buffer;
 using Rtps.Messages;

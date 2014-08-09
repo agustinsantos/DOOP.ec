@@ -1,4 +1,4 @@
-﻿using Doopec.Utils.Network.Encoders.Rtps;
+﻿using Doopec.Rtps.Encoders;
 using log4net;
 using Mina.Core.Future;
 using Mina.Core.Service;
