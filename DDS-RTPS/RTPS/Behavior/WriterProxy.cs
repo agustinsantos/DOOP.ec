@@ -14,12 +14,12 @@ namespace Rtps.Behavior
     /// that is the DDS DataReader matching a DDS DataWriter by Topic, having compatible QoS, belonging to a common 
     /// partition, and not being explicitly ignored by the application that uses DDS.
     /// </summary>
-    public class WriterProxy
+    public class WriterProxy<T>
     {
         private GUID remoteWriterGuid;
         private IList<Locator> unicastLocatorList;
         private IList<Locator> multicastLocatorList;
-        private ISet<CacheChange> changes_from_writer;
+        private ISet<CacheChange<T>> changes_from_writer;
 
         /// <summary>
         /// Identifies the matched Writer.
@@ -54,7 +54,7 @@ namespace Rtps.Behavior
         /// List of CacheChange changes received or expected from the matched 
         /// RTPS Writer. 
         /// </summary>
-        public ISet<CacheChange> Changes_from_writer
+        public ISet<CacheChange<T>> Changes_from_writer
         {
             get { return changes_from_writer; }
             set { changes_from_writer = value; }

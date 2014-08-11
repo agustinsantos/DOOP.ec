@@ -101,6 +101,7 @@
     <Compile Include="RTPS\Encoders\TimeEncoder.cs" />
     <Compile Include="RTPS\Encoders\VendorIdEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTPS\WriterCache.cs" />
     <Compile Include="Transport\IReceiver.cs" />
     <Compile Include="Transport\ITransmitter.cs" />
     <Compile Include="Transport\UDPReceiver.cs" />

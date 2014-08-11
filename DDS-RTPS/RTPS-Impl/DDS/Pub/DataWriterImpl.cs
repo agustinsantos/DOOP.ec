@@ -2,8 +2,12 @@
 using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
+using Rtps.Behavior;
+using Rtps.Structure;
+using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
+using InstanceHandle = Rtps.Structure.Types.InstanceHandle;
 
 namespace Doopec.Dds.Pub
 {
@@ -14,10 +18,29 @@ namespace Doopec.Dds.Pub
         DataWriterListener<TYPE> listener;
         DataWriterQos qos;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        protected readonly Writer<TYPE> rtpsWriter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        protected readonly HistoryCache<TYPE> historyCache;
+
         public DataWriterImpl(Publisher pub, Topic<TYPE> topic)
         {
             pub_ = pub;
             topic_ = topic;
+            //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
+            Participant participant = new Participant();
+            rtpsWriter = new StatelessWriter<TYPE>(participant);
         }
 
         public Type getType()
@@ -40,7 +63,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void waitForAcknowledgments(long maxWait,  TimeUnit unit)
+        public void waitForAcknowledgments(long maxWait, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -90,7 +113,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.InstanceHandle registerInstance(TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
+        public org.omg.dds.core.InstanceHandle registerInstance(TYPE instanceData, long sourceTimestamp, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -110,22 +133,24 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void unregisterInstance(org.omg.dds.core.InstanceHandle handle, TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
+        public void unregisterInstance(org.omg.dds.core.InstanceHandle handle, TYPE instanceData, long sourceTimestamp, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
 
         public void write(TYPE instanceData)
         {
-            throw new NotImplementedException();
+            long ts = System.DateTime.Now.Ticks;
+            CacheChange<TYPE> change = rtpsWriter.NewChange<TYPE>(ChangeKind.ALIVE, new Data(instanceData), new InstanceHandle());
+            historyCache.AddChange(change);
         }
 
-        public void write(TYPE instanceData,  Time sourceTimestamp)
+        public void write(TYPE instanceData, Time sourceTimestamp)
         {
             throw new NotImplementedException();
         }
 
-        public void write(TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
+        public void write(TYPE instanceData, long sourceTimestamp, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -140,7 +165,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void write(TYPE instanceData, org.omg.dds.core.InstanceHandle handle, long sourceTimestamp,  TimeUnit unit)
+        public void write(TYPE instanceData, org.omg.dds.core.InstanceHandle handle, long sourceTimestamp, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -160,7 +185,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void dispose(org.omg.dds.core.InstanceHandle instanceHandle, TYPE instanceData, long sourceTimestamp,  TimeUnit unit)
+        public void dispose(org.omg.dds.core.InstanceHandle instanceHandle, TYPE instanceData, long sourceTimestamp, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -239,6 +264,6 @@ namespace Doopec.Dds.Pub
         {
             throw new NotImplementedException();
         }
-  
+
     }
 }

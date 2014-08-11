@@ -13,7 +13,7 @@ namespace Rtps.Behavior
     /// In the current Reference Implementation, the StatelessReader does not add any configuration attributes or operations to 
     /// those inherited from the Reader super class. Both classes are therefore identical.
     /// </summary>
-    public class StatelessReader : Reader
+    public class StatelessReader<T> : Reader<T>
     {
         public StatelessReader(Participant participant)
             : base(participant)

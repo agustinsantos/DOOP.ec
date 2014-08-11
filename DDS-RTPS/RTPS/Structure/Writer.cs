@@ -8,10 +8,8 @@ namespace Rtps.Structure
     /// From OMG RTPS Standard v2.1 p13: Specialization of RTPS Endpoint representing
     ///  the objects that can be the sources of messages communicating CacheChanges.
     /// </summary>
-    public class Writer : Endpoint
+    public abstract class Writer<T> : Endpoint
     {
-
-
         /// <summary>
         /// Configures the mode in which the Writer operates. If pushMode==true, then the 
         /// Writer will push changes to the reader. If pushMode==false, changes will only be announced 
@@ -46,7 +44,7 @@ namespace Rtps.Structure
         /// <summary>
         ///  Contains the history of CacheChange changes for this Writer.
         /// </summary>
-        public HistoryCache writer_cache = new HistoryCache();
+        public HistoryCache<T> writer_cache = new HistoryCache<T>();
 
         public Writer(Participant participant)
             : base(participant)
@@ -55,7 +53,6 @@ namespace Rtps.Structure
             // ‘out-of-the-box’ interoperability between implementations.
             this.nackResponseDelay = new Duration(200); //200 milliseconds
             this.nackSuppressionDuration = new Duration(0);
-
         }
 
         /// <summary>
@@ -64,10 +61,10 @@ namespace Rtps.Structure
         /// change plus one. 
         /// </summary>
         /// <returns>This operation returns the new change</returns>
-        public CacheChange NewChange(ChangeKind kind, Data data, InstanceHandle handle)
+        public CacheChange<T> NewChange<T>(ChangeKind kind, Data data, InstanceHandle handle)
         {
             this.lastChangeSequenceNumber.LongValue++;
-            CacheChange a_change = new CacheChange(kind, this.guid, this.lastChangeSequenceNumber, data, handle);
+            CacheChange<T> a_change = new CacheChange<T>(kind, this.guid, this.lastChangeSequenceNumber, data, handle);
             return a_change;
         }
     }

@@ -29,13 +29,13 @@ namespace rtps.messages.elements
             {
                 switch (kind)
                 {
-                    case ChangeKind.DISPOSE:
+                    case ChangeKind.NOT_ALIVE_DISPOSED:
                         this.flags[3] |= 0x1;
                         break;
-                    case ChangeKind.UNREGISTER:
+                    case ChangeKind.NOT_ALIVE_UNREGISTERED:
                         this.flags[3] |= 0x2;
                         break;
-                    case ChangeKind.WRITE:
+                    case ChangeKind.ALIVE:
                         break; // Ignore
                     default:
                         log.WarnFormat("{o} not handled", kind);
@@ -45,7 +45,7 @@ namespace rtps.messages.elements
         }
 
         public StatusInfo()
-            : this(ChangeKind.WRITE)
+            : this(ChangeKind.ALIVE)
         {
         }
 
@@ -82,11 +82,11 @@ namespace rtps.messages.elements
             IList<ChangeKind> ckList = new List<ChangeKind>();
             if (IsDisposed)
             {
-                ckList.Add(ChangeKind.DISPOSE);
+                ckList.Add(ChangeKind.NOT_ALIVE_DISPOSED);
             }
             if (IsUnregistered)
             {
-                ckList.Add(ChangeKind.UNREGISTER);
+                ckList.Add(ChangeKind.NOT_ALIVE_UNREGISTERED);
             }
 
             return ckList;
@@ -102,15 +102,15 @@ namespace rtps.messages.elements
         {
             if (IsDisposed)
             {
-                return ChangeKind.DISPOSE;
+                return ChangeKind.NOT_ALIVE_DISPOSED;
             }
             else if (IsUnregistered)
             {
-                return ChangeKind.UNREGISTER;
+                return ChangeKind.NOT_ALIVE_UNREGISTERED;
             }
             else
             {
-                return ChangeKind.WRITE;
+                return ChangeKind.ALIVE;
             }
         }
 

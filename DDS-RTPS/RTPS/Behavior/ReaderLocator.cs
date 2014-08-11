@@ -13,8 +13,8 @@ namespace Rtps.Behavior
     /// </summary>
     public class ReaderLocator
     {
-        private IList<CacheChange> requested_changes_;
-        private IList<CacheChange> unsent_changes_;
+        private IList<ICacheChange> requested_changes_;
+        private IList<ICacheChange> unsent_changes_;
         private Locator locator;
         private bool expectsInlineQos;
 
@@ -22,7 +22,7 @@ namespace Rtps.Behavior
         /// A list of changes in the writer’s HistoryCache that were requested by 
         /// remote Readers at this ReaderLocator.
         /// </summary>
-        public IList<CacheChange> RequestedChanges
+        public IList<ICacheChange> RequestedChanges
         {
             get { return requested_changes_; }
             set { requested_changes_ = value; }
@@ -32,7 +32,7 @@ namespace Rtps.Behavior
         /// A list of changes in the writer’s HistoryCache that have not been sent yet to 
         /// this ReaderLocator.
         /// </summary>
-        public IList<CacheChange> UnsentChanges
+        public IList<ICacheChange> UnsentChanges
         {
             get { return unsent_changes_; }
             set { unsent_changes_ = value; }
@@ -62,14 +62,14 @@ namespace Rtps.Behavior
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public ChangeForReader NextRequestedChange()
+        public IChangeForReader NextRequestedChange()
         { throw new NotImplementedException(); }
 
         /// <summary>
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public ChangeForReader NextUnsentChange()
+        public IChangeForReader NextUnsentChange()
         { throw new NotImplementedException(); }
 
         /// <summary>

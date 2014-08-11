@@ -14,7 +14,7 @@ namespace Rtps.Structure
     /// <i>ReaderCache</i>. ReaderCache is implemented by DDS layer and is responsible for
     /// storing samples.
     /// </summary>
-    public class Reader : Endpoint
+    public abstract class Reader<T> : Endpoint
     {
         /// <summary>
         /// Protocol tuning parameter that allows the RTPS Reader to delay the sending of a 
@@ -31,7 +31,7 @@ namespace Rtps.Structure
         /// <summary>
         /// Contains the history of CacheChange changes for this RTPS Reader.
         /// </summary>
-        public HistoryCache reader_cache;
+        public HistoryCache<T> reader_cache;
 
         /// <summary>
         ///  Specifies whether the RTPS Reader expects in-line QoS to be sent along with any data.
@@ -47,7 +47,7 @@ namespace Rtps.Structure
             this.heartbeatResponseDelay = new Duration(500); //500 milliseconds
             this.heartbeatSuppressionDuration = new Duration(0);
 
-            reader_cache = new HistoryCache();
+            reader_cache = new HistoryCache<T>();
         }
     }
 

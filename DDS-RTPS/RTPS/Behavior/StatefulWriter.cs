@@ -17,15 +17,15 @@ namespace Rtps.Behavior
     /// bandwidth by avoiding to send announcements to readers that have received all the changes in the writer’s HistoryCache. 
     /// The information it maintains also simplifies QoS-based filtering on the Writer side. 
     /// </summary>
-    public class StatefulWriter : Writer
+    public class StatefulWriter<T> : Writer<T>
     {
-        private IList<ReaderProxy> matched_readers;
+        private IList<ReaderProxy<T>> matched_readers;
 
         /// <summary>
         /// The StatefulWriter keeps track of all the RTPS Readers matched with it. Each 
         /// matched reader is represented by an instance of the ReaderProxy class.
         /// </summary>
-        public IList<ReaderProxy> MatchedReaders
+        public IList<ReaderProxy<T>> MatchedReaders
         {
             get { return matched_readers; }
             set { matched_readers = value; }
@@ -40,7 +40,7 @@ namespace Rtps.Behavior
         /// This operation adds the ReaderProxy a_reader_proxy to the set StatefulWriter::matched_readers.
         /// </summary>
         /// <param name="a_reader_proxy"></param>
-        public void MatchedReaderAdd(ReaderProxy a_reader_proxy)
+        public void MatchedReaderAdd(ReaderProxy<T> a_reader_proxy)
         {
             /// ADD a_writer_proxy TO {this.matched_writers};
             matched_readers.Add(a_reader_proxy);
@@ -50,7 +50,7 @@ namespace Rtps.Behavior
         /// This operation removes the ReaderProxy a_reader_proxy from the set StatefulWriter::matched_readers.
         /// </summary>
         /// <param name="a_reader_proxy"></param>
-        public void MatchedReaderRemove(ReaderProxy a_reader_proxy)
+        public void MatchedReaderRemove(ReaderProxy<T> a_reader_proxy)
         {
             // REMOVE a_writer_proxy FROM {this.matched_writers};
             // delete a_writer_proxy;
@@ -62,7 +62,7 @@ namespace Rtps.Behavior
         /// </summary>
         /// <param name="a_reader_proxy"></param>
         /// <returns></returns>
-        public ReaderProxy MatchedReaderLookup(GUID a_reader_proxy)
+        public ReaderProxy<T> MatchedReaderLookup(GUID a_reader_proxy)
         {
             /// FIND proxy IN this.matched_writers SUCH-THAT (proxy.remoteWriterGuid == a_writer_guid);
             /// return proxy;
@@ -76,7 +76,7 @@ namespace Rtps.Behavior
         /// </summary>
         /// <param name="a_change"></param>
         /// <returns></returns>
-        public bool IsAckedByAll(CacheChange a_change)
+        public bool IsAckedByAll<T>(CacheChange<T> a_change)
         { throw new NotImplementedException(); }
     }
 }

@@ -15,7 +15,7 @@ namespace Rtps.Behavior
     /// The RTPS StatelessWriter maintains only the RTPS Locator_t list that should be used to send information to 
     /// the matched readers.
     /// </summary>
-    public class StatelessWriter : Writer
+    public class StatelessWriter<T> : Writer<T>
     {
         private Duration resendDataPeriod;
 
@@ -67,7 +67,8 @@ namespace Rtps.Behavior
         {
             foreach (var readerLocator in this.reader_locators)
             {
-                readerLocator.UnsentChanges = this.writer_cache.Changes;
+                foreach (var change in this.writer_cache.Changes)
+                    readerLocator.UnsentChanges.Add(change);
             }
         }
     }

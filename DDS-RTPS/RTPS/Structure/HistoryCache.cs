@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Rtps.Structure.Types;
+using log4net;
+using System.Reflection;
 namespace Rtps.Structure
 {
 
@@ -24,17 +26,19 @@ namespace Rtps.Structure
     ///  this superposition and the amount of partial history required depend on the DDS
     ///  QoS and the state of the communication with the matched RTPS Writer endpoints.
     /// </summary>
-    public class HistoryCache
+    public class HistoryCache<T>
     {
-        /// <summary>
-        /// A collection of CacheCahnges contained in the HistoryCache
-        /// </summary>
-        private IList<CacheChange> changes = new List<CacheChange>();
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// A collection of CacheCahnges contained in the HistoryCache
         /// </summary>
-        public IList<CacheChange> Changes
+        private IList<CacheChange<T>> changes = new List<CacheChange<T>>();
+
+        /// <summary>
+        /// A collection of CacheChanges contained in the HistoryCache
+        /// </summary>
+        public IList<CacheChange<T>> Changes
         {
             get { return changes; }
             set { changes = value; }
@@ -48,9 +52,10 @@ namespace Rtps.Structure
         /// specification. 
         /// </summary>
         /// <param name="a_change"></param>
-        public void AddChange(CacheChange a_change)
+        public void AddChange(CacheChange<T> a_change)
         {
             changes.Add(a_change);
+            NotifyNewChanges();
         }
 
         /// <summary>
@@ -59,12 +64,12 @@ namespace Rtps.Structure
         /// associated with the related DDS entity and on the acknowledgment status of the CacheChange. 
         /// </summary>
         /// <param name="a_change"></param>
-        public void RemoveChange(CacheChange a_change)
+        public void RemoveChange(CacheChange<T> a_change)
         {
             changes.Remove(a_change);
         }
 
-        public CacheChange GetChange()
+        public CacheChange<T> GetChange()
         {
             throw new NotImplementedException();
         }
@@ -86,7 +91,12 @@ namespace Rtps.Structure
         /// <returns></returns>
         SequenceNumber get_seq_num_max()
         {
-            return changes[changes.Count -1].SequenceNumber;
+            return changes[changes.Count - 1].SequenceNumber;
+        }
+
+        private void NotifyNewChanges()
+        {
+            log.Debug("This HistoryCache has new changes");
         }
     }
 }

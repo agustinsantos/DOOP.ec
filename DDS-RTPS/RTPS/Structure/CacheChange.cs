@@ -3,13 +3,16 @@ using Rtps.Structure.Types;
 using System;
 namespace Rtps.Structure
 {
-
+    public interface ICacheChange
+    {
+        //TODO: define this
+    }
 
     /// <summary>
     /// From OMG RTPS Standard v2.1 p13: Represents an individual change made to a
     ///  data-object. Includes the creation, modification, and deletion of data-objects.
     /// </summary>
-    public class CacheChange : IComparable<CacheChange>
+    public class CacheChange<T> : ICacheChange, IComparable<CacheChange<T>>
     {
         private ChangeKind kind;
         private GUID writerGuid;
@@ -73,7 +76,7 @@ namespace Rtps.Structure
             set { data_value = value; }
         }
 
-        public int CompareTo(CacheChange o)
+        public int CompareTo(CacheChange<T> o)
         {
             return this.sequenceNumber.CompareTo(o.sequenceNumber);
         }

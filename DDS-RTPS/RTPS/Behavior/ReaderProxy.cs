@@ -12,7 +12,7 @@ namespace Rtps.Behavior
     /// The RTPS ReaderProxy class represents the information an RTPS StatefulWriter maintains on each matched RTPS 
     /// Reader. 
     /// </summary>
-    public class ReaderProxy
+    public class ReaderProxy<T>
     {
         /// <summary>
         /// Identifies the remote matched RTPS Reader that is represented by the 
@@ -35,7 +35,7 @@ namespace Rtps.Behavior
         /// <summary>
         /// List of CacheChange changes as they relate to the matched RTPS Reader.
         /// </summary>
-        public IList<ChangeForReader> changes_for_reader;
+        public IList<ChangeForReader<T>> changes_for_reader;
 
         /// <summary>
         /// Specifies whether the remote matched RTPS Reader expects in-line QoS to be 
@@ -72,28 +72,28 @@ namespace Rtps.Behavior
         /// represented by the ReaderProxy in response to a previous AckNack message (see Section 8.3.7.1) from the Reader.
         /// </summary>
         /// <returns></returns>
-        public ChangeForReader next_requested_change()
+        public ChangeForReader<T> next_requested_change()
         { throw new NotImplementedException(); }
 
         /// <summary>
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public ChangeForReader next_unsent_change()
+        public ChangeForReader<T> next_unsent_change()
         { throw new NotImplementedException(); }
 
         /// <summary>
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public IList<ChangeForReader> unsent_changes()
+        public IList<ChangeForReader<T>> unsent_changes()
         { throw new NotImplementedException(); }
 
         /// <summary>
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public IList<ChangeForReader> requested_changes()
+        public IList<ChangeForReader<T>> requested_changes()
         { throw new NotImplementedException(); }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Rtps.Behavior
         /// TODO. Comment this method
         /// </summary>
         /// <returns></returns>
-        public IList<ChangeForReader> unacked_changes()
+        public IList<ChangeForReader<T>> unacked_changes()
         { throw new NotImplementedException(); }
     }
 }
