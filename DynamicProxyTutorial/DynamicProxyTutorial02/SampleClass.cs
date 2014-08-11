@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace DynamicProxyTutorial02
 {
-    public class SampleClass
+    public class SampleClass 
     {
+        /// <summary>
+        /// This method will be intercepted
+        /// Only method with "no" in the name will not be intercepted
+        /// </summary>
+        /// <returns></returns>
         public virtual string SayIntercepted()
         {
-            return "This method is intercepted";
+            return "This method is intercepted ";
         }
 
         public virtual string SayNoIntercepted()
