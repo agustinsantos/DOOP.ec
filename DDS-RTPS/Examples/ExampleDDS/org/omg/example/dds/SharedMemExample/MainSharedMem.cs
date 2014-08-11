@@ -29,6 +29,10 @@ namespace org.omg.example.dds.helloworld
             Publisher pub = dp.createPublisher();
             DataWriter<Greeting> dw = pub.createDataWriter(tp);
 
+            // Now Publish some piece of data
+            dw.write(new Greeting("Hello, World"));
+
+
             // Create the subscriber
             Subscriber sub = dp.createSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
@@ -36,9 +40,6 @@ namespace org.omg.example.dds.helloworld
                                                                     sub.getDefaultDataReaderQos(),
                                                                     ls,
                                                                     null /* all status changes */);
-            // Now Publish some piece of data
-            dw.write(new Greeting("Hello, World"));
-
             //and check that the reader has this data
             dr.waitForHistoricalData(10, TimeUnit.SECONDS);
 
