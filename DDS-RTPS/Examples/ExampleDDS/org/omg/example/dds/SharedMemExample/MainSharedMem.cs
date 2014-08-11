@@ -23,7 +23,7 @@ namespace org.omg.example.dds.helloworld
             DomainParticipant dp = factory.createParticipant();
 
             // Implicitly create TypeSupport and register type:
-            Topic<Greeting> tp = dp.createTopic<Greeting>("My Topic");
+            Topic<Greeting> tp = dp.createTopic<Greeting>("Greetings Topic");
 
             // Create the publisher
             Publisher pub = dp.createPublisher();
@@ -33,28 +33,15 @@ namespace org.omg.example.dds.helloworld
             Subscriber sub = dp.createSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
-                                               sub.getDefaultDataReaderQos(),
-                                               ls,
-                                               null /* all status changes */);
+                                                                    sub.getDefaultDataReaderQos(),
+                                                                    ls,
+                                                                    null /* all status changes */);
             // Now Publish some piece of data
-            try
-            {
-                dw.write(new Greeting("Hello, World"));
-            }
-            catch (Exception tx)
-            {
-                Console.WriteLine(tx);
-            }
+            dw.write(new Greeting("Hello, World"));
 
             //and check that the reader has this data
-            try
-            {
-                dr.waitForHistoricalData(10, TimeUnit.SECONDS);
-            }
-            catch (Exception tx)
-            {
-                Console.WriteLine(tx);
-            }
+            dr.waitForHistoricalData(10, TimeUnit.SECONDS);
+
             dp.Close();
         }
 

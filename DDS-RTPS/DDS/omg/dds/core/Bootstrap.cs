@@ -90,68 +90,6 @@ namespace org.omg.dds.core
         }
 
 
-        /*
-         * Look up the system property identified by the given string and load,
-         * then instantiate, the Bootstrap implementation class identified by its
-         * value. The class must be accessible and have a public constructor.
-         * 
-         * The public constructors of the implementation class will first be
-         * searched for one accepting a single argument of type {@link Map}. If
-         * one is found, it will be called with the <code>environment</code> map
-         * provided to this method as its argument. If no such constructor is
-         * found, a no-argument constructor will be used instead, and the
-         * provided <code>environment</code>, if any, will be ignored. If the
-         * implementation class provides no public constructor with either of
-         * these signatures, an exception will be thrown.
-         * 
-         * By default, the class loader for the <code>Bootstrap</code> class will
-         * be used to load the indicated class. If this class loader is null --
-         * for instance, if it is the bootstrap class loader -- then the system
-         * class loader will be used in its place. If it is also null, a
-         * <code>ServiceConfigurationException</code> will be thrown.
-         * 
-         * Neither the class loader nor the loaded class will be cached between
-         * invocations of this method. As a result, execution of this method is
-         * expected to be relatively expensive. However, as any DDS object can
-         * provide a reference to its creating Bootstrap via
-         * {@link DDSObject#getBootstrap()}, executions of this method are also
-         * expected to be rare.
-         * 
-         * @param   implClassNameProperty       The name of a system property,
-         *          the value of which will be taken as the name of a Bootstrap
-         *          implementation class to load.
-         * @param   environment                 A collection of name-value pairs
-         *          to be provided to the concrete Bootstrap subclass. If that
-         *          class does not provide a constructor that can accept this
-         *          environment, the environment will be ignored. This argument
-         *          may be null; a null environment shall be considered equivalent
-         *          to an empty map.
-         * 
-         * @return  A non-null Bootstrap.
-         * 
-         * @throws  NullPointerException        If the given property name is
-         *          null.
-         * @throws  IllegalArgumentException    If the given property name
-         *          is the empty string.
-         * @throws  ServiceConfigurationException   If the class could not be
-         *          loaded because of an issue with the the invocation of this
-         *          method or the configuration of the runtime environment. For
-         *          example, the class may not be on the class path, it may
-         *          require a native library that is not available, or an
-         *          inappropriate class may have been requested (e.g. one that is
-         *          not a Bootstrap or that doesn't have a no-argument
-         *          constructor).
-         * @throws  ServiceInitializationException  If the class was found but
-         *          could not be initialized and/or instantiated because of an
-         *          error that occurred within its implementation.
-         * 
-         * @see     #CreateInstance()
-         * @see     DDSObject#getBootstrap()
-         * @see     System#getProperty(string)
-         * @see     Class#getClassLoader()
-         * @see     ClassLoader#getSystemClassLoader()
-         * @see     ClassLoader#loadClass(string)
-         */
         /// <summary>
         /// Look up the system property identified by the given string and load,
         /// then instantiate, the Bootstrap implementation class identified by its
@@ -264,7 +202,7 @@ namespace org.omg.dds.core
                 // Thrown by ClassLoader.getSystemClassLoader.
                 throw new ServiceConfigurationException(ERROR_STRING, isx);
             }
- #if TODO
+#if TODO
            catch (ClassNotFoundException cnfx)
             {
                 // Thrown by ClassLoader.loadClass.
@@ -364,11 +302,11 @@ namespace org.omg.dds.core
         // Service-Provider Interface
         // -----------------------------------------------------------------------
 
-        /**
-         * This interface is for the use of the DDS implementation, not of DDS
-         * applications. It simplifies the creation of objects of certain types in
-         * the DDS API.
-         */
+        /// <summary>
+        /// This interface is for the use of the DDS implementation, not of DDS
+        /// applications. It simplifies the creation of objects of certain types in
+        /// the DDS API.
+        /// </summary>
         public interface ServiceProviderInterface
         {
             // --- Singleton factories: ------------------------------------------

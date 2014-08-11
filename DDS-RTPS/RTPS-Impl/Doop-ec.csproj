@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DDS\Core\BootstrapImpl.cs" />
-    <Compile Include="DDS\Core\EntityQosImpl.cs" />
+    <Compile Include="Properties\EntityQosImpl.cs" />
     <Compile Include="DDS\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
     <Compile Include="DDS\Core\Policy\QosPolicyImpl.cs" />
     <Compile Include="DDS\Core\Policy\UserDataQosPolicyImpl.cs" />

@@ -50,12 +50,18 @@ namespace org.omg.dds.domain
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * Create a new participant in the domain with ID 0 having default QoS
-         * and no listener.
-         */
+        /// <summary>
+        /// Create a new participant in the domain with ID 0 having default QoS
+        /// and no listener.
+        /// </summary>
+        /// <returns>new participant</returns>
         public abstract DomainParticipant createParticipant();
 
+        /// <summary>
+        /// Create a new participant in the domain with a fixed ID and having default QoS
+        /// and no listener.
+        /// </summary>
+        /// <returns>new participant</returns>
         public abstract DomainParticipant createParticipant(int domainId);
 
         /**
