@@ -40,7 +40,9 @@
       <HintPath>..\Libs\Mina.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +68,11 @@
     <Compile Include="DDS\Sub\SubscriberImpl.cs" />
     <Compile Include="DDS\Topic\TopicImpl.cs" />
     <Compile Include="DDS\Utils\QosHelper.cs" />
+    <Compile Include="Doopec.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Doopec.settings</DependentUpon>
+    </Compile>
     <Compile Include="Encoders\IEncoder.cs" />
     <Compile Include="RTPS\Encoders\AckNackEncoder.cs" />
     <Compile Include="Encoders\BufferUtils.cs" />
@@ -101,6 +108,9 @@
     <Compile Include="RTPS\Encoders\TimeEncoder.cs" />
     <Compile Include="RTPS\Encoders\VendorIdEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTPS\RtpsEngine.cs" />
+    <Compile Include="RTPS\SharedMem\SharedMemoryDiscovery.cs" />
+    <Compile Include="RTPS\SharedMem\SharedMemoryEngine.cs" />
     <Compile Include="RTPS\WriterCache.cs" />
     <Compile Include="Transport\IReceiver.cs" />
     <Compile Include="Transport\ITransmitter.cs" />
@@ -117,7 +127,13 @@
       <Name>RTPS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Doopec.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Doopec.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

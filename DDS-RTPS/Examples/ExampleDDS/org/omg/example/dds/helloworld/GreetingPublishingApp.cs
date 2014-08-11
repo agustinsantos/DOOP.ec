@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+using ExampleDDS.Common;
 using org.omg.dds.core;
 using org.omg.dds.domain;
 using org.omg.dds.pub;

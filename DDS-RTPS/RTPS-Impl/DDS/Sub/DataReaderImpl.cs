@@ -1,6 +1,10 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Rtps;
+using Doopec.Rtps.SharedMem;
 using org.omg.dds.sub;
 using org.omg.dds.topic;
+using Rtps.Behavior;
+using Rtps.Structure;
 using System;
 using System.Collections.Generic;
 
@@ -9,18 +13,30 @@ namespace Doopec.Dds.Sub
     public class DataReaderImpl<TYPE> : DataReader<TYPE>
     {
         TopicDescription<TYPE> topic_;
-        Subscriber pub_;
+        Subscriber sub_;
 
-        public DataReaderImpl(Subscriber pub, TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        protected readonly Reader<TYPE> rtpsReader;
+
+
+        public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
-            pub_ = pub;
+            sub_ = sub;
             topic_ = topic;
+
+            Participant participant = new Participant();
+            this.rtpsReader = new StatelessReader<TYPE>(participant);
+            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.RegisterEndpoint(this.rtpsReader); // TODO unregister this endpoint
         }
-            
-            public DataReaderImpl(Subscriber pub, TopicDescription<TYPE> topic)
+
+        public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
+            : this(sub, topic, sub.getDefaultDataReaderQos(), null, null)
         {
-            pub_ = pub;
-            topic_ = topic;
         }
 
         public Type getType()
@@ -98,7 +114,7 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public void waitForHistoricalData(long maxWait,  TimeUnit unit)
+        public void waitForHistoricalData(long maxWait, TimeUnit unit)
         {
             throw new NotImplementedException();
         }

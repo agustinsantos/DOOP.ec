@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Doopec" GeneratedClassName="Doopec">
+  <Profiles />
+  <Settings>
+    <Setting Name="RTPSEngineType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Doopec.Rtps.SharedMem.SharedMemoryEngine, Doopec</Value>
+    </Setting>
+    <Setting Name="ListenerUris" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mem://sharedmemory</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

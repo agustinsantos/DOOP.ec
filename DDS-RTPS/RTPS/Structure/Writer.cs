@@ -44,7 +44,12 @@ namespace Rtps.Structure
         /// <summary>
         ///  Contains the history of CacheChange changes for this Writer.
         /// </summary>
-        public HistoryCache<T> writer_cache = new HistoryCache<T>();
+        private HistoryCache<T> writer_cache = new HistoryCache<T>();
+
+        public HistoryCache<T> HistoryCache
+        {
+            get { return writer_cache; }
+        }
 
         public Writer(Participant participant)
             : base(participant)
@@ -53,6 +58,8 @@ namespace Rtps.Structure
             // ‘out-of-the-box’ interoperability between implementations.
             this.nackResponseDelay = new Duration(200); //200 milliseconds
             this.nackSuppressionDuration = new Duration(0);
+
+            this.lastChangeSequenceNumber = new SequenceNumber();
         }
 
         /// <summary>
@@ -61,7 +68,7 @@ namespace Rtps.Structure
         /// change plus one. 
         /// </summary>
         /// <returns>This operation returns the new change</returns>
-        public CacheChange<T> NewChange<T>(ChangeKind kind, Data data, InstanceHandle handle)
+        public CacheChange<T> NewChange(ChangeKind kind, Data data, InstanceHandle handle)
         {
             this.lastChangeSequenceNumber.LongValue++;
             CacheChange<T> a_change = new CacheChange<T>(kind, this.guid, this.lastChangeSequenceNumber, data, handle);

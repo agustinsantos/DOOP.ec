@@ -1,4 +1,6 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Rtps;
+using Doopec.Rtps.SharedMem;
 using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
@@ -36,11 +38,12 @@ namespace Doopec.Dds.Pub
 
         public DataWriterImpl(Publisher pub, Topic<TYPE> topic)
         {
-            pub_ = pub;
-            topic_ = topic;
+            this.pub_ = pub;
+            this.topic_ = topic;
             //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
             Participant participant = new Participant();
-            rtpsWriter = new StatelessWriter<TYPE>(participant);
+            this.rtpsWriter = new StatelessWriter<TYPE>(participant);
+            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.RegisterEndpoint(this.rtpsWriter); // TODO unregister this endpoint
         }
 
         public Type getType()
@@ -140,9 +143,9 @@ namespace Doopec.Dds.Pub
 
         public void write(TYPE instanceData)
         {
-            long ts = System.DateTime.Now.Ticks;
-            CacheChange<TYPE> change = rtpsWriter.NewChange<TYPE>(ChangeKind.ALIVE, new Data(instanceData), new InstanceHandle());
-            historyCache.AddChange(change);
+            // A single tick represents one hundred nanoseconds
+            long ts = System.DateTime.Now.Ticks / (TimeSpan.TicksPerMillisecond / 1000);
+            this.write(instanceData, ts, TimeUnit.NANOSECONDS);
         }
 
         public void write(TYPE instanceData, Time sourceTimestamp)
@@ -152,7 +155,9 @@ namespace Doopec.Dds.Pub
 
         public void write(TYPE instanceData, long sourceTimestamp, TimeUnit unit)
         {
-            throw new NotImplementedException();
+            // TODO. Implements timestamp and timeunit in write
+            CacheChange<TYPE> change = rtpsWriter.NewChange(ChangeKind.ALIVE, new Data(instanceData), new InstanceHandle());
+            rtpsWriter.HistoryCache.AddChange(change);
         }
 
         public void write(TYPE instanceData, org.omg.dds.core.InstanceHandle handle)

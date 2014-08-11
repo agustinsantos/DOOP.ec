@@ -67,7 +67,7 @@ namespace Rtps.Behavior
         {
             foreach (var readerLocator in this.reader_locators)
             {
-                foreach (var change in this.writer_cache.Changes)
+                foreach (var change in this.HistoryCache.Changes)
                     readerLocator.UnsentChanges.Add(change);
             }
         }

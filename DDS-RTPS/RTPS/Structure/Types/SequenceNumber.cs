@@ -44,7 +44,7 @@ namespace Rtps.Structure.Types
         }
 
         public SequenceNumber()
-            : this(1)
+            : this(0)
         {
         }
 

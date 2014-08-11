@@ -1,6 +1,8 @@
 ﻿using Doopec.Dds.Pub;
 using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
+using Doopec.Rtps;
+using Doopec.Rtps.SharedMem;
 using Mina.Filter.Statistic;
 using org.omg.dds.core;
 using org.omg.dds.core.modifiable;
@@ -9,6 +11,7 @@ using org.omg.dds.pub;
 using org.omg.dds.sub;
 using org.omg.dds.topic;
 using org.omg.dds.type;
+using Rtps.Structure;
 using System;
 using System.Collections.Generic;
 
@@ -24,9 +27,16 @@ namespace Doopec.Dds.Domain
 
         List<ITopic> topics_ = new List<ITopic>();
 
-        public DomainParticipantImpl() { }
+        Participant rtpsParticipant;
+
+        public DomainParticipantImpl()
+        {
+            rtpsParticipant = new Participant();
+            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.RegisterParticipant(rtpsParticipant);
+        }
 
         public DomainParticipantImpl(int domainId, DomainParticipantQos qos, DomainParticipantListener listener)
+            : this()
         {
             this.domainId_ = domainId;
             this.qos_ = qos;
@@ -86,7 +96,7 @@ namespace Doopec.Dds.Domain
             // raise exception if it does exist.
 
             // Not exists another topic qith the same name
-            Topic<TYPE> topic = new TopicImpl<TYPE>( topicName, null, null, this);
+            Topic<TYPE> topic = new TopicImpl<TYPE>(topicName, null, null, this);
             AddTopic(topic);
             return topic;
         }
@@ -123,7 +133,7 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout,  TimeUnit unit)
+        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -300,7 +310,7 @@ namespace Doopec.Dds.Domain
 
         public void Close()
         {
-            throw new NotImplementedException();
+            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.UnregisterParticipant(rtpsParticipant);
         }
 
         public void Retain()

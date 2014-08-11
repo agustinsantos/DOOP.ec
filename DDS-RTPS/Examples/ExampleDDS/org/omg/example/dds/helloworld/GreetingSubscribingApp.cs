@@ -19,6 +19,7 @@
 
 
 using DDS.ConversionUtils;
+using ExampleDDS.Common;
 using org.omg.dds.core;
 using org.omg.dds.core.status;
 using org.omg.dds.domain;

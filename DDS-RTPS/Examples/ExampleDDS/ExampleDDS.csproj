@@ -45,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\omg\example\dds\helloworld\MainLauncher.cs" />
+    <Compile Include="org\omg\example\dds\Common\ExampleApp.cs" />
+    <Compile Include="org\omg\example\dds\helloworld\MainHelloword.cs" />
+    <Compile Include="org\omg\example\dds\MainLauncher.cs" />
+    <Compile Include="org\omg\example\dds\SharedMemExample\MainSharedMem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,13 +66,18 @@
       <Project>{51bb643c-96ed-472e-b80b-723254599bc3}</Project>
       <Name>Doop-ec</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\RTPS\RTPS.csproj">
+      <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
+      <Name>RTPS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\omg\example\dds\helloworld\Greeting.cs" />
+    <Compile Include="org\omg\example\dds\Common\Greeting.cs" />
     <Compile Include="org\omg\example\dds\helloworld\GreetingPublishingApp.cs" />
     <Compile Include="org\omg\example\dds\helloworld\GreetingSubscribingApp.cs" />
     <Compile Include="org\omg\example\dds\helloworld\QosExample.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

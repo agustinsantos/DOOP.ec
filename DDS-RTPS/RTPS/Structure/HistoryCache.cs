@@ -35,13 +35,16 @@ namespace Rtps.Structure
         /// </summary>
         private IList<CacheChange<T>> changes = new List<CacheChange<T>>();
 
+        public delegate void ChangedEventHandler(object sender, EventArgs e);
+
+        public event ChangedEventHandler Changed;
+
         /// <summary>
         /// A collection of CacheChanges contained in the HistoryCache
         /// </summary>
-        public IList<CacheChange<T>> Changes
+        internal protected IList<CacheChange<T>> Changes
         {
             get { return changes; }
-            set { changes = value; }
         }
 
         /// <summary>
@@ -97,6 +100,10 @@ namespace Rtps.Structure
         private void NotifyNewChanges()
         {
             log.Debug("This HistoryCache has new changes");
+            if (Changed != null)
+            {
+                Changed(this, EventArgs.Empty);
+            }
         }
     }
 }
