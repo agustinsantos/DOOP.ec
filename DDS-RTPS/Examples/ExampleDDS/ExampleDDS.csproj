@@ -32,12 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-=======
     <Reference Include="log4net">
->>>>>>> ec9dc303d0b331cb6516771c89ed3b53d119de99
       <HintPath>..\..\Libs\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
