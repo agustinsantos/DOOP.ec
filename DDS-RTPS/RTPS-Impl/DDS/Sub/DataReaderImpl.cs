@@ -1,6 +1,10 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.DDS.Core;
+using Doopec.DDS.Sub;
 using Doopec.Rtps;
+using Doopec.Rtps.Behavior;
 using Doopec.Rtps.SharedMem;
+using org.omg.dds.core.status;
 using org.omg.dds.sub;
 using org.omg.dds.topic;
 using Rtps.Behavior;
@@ -14,6 +18,7 @@ namespace Doopec.Dds.Sub
     {
         TopicDescription<TYPE> topic_;
         Subscriber sub_;
+        DataReaderListener<TYPE> listener;
 
         /// <summary>
         /// 
@@ -26,12 +31,12 @@ namespace Doopec.Dds.Sub
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
-            sub_ = sub;
-            topic_ = topic;
+            this.sub_ = sub;
+            this.topic_ = topic;
+            this.listener = listener;
 
             Participant participant = new Participant();
-            this.rtpsReader = new StatelessReader<TYPE>(participant);
-            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.RegisterEndpoint(this.rtpsReader); // TODO unregister this endpoint
+            this.rtpsReader = new SharedMemoryReader<TYPE>(participant);
         }
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
@@ -116,7 +121,15 @@ namespace Doopec.Dds.Sub
 
         public void waitForHistoricalData(long maxWait, TimeUnit unit)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            //TODO For the shared memory implementation, the data is available immediately
+            CacheChange<TYPE> change = rtpsReader.reader_cache.GetChange();
+            if (this.listener != null)
+            {
+                DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
+
+                this.listener.onDataAvailable(status);
+            }
         }
 
         public ICollection<org.omg.dds.core.InstanceHandle> getMatchedPublications(ICollection<org.omg.dds.core.InstanceHandle> publicationHandles)
@@ -156,7 +169,9 @@ namespace Doopec.Dds.Sub
 
         public SampleIterator<TYPE> take()
         {
-            throw new NotImplementedException();
+            SampleIterator<TYPE> it = new SampleIteratorImpl<TYPE>();
+            it.add(new SampleImpl<TYPE>( rtpsReader.reader_cache.GetChange()));
+            return it;
         }
 
         public SampleIterator<TYPE> take(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)

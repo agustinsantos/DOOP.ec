@@ -1,14 +1,24 @@
 ﻿using Doopec.DDS.Core;
+using org.omg.dds.core.modifiable;
 using org.omg.dds.sub;
+using Rtps.Structure;
 using System;
+using System.Collections.Generic;
 
 namespace Doopec.DDS.Sub
 {
-    public class SampleImpl<TYPE> :  ModifiableValueImpl<Sample<TYPE>, Sample<TYPE>>, Sample<TYPE>
+    public class SampleImpl<TYPE> : ModifiableValueImpl<Sample<TYPE>, Sample<TYPE>>, Sample<TYPE>
     {
+        private TYPE data;
+
+        public SampleImpl(CacheChange<TYPE> change)
+        {
+            this.data = (TYPE)change.DataValue.Value;
+        }
+
         public TYPE getData()
         {
-            throw new NotImplementedException();
+            return data;
         }
 
         public SampleState getSampleState()
@@ -26,17 +36,17 @@ namespace Doopec.DDS.Sub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime getSourceTimestamp()
+        public ModifiableTime getSourceTimestamp()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle getInstanceHandle()
+        public ModifiableInstanceHandle getInstanceHandle()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle getPublicationHandle()
+        public ModifiableInstanceHandle getPublicationHandle()
         {
             throw new NotImplementedException();
         }
@@ -64,6 +74,29 @@ namespace Doopec.DDS.Sub
         public int getAbsoluteGenerationRank()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class SampleIteratorImpl<IT_DATA> : List<Sample<IT_DATA>>, SampleIterator<IT_DATA>
+    {
+        public void returnLoan()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void remove()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void set(Sample<IT_DATA> o)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void add(Sample<IT_DATA> o)
+        {
+            this.Add(o);
         }
     }
 }

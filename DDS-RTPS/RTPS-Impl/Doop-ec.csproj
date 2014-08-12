@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DDS\Core\BootstrapImpl.cs" />
+    <Compile Include="DDS\Core\DataAvailableStatusImpl.cs" />
     <Compile Include="Properties\EntityQosImpl.cs" />
     <Compile Include="DDS\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
     <Compile Include="DDS\Core\Policy\QosPolicyImpl.cs" />
@@ -74,6 +75,8 @@
       <DependentUpon>Doopec.settings</DependentUpon>
     </Compile>
     <Compile Include="Encoders\IEncoder.cs" />
+    <Compile Include="RTPS\Behavior\SharedMemoryWriter.cs" />
+    <Compile Include="RTPS\Behavior\SharedMemoryReader.cs" />
     <Compile Include="RTPS\Encoders\AckNackEncoder.cs" />
     <Compile Include="Encoders\BufferUtils.cs" />
     <Compile Include="RTPS\Encoders\DataFragEncoder.cs" />

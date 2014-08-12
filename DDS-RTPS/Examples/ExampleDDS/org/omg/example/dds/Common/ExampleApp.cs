@@ -6,11 +6,13 @@ namespace ExampleDDS.Common
 {
     class ExampleApp
     {
-        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public virtual void RunExample(string[] args)
         {
+#if DEBUG
             LogAssemblyInfo();
+#endif
         }
 
         private static void LogAssemblyInfo()

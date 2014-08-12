@@ -29,10 +29,6 @@ namespace org.omg.example.dds.helloworld
             Publisher pub = dp.createPublisher();
             DataWriter<Greeting> dw = pub.createDataWriter(tp);
 
-            // Now Publish some piece of data
-            dw.write(new Greeting("Hello, World"));
-
-
             // Create the subscriber
             Subscriber sub = dp.createSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
@@ -40,6 +36,12 @@ namespace org.omg.example.dds.helloworld
                                                                     sub.getDefaultDataReaderQos(),
                                                                     ls,
                                                                     null /* all status changes */);
+
+            // Now Publish some piece of data
+            Greeting data = new Greeting("Hello, World with DDS");
+            log.InfoFormat("Sending data:\"{0}\"", data.Value);
+            dw.write(data);
+
             //and check that the reader has this data
             dr.waitForHistoricalData(10, TimeUnit.SECONDS);
 
@@ -48,6 +50,8 @@ namespace org.omg.example.dds.helloworld
 
         private class MyListener : DataReaderAdapter<Greeting>
         {
+            private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
             public override void onDataAvailable(DataAvailableStatus<Greeting> status)
             {
                 DataReader<Greeting> dr = status.getSource();
@@ -55,10 +59,10 @@ namespace org.omg.example.dds.helloworld
                 foreach (Sample<Greeting> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
-                    InstanceHandle inst = smp.getInstanceHandle();
+                    // InstanceHandle inst = smp.getInstanceHandle();
                     // Data accessible from Sample; null if invalid:
                     Greeting dt = smp.getData();
-                    // ...
+                    log.InfoFormat("Received data:\"{0}\"", dt.Value);
                 }
             }
         }

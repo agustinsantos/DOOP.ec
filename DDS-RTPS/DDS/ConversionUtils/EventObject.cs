@@ -11,6 +11,7 @@ namespace DDS.ConversionUtils
         protected Object source;
         protected EventObject(Object source)
         {
+            this.source = source;
         }
     }
 }

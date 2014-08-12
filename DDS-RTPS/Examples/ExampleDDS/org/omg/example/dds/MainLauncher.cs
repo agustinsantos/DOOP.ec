@@ -14,6 +14,10 @@ namespace ExampleDDS
         {
             ExampleApp app = new MainSharedMem();
              app.RunExample(args);
+#if DEBUG
+             Console.WriteLine("Press enter to close...");
+             Console.ReadLine();
+#endif
         }
     }
 }

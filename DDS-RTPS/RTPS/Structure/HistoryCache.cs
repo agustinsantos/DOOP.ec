@@ -74,7 +74,7 @@ namespace Rtps.Structure
 
         public CacheChange<T> GetChange()
         {
-            throw new NotImplementedException();
+            return changes[0];
         }
 
         /// <summary>

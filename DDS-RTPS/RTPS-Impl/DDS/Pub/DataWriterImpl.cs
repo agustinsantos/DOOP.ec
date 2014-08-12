@@ -1,10 +1,8 @@
 ﻿using DDS.ConversionUtils;
-using Doopec.Rtps;
-using Doopec.Rtps.SharedMem;
+using Doopec.Rtps.Behavior;
 using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
-using Rtps.Behavior;
 using Rtps.Structure;
 using Rtps.Structure.Types;
 using System;
@@ -42,9 +40,8 @@ namespace Doopec.Dds.Pub
             this.topic_ = topic;
             //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
             Participant participant = new Participant();
-            this.rtpsWriter = new StatelessWriter<TYPE>(participant);
-            ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule.RegisterEndpoint(this.rtpsWriter); // TODO unregister this endpoint
-        }
+            this.rtpsWriter = new SharedMemoryWriter<TYPE>(participant);
+         }
 
         public Type getType()
         {

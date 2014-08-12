@@ -9,6 +9,20 @@ using System.Threading.Tasks;
 
 namespace Doopec.Rtps.SharedMem
 {
+    public enum EventReason
+    {
+        NEW_PARTICIPANT,
+        DELETED_PARTICIPANT,
+        NEW_ENDPOINT,
+        DELETED_ENDPOINT,
+    }
+
+    public class DiscoveryEventArgs : EventArgs
+    {
+        public EventReason Reason { get; set; }
+        public object EventData { get; set; }
+    }
+
     public class SharedMemoryDiscovery
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -16,7 +30,7 @@ namespace Doopec.Rtps.SharedMem
         private List<Participant> participants = new List<Participant>();
         private List<Endpoint> endpoints = new List<Endpoint>();
 
-        public delegate void DiscoveryEventHandler(object sender, EventArgs e);
+        public delegate void DiscoveryEventHandler(object sender, DiscoveryEventArgs e);
 
         public event DiscoveryEventHandler ParticipantDiscovery;
         public event DiscoveryEventHandler EndpointDiscovery;
@@ -24,12 +38,12 @@ namespace Doopec.Rtps.SharedMem
         public IList<Participant> Participants
         {
             get { return participants.AsReadOnly(); }
-         }
+        }
 
         public IList<Endpoint> Endpoints
         {
             get { return endpoints.AsReadOnly(); }
-         }
+        }
 
 
 
@@ -38,7 +52,10 @@ namespace Doopec.Rtps.SharedMem
             if (participant != null)
             {
                 participants.Add(participant);
-                NotifyParticipantChanges();
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.NEW_PARTICIPANT;
+                dea.EventData = participant;
+                NotifyParticipantChanges(dea);
             }
         }
 
@@ -47,7 +64,10 @@ namespace Doopec.Rtps.SharedMem
             if (participant != null)
             {
                 participants.Remove(participant);
-                NotifyParticipantChanges();
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.DELETED_PARTICIPANT;
+                dea.EventData = participant;
+                NotifyParticipantChanges(dea);
             }
         }
 
@@ -56,7 +76,10 @@ namespace Doopec.Rtps.SharedMem
             if (endpoint != null)
             {
                 endpoints.Add(endpoint);
-                NotifyEndpointsChanges();
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.NEW_ENDPOINT;
+                dea.EventData = endpoint;
+                NotifyEndpointsChanges(dea);
             }
         }
 
@@ -65,25 +88,28 @@ namespace Doopec.Rtps.SharedMem
             if (endpoint != null)
             {
                 endpoints.Remove(endpoint);
-                NotifyEndpointsChanges();
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.DELETED_ENDPOINT;
+                dea.EventData = endpoint;
+                NotifyEndpointsChanges(dea);
             }
         }
 
-        private void NotifyParticipantChanges()
+        private void NotifyParticipantChanges(DiscoveryEventArgs dea)
         {
             log.Debug("The information about Participants has changed");
             if (ParticipantDiscovery != null)
             {
-                ParticipantDiscovery(this, EventArgs.Empty);
+                ParticipantDiscovery(this, dea);
             }
         }
 
-        private void NotifyEndpointsChanges()
+        private void NotifyEndpointsChanges(DiscoveryEventArgs dea)
         {
             log.Debug("The information about Endpoints has changed");
             if (EndpointDiscovery != null)
             {
-                EndpointDiscovery(this, EventArgs.Empty);
+                EndpointDiscovery(this, dea);
             }
         }
     }
