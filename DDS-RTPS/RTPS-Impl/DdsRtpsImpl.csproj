@@ -52,6 +52,10 @@
   <ItemGroup>
     <Compile Include="Dds\Core\BootstrapImpl.cs" />
     <Compile Include="Dds\Core\DataAvailableStatusImpl.cs" />
+    <Compile Include="Dds\Core\Policy\GroupDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\PartitionQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\PresentationQosPolicyImpl.cs" />
+    <Compile Include="Dds\Pub\PublisherQosImpl.cs" />
     <Compile Include="Properties\EntityQosImpl.cs" />
     <Compile Include="Dds\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\QosPolicyImpl.cs" />
