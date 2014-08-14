@@ -44,11 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\omg\example\dds\Common\ExampleApp.cs" />
+    <Compile Include="ExampleApp.cs" />
     <Compile Include="org\omg\example\dds\helloworld\MainHelloword.cs" />
-    <Compile Include="org\omg\example\dds\MainLauncher.cs" />
-    <Compile Include="org\omg\example\dds\SharedMemExample\MainSharedMem.cs" />
+    <Compile Include="MainLauncher.cs" />
+    <Compile Include="PubSub\PubSubExample01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleTopics\WeatherSensors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -57,17 +58,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DDS\DDS.csproj">
+    <ProjectReference Include="..\..\DDS\API-DDS.csproj">
       <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
-      <Name>DDS</Name>
+      <Name>API-DDS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\RTPS-Impl\Doop-ec.csproj">
+    <ProjectReference Include="..\..\RTPS-Impl\DdsRtpsImpl.csproj">
       <Project>{51bb643c-96ed-472e-b80b-723254599bc3}</Project>
-      <Name>Doop-ec</Name>
+      <Name>DdsRtpsImpl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\RTPS\RTPS.csproj">
+    <ProjectReference Include="..\..\RTPS\API-RTPS.csproj">
       <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
-      <Name>RTPS</Name>
+      <Name>API-RTPS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

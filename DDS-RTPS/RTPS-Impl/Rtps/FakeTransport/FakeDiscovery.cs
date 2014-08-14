@@ -23,7 +23,7 @@ namespace Doopec.Rtps.SharedMem
         public object EventData { get; set; }
     }
 
-    public class SharedMemoryDiscovery
+    public class FakeDiscovery
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 

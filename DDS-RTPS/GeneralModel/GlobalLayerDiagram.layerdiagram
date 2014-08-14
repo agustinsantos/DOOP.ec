@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0e2a87dc-b3aa-47ff-86e4-c11a9c18b2d2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="7268775e-d36a-4c42-9d5e-2cf2976c1cdd" name="Data Centric Publish/Subscribe (DCPS)">
+      <description>DDS core specification</description>
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c7d2e128-7dea-417c-858c-58fdf4615a82" direction="Forward">
+          <layerMoniker Id="a2bcb7ba-8a87-4ee8-b319-d7daf5858f9c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a2bcb7ba-8a87-4ee8-b319-d7daf5858f9c" name="Real-Time Publish/Subscribe Protocol (RTPS)">
+      <description>DDS interoperability wire protocol</description>
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4d9c048e-b738-485b-94dd-0e77e74ac2b9" direction="Forward">
+          <layerMoniker Id="22e40d15-5d19-45ec-8436-296e190b0519" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="22e40d15-5d19-45ec-8436-296e190b0519" name="Transports (UDP/IP, ..)">
+      <description>Several transports are planned (UDP, Fake, shared memory, ..)</description>
+      <childLayers>
+        <layer Id="34500763-fbe7-4a92-847a-78e536e3f350" name="UDP/IP" />
+        <layer Id="99d01e4d-013e-4481-ba30-74aa810bebe7" name="Shared Memory" />
+        <layer Id="d5f8fd71-92b9-45ef-937c-e749ebd1ec98" name="Fake" />
+      </childLayers>
+    </layer>
+    <layer Id="ff56c1c7-fba9-4755-bc18-1940b27f6823" name="Data Local reconstruction Layer (DLRL)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="27372a52-e5e6-4d88-9a01-3f16d07ea12c" direction="Forward">
+          <layerMoniker Id="7268775e-d36a-4c42-9d5e-2cf2976c1cdd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0d199d7e-1124-4ceb-a78f-b2446bbfafc4" name="Remote Procedure Call (RPC) over DDS">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d869c6aa-706e-4ff2-881d-37e44ab8f67a" direction="Forward">
+          <layerMoniker Id="ff56c1c7-fba9-4755-bc18-1940b27f6823" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="edb6ea09-4726-42e4-8d07-36315eedd972" direction="Forward">
+          <layerMoniker Id="7268775e-d36a-4c42-9d5e-2cf2976c1cdd" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="21ba3e79-827a-4c74-a78a-35648397f13d" name="Method Interception &amp; Reflection">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="be92e008-6431-4b77-b6ab-88f414ae1590" direction="Forward">
+          <layerMoniker Id="ff56c1c7-fba9-4755-bc18-1940b27f6823" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="549da542-a60d-4f10-9fd8-2f5d2e29607f" direction="Forward">
+          <layerMoniker Id="0d199d7e-1124-4ceb-a78f-b2446bbfafc4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ed86a6fb-95b3-40b5-9539-3f4b39595feb" name="User Application" />
+  </layers>
+</layerModel>

@@ -20,7 +20,7 @@ namespace Doopec.Rtps.Behavior
         public SharedMemoryReader(Participant participant)
             : base(participant)
         {
-            SharedMemoryDiscovery discoveryModule = ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule;
+            FakeDiscovery discoveryModule = ((FakeEngine)RtpsEngine.Instance).DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);
             discoveryModule.EndpointDiscovery += OnDiscoveryEndpoints;
             AddWriters(discoveryModule);
@@ -29,7 +29,7 @@ namespace Doopec.Rtps.Behavior
         public void Dispose()
         {
             RemoveAllWriters();
-            SharedMemoryDiscovery discoveryModule = ((SharedMemoryEngine)RtpsEngine.Instance).DiscoveryModule;
+            FakeDiscovery discoveryModule = ((FakeEngine)RtpsEngine.Instance).DiscoveryModule;
             discoveryModule.UnregisterEndpoint(this);
             discoveryModule.EndpointDiscovery -= OnDiscoveryEndpoints;
         }
@@ -55,7 +55,7 @@ namespace Doopec.Rtps.Behavior
             writer.HistoryCache.Changed += OnChangedHistoryCache;
         }
 
-        private void AddWriters(SharedMemoryDiscovery discoveryModule)
+        private void AddWriters(FakeDiscovery discoveryModule)
         {
             foreach (var endpoint in discoveryModule.Endpoints)
             {

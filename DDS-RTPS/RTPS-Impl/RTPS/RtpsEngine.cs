@@ -10,6 +10,7 @@ namespace Doopec.Rtps
     public interface IRtpsEngine
     {
     }
+
     public class RtpsEngine
     {
         private static IRtpsEngine theInstance;

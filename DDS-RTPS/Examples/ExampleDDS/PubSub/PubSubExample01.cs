@@ -13,7 +13,7 @@ using System.Reflection;
 
 namespace org.omg.example.dds.helloworld
 {
-    class MainSharedMem : ExampleApp
+    class PubSubExample01 : ExampleApp
     {
         public override void RunExample(string[] args)
         {

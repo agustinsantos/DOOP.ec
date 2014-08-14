@@ -25,7 +25,7 @@ namespace Doopec {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Doopec.Rtps.SharedMem.SharedMemoryEngine, Doopec")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Doopec.Rtps.SharedMem.FakeEngine, Doopec")]
         public string RTPSEngineType {
             get {
                 return ((string)(this["RTPSEngineType"]));

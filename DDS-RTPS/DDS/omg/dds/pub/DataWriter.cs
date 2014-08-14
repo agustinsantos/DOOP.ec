@@ -34,20 +34,20 @@ namespace org.omg.dds.pub
                                         DataWriterListener<TYPE>,
                                         DataWriterQos>
     {
-        /**
-         * @return  the type parameter if this object's class.
-         */
+        /// <summary>
+        /// returns  the type parameter if this object's class.
+        /// </summary>
+        /// <returns>the type parameter if this object's class.</returns>
         System.Type getType();
 
-        /**
-         * Cast this data writer to the given type, or throw an exception if
-         * the cast fails.
-         * 
-         * @param <OTHER>   The type of the data published by this writer,
-         *                  according to the caller.
-         * @return          this data writer
-         * @throws          ClassCastException if the cast fails
-         */
+        /// <summary>
+        /// Cast this data writer to the given type, or throw an exception if
+        /// the cast fails.
+        /// </summary>
+        /// <typeparam name="OTHER">The type of the data published by this writer,
+        ///                 according to the caller.</typeparam>
+        /// <returns>this data writer</returns>
+        /// <exception cref="ClassCastException"/>
         DataWriter<OTHER> cast<OTHER>();
 
         Topic<TYPE> getTopic();

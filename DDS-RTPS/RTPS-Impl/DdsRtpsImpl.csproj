@@ -50,84 +50,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DDS\Core\BootstrapImpl.cs" />
-    <Compile Include="DDS\Core\DataAvailableStatusImpl.cs" />
+    <Compile Include="Dds\Core\BootstrapImpl.cs" />
+    <Compile Include="Dds\Core\DataAvailableStatusImpl.cs" />
     <Compile Include="Properties\EntityQosImpl.cs" />
-    <Compile Include="DDS\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
-    <Compile Include="DDS\Core\Policy\QosPolicyImpl.cs" />
-    <Compile Include="DDS\Core\Policy\UserDataQosPolicyImpl.cs" />
-    <Compile Include="DDS\Core\ValueImpl.cs" />
-    <Compile Include="DDS\Domain\DomainParticipantQosImpl.cs" />
-    <Compile Include="DDS\Pub\DataWriterImpl.cs" />
-    <Compile Include="DDS\Pub\PublisherImpl.cs" />
-    <Compile Include="DDS\Domain\DomainParticipantFactoryImpl.cs" />
-    <Compile Include="DDS\Domain\DomainParticipantImpl.cs" />
-    <Compile Include="DDS\Sub\DataReaderImpl.cs" />
-    <Compile Include="DDS\Sub\DataReaderQosImpl.cs" />
-    <Compile Include="DDS\Core\ModifiableValueImpl.cs" />
-    <Compile Include="DDS\Sub\SampleImpl.cs" />
-    <Compile Include="DDS\Sub\SubscriberImpl.cs" />
-    <Compile Include="DDS\Topic\TopicImpl.cs" />
-    <Compile Include="DDS\Utils\QosHelper.cs" />
+    <Compile Include="Dds\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\QosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\UserDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\ValueImpl.cs" />
+    <Compile Include="Dds\Domain\DomainParticipantQosImpl.cs" />
+    <Compile Include="Dds\Pub\DataWriterImpl.cs" />
+    <Compile Include="Dds\Pub\PublisherImpl.cs" />
+    <Compile Include="Dds\Domain\DomainParticipantFactoryImpl.cs" />
+    <Compile Include="Dds\Domain\DomainParticipantImpl.cs" />
+    <Compile Include="Dds\Sub\DataReaderImpl.cs" />
+    <Compile Include="Dds\Sub\DataReaderQosImpl.cs" />
+    <Compile Include="Dds\Core\ModifiableValueImpl.cs" />
+    <Compile Include="Dds\Sub\SampleImpl.cs" />
+    <Compile Include="Dds\Sub\SubscriberImpl.cs" />
+    <Compile Include="Dds\Topic\TopicImpl.cs" />
+    <Compile Include="Dds\Utils\QosHelper.cs" />
     <Compile Include="Doopec.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Doopec.settings</DependentUpon>
     </Compile>
     <Compile Include="Encoders\IEncoder.cs" />
-    <Compile Include="RTPS\Behavior\SharedMemoryWriter.cs" />
-    <Compile Include="RTPS\Behavior\SharedMemoryReader.cs" />
-    <Compile Include="RTPS\Encoders\AckNackEncoder.cs" />
+    <Compile Include="Rtps\Behavior\SharedMemoryWriter.cs" />
+    <Compile Include="Rtps\Behavior\SharedMemoryReader.cs" />
+    <Compile Include="Rtps\Encoders\AckNackEncoder.cs" />
     <Compile Include="Encoders\BufferUtils.cs" />
-    <Compile Include="RTPS\Encoders\DataFragEncoder.cs" />
-    <Compile Include="RTPS\Encoders\DataSubMessageEncoder.cs" />
-    <Compile Include="RTPS\Encoders\EntityIdEncoder.cs" />
-    <Compile Include="RTPS\Encoders\GapEncoder.cs" />
-    <Compile Include="RTPS\Encoders\GuidPrefixEncoder.cs" />
-    <Compile Include="RTPS\Encoders\HeaderEncoder.cs" />
-    <Compile Include="RTPS\Encoders\HeartbeatEncoder.cs" />
-    <Compile Include="RTPS\Encoders\HeartbeatFragEncoder.cs" />
-    <Compile Include="RTPS\Encoders\InfoDestinationEncoder.cs" />
-    <Compile Include="RTPS\Encoders\InfoReplyEncoder.cs" />
-    <Compile Include="RTPS\Encoders\InfoReplyIp4Encoder.cs" />
-    <Compile Include="RTPS\Encoders\InfoSourceEncoder.cs" />
-    <Compile Include="RTPS\Encoders\InfoTimestampEncoder.cs" />
-    <Compile Include="RTPS\Encoders\LocatorEncoder.cs" />
-    <Compile Include="RTPS\Encoders\LocatorUDPv4Encoder.cs" />
-    <Compile Include="RTPS\Encoders\MessageEncoder.cs" />
-    <Compile Include="RTPS\Encoders\MessageStaticEncoder.cs" />
-    <Compile Include="RTPS\Encoders\NackFragEncoder.cs" />
-    <Compile Include="RTPS\Encoders\PadEncoder.cs" />
-    <Compile Include="RTPS\Encoders\ParameterEncoder.cs" />
-    <Compile Include="RTPS\Encoders\ParameterListEncoder.cs" />
-    <Compile Include="RTPS\Encoders\ProtocolIdEncoder.cs" />
-    <Compile Include="RTPS\Encoders\ProtocolVersionEncoder.cs" />
-    <Compile Include="RTPS\Encoders\Sentinel.cs" />
-    <Compile Include="RTPS\Encoders\SequenceNumberEncoder.cs" />
-    <Compile Include="RTPS\Encoders\SequenceNumberSetEncoder.cs" />
-    <Compile Include="RTPS\Encoders\StatusInfoEncoder.cs" />
-    <Compile Include="RTPS\Encoders\SubMessageEncoder.cs" />
-    <Compile Include="RTPS\Encoders\SubMessageHeaderEncoder.cs" />
-    <Compile Include="RTPS\Encoders\TimeEncoder.cs" />
-    <Compile Include="RTPS\Encoders\VendorIdEncoder.cs" />
+    <Compile Include="Rtps\Encoders\DataFragEncoder.cs" />
+    <Compile Include="Rtps\Encoders\DataSubMessageEncoder.cs" />
+    <Compile Include="Rtps\Encoders\EntityIdEncoder.cs" />
+    <Compile Include="Rtps\Encoders\GapEncoder.cs" />
+    <Compile Include="Rtps\Encoders\GuidPrefixEncoder.cs" />
+    <Compile Include="Rtps\Encoders\HeaderEncoder.cs" />
+    <Compile Include="Rtps\Encoders\HeartbeatEncoder.cs" />
+    <Compile Include="Rtps\Encoders\HeartbeatFragEncoder.cs" />
+    <Compile Include="Rtps\Encoders\InfoDestinationEncoder.cs" />
+    <Compile Include="Rtps\Encoders\InfoReplyEncoder.cs" />
+    <Compile Include="Rtps\Encoders\InfoReplyIp4Encoder.cs" />
+    <Compile Include="Rtps\Encoders\InfoSourceEncoder.cs" />
+    <Compile Include="Rtps\Encoders\InfoTimestampEncoder.cs" />
+    <Compile Include="Rtps\Encoders\LocatorEncoder.cs" />
+    <Compile Include="Rtps\Encoders\LocatorUDPv4Encoder.cs" />
+    <Compile Include="Rtps\Encoders\MessageEncoder.cs" />
+    <Compile Include="Rtps\Encoders\MessageStaticEncoder.cs" />
+    <Compile Include="Rtps\Encoders\NackFragEncoder.cs" />
+    <Compile Include="Rtps\Encoders\PadEncoder.cs" />
+    <Compile Include="Rtps\Encoders\ParameterEncoder.cs" />
+    <Compile Include="Rtps\Encoders\ParameterListEncoder.cs" />
+    <Compile Include="Rtps\Encoders\ProtocolIdEncoder.cs" />
+    <Compile Include="Rtps\Encoders\ProtocolVersionEncoder.cs" />
+    <Compile Include="Rtps\Encoders\Sentinel.cs" />
+    <Compile Include="Rtps\Encoders\SequenceNumberEncoder.cs" />
+    <Compile Include="Rtps\Encoders\SequenceNumberSetEncoder.cs" />
+    <Compile Include="Rtps\Encoders\StatusInfoEncoder.cs" />
+    <Compile Include="Rtps\Encoders\SubMessageEncoder.cs" />
+    <Compile Include="Rtps\Encoders\SubMessageHeaderEncoder.cs" />
+    <Compile Include="Rtps\Encoders\TimeEncoder.cs" />
+    <Compile Include="Rtps\Encoders\VendorIdEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RTPS\RtpsEngine.cs" />
-    <Compile Include="RTPS\SharedMem\SharedMemoryDiscovery.cs" />
-    <Compile Include="RTPS\SharedMem\SharedMemoryEngine.cs" />
-    <Compile Include="RTPS\WriterCache.cs" />
+    <Compile Include="Rtps\RtpsEngine.cs" />
+    <Compile Include="Rtps\FakeTransport\FakeDiscovery.cs" />
+    <Compile Include="Rtps\FakeTransport\FakeEngine.cs" />
+    <Compile Include="Rtps\WriterCache.cs" />
     <Compile Include="Transport\IReceiver.cs" />
     <Compile Include="Transport\ITransmitter.cs" />
     <Compile Include="Transport\UDPReceiver.cs" />
     <Compile Include="Transport\UDPTransmitter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DDS\DDS.csproj">
+    <ProjectReference Include="..\DDS\API-DDS.csproj">
       <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
-      <Name>DDS</Name>
+      <Name>API-DDS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RTPS\RTPS.csproj">
+    <ProjectReference Include="..\RTPS\API-RTPS.csproj">
       <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
-      <Name>RTPS</Name>
+      <Name>API-RTPS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

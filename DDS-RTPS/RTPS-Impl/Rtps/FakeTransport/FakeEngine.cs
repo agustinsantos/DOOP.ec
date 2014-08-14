@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Doopec.Rtps.SharedMem
 {
-    internal class SharedMemoryEngine : IRtpsEngine
+    internal class FakeEngine : IRtpsEngine
     {
-        protected SharedMemoryDiscovery discoveryModule = new SharedMemoryDiscovery();
+        protected FakeDiscovery discoveryModule = new FakeDiscovery();
 
 
-        public SharedMemoryDiscovery DiscoveryModule
+        public FakeDiscovery DiscoveryModule
         {
             get { return discoveryModule; }
         }
