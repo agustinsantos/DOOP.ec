@@ -12,7 +12,7 @@ namespace ExampleDDS
     {
         public static void Main(string[] args)
         {
-            ExampleApp app = new PubSubExample01();
+            ExampleApp app = new PubSubExample02();
              app.RunExample(args);
 #if DEBUG
              Console.WriteLine("Press enter to close...");

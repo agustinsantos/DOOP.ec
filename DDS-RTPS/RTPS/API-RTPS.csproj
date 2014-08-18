@@ -58,6 +58,7 @@
     <Compile Include="Behavior\Types\ChangeFromWriterStatusKind.cs" />
     <Compile Include="Behavior\Types\ParticipantMessageData.cs" />
     <Compile Include="Behavior\WriterProxy.cs" />
+    <Compile Include="Discovery\Spdp\BuiltinEndpointSet.cs" />
     <Compile Include="Discovery\Spdp\ParticipantProxy.cs" />
     <Compile Include="Discovery\Spdp\SPDPdiscoveredParticipantData.cs" />
     <Compile Include="Messages\Header.cs" />

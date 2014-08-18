@@ -79,8 +79,10 @@
       <DependentUpon>Doopec.settings</DependentUpon>
     </Compile>
     <Compile Include="Encoders\IEncoder.cs" />
-    <Compile Include="Rtps\Behavior\SharedMemoryWriter.cs" />
-    <Compile Include="Rtps\Behavior\SharedMemoryReader.cs" />
+    <Compile Include="Rtps\Behavior\FakeRtpsWriter.cs" />
+    <Compile Include="Rtps\Behavior\FakeRtpsReader.cs" />
+    <Compile Include="Rtps\Behavior\WriterWorker.cs" />
+    <Compile Include="Rtps\Utils\PeriodicWorker.cs" />
     <Compile Include="Rtps\Encoders\AckNackEncoder.cs" />
     <Compile Include="Encoders\BufferUtils.cs" />
     <Compile Include="Rtps\Encoders\DataFragEncoder.cs" />

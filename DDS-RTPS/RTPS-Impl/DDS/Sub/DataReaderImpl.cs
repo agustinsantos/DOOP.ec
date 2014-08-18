@@ -36,7 +36,7 @@ namespace Doopec.Dds.Sub
             this.listener = listener;
 
             Participant participant = new Participant();
-            this.rtpsReader = new SharedMemoryReader<TYPE>(participant);
+            this.rtpsReader = new FakeRtpsReader<TYPE>(participant);
         }
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
@@ -123,7 +123,7 @@ namespace Doopec.Dds.Sub
         {
             //throw new NotImplementedException();
             //TODO For the shared memory implementation, the data is available immediately
-            CacheChange<TYPE> change = rtpsReader.reader_cache.GetChange();
+            CacheChange<TYPE> change = rtpsReader.ReaderCache.GetChange();
             if (this.listener != null)
             {
                 DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
@@ -170,7 +170,7 @@ namespace Doopec.Dds.Sub
         public SampleIterator<TYPE> take()
         {
             SampleIterator<TYPE> it = new SampleIteratorImpl<TYPE>();
-            it.add(new SampleImpl<TYPE>( rtpsReader.reader_cache.GetChange()));
+            it.add(new SampleImpl<TYPE>( rtpsReader.ReaderCache.GetChange()));
             return it;
         }
 

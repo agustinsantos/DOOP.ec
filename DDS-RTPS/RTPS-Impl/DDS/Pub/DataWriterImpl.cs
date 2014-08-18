@@ -40,7 +40,7 @@ namespace Doopec.Dds.Pub
             this.topic_ = topic;
             //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
             Participant participant = new Participant();
-            this.rtpsWriter = new SharedMemoryWriter<TYPE>(participant);
+            this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
          }
 
         public Type getType()

@@ -18,25 +18,25 @@ namespace Rtps.Structure
     {
         /// <summary>
         /// Protocol tuning parameter that allows the RTPS Reader to delay the sending of a 
-        ///positive or negative acknowledgment
+        /// positive or negative acknowledgment
         /// </summary>
-        public Duration heartbeatResponseDelay;
+        public Duration HeartbeatResponseDelay { get; set; }
 
         /// <summary>
         /// Protocol tuning parameter that allows the RTPS Reader to ignore HEARTBEATs that 
         /// arrive ‘too soon’ after a previous HEARTBEAT was received.
         /// </summary>
-        public Duration heartbeatSuppressionDuration;
+        public Duration HeartbeatSuppressionDuration { get; set; }
 
         /// <summary>
         /// Contains the history of CacheChange changes for this RTPS Reader.
         /// </summary>
-        public HistoryCache<T> reader_cache;
+        public HistoryCache<T> ReaderCache { get; set; }
 
         /// <summary>
         ///  Specifies whether the RTPS Reader expects in-line QoS to be sent along with any data.
         /// </summary>
-        public bool expectsInlineQos;
+        public bool ExpectsInlineQos { get; set; }
 
 
         public Reader(Participant participant)
@@ -44,10 +44,10 @@ namespace Rtps.Structure
         {
             //The following timing-related values are used as the defaults in order to facilitate 
             // ‘out-of-the-box’ interoperability between implementations.
-            this.heartbeatResponseDelay = new Duration(500); //500 milliseconds
-            this.heartbeatSuppressionDuration = new Duration(0);
+            this.HeartbeatResponseDelay = new Duration(500); //500 milliseconds
+            this.HeartbeatSuppressionDuration = new Duration(0);
 
-            reader_cache = new HistoryCache<T>();
+            ReaderCache = new HistoryCache<T>();
         }
     }
 

@@ -71,8 +71,8 @@ namespace Rtps.Behavior
 
         /// <summary>
         /// This operation takes a CacheChange a_change as a parameter and determines whether all the ReaderProxy have 
-        /// acknowledged the CacheChange. The operation will return true if all ReaderProxy have acknowledged the corresponding 
-        /// CacheChange and false otherwise.
+        /// acknowledged the CacheChange. The operation will return true if all ReaderProxy have acknowledged the  
+        /// corresponding CacheChange and false otherwise.
         /// </summary>
         /// <param name="a_change"></param>
         /// <returns></returns>

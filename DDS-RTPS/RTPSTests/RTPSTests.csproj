@@ -66,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeTests.cs" />
     <Compile Include="Transport\UDPTransportTests.cs" />
+    <Compile Include="Utils\PeriodicWorkerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RTPS-Impl\DdsRtpsImpl.csproj">

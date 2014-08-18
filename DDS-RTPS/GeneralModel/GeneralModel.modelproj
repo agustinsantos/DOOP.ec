@@ -22,17 +22,25 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="PublicationInteractionModel.sequencediagram">
+    <Content Include="PublicationProcess\WriteInteractionModel.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="PublicationInteractionModel.sequencediagram.layout">
+    <Content Include="PublicationProcess\WriteInteractionModel.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>PublicationInteractionModel.sequencediagram</DependentUpon>
+      <DependentUpon>PublicationProcess\WriteInteractionModel.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="PublicationProcess\PublicationInteractionModel.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PublicationProcess\PublicationInteractionModel.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PublicationProcess\PublicationInteractionModel.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\GeneralModel.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="PublicationProcess" />
   </ItemGroup>
   <ItemGroup>
     <Validate Include="GlobalLayerDiagram.layerdiagram">

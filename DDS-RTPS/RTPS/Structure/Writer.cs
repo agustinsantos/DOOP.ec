@@ -54,6 +54,9 @@ namespace Rtps.Structure
         public Writer(Participant participant)
             : base(participant)
         {
+            this.heartbeatPeriod = new Duration(1000);
+            
+            
             //The following timing-related values are used as the defaults in order to facilitate 
             // ‘out-of-the-box’ interoperability between implementations.
             this.nackResponseDelay = new Duration(200); //200 milliseconds
