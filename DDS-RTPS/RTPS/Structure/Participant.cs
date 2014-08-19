@@ -10,7 +10,7 @@ namespace Rtps.Structure
     /// responsible for creating readers and writers and setting up network
     /// receivers.
     /// </summary>
-    public class Participant : Entity
+    public abstract class Participant : Entity
     {
         private ProtocolVersion protocolVersion = ProtocolVersion.PROTOCOLVERSION;
         private VendorId vendorId = VendorId.VENDORID_UNKNOWN;
@@ -28,7 +28,7 @@ namespace Rtps.Structure
 
         public Participant()
         {
-            this.Guid.EntityId = EntityId.participant;
+            this.Guid.EntityId = EntityId.ENTITYID_PARTICIPANT;
         }
 
         /// <summary>

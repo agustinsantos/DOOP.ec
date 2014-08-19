@@ -11,7 +11,7 @@ using org.omg.dds.topic;
 using System;
 using System.Reflection;
 
-namespace org.omg.example.dds.helloworld
+namespace ExampleDDS.PubSubExamples
 {
     class PubSubExample01 : ExampleApp
     {

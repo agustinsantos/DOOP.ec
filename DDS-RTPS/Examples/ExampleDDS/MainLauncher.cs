@@ -1,10 +1,6 @@
 ﻿using ExampleDDS.Common;
-using org.omg.example.dds.helloworld;
+using ExampleDDS.DiscoveryExamples;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExampleDDS
 {
@@ -12,7 +8,7 @@ namespace ExampleDDS
     {
         public static void Main(string[] args)
         {
-            ExampleApp app = new PubSubExample02();
+            ExampleApp app = new DiscoveryExample01();
              app.RunExample(args);
 #if DEBUG
              Console.WriteLine("Press enter to close...");

@@ -40,7 +40,7 @@ namespace Rtps.Structure.Types
         public EntityId EntityId
         {
             get { return entityId; }
-            internal set { entityId = value; }
+            set { entityId = value; }
         }
 
         /// <summary>

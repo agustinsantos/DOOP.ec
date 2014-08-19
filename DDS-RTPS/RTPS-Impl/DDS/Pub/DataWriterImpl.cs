@@ -1,5 +1,6 @@
 ﻿using DDS.ConversionUtils;
 using Doopec.Rtps.Behavior;
+using Doopec.Rtps.Structure;
 using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
@@ -39,7 +40,7 @@ namespace Doopec.Dds.Pub
             this.pub_ = pub;
             this.topic_ = topic;
             //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
-            Participant participant = new Participant();
+            Participant participant = new ParticipantImpl();
             this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
          }
 

@@ -15,10 +15,10 @@ namespace Rtps.Discovery.Spdp
         public VendorId vendorId;
         public bool expectsInlineQos;
         public BuiltinEndpointSet availableBuiltinEndpoints;
-        public Locator[] metatrafficUnicastLocatorList;
-        public Locator[] metatrafficMulticastLocatorList;
-        public Locator[] defaultMulticastLocatorList;
-        public Locator[] defaultUnicastLocatorList;
+        public IList<Locator> metatrafficUnicastLocatorList;
+        public IList<Locator> metatrafficMulticastLocatorList;
+        public IList<Locator> defaultMulticastLocatorList;
+        public IList<Locator> defaultUnicastLocatorList;
         public Count manualLivelinessCount;
     }
 }

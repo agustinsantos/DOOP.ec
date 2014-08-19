@@ -13,8 +13,8 @@ namespace Rtps.Behavior
     /// </summary>
     public class ReaderLocator
     {
-        private IList<ICacheChange> requested_changes_;
-        private IList<ICacheChange> unsent_changes_;
+        private IList<ICacheChange> requested_changes_ = new List<ICacheChange>();
+        private IList<ICacheChange> unsent_changes_ = new List<ICacheChange>();
         private Locator locator;
         private bool expectsInlineQos;
 

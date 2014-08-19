@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Doopec.Rtps.Config" GeneratedClassName="Writer">
+  <Profiles />
+  <Settings>
+    <Setting Name="PushMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HeartbeatPeriod" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5001</Value>
+    </Setting>
+    <Setting Name="NackResponseDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">201</Value>
+    </Setting>
+    <Setting Name="NackSuppressionDuration" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

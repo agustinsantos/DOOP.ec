@@ -47,7 +47,7 @@ namespace Rtps.Structure.Types
         public readonly static EntityId ENTITYID_UNKNOWN =
              new EntityId(new byte[] { 0, 0, 0 }, EntityKinds.USER_DEFINED_UNKNOWN);
 
-        public readonly static EntityId participant =
+        public readonly static EntityId ENTITYID_PARTICIPANT =
             new EntityId(new byte[] { 0, 0, 1 }, EntityKinds.BUILT_IN_PARTICIPANT);
         public readonly static EntityId SEDPbuiltinTopicWriter =
             new EntityId(new byte[] { 0, 0, 2 }, EntityKinds.BUILT_IN_WRITER_W_KEY);

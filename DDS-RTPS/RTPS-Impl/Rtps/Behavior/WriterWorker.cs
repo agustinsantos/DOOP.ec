@@ -13,11 +13,26 @@ namespace Doopec.Rtps.Behavior
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        public delegate void PeriodicWorkDelegate();
+
+        private PeriodicWorkDelegate periodicWork;
+
+        public WriterWorker()
+        {
+        }
+
+        public WriterWorker(PeriodicWorkDelegate periodicWork)
+        {
+            this.periodicWork = periodicWork;
+        }
+
         public override void DoPeriodicWork()
         {
             base.DoPeriodicWork();
             // the RTPS Writer to repeatedly announce the availability of data by sending a Heartbeat Message.
             Console.WriteLine("I have to send a Heartbeat Message,  at {0}", DateTime.Now);
+            if (periodicWork != null)
+                periodicWork();
         }
     }
 }

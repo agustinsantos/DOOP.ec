@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Discovery\DiscoveryExample01.cs" />
     <Compile Include="ExampleApp.cs" />
     <Compile Include="org\omg\example\dds\helloworld\MainHelloword.cs" />
     <Compile Include="MainLauncher.cs" />

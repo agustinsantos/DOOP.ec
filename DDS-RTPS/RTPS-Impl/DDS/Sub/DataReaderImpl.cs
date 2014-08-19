@@ -4,6 +4,7 @@ using Doopec.DDS.Sub;
 using Doopec.Rtps;
 using Doopec.Rtps.Behavior;
 using Doopec.Rtps.SharedMem;
+using Doopec.Rtps.Structure;
 using org.omg.dds.core.status;
 using org.omg.dds.sub;
 using org.omg.dds.topic;
@@ -35,7 +36,7 @@ namespace Doopec.Dds.Sub
             this.topic_ = topic;
             this.listener = listener;
 
-            Participant participant = new Participant();
+            Participant participant = new ParticipantImpl();
             this.rtpsReader = new FakeRtpsReader<TYPE>(participant);
         }
 

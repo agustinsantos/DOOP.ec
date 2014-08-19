@@ -3,6 +3,7 @@ using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
 using Doopec.Rtps;
 using Doopec.Rtps.SharedMem;
+using Doopec.Rtps.Structure;
 using Mina.Filter.Statistic;
 using org.omg.dds.core;
 using org.omg.dds.core.modifiable;
@@ -31,7 +32,7 @@ namespace Doopec.Dds.Domain
 
         public DomainParticipantImpl()
         {
-            rtpsParticipant = new Participant();
+            rtpsParticipant = new ParticipantImpl();
             ((FakeEngine)RtpsEngine.Instance).DiscoveryModule.RegisterParticipant(rtpsParticipant);
         }
 
