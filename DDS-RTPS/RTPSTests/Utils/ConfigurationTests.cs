@@ -26,16 +26,20 @@ namespace Rtps.Tests.Utils
         public void TestSPDPContent()
         {
             RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
-            Assert.AreEqual(5000, rtpsConfig.SPDPConfig.ResendDataPeriod);
+            /// The default rate by which SPDP periodic announcements are sent equals 30 seconds.
+            Assert.AreEqual(3000, rtpsConfig.SPDPConfig.ResendDataPeriod);
             Assert.AreEqual("udp://239.255.0.1, udp://localhost", rtpsConfig.SPDPConfig.DiscoveryListenerUris);
             Assert.IsNotNull(rtpsConfig.SPDPConfig.WellKnownPorts);
+
+            /// In order to enable out-of-the-box interoperability, the following default values must be used
+            /// page 179 (9.6.1.4 Default Settings for the Simple Participant Discovery Protocol)
             Assert.AreEqual(7400, rtpsConfig.SPDPConfig.WellKnownPorts.PortBase);
             Assert.AreEqual(250, rtpsConfig.SPDPConfig.WellKnownPorts.DomainIdGain);
             Assert.AreEqual(2, rtpsConfig.SPDPConfig.WellKnownPorts.ParticipantIdGain);
             Assert.AreEqual(0, rtpsConfig.SPDPConfig.WellKnownPorts.Offsetd0);
             Assert.AreEqual(10, rtpsConfig.SPDPConfig.WellKnownPorts.Offsetd1);
             Assert.AreEqual(1, rtpsConfig.SPDPConfig.WellKnownPorts.Offsetd2);
-            Assert.AreEqual(1, rtpsConfig.SPDPConfig.WellKnownPorts.Offsetd3);
+            Assert.AreEqual(11, rtpsConfig.SPDPConfig.WellKnownPorts.Offsetd3);
         }
 
         [TestMethod]
