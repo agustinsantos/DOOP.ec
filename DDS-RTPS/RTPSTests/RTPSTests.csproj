@@ -48,6 +48,7 @@
       <HintPath>..\Libs\Mina.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -68,6 +69,7 @@
     <Compile Include="Transport\UDPTransportTests.cs" />
     <Compile Include="Utils\PeriodicWorkerTests.cs" />
     <Compile Include="Utils\GuidGeneratorTests.cs" />
+    <Compile Include="Utils\ConfigurationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RTPS-Impl\DdsRtpsImpl.csproj">
@@ -78,6 +80,9 @@
       <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
       <Name>API-RTPS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

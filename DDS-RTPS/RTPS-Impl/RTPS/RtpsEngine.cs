@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Doopec.Dds.Config;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -31,7 +32,8 @@ namespace Doopec.Rtps
 
         public static IRtpsEngine CreateEngine(IDictionary<string, Object> environment)
         {
-            string className = Doopec.Default.RTPSEngineType;
+            DdsConfigurationSectionHandler ddsConfig = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+            string className = ddsConfig.Settings["TransportEngine"].Value;
             if (string.IsNullOrWhiteSpace(className))
             {
                 // no implementation class name specified

@@ -56,6 +56,7 @@
     <Compile Include="Dds\Core\Policy\PartitionQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\PresentationQosPolicyImpl.cs" />
     <Compile Include="Dds\Pub\PublisherQosImpl.cs" />
+    <Compile Include="Dds\Utils\Config\DdsConfigurationSectionHandler.cs" />
     <Compile Include="Properties\EntityQosImpl.cs" />
     <Compile Include="Dds\Core\Policy\EntityFactoryQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\QosPolicyImpl.cs" />
@@ -73,31 +74,20 @@
     <Compile Include="Dds\Sub\SubscriberImpl.cs" />
     <Compile Include="Dds\Topic\TopicImpl.cs" />
     <Compile Include="Dds\Utils\QosHelper.cs" />
-    <Compile Include="Doopec.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Doopec.settings</DependentUpon>
-    </Compile>
     <Compile Include="Encoders\IEncoder.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsWriter.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsReader.cs" />
     <Compile Include="Rtps\Behavior\WriterWorker.cs" />
-    <Compile Include="Properties\Rtps.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Rtps.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Rtps\Config\RtpsConfigurationSectionHandler.cs" />
-    <Compile Include="Properties\Writer.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Writer.settings</DependentUpon>
-    </Compile>
+    <Compile Include="Rtps\Utils\Config\ReaderConfig.cs" />
+    <Compile Include="Rtps\Utils\Config\RtpsConfigurationSectionHandler.cs" />
     <Compile Include="Rtps\Discovery\DiscoveryImpl.cs" />
     <Compile Include="Rtps\Discovery\Sedp.cs" />
     <Compile Include="Rtps\Discovery\Spdp.cs" />
     <Compile Include="Rtps\Discovery\SPDPbuiltinParticipantWriter.cs" />
     <Compile Include="Rtps\Structure\ParticipantImpl.cs" />
+    <Compile Include="Rtps\Utils\Config\SPDPConfig.cs" />
+    <Compile Include="Rtps\Utils\Config\WellKnownPortsConfig.cs" />
+    <Compile Include="Rtps\Utils\Config\WriterConfig.cs" />
     <Compile Include="Rtps\Utils\GuidGenerator.cs" />
     <Compile Include="Rtps\Utils\PeriodicWorker.cs" />
     <Compile Include="Rtps\Encoders\AckNackEncoder.cs" />
@@ -155,18 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Doopec.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Doopec.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Properties\Rtps.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Rtps.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Properties\Writer.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Writer.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
