@@ -1,4 +1,5 @@
 ﻿using Rtps.Messages.Types;
+using Rtps.Structure;
 using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,25 @@ namespace Rtps.Discovery.Spdp
 {
     public class ParticipantProxy
     {
-        public ProtocolVersion protocolVersion;
-        public GuidPrefix guidPrefix;  // optional in SPDPdiscoveredParticipantData
-        public VendorId vendorId;
-        public bool expectsInlineQos;
-        public BuiltinEndpointSet availableBuiltinEndpoints;
-        public IList<Locator> metatrafficUnicastLocatorList;
-        public IList<Locator> metatrafficMulticastLocatorList;
-        public IList<Locator> defaultMulticastLocatorList;
-        public IList<Locator> defaultUnicastLocatorList;
-        public Count manualLivelinessCount;
+        public ParticipantProxy(Participant participant)
+        {
+            this.ProtocolVersion = participant.ProtocolVersion;
+            this.VendorId = participant.VendorId;
+            this.GuidPrefix = participant.Guid.Prefix;
+            //this.ExpectsInlineQos = participant.ExpectsInlineQos;
+            this.DefaultMulticastLocatorList = participant.DefaultMulticastLocatorList;
+            this.DefaultUnicastLocatorList = participant.DefaultUnicastLocatorList;
+        }
+
+        public ProtocolVersion ProtocolVersion { get; set; }
+        public GuidPrefix GuidPrefix { get; set; }  // optional in SPDPdiscoveredParticipantData
+        public VendorId VendorId { get; set; }
+        public bool ExpectsInlineQos { get; set; }
+        public BuiltinEndpointSet AvailableBuiltinEndpoints { get; set; }
+        public IList<Locator> MetatrafficUnicastLocatorList { get; set; }
+        public IList<Locator> MetatrafficMulticastLocatorList { get; set; }
+        public IList<Locator> DefaultMulticastLocatorList { get; set; }
+        public IList<Locator> DefaultUnicastLocatorList { get; set; }
+        public Count ManualLivelinessCount { get; set; }
     }
 }

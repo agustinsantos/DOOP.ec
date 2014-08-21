@@ -146,6 +146,12 @@
   <ItemGroup>
     <Compile Include="Behavior\Types\Duration.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDS\API-DDS.csproj">
+      <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
+      <Name>API-DDS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

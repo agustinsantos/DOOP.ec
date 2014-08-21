@@ -26,7 +26,7 @@ namespace Doopec.Rtps.Discovery
             this.TopicKind = TopicKind.WITH_KEY;
             this.ReliabilityLevel = ReliabilityKind.BEST_EFFORT;
 
-            SPDPdiscoveredParticipantData data = new SPDPdiscoveredParticipantData();
+            SPDPdiscoveredParticipantData data = new SPDPdiscoveredParticipantData(participant);
             CacheChange<SPDPdiscoveredParticipantData> change = this.NewChange(ChangeKind.ALIVE, new Data(data), null);
             this.HistoryCache.AddChange(change);
 

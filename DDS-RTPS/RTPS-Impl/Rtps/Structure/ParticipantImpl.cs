@@ -12,6 +12,8 @@ namespace Doopec.Rtps.Structure
     public class ParticipantImpl : Participant
     {
         private SPDPbuiltinParticipantReader spdpReader;
+
+        //The SPDPbuiltinParticipantWriter is an RTPS Best-Effort StatelessWriter.
         private SPDPbuiltinParticipantWriter spdpWriter;
 
         public ParticipantImpl()
