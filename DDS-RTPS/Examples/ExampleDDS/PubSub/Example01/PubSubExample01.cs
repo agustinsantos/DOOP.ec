@@ -11,9 +11,9 @@ using org.omg.dds.topic;
 using System;
 using System.Reflection;
 
-namespace org.omg.example.dds.helloworld
+namespace ExampleDDS.PubSubExamples
 {
-    class PubSubExample02 : ExampleApp
+    class PubSubExample01 : ExampleApp
     {
         public override void RunExample(string[] args)
         {
@@ -38,9 +38,7 @@ namespace org.omg.example.dds.helloworld
                                                                     null /* all status changes */);
 
             // Now Publish some piece of data
-            Console.WriteLine("Enter a message for the topic:");
-            String msg = Console.ReadLine();
-            Greeting data = new Greeting(msg);
+            Greeting data = new Greeting("Hello, World with DDS");
             log.InfoFormat("Sending data:\"{0}\"", data.Value);
             dw.write(data);
 

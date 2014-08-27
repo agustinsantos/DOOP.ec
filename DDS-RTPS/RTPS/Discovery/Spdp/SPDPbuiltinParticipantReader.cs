@@ -10,6 +10,8 @@ namespace Doopec.Rtps.Discovery
         public SPDPbuiltinParticipantReader(Participant participant)
             : base(participant)
         {
+            this.guid = new GUID(participant.Guid.Prefix, EntityId.ENTITYID_SPDP_BUILTIN_PARTICIPANT_READER);
+
             this.TopicKind = TopicKind.WITH_KEY;
             this.ReliabilityLevel = ReliabilityKind.BEST_EFFORT;
         }

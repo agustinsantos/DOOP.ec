@@ -1,9 +1,6 @@
-﻿using org.omg.dds.core.policy;
+﻿using org.omg.dds.core;
+using org.omg.dds.core.policy;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Doopec.DDS.Core.Policy
 {
@@ -14,9 +11,25 @@ namespace Doopec.DDS.Core.Policy
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap getBootstrap()
+        public  Bootstrap getBootstrap()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class QosPolicyIdImpl : QosPolicyId
+    {
+        protected int policyIdValue;
+        protected string policyName;
+
+        public override int getPolicyIdValue()
+        {
+            return policyIdValue;
+        }
+
+        public override string getPolicyName()
+        {
+            return policyName;
         }
     }
 }

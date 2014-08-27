@@ -49,22 +49,27 @@ namespace Rtps.Structure.Types
 
         public readonly static EntityId ENTITYID_PARTICIPANT =
             new EntityId(new byte[] { 0, 0, 1 }, EntityKinds.BUILT_IN_PARTICIPANT);
-        public readonly static EntityId SEDPbuiltinTopicWriter =
+
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_TOPIC_WRITER =
             new EntityId(new byte[] { 0, 0, 2 }, EntityKinds.BUILT_IN_WRITER_W_KEY);
-        public readonly static EntityId SEDPbuiltinTopicReader =
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_TOPIC_READER =
             new EntityId(new byte[] { 0, 0, 2 }, EntityKinds.BUILT_IN_READER_W_KEY);
-        public readonly static EntityId SEDPbuiltinPublicationsWriter =
+        
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_PUBLICATIONS_WRITER =
             new EntityId(new byte[] { 0, 0, 3 }, EntityKinds.BUILT_IN_WRITER_W_KEY);
-        public readonly static EntityId SEDPbuiltinPublicationsReader =
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_PUBLICATIONS_READER =
             new EntityId(new byte[] { 0, 0, 3 }, EntityKinds.BUILT_IN_READER_W_KEY);
-        public readonly static EntityId SEDPbuiltinSubscriptionsWriter =
+        
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_SUBSCRIPTIONS_WRITER =
             new EntityId(new byte[] { 0, 0, 4 }, EntityKinds.BUILT_IN_WRITER_W_KEY);
-        public readonly static EntityId SEDPbuiltinSubscriptionsReader =
+        public readonly static EntityId ENTITYID_SEDP_BUILTIN_SUBSCRIPTIONS_READER =
             new EntityId(new byte[] { 0, 0, 4 }, EntityKinds.BUILT_IN_READER_W_KEY);
-        public readonly static EntityId SEDPbuiltinParticipantWriter =
+
+        public readonly static EntityId ENTITYID_SPDP_BUILTIN_PARTICIPANT_WRITER =
             new EntityId(new byte[] { 0, 1, 0 }, EntityKinds.BUILT_IN_WRITER_W_KEY);
-        public readonly static EntityId SEDPbuiltinParticipantReader =
+        public readonly static EntityId ENTITYID_SPDP_BUILTIN_PARTICIPANT_READER =
             new EntityId(new byte[] { 0, 1, 0 }, EntityKinds.BUILT_IN_READER_W_KEY);
+        
         public readonly static EntityId BuiltinParticipantMessageWriter =
             new EntityId(new byte[] { 0, 2, 0 }, EntityKinds.BUILT_IN_WRITER_W_KEY);
         public readonly static EntityId BuiltinParticipantMessageReader =

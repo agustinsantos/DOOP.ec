@@ -9,19 +9,30 @@ namespace Doopec.Dds.Core
 {
     public class BootstrapImpl : Bootstrap
     {
-        private static readonly SPI SPIInstance = new SPI();
+        private SPI SPIInstance;
 
         public override Bootstrap.ServiceProviderInterface getSPI()
         {
+            if (SPIInstance == null)
+                SPIInstance = new SPI(this);
+
             return SPIInstance;
         }
     }
 
     public class SPI : Bootstrap.ServiceProviderInterface
     {
+
+        private readonly Bootstrap boostrap;
+
+        public SPI(Bootstrap boostrap)
+        {
+            this.boostrap = boostrap;
+        }
+
         public org.omg.dds.domain.DomainParticipantFactory getParticipantFactory()
         {
-            return new DomainParticipantFactoryImpl();
+            return new DomainParticipantFactoryImpl(this.boostrap);
         }
 
         public org.omg.dds.type.dynamic.DynamicTypeFactory getTypeFactory()
@@ -39,7 +50,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration,  TimeUnit unit)
+        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -54,7 +65,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time,  TimeUnit units)
+        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time, TimeUnit units)
         {
             throw new NotImplementedException();
         }

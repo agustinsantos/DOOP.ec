@@ -49,11 +49,31 @@ namespace Doopec.Dds.Config
 
 
         [ConfigurationProperty("", IsDefaultCollection = true, IsKey = false, IsRequired = false)]
-        public DdsSettingCollection  Settings
+        public DdsSettingCollection Settings
         {
             get
             {
                 return this[""] as DdsSettingCollection;
+            }
+        }
+
+        public int DefaultDomainId
+        {
+            get
+            {
+                int rst = 0;
+                if (this.Settings["DefaultDomainId"] != null && !string.IsNullOrWhiteSpace(this.Settings["DefaultDomainId"].Value))
+                    rst = int.Parse(this.Settings["DefaultDomainId"].Value);
+                return rst;
+            }
+        }
+
+        [ConfigurationProperty("Doopec.Dds.QoS", IsKey = false, IsRequired = false)]
+        public QoSConfig QoSCollection
+        {
+            get
+            {
+                return (QoSConfig)this["Doopec.Dds.QoS"];
             }
         }
     }

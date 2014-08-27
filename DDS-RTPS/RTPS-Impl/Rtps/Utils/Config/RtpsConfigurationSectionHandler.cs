@@ -48,7 +48,7 @@ namespace Doopec.Rtps.Config
             get { return (SpdpConfig)this["Doopec.Rtps.SPDP"]; }
         }
 
-         [ConfigurationProperty("Doopec.Rtps.Writer", IsDefaultCollection = true, IsKey = false, IsRequired = false)]
+        [ConfigurationProperty("Doopec.Rtps.Writer", IsDefaultCollection = true, IsKey = false, IsRequired = false)]
         public WriterConfig WriterConfiguration
         {
             get { return (WriterConfig)this["Doopec.Rtps.Writer"]; }

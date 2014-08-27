@@ -28,7 +28,8 @@ namespace Rtps.Tests.Utils
             RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
             /// The default rate by which SPDP periodic announcements are sent equals 30 seconds.
             Assert.AreEqual(3000, rtpsConfig.SPDPConfig.ResendDataPeriod);
-            Assert.AreEqual("udp://239.255.0.1, udp://localhost", rtpsConfig.SPDPConfig.DiscoveryListenerUris);
+            Assert.AreEqual("udp://239.255.0.1", rtpsConfig.SPDPConfig.MulticastLocatorList);
+            Assert.AreEqual("udp://localhost", rtpsConfig.SPDPConfig.UnicastLocatorList);
             Assert.IsNotNull(rtpsConfig.SPDPConfig.WellKnownPorts);
 
             /// In order to enable out-of-the-box interoperability, the following default values must be used

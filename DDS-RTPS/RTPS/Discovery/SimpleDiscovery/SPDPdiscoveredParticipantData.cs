@@ -54,5 +54,10 @@ namespace Rtps.Discovery.Spdp
         {
             throw new System.NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            return PARTICIPANT_TOPIC + "{key: " + getKey() + ", QoS: " + getUserData()+"}";
+        }
     }
 }

@@ -28,8 +28,7 @@ namespace org.omg.dds.topic
 
 
     [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
-    public abstract class TopicBuiltinTopicData
-     : ModifiableValue<TopicBuiltinTopicData, TopicBuiltinTopicData>
+    public abstract class TopicBuiltinTopicData : ModifiableValue<TopicBuiltinTopicData, TopicBuiltinTopicData>
     {
         // -----------------------------------------------------------------------
         // Factory Methods

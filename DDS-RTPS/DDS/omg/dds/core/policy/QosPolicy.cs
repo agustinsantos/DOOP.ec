@@ -59,10 +59,6 @@ namespace org.omg.dds.core.policy
     [Nested]
     public interface QosPolicy : Value
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
         QosPolicyId getId();
     }
 
@@ -80,13 +76,13 @@ namespace org.omg.dds.core.policy
 
     public abstract class QosPolicyId
     {
-        // --- Factory Methods: ----------------------------------------------
-        /**
-         * Get the QoS policy ID for the given QoS policy class.
-         * 
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Get the QoS policy ID for the given QoS policy class.
+        /// </summary>
+        /// <param name="policyClass"></param>
+        /// <param name="bootstrap">
+        /// Identifies the Service instance to which the object will belong.</param>
+        /// <returns></returns>
         public static QosPolicyId getId(System.Type policyClass, Bootstrap bootstrap)
         {
             return bootstrap.getSPI().getQosPolicyId(policyClass);

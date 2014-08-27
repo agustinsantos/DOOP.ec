@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Doopec.Rtps.Discovery
 {
-    class Sedp
+    public class Sedp
     {
     }
 }

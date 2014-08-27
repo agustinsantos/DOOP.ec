@@ -27,6 +27,12 @@ namespace org.omg.dds.type
     ]
     public class Key : Attribute
     {
-        public bool value { get; set; }// default true;
+        private bool val = true;
+
+        public bool Value
+        {
+            get { return val; }
+            set { val = value; }
+        }// default true;
     }
 }

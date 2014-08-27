@@ -20,9 +20,14 @@ namespace Doopec.Rtps.Config
             get { return int.Parse(this.SpdpSettings["resendDataPeriod"].Value); }
         }
 
-        public string DiscoveryListenerUris
+        public string UnicastLocatorList
         {
-            get { return this.SpdpSettings["discoveryListenerUris"].Value; }
+            get { return this.SpdpSettings["unicastLocatorList"].Value; }
+        }
+
+        public string MulticastLocatorList
+        {
+            get { return this.SpdpSettings["multicastLocatorList"].Value; }
         }
 
         [ConfigurationProperty("WellKnownPorts")]

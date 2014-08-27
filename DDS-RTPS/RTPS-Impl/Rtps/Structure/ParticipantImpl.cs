@@ -11,16 +11,16 @@ namespace Doopec.Rtps.Structure
 {
     public class ParticipantImpl : Participant
     {
-        private SPDPbuiltinParticipantReader spdpReader;
+        private SPDPbuiltinParticipantReaderImpl spdpReader;
 
         //The SPDPbuiltinParticipantWriter is an RTPS Best-Effort StatelessWriter.
-        private SPDPbuiltinParticipantWriter spdpWriter;
+        private SPDPbuiltinParticipantWriterImpl spdpWriter;
 
         public ParticipantImpl()
             : base()
         {
-            spdpReader = new SPDPbuiltinParticipantReader(this);
-            spdpWriter = new SPDPbuiltinParticipantWriter(this);
+            spdpReader = new SPDPbuiltinParticipantReaderImpl(this);
+            spdpWriter = new SPDPbuiltinParticipantWriterImpl(this);
         }
     }
 }

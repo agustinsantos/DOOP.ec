@@ -1,5 +1,6 @@
 ﻿using ExampleDDS.Common;
 using ExampleDDS.DiscoveryExamples;
+using ExampleDDS.PubSubExamples;
 using System;
 
 namespace ExampleDDS
@@ -8,8 +9,9 @@ namespace ExampleDDS
     {
         public static void Main(string[] args)
         {
-            ExampleApp app = new DiscoveryExample01();
-             app.RunExample(args);
+            //ExampleApp app = new DiscoveryExample01();
+            ExampleApp app = new PubSubExample02();
+            app.RunExample(args);
 #if DEBUG
              Console.WriteLine("Press enter to close...");
              Console.ReadLine();

@@ -58,10 +58,11 @@
     <Compile Include="Behavior\Types\ChangeFromWriterStatusKind.cs" />
     <Compile Include="Behavior\Types\ParticipantMessageData.cs" />
     <Compile Include="Behavior\WriterProxy.cs" />
+    <Compile Include="Discovery\Spdp\SPDPbuiltinParticipantWriter.cs" />
     <Compile Include="Discovery\Spdp\BuiltinEndpointSet.cs" />
     <Compile Include="Discovery\Spdp\ParticipantProxy.cs" />
     <Compile Include="Discovery\Spdp\SPDPbuiltinParticipantReader.cs" />
-    <Compile Include="Discovery\Spdp\SPDPdiscoveredParticipantData.cs" />
+    <Compile Include="Discovery\SimpleDiscovery\SPDPdiscoveredParticipantData.cs" />
     <Compile Include="Messages\Header.cs" />
     <Compile Include="Messages\Message.cs" />
     <Compile Include="Messages\Receiver.cs" />

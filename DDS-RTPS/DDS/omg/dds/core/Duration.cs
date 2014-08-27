@@ -25,10 +25,9 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.core
 {
-
-    /**
-     * A span of elapsed time expressed with nanosecond precision.
-     */
+    /// <summary>
+    ///  A span of elapsed time expressed with nanosecond precision.
+    /// </summary>
     [Extensibility(ExtensibilityKind.FINAL_EXTENSIBILITY)]
     [Nested]
     public abstract class Duration : Value<Duration, ModifiableDuration>
@@ -37,7 +36,7 @@ namespace org.omg.dds.core
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
+        /*
          * Construct a time duration of the given magnitude.
          * 
          * A duration of magnitude {@link Long#MAX_VALUE} indicates an infinite
@@ -49,8 +48,7 @@ namespace org.omg.dds.core
          * @see     #isInfinite()
          * @see     #infiniteDuration(Bootstrap)
          */
-        public static ModifiableDuration newDuration(
-                long duration, TimeUnit unit, Bootstrap bootstrap)
+        public static ModifiableDuration newDuration(long duration, TimeUnit unit, Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newDuration(duration, unit);
         }

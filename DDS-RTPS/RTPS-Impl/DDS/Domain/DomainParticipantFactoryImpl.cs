@@ -1,8 +1,11 @@
-﻿using Doopec.DDS.Utils;
+﻿using Doopec.Dds.Config;
+using Doopec.DDS.Domain;
+using Doopec.DDS.Utils;
 using org.omg.dds.core;
 using org.omg.dds.domain;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace Doopec.Dds.Domain
 {
@@ -16,27 +19,42 @@ namespace Doopec.Dds.Domain
     /// </summary>
     public class DomainParticipantFactoryImpl : DomainParticipantFactory
     {
+
+        public DomainParticipantFactoryImpl(Bootstrap bootstrap)
+        {
+            this.bootstrap_ = bootstrap;
+            if (default_participant_qos_ == null)
+            {
+                default_participant_qos_ = new DomainParticipantQosImpl();
+
+                if (config.Settings["DefaultDomainQoS"] != null)
+                {
+                    string defaultQoS = config.Settings["DefaultDomainQoS"].Value;
+                    // TODO Assign values to default_participant_qos_ from configuration
+                }
+            }
+        }
+
         public override DomainParticipant createParticipant()
         {
-            // Check invalid qos
-            // Check inconsistent qos
-            // Check if repository exists for domainId
-            // Check if Guid is not GUID_UNKNOWN
-            DomainParticipantImpl dp = new DomainParticipantImpl();
+            int domainId = config.DefaultDomainId;
+            DomainParticipantQos qos = this.getDefaultParticipantQos();
 
-            // Add dp to participants
-            //participants_.Add();
-            return dp;
+            return this.createParticipant(domainId, qos, null, null);
         }
 
         public override DomainParticipant createParticipant(int domainId)
         {
-            throw new NotImplementedException();
+            DomainParticipantQos qos = this.getDefaultParticipantQos();
+
+            return this.createParticipant(domainId, qos, null, null);
         }
 
         public override DomainParticipant createParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
         {
-            throw new NotImplementedException();
+            DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener);
+            participants_.Add(domainId, dp);
+            return dp;
         }
 
         public override DomainParticipant createParticipant(int domainId, string qosLibraryName, string qosProfileName, DomainParticipantListener listener, ICollection<Type> statuses)
@@ -46,7 +64,9 @@ namespace Doopec.Dds.Domain
 
         public override DomainParticipant lookupParticipant(int domainId)
         {
-            throw new NotImplementedException();
+            DomainParticipant dp = null;
+            participants_.TryGetValue(domainId, out dp);
+            return dp;
         }
 
         public override DomainParticipantFactoryQos getQos()
@@ -89,19 +109,24 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override Bootstrap getBootstrap()
         {
-            throw new NotImplementedException();
+            return bootstrap_;
         }
 
         #region Fields
-        DomainParticipantFactoryQos qos_;
+        private DomainParticipantFactoryQos qos_;
 
         /// The default qos value of DomainParticipant.
-        DomainParticipantQos default_participant_qos_;
+        private DomainParticipantQos default_participant_qos_;
 
         /// The collection of domain participants.
-        IDictionary<long, ISet<DomainParticipant>> participants_ = new Dictionary<long, ISet<DomainParticipant>>();
+        private IDictionary<long, DomainParticipant> participants_ = new Dictionary<long, DomainParticipant>();
+
+        private readonly Bootstrap bootstrap_ = null;
+
+        private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+
         #endregion
     }
 }

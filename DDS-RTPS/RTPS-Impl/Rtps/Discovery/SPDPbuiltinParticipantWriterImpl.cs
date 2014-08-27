@@ -1,5 +1,6 @@
 ﻿using Doopec.Rtps.Behavior;
 using Rtps.Behavior;
+using Rtps.Discovery.Sedp;
 using Rtps.Discovery.Spdp;
 using Rtps.Structure;
 using Rtps.Structure.Types;
@@ -9,23 +10,20 @@ using System.Net;
 namespace Doopec.Rtps.Discovery
 {
     /// <summary>
-    /// For each Participant, the SPDP creates two RTPS built-in Endpoints: the SPDPbuiltinParticipantWriter and
-    /// the SPDPbuiltinParticipantReader.
+    /// For each Participant, the SPDP creates two RTPS built-in Endpoints: the
+    /// SPDPbuiltinParticipantWriter and the SPDPbuiltinParticipantReader.
     /// The SPDPbuiltinParticipantWriter is an RTPS Best-Effort StatelessWriter. The HistoryCache of the
     /// SPDPbuiltinParticipantWriter contains a single data-object of type SPDPdiscoveredParticipantData. 
-    /// The value of this data-object is set from the attributes in the Participant. If the attributes change,
-    /// the data-object is replaced.
+    /// The value of this data-object is set from the attributes in the Participant. 
+    /// If the attributes change, the data-object is replaced.
     /// </summary>
-    public class SPDPbuiltinParticipantWriter : StatelessWriter<SPDPdiscoveredParticipantData>, IDisposable
+    public class SPDPbuiltinParticipantWriterImpl : SPDPbuiltinParticipantWriter, IDisposable
     {
         private WriterWorker worker;
 
-        public SPDPbuiltinParticipantWriter(Participant participant)
+        public SPDPbuiltinParticipantWriterImpl(Participant participant)
             : base(participant)
         {
-            this.TopicKind = TopicKind.WITH_KEY;
-            this.ReliabilityLevel = ReliabilityKind.BEST_EFFORT;
-
             SPDPdiscoveredParticipantData data = new SPDPdiscoveredParticipantData(participant);
             CacheChange<SPDPdiscoveredParticipantData> change = this.NewChange(ChangeKind.ALIVE, new Data(data), null);
             this.HistoryCache.AddChange(change);

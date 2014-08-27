@@ -31,6 +31,7 @@ namespace org.omg.dds.type
         {
             value = val;
         }
+
         public long value {get; set;}
     }
 }
