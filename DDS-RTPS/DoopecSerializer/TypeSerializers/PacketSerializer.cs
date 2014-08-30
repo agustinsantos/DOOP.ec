@@ -7,14 +7,14 @@ using System.Reflection.Emit;
 
 namespace Doopec.Serializer.TypeSerializers
 {
-    public class GenericSerializer : IDynamicTypeSerializer
+    public class PacketSerializer : IDynamicTypeSerializer
     {
         public bool Handles(Type type)
         {
-            bool packetCompatible = SwitchedPacketAttribute.IsCompatible(type);
+            bool packetCompatible = PacketAttribute.IsCompatible(type);
 
             if (!packetCompatible)
-                throw new NotSupportedException(String.Format("Type {0} is not marked with SwitchedPacket attribute", type.FullName));
+                throw new NotSupportedException(String.Format("Type {0} is not marked with Packet attribute", type.FullName));
             return true;
         }
 
@@ -95,9 +95,11 @@ namespace Doopec.Serializer.TypeSerializers
 
             il.Emit(OpCodes.Ret);
         }
+
+
         public bool HasSwitch
         {
-            get { return true; }
+            get { return false; }
         }
     }
 }

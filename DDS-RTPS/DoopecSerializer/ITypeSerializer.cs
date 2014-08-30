@@ -37,5 +37,7 @@ namespace Doopec.Serializer
         /// Generate code to deserialize the given type
         /// </summary>
         void GenerateReaderMethod(Type type, CodeGenContext ctx, ILGenerator il);
+
+        bool HasSwitch { get; }
     }
 }

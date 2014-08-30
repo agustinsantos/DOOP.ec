@@ -36,15 +36,30 @@ namespace Doopec.Serializer
 
             var idLocal = il.DeclareLocal(typeof(ushort));
 
+            // bool ilLocal2 = Helpers.HasSwitchTypeMethodInfo(obj);
+            var idLocal2 = il.DeclareLocal(typeof(bool));
+            il.Emit(OpCodes.Ldarg_1);
+            il.EmitCall(OpCodes.Call, Helpers.HasSwitchTypeMethodInfo, null);
+            il.Emit(OpCodes.Stloc_S, idLocal2);
+
             // get TypeID from object's Type
             il.Emit(OpCodes.Ldarg_1);
             il.EmitCall(OpCodes.Call, Helpers.GetTypeIDMethodInfo, null);
             il.Emit(OpCodes.Stloc_S, idLocal);
 
+            var hasSwitchLabel = il.DefineLabel();
+
+            // if (idLocal2.HasSwitch)
+            il.Emit(OpCodes.Ldloc_S, idLocal2);
+            il.Emit(OpCodes.Brfalse_S, hasSwitchLabel);
+
             // write typeID
+            //il.Emit(OpCodes.)
             il.Emit(OpCodes.Ldarg_0);
             il.Emit(OpCodes.Ldloc_S, idLocal);
             il.EmitCall(OpCodes.Call, ctx.GetWriterMethodInfo(typeof(ushort)), null);
+
+            il.MarkLabel(hasSwitchLabel);
 
             // +1 for 0 (null)
             var jumpTable = new Label[map.Count + 1];

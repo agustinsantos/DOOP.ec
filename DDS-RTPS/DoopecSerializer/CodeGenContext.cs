@@ -22,6 +22,8 @@ namespace Doopec.Serializer
 
         public readonly ushort TypeID;
         public bool IsGenerated { get { return this.TypeSerializer != null; } }
+        public bool HasSwitch { get { return this.TypeSerializer != null && this.TypeSerializer.HasSwitch; } }
+
         public readonly IDynamicTypeSerializer TypeSerializer;
         public MethodInfo WriterMethodInfo;
         public MethodInfo ReaderMethodInfo;
@@ -57,6 +59,11 @@ namespace Doopec.Serializer
         public bool IsGenerated(Type type)
         {
             return m_typeMap[type].IsGenerated;
+        }
+
+        public bool HasSwitch(Type type)
+        {
+            return m_typeMap[type].HasSwitch;
         }
     }
 }

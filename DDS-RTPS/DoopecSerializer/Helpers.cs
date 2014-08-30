@@ -11,7 +11,10 @@ namespace Doopec.Serializer
     static class Helpers
     {
         public static readonly ConstructorInfo ExceptionCtorInfo = typeof(Exception).GetConstructor(BindingFlags.Public | BindingFlags.Instance, null, new Type[0], null);
+
         public static readonly MethodInfo GetTypeIDMethodInfo = typeof(Serializer).GetMethod("GetTypeID", BindingFlags.NonPublic | BindingFlags.Static, null, new Type[] { typeof(object) }, null);
+
+        public static readonly MethodInfo HasSwitchTypeMethodInfo = typeof(Serializer).GetMethod("HasSwitchType", BindingFlags.NonPublic | BindingFlags.Static, null, new Type[] { typeof(object) }, null);
 
         public static IEnumerable<FieldInfo> GetFieldInfos(Type type)
         {
@@ -44,6 +47,8 @@ namespace Doopec.Serializer
                 direct = true;
             else if (type.IsSealed && ctx.IsGenerated(type) == false)
                 direct = true;
+            else if (!ctx.HasSwitch(type))
+                direct = true;
             else
                 direct = false;
 
@@ -65,6 +70,8 @@ namespace Doopec.Serializer
             if (type.IsValueType || type.IsArray)
                 direct = true;
             else if (type.IsSealed && ctx.IsGenerated(type) == false)
+                direct = true;
+            else if (!ctx.HasSwitch(type))
                 direct = true;
             else
                 direct = false;

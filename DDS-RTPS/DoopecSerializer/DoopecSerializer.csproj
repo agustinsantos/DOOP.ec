@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Attributes\FieldAttribute.cs" />
     <Compile Include="Attributes\PacketAttribute.cs" />
+    <Compile Include="Attributes\SwitchedPacketAttribute.cs" />
     <Compile Include="CodeGenContext.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="ITypeSerializer.cs" />
@@ -55,7 +56,9 @@
     <Compile Include="Serializer.cs" />
     <Compile Include="SerializerCodegen.cs" />
     <Compile Include="TypeSerializers\ArraySerializer.cs" />
+    <Compile Include="TypeSerializers\DictionarySerializer.cs" />
     <Compile Include="TypeSerializers\EnumSerializer.cs" />
+    <Compile Include="TypeSerializers\PacketSerializer.cs" />
     <Compile Include="TypeSerializers\GenericSerializer.cs" />
     <Compile Include="TypeSerializers\PrimitivesSerializer.cs" />
   </ItemGroup>

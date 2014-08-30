@@ -169,5 +169,10 @@ namespace Doopec.Serializer.TypeSerializers
 
             il.Emit(OpCodes.Ret);
         }
+
+        public bool HasSwitch
+        {
+            get { return true; }
+        }
     }
 }

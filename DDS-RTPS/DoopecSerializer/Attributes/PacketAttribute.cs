@@ -13,14 +13,6 @@ namespace Doopec.Serializer.Attributes
                     AllowMultiple = false, Inherited = true)]
     public sealed class PacketAttribute : Attribute
     {
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public String Name { get; set; }
-
         public static bool IsCompatible(Type type)
         {
             return type.GetCustomAttributes(typeof(PacketAttribute), false).Any();

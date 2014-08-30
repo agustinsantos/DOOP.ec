@@ -14,18 +14,22 @@ namespace Doopec.Serializer
     public static partial class Serializer
     {
         static Dictionary<Type, ushort> s_typeIDMap;
+        static Dictionary<Type, TypeData> typeDataMap;
 
         delegate void SerializerSwitch(IoBuffer buffer, object ob);
         delegate void DeserializerSwitch(IoBuffer buffer, out object ob);
+        delegate void DeserializerSwitchTyped(IoBuffer buffer, out object o, ushort typeId);
 
         static SerializerSwitch s_serializerSwitch;
         static DeserializerSwitch s_deserializerSwitch;
+        static DeserializerSwitchTyped s_deserializerSwitchTyped;
 
         static ITypeSerializer[] s_typeSerializers = new ITypeSerializer[] {
             new PrimitivesSerializer(),
             new ArraySerializer(),
             new EnumSerializer(),
-            //new DictionarySerializer(),
+            new PacketSerializer(),
+            new DictionarySerializer(),
             new GenericSerializer(),
 		};
 
@@ -34,7 +38,7 @@ namespace Doopec.Serializer
         public static bool IsInitialized { get; private set; }
 
         /// <summary>
-        /// Initialize NetSerializer
+        /// Initialize Serializer
         /// </summary>
         /// <param name="rootTypes">Types to be (de)serialized</param>
         public static void Initialize(IEnumerable<Type> rootTypes)
@@ -43,7 +47,7 @@ namespace Doopec.Serializer
         }
 
         /// <summary>
-        /// Initialize NetSerializer
+        /// Initialize Serializer
         /// </summary>
         /// <param name="rootTypes">Types to be (de)serialized</param>
         /// <param name="userTypeSerializers">Array of custom serializers</param>
@@ -51,14 +55,13 @@ namespace Doopec.Serializer
         {
             if (IsInitialized)
                 return;
-                //throw new InvalidOperationException("NetSerializer already initialized");
 
             if (userTypeSerializers.All(s => s is IDynamicTypeSerializer || s is IStaticTypeSerializer) == false)
                 throw new ArgumentException("TypeSerializers have to implement IDynamicTypeSerializer or  IStaticTypeSerializer");
 
             s_userTypeSerializers = userTypeSerializers;
 
-            var typeDataMap = GenerateTypeData(rootTypes);
+            typeDataMap = GenerateTypeData(rootTypes);
 
             GenerateDynamic(typeDataMap);
 
@@ -71,10 +74,18 @@ namespace Doopec.Serializer
             IsInitialized = true;
         }
 
+        public static void Serialize<T>(IoBuffer buffer, object data)
+        {
+            if (!IsInitialized)
+                throw new InvalidOperationException("Serializer not initialized");
+
+            Serialize(buffer, data);
+        }
+
         public static void Serialize(IoBuffer buffer, object data)
         {
             if (!IsInitialized)
-                throw new InvalidOperationException("NetSerializer not initialized");
+                throw new InvalidOperationException("Serializer not initialized");
 
             s_serializerSwitch(buffer, data);
         }
@@ -82,17 +93,18 @@ namespace Doopec.Serializer
         public static T Deserialize<T>(IoBuffer buffer)
         {
             if (!IsInitialized)
-                throw new InvalidOperationException("NetSerializer not initialized");
+                throw new InvalidOperationException("Serializer not initialized");
 
+            ushort id = GetTypeID(typeof(T));
             object o;
-            s_deserializerSwitch(buffer, out o);
+            s_deserializerSwitchTyped(buffer, out o, id);
             return (T)o;
         }
 
         public static object Deserialize(IoBuffer buffer)
         {
             if (!IsInitialized)
-                throw new InvalidOperationException("NetSerializer not initialized");
+                throw new InvalidOperationException("Serializer not initialized");
 
             object o;
             s_deserializerSwitch(buffer, out o);
@@ -210,6 +222,15 @@ namespace Doopec.Serializer
             deserializerSwitchMethod.DefineParameter(2, ParameterAttributes.Out, "value");
             var deserializerSwitchMethodInfo = deserializerSwitchMethod;
 
+            var deserializerSwitchTypedMethod = new DynamicMethod("DeserializerSwitchTyped", null,
+                new Type[] { typeof(IoBuffer), typeof(object).MakeByRefType(), typeof(ushort) },
+                typeof(Serializer), true);
+            deserializerSwitchTypedMethod.DefineParameter(1, ParameterAttributes.None, "buffer");
+            deserializerSwitchTypedMethod.DefineParameter(2, ParameterAttributes.Out, "value");
+            deserializerSwitchTypedMethod.DefineParameter(3, ParameterAttributes.None, "typeId");
+            var deserializerSwitchTypedMethodInfo = deserializerSwitchTypedMethod;
+
+
             var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, deserializerSwitchMethodInfo);
 
             /* generate bodies */
@@ -233,14 +254,18 @@ namespace Doopec.Serializer
             ilGen = deserializerSwitchMethod.GetILGenerator();
             DeserializerCodegen.GenerateDeserializerSwitch(ctx, ilGen, map);
             s_deserializerSwitch = (DeserializerSwitch)deserializerSwitchMethod.CreateDelegate(typeof(DeserializerSwitch));
+
+            ilGen = deserializerSwitchTypedMethod.GetILGenerator();
+            DeserializerCodegen.GenerateDeserializerSwitchTyped(ctx, ilGen, map);
+            s_deserializerSwitchTyped = (DeserializerSwitchTyped)deserializerSwitchTypedMethod.CreateDelegate(typeof(DeserializerSwitchTyped));
         }
 
 #if GENERATE_DEBUGGING_ASSEMBLY
         static void GenerateDebugAssembly(Dictionary<Type, TypeData> map)
         {
-            var ab = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("NetSerializerDebug"), AssemblyBuilderAccess.RunAndSave);
-            var modb = ab.DefineDynamicModule("NetSerializerDebug.dll");
-            var tb = modb.DefineType("NetSerializer", TypeAttributes.Public);
+            var ab = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("SerializerDebug"), AssemblyBuilderAccess.RunAndSave);
+            var modb = ab.DefineDynamicModule("SerializerDebug.dll");
+            var tb = modb.DefineType("Serializer", TypeAttributes.Public);
 
             /* generate stubs */
             foreach (var kvp in map)
@@ -270,6 +295,12 @@ namespace Doopec.Serializer
             deserializerSwitchMethod.DefineParameter(2, ParameterAttributes.Out, "value");
             var deserializerSwitchMethodInfo = deserializerSwitchMethod;
 
+            var deserializerSwitchTypedMethod = tb.DefineMethod("DeserializerSwitchTyped", MethodAttributes.Public | MethodAttributes.Static, null, new Type[] { typeof(IoBuffer), typeof(object).MakeByRefType(), typeof(ushort) });
+            deserializerSwitchTypedMethod.DefineParameter(1, ParameterAttributes.None, "buffer");
+            deserializerSwitchTypedMethod.DefineParameter(2, ParameterAttributes.Out, "value");
+            deserializerSwitchTypedMethod.DefineParameter(3, ParameterAttributes.None, "typeId");
+            var deserializerSwitchTypedMethodInfo = deserializerSwitchTypedMethod;
+
             var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, deserializerSwitchMethodInfo);
 
             /* generate bodies */
@@ -292,8 +323,11 @@ namespace Doopec.Serializer
             ilGen = deserializerSwitchMethod.GetILGenerator();
             DeserializerCodegen.GenerateDeserializerSwitch(ctx, ilGen, map);
 
+            ilGen = deserializerSwitchTypedMethod.GetILGenerator();
+            DeserializerCodegen.GenerateDeserializerSwitchTyped(ctx, ilGen, map);
+
             tb.CreateType();
-            ab.Save("NetSerializerDebug.dll");
+            ab.Save("SerializerDebug.dll");
         }
 #endif
 
@@ -311,6 +345,34 @@ namespace Doopec.Serializer
                 throw new InvalidOperationException(String.Format("Unknown type {0}", type.FullName));
 
             return id;
+        }
+
+        static ushort GetTypeID(Type type)
+        {
+            ushort id;
+
+            if (type == null)
+                return 0;
+
+            if (s_typeIDMap.TryGetValue(type, out id) == false)
+                throw new InvalidOperationException(String.Format("Unknown type {0}", type.FullName));
+
+            return id;
+        }
+
+        static bool HasSwitchType(object ob)
+        {
+            TypeData typeData;
+
+            if (ob == null)
+                return false;
+
+            var type = ob.GetType();
+
+            if (typeDataMap.TryGetValue(type, out typeData) == false)
+                throw new InvalidOperationException(String.Format("Unknown type {0}", type.FullName));
+
+            return typeData.HasSwitch;
         }
     }
 }
