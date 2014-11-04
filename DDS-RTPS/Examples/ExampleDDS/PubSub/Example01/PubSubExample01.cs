@@ -23,14 +23,14 @@ namespace ExampleDDS.PubSubExamples
             DomainParticipant dp = factory.createParticipant();
 
             // Implicitly create TypeSupport and register type:
-            Topic<Greeting> tp = dp.createTopic<Greeting>("Greetings Topic");
+            Topic<Greeting> tp = dp.CreateTopic<Greeting>("Greetings Topic");
 
             // Create the publisher
-            Publisher pub = dp.createPublisher();
+            Publisher pub = dp.CreatePublisher();
             DataWriter<Greeting> dw = pub.createDataWriter(tp);
 
             // Create the subscriber
-            Subscriber sub = dp.createSubscriber();
+            Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
                                                                     sub.getDefaultDataReaderQos(),

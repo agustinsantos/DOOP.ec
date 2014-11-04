@@ -28,10 +28,10 @@ namespace ExampleDDS.DiscoveryExamples
             // At this point the Simple Participant Discovery protocol should be running.
 
            // // Implicitly create TypeSupport and register type:
-           // Topic<SPDPdiscoveredParticipantData> tp = dp.createTopic<SPDPdiscoveredParticipantData>("DCPSParticipant");
+           // Topic<SPDPdiscoveredParticipantData> tp = dp.CreateTopic<SPDPdiscoveredParticipantData>("DCPSParticipant");
 
            // // Create the publisher
-           // Publisher pub = dp.createPublisher();
+           // Publisher pub = dp.CreatePublisher();
            // DataWriter<SPDPdiscoveredParticipantData> dw = pub.createDataWriter(tp);
            //// dw.write(data);
 

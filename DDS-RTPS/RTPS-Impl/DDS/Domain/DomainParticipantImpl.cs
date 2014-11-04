@@ -51,46 +51,49 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public Publisher createPublisher()
+        public Publisher CreatePublisher()
         {
             Publisher pub = new PublisherImpl(null, null, this);
             AddPublisher(pub);
             return pub;
         }
 
-        public Publisher createPublisher(PublisherQos qos, PublisherListener listener, ICollection<Type> statuses)
+        public Publisher CreatePublisher(PublisherQos qos, PublisherListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Publisher createPublisher(string qosLibraryName, string qosProfileName, PublisherListener listener, ICollection<Type> statuses)
+        public Publisher CreatePublisher(string qosLibraryName, string qosProfileName, PublisherListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Subscriber createSubscriber()
+        public Subscriber CreateSubscriber()
         {
             Subscriber sub = new SubscriberImpl(null, null, this);
             AddSubscriber(sub);
             return sub;
         }
 
-        public Subscriber createSubscriber(SubscriberQos qos, SubscriberListener listener, ICollection<Type> statuses)
+        public Subscriber CreateSubscriber(SubscriberQos qos, SubscriberListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Subscriber createSubscriber(string qosLibraryName, string qosProfileName, SubscriberListener listener, ICollection<Type> statuses)
+        public Subscriber CreateSubscriber(string qosLibraryName, string qosProfileName, SubscriberListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Subscriber getBuiltinSubscriber()
+        public Subscriber BuiltinSubscriber
         {
-            throw new NotImplementedException();
+            get {
+                throw new NotImplementedException();
+            }
+            
         }
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName)
         {
             //DomainParticipant.TOPIC_QOS_DEFAULT, null,  StatusMask.STATUS_MASK_NONE
             // look for this topic. Check id it already exists
@@ -103,163 +106,154 @@ namespace Doopec.Dds.Domain
         }
 
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, Type type, TopicQos qos, TopicListener<TYPE> listener, ICollection<Type> statuses)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName, Type type, TopicQos qos, TopicListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, TypeSupport<TYPE> type)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName, TypeSupport<TYPE> type)
         {
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, TypeSupport<TYPE> type, TopicQos qos, TopicListener<TYPE> listener, ICollection<Type> statuses)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName, TypeSupport<TYPE> type, TopicQos qos, TopicListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> createTopic<TYPE>(string topicName, TypeSupport<TYPE> type, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
+        public Topic<TYPE> CreateTopic<TYPE>(string topicName, TypeSupport<TYPE> type, string qosLibraryName, string qosProfileName, TopicListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> findTopic<TYPE>(string topicName, Duration timeout)
+        public Topic<TYPE> FindTopic<TYPE>(string topicName, Duration timeout)
         {
             throw new NotImplementedException();
         }
 
-        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout, TimeUnit unit)
+        public Topic<TYPE> FindTopic<TYPE>(string topicName, long timeout, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
 
-        public TopicDescription<TYPE> lookupTopicDescription<TYPE>(string name)
+        public TopicDescription<TYPE> LookupTopicDescription<TYPE>(string name)
         {
             throw new NotImplementedException();
         }
 
-        public ContentFilteredTopic<TYPE> createContentFilteredTopic<TYPE>(string name, Topic<TYPE> relatedTopic, string filterExpression, IList<string> expressionParameters)
+        public ContentFilteredTopic<TYPE> CreateContentFilteredTopic<TYPE>(string name, Topic<TYPE> relatedTopic, string filterExpression, IList<string> expressionParameters)
         {
             throw new NotImplementedException();
         }
 
-        public MultiTopic<TYPE> createMultiTopic<TYPE>(string name, string typeName, string subscriptionExpression, List<string> expressionParameters)
+        public MultiTopic<TYPE> CreateMultiTopic<TYPE>(string name, string typeName, string subscriptionExpression, List<string> expressionParameters)
         {
             throw new NotImplementedException();
         }
 
-        public void closeContainedEntities()
+        public void CloseContainedEntities()
         {
             throw new NotImplementedException();
         }
 
-        public void ignoreParticipant(InstanceHandle handle)
+        public void IgnoreParticipant(InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void ignoreTopic(InstanceHandle handle)
+        public void IgnoreTopic(InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void ignorePublication(InstanceHandle handle)
+        public void IgnorePublication(InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void ignoreSubscription(InstanceHandle handle)
+        public void IgnoreSubscription(InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public int getDomainId()
+        public int DomainId
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void AssertLiveliness()
         {
             throw new NotImplementedException();
         }
 
-        public void assertLiveliness()
+        public PublisherQos DefaultPublisherQos
+        {
+            get {throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        public void SetDefaultPublisherQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
 
-        public PublisherQos getDefaultPublisherQos()
+        public SubscriberQos DefaultSubscriberQos
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        public void SetDefaultSubscriberQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultPublisherQos(PublisherQos qos)
+        public TopicQos DefaultTopicQos
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        public void SetDefaultTopicQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultPublisherQos(string qosLibraryName, string qosProfileName)
+        public ICollection<InstanceHandle> GetDiscoveredParticipants(ICollection<InstanceHandle> participantHandles)
         {
             throw new NotImplementedException();
         }
 
-        public SubscriberQos getDefaultSubscriberQos()
+        public ParticipantBuiltinTopicData GetDiscoveredParticipantData(ParticipantBuiltinTopicData participantData, InstanceHandle participantHandle)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultSubscriberQos(SubscriberQos qos)
+        public ICollection<InstanceHandle> GetDiscoveredTopics(ICollection<InstanceHandle> topicHandles)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultSubscriberQos(string qosLibraryName, string qosProfileName)
+        public TopicBuiltinTopicData GetDiscoveredTopicData(TopicBuiltinTopicData topicData, InstanceHandle topicHandle)
         {
             throw new NotImplementedException();
         }
 
-        public TopicQos getDefaultTopicQos()
+        public bool ContainsEntity(InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultTopicQos(TopicQos qos)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void setDefaultTopicQos(string qosLibraryName, string qosProfileName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<InstanceHandle> getDiscoveredParticipants(ICollection<InstanceHandle> participantHandles)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ParticipantBuiltinTopicData getDiscoveredParticipantData(ParticipantBuiltinTopicData participantData, InstanceHandle participantHandle)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<InstanceHandle> getDiscoveredTopics(ICollection<InstanceHandle> topicHandles)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TopicBuiltinTopicData getDiscoveredTopicData(TopicBuiltinTopicData topicData, InstanceHandle topicHandle)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool containsEntity(InstanceHandle handle)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ModifiableTime getCurrentTime(ModifiableTime currentTime)
+        public ModifiableTime CurrentTime(ModifiableTime currentTime)
         {
             throw new NotImplementedException();
         }
@@ -373,7 +367,7 @@ namespace Doopec.Dds.Domain
 
 
 
-        public Topic<TYPE> findTopic<TYPE>(string topicName, long timeout, global::DDS.ConversionUtils.TimeUnit unit)
+        public Topic<TYPE> FindTopic<TYPE>(string topicName, long timeout, global::DDS.ConversionUtils.TimeUnit unit)
         {
             throw new NotImplementedException();
         }
