@@ -17,6 +17,7 @@
  */
 
 using System;
+using System.Diagnostics;
 
 namespace org.omg.dds.type
 {
@@ -24,17 +25,19 @@ namespace org.omg.dds.type
     [System.AttributeUsage(AttributeTargets.Class |
                             AttributeTargets.Enum)
     ]
-    public class BitBound : Attribute
+    public class BitBoundAttribute : Attribute
     {
-        public BitBound(int val)
-        { value = val; }
+        public BitBoundAttribute(int val)
+        {
+            Value = val;
+        }
 
-        public BitBound( )
-        { value = 32; }
+        public BitBoundAttribute()
+        { Value = 32; }
         
         /// <summary>
         /// default 32;
         /// </summary>
-        public int value { get; set;} 
+        public int Value { get; set;} 
     }
 }

@@ -23,6 +23,11 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.type.typeobject
 {
+    /// <summary>
+    /// The TypeObject type is designed to describe other types in that type system;
+    /// in that sense, it is a meta-type.
+    /// This identifies a single type within a library.
+    /// </summary>
     [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
     public interface TypeObject : ModifiableValue<TypeObject, TypeObject>
     {

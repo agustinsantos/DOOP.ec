@@ -20,7 +20,7 @@ using System;
 namespace org.omg.dds.core
 {
 
-
+    [Serializable]
     public abstract class OutOfResourcesException : DDSException
     {
         // -----------------------------------------------------------------------

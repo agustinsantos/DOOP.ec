@@ -19,23 +19,27 @@
 
 
 using org.omg.dds.type;
+using System;
 
 namespace org.omg.dds.type.typeobject
 {
-
+    [Flags]
     [BitSet]
     [BitBound(16)]
-    public enum TypeFlag : short
+    public enum TypeFlag : ushort
     {
         // -----------------------------------------------------------------------
         // Constants
         // -----------------------------------------------------------------------
+        NO_FLAGS = 0,
 
         [Value(0)]
-        IS_FINAL = (short)0,
+        IS_FINAL = 1,
+
         [Value(1)]
-        IS_MUTABLE = (short)1,
+        IS_MUTABLE = 2,
+
         [Value(2)]
-        IS_NESTED = (short)2
+        IS_NESTED = 4
     }
 }

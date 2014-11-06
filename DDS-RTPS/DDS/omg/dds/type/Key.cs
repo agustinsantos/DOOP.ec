@@ -25,7 +25,7 @@ namespace org.omg.dds.type
     [System.AttributeUsage(AttributeTargets.Field |
                             AttributeTargets.Method)
     ]
-    public class Key : Attribute
+    public class KeyAttribute : Attribute
     {
         private bool val = true;
 

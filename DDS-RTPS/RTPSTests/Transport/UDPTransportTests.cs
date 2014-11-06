@@ -5,6 +5,8 @@ using Rtps.Messages;
 using Rtps.Messages.Submessages.Elements;
 using Data = Rtps.Messages.Submessages.Data;
 using Rtps.Structure.Types;
+using Doopec.Utils.Network.Encoders;
+using Mina.Core.Buffer;
 
 namespace Rtps.Tests.Transport
 {
@@ -41,15 +43,11 @@ namespace Rtps.Tests.Transport
             EntityId id2 = EntityId.ENTITYID_UNKNOWN;
 
             msg.SubMessages.Clear();
-            byte[] buff = new byte[4 + 4];
-            if (BitConverter.IsLittleEndian)
-                Array.Copy(DataEncapsulation.CDR_LE_HEADER, 0, buff, 0, 4);
-            else
-                Array.Copy(DataEncapsulation.CDR_BE_HEADER, 0, buff, 0, 4);
-            Array.Copy(BitConverter.GetBytes(number), 0, buff, 4, 4);
-            SerializedPayload data = new SerializedPayload();
-            data.DataEncapsulation = DataEncapsulation.CreateInstance(buff);
-            msg.SubMessages.Add(new Data(id1, id2, 1, null, data));
+            byte[] buff = BitConverter.GetBytes(number);
+            SerializedPayload payload = new SerializedPayload();
+            //TODO payload.DataEncapsulation = buff.EncapsuleCDRData(BitConverter.IsLittleEndian ? ByteOrder.BigEndian : ByteOrder.BigEndian);
+            throw new NotImplementedException();
+            msg.SubMessages.Add(new Data(id1, id2, 1, null, payload));
 
             trans.SendMessage(msg);
         }

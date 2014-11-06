@@ -28,9 +28,9 @@ namespace org.omg.dds.type
                             AttributeTargets.Field |
                             AttributeTargets.Method)
     ]
-    public class BitSet : Attribute
+    public class BitSetAttribute : Attribute
     {
-        public BitSet()
+        public BitSetAttribute()
         { 
         }
 

@@ -361,4 +361,125 @@ namespace SerializerTests
             throw new NotImplementedException();
         }
     }
+
+    public enum MyEnum
+    {
+        Zero = 0,
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
+    }
+
+    [Packet]
+    public sealed class EnumPacket
+    {
+        [Field]
+        private MyEnum m_val;
+
+        public EnumPacket(MyEnum v)
+        {
+            m_val = v;
+        }
+        public static int Size()
+        {
+            return sizeof(MyEnum);
+        }
+
+        public override bool Equals(object other)
+        {
+            EnumPacket otherObj = (EnumPacket)other;
+            return this.m_val == otherObj.m_val;
+        }
+        public override Int32 GetHashCode()
+        {
+            return this.m_val.GetHashCode();
+        }
+    }
+
+    [Packet]
+    public struct MyStruct1
+    {
+        [Field]
+        public byte m_byte;
+
+        [Field]
+        public int m_int;
+
+        [Field]
+        public long m_long;
+
+        public static int Size()
+        {
+            return sizeof(byte) + sizeof(int) + sizeof(long);
+        } 
+
+        public override bool Equals(object other)
+        {
+            MyStruct1 otherObj = (MyStruct1)other;
+            return this.m_byte == otherObj.m_byte &&
+                    this.m_int == otherObj.m_int &&
+                    this.m_long == otherObj.m_long;
+        }
+        public override Int32 GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    [Packet]
+    public struct MyStruct2
+    {
+        [Field]
+        public MyEnum m_enum;
+
+        [Field]
+        public int m_int;
+
+        public static int Size()
+        {
+            return sizeof(MyEnum) + sizeof(int);
+        } 
+
+        public override bool Equals(object other)
+        {
+            MyStruct2 otherObj = (MyStruct2)other;
+            return this.m_enum == otherObj.m_enum &&
+                   this.m_int == otherObj.m_int;
+        }
+        public override Int32 GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    [Packet]
+    public sealed class StructMessage
+    {
+        [Field]
+        MyStruct1 m_struct1;
+
+        [Field]
+        MyStruct2 m_struct2;
+
+        public StructMessage()
+        {
+        }
+        public static int Size()
+        {
+            return MyStruct1.Size() + MyStruct2.Size();
+        } 
+
+        public override bool Equals(object other)
+        {
+            StructMessage otherObj = (StructMessage)other;
+            return this.m_struct1.Equals(otherObj.m_struct1) &&
+                   this.m_struct2.Equals(otherObj.m_struct2);
+        }
+        public override Int32 GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

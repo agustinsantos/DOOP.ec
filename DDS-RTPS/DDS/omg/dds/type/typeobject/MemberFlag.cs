@@ -18,28 +18,50 @@
 
 
 using org.omg.dds.type;
+using System;
 
 namespace org.omg.dds.type.typeobject
 {
-
+    [Flags]
     [BitSet]
     [BitBound(16)]
-    public enum MemberFlag : short
+    public enum MemberFlag : ushort
     {
         // -----------------------------------------------------------------------
         // Constants
         // -----------------------------------------------------------------------
+        NO_FLAGS = 0,
 
         [Value(0)]
-        IS_KEY = (short)0,
-
+        IS_KEY = 1,
+  
         [Value(1)]
-        IS_OPTIONAL = (short)1,
+        IS_OPTIONAL = 2,
 
         [Value(2)]
-        IS_SHAREABLE = (short)2,
+        IS_SHAREABLE = 4,
 
         [Value(3)]
-        IS_UNION_DEFAULT = (short)3
+        IS_UNION_DEFAULT = 8
+    }
+
+    public static class MemberFlagExtensions
+    {
+        public static bool IsKey(this MemberFlag flag)
+        {
+            return (flag & MemberFlag.IS_KEY) == MemberFlag.IS_KEY;
+        }
+        public static bool IsOptional(this MemberFlag flag)
+        {
+            return (flag & MemberFlag.IS_OPTIONAL) == MemberFlag.IS_OPTIONAL;
+        }
+        public static bool IsSharable(this MemberFlag flag)
+        {
+            return (flag & MemberFlag.IS_SHAREABLE) == MemberFlag.IS_SHAREABLE;
+        }
+        public static bool IsUnionDefault(this MemberFlag flag)
+        {
+            return (flag & MemberFlag.IS_UNION_DEFAULT) == MemberFlag.IS_UNION_DEFAULT;
+        }
     }
 }

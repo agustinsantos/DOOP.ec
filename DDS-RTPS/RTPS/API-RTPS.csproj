@@ -72,7 +72,6 @@
     <Compile Include="Messages\Submessages\AckNack.cs" />
     <Compile Include="Messages\Submessages\Data.cs" />
     <Compile Include="Messages\Submessages\DataFrag.cs" />
-    <Compile Include="Messages\Submessages\Elements\CDREncapsulation.cs" />
     <Compile Include="Messages\Submessages\Elements\CountElement.cs" />
     <Compile Include="Messages\Submessages\Elements\DataEncapsulation.cs" />
     <Compile Include="Messages\Submessages\Elements\EntityIdElement.cs" />

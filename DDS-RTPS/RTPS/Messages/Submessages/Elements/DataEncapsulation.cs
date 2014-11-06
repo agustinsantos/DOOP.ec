@@ -36,59 +36,6 @@ namespace Rtps.Messages.Submessages.Elements
         /// </summary>
         public abstract byte[] SerializedPayload { get; }
 
-        /// <summary>
-        /// Creates an instance of DataEncapsulation. Encapsulation identified by
-        ///  reading first 2 bytes of serializedPayload.
-        /// </summary>
-        /// <param name="serializedPayload"></param>
-        /// <returns></returns>
-        public static DataEncapsulation CreateInstance(byte[] serializedPayload)
-        {
-#if TODO
-            IoBuffer bb = IoBuffer.Wrap(serializedPayload);
-            byte[] encapsulationHeader = new byte[2];
-            bb.Get(encapsulationHeader, 0, 2);
-
-            short eh = (short)(((short)encapsulationHeader[0] << 8) | (encapsulationHeader[1] & 0xff));
-
-            switch (eh)
-            {
-                case 0:
-                case 1:
-                    bool littleEndian = (eh & 0x1) == 0x1;
-                    if (littleEndian)
-                    {
-                        bb.Order = ByteOrder.LittleEndian;
-                    }
-                    else
-                    {
-                        bb.Order = ByteOrder.BigEndian;
-                    }
-
-                    return new CDREncapsulation(bb);
-                case 2:
-                case 3:
-
-                    littleEndian = (eh & 0x1) == 0x1;
-                    if (littleEndian)
-                    {
-                        bb.Order = ByteOrder.LittleEndian;
-                    }
-                    else
-                    {
-                        bb.Order = ByteOrder.BigEndian;
-                    }
-
-                    return new ParameterListEncapsulation(bb);
-        }
-
-            // TODO: handle this more gracefully
-            return null;
- 
-#endif
-            throw new NotImplementedException();
-        }
-
         public override string ToString()
         {
             return BitConverter.ToString(this.SerializedPayload);

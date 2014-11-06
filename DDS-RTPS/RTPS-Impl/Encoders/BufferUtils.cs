@@ -4,7 +4,7 @@ namespace Doopec.Utils.Network.Encoders
 {
     public static class BufferUtils
     {
-         /// <summary>
+        /// <summary>
         /// Aligns this buffer to given byteBoundary.
         /// </summary>
         /// <param name="buffer"></param>
@@ -19,5 +19,5 @@ namespace Doopec.Utils.Network.Encoders
                 buffer.Position = position + (byteBoundary - adv);
             }
         }
-    }
+     }
 }

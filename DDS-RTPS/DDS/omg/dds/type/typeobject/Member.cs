@@ -43,13 +43,13 @@ namespace org.omg.dds.type.typeobject
         Member setProperty(MemberProperty newProperty);
 
         [ID(MemberMemberId.ANNOTATION_MEMBER_MEMBER_ID)]
-        List<AnnotationUsage> getAnnotation();
+        IList<AnnotationUsage> getAnnotation();
 
         /**
          * @return  this
          */
         [ID(MemberMemberId.ANNOTATION_MEMBER_MEMBER_ID)]
-        Member setAnnotation(List<AnnotationUsage> newAnnotation);
+        Member setAnnotation(IList<AnnotationUsage> newAnnotation);
 
     }
 

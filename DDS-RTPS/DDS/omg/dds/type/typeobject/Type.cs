@@ -39,12 +39,12 @@ namespace org.omg.dds.type.typeobject
         Type setProperty(TypeProperty newProperty);
 
         [ID(TypeMemberId.ANNOTATION_TYPE_MEMBER_ID)]
-        List<AnnotationUsage> getAnnotation();
+        IList<AnnotationUsage> getAnnotation();
 
         /**
          * @return  this
          */
-        Type setAnnotation(List<AnnotationUsage> newAnnotation);
+        Type setAnnotation(IList<AnnotationUsage> newAnnotation);
 
     }
 

@@ -25,12 +25,12 @@ namespace org.omg.dds.type
     [System.AttributeUsage(AttributeTargets.Field |
                             AttributeTargets.Method)
     ]
-    public class Optional : Attribute
+    public class OptionalAttribute : Attribute
     {
-        public Optional()
+        public OptionalAttribute()
         {
-            value = true;
+            Value = true;
         }
-        public bool value { get; set; }// default true;
+        public bool Value { get; set; }// default true;
     }
 }

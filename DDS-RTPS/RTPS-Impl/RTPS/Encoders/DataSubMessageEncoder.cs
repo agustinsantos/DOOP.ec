@@ -94,7 +94,8 @@ namespace Doopec.Rtps.Encoders
                 }
 
                 buffer.Get(serializedPayload, 0, serializedPayload.Length);
-                obj.SerializedPayload.DataEncapsulation = DataEncapsulation.CreateInstance(serializedPayload);
+                throw new NotImplementedException();
+                //TODO obj.SerializedPayload.DataEncapsulation = serializedPayload.EncapsuleCDRData(BitConverter.IsLittleEndian ? ByteOrder.BigEndian : ByteOrder.BigEndian);
             }
         }
     }

@@ -39,12 +39,12 @@ namespace org.omg.dds.type.typeobject
         EnumerationType setBitBound(int newBitBound);
 
         [ID(EnumerationTypeMemberId.CONSTANT_ENUMERATIONTYPE_MEMBER_ID)]
-        List<EnumeratedConstant> getConstant();
+        IList<EnumeratedConstant> getConstant();
 
         /**
          * @return  this
          */
-        EnumerationType setConstant(List<EnumeratedConstant> newConstant);
+        EnumerationType setConstant(IList<EnumeratedConstant> newConstant);
 
     }
     // -----------------------------------------------------------------------

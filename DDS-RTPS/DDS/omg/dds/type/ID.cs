@@ -21,17 +21,29 @@ using System;
 
 namespace org.omg.dds.type
 {
-
+    /// <summary>
+    /// Each member of an aggregated type is uniquely identified within that type by an integer “member ID.” 
+    /// Member IDs are unsigned and have a range that can be represented in 28 bits: from zero to 268,435,455 (0x0FFFFFFF). 
+    /// (The full range of a 32-bit unsigned integer is not used in order to allow binary Data Representations the 
+    /// freedom to embed a small amount of meta-data into a single 32-bit field if they so desire.)
+    /// The upper end of the range, from 268,419,072 (0x0FFFC000) to 268,435,455 (0x0FFFFFFF) inclusive, is reserved 
+    /// for use by the OMG, either by this specification—including future versions of it—or by future related 
+    /// specifications (16,384 values). The largest value in this range—0x0FFFFFFF—shall be used as a sentinel to indicate 
+    /// an invalid member ID. This sentinel is referred to by the name MEMBER_ID_INVALID.
+    /// 
+    /// The remaining part of the member ID range—from 0 to 268,402,687 (0x0FFFBFFF)—is available for use by 
+    /// application-defined types compliant with this specification.
+    /// </summary>
     [System.AttributeUsage(AttributeTargets.Field |
                             AttributeTargets.Method)
     ]
-    public class ID : Attribute
+    public class IDAttribute : Attribute
     {
-        public ID(long val)
+        public IDAttribute(int val)
         {
-            value = val;
+            Value = val;
         }
 
-        public long value {get; set;}
+        public int Value { get; set; }
     }
 }

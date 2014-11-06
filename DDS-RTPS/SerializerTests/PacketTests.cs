@@ -206,5 +206,53 @@ namespace SerializerTests
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }
+
+        [TestMethod]
+        public void TestEnumPacket()
+        {
+            int size = EnumPacket.Size();
+            EnumPacket v1 = new EnumPacket(MyEnum.Three);
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            EnumPacket v2 = Serializer.Deserialize<EnumPacket>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestStruct1Packet()
+        {
+            int size = MyStruct1.Size();
+            MyStruct1 v1 = new MyStruct1();
+            v1.m_byte = 1;
+            v1.m_int = 2;
+            v1.m_long = 3;
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            MyStruct1 v2 = Serializer.Deserialize<MyStruct1>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestStructMessagePacket()
+        {
+            int size = StructMessage.Size();
+            StructMessage v1 = new StructMessage();
+             var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            StructMessage v2 = Serializer.Deserialize<StructMessage>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
     }
 }

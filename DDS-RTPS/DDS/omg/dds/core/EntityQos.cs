@@ -29,24 +29,28 @@ namespace org.omg.dds.core
     {
     }
 
-    /**
-     * A base interface for all entity QoS types.
-     */
+    /// <summary>
+    /// A base interface for all entity QoS types.
+    /// </summary>
+    /// <typeparam name="UNMOD_SELF"></typeparam>
+    /// <typeparam name="MOD_SELF"></typeparam>
     [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
     public interface EntityQos<UNMOD_SELF, MOD_SELF> : EntityQos,
-                                                        Value<UNMOD_SELF, MOD_SELF>, 
+                                                        Value<UNMOD_SELF, MOD_SELF>,
                                                         IDictionary<QosPolicyId, QosPolicy>
         where UNMOD_SELF : EntityQos<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        /**
-         * @return  a reference to the corresponding policy in this
-         *          <code>EntityQos</code>. The returned object is not a copy; changes
-         *          to the returned object will be reflected in subsequent
-         *          accesses.
-         *
-         * @see Map#get(Object)
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="POLICY"></typeparam>
+        /// <param name="id"></param>
+        /// <returns>a reference to the corresponding policy in this
+        ///          <code>EntityQos</code>. The returned object is not a copy; changes
+        ///          to the returned object will be reflected in subsequent
+        ///          accesses.
+        /// </returns>
         POLICY get<POLICY>(QosPolicyId id) where POLICY : QosPolicy;
 
         /**
