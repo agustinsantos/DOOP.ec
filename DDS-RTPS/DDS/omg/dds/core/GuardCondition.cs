@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+
+///
+
 namespace org.omg.dds.core
 {
 
@@ -36,10 +39,15 @@ namespace org.omg.dds.core
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
+        /*
          * @param bootstrap Identifies the Service instance to which the new
          *                  object will belong.
          */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong.</param>
+        /// <returns></returns>
         public static GuardCondition newGuardCondition(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newGuardCondition();

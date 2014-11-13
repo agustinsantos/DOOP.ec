@@ -29,6 +29,8 @@ namespace org.omg.dds.core
     {
     }
 
+
+    
     /// <summary>
     /// A base interface for all entity QoS types.
     /// </summary>
