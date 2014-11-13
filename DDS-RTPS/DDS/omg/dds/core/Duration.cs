@@ -36,6 +36,10 @@ namespace org.omg.dds.core
         // Factory Methods
         // -----------------------------------------------------------------------
 
+        /// 
+        /// Example
+        /// 
+
         /*
          * Construct a time duration of the given magnitude.
          * 
