@@ -16,17 +16,17 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.QosPolicy put(org.omg.dds.core.policy.QosPolicyId key, org.omg.dds.core.policy.QosPolicy value)
+        public org.omg.dds.core.policy.QosPolicy Put(org.omg.dds.core.policy.QosPolicyId key, org.omg.dds.core.policy.QosPolicy value)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.QosPolicy remove(object key)
+        public org.omg.dds.core.policy.QosPolicy Remove(object key)
         {
             throw new NotImplementedException();
         }
 
-        public void clear()
+        public void Clear()
         {
             throw new NotImplementedException();
         }
@@ -83,10 +83,6 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public void Clear()
-        {
-            throw new NotImplementedException();
-        }
 
         public bool Contains(KeyValuePair<org.omg.dds.core.policy.QosPolicyId, org.omg.dds.core.policy.QosPolicy> item)
         {
