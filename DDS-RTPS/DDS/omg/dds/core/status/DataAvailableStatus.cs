@@ -26,14 +26,12 @@ namespace org.omg.dds.core.status
      : Status<DataAvailableStatus<TYPE>, DataReader<TYPE>>
     {
 
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static DataAvailableStatus<TYPE> newDataAvailableStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newDataAvailableStatus<TYPE>();

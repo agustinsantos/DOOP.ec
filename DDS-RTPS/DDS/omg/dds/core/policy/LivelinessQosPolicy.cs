@@ -25,21 +25,18 @@ namespace org.omg.dds.core.policy
 
     public interface LivelinessQosPolicy : QosPolicy<LivelinessQosPolicy, ModifiableLivelinessQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the kind</returns>
         LivelinessQosPolicyKind getKind();
 
         Duration getLeaseDuration();
     }
 
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
+    /// <summary>
+    /// Types
+    /// </summary>
     public enum LivelinessQosPolicyKind
     {
         AUTOMATIC,

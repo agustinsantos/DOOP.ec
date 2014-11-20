@@ -25,11 +25,11 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableWriterDataLifecycleQosPolicy : WriterDataLifecycleQosPolicy,
             ModifiableQosPolicy<WriterDataLifecycleQosPolicy, ModifiableWriterDataLifecycleQosPolicy>
     {
-        /**
-         * @param autDisposeUnregisteredInstances   the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autDisposeUnregisteredInstances">the value to set</param>
+        /// <returns>this</returns>
         ModifiableWriterDataLifecycleQosPolicy setAutDisposeUnregisteredInstances(bool autDisposeUnregisteredInstances);
     }
 }

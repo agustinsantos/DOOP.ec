@@ -53,22 +53,35 @@ namespace org.omg.dds.core
         /// </returns>
         POLICY get<POLICY>(QosPolicyId id) where POLICY : QosPolicy;
 
-        /**
-         * @throws  UnsupportedOperationException   if this <code>EntityQos</code> is
-         *          not a <code>ModifiableEntityQos</code>.
-         */
+        /// <summary>
+        ///  
+        ///<throws> UnsupportedOperationException if this <code>EntityQos</code> is
+        ///         not a <code>ModifiableEntityQos</code>.</throws> 
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+         
         QosPolicy put(QosPolicyId key, QosPolicy value);
-
-        /**
-         * @throws  UnsupportedOperationException   always: the <tt>remove</tt>
-         *          operation is not supported by this map.
-         */
+        /// <summary>
+        ///  
+        /// <throws>UnsupportedOperationException always: the <tt>remove</tt>
+        ///         operation is not supported by this map.</throws>  
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+       
+       
+        
         QosPolicy remove(Object key);
-
-        /**
-         * @throws  UnsupportedOperationException   always: the <tt>clear</tt>
-         *          operation is not supported by this map.
-         */
+        /// <summary>
+        /// <throws>UnsupportedOperationException always: the <tt>clear</tt>
+        ///         operation is not supported by this map.</throws>  
+        ///
+        /// </summary>
+        
         void clear();
 
     }

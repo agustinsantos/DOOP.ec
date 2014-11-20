@@ -17,32 +17,34 @@
  */
 
 
- using org.omg.dds.core.status ;
+using org.omg.dds.core.status ;
 using System;
 using System.Collections.Generic;
 
 namespace org.omg.dds.core
 {
-
-    /**
-     * A StatusCondition object is a specific Condition that is associated with
-     * each {@link Entity}. The triggerValue of the StatusCondition depends on
-     * the communication status of that entity (e.g., arrival of data, loss of
-     * information, etc.), "filtered" by the set of enabledStatuses on the
-     * StatusCondition.
-     * 
-     * @param <ENTITY>      The type of the entity with which this condition is
-     *                      associated.
-     */
+    /// <summary>
+    ///  
+    /// A StatusCondition object is a specific Condition that is associated with
+    /// each {<link name= "Entity"></link> }. The triggerValue of the StatusCondition depends on
+    /// the communication status of that entity (e.g., arrival of data, loss of
+    /// information, etc.), "filtered" by the set of enabledStatuses on the
+    /// StatusCondition.
+    ///
+    /// </summary>
+    /// <typeparam name="ENTITY"> The type of the entity with which this condition is
+    ///                           associated.</typeparam>
     public interface StatusCondition<ENTITY> : Condition
         where ENTITY : IEntity
     {
         ICollection<Type> getEnabledStatuses(ICollection<Type> statuses);
-
-        /**
-         * @param statuses  For which status changes the condition should trigger.
-         *                  A null collection signifies all status changes.
-         */
+        /// <summary>
+        /// 
+        ///
+        /// </summary>
+        /// <param name="statuses">For which status changes the condition should trigger.
+        ///                        A null collection signifies all status changes.</param>
+       
         void setEnabledStatuses(              ICollection<Type> statuses);
 
         ENTITY getEntity();

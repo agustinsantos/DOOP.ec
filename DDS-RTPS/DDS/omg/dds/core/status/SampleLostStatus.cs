@@ -27,14 +27,12 @@ namespace org.omg.dds.core.status
      : Status<SampleLostStatus<TYPE>, DataReader<TYPE>>
     {
 
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static SampleLostStatus<TYPE> newSampleLostStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newSampleLostStatus<TYPE>();
@@ -54,14 +52,16 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCountChange</returns>
         public abstract int getTotalCountChange();
 
     }

@@ -24,17 +24,22 @@ namespace org.omg.dds.core
 {
     public interface Value : DDSObject //, ICloneable
     {
-        // --- From Object: ------------------------------------------------------
-
-        /**
-         * Implementing classes should override <code>equals()</code>.
-         */
+        /// <summary>
+        /// From Object:
+        ///
+        /// Implementing classes should override <code>equals()</code>.
+        ///
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+       
 
           bool Equals(Object other);
-
-        /**
-         * Implementing classes should override <code>hashCode()</code>.
-         */
+        /// <summary>
+        /// Implementing classes should override <code>hashCode()</code>.       
+        /// </summary>
+        /// <returns></returns>
+       
 
           int GetHashCode();
 
@@ -61,49 +66,48 @@ namespace org.omg.dds.core
         //Value modify();
     }
 
-    /**
-     * Implementing classes have value semantics: they can be deeply copied, and
-     * equality is determined based on their contents, not on their object
-     * identity.
-     */
+    /// <summary>
+    ///  
+    /// Implementing classes have value semantics: they can be deeply copied, and
+    /// equality is determined based on their contents, not on their object
+    /// identity.
+    ///
+    /// </summary>
+    /// <typeparam name="UNMOD_SELF"></typeparam>
+    /// <typeparam name="MOD_SELF"></typeparam>
+
+  
     public interface Value<UNMOD_SELF, MOD_SELF> : Value
         where UNMOD_SELF : Value<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        // --- From Object: ------------------------------------------------------
-
-        /**
-         * Implementing classes should override <code>equals()</code>.
-         */
-
-        //bool Equals(Object other);
-
-        /**
-         * Implementing classes should override <code>hashCode()</code>.
-         */
-
-        //int GetHashCode();
-
-        /**
-         * Extends the concept of "cloneable" defined in <code>java.lang</code> by
-         * providing an explicit public {@link #clone()} method.
-         * 
-         * @return  a new object that with state identical to that of this object.
-         */
-         //UNMOD_SELF clone();
+        /// <summary>
+        /// From Object
+        /// Implementing classes should override <code>equals()</code>.
+        /// bool Equals(Object other);
+        /// Implementing classes should override <code>hashCode()</code>.
+        /// int GetHashCode();
+        ///
+        /// Extends the concept of "cloneable" defined in <code>java.lang</code> by
+        /// providing an explicit public {@link #clone()} method.
+        ///
+        /// <return>  a new object that with state identical to that of this object.
+        //UNMOD_SELF clone();
 
 
-        // --- Conversion: -------------------------------------------------------
+        /// Conversion:
+        /// 
 
-        /**
-         * If this value type is of a modifiable subtype, return this.
-         * If this value type has a modifiable subtype, return a new object
-         * of that type that is a modifiable copy of this object.
-         * Otherwise, return null.
-         * 
-         * @return  <code>this</code>, a new modifiable copy of <code>this</code>,
-         *          or <code>null</code>.
-         */
+        ///If this value type is of a modifiable subtype, return this.
+        ///If this value type has a modifiable subtype, return a new object
+        ///of that type that is a modifiable copy of this object.
+        ///Otherwise, return null.
+        ///
+        /// <return></return>  <code>this</code>, a new modifiable copy of <code>this</code>,
+        ///        or <code>null</code>.
+        ///
+        /// </summary>
+        /// <returns></returns>
         MOD_SELF modify();
     }
 }

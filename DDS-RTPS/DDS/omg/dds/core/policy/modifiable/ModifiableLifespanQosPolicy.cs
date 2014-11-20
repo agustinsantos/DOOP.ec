@@ -30,16 +30,19 @@ namespace org.omg.dds.core.policy.modifiable
      : LifespanQosPolicy,
             ModifiableQosPolicy<LifespanQosPolicy, ModifiableLifespanQosPolicy>
     {
-        /**
-         * @param duration the duration to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="duration">the duration to set</param>
+        /// <returns>this</returns>
         ModifiableLifespanQosPolicy setDuration(Duration duration);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <param name="unit"></param>
+        /// <returnsthis></returns>
         ModifiableLifespanQosPolicy setDuration(long duration, TimeUnit unit);
     }
 }

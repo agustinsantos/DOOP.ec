@@ -19,18 +19,20 @@
 using System;
 namespace org.omg.dds.core
 {
-
-
-    /**
-     * Indicates that a DDS implementation could not be initialized due to an
-     * error that occurred within that implementation.
-     */
+    /// <summary>
+    ///
+    ///Indicates that a DDS implementation could not be initialized due to an
+    ///error that occurred within that implementation.
+    ///
+    /// </summary>
+   
     public class ServiceInitializationException : SystemException
     {
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
+       /// <summary>
+       /// 
+       /// Object Life Cycle
+       ///
+       /// </summary>
         public ServiceInitializationException()
             : base()
         {

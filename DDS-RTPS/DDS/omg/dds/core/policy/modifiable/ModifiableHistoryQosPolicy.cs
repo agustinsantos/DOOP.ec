@@ -24,18 +24,18 @@ namespace org.omg.dds.core.policy.modifiable
 
     public interface ModifiableHistoryQosPolicy : HistoryQosPolicy, ModifiableQosPolicy<HistoryQosPolicy, ModifiableHistoryQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">the kind to set</param>
+        /// <returns>this</returns>
         ModifiableHistoryQosPolicy setKind(HistoryQosPolicyKind kind);
 
-        /**
-         * @param depth the depth to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="depth">the depth to set</param>
+        /// <returns>this</returns>
         ModifiableHistoryQosPolicy setDepth(int depth);
     }
 }

@@ -24,25 +24,20 @@ namespace org.omg.dds.core.policy
 
     public interface HistoryQosPolicy : QosPolicy<HistoryQosPolicy, ModifiableHistoryQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the kind</returns>
         HistoryQosPolicyKind getKind();
 
-        /**
-         * @return the depth
-         */
+        /// <summary>
+        /// </summary>
+        /// <returns>the depth</returns>
         int getDepth();
     }
-
-
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
+    /// <summary>
+    /// Types
+    /// </summary>
 
     public enum HistoryQosPolicyKind
     {

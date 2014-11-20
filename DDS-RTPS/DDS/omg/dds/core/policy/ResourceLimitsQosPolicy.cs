@@ -30,14 +30,16 @@ namespace org.omg.dds.core.policy
          */
         int getMaxSamples();
 
-        /**
-         * @return the maxInstances
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the maxInstances</returns>
         int getMaxInstances();
 
-        /**
-         * @return the maxSamplesPerInstance
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the maxSamplesPerInstance</returns>
         int getMaxSamplesPerInstance();
 
     }

@@ -70,10 +70,9 @@ namespace org.omg.dds.core.policy
     {
     }
 
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
-
+    /// <summary>
+    /// Types
+    /// </summary>
     public abstract class QosPolicyId
     {
         /// <summary>
@@ -88,7 +87,10 @@ namespace org.omg.dds.core.policy
             return bootstrap.getSPI().getQosPolicyId(policyClass);
         }
 
-        // --- Instance Methods: ---------------------------------------------
+        /// <summary>
+        /// Instance Methods
+        /// </summary>
+        /// <returns></returns>
         public abstract int getPolicyIdValue();
 
         public abstract string getPolicyName();

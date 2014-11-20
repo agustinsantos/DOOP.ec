@@ -28,23 +28,26 @@ namespace org.omg.dds.core.policy.modifiable
 {
     public interface ModifiableReliabilityQosPolicy : ReliabilityQosPolicy, ModifiableQosPolicy<ReliabilityQosPolicy, ModifiableReliabilityQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">the kind to set</param>
+        /// <returns>this</returns>
         ModifiableReliabilityQosPolicy setKind(ReliabilityQosPolicyKind kind);
 
-        /**
-         * @param maxBlockingTime the maxBlockingTime to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxBlockingTime">the maxBlockingTime to set</param>
+        /// <returns>this</returns>
         ModifiableReliabilityQosPolicy setMaxBlockingTime(Duration maxBlockingTime);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxBlockingTime"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableReliabilityQosPolicy setMaxBlockingTime(long maxBlockingTime, TimeUnit unit);
     }
 }

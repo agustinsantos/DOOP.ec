@@ -24,11 +24,11 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableOwnershipStrengthQosPolicy : OwnershipStrengthQosPolicy,
             ModifiableQosPolicy<OwnershipStrengthQosPolicy, ModifiableOwnershipStrengthQosPolicy>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">the value to set</param>
+        /// <returns>this</returns>
         ModifiableOwnershipStrengthQosPolicy setValue(int value);
     }
 }

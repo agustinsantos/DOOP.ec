@@ -22,14 +22,16 @@ namespace org.omg.dds.core.policy
 {
     public interface QosPolicyCount : ModifiableValue<QosPolicyCount, QosPolicyCount>
     {
-        /**
-         * @return the policyId
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the policyId</returns>
         QosPolicyId getPolicyId();
 
-        /**
-         * @return the count
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the count</returns>
         int getCount();
     }
 }

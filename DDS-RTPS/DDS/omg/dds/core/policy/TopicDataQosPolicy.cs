@@ -23,20 +23,22 @@ namespace org.omg.dds.core.policy
 
     public interface TopicDataQosPolicy : QosPolicy<TopicDataQosPolicy, ModifiableTopicDataQosPolicy>
     {
-        /**
-         * Copy the data into the given array, starting at the index at the given
-         * offset.
-         * 
-         * @return  The total number of bytes in the data, independent of the
-         *          number of bytes copied. Callers can use this result to
-         *          determine if the output array is long enough or, if it is
-         *          long enough, what range within it contains valid data.
-         */
+        /// <summary>
+        /// Copy the data into the given array, starting at the index at the given
+        /// offset. 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="offset"></param>
+        /// <returns>The total number of bytes in the data, independent of the
+        /// number of bytes copied. Callers can use this result to
+        /// determine if the output array is long enough or, if it is
+        /// long enough, what range within it contains valid data.</returns>
         int getValue(byte[] value, int offset);
 
-        /**
-         * @return  the length of the <code>value</code> property.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the length of the <code>value</code> property.</returns>
         int getLength();
     }
 }

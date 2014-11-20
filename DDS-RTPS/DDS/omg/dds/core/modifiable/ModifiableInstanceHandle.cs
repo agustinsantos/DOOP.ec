@@ -24,12 +24,13 @@ namespace org.omg.dds.core.modifiable
 {
     public abstract class ModifiableInstanceHandle : InstanceHandle, ModifiableValue<InstanceHandle, ModifiableInstanceHandle>
     {
-        // -----------------------------------------------------------------------
-        // Instance Methods
-        // -----------------------------------------------------------------------
-
-        // --- From Object: ------------------------------------------------------
-
+        /// <summary>
+        /// Instance Methods
+        /// From Object: 
+        /// /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+       
         public abstract ModifiableInstanceHandle copyFrom(InstanceHandle other);
 
         public abstract InstanceHandle finishModification();

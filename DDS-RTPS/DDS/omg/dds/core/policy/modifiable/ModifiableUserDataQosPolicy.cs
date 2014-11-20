@@ -25,11 +25,13 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableUserDataQosPolicy : UserDataQosPolicy,
             ModifiableQosPolicy<UserDataQosPolicy, ModifiableUserDataQosPolicy>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">the value to set</param>
+        /// <param name="offset"></param>
+        /// <param name="length"></param>
+        /// <returns>this</returns>
         ModifiableUserDataQosPolicy setValue(byte[] value, int offset, int length);
     }
 }

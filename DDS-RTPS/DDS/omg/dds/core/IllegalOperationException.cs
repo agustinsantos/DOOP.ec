@@ -20,10 +20,10 @@ namespace org.omg.dds.core
 {
     public abstract class IllegalOperationException : DDSException
     {
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
+        
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
         protected IllegalOperationException()
         {
         }

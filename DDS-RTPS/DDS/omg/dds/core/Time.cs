@@ -23,34 +23,35 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.core
 {
+    /// <summary>
+    /// A moment in time expressed with nanosecond precision (though not
+    /// necessarily nanosecond accuracy).
+    ///
+    /// </summary>
 
-    /**
-     * A moment in time expressed with nanosecond precision (though not
-     * necessarily nanosecond accuracy).
-     */
     [Extensibility(ExtensibilityKind.FINAL_EXTENSIBILITY)]
     [Nested]
     public abstract class Time : Value<Time, ModifiableTime>
     {
+        /// <summary>
+        /// Factory Methods
+        ///
+        /// Construct a specific instant in time.
+        /// 
+        /// Negative values are considered invalid and will result in the
+        /// construction of a time <code>t</code> such that:
+        ///<code>t.isValid() == false</code>
+        ///
+        ///<see> #isValid()</see>    
+        ///
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="units"></param>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///            object will belong.</param>
+        /// <returns></returns>
 
 
-        // -----------------------------------------------------------------------
-        // Factory Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * Construct a specific instant in time.
-         * 
-         * Negative values are considered invalid and will result in the
-         * construction of a time <code>t</code> such that:
-         * 
-         * <code>t.isValid() == false</code>
-         * 
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         * 
-         * @see     #isValid()
-         */
         public static ModifiableTime newTime(long time, TimeUnit units, Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newTime(time, units);

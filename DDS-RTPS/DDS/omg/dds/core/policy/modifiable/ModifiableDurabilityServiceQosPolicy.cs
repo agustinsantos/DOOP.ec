@@ -31,11 +31,11 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<DurabilityServiceQosPolicy,
                                 ModifiableDurabilityServiceQosPolicy>
     {
-        /**
-         * @param serviceCleanupDelay the serviceCleanupDelay to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serviceCleanupDelay">the serviceCleanupDelay to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setServiceCleanupDelay(
               Duration serviceCleanupDelay);
 

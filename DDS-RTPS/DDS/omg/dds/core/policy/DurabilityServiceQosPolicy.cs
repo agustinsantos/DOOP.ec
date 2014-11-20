@@ -27,29 +27,31 @@ namespace org.omg.dds.core.policy
     {
         Duration getServiceCleanupDelay();
 
-        /**
-         * @return the historyKind
-         */
+        /// <summary>
+        /// </summary>
+        /// <returns>the historyKind</returns>
         HistoryQosPolicyKind getHistoryKind();
 
-        /**
-         * @return the historyDepth
-         */
+        /// <summary>
+        /// </summary>
+        /// <returns>the historyDepth</returns>
         int getHistoryDepth();
 
-        /**
-         * @return the maxSamples
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the maxSamples</returns>
         int getMaxSamples();
 
-        /**
-         * @return the maxInstances
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the maxInstances</returns>
         int getMaxInstances();
 
-        /**
-         * @return the maxSamplesPerInstance
-         */
+        /// <summary> 
+        /// </summary>
+        /// <returns>the maxSamplesPerInstance</returns>
         int getMaxSamplesPerInstance();
 
     }

@@ -25,54 +25,54 @@ namespace org.omg.dds.core.modifiable
 {
     public abstract class ModifiableDuration : Duration, ModifiableValue<Duration, ModifiableDuration>
     {
-
-        // -----------------------------------------------------------------------
+        /// <summary>
+        /// 
         // Methods
-        // -----------------------------------------------------------------------
-
-        // --- Data access: ------------------------------------------------------
-
-        /**
-         * @return  this
-         */
+        ///Data access:
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
+        
         public abstract ModifiableDuration setDuration(long duration, TimeUnit unit);
-
-
-        // --- Manipulation: -----------------------------------------------------
-
-        /**
-         * Increase this duration by the given amount.
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// Manipulation:
+        /// Increase this duration by the given amount.
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <returns>this</returns>
         public abstract ModifiableDuration add(Duration duration);
-
-        /**
-         * Increase this duration by the given amount.
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        ///Increase this duration by the given amount.
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         public abstract ModifiableDuration add(long duration, TimeUnit unit);
 
-        /**
-         * Decrease this duration by the given amount.
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// Decrease this duration by the given amount.
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <returns>this</returns>
         public abstract ModifiableDuration subtract(Duration duration);
 
-        /**
-         * Decrease this duration by the given amount.
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// Decrease this duration by the given amount.
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         public abstract ModifiableDuration subtract(long duration, TimeUnit unit);
 
 
-        // --- From Object: ------------------------------------------------------
-
-
-        //public abstract ModifiableDuration clone();
+        /// <summary>
+        /// From Object: 
+        ///public abstract ModifiableDuration clone();
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
 
         public abstract ModifiableDuration copyFrom(Duration other);
 

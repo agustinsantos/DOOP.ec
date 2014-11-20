@@ -24,32 +24,30 @@ namespace org.omg.dds.core.policy
 
     public interface PresentationQosPolicy : QosPolicy<PresentationQosPolicy, ModifiablePresentationQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the accessScope
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the accessScope</returns>
         AccessScopeKind getAccessScope();
 
-        /**
-         * @return the coherentAccess
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the coherentAccess</returns>
         bool isCoherentAccess();
 
-        /**
-         * @return the orderedAccess
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the orderedAccess</returns>
         bool isOrderedAccess();
 
 
     }
 
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
-
+    /// <summary>
+    /// Types
+    /// </summary>
     public enum AccessScopeKind
     {
         INSTANCE,

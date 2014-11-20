@@ -24,21 +24,16 @@ namespace org.omg.dds.core.policy
 
     public interface DurabilityQosPolicy : QosPolicy<DurabilityQosPolicy, ModifiableDurabilityQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the kind</returns>
           DurabilityQosPolicyKind getKind();
 
     }
-
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
-
+    /// <summary>
+    /// Types
+    /// </summary>
     public enum DurabilityQosPolicyKind
     {
         VOLATILE,

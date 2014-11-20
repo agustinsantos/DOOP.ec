@@ -25,25 +25,25 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiablePresentationQosPolicy : PresentationQosPolicy,
             ModifiableQosPolicy<PresentationQosPolicy, ModifiablePresentationQosPolicy>
     {
-        /**
-         * @param accessScope the accessScope to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accessScope">the accessScope to set</param>
+        /// <returns>this</returns>
         ModifiablePresentationQosPolicy setAccessScope(AccessScopeKind accessScope);
 
-        /**
-         * @param coherentAccess the coherentAccess to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="coherentAccess">the coherentAccess to set</param>
+        /// <returns>this</returns>
         ModifiablePresentationQosPolicy setCoherentAccess(bool coherentAccess);
 
-        /**
-         * @param orderedAccess the orderedAccess to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="orderedAccess">the orderedAccess to set</param>
+        /// <returns>this</returns>
         ModifiablePresentationQosPolicy setOrderedAccess(bool orderedAccess);
     }
 }

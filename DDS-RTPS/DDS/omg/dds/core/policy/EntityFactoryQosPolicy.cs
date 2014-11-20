@@ -24,9 +24,10 @@ namespace org.omg.dds.core.policy
 
     public interface EntityFactoryQosPolicy : QosPolicy<EntityFactoryQosPolicy, ModifiableEntityFactoryQosPolicy>
     {
-        /**
-         * @return the autoEnableCreatedEntities
-         */
+        /// <summary>
+        ///
+        /// </summary>
+        /// <returns>the autoEnableCreatedEntities</returns>
         bool isAutoEnableCreatedEntities();
 
     }

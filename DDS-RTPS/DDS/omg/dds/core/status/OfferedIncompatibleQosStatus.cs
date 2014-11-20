@@ -27,14 +27,12 @@ namespace org.omg.dds.core.status
     public abstract class OfferedIncompatibleQosStatus<TYPE> : Status<OfferedIncompatibleQosStatus<TYPE>, DataWriter<TYPE>>
     {
 
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                  object will belong.</param>
+        /// <returns></returns>
         public static OfferedIncompatibleQosStatus<TYPE>
         newOfferedIncompatibleQosStatus(Bootstrap bootstrap)
         {
@@ -55,24 +53,28 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCountChange</returns>
         public abstract int getTotalCountChange();
 
-        /**
-         * @return the lastPolicyId
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the lastPolicyId</returns>
         public abstract QosPolicyId getLastPolicyId();
 
-        /**
-         * @return  an unmodifiable set of policy counts.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>an unmodifiable set of policy counts.</returns>
         public abstract ISet<QosPolicyCount> getPolicies();
 
     }

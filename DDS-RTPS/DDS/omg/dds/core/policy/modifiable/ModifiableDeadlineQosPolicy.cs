@@ -28,11 +28,11 @@ namespace org.omg.dds.core.policy.modifiable
 {
     public interface ModifiableDeadlineQosPolicy : DeadlineQosPolicy, ModifiableQosPolicy<DeadlineQosPolicy, ModifiableDeadlineQosPolicy>
     {
-        /**
-         * @param period the period to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="period">period the period to set</param>
+        /// <returns>this</returns>
         ModifiableDeadlineQosPolicy setPeriod(Duration period);
 
         /**

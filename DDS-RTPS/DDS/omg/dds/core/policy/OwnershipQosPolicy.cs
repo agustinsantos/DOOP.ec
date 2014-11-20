@@ -24,21 +24,18 @@ namespace org.omg.dds.core.policy
 
     public interface OwnershipQosPolicy : QosPolicy<OwnershipQosPolicy, ModifiableOwnershipQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// Methods
+        /// @return the kind
+        /// </summary>
+        /// <returns>the kind</returns>
         OwnershipQosPolicyKind getKind();
 
     }
 
-
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
+    /// <summary>
+    /// Types
+    /// </summary>
 
     public enum OwnershipQosPolicyKind
     {

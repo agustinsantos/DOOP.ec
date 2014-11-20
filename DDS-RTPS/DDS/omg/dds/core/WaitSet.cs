@@ -23,36 +23,33 @@ using System.Collections.Generic;
 
 namespace org.omg.dds.core
 {
-
-    /**
-     * A WaitSet object allows an application to wait until one or more of the
-     * attached {@link Condition} objects has a triggerValue of true or else until
-     * the timeout expires.
-     * 
-     * WaitSet is not necessarily associated with a single
-     * {@link DomainParticipant} and could be used to wait on Condition objects
-     * associated with different DomainParticipant objects.
-     */
+    /// <summary>
+    /// 
+    ///
+    /// A WaitSet object allows an application to wait until one or more of the
+    /// attached {@link Condition} objects has a triggerValue of true or else until
+    /// the timeout expires.
+    ///
+    /// WaitSet is not necessarily associated with a single
+    /// {<link name= "DomainParticipant"></link> } and could be used to wait on Condition objects
+    ///associated with different DomainParticipant objects.
+    /// </summary>
     public abstract class WaitSet : DDSObject
     {
-        // -----------------------------------------------------------------------
-        // Factory Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Factory Methods
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
+       
         public static WaitSet newWaitSet(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newWaitSet();
         }
-
-
-
-        // -----------------------------------------------------------------------
-        // Instance Methods
-        // -----------------------------------------------------------------------
+        /// <summary>
+        /// Instance Methods
+        /// </summary>
 
         public abstract void waitForConditions();
 
@@ -73,10 +70,10 @@ namespace org.omg.dds.core
         public abstract void attachCondition(Condition cond);
         public abstract void detachCondition(Condition cond);
 
-        /**
-         * @return  an unmodifiable collection of the conditions attached to this
-         *          wait set.
-         */
+       /// <summary>
+       /// </summary>
+       /// <returns>an unmodifiable collection of the conditions attached to this
+       ///        wait set.</returns>
         public abstract ICollection<Condition> getConditions();
 
         public abstract Bootstrap getBootstrap();

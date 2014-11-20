@@ -27,11 +27,11 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<TransportPriorityQosPolicy,
                                 ModifiableTransportPriorityQosPolicy>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">the value to set</param>
+        /// <returns>this</returns>
         ModifiableTransportPriorityQosPolicy setValue(int value);
     }
 }

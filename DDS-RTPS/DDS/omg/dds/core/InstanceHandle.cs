@@ -24,47 +24,39 @@ namespace org.omg.dds.core
 
     public abstract class InstanceHandle : Value<InstanceHandle, ModifiableInstanceHandle>
     {
-        // -----------------------------------------------------------------------
-        // Factory Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Factory Methods
+        /// </summary>
+        /// <param name="bootstrap"></param>
+        /// Identifies the Service instance to which the new object will belong
+        /// <returns></returns>
+      
         public static ModifiableInstanceHandle newInstanceHandle(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newInstanceHandle();
         }
-
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         * 
-         * @return  An unmodifiable nil instance handle.
-         */
+        /// <summary>
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the
+        ///                         object will belong.</param>
+        /// <returns>An unmodifiable nil instance handle</returns>
+       
         public static InstanceHandle nilHandle(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().nilHandle();
         }
-
-
-
-        // -----------------------------------------------------------------------
-        // Instance Methods
-        // -----------------------------------------------------------------------
-
+        /// <summary>
+        /// Instance Methods
+        /// </summary>
+        /// <returns></returns>       
         public abstract bool isNil();
-
-
-        // --- From Object: ------------------------------------------------------
-
-
-        //public abstract InstanceHandle clone();
-
-        //public abstract InstanceHandle Clone();
-
+        /// <summary>
+        /// From Object:
+        ///public abstract InstanceHandle clone();
+        ///
+        ///public abstract InstanceHandle Clone();
+        /// </summary>
+        /// <returns></returns>
         public abstract ModifiableInstanceHandle modify();
 
         public abstract Bootstrap getBootstrap();

@@ -30,16 +30,19 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<TimeBasedFilterQosPolicy,
                                 ModifiableTimeBasedFilterQosPolicy>
     {
-        /**
-         * @param minimumSeparation the minimumSeparation to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="minimumSeparation">the minimumSeparation to set</param>
+        /// <returns>this</returns>
         ModifiableTimeBasedFilterQosPolicy setMinimumSeparation(Duration minimumSeparation);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="minimumSeparation"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableTimeBasedFilterQosPolicy setMinimumSeparation(long minimumSeparation, TimeUnit unit);
     }
 }

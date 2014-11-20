@@ -27,14 +27,13 @@ namespace org.omg.dds.core.status
     public abstract class SampleRejectedStatus<TYPE>
      : Status<SampleRejectedStatus<TYPE>, DataReader<TYPE>>
     {
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static SampleRejectedStatus<TYPE> newSampleRejectedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newSampleRejectedStatus<TYPE>();
@@ -48,35 +47,29 @@ namespace org.omg.dds.core.status
         {
         }
 
-
-
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCountChange</returns>
         public abstract int getTotalCountChange();
 
-        /**
-         * @return the lastReason
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the lastReason</returns>
         public abstract Kind getLastReason();
 
         public abstract ModifiableInstanceHandle getLastInstanceHandle();
 
-
-
-        // -----------------------------------------------------------------------
-        // Types
-        // -----------------------------------------------------------------------
-
+        /// <summary>
+        /// Types
+        /// </summary>
         public enum Kind
         {
             NOT_REJECTED,

@@ -20,11 +20,9 @@ namespace org.omg.dds.core
 {
     public class InconsistentPolicyException : DDSException
     {
-
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
         public InconsistentPolicyException()
         {
         }

@@ -27,14 +27,12 @@ namespace org.omg.dds.core.status
     public abstract class PublicationMatchedStatus<TYPE> : Status<PublicationMatchedStatus<TYPE>, DataWriter<TYPE>>
     {
 
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static PublicationMatchedStatus<TYPE> newPublicationMatchedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newPublicationMatchedStatus<TYPE>();
@@ -48,30 +46,28 @@ namespace org.omg.dds.core.status
         {
         }
 
-
-
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCountChange</returns>
         public abstract int getTotalCountChange();
 
-        /**
-         * @return the currentCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the currentCount</returns>
         public abstract int getCurrentCount();
 
-        /**
-         * @return the currentCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the currentCountChange</returns>
         public abstract int getCurrentCountChange();
 
         public abstract ModifiableInstanceHandle getLastSubscriptionHandle();

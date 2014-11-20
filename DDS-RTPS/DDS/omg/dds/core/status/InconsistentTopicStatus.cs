@@ -27,14 +27,13 @@ namespace org.omg.dds.core.status
 
     public abstract class InconsistentTopicStatus<TYPE> : Status<InconsistentTopicStatus<TYPE>, Topic<TYPE>>, IInconsistentTopicStatus
     {
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static InconsistentTopicStatus<TYPE>
         newInconsistentTopicStatus(Bootstrap bootstrap)
         {
@@ -55,14 +54,16 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the totalCountChange</returns>
         public abstract int getTotalCountChange();
 
     }

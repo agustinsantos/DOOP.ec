@@ -25,26 +25,26 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableResourceLimitsQosPolicy : ResourceLimitsQosPolicy,
             ModifiableQosPolicy<ResourceLimitsQosPolicy, ModifiableResourceLimitsQosPolicy>
     {
-        /**
-         * @param maxSamples the maxSamples to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxSamples">the maxSamples to set</param>
+        /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy setMaxSamples(int maxSamples);
 
-        /**
-         * @param maxInstances the maxInstances to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxInstances">the maxInstances to set</param>
+        /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy setMaxInstances(
               int maxInstances);
 
-        /**
-         * @param maxSamplesPerInstance the maxSamplesPerInstance to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxSamplesPerInstance">the maxSamplesPerInstance to set</param>
+        /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy setMaxSamplesPerInstance(
               int maxSamplesPerInstance);
     }

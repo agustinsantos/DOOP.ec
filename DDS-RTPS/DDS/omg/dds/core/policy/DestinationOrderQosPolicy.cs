@@ -24,20 +24,15 @@ namespace org.omg.dds.core.policy
 
     public interface DestinationOrderQosPolicy : QosPolicy<DestinationOrderQosPolicy, ModifiableDestinationOrderQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Methods
-        // -----------------------------------------------------------------------
-
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// Methods
+        /// </summary>
+        /// <returns>the kind</returns>
         DestinationOrderQosPolicyKind getKind();
     }
-
-
-    // -----------------------------------------------------------------------
-    // Types
-    // -----------------------------------------------------------------------
+    /// <summary>
+    /// Types
+    /// </summary>
 
     public enum DestinationOrderQosPolicyKind
     {

@@ -27,14 +27,12 @@ namespace org.omg.dds.core.status
     public abstract class LivelinessChangedStatus<TYPE>     : Status<LivelinessChangedStatus<TYPE>, DataReader<TYPE>>
     {
 
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                 object will belong.</param>
+        /// <returns></returns>
         public static LivelinessChangedStatus<TYPE>        newLivelinessChangedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newLivelinessChangedStatus<TYPE>();
@@ -54,24 +52,28 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the aliveCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the aliveCount</returns>
         public abstract int getAliveCount();
 
-        /**
-         * @return the notAliveCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the notAliveCount</returns>
         public abstract int getNotAliveCount();
 
-        /**
-         * @return the aliveCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the aliveCountChange</returns>
         public abstract int getAliveCountChange();
 
-        /**
-         * @return the notAliveCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>the notAliveCountChange</returns>
         public abstract int getNotAliveCountChange();
 
         public abstract ModifiableInstanceHandle getLastPublicationHandle();

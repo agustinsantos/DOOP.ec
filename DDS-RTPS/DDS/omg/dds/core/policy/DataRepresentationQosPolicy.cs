@@ -26,10 +26,11 @@ namespace org.omg.dds.core.policy
 
     public interface DataRepresentationQosPolicy : QosPolicy<DataRepresentationQosPolicy, ModifiableDataRepresentationQosPolicy>
     {
-        // -----------------------------------------------------------------------
-        // Properties
-        // -----------------------------------------------------------------------
-
+        /// <summary>
+        /// Properties
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<short> getValue();
     }
 

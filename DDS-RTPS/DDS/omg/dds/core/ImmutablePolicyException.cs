@@ -21,10 +21,9 @@ namespace org.omg.dds.core
 
     public abstract class ImmutablePolicyException : DDSException
     {
-        // -----------------------------------------------------------------------
-        // Object Life Cycle
-        // -----------------------------------------------------------------------
-
+        /// <summary>
+        /// Object Life Cycle
+        /// </summary>
         protected ImmutablePolicyException()
         {
         }

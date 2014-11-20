@@ -27,11 +27,11 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<DurabilityQosPolicy,
                                 ModifiableDurabilityQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">the kind to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityQosPolicy setKind(DurabilityQosPolicyKind kind);
     }
 }
