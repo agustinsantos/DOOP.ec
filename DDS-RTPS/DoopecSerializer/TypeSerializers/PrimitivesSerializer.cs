@@ -18,6 +18,7 @@ namespace Doopec.Serializer.TypeSerializers
 				typeof(ulong), typeof(long),
 				typeof(float), 
                 typeof(double),
+                typeof(decimal),
 				typeof(string),
 				typeof(DateTime),
 				typeof(byte[]),

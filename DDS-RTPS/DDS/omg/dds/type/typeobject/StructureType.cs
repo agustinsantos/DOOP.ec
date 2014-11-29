@@ -42,13 +42,13 @@ namespace org.omg.dds.type.typeobject
         StructureType setBaseType(int newBaseTypeId);
 
         [ID(StructureTypeMemberId.MEMBER_STRUCTURETYPE_MEMBER_ID)]
-        IList<Member> getMember();
+        IList<Member> GetMember();
 
         /**
          * @return  this
          */
         [ID(StructureTypeMemberId.MEMBER_STRUCTURETYPE_MEMBER_ID)]
-        StructureType setMember(IList<Member> newMember);
+        StructureType SetMember(IList<Member> newMember);
     }
 
     // -----------------------------------------------------------------------

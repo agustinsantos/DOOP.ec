@@ -4,10 +4,7 @@ using org.omg.dds.type.typeobject;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Doopec.XTypes
 {
@@ -20,6 +17,10 @@ namespace Doopec.XTypes
             {
                 ddsType = ExploreClass(type);
             }
+            else if (type.IsValueType)
+            {
+                ddsType = ExploreValueType(type); 
+            }
             else if (type.IsEnum)
             {
                 ddsType = ExploreEnum(type);
@@ -30,7 +31,10 @@ namespace Doopec.XTypes
             }
             return ddsType;
         }
-
+        private static StructureType ExploreValueType(System.Type type)
+        {
+            throw new NotImplementedException();
+        }
         private static StructureType ExploreClass(System.Type type)
         {
             StructureType ddsType = new StructureTypeImpl();
@@ -45,7 +49,7 @@ namespace Doopec.XTypes
 
             List<Member> listMember = new List<Member>();
             var fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-            int lastId = 0;
+            uint lastId = 0;
             foreach (var member in fields)
             {
                 Member memberInfo = new MemberImpl();
@@ -80,7 +84,7 @@ namespace Doopec.XTypes
                 memberInfo.setProperty(memberProp);
                 listMember.Add(memberInfo);
             }
-            ddsType.setMember(listMember);
+            ddsType.SetMember(listMember);
 
             return ddsType;
         }

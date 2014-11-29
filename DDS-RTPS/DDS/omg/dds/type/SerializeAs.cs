@@ -28,6 +28,7 @@ namespace org.omg.dds.type
                             AttributeTargets.Enum |
                             AttributeTargets.Interface |
                             AttributeTargets.Field |
+                            AttributeTargets.Property |
                             AttributeTargets.Method)
     ]
     public class SerializeAs : Attribute

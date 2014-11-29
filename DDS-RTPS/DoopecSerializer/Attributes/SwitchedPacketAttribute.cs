@@ -10,7 +10,10 @@ namespace Doopec.Serializer.Attributes
     /// Indicates that a type is defined for complex packet serialization.
     /// This packet has a header and several bodies that depend on a switch field
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface,
+    [AttributeUsage(AttributeTargets.Class |
+                    AttributeTargets.Struct |
+                    AttributeTargets.Enum |
+                    AttributeTargets.Interface,
                     AllowMultiple = false, Inherited = true)]
     public sealed class SwitchedPacketAttribute : Attribute
     {

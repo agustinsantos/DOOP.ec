@@ -10,7 +10,7 @@ namespace Doopec.Dds.XTypes
     public class MemberPropertyImpl : MemberProperty
     {
         public MemberFlag Flag { get; set; }
-        public int MemberId { get; set; }
+        public uint MemberId { get; set; }
         public int MemberType { get; set; }
         public string Name { get; set; }
 
@@ -25,13 +25,13 @@ namespace Doopec.Dds.XTypes
             return this.Flag;
         }
 
-        public MemberProperty setMemberId(int memberId)
+        public MemberProperty setMemberId(uint memberId)
         {
             this.MemberId = memberId;
             return this;
         }
 
-        public int getMemberId()
+        public uint getMemberId()
         {
             return this.MemberId;
         }

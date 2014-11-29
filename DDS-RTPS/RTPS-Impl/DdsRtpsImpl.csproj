@@ -105,6 +105,7 @@
     <Compile Include="Rtps\Discovery\SPDPPublicationBuiltinTopicData.cs" />
     <Compile Include="Rtps\Discovery\SPDPSubscriptionBuiltinTopicData.cs" />
     <Compile Include="Rtps\Discovery\SPDPTopicBuiltinTopicData.cs" />
+    <Compile Include="Rtps\Encoders\EncapsulationSchemeEncoder.cs" />
     <Compile Include="Rtps\Messages\CDREncapsulation.cs">
       <SubType>
       </SubType>

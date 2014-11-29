@@ -23,12 +23,12 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public IList<Member> getMember()
+        public IList<Member> GetMember()
         {
             return this.MemberList;
         }
 
-        public StructureType setMember(IList<Member> newMember)
+        public StructureType SetMember(IList<Member> newMember)
         {
             this.MemberList = newMember;
             return this;
