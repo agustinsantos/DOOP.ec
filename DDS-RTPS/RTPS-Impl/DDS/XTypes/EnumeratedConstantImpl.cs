@@ -12,7 +12,7 @@ namespace Doopec.Dds.XTypes
         public int Value { get; set; }
         public string Name { get; set; }
 
-        public EnumeratedConstant setValue(int value)
+        public EnumeratedConstant SetValue(int value)
         {
             this.Value = value;
             return this;
@@ -23,7 +23,7 @@ namespace Doopec.Dds.XTypes
             return this.Value;
         }
 
-        public EnumeratedConstant setName(string name)
+        public EnumeratedConstant SetName(string name)
         {
             this.Name = name;
             return this;
@@ -34,7 +34,7 @@ namespace Doopec.Dds.XTypes
             return this.Name;
         }
 
-        public EnumeratedConstant copyFrom(EnumeratedConstant other)
+        public EnumeratedConstant CopyFrom(EnumeratedConstant other)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public EnumeratedConstant modify()
+        public EnumeratedConstant Modify()
         {
             throw new NotImplementedException();
         }

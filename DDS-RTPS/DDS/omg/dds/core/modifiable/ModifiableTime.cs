@@ -75,7 +75,7 @@ namespace org.omg.dds.core.modifiable
 
         //public  abstract ModifiableTime clone();
 
-        public abstract ModifiableTime copyFrom(Time other);
+        public abstract ModifiableTime CopyFrom(Time other);
 
         public abstract Time finishModification();
 

@@ -31,7 +31,7 @@ namespace Doopec.Dds.Core.Policy
             return maxBlockingTime;
         }
 
-        public ModifiableReliabilityQosPolicy modify()
+        public ModifiableReliabilityQosPolicy Modify()
         {
             throw new NotImplementedException();
         }

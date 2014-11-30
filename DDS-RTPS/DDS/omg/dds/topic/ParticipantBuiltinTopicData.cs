@@ -36,7 +36,7 @@ namespace org.omg.dds.topic
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
+        /*
          * @param bootstrap Identifies the Service instance to which the new
          *                  object will belong.
          */
@@ -54,23 +54,23 @@ namespace org.omg.dds.topic
 
         [ID(0x0050)]
         [Key]
-        public abstract BuiltinTopicKey getKey();
+        public abstract BuiltinTopicKey Key { get; }
 
         [ID(0x002C)]
-        public abstract UserDataQosPolicy getUserData();
+        public abstract UserDataQosPolicy UserData { get; }
 
 
         // --- From Object: ------------------------------------------------------
 
         //public abstract ParticipantBuiltinTopicData clone();
 
-        public abstract ParticipantBuiltinTopicData copyFrom(ParticipantBuiltinTopicData other);
+        public abstract ParticipantBuiltinTopicData CopyFrom(ParticipantBuiltinTopicData other);
 
         public abstract ParticipantBuiltinTopicData finishModification();
 
         public abstract ParticipantBuiltinTopicData Clone();
 
-        public abstract ParticipantBuiltinTopicData modify();
+        public abstract ParticipantBuiltinTopicData Modify();
 
         public abstract Bootstrap getBootstrap();
     }

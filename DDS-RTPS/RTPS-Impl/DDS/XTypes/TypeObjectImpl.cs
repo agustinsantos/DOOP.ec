@@ -34,7 +34,7 @@ namespace Doopec.Dds.XTypes
             return TypeId;
         }
 
-        public TypeObject copyFrom(TypeObject other)
+        public TypeObject CopyFrom(TypeObject other)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public TypeObject modify()
+        public TypeObject Modify()
         {
             throw new NotImplementedException();
         }

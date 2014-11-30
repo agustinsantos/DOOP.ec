@@ -27,53 +27,55 @@ namespace org.omg.dds.type.typeobject
     [Extensibility(ExtensibilityKind.EXTENSIBLE_EXTENSIBILITY)]
     [Nested]
     public interface MemberProperty : ModifiableValue<MemberProperty, MemberProperty>
-    {
-        /**
-         * @param flag the flag to set
-         * 
-         * @return  this
-         */
-        MemberProperty setFlag(MemberFlag flag);
+    {        
+        /// <summary>
+        /// Set the flag and return the instance.
+        /// </summary>
+        /// <param name="flag">the flag to set</param>
+        /// <returns>return this</returns>
+        MemberProperty SetFlag(MemberFlag flag);
 
-        /**
-         * @return the flag
-         */
-        MemberFlag getFlag();
+        /// <summary>
+        /// Gets/Sets Flags
+        /// </summary>
+        MemberFlag Flag { get; set; }
 
-        /**
-         * @param memberId the memberId to set
-         * 
-         * @return  this
-         */
-        MemberProperty setMemberId(uint memberId);
+        /// <summary>
+        /// Set the member Id
+        /// </summary>
+        /// <param name="memberId">the memberId to set</param>
+        /// <returns>this</returns>
+        MemberProperty SetMemberId(uint memberId);
 
-        /**
-         * @return the memberId
-         */
-        uint getMemberId();
+        
+        /// <summary>
+        /// Gets/Sets the Member ID
+        /// </summary>
+        uint MemberId { get; set; }
 
-        /**
-         * @param type the type to set
-         * 
-         * @return  this
-         */
-        MemberProperty setType(int type);
+        /// <summary>
+        /// Return the information about DDS type
+        /// </summary>
+        /// <param name="type">the type to set</param>
+        /// <returns>this</returns>
+        MemberProperty SetType(int type);
 
-        /**
-         * @return the type
-         */
-        int getType();
+        /// <summary>
+        /// Gets/sets the DDS Type
+        /// </summary>
+        int Type { get; set; }
 
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
-        MemberProperty setName(string name);
+        /// <summary>
+        /// Set the full name
+        /// </summary>
+        /// <param name="name">the name to set</param>
+        /// <returns>this</returns>
+        MemberProperty SetName(string name);
 
-        /**
-         * @return the name
-         */
-        string getName();
+        /// <summary>
+        /// Gets/Sets the name
+        /// </summary>
+        /// <returns></returns>
+        string Name { get; set; }
     }
 }

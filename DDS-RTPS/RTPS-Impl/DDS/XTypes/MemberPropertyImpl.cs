@@ -11,54 +11,34 @@ namespace Doopec.Dds.XTypes
     {
         public MemberFlag Flag { get; set; }
         public uint MemberId { get; set; }
-        public int MemberType { get; set; }
+        public int Type { get; set; }
         public string Name { get; set; }
 
-        public MemberProperty setFlag(MemberFlag flag)
+        public MemberProperty SetFlag(MemberFlag flag)
         {
             this.Flag = flag;
             return this;
         }
 
-        public MemberFlag getFlag()
-        {
-            return this.Flag;
-        }
-
-        public MemberProperty setMemberId(uint memberId)
+        public MemberProperty SetMemberId(uint memberId)
         {
             this.MemberId = memberId;
             return this;
         }
 
-        public uint getMemberId()
+        public MemberProperty SetType(int type)
         {
-            return this.MemberId;
-        }
-
-        public MemberProperty setType(int type)
-        {
-            this.MemberType = type;
+            this.Type = type;
             return this;
         }
 
-        public int getType()
-        {
-            return this.MemberType;
-        }
-
-        public MemberProperty setName(string name)
+        public MemberProperty SetName(string name)
         {
             this.Name = name;
             return this;
         }
 
-        public string getName()
-        {
-            return this.Name;
-        }
-
-        public MemberProperty copyFrom(MemberProperty other)
+        public MemberProperty CopyFrom(MemberProperty other)
         {
             throw new NotImplementedException();
         }
@@ -68,7 +48,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public MemberProperty modify()
+        public MemberProperty Modify()
         {
             throw new NotImplementedException();
         }

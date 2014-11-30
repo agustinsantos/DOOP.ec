@@ -13,7 +13,7 @@ namespace Doopec.Dds.XTypes
         public int TypeId { get; set; }
         public string Name { get; set; }
 
-        public TypeProperty setFlag(TypeFlag flag)
+        public TypeProperty SetFlag(TypeFlag flag)
         {
             this.Flag = flag;
             return this;
@@ -24,7 +24,7 @@ namespace Doopec.Dds.XTypes
             return this.Flag;
         }
 
-        public TypeProperty setTypeId(int typeId)
+        public TypeProperty SetTypeId(int typeId)
         {
             this.TypeId = typeId;
             return this;
@@ -46,7 +46,7 @@ namespace Doopec.Dds.XTypes
             return this.Name;
         }
 
-        public TypeProperty copyFrom(TypeProperty other)
+        public TypeProperty CopyFrom(TypeProperty other)
         {
             throw new NotImplementedException();
         }
@@ -56,7 +56,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public TypeProperty modify()
+        public TypeProperty Modify()
         {
             throw new NotImplementedException();
         }

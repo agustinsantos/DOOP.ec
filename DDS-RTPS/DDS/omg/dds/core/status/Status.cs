@@ -94,13 +94,13 @@ namespace org.omg.dds.core.status
             base.source = source;
         }
 
-        public abstract SELF copyFrom(SELF other);
+        public abstract SELF CopyFrom(SELF other);
 
         public abstract SELF finishModification();
 
         public abstract SELF Clone();
 
-        public abstract SELF modify();
+        public abstract SELF Modify();
 
         public abstract Bootstrap getBootstrap();
 

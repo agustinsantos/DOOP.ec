@@ -32,7 +32,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.typeobject.Type copyFrom(org.omg.dds.type.typeobject.Type other)
+        public org.omg.dds.type.typeobject.Type CopyFrom(org.omg.dds.type.typeobject.Type other)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.typeobject.Type modify()
+        public org.omg.dds.type.typeobject.Type Modify()
         {
             throw new NotImplementedException();
         }

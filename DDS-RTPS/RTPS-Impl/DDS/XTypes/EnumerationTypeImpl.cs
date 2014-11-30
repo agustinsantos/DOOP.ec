@@ -10,6 +10,7 @@ namespace Doopec.Dds.XTypes
     public class EnumerationTypeImpl : TypeImpl, EnumerationType 
     {
         public int BitBound { get; set; }
+        
         public IList<EnumeratedConstant> Constants { get; set; }
 
         public int getBitBound()
@@ -17,7 +18,7 @@ namespace Doopec.Dds.XTypes
             return this.BitBound;
         }
 
-        public EnumerationType setBitBound(int newBitBound)
+        public EnumerationType SetBitBound(int newBitBound)
         {
             this.BitBound = newBitBound;
             return this;
@@ -28,7 +29,7 @@ namespace Doopec.Dds.XTypes
             return this.Constants;
         }
 
-        public EnumerationType setConstant(IList<EnumeratedConstant> newConstant)
+        public EnumerationType SetConstant(IList<EnumeratedConstant> newConstant)
         {
             this.Constants = newConstant;
             return this;

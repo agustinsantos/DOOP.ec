@@ -26,7 +26,7 @@ namespace Doopec.Dds.Core.Policy
             throw new NotImplementedException();
         }
 
-        public ModifiablePresentationQosPolicy modify()
+        public ModifiablePresentationQosPolicy Modify()
         {
             throw new NotImplementedException();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using org.omg.dds.type;
 using Rtps.Messages.Types;
 using System.Diagnostics;
+using Doopec.XTypes;
 
 namespace Doopec.Rtps.Messages
 {
@@ -100,6 +101,7 @@ namespace Doopec.Rtps.Messages
 
         private static ParameterList BuildParameters(object obj)
         {
+            var type = TypeExplorer.ExploreType(obj.GetType());
             var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
                                .Where(fi => (fi.Attributes & FieldAttributes.NotSerialized) == 0);
             ParameterList parameters = new ParameterList();

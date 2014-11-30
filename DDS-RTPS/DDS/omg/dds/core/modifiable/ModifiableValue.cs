@@ -20,39 +20,37 @@ using org.omg.dds.core;
 
 namespace org.omg.dds.core.modifiable
 {
-    /**
-     * A value type that supports modification.
-     * 
-     * @param <UNMOD_SELF>  The unmodifiable supertype of this interface.
-     * @param <MOD_SELF>    This interface.
-     */
+    /// <summary>
+    /// A value type that supports modification.
+    /// </summary>
+    /// <typeparam name="UNMOD_SELF">The unmodifiable supertype of this interface.</typeparam>
+    /// <typeparam name="MOD_SELF">This interface.</typeparam>
     public interface ModifiableValue<UNMOD_SELF, MOD_SELF> : Value<UNMOD_SELF, MOD_SELF>
         where UNMOD_SELF : Value<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        /**
-         * Overwrite this object's state with the contents of the given object.
-         * 
-         * @return  this
-         */
-        MOD_SELF copyFrom(UNMOD_SELF other);
+        /// <summary>
+        ///  Overwrite this object's state with the contents of the given object.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns>this</returns>
+        MOD_SELF CopyFrom(UNMOD_SELF other);
 
-        /**
-         * If this value type has an unmodifiable counterpart class, return a new
-         * object of that class containing a copy of the state of this object. If
-         * not return null.
-         * 
-         * Calling this method is optional in general; because modifiable
-         * interfaces extend "unmodifiable" ones, the former can typically be
-         * used wherever the latter is required.
-         * 
-         * @return  a new unmodifiable copy of this object or null.
-         */
+        /// <summary>
+        /// If this value type has an unmodifiable counterpart class, return a new
+        /// object of that class containing a copy of the state of this object. If
+        /// not return null.
+        ///  
+        /// Calling this method is optional in general; because modifiable
+        /// interfaces extend "unmodifiable" ones, the former can typically be
+        /// used wherever the latter is required.
+        /// </summary>
+        /// <returns>a new unmodifiable copy of this object or null.</returns>
         UNMOD_SELF finishModification();
 
 
         // --- From Value: ---------------------------------------------------
 
-       // MOD_SELF clone();
+        // MOD_SELF clone();
     }
 }

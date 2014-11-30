@@ -4,127 +4,199 @@ namespace Doopec.Rtps.Discovery
 {
     public class DiscoveredWriterData : PublicationBuiltinTopicData
     {
-        public override BuiltinTopicKey getKey()
+        public override BuiltinTopicKey Key
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override BuiltinTopicKey getParticipantKey()
+        public override BuiltinTopicKey ParticipantKey
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override string getTopicName()
+        public override string TopicName
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override string getTypeName()
+        public override string TypeName
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override System.Collections.Generic.List<string> getEquivalentTypeName()
+        public override System.Collections.Generic.List<string> EquivalentTypeName
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override System.Collections.Generic.List<string> getBaseTypeName()
+        public override System.Collections.Generic.List<string> BaseTypeName
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.type.typeobject.TypeObject getType()
+        public override org.omg.dds.type.typeobject.TypeObject Type
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DurabilityQosPolicy getDurability()
+        public override org.omg.dds.core.policy.DurabilityQosPolicy Durability
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DurabilityServiceQosPolicy getDurabilityService()
+        public override org.omg.dds.core.policy.DurabilityServiceQosPolicy DurabilityService
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DeadlineQosPolicy getDeadline()
+        public override org.omg.dds.core.policy.DeadlineQosPolicy Deadline
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LatencyBudgetQosPolicy getLatencyBudget()
+        public override org.omg.dds.core.policy.LatencyBudgetQosPolicy LatencyBudget
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LivelinessQosPolicy getLiveliness()
+        public override org.omg.dds.core.policy.LivelinessQosPolicy Liveliness
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.ReliabilityQosPolicy getReliability()
+        public override org.omg.dds.core.policy.ReliabilityQosPolicy Reliability
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LifespanQosPolicy getLifespan()
+        public override org.omg.dds.core.policy.LifespanQosPolicy Lifespan
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.UserDataQosPolicy getUserData()
+        public override org.omg.dds.core.policy.UserDataQosPolicy UserData
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.OwnershipQosPolicy getOwnership()
+        public override org.omg.dds.core.policy.OwnershipQosPolicy Ownership
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.OwnershipStrengthQosPolicy getOwnershipStrength()
+        public override org.omg.dds.core.policy.OwnershipStrengthQosPolicy OwnershipStrength
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DestinationOrderQosPolicy getDestinationOrder()
+        public override org.omg.dds.core.policy.DestinationOrderQosPolicy DestinationOrder
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.PresentationQosPolicy getPresentation()
+        public override org.omg.dds.core.policy.PresentationQosPolicy Presentation
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.PartitionQosPolicy getPartition()
+        public override org.omg.dds.core.policy.PartitionQosPolicy Partition
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.TopicDataQosPolicy getTopicData()
+        public override org.omg.dds.core.policy.TopicDataQosPolicy TopicData
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.GroupDataQosPolicy getGroupData()
+        public override org.omg.dds.core.policy.GroupDataQosPolicy GroupData
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DataRepresentationQosPolicy getRepresentation()
+        public override org.omg.dds.core.policy.DataRepresentationQosPolicy Representation
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.TypeConsistencyEnforcementQosPolicy getTypeConsistency()
+        public override org.omg.dds.core.policy.TypeConsistencyEnforcementQosPolicy TypeConsistency
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override PublicationBuiltinTopicData copyFrom(PublicationBuiltinTopicData other)
+        public override PublicationBuiltinTopicData CopyFrom(PublicationBuiltinTopicData other)
         {
             throw new System.NotImplementedException();
         }
@@ -139,7 +211,7 @@ namespace Doopec.Rtps.Discovery
             throw new System.NotImplementedException();
         }
 
-        public override PublicationBuiltinTopicData modify()
+        public override PublicationBuiltinTopicData Modify()
         {
             throw new System.NotImplementedException();
         }

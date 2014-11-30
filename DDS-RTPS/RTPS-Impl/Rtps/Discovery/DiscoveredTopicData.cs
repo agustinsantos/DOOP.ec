@@ -9,112 +9,175 @@ namespace Doopec.Rtps.Discovery
 {
     public class DiscoveredTopicData : TopicBuiltinTopicData
     {
-        public override BuiltinTopicKey getKey()
+        public override BuiltinTopicKey Key
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override string getName()
+        public override string Name
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override string getTypeName()
+        public override string TypeName
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override List<string> getEquivalentTypeName()
+        public override List<string> EquivalentTypeName
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override List<string> getBaseTypeName()
+        public override List<string> BaseTypeName
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.type.typeobject.TypeObject getType()
+        public override org.omg.dds.type.typeobject.TypeObject Type
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DurabilityQosPolicy getDurability()
+        public override org.omg.dds.core.policy.DurabilityQosPolicy Durability
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DurabilityServiceQosPolicy getDurabilityService()
+        public override org.omg.dds.core.policy.DurabilityServiceQosPolicy DurabilityService
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DeadlineQosPolicy getDeadline()
+        public override org.omg.dds.core.policy.DeadlineQosPolicy Deadline
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LatencyBudgetQosPolicy getLatencyBudget()
+        public override org.omg.dds.core.policy.LatencyBudgetQosPolicy LatencyBudget
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LivelinessQosPolicy getLiveliness()
+        public override org.omg.dds.core.policy.LivelinessQosPolicy Liveliness
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.ReliabilityQosPolicy getReliability()
+        public override org.omg.dds.core.policy.ReliabilityQosPolicy Reliability
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.TransportPriorityQosPolicy getTransportPriority()
+        public override org.omg.dds.core.policy.TransportPriorityQosPolicy TransportPriority
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.LifespanQosPolicy getLifespan()
+        public override org.omg.dds.core.policy.LifespanQosPolicy Lifespan
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DestinationOrderQosPolicy getDestinationOrder()
+        public override org.omg.dds.core.policy.DestinationOrderQosPolicy DestinationOrder
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.HistoryQosPolicy getHistory()
+        public override org.omg.dds.core.policy.HistoryQosPolicy History
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.ResourceLimitsQosPolicy getResourceLimits()
+        public override org.omg.dds.core.policy.ResourceLimitsQosPolicy ResourceLimits
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.OwnershipQosPolicy getOwnership()
+        public override org.omg.dds.core.policy.OwnershipQosPolicy Ownership
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.TopicDataQosPolicy getTopicData()
+        public override org.omg.dds.core.policy.TopicDataQosPolicy TopicData
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.DataRepresentationQosPolicy getRepresentation()
+        public override org.omg.dds.core.policy.DataRepresentationQosPolicy Representation
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.TypeConsistencyEnforcementQosPolicy getTypeConsistency()
+        public override org.omg.dds.core.policy.TypeConsistencyEnforcementQosPolicy TypeConsistency
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public override TopicBuiltinTopicData copyFrom(TopicBuiltinTopicData other)
+        public override TopicBuiltinTopicData CopyFrom(TopicBuiltinTopicData other)
         {
             throw new NotImplementedException();
         }
@@ -124,7 +187,7 @@ namespace Doopec.Rtps.Discovery
             throw new NotImplementedException();
         }
 
-        public override TopicBuiltinTopicData modify()
+        public override TopicBuiltinTopicData Modify()
         {
             throw new NotImplementedException();
         }

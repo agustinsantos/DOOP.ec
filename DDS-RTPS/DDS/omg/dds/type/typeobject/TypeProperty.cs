@@ -28,41 +28,44 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface TypeProperty : ModifiableValue<TypeProperty, TypeProperty>
     {
-        /**
-         * @param flag the flag to set
-         * 
-         * @return  this
-         */
-        TypeProperty setFlag(TypeFlag flag);
+        /// <summary>
+        /// Sets the flag
+        /// </summary>
+        /// <param name="flag">the flag to set</param>
+        /// <returns>this</returns>
+        TypeProperty SetFlag(TypeFlag flag);
 
-        /**
-         * @return the flag
-         */
-        TypeFlag getFlag();
+        /// <summary>
+        /// Gets/Sets the flag
+        /// </summary>
+        TypeFlag Flag { get; set; }
 
-        /**
-         * @param typeId the typeId to set
-         * 
-         * @return  this
-         */
-        TypeProperty setTypeId(int typeId);
+        /// <summary>
+        /// Sets the typeId
+        /// </summary>
+        /// <param name="typeId">the typeId to set</param>
+        /// <returns>this</returns>
+        TypeProperty SetTypeId(int typeId);
 
-        /**
-         * @return the typeId
-         */
-        int getTypeId();
+        
+        /// <summary>
+        /// Gets/Sets the typeId
+        /// </summary>
+        int TypeId { get; set; }
 
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
+        
+        /// <summary>
+        /// Sets the name
+        /// </summary>
+        /// <param name="name">the name to set</param>
+        /// <returns>this</returns>
         TypeProperty setName(string name);
 
-        /**
-         * @return the name
-         */
-        string getName();
+        
+        /// <summary>
+        /// Gets/Sets the name
+        /// </summary>
+        string Name { get; set; }
     }
 
 }

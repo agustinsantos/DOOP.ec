@@ -8,7 +8,7 @@ namespace Doopec.DDS.Core
         where UNMOD_SELF : Value<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        public MOD_SELF copyFrom(UNMOD_SELF other)
+        public MOD_SELF CopyFrom(UNMOD_SELF other)
         {
             throw new NotImplementedException();
         }

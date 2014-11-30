@@ -34,7 +34,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public Member copyFrom(Member other)
+        public Member CopyFrom(Member other)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public Member modify()
+        public Member Modify()
         {
             throw new NotImplementedException();
         }

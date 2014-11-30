@@ -119,7 +119,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public MOD_SELF modify()
+        public MOD_SELF Modify()
         {
             throw new NotImplementedException();
         }

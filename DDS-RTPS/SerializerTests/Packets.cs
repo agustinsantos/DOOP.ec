@@ -1,8 +1,10 @@
 ﻿using Doopec.Serializer.Attributes;
 using System;
+using org.omg.dds.type;
 
 namespace SerializerTests
 {
+    #region Regular classes for testing
     [Packet]
     public sealed class BoolPacket
     {
@@ -58,6 +60,9 @@ namespace SerializerTests
         [Field]
         private byte m_val;
 
+        public U8Packet()
+        { }
+
         public U8Packet(byte v)
         {
             m_val = v;
@@ -79,6 +84,8 @@ namespace SerializerTests
     {
         [Field]
         private ushort m_val;
+        public U16Packet()
+        { }
 
         public U16Packet(ushort v)
         {
@@ -517,4 +524,40 @@ namespace SerializerTests
             throw new NotImplementedException();
         }
     }
+    #endregion
+
+    #region Extended and Annotated Classes for testing
+    [Packet]
+    public class XMyClass1
+    {
+        [Field]
+        [ID(0x8001)]
+        public byte m_byte;
+
+        [Field]
+        [ID(0x8002)]
+        public int m_int;
+
+        [Field]
+        [ID(0x8003)]
+        public short m_short;
+
+        public static int Size()
+        {
+            return sizeof(byte) + sizeof(int) + sizeof(long);
+        }
+
+        public override bool Equals(object other)
+        {
+            XMyClass1 otherObj = (XMyClass1)other;
+            return this.m_byte == otherObj.m_byte &&
+                    this.m_int == otherObj.m_int &&
+                    this.m_short == otherObj.m_short;
+        }
+        public override Int32 GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
+#endregion
 }

@@ -7,7 +7,7 @@ namespace Doopec.DDS.Core
         where UNMOD_SELF : Value<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        public MOD_SELF modify()
+        public MOD_SELF Modify()
         {
             throw new NotImplementedException();
         }

@@ -18,127 +18,199 @@ namespace Doopec.Dds.Topic
         protected string topicName;
         protected string typeName;
 
-        public override BuiltinTopicKey getKey()
+        public override BuiltinTopicKey Key
         {
-            return key;
+            get
+            {
+                return key;
+            }
         }
 
-        public override BuiltinTopicKey getParticipantKey()
+        public override BuiltinTopicKey ParticipantKey
         {
-            return participantKey;
+            get
+            {
+                return participantKey;
+            }
         }
 
-        public override string getTopicName()
+        public override string TopicName
         {
-            return topicName;
+            get
+            {
+                return topicName;
+            }
         }
 
-        public override string getTypeName()
+        public override string TypeName
         {
-            return typeName;
+            get
+            {
+                return typeName;
+            }
         }
 
-        public override List<string> getEquivalentTypeName()
+        public override List<string> EquivalentTypeName
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override List<string> getBaseTypeName()
+        public override List<string> BaseTypeName
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override TypeObject getType()
+        public override TypeObject Type
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override DurabilityQosPolicy getDurability()
+        public override DurabilityQosPolicy Durability
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override DurabilityServiceQosPolicy getDurabilityService()
+        public override DurabilityServiceQosPolicy DurabilityService
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override DeadlineQosPolicy getDeadline()
+        public override DeadlineQosPolicy Deadline
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override LatencyBudgetQosPolicy getLatencyBudget()
+        public override LatencyBudgetQosPolicy LatencyBudget
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override LivelinessQosPolicy getLiveliness()
+        public override LivelinessQosPolicy Liveliness
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override ReliabilityQosPolicy getReliability()
+        public override ReliabilityQosPolicy Reliability
         {
-            return reliabilityQosPolicy;
+            get
+            {
+                return reliabilityQosPolicy;
+            }
         }
 
-        public override LifespanQosPolicy getLifespan()
+        public override LifespanQosPolicy Lifespan
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override UserDataQosPolicy getUserData()
+        public override UserDataQosPolicy UserData
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override OwnershipQosPolicy getOwnership()
+        public override OwnershipQosPolicy Ownership
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override OwnershipStrengthQosPolicy getOwnershipStrength()
+        public override OwnershipStrengthQosPolicy OwnershipStrength
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override DestinationOrderQosPolicy getDestinationOrder()
+        public override DestinationOrderQosPolicy DestinationOrder
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override PresentationQosPolicy getPresentation()
+        public override PresentationQosPolicy Presentation
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override PartitionQosPolicy getPartition()
+        public override PartitionQosPolicy Partition
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override TopicDataQosPolicy getTopicData()
+        public override TopicDataQosPolicy TopicData
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override GroupDataQosPolicy getGroupData()
+        public override GroupDataQosPolicy GroupData
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override DataRepresentationQosPolicy getRepresentation()
+        public override DataRepresentationQosPolicy Representation
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override TypeConsistencyEnforcementQosPolicy getTypeConsistency()
+        public override TypeConsistencyEnforcementQosPolicy TypeConsistency
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override PublicationBuiltinTopicData copyFrom(PublicationBuiltinTopicData other)
+        public override PublicationBuiltinTopicData CopyFrom(PublicationBuiltinTopicData other)
         {
             throw new NotImplementedException();
         }
@@ -153,7 +225,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override PublicationBuiltinTopicData modify()
+        public override PublicationBuiltinTopicData Modify()
         {
             throw new NotImplementedException();
         }

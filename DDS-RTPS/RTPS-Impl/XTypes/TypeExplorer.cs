@@ -41,31 +41,34 @@ namespace Doopec.XTypes
 
             TypeProperty typeProp = new TypePropertyImpl();
             typeProp.setName(type.FullName);
-            typeProp.setTypeId(type.GetHashCode());
+            typeProp.SetTypeId(type.GetHashCode());
             TypeFlag flag = default(TypeFlag);
             //TODO flag |= (type.IsSealed? TypeFlag.IS_FINAL : 0);
-            typeProp.setFlag(flag);
+            typeProp.SetFlag(flag);
             ddsType.setProperty(typeProp);
 
             List<Member> listMember = new List<Member>();
-            var fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            var fields = type.GetFields(BindingFlags.Public |
+                                        BindingFlags.NonPublic |
+                                        BindingFlags.Instance |
+                                        BindingFlags.DeclaredOnly);
             uint lastId = 0;
             foreach (var member in fields)
             {
                 Member memberInfo = new MemberImpl();
 
                 MemberProperty memberProp = new MemberPropertyImpl();
-                memberProp.setName(member.Name);
+                memberProp.SetName(member.Name);
                 IDAttribute id = member.GetCustomAttribute<IDAttribute>();
                 if (id != null)
                 {
-                    memberProp.setMemberId(id.Value);
+                    memberProp.SetMemberId(id.Value);
                     lastId = id.Value;
                 }
                 else
                 {
                     lastId++;
-                    memberProp.setMemberId(lastId);
+                    memberProp.SetMemberId(lastId);
                 }
                 MemberFlag memberFlag = default(MemberFlag);
                 KeyAttribute isKey = member.GetCustomAttribute<KeyAttribute>();
@@ -79,7 +82,45 @@ namespace Doopec.XTypes
                     memberFlag |= MemberFlag.IS_OPTIONAL;
                 }
 
-                memberProp.setFlag(memberFlag);
+                memberProp.SetFlag(memberFlag);
+
+                memberInfo.setProperty(memberProp);
+                listMember.Add(memberInfo);
+            }
+            var props = type.GetProperties(BindingFlags.Public |
+                                           BindingFlags.NonPublic |
+                                           BindingFlags.Instance |
+                                           BindingFlags.DeclaredOnly);
+            foreach (var member in props)
+            {
+                Member memberInfo = new MemberImpl();
+
+                MemberProperty memberProp = new MemberPropertyImpl();
+                memberProp.SetName(member.Name);
+                IDAttribute id = member.GetCustomAttribute<IDAttribute>();
+                if (id != null)
+                {
+                    memberProp.SetMemberId(id.Value);
+                    lastId = id.Value;
+                }
+                else
+                {
+                    lastId++;
+                    memberProp.SetMemberId(lastId);
+                }
+                MemberFlag memberFlag = default(MemberFlag);
+                KeyAttribute isKey = member.GetCustomAttribute<KeyAttribute>();
+                if (isKey != null)
+                {
+                    memberFlag |= MemberFlag.IS_KEY;
+                }
+                OptionalAttribute isOptional = member.GetCustomAttribute<OptionalAttribute>();
+                if (isOptional != null)
+                {
+                    memberFlag |= MemberFlag.IS_OPTIONAL;
+                }
+
+                memberProp.SetFlag(memberFlag);
 
                 memberInfo.setProperty(memberProp);
                 listMember.Add(memberInfo);
@@ -95,10 +136,10 @@ namespace Doopec.XTypes
 
             TypeProperty typeProp = new TypePropertyImpl();
             typeProp.setName(type.FullName);
-            typeProp.setTypeId(type.GetHashCode());
+            typeProp.SetTypeId(type.GetHashCode());
             TypeFlag flag = default(TypeFlag);
             //TODO flag |= (type.IsSealed? TypeFlag.IS_FINAL : 0);
-            typeProp.setFlag(flag);
+            typeProp.SetFlag(flag);
             ddsType.setProperty(typeProp);
 
             var bitbound = type.GetCustomAttribute<BitBoundAttribute>();
@@ -106,26 +147,26 @@ namespace Doopec.XTypes
             {
                 Debug.Assert(bitbound.Value >= 1 && bitbound.Value <= 32, "The value member may take any value from 1 to 32, inclusive, when this annotation is applied to an enumerated type.");
 
-                ddsType.setBitBound(bitbound.Value);
+                ddsType.SetBitBound(bitbound.Value);
             }
             else
             {
                 var ut = type.GetEnumUnderlyingType();
                 if (ut == typeof(int) || ut == typeof(uint))
                 {
-                    ddsType.setBitBound(32);
+                    ddsType.SetBitBound(32);
                 }
                 else if (ut == typeof(byte) || ut == typeof(sbyte))
                 {
-                    ddsType.setBitBound(8);
+                    ddsType.SetBitBound(8);
                 }
                 else if (ut == typeof(short) || ut == typeof(ushort))
                 {
-                    ddsType.setBitBound(16);
+                    ddsType.SetBitBound(16);
                 }
                 else if (ut == typeof(long) || ut == typeof(ulong))
                 {
-                    ddsType.setBitBound(64);
+                    ddsType.SetBitBound(64);
                 }
                 else { throw new NotSupportedException(ut.ToString()); }
             }
@@ -136,11 +177,11 @@ namespace Doopec.XTypes
             for (int i = 0; i < constantNames.Length; i++)
             {
                 EnumeratedConstant constant = new EnumeratedConstantImpl();
-                constant.setName(constantNames[i]);
-                constant.setValue((int)constantValues.GetValue(i));
+                constant.SetName(constantNames[i]);
+                constant.SetValue((int)constantValues.GetValue(i));
                 listConstants.Add(constant);
             }
-            ddsType.setConstant(listConstants);
+            ddsType.SetConstant(listConstants);
             return ddsType;
         }
     }

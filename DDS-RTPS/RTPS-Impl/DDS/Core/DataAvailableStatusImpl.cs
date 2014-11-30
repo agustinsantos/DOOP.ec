@@ -20,7 +20,7 @@ namespace Doopec.DDS.Core
             return source as DataReader<TYPE>;
         }
 
-        public override DataAvailableStatus<TYPE> copyFrom(DataAvailableStatus<TYPE> other)
+        public override DataAvailableStatus<TYPE> CopyFrom(DataAvailableStatus<TYPE> other)
         {
             throw new NotImplementedException();
         }
@@ -35,7 +35,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public override DataAvailableStatus<TYPE> modify()
+        public override DataAvailableStatus<TYPE> Modify()
         {
             throw new NotImplementedException();
         }

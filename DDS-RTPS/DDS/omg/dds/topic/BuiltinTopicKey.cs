@@ -71,13 +71,13 @@ namespace org.omg.dds.topic
         public abstract Bootstrap getBootstrap();
 
 
-        public abstract BuiltinTopicKey copyFrom(BuiltinTopicKey other);
+        public abstract BuiltinTopicKey CopyFrom(BuiltinTopicKey other);
 
         public abstract BuiltinTopicKey finishModification();
 
         //public abstract BuiltinTopicKey clone();
 
-        public abstract BuiltinTopicKey modify();
+        public abstract BuiltinTopicKey Modify();
 
     }
 }

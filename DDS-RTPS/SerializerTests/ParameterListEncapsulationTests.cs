@@ -3,12 +3,7 @@ using Doopec.Serializer;
 using Doopec.Serializer.Attributes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mina.Core.Buffer;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SerializerTests
 {
@@ -59,71 +54,84 @@ namespace SerializerTests
         private const int maxBufferSize = 128;
 
         #region CDREncapsulation Little-Endian
-        /*
         [TestMethod]
         public void TestBoolPacketLE()
         {
             BoolPacket v1 = new BoolPacket(true);
-            int bufferSize = sizeof(bool) + CDRHeaderSize;
-            var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-            CDREncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 
+                                 "00 80 04 00 01 00 00 00 " + // Parameter
+                                 "01 00 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
 
             buffer.Rewind();
-            Assert.AreEqual("00 01 00 00 01 00 00 00 01", buffer.GetHexDump());
-            BoolPacket v2 = CDREncapsulation.Deserialize<BoolPacket>(buffer);
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            BoolPacket v2 = ParameterListEncapsulation.Deserialize<BoolPacket>(buffer);
             Assert.AreEqual(v1, v2);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            Assert.AreEqual(expectedSize, buffer.Position);
         }
 
         [TestMethod]
         public void TestCharPacketLE()
         {
             CharPacket v1 = new CharPacket('A');
-            int bufferSize = sizeof(char) + CDRHeaderSize;
-            var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-            CDREncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 
+                                 "00 80 04 00 00 41 00 00 " + // Parameter
+                                 "01 00 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
 
             buffer.Rewind();
-            Assert.AreEqual("00 01 00 00 02 00 00 00 41 00", buffer.GetHexDump());
-            CharPacket v2 = CDREncapsulation.Deserialize<CharPacket>(buffer);
+             Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            CharPacket v2 = ParameterListEncapsulation.Deserialize<CharPacket>(buffer);
             Assert.AreEqual(v1, v2);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            Assert.AreEqual(expectedSize, buffer.Position);
+
         }
 
         [TestMethod]
         public void TestU8PacketLE()
         {
             U8Packet v1 = new U8Packet(0xA);
-            int bufferSize = sizeof(byte) + CDRHeaderSize;
-            var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-            CDREncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 
+                                 "00 80 04 00 0A 00 00 00 " + // Parameter
+                                 "01 00 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
 
             buffer.Rewind();
-            Assert.AreEqual("00 01 00 00 01 00 00 00 0A", buffer.GetHexDump());
-            U8Packet v2 = CDREncapsulation.Deserialize<U8Packet>(buffer);
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            U8Packet v2 = ParameterListEncapsulation.Deserialize<U8Packet>(buffer);
             Assert.AreEqual(v1, v2);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            Assert.AreEqual(expectedSize, buffer.Position);
         }
+
 
         [TestMethod]
         public void TestU16PacketLE()
         {
             U16Packet v1 = new U16Packet(0xAB);
-            int bufferSize = sizeof(ushort) + CDRHeaderSize;
-            var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-            CDREncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
-            Assert.AreEqual(bufferSize, buffer.Position);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 
+                                 "00 80 04 00 00 AB 00 00 " + // Parameter
+                                 "01 00 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
 
             buffer.Rewind();
-            Assert.AreEqual("00 01 00 00 02 00 00 00 AB 00", buffer.GetHexDump());
-            U16Packet v2 = CDREncapsulation.Deserialize<U16Packet>(buffer);
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            U16Packet v2 = ParameterListEncapsulation.Deserialize<U16Packet>(buffer);
             Assert.AreEqual(v1, v2);
-            Assert.AreEqual(bufferSize, buffer.Position);
-        }
-
+            Assert.AreEqual(expectedSize, buffer.Position);
+        } 
+        /*
         [TestMethod]
         public void TestU32PacketLE()
         {
@@ -354,40 +362,46 @@ namespace SerializerTests
             Assert.AreEqual(expectedSize, buffer.Position);
 
         }
+
+        [TestMethod]
+        public void TestU8PacketBE()
+        {
+            U8Packet v1 = new U8Packet(0xA);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 02 00 00 00 00 00 0C " + // Header
+                                 "80 00 00 04 0A 00 00 00 " + // Parameter
+                                 "00 01 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.BigEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
+
+            buffer.Rewind();
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            U8Packet v2 = ParameterListEncapsulation.Deserialize<U8Packet>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(expectedSize, buffer.Position);
+        }
+
+
+        [TestMethod]
+        public void TestU16PacketBE()
+        {
+            U16Packet v1 = new U16Packet(0xAB);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 02 00 00 00 00 00 0C " + // Header
+                                 "80 00 00 04 00 AB 00 00 " + // Parameter
+                                 "00 01 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.BigEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
+
+            buffer.Rewind();
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            U16Packet v2 = ParameterListEncapsulation.Deserialize<U16Packet>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(expectedSize, buffer.Position);
+        }
         /*
-                [TestMethod]
-                public void TestU8PacketBE()
-                {
-                    U8Packet v1 = new U8Packet(0xA);
-                    int bufferSize = sizeof(byte) + CDRHeaderSize;
-                    var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-                    CDREncapsulation.Serialize(buffer, v1, ByteOrder.BigEndian);
-                    Assert.AreEqual(bufferSize, buffer.Position);
-
-                    buffer.Rewind();
-                    Assert.AreEqual("00 00 00 00 00 00 00 01 0A", buffer.GetHexDump());
-                    U8Packet v2 = CDREncapsulation.Deserialize<U8Packet>(buffer);
-                    Assert.AreEqual(v1, v2);
-                    Assert.AreEqual(bufferSize, buffer.Position);
-                }
-
-
-                [TestMethod]
-                public void TestU16PacketBE()
-                {
-                    U16Packet v1 = new U16Packet(0xAB);
-                    int bufferSize = sizeof(ushort) + CDRHeaderSize;
-                    var buffer = ByteBufferAllocator.Instance.Allocate(bufferSize);
-                    CDREncapsulation.Serialize(buffer, v1, ByteOrder.BigEndian);
-                    Assert.AreEqual(bufferSize, buffer.Position);
-
-                    buffer.Rewind();
-                    Assert.AreEqual("00 00 00 00 00 00 00 02 00 AB", buffer.GetHexDump());
-                    U16Packet v2 = CDREncapsulation.Deserialize<U16Packet>(buffer);
-                    Assert.AreEqual(v1, v2);
-                    Assert.AreEqual(bufferSize, buffer.Position);
-                }
-
 
                 [TestMethod]
                 public void TestU32PacketBE()

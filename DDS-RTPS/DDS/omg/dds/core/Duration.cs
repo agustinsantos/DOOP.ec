@@ -175,7 +175,7 @@ namespace org.omg.dds.core
         //public abstract Duration clone();
 
 
-        public abstract ModifiableDuration modify();
+        public abstract ModifiableDuration Modify();
 
         public abstract Bootstrap getBootstrap();
     }

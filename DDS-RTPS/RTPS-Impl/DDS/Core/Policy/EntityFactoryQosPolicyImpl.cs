@@ -24,7 +24,7 @@ namespace Doopec.DDS.Core.Policy
             return isAutoEnable;
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableEntityFactoryQosPolicy modify()
+        public org.omg.dds.core.policy.modifiable.ModifiableEntityFactoryQosPolicy Modify()
         {
             throw new NotImplementedException();
         }

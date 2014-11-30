@@ -29,22 +29,32 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface EnumerationType : Type
     {
-
+        /// <summary>
+        /// Gets/Sets the bit bound
+        /// </summary>
         [ID(EnumerationTypeMemberId.BIT_BOUND_ENUMERATIONTYPE_MEMBER_ID)]
-        int getBitBound();
+        int BitBound { get; set; }
 
-        /**
-         * @return  this
-         */
-        EnumerationType setBitBound(int newBitBound);
+        
+        /// <summary>
+        /// Sets a new BitBound
+        /// </summary>
+        /// <param name="newBitBound">the new BitBound</param>
+        /// <returns>this</returns>
+        EnumerationType SetBitBound(int newBitBound);
 
+        /// <summary>
+        /// Gets/Sets the list of enumerated constants (enums values)
+        /// </summary>
         [ID(EnumerationTypeMemberId.CONSTANT_ENUMERATIONTYPE_MEMBER_ID)]
-        IList<EnumeratedConstant> getConstant();
+        IList<EnumeratedConstant> Constants { get; set; }
 
-        /**
-         * @return  this
-         */
-        EnumerationType setConstant(IList<EnumeratedConstant> newConstant);
+        /// <summary>
+        /// Set a new list of constants
+        /// </summary>
+        /// <param name="newConstant">the new list of constants</param>
+        /// <returns>this</returns>
+        EnumerationType SetConstant(IList<EnumeratedConstant> newConstant);
 
     }
     // -----------------------------------------------------------------------

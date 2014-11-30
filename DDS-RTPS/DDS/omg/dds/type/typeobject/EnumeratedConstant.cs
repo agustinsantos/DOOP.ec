@@ -27,28 +27,29 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface EnumeratedConstant : ModifiableValue<EnumeratedConstant, EnumeratedConstant>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
-        EnumeratedConstant setValue(int value);
+        /// <summary>
+        /// Sets the value of a constant
+        /// </summary>
+        /// <param name="name">the new value</param>
+        /// <returns>this</returns>
+        EnumeratedConstant SetValue(int value);
 
-        /**
-         * @return the value
-         */
-        int getValue();
+        
+        /// <summary>
+        /// Gets/Sets the internal Value
+        /// </summary>
+        int Value { get; set; }
 
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
-        EnumeratedConstant setName(string name);
+        /// <summary>
+        /// Sets the name of a constant
+        /// </summary>
+        /// <param name="name">the new name</param>
+        /// <returns>this</returns>
+        EnumeratedConstant SetName(string name);
 
-        /**
-         * @return the name
-         */
-        string getName();
+        /// <summary>
+        /// Gets/Sets the Name
+        /// </summary>
+        string Name { get; set; }
     }
 }

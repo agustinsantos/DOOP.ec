@@ -148,6 +148,6 @@ namespace org.omg.dds.core
 
         public abstract Bootstrap getBootstrap();
 
-        public abstract ModifiableTime modify();
+        public abstract ModifiableTime Modify();
     }
 }

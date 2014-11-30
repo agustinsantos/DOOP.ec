@@ -23,7 +23,8 @@ using System;
 namespace org.omg.dds.type
 {
     [System.AttributeUsage(AttributeTargets.Field |
-                            AttributeTargets.Method)
+                           AttributeTargets.Property |
+                           AttributeTargets.Method)
     ]
     public class OptionalAttribute : Attribute
     {

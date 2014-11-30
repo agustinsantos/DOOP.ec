@@ -51,126 +51,126 @@ namespace org.omg.dds.topic
 
         [ID(0x005A)]
         [Key]
-        public abstract BuiltinTopicKey getKey();
+        public abstract BuiltinTopicKey Key { get; }
 
         /**
          * @return the name
          */
         [ID(0x0005)]
-        public abstract string getName();
+        public abstract string Name { get; }
 
         /**
          * @return the typeName
          */
         [ID(0x0007)]
-        public abstract string getTypeName();
+        public abstract string TypeName { get; }
 
         [ID(0x0075)]
         [Optional]
-        public abstract List<string> getEquivalentTypeName();
+        public abstract List<string> EquivalentTypeName { get; }
 
         [ID(0x0076)]
         [Optional]
-        public abstract List<string> getBaseTypeName();
+        public abstract List<string> BaseTypeName { get; }
 
         [ID(0x0072)]
         [Optional]
-        public abstract TypeObject getType();
+        public abstract TypeObject Type { get; }
 
         /**
          * @return the durability
          */
         [ID(0x001D)]
-        public abstract DurabilityQosPolicy getDurability();
+        public abstract DurabilityQosPolicy Durability { get; }
 
         /**
          * @return the durabilityService
          */
         [ID(0x001E)]
-        public abstract DurabilityServiceQosPolicy getDurabilityService();
+        public abstract DurabilityServiceQosPolicy DurabilityService { get; }
 
         /**
          * @return the deadline
          */
         [ID(0x0023)]
-        public abstract DeadlineQosPolicy getDeadline();
+        public abstract DeadlineQosPolicy Deadline { get; }
 
         /**
          * @return the latencyBudget
          */
         [ID(0x0027)]
-        public abstract LatencyBudgetQosPolicy getLatencyBudget();
+        public abstract LatencyBudgetQosPolicy LatencyBudget { get; }
 
         /**
          * @return the liveliness
          */
         [ID(0x001B)]
-        public abstract LivelinessQosPolicy getLiveliness();
+        public abstract LivelinessQosPolicy Liveliness { get; }
 
         /**
          * @return the reliability
          */
         [ID(0x001A)]
-        public abstract ReliabilityQosPolicy getReliability();
+        public abstract ReliabilityQosPolicy Reliability { get; }
 
         /**
          * @return the transportPriority
          */
         [ID(0x0049)]
-        public abstract TransportPriorityQosPolicy getTransportPriority();
+        public abstract TransportPriorityQosPolicy TransportPriority { get; }
 
         /**
          * @return the lifespan
          */
         [ID(0x002B)]
-        public abstract LifespanQosPolicy getLifespan();
+        public abstract LifespanQosPolicy Lifespan { get; }
 
         /**
          * @return the destinationOrder
          */
         [ID(0x0025)]
-        public abstract DestinationOrderQosPolicy getDestinationOrder();
+        public abstract DestinationOrderQosPolicy DestinationOrder { get; }
 
         /**
          * @return the history
          */
         [ID(0x0040)]
-        public abstract HistoryQosPolicy getHistory();
+        public abstract HistoryQosPolicy History { get; }
 
         /**
          * @return the resourceLimits
          */
         [ID(0x0041)]
-        public abstract ResourceLimitsQosPolicy getResourceLimits();
+        public abstract ResourceLimitsQosPolicy ResourceLimits { get; }
 
         /**
          * @return the ownership
          */
         [ID(0x001F)]
-        public abstract OwnershipQosPolicy getOwnership();
+        public abstract OwnershipQosPolicy Ownership { get; }
 
         /**
          * @return the topicData
          */
         [ID(0x002E)]
-        public abstract TopicDataQosPolicy getTopicData();
+        public abstract TopicDataQosPolicy TopicData { get; }
 
         [ID(0x0073)]
-        public abstract DataRepresentationQosPolicy getRepresentation();
+        public abstract DataRepresentationQosPolicy Representation { get; }
 
         [ID(0x0074)]
-        public abstract TypeConsistencyEnforcementQosPolicy getTypeConsistency();
+        public abstract TypeConsistencyEnforcementQosPolicy TypeConsistency { get; }
 
 
         // --- From Object: ------------------------------------------------------
 
         //public abstract TopicBuiltinTopicData clone();
 
-        public abstract TopicBuiltinTopicData copyFrom(TopicBuiltinTopicData other);
+        public abstract TopicBuiltinTopicData CopyFrom(TopicBuiltinTopicData other);
 
         public abstract TopicBuiltinTopicData finishModification();
 
-        public abstract TopicBuiltinTopicData modify();
+        public abstract TopicBuiltinTopicData Modify();
 
         public abstract Bootstrap getBootstrap();
 

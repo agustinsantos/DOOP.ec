@@ -20,17 +20,23 @@ namespace Rtps.Discovery.Spdp
 
         public Duration LeaseDuration { get; set; }
 
-        public override BuiltinTopicKey getKey()
+        public override BuiltinTopicKey Key
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override org.omg.dds.core.policy.UserDataQosPolicy getUserData()
+        public override org.omg.dds.core.policy.UserDataQosPolicy UserData
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
-        public override ParticipantBuiltinTopicData copyFrom(ParticipantBuiltinTopicData other)
+        public override ParticipantBuiltinTopicData CopyFrom(ParticipantBuiltinTopicData other)
         {
             throw new System.NotImplementedException();
         }
@@ -45,7 +51,7 @@ namespace Rtps.Discovery.Spdp
             throw new System.NotImplementedException();
         }
 
-        public override ParticipantBuiltinTopicData modify()
+        public override ParticipantBuiltinTopicData Modify()
         {
             throw new System.NotImplementedException();
         }
@@ -57,7 +63,7 @@ namespace Rtps.Discovery.Spdp
 
         public override string ToString()
         {
-            return PARTICIPANT_TOPIC + "{key: " + getKey() + ", QoS: " + getUserData()+"}";
+            return PARTICIPANT_TOPIC + string.Format("{key: {0}, QoS: {1}}", this.Key, this.UserData);
         }
     }
 }

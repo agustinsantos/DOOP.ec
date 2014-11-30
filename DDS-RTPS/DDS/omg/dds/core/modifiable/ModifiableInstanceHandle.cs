@@ -30,7 +30,7 @@ namespace org.omg.dds.core.modifiable
 
         // --- From Object: ------------------------------------------------------
 
-        public abstract ModifiableInstanceHandle copyFrom(InstanceHandle other);
+        public abstract ModifiableInstanceHandle CopyFrom(InstanceHandle other);
 
         public abstract InstanceHandle finishModification();
 

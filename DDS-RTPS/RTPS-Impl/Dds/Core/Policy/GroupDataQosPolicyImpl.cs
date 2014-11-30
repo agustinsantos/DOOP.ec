@@ -15,7 +15,7 @@ namespace Doopec.Dds.Core.Policy
             throw new System.NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableGroupDataQosPolicy modify()
+        public org.omg.dds.core.policy.modifiable.ModifiableGroupDataQosPolicy Modify()
         {
             throw new System.NotImplementedException();
         }

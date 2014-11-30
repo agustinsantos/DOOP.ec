@@ -33,7 +33,7 @@ namespace Doopec.DDS.Core.Policy
             return this.value.Length;
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableUserDataQosPolicy modify()
+        public org.omg.dds.core.policy.modifiable.ModifiableUserDataQosPolicy Modify()
         {
             throw new NotImplementedException();
         }

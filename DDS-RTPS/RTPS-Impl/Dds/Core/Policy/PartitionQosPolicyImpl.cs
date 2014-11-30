@@ -13,7 +13,7 @@ namespace Doopec.Dds.Core.Policy
             throw new NotImplementedException();
         }
 
-        public ModifiablePartitionQosPolicy modify()
+        public ModifiablePartitionQosPolicy Modify()
         {
             throw new NotImplementedException();
         }
