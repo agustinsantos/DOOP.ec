@@ -35,15 +35,16 @@ namespace org.omg.dds.type
     /// application-defined types compliant with this specification.
     /// </summary>
     [System.AttributeUsage(AttributeTargets.Field |
-                            AttributeTargets.Method)
+                           AttributeTargets.Property |
+                           AttributeTargets.Method)
     ]
     public class IDAttribute : Attribute
     {
-        public IDAttribute(int val)
+        public IDAttribute(uint val)
         {
             Value = val;
         }
 
-        public int Value { get; set; }
+        public uint Value { get; set; }
     }
 }

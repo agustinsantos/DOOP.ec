@@ -223,6 +223,15 @@ namespace Doopec.Serializer
             value = buffer.GetDouble();
         }
 
+        public static unsafe void WritePrimitive(IoBuffer buffer, decimal value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static unsafe void ReadPrimitive(IoBuffer buffer, out decimal value)
+        {
+            throw new NotImplementedException();
+        }
 
         public static void WritePrimitive(IoBuffer buffer, DateTime value)
         {

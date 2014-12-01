@@ -45,12 +45,12 @@ namespace org.omg.dds.type.typeobject
          * 
          * @return  this
          */
-        MemberProperty setMemberId(int memberId);
+        MemberProperty setMemberId(uint memberId);
 
         /**
          * @return the memberId
          */
-        int getMemberId();
+        uint getMemberId();
 
         /**
          * @param type the type to set

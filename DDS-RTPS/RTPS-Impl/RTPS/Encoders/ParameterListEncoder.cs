@@ -21,23 +21,11 @@ namespace Doopec.Rtps.Encoders
         {
             buffer.Align(4); // @see 9.4.2.11
 
-            obj.Value.Add(new Sentinel()); // Sentinel must be the last Parameter
+            obj.Value.Add(Sentinel.Instance); // Sentinel must be the last Parameter
             foreach (Parameter param in obj.Value)
             {
-                buffer.PutInt16((short)param.ParameterId);
-                buffer.PutInt16(0); // length will be calculated
-
-                int pos = buffer.Position;
                 buffer.PutParameter(param);
-
-                buffer.Align(4); // Make sure length is multiple of 4 & align for
-                // next param
-
-                int paramLength = buffer.Position - pos;
-                buffer.PutInt16(pos - 2, (short)paramLength);
             }
-
-            // TODO: last Parameter must be PID_SENTINEL
         }
 
         public static ParameterList GetParameterList(this IoBuffer buffer)

@@ -65,6 +65,10 @@ namespace Rtps.Messages.Submessages.Elements
             {
                 return bytes;
             }
+            set
+            {
+                bytes = value;
+            }
         }
     }
 }

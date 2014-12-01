@@ -54,7 +54,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ParameterListEncapsulationTests.cs" />
     <Compile Include="Packets.cs" />
+    <Compile Include="CDREncapsulationTests.cs" />
     <Compile Include="PacketTests.cs" />
     <Compile Include="PrimitiveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +65,14 @@
     <ProjectReference Include="..\DoopecSerializer\DoopecSerializer.csproj">
       <Project>{22101bf5-0f28-4fcb-9b3b-296158787996}</Project>
       <Name>DoopecSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTPS-Impl\DdsRtpsImpl.csproj">
+      <Project>{51bb643c-96ed-472e-b80b-723254599bc3}</Project>
+      <Name>DdsRtpsImpl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTPS\API-RTPS.csproj">
+      <Project>{350002ab-e6eb-48fe-8e43-4988e923206b}</Project>
+      <Name>API-RTPS</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

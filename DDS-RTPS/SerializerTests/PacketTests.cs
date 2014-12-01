@@ -254,5 +254,20 @@ namespace SerializerTests
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }
+
+        [TestMethod]
+        public void TestMyClass1MessagePacket()
+        {
+            int size = MyClass1.Size();
+            MyClass1 v1 = new MyClass1();
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            MyClass1 v2 = Serializer.Deserialize<MyClass1>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
     }
 }

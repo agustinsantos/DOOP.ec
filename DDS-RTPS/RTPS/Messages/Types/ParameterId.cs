@@ -4,7 +4,7 @@ namespace Rtps.Messages.Types
     /// <summary>
     /// ParameterIds for Data submessage. see table 9.12 & table 9.14 & Table 9.17
     /// </summary>
-    public enum ParameterId : short
+    public enum ParameterId : ushort
     {
         PID_PAD = 0x0000,
         PID_SENTINEL = 0x0001,
@@ -79,9 +79,10 @@ namespace Rtps.Messages.Types
         PID_RECV_QUEUE_SIZE = 0x0018,
         PID_RELIABILITY_OFFERED = 0x0019,
 
-        PID_VENDOR_SPECIFIC = -1, // is just invented, @see 9.6.2.2.1
+        PID_VENDOR_SPECIFIC = 0x8000, // is just invented, @see 9.6.2.2.1
+
         // ParameterId space
-        PID_UNKNOWN_PARAMETER = short.MinValue // is just invented, @see 9.6.2.2.1
+        PID_UNKNOWN_PARAMETER = ushort.MinValue // it is just invented, @see 9.6.2.2.1
         // ParameterId space
     }
 }

@@ -9,6 +9,9 @@ namespace SerializerTests
         [Field]
         private bool m_val;
 
+        public BoolPacket()
+        { }
+
         public BoolPacket(bool v)
         {
             m_val = v;
@@ -30,6 +33,8 @@ namespace SerializerTests
     {
         [Field]
         private char m_val;
+        public CharPacket()
+        { }
 
         public CharPacket(char v)
         {
@@ -413,7 +418,7 @@ namespace SerializerTests
         public static int Size()
         {
             return sizeof(byte) + sizeof(int) + sizeof(long);
-        } 
+        }
 
         public override bool Equals(object other)
         {
@@ -440,7 +445,7 @@ namespace SerializerTests
         public static int Size()
         {
             return sizeof(MyEnum) + sizeof(int);
-        } 
+        }
 
         public override bool Equals(object other)
         {
@@ -469,13 +474,43 @@ namespace SerializerTests
         public static int Size()
         {
             return MyStruct1.Size() + MyStruct2.Size();
-        } 
+        }
 
         public override bool Equals(object other)
         {
             StructMessage otherObj = (StructMessage)other;
             return this.m_struct1.Equals(otherObj.m_struct1) &&
                    this.m_struct2.Equals(otherObj.m_struct2);
+        }
+        public override Int32 GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    [Packet]
+    public class MyClass1
+    {
+        [Field]
+        public byte m_byte;
+
+        [Field]
+        public int m_int;
+
+        [Field]
+        public long m_long;
+
+        public static int Size()
+        {
+            return sizeof(byte) + sizeof(int) + sizeof(long);
+        }
+
+        public override bool Equals(object other)
+        {
+            MyClass1 otherObj = (MyClass1)other;
+            return this.m_byte == otherObj.m_byte &&
+                    this.m_int == otherObj.m_int &&
+                    this.m_long == otherObj.m_long;
         }
         public override Int32 GetHashCode()
         {

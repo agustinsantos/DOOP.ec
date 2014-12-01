@@ -9,7 +9,7 @@ namespace Rtps.Messages.Submessages.Elements
         public readonly static short PID_SENTINEL = 1;
         public readonly static short PID_PAD = 0;
 
-        public List<Parameter> Value;
+        public List<Parameter> Value = new List<Parameter>();
         private int size = 0;
 
         public int Size
