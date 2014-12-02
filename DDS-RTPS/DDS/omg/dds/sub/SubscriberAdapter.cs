@@ -24,42 +24,42 @@ namespace org.omg.dds.sub
 
     public class SubscriberAdapter : SubscriberListener
     {
-        public void onDataAvailable<TYPE>(DataAvailableStatus<TYPE> status)
+        public void OnDataAvailable<TYPE>(DataAvailableStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status)
+        public void OnLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status)
+        public void OnRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status)
+        public void OnRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSampleLost<TYPE>(SampleLostStatus<TYPE> status)
+        public void OnSampleLost<TYPE>(SampleLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status)
+        public void OnSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status)
+        public void OnSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onDataOnReaders(DataOnReadersStatus status)
+        public void OnDataOnReaders(DataOnReadersStatus status)
         {
             // empty
         }

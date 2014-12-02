@@ -29,23 +29,26 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableLivelinessQosPolicy : LivelinessQosPolicy,
             ModifiableQosPolicy<LivelinessQosPolicy, ModifiableLivelinessQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">The kind to set</param>
+        /// <returns>this</returns>
         ModifiableLivelinessQosPolicy setKind(LivelinessQosPolicyKind kind);
 
-        /**
-         * @param leaseDuration the leaseDuration to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="leaseDuration">The leaseDuration to set</param>
+        /// <returns>this</returns>
         ModifiableLivelinessQosPolicy setLeaseDuration(Duration leaseDuration);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="leaseDuration"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableLivelinessQosPolicy setLeaseDuration(long leaseDuration, TimeUnit unit);
 
     }

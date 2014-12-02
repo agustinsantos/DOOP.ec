@@ -86,10 +86,8 @@ namespace org.omg.dds.domain
         ///                  notified. A null collection signifies all status
         ///                  changes.</param>
         /// <returns></returns>
-        Publisher CreatePublisher(string qosLibraryName,
-               string qosProfileName,
-               PublisherListener listener,
-               ICollection<Type> statuses);
+        Publisher CreatePublisher(string qosLibraryName, string qosProfileName,
+               PublisherListener listener, ICollection<Type> statuses);
 
         // --- Create Subscriber: ------------------------------------------------
         /// <summary>
@@ -109,9 +107,7 @@ namespace org.omg.dds.domain
         ///                  notified. A null collection signifies all status
         ///                  changes.</param>
         /// <returns></returns>
-        Subscriber CreateSubscriber(SubscriberQos qos,
-               SubscriberListener listener,
-               ICollection<Type> statuses);
+        Subscriber CreateSubscriber(SubscriberQos qos, SubscriberListener listener, ICollection<Type> statuses);
 
         /// <summary>
         /// Create a new subscriber.

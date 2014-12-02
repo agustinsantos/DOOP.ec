@@ -25,19 +25,22 @@ namespace org.omg.dds.core.policy
     public interface ResourceLimitsQosPolicy : QosPolicy<ResourceLimitsQosPolicy, ModifiableResourceLimitsQosPolicy>
     {
 
-        /**
-         * @return the maxSamples
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The maxSamples</returns>
         int getMaxSamples();
 
-        /**
-         * @return the maxInstances
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The maxInstances</returns>
         int getMaxInstances();
 
-        /**
-         * @return the maxSamplesPerInstance
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The maxSamplesPerInstance</returns>
         int getMaxSamplesPerInstance();
 
     }

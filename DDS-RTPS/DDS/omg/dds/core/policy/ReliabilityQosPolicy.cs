@@ -26,15 +26,15 @@ namespace org.omg.dds.core.policy
     public interface ReliabilityQosPolicy : QosPolicy<ReliabilityQosPolicy, ModifiableReliabilityQosPolicy>
     {
         /// <summary>
-        /// return the kind
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The kind</returns>
         ReliabilityQosPolicyKind getKind();
 
         /// <summary>
-        /// Return the max blocking time
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The max blocking time</returns>
         Duration getMaxBlockingTime();
     }
 

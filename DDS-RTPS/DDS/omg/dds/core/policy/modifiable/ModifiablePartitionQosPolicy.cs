@@ -25,11 +25,11 @@ namespace org.omg.dds.core.policy.modifiable
 {
     public interface ModifiablePartitionQosPolicy : PartitionQosPolicy, ModifiableQosPolicy<PartitionQosPolicy, ModifiablePartitionQosPolicy>
     {
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">The name to set</param>
+        /// <returns>this</returns>
         ModifiablePartitionQosPolicy setName(ICollection<string> name);
     }
 }

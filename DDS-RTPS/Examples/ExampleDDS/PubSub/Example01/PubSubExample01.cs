@@ -20,7 +20,7 @@ namespace ExampleDDS.PubSubExamples
             base.RunExample(args);
 
             DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp = factory.createParticipant();
+            DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
             Topic<Greeting> tp = dp.CreateTopic<Greeting>("Greetings Topic");

@@ -151,6 +151,7 @@ namespace org.omg.dds.core
              * described in the specification for this method and throws
              * NullPointerException or IllegalArgumentException if necessary.
              */
+            
             string className = ConfigurationManager.AppSettings[implClassNameProperty];
             if (string.IsNullOrWhiteSpace(className))
             {
@@ -173,14 +174,13 @@ namespace org.omg.dds.core
                 }
                 catch (Exception)
                 {
-                    /* No Map constructor found; try a no-argument constructor
-                     * instead.
-                     * 
-                     * Get the constructor and call it explicitly rather than
-                     * calling Class.newInstance(). The latter propagates all
-                     * exceptions, even checked ones, complicating error handling
-                     * for us and the user.
-                     */
+                    /// No Map constructor found; try a no-argument constructor
+                    /// instead.
+                    ///
+                    /// Get the constructor and call it explicitly rather than
+                    /// calling Class.newInstance(). The latter propagates all
+                    /// exceptions, even checked ones, complicating error handling
+                    /// for us and the user.
                     object newInstance = Activator.CreateInstance(ctxClass);
                     return (Bootstrap)newInstance;
                 }
@@ -266,12 +266,12 @@ namespace org.omg.dds.core
                 throw new AssertionError(argx);
             }
 #endif
-            /* If any other RuntimeException or Error gets thrown above, it's
-             * either a bug in the implementation of this method or an
-             * undocumented behavior of the Java standard library. In either
-             * case, there's not much we can do about it, so let the exception
-             * propagate up the call stack as-is.
-             */
+            /// If any other RuntimeException or Error gets thrown above, it's
+            ///  either a bug in the implementation of this method or an
+            /// undocumented behavior of the Java standard library. In either
+            /// case, there's not much we can do about it, so let the exception
+            /// propagate up the call stack as-is.
+       
             return null;
         }
 
@@ -321,29 +321,32 @@ namespace org.omg.dds.core
 
             // --- Types: --------------------------------------------------------
 
-            /**
-             * Create a new {@link TypeSupport} object for the given physical
-             * type. The Service will register this type under the given name
-             * with any participant with which the <code>TypeSupport</code> is
-             * used.
-             * 
-             * @param <TYPE>    The physical type of all samples read or written
-             *                  by any {@link org.omg.dds.sub.DataReader} or
-             *                  {@link org.omg.dds.pub.DataWriter} typed by the
-             *                  resulting <code>TypeSupport</code>.
-             * @param type      The physical type of all samples read or written
-             *                  by any {@link org.omg.dds.sub.DataReader} or
-             *                  {@link org.omg.dds.pub.DataWriter} typed by the
-             *                  resulting <code>TypeSupport</code>.
-             * @param registeredName    The logical name under which this type
-             *                  will be registered with any
-             *                  {@link org.omg.dds.domain.DomainParticipant}
-             *                  with which the resulting
-             *                  <code>TypeSupport</code> is used.
-             * @return          A new <code>TypeSupport</code> object, which can
-             *                  subsequently be used to create one or more
-             *                  {@link org.omg.dds.topic.Topic}s.
-             */
+            /// <summary>
+            /// Create a new {@link TypeSupport} object for the given physical
+            /// type. The Service will register this type under the given name
+            /// with any participant with which the <code>TypeSupport</code> is
+            /// used
+            /// </summary>
+            /// <typeparam name="TYPE">The physical type of all samples read or written
+            ///                        by any {@link org.omg.dds.sub.DataReader} or
+            ///                        {@link org.omg.dds.pub.DataWriter} typed by the
+            ///                        resulting <code>TypeSupport</code>
+            /// </typeparam>
+            /// <param name="type">The physical type of all samples read or written
+            ///                    by any {@link org.omg.dds.sub.DataReader} or
+            ///                    {@link org.omg.dds.pub.DataWriter} typed by the
+            ///                    resulting <code>TypeSupport</code>
+            /// </param>
+            /// <param name="registeredName">The logical name under which this type
+            ///                              will be registered with any
+            ///                              {@link org.omg.dds.domain.DomainParticipant}
+            ///                              with which the resulting
+            ///                              <code>TypeSupport</code> is used
+            /// </param>
+            /// <returns>A new <code>TypeSupport</code> object, which can
+            ///          subsequently be used to create one or more
+            ///          {@link org.omg.dds.topic.Topic}s
+            /// </returns>
             TypeSupport<TYPE> newTypeSupport<TYPE>(Type type, string registeredName);
 
 
@@ -361,29 +364,35 @@ namespace org.omg.dds.core
             /// <returns></returns>
             ModifiableDuration newDuration(long duration, TimeUnit unit);
 
-            /**
-             * @return      A {@link Duration} of infinite length.
-             */
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <returns>A {@link Duration} of infinite length</returns>
             Duration infiniteDuration();
 
-            /**
-             * @return      A {@link Duration} of zero length.
-             */
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <returns>A {@link Duration} of zero length</returns>
             Duration zeroDuration();
 
-            /**
-             * Construct a specific instant in time.
-             * 
-             * Negative values are considered invalid and will result in the
-             * construction of a time <code>t</code> such that:
-             * 
-             * <code>t.isValid() == false</code>
-             */
+            /// <summary>
+            /// Construct a specific instant in time.
+            /// 
+            /// Negative values are considered invalid and will result in the
+            /// construction of a time <code>t</code> such that:
+            /// 
+            /// <code>t.isValid() == false</code>
+            /// </summary>
+            /// <param name="time"></param>
+            /// <param name="units"></param>
+            /// <returns></returns>
             ModifiableTime newTime(long time, TimeUnit units);
 
-            /**
-             * @return      A {@link Time} that is not valid.
-             */
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <returns>A {@link Time} that is not valid</returns>
             Time invalidTime();
 
 

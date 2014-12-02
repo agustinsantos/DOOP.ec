@@ -30,10 +30,11 @@ namespace org.omg.dds.core.status
         // Object Life Cycle
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
+        /// <returns></returns>
         public static OfferedDeadlineMissedStatus<TYPE> newOfferedDeadlineMissedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newOfferedDeadlineMissedStatus<TYPE>();
@@ -53,14 +54,16 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the totalCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The totalCount</returns>
         public abstract int getTotalCount();
 
-        /**
-         * @return the totalCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The totalCountChange</returns>
         public abstract int getTotalCountChange();
 
         public abstract ModifiableInstanceHandle getLastInstanceHandle();

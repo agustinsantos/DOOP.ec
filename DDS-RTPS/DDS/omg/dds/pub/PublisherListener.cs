@@ -25,14 +25,14 @@ namespace org.omg.dds.pub
 
     public interface PublisherListener : EventListener
     {
-        void onOfferedDeadlineMissed<Type>(
+        void OnOfferedDeadlineMissed<Type>(
               OfferedDeadlineMissedStatus<Type> status);
 
-        void onOfferedIncompatibleQos<Type>(
+        void OnOfferedIncompatibleQos<Type>(
               OfferedIncompatibleQosStatus<Type> status);
 
-        void onLivelinessLost<Type>(LivelinessLostStatus<Type> status);
+        void OnLivelinessLost<Type>(LivelinessLostStatus<Type> status);
 
-        void onPublicationMatched<Type>(PublicationMatchedStatus<Type> status);
+        void OnPublicationMatched<Type>(PublicationMatchedStatus<Type> status);
     }
 }

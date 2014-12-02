@@ -25,67 +25,67 @@ namespace org.omg.dds.domain
 
     public class DomainParticipantAdapter : DomainParticipantListener
     {
-        public void onInconsistentTopic<TYPE>(InconsistentTopicStatus<TYPE> status)
+        public void OnInconsistentTopic<TYPE>(InconsistentTopicStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onLivelinessLost<TYPE>(LivelinessLostStatus<TYPE> status)
+        public void OnLivelinessLost<TYPE>(LivelinessLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onOfferedDeadlineMissed<TYPE>(OfferedDeadlineMissedStatus<TYPE> status)
+        public void OnOfferedDeadlineMissed<TYPE>(OfferedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onOfferedIncompatibleQos<TYPE>(OfferedIncompatibleQosStatus<TYPE> status)
+        public void OnOfferedIncompatibleQos<TYPE>(OfferedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onPublicationMatched<TYPE>(PublicationMatchedStatus<TYPE> status)
+        public void OnPublicationMatched<TYPE>(PublicationMatchedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onDataOnReaders(DataOnReadersStatus status)
+        public void OnDataOnReaders(DataOnReadersStatus status)
         {
             // empty
         }
 
-        public void onDataAvailable<TYPE>(DataAvailableStatus<TYPE> status)
+        public void OnDataAvailable<TYPE>(DataAvailableStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status)
+        public void OnLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status)
+        public void OnRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status)
+        public void OnRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSampleLost<TYPE>(SampleLostStatus<TYPE> status)
+        public void OnSampleLost<TYPE>(SampleLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status)
+        public void OnSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status)
+        public void OnSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status)
         {
             // empty
         }

@@ -22,7 +22,7 @@ namespace ExampleDDS.DiscoveryExamples
             base.RunExample(args);
 
             DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp = factory.createParticipant();
+            DomainParticipant dp = factory.CreateParticipant();
 
 
             // At this point the Simple Participant Discovery protocol should be running.

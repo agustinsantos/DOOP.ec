@@ -28,19 +28,22 @@ namespace org.omg.dds.core.policy
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the accessScope
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The accessScope</returns>
         AccessScopeKind getAccessScope();
 
-        /**
-         * @return the coherentAccess
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The coherentAccess</returns>
         bool isCoherentAccess();
 
-        /**
-         * @return the orderedAccess
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The orderedAccess</returns>
         bool isOrderedAccess();
 
 

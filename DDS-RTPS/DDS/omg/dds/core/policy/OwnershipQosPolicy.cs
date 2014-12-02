@@ -28,9 +28,10 @@ namespace org.omg.dds.core.policy
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The kind</returns>
         OwnershipQosPolicyKind getKind();
 
     }

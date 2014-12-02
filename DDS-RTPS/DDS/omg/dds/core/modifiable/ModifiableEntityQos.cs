@@ -29,19 +29,22 @@ namespace org.omg.dds.core.modifiable
         where UNMOD_SELF : EntityQos<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        /**
-         * Overwrite the value of the indicated policy with the given new value.
-         * Subsequent calls to {@link #get(Object)} may return the given object
-         * or a copy of it.
-         * 
-         * @return  the previous value of the indicated policy if that policy
-         *          applies to this <code>EntityQos</code>'s {@link Entity} or
-         *          <code>null</code> otherwise. If the returned object is not
-         *          <code>null</code>, changes to it will <em>not</em> be
-         *          reflected by subsequent calls to {@link #get(Object)}.
-         * @throws  NullPointerException    if the given key or value is
-         *                                  <code>null</code>.
-         */
+        /// <summary>
+        /// Overwrite the value of the indicated policy with the given new value.
+        /// Subsequent calls to {@link #get(Object)} may return the given object
+        /// or a copy of it.
+        /// 
+        /// @throws  NullPointerException    if the given key or value is <code>null</code>.
+        /// </summary>
+        /// <typeparam name="POLICY"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns>The previous value of the indicated policy if that policy
+        ///          applies to this <code>EntityQos</code>'s {@link Entity} or
+        ///          <code>null</code> otherwise. If the returned object is not
+        ///          <code>null</code>, changes to it will <em>not</em> be
+        ///          reflected by subsequent calls to {@link #get(Object)}.
+        /// </returns>
         POLICY put<POLICY>(QosPolicyId key, POLICY value) where POLICY : QosPolicy;
     }
 }

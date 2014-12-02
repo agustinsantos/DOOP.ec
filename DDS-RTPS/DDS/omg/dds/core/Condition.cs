@@ -21,16 +21,16 @@
 namespace org.omg.dds.core
 {
 
-    /**
-     * A Condition is a root interface for all the conditions that may be
-     * attached to a {@link WaitSet}. This basic interface is specialized in the
-     * following interfaces that are known by the middleware:
-     * {@link GuardCondition}, {@link StatusCondition}, and
-     * {@link ReadCondition}.
-     * 
-     * A Condition has a triggerValue that can be true or false and is set
-     * automatically by the Service.
-     */
+    /// <summary>
+    /// A Condition is a root interface for all the conditions that may be
+    /// attached to a {@link WaitSet}. This basic interface is specialized in the
+    /// following interfaces that are known by the middleware:
+    /// {@link GuardCondition}, {@link StatusCondition}, and
+    /// {@link ReadCondition}.
+    /// 
+    /// A Condition has a triggerValue that can be true or false and is set
+    /// automatically by the Service.
+    /// </summary>
     public interface Condition : DDSObject
     {
         bool getTriggerValue();

@@ -28,22 +28,22 @@ namespace org.omg.dds.core
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
+        /// <returns></returns>
         public static ModifiableInstanceHandle newInstanceHandle(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newInstanceHandle();
         }
 
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         * 
-         * @return  An unmodifiable nil instance handle.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
+        /// <returns>An unmodifiable nil instance handle</returns>
         public static InstanceHandle nilHandle(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().nilHandle();

@@ -26,8 +26,8 @@ namespace ExampleDDS.PubSubExamples
             base.RunExample(args);
 
             DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp1 = factory.createParticipant();
-            DomainParticipant dp = factory.createParticipant(MY_DOMAIN);
+            DomainParticipant dp1 = factory.CreateParticipant();
+            DomainParticipant dp = factory.CreateParticipant(MY_DOMAIN);
 
             // Get unmodifiable QoS for inspection:
             DomainParticipantQos dpqUnmod = dp.getQos();

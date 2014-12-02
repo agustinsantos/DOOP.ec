@@ -25,22 +25,22 @@ namespace org.omg.dds.pub
 
     public class PublisherAdapter : PublisherListener
     {
-        public void onLivelinessLost<TYPE>(LivelinessLostStatus<TYPE> status)
+        public void OnLivelinessLost<TYPE>(LivelinessLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onOfferedDeadlineMissed<TYPE>(OfferedDeadlineMissedStatus<TYPE> status)
+        public void OnOfferedDeadlineMissed<TYPE>(OfferedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onOfferedIncompatibleQos<TYPE>(OfferedIncompatibleQosStatus<TYPE> status)
+        public void OnOfferedIncompatibleQos<TYPE>(OfferedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public void onPublicationMatched<TYPE>(PublicationMatchedStatus<TYPE> status)
+        public void OnPublicationMatched<TYPE>(PublicationMatchedStatus<TYPE> status)
         {
             // empty
         }

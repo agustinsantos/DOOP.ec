@@ -26,17 +26,19 @@ using System.Collections.Generic;
 namespace org.omg.dds.core.status
 {
 
-    /**
-     * Status is the abstract root class for all communication status objects.
-     * All concrete kinds of Status classes extend this class.
-     * 
-     * Each concrete {@link Entity} is associated with a set of Status objects
-     * whose value represents the "communication status" of that entity. These
-     * status values can be accessed with corresponding methods on the Entity.
-     * The changes on these status values are the ones that both cause activation
-     * of the corresponding {@link StatusCondition} objects and trigger invocation
-     * of the proper Listener objects to asynchronously inform the application.
-     */
+    /// <summary>
+    /// Status is the abstract root class for all communication status objects.
+    /// All concrete kinds of Status classes extend this class.
+    /// 
+    /// Each concrete {@link Entity} is associated with a set of Status objects
+    /// whose value represents the "communication status" of that entity. These
+    /// status values can be accessed with corresponding methods on the Entity.
+    /// The changes on these status values are the ones that both cause activation
+    /// of the corresponding {@link StatusCondition} objects and trigger invocation
+    /// of the proper Listener objects to asynchronously inform the application.
+    /// </summary>
+    /// <typeparam name="SELF"></typeparam>
+    /// <typeparam name="SOURCE"></typeparam>
     public abstract class Status<SELF, SOURCE>
      : EventObject, ModifiableValue<SELF, SELF>
         where SELF : Status<SELF, SOURCE>
@@ -47,20 +49,22 @@ namespace org.omg.dds.core.status
         // Object Life Cycle
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
+        /// <returns></returns>
         public static ISet<Type> allStatuses(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().allStatusKinds();
         }
 
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
+        /// <returns></returns>
         public static ISet<Type> noStatuses(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().noStatusKinds();

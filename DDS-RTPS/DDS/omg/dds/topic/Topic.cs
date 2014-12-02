@@ -36,7 +36,7 @@ namespace org.omg.dds.topic
      * Topic is the only TopicDescription that can be used for publications and
      * therefore associated to a {@link DataWriter}. All operations except for
      * the inherited operations {@link #setQos(org.omg.dds.core.EntityQos)},
-     * {@link #getQos()}, {@link #setListener(java.util.EventListener)},
+     * {@link #Qos()}, {@link #setListener(java.util.EventListener)},
      * {@link #getListener()}, {@link #Enable()}, and
      * {@link #getStatusCondition()} may fail with the exception
      * {@link NotEnabledException}.
