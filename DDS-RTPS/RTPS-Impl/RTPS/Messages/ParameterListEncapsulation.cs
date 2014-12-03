@@ -8,6 +8,7 @@ using org.omg.dds.type;
 using Rtps.Messages.Types;
 using System.Diagnostics;
 using Doopec.XTypes;
+using org.omg.dds.type.typeobject;
 
 namespace Doopec.Rtps.Messages
 {
@@ -102,41 +103,34 @@ namespace Doopec.Rtps.Messages
         private static ParameterList BuildParameters(object obj)
         {
             var type = TypeExplorer.ExploreType(obj.GetType());
-            var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                               .Where(fi => (fi.Attributes & FieldAttributes.NotSerialized) == 0);
+            //var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+            //                   .Where(fi => (fi.Attributes & FieldAttributes.NotSerialized) == 0);
+            StructureType structType = type as StructureType;
             ParameterList parameters = new ParameterList();
-            ushort cnt = (ushort)ParameterId.PID_VENDOR_SPECIFIC;
-            foreach (var field in fields)
+            foreach (var member in structType.GetMember())
             {
                 Parameter parameter = new Parameter();
-                IDAttribute id = field.GetCustomAttribute<IDAttribute>();
-                if (id != null)
+                //uint id = field.getProperty().MemberId;
+                parameter.ParameterId = (ParameterId)member.getProperty().MemberId; ;
+                IoBuffer buffer = ByteBufferAllocator.Instance.Allocate(64);
+                buffer.AutoExpand = true;
+                if (member.getProperty().IsProperty)
                 {
-                    throw new NotImplementedException();
+                    var field = obj.GetType().GetProperty(member.getProperty().Name);
+                    Doopec.Serializer.Serializer.Serialize(buffer, field.GetValue(obj));
                 }
                 else
                 {
-                    parameter.ParameterId = (ParameterId)cnt++;
-                    IoBuffer buffer = ByteBufferAllocator.Instance.Allocate(64);
-                    buffer.AutoExpand = true;
+                    var field = obj.GetType().GetField(member.getProperty().Name);
                     Doopec.Serializer.Serializer.Serialize(buffer, field.GetValue(obj));
-                    int length = buffer.Position;
-                    parameter.Bytes = new byte[length];
-                    buffer.Rewind();
-                    buffer.Get(parameter.Bytes, 0, length);
-                    parameters.Value.Add(parameter);
                 }
+
+                int length = buffer.Position;
+                parameter.Bytes = new byte[length];
+                buffer.Rewind();
+                buffer.Get(parameter.Bytes, 0, length);
+                parameters.Value.Add(parameter);
             }
-            //if (type.BaseType == null)
-            //{
-            //    return parameters;
-            //}
-            //else
-            //{
-            //    var baseFields = BuildParameters(type.BaseType);
-            //    parameters.Value.Concat(baseFields.Value);
-            //    return parameters;
-            //}
             return parameters;
         }
         public static T Deserialize<T>(IoBuffer buffer) where T : new()
@@ -172,7 +166,7 @@ namespace Doopec.Rtps.Messages
                 MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethods().Where(x => x.Name == "Deserialize" && x.IsGenericMethod).SingleOrDefault(); ;
                 //MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethod("Deserialize", new Type[] { buffer.GetType() });
                 MethodInfo generic = method.MakeGenericMethod(field.FieldType);
-                object val = generic.Invoke(null, new object[]{buffer});
+                object val = generic.Invoke(null, new object[] { buffer });
                 field.SetValue(obj, val);
             }
             return obj;

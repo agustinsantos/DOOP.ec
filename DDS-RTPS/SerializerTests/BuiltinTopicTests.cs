@@ -1,14 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Doopec.XTypes;
 using org.omg.dds.topic;
 using org.omg.dds.type.typeobject;
+using Doopec.Dds.Domain;
+using System.Linq;
+using Doopec.Serializer.Attributes;
+using Doopec.Serializer;
+using Mina.Core.Buffer;
+using Doopec.Rtps.Messages;
+using Rtps.Discovery.Spdp;
+using Rtps.Structure;
+using Doopec.Rtps.Structure;
 
 namespace SerializerTests
 {
     [TestClass]
     public class BuiltinTopicTests
     {
+        [TestInitialize]
+        public void SetUp()
+        {
+            List<System.Type> rootTypes = new List<System.Type>();
+            rootTypes.Add(typeof(ParticipantBuiltinTopicData));
+
+            ITypeSerializer[] customSerializers = new ITypeSerializer[0];
+            
+            Serializer.Initialize(rootTypes, customSerializers);
+        }
+        private const int headerSize = 4 + 4; //including length
+        private const int paramHeaderSize = 4;
+        private const int paramSentinelSize = 4;
+        private const int byteBoundary = 4;
+
         [TestMethod]
         public void TestParticipantBuiltinTopicData()
         {
@@ -28,6 +53,26 @@ namespace SerializerTests
 
             Assert.AreEqual((uint)0x0050, members[0].getProperty().MemberId);
             Assert.AreEqual((uint)0x002C, members[1].getProperty().MemberId);
+        }
+
+        [TestMethod]
+        public void TestSerializeParticipantBuiltinTopicData()
+        {
+            Participant participant = new ParticipantImpl();
+            SPDPdiscoveredParticipantData v1 = new SPDPdiscoveredParticipantData(participant);
+            int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
+            string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 
+                                 "00 80 04 00 01 00 00 00 " + // Parameter
+                                 "01 00 00 00";               // Sentinel
+            var buffer = ByteBufferAllocator.Instance.Allocate(expectedSize);
+            ParameterListEncapsulation.Serialize(buffer, v1, ByteOrder.LittleEndian);
+            Assert.AreEqual(expectedSize, buffer.Position);
+
+            buffer.Rewind();
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            SPDPdiscoveredParticipantData v2 = ParameterListEncapsulation.Deserialize<SPDPdiscoveredParticipantData>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(expectedSize, buffer.Position);
         }
 
         [TestMethod]

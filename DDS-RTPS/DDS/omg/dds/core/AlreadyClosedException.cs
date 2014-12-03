@@ -20,10 +20,10 @@ namespace org.omg.dds.core
 {
 
 
-    /**
-     * The target object was previously closed and therefore cannot process
-     * the operation.
-     */
+    /// <summary>
+    /// The target object was previously closed and therefore cannot process
+    /// the operation.
+    /// </summary>
     public abstract class AlreadyClosedException : DDSException
     {
         // -----------------------------------------------------------------------

@@ -25,11 +25,11 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableDestinationOrderQosPolicy : DestinationOrderQosPolicy,
             ModifiableQosPolicy<DestinationOrderQosPolicy, ModifiableDestinationOrderQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">The kind to set</param>
+        /// <returns>this</returns>
         ModifiableDestinationOrderQosPolicy setKind(DestinationOrderQosPolicyKind kind);
     }
 }

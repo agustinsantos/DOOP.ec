@@ -30,16 +30,19 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<LatencyBudgetQosPolicy,
                                 ModifiableLatencyBudgetQosPolicy>
     {
-        /**
-         * @param duration the duration to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="duration">The duration to set</param>
+        /// <returns>this</returns>
         ModifiableLatencyBudgetQosPolicy setDuration(Duration duration);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="duration"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableLatencyBudgetQosPolicy setDuration(long duration, TimeUnit unit);
     }
 }

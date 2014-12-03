@@ -24,11 +24,13 @@ namespace org.omg.dds.core.policy.modifiable
 {
     public interface ModifiableGroupDataQosPolicy : GroupDataQosPolicy, ModifiableQosPolicy<GroupDataQosPolicy, ModifiableGroupDataQosPolicy>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">The value to set</param>
+        /// <param name="offset"></param>
+        /// <param name="length"></param>
+        /// <returns>this</returns>
         ModifiableGroupDataQosPolicy setValue(
               byte[] value, int offset, int length);
     }

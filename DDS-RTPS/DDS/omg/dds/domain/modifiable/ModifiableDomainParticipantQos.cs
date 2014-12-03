@@ -28,19 +28,21 @@ namespace org.omg.dds.domain.modifiable
     public interface ModifiableDomainParticipantQos : DomainParticipantQos, ModifiableEntityQos<DomainParticipantQos,
                                 ModifiableDomainParticipantQos>
     {
-        /**
-         * @param userData the userData to set
-         * 
-         * @return  this
-         */
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userData">the userData to set</param>
+        /// <returns>this</returns>
         ModifiableDomainParticipantQos setUserData(UserDataQosPolicy userData);
 
   
-        /**
-         * @param entityFactory the entityFactory to set
-         * 
-         * @return  this
-         */
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entityFactory">the entityFactory to set</param>
+        /// <returns>this</returns>
         ModifiableDomainParticipantQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
 
   

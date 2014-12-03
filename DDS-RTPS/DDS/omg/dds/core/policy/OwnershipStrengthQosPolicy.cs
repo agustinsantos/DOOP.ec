@@ -25,9 +25,10 @@ namespace org.omg.dds.core.policy
     public interface OwnershipStrengthQosPolicy : QosPolicy<OwnershipStrengthQosPolicy,
                       ModifiableOwnershipStrengthQosPolicy>
     {
-        /**
-         * @return the value
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The value</returns>
         int getValue();
 
     }

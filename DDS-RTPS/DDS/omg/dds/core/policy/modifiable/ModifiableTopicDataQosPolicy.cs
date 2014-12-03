@@ -26,11 +26,13 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<TopicDataQosPolicy,
                                 ModifiableTopicDataQosPolicy>
     {
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">The value to set</param>
+        /// <param name="offset"></param>
+        /// <param name="length"></param>
+        /// <returns>this</returns>
         ModifiableTopicDataQosPolicy setValue(byte[] value, int offset, int length);
     }
 }

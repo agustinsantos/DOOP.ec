@@ -31,10 +31,11 @@ namespace org.omg.dds.core.status
         // Object Life Cycle
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
+        /// <returns></returns>
         public static LivelinessChangedStatus<TYPE>        newLivelinessChangedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newLivelinessChangedStatus<TYPE>();
@@ -54,24 +55,28 @@ namespace org.omg.dds.core.status
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the aliveCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The aliveCount</returns>
         public abstract int getAliveCount();
 
-        /**
-         * @return the notAliveCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The notAliveCount</returns>
         public abstract int getNotAliveCount();
 
-        /**
-         * @return the aliveCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The aliveCountChange</returns>
         public abstract int getAliveCountChange();
 
-        /**
-         * @return the notAliveCountChange
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The notAliveCountChange</returns>
         public abstract int getNotAliveCountChange();
 
         public abstract ModifiableInstanceHandle getLastPublicationHandle();

@@ -13,6 +13,7 @@ namespace Doopec.Dds.XTypes
         public uint MemberId { get; set; }
         public int Type { get; set; }
         public string Name { get; set; }
+        public bool IsProperty { get; set; }
 
         public MemberProperty SetFlag(MemberFlag flag)
         {

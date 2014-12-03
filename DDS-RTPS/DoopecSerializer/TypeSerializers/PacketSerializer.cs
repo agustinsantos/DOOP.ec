@@ -1,4 +1,5 @@
 ﻿using Doopec.Serializer.Attributes;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,14 @@ namespace Doopec.Serializer.TypeSerializers
 {
     public class PacketSerializer : IDynamicTypeSerializer
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public bool Handles(Type type)
         {
             bool packetCompatible = PacketAttribute.IsCompatible(type);
 
             if (!packetCompatible)
-                throw new NotSupportedException(String.Format("Type {0} is not marked with Packet attribute", type.FullName));
+                log.WarnFormat("Type {0} is not marked with Packet attribute", type.FullName);
             return true;
         }
 

@@ -30,18 +30,17 @@ namespace org.omg.dds.core.policy
         /// </summary>
         /// <param name="value"></param>
         /// <param name="offset"></param>
-        /// <returns>
-        /// The total number of bytes in the data, independent of the
+        /// <returns>The total number of bytes in the data, independent of the
         ///          number of bytes copied. Callers can use this result to
         ///          determine if the output array is long enough or, if it is
         ///          long enough, what range within it contains valid data.
-        ///    </returns>
+        /// </returns>
         int getValue(byte[] value, int offset);
 
         /// <summary>
-        /// return  the length of the <code>value</code> property.
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The length of the <code>value</code> property.</returns>
         int getLength();
     }
 }

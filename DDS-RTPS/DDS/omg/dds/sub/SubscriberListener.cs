@@ -25,20 +25,20 @@ namespace org.omg.dds.sub
 
     public interface SubscriberListener : EventListener
     {
-        void onRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status);
+        void OnRequestedDeadlineMissed<TYPE>(RequestedDeadlineMissedStatus<TYPE> status);
 
-        void onRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status);
+        void OnRequestedIncompatibleQos<TYPE>(RequestedIncompatibleQosStatus<TYPE> status);
 
-        void onSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status);
+        void OnSampleRejected<TYPE>(SampleRejectedStatus<TYPE> status);
 
-        void onLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status);
+        void OnLivelinessChanged<TYPE>(LivelinessChangedStatus<TYPE> status);
 
-        void onDataAvailable<TYPE>(DataAvailableStatus<TYPE> status);
+        void OnDataAvailable<TYPE>(DataAvailableStatus<TYPE> status);
 
-        void onSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status);
+        void OnSubscriptionMatched<TYPE>(SubscriptionMatchedStatus<TYPE> status);
 
-        void onSampleLost<TYPE>(SampleLostStatus<TYPE> status);
+        void OnSampleLost<TYPE>(SampleLostStatus<TYPE> status);
 
-        void onDataOnReaders(DataOnReadersStatus status);
+        void OnDataOnReaders(DataOnReadersStatus status);
     }
 }

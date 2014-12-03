@@ -31,52 +31,55 @@ namespace org.omg.dds.core.policy.modifiable
             ModifiableQosPolicy<DurabilityServiceQosPolicy,
                                 ModifiableDurabilityServiceQosPolicy>
     {
-        /**
-         * @param serviceCleanupDelay the serviceCleanupDelay to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serviceCleanupDelay">The serviceCleanupDelay to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setServiceCleanupDelay(
               Duration serviceCleanupDelay);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serviceCleanupDelay"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setServiceCleanupDelay(long serviceCleanupDelay, TimeUnit unit);
 
-        /**
-         * @param historyKind the historyKind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="historyKind">The historyKind to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setHistoryKind(HistoryQosPolicyKind historyKind);
 
-        /**
-         * @param historyDepth the historyDepth to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="historyDepth">The historyDepth to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setHistoryDepth(int historyDepth);
 
-        /**
-         * @param maxSamples the maxSamples to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxSamples">The maxSamples to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setMaxSamples(int maxSamples);
 
-        /**
-         * @param maxInstances the maxInstances to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxInstances">The maxInstances to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setMaxInstances(int maxInstances);
 
-        /**
-         * @param maxSamplesPerInstance the maxSamplesPerInstance to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="maxSamplesPerInstance">The maxSamplesPerInstance to set</param>
+        /// <returns>this</returns>
         ModifiableDurabilityServiceQosPolicy setMaxSamplesPerInstance(int maxSamplesPerInstance);
     }
 }

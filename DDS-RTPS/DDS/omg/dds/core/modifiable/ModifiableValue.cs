@@ -36,16 +36,16 @@ namespace org.omg.dds.core.modifiable
         /// <returns>this</returns>
         MOD_SELF CopyFrom(UNMOD_SELF other);
 
+
         /// <summary>
         /// If this value type has an unmodifiable counterpart class, return a new
         /// object of that class containing a copy of the state of this object. If
         /// not return null.
-        ///  
         /// Calling this method is optional in general; because modifiable
         /// interfaces extend "unmodifiable" ones, the former can typically be
         /// used wherever the latter is required.
         /// </summary>
-        /// <returns>a new unmodifiable copy of this object or null.</returns>
+        /// <returns>A new unmodifiable copy of this object or null</returns>
         UNMOD_SELF finishModification();
 
 

@@ -28,14 +28,16 @@ namespace org.omg.dds.core.policy
         // Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The kind</returns>
         HistoryQosPolicyKind getKind();
 
-        /**
-         * @return the depth
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The depth</returns>
         int getDepth();
     }
 

@@ -35,64 +35,65 @@ namespace Doopec.Dds.Domain
             }
         }
 
-        public override DomainParticipant createParticipant()
+        public override DomainParticipant CreateParticipant()
         {
             int domainId = config.DefaultDomainId;
             DomainParticipantQos qos = this.getDefaultParticipantQos();
 
-            return this.createParticipant(domainId, qos, null, null);
+            return this.CreateParticipant(domainId, qos, null, null);
         }
 
-        public override DomainParticipant createParticipant(int domainId)
+        public override DomainParticipant CreateParticipant(int domainId)
         {
             DomainParticipantQos qos = this.getDefaultParticipantQos();
 
-            return this.createParticipant(domainId, qos, null, null);
+            return this.CreateParticipant(domainId, qos, null, null);
         }
 
-        public override DomainParticipant createParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
+        public override DomainParticipant CreateParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
         {
             DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener);
             participants_.Add(domainId, dp);
             return dp;
         }
 
-        public override DomainParticipant createParticipant(int domainId, string qosLibraryName, string qosProfileName, DomainParticipantListener listener, ICollection<Type> statuses)
+        public override DomainParticipant CreateParticipant(int domainId, string qosLibraryName, string qosProfileName, DomainParticipantListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public override DomainParticipant lookupParticipant(int domainId)
+        public override DomainParticipant LookupParticipant(int domainId)
         {
             DomainParticipant dp = null;
             participants_.TryGetValue(domainId, out dp);
             return dp;
         }
 
-        public override DomainParticipantFactoryQos getQos()
+        public override DomainParticipantFactoryQos Qos
         {
-            return qos_;
+            get { return qos_;  }
+            set
+            {
+                if (QosHelper.IsValid(value) && QosHelper.IsConsistent(value))
+                {
+                    if (!(qos_ == value) && QosHelper.IsChangeable(qos_, value))
+                        qos_ = value;
+                }
+                else
+                {
+                    throw new InconsistentPolicyException();
+                }
+            }
+            
         }
 
-        public override void setQos(DomainParticipantFactoryQos qos)
-        {
-            if (QosHelper.IsValid(qos) && QosHelper.IsConsistent(qos))
-            {
-                if (!(qos_ == qos) && QosHelper.IsChangeable(qos_, qos))
-                    qos_ = qos;
-            }
-            else
-            {
-                throw new InconsistentPolicyException();
-            }
-        }
 
         public override DomainParticipantQos getDefaultParticipantQos()
         {
             return this.default_participant_qos_;
         }
 
-        public override void setDefaultParticipantQos(DomainParticipantQos qos)
+        public override void SetDefaultParticipantQos(DomainParticipantQos qos)
         {
             if (QosHelper.IsValid(qos) && QosHelper.IsConsistent(qos))
             {
@@ -104,7 +105,7 @@ namespace Doopec.Dds.Domain
             }
         }
 
-        public override void setDefaultParticipantQos(string qosLibraryName, string qosProfileName)
+        public override void SetDefaultParticipantQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }

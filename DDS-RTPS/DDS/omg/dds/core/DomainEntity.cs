@@ -25,28 +25,27 @@ namespace org.omg.dds.core
     public interface IDomainEntity : IEntity
     { }
 
-    /**
-     * DomainEntity is the abstract base class for all DCPS entities, except for
-     * the {@link DomainParticipant}. Its sole purpose is to express that
-     * DomainParticipant is a special kind of Entity, which acts as a container
-     * of all other Entity, but itself cannot contain other DomainParticipant.
-     * 
-     * @param <SELF>        The most-derived DDS-standard interface implemented
-     *                      by this entity.
-     * @param <PARENT>      The most-derived DDS-standard interface implemented
-     *                      by the entity that creates entities of this type.
-     * @param <LISTENER>    The listener interface appropriate for this entity.
-     * @param <QOS>         The QoS interface appropriate for this entity.
-     */
+    /// <summary>
+    /// DomainEntity is the abstract base class for all DCPS entities, except for
+    /// the {@link DomainParticipant}. Its sole purpose is to express that
+    /// DomainParticipant is a special kind of Entity, which acts as a container
+    /// of all other Entity, but itself cannot contain other DomainParticipant
+    /// </summary>
+    /// <typeparam name="SELF">The most-derived DDS-standard interface implemented by this entity</typeparam>
+    /// <typeparam name="PARENT">The most-derived DDS-standard interface implemented
+    ///                          by the entity that creates entities of this type</typeparam>
+    /// <typeparam name="LISTENER">The listener interface appropriate for this entity</typeparam>
+    /// <typeparam name="QOS">The QoS interface appropriate for this entity</typeparam>
     public interface DomainEntity<SELF, PARENT, LISTENER, QOS> : Entity<SELF, LISTENER, QOS>
         where SELF : Entity<SELF, LISTENER, QOS>
         where PARENT : IEntity
         where LISTENER : EventListener
         where QOS : EntityQos
     {
-        /**
-         * @return  the factory object that created this entity.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The factory object that created this entity</returns>
         PARENT getParent();
     }
 }

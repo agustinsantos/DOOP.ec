@@ -25,9 +25,10 @@ namespace org.omg.dds.core.policy
     public interface TransportPriorityQosPolicy
      : QosPolicy<TransportPriorityQosPolicy, ModifiableTransportPriorityQosPolicy>
     {
-        /**
-         * @return the value
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The value</returns>
         int getValue();
 
     }

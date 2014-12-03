@@ -24,11 +24,11 @@ namespace org.omg.dds.core.policy.modifiable
 {
     public interface ModifiableOwnershipQosPolicy     : OwnershipQosPolicy,            ModifiableQosPolicy<OwnershipQosPolicy,                                ModifiableOwnershipQosPolicy>
     {
-        /**
-         * @param kind the kind to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="kind">The kind to set</param>
+        /// <returns>this</returns>
         ModifiableOwnershipQosPolicy setKind(OwnershipQosPolicyKind kind);
     }
 }

@@ -35,21 +35,21 @@ namespace org.omg.example.dds.helloworld
         public static void RunExample(string[] args)
         {
             Bootstrap bstp = Bootstrap.CreateInstance();
-            DomainParticipant dp = DomainParticipantFactory.getInstance(bstp).createParticipant();
+            DomainParticipant dp = DomainParticipantFactory.getInstance(bstp).CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
-            Topic<Greeting> tp = dp.createTopic<Greeting>("My Topic");
+            Topic<Greeting> tp = dp.CreateTopic<Greeting>("My Topic");
 
             // OR explicitly create TypeSupport, registered with default name:
-            // Topic<Greeting> tp = dp.createTopic(
+            // Topic<Greeting> tp = dp.CreateTopic(
             //         "My Topic",
             //         ctx.createTypeSupport(Greeting.class));
             // OR explicitly create TypeSupport, registered with custom name:
-            // Topic<Greeting> tp = dp.createTopic(
+            // Topic<Greeting> tp = dp.CreateTopic(
             //         "My Topic",
             //         ctx.createTypeSupport(Greeting.class, "MyType"));
 
-            Subscriber sub = dp.createSubscriber();
+            Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
                                                             sub.getDefaultDataReaderQos(),

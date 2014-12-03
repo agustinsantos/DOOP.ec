@@ -29,29 +29,34 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableReaderDataLifecycleQosPolicy : ReaderDataLifecycleQosPolicy,
             ModifiableQosPolicy<ReaderDataLifecycleQosPolicy, ModifiableReaderDataLifecycleQosPolicy>
     {
-        /**
-         * @param autoPurgeNoWriterSamplesDelay the autoPurgeNoWriterSamplesDelay
-         *                                      to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autoPurgeNoWriterSamplesDelay">The autoPurgeNoWriterSamplesDelay to set</param>
+        /// <returns>this</returns>
         ModifiableReaderDataLifecycleQosPolicy setAutoPurgeNoWriterSamplesDelay(Duration autoPurgeNoWriterSamplesDelay);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autoPurgeNoWriterSamplesDelay"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableReaderDataLifecycleQosPolicy setAutoPurgeNoWriterSamplesDelay( long autoPurgeNoWriterSamplesDelay, TimeUnit unit);
 
-        /**
-         * @param autoPurgeDisposedSamplesDelay the autoPurgeDisposedSamplesDelay to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autoPurgeDisposedSamplesDelay">The autoPurgeDisposedSamplesDelay to set</param>
+        /// <returns>this</returns>
         ModifiableReaderDataLifecycleQosPolicy setAutoPurgeDisposedSamplesDelay(Duration autoPurgeDisposedSamplesDelay);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autoPurgeDisposedSamplesDelay"></param>
+        /// <param name="unit"></param>
+        /// <returns>this</returns>
         ModifiableReaderDataLifecycleQosPolicy setAutoPurgeDisposedSamplesDelay(
                long autoPurgeDisposedSamplesDelay, TimeUnit unit);
     }

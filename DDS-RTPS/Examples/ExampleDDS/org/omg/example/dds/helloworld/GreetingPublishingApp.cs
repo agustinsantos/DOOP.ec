@@ -32,21 +32,21 @@ namespace org.omg.example.dds.helloworld
         public static void RunExample(string[] args)
         {
             DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp = factory.createParticipant();
+            DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
-            Topic<Greeting> tp = dp.createTopic<Greeting>("My Topic");
+            Topic<Greeting> tp = dp.CreateTopic<Greeting>("My Topic");
 
             // OR explicitly create TypeSupport, registered with default name:
-            // Topic<Greeting> tp = dp.createTopic(
+            // Topic<Greeting> tp = dp.CreateTopic(
             //         "My Topic",
             //         ctx.createTypeSupport(Greeting.class));
             // OR explicitly create TypeSupport, registered with custom name:
-            // Topic<Greeting> tp = dp.createTopic(
+            // Topic<Greeting> tp = dp.CreateTopic(
             //         "My Topic",
             //         ctx.createTypeSupport(Greeting.class, "MyType"));
 
-            Publisher pub = dp.createPublisher();
+            Publisher pub = dp.CreatePublisher();
             DataWriter<Greeting> dw = pub.createDataWriter(tp);
 
             try

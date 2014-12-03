@@ -55,52 +55,61 @@ namespace org.omg.dds.domain
         /// and no listener.
         /// </summary>
         /// <returns>new participant</returns>
-        public abstract DomainParticipant createParticipant();
+        public abstract DomainParticipant CreateParticipant();
 
         /// <summary>
         /// Create a new participant in the domain with a fixed ID and having default QoS
         /// and no listener.
         /// </summary>
         /// <returns>new participant</returns>
-        public abstract DomainParticipant createParticipant(int domainId);
+        public abstract DomainParticipant CreateParticipant(int domainId);
 
-        /**
-         * Create a new domain participant.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        public abstract DomainParticipant createParticipant(
+        
+        /// <summary>
+        /// Create a new domain participant.
+        /// </summary>
+        /// <param name="domainId"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status 
+        ///                        changes.</param>
+        /// <returns></returns>
+        public abstract DomainParticipant CreateParticipant(
                 int domainId,
                 DomainParticipantQos qos,
                 DomainParticipantListener listener,
                 ICollection<Type> statuses);
 
-        /**
-         * Create a new domain participant.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        public abstract DomainParticipant createParticipant(
+        
+         
+        /// <summary>
+        /// Create a new domain participant.
+        /// </summary>
+        /// <param name="domainId"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes.</param>
+        /// <returns></returns>
+        public abstract DomainParticipant CreateParticipant(
                 int domainId,
                 string qosLibraryName,
                 string qosProfileName,
                 DomainParticipantListener listener,
                 ICollection<Type> statuses);
 
-        public abstract DomainParticipant lookupParticipant(int domainId);
+        public abstract DomainParticipant LookupParticipant(int domainId);
 
-        public abstract DomainParticipantFactoryQos getQos();
-        public abstract void setQos(DomainParticipantFactoryQos qos);
+        public abstract DomainParticipantFactoryQos Qos {get ; set; }
 
         public abstract DomainParticipantQos getDefaultParticipantQos();
 
-        public abstract void setDefaultParticipantQos(DomainParticipantQos qos);
+        public abstract void SetDefaultParticipantQos(DomainParticipantQos qos);
 
-        public abstract void setDefaultParticipantQos(string qosLibraryName, string qosProfileName);
+        public abstract void SetDefaultParticipantQos(string qosLibraryName, string qosProfileName);
 
 
         public abstract Bootstrap getBootstrap();

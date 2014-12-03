@@ -17,6 +17,7 @@
  */
 
 
+
 using System.Collections.Generic;
 using DDS.ConversionUtils;
 
@@ -31,100 +32,104 @@ using System;
 
 namespace org.omg.dds.domain
 {
-
-    /**
-     * The DomainParticipant object plays several roles:
-     * <ul>
-     * <li>It acts as a container for all other {@link Entity} objects.</li>
-     * <li>It acts as factory for the {@link Publisher}, {@link Subscriber},
-     *     {@link Topic}, {@link ContentFilteredTopic}, and {@link MultiTopic}
-     *     objects.</li>
-     * <li>It represents the participation of the application on a communication
-     *     plane that isolates applications running on the same set of physical
-     *     computers from each other. A domain establishes a "virtual network"
-     *     linking all applications that share the same domainId and isolating
-     *     them from applications running on different domains. In this way,
-     *     several independent distributed applications can coexist in the same
-     *     physical network without interfering, or even being aware of each
-     *     other.</li>
-     * <li>It provides administration services in the domain, offering operations
-     *     that allow the application to "ignore" locally any information about a
-     *     given participant ({@link #ignoreParticipant(InstanceHandle)}),
-     *     publication ({@link #ignorePublication(InstanceHandle)}),
-     *     subscription ({@link #ignoreSubscription(InstanceHandle)}), or topic
-     *     ({@link #ignoreTopic(InstanceHandle)}).</li>
-     * </ul>
-     */
+    /// <summary>
+    /// The DomainParticipant object plays several roles:
+    /// <ul>
+    /// <li>It acts as a container for all other {@link Entity} objects.</li>
+    /// <li>It acts as factory for the {@link Publisher}, {@link Subscriber},
+    ///     {@link Topic}, {@link ContentFilteredTopic}, and {@link MultiTopic}
+    ///     objects.</li>
+    /// <li>It represents the participation of the application on a communication
+    ///     plane that isolates applications running on the same set of physical
+    ///     computers from each other. A domain establishes a "virtual network"
+    ///     linking all applications that share the same domainId and isolating
+    ///     them from applications running on different domains. In this way,
+    ///     several independent distributed applications can coexist in the same
+    ///     physical network without interfering, or even being aware of each
+    ///     other.</li>
+    /// <li>It provides administration services in the domain, offering operations
+    ///     that allow the application to "ignore" locally any information about a
+    ///     given participant ({@link #IgnoreParticipant(InstanceHandle)}),
+    ///     publication ({@link #IgnorePublication(InstanceHandle)}),
+    ///     subscription ({@link #IgnoreSubscription(InstanceHandle)}), or topic
+    ///     ({@link #IgnoreTopic(InstanceHandle)}).</li>
+    /// </ul>
+    /// </summary>
     public interface DomainParticipant : Entity<DomainParticipant,
                                                 DomainParticipantListener,
                                                 DomainParticipantQos>
     {
         // --- Create Publisher: -------------------------------------------------
 
-        Publisher createPublisher();
+        Publisher CreatePublisher();
 
-        /**
-         * Create a new publisher.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Publisher createPublisher(
-               PublisherQos qos,
+        /// <summary>
+        /// Create a new publisher.
+        /// </summary>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses"> Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes</param>
+        /// <returns></returns>
+        Publisher CreatePublisher(PublisherQos qos,
                PublisherListener listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new publisher.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Publisher createPublisher(
-               string qosLibraryName,
-               string qosProfileName,
-               PublisherListener listener,
-               ICollection<Type> statuses);
+        /// <summary>
+        /// Create a new publisher.
+        /// </summary>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes.</param>
+        /// <returns></returns>
+        Publisher CreatePublisher(string qosLibraryName, string qosProfileName,
+               PublisherListener listener, ICollection<Type> statuses);
 
         // --- Create Subscriber: ------------------------------------------------
+        /// <summary>
+        /// Create Subscriber
+        /// </summary>
+        /// <returns></returns>
+        Subscriber CreateSubscriber();
 
-        Subscriber createSubscriber();
 
-        /**
-         * Create a new subscriber.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Subscriber createSubscriber(
-               SubscriberQos qos,
-               SubscriberListener listener,
-               ICollection<Type> statuses);
+        /// <summary>
+        /// Create a new subscriber.
+        /// </summary>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">
+        ///  Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes.</param>
+        /// <returns></returns>
+        Subscriber CreateSubscriber(SubscriberQos qos, SubscriberListener listener, ICollection<Type> statuses);
 
-        /**
-         * Create a new subscriber.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Subscriber createSubscriber(
-               string qosLibraryName,
+        /// <summary>
+        /// Create a new subscriber.
+        /// </summary>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                 changes.</param>
+        /// <returns></returns>
+        Subscriber CreateSubscriber(string qosLibraryName,
                string qosProfileName,
                SubscriberListener listener,
                ICollection<Type> statuses);
 
-        Subscriber getBuiltinSubscriber();
-
+        Subscriber BuiltinSubscriber { get; }
 
         /// <summary>
         /// Create a new topic with implicit TypeSupport
         /// </summary>
-        Topic<TYPE> createTopic<TYPE>(string topicName);
-
+        Topic<TYPE> CreateTopic<TYPE>(string topicName);
 
         /// <summary>
         /// Create a new topic.
@@ -140,129 +145,129 @@ namespace org.omg.dds.domain
         ///             changes
         ///     </param>
         /// <returns></returns>
-        Topic<TYPE> createTopic<TYPE>(
-                                       string topicName,
-                                       Type type,
-                                       TopicQos qos,
-                                       TopicListener<TYPE> listener,
-                                       ICollection<Type> statuses);
+        Topic<TYPE> CreateTopic<TYPE>(string topicName, 
+                                        Type type, 
+                                        TopicQos qos, 
+                                        TopicListener<TYPE> listener, 
+                                        ICollection<Type> statuses);
 
-        /**
-         * Create a new topic.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Topic<TYPE> createTopic<TYPE>( string topicName,
-                                       string qosLibraryName,
-                                       string qosProfileName,
-                                       TopicListener<TYPE> listener,
-                                       ICollection<Type> statuses);
+        /// <summary>
+        /// Create a new topic.
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topicName"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes.</param>
+        /// <returns></returns>
+        Topic<TYPE> CreateTopic<TYPE>(string topicName, 
+                                        string qosLibraryName, 
+                                        string qosProfileName, 
+                                        TopicListener<TYPE> listener, 
+                                        ICollection<Type> statuses);
 
 
         // --- Create Topic with explicit TypeSupport: ---------------------------
 
-        Topic<TYPE> createTopic<TYPE>(
-                                       string topicName,
-                                       TypeSupport<TYPE> type);
+        Topic<TYPE> CreateTopic<TYPE>(string topicName, TypeSupport<TYPE> type);
 
-        /**
-         * Create a new topic.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Topic<TYPE> createTopic<TYPE>(
-                                       string topicName,
+        /// <summary>
+        ///  Create a new topic.
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topicName"></param>
+        /// <param name="type"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes.</param>
+        /// <returns></returns>
+        Topic<TYPE> CreateTopic<TYPE>(string topicName,
                                        TypeSupport<TYPE> type,
                                        TopicQos qos,
                                        TopicListener<TYPE> listener,
                                        ICollection<Type> statuses);
 
-        /**
-         * Create a new topic.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
-        Topic<TYPE> createTopic<TYPE>(
-                                       string topicName,
+        /// <summary>
+        /// Create a new topic.
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topicName"></param>
+        /// <param name="type"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                  notified. A null collection signifies all status
+        ///                  changes.</param>
+        /// <returns></returns>
+        Topic<TYPE> CreateTopic<TYPE>(string topicName,
                                        TypeSupport<TYPE> type,
                                        string qosLibraryName,
                                        string qosProfileName,
                                        TopicListener<TYPE> listener,
                                        ICollection<Type> statuses);
 
-
         // --- Other operations: -------------------------------------------------
 
-        Topic<TYPE> findTopic<TYPE>(
-               string topicName,
-               Duration timeout);
-        Topic<TYPE> findTopic<TYPE>(
-               string topicName,
-               long timeout,
-               TimeUnit unit);
-        TopicDescription<TYPE> lookupTopicDescription<TYPE>(string name);
+        Topic<TYPE> FindTopic<TYPE>(string topicName, Duration timeout);
 
-        ContentFilteredTopic<TYPE> createContentFilteredTopic<TYPE>(
-               string name,
+        Topic<TYPE> FindTopic<TYPE>(string topicName, long timeout, TimeUnit unit);
+
+        TopicDescription<TYPE> LookupTopicDescription<TYPE>(string name);
+
+        ContentFilteredTopic<TYPE> CreateContentFilteredTopic<TYPE>(string name,
                Topic<TYPE> relatedTopic,
                string filterExpression,
                IList<string> expressionParameters);
 
-        MultiTopic<TYPE> createMultiTopic<TYPE>(
+        MultiTopic<TYPE> CreateMultiTopic<TYPE>(
                string name,
                string typeName,
                string subscriptionExpression,
                List<string> expressionParameters);
 
-        void closeContainedEntities();
+        void CloseContainedEntities();
 
-        void ignoreParticipant(InstanceHandle handle);
-        void ignoreTopic(InstanceHandle handle);
-        void ignorePublication(InstanceHandle handle);
-        void ignoreSubscription(InstanceHandle handle);
+        void IgnoreParticipant(InstanceHandle handle);
 
-        int getDomainId();
+        void IgnoreTopic(InstanceHandle handle);
+        
+        void IgnorePublication(InstanceHandle handle);
+        
+        void IgnoreSubscription(InstanceHandle handle);
 
-        void assertLiveliness();
+        int DomainId { get; }
 
-        PublisherQos getDefaultPublisherQos();
-        void setDefaultPublisherQos(PublisherQos qos);
-        void setDefaultPublisherQos(
-               string qosLibraryName,
-               string qosProfileName);
+        void AssertLiveliness();
 
-        SubscriberQos getDefaultSubscriberQos();
-        void setDefaultSubscriberQos(SubscriberQos qos);
-        void setDefaultSubscriberQos(
-               string qosLibraryName,
-               string qosProfileName);
+        PublisherQos DefaultPublisherQos { get; set; }
 
-        TopicQos getDefaultTopicQos();
-        void setDefaultTopicQos(TopicQos qos);
-        void setDefaultTopicQos(
-               string qosLibraryName,
-               string qosProfileName);
+        void SetDefaultPublisherQos(string qosLibraryName, string qosProfileName);
 
-        ICollection<InstanceHandle> getDiscoveredParticipants(
-               ICollection<InstanceHandle> participantHandles);
-        ParticipantBuiltinTopicData getDiscoveredParticipantData(
-               ParticipantBuiltinTopicData participantData,
-               InstanceHandle participantHandle);
+        SubscriberQos DefaultSubscriberQos { get; set; }
+        
+        void SetDefaultSubscriberQos(string qosLibraryName, string qosProfileName);
 
-        ICollection<InstanceHandle> getDiscoveredTopics(
-               ICollection<InstanceHandle> topicHandles);
-        TopicBuiltinTopicData getDiscoveredTopicData(
-               TopicBuiltinTopicData topicData,
-               InstanceHandle topicHandle);
+        TopicQos DefaultTopicQos { get; set; }
+        
+        void SetDefaultTopicQos(string qosLibraryName, string qosProfileName);
 
-        bool containsEntity(InstanceHandle handle);
+        ICollection<InstanceHandle> GetDiscoveredParticipants(ICollection<InstanceHandle> participantHandles);
+        
+        ParticipantBuiltinTopicData GetDiscoveredParticipantData(ParticipantBuiltinTopicData participantData, 
+                                                                    InstanceHandle participantHandle);
 
-        ModifiableTime getCurrentTime(ModifiableTime currentTime);
+        ICollection<InstanceHandle> GetDiscoveredTopics(ICollection<InstanceHandle> topicHandles);
+        
+        TopicBuiltinTopicData GetDiscoveredTopicData(TopicBuiltinTopicData topicData, InstanceHandle topicHandle);
+
+        bool ContainsEntity(InstanceHandle handle);
+
+        ModifiableTime CurrentTime(ModifiableTime currentTime);
     }
 }

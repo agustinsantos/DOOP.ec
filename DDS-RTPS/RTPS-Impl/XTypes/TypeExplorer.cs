@@ -1,6 +1,7 @@
 ﻿using Doopec.Dds.XTypes;
 using org.omg.dds.type;
 using org.omg.dds.type.typeobject;
+using Rtps.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,13 +14,9 @@ namespace Doopec.XTypes
         public static org.omg.dds.type.typeobject.Type ExploreType(System.Type type)
         {
             org.omg.dds.type.typeobject.Type ddsType = null;
-            if (type.IsClass)
+            if (type.IsClass || type.IsValueType)
             {
                 ddsType = ExploreClass(type);
-            }
-            else if (type.IsValueType)
-            {
-                ddsType = ExploreValueType(type); 
             }
             else if (type.IsEnum)
             {
@@ -31,10 +28,7 @@ namespace Doopec.XTypes
             }
             return ddsType;
         }
-        private static StructureType ExploreValueType(System.Type type)
-        {
-            throw new NotImplementedException();
-        }
+
         private static StructureType ExploreClass(System.Type type)
         {
             StructureType ddsType = new StructureTypeImpl();
@@ -43,19 +37,20 @@ namespace Doopec.XTypes
             typeProp.setName(type.FullName);
             typeProp.SetTypeId(type.GetHashCode());
             TypeFlag flag = default(TypeFlag);
-            //TODO flag |= (type.IsSealed? TypeFlag.IS_FINAL : 0);
+            flag |= (type.IsSealed ? TypeFlag.IS_FINAL : 0);
             typeProp.SetFlag(flag);
             ddsType.setProperty(typeProp);
 
             List<Member> listMember = new List<Member>();
             var fields = type.GetFields(BindingFlags.Public |
-                                        BindingFlags.NonPublic |
-                                        BindingFlags.Instance |
-                                        BindingFlags.DeclaredOnly);
+                                        BindingFlags.Instance);
             uint lastId = 0;
             foreach (var member in fields)
             {
                 Member memberInfo = new MemberImpl();
+                NonFieldAttribute isField = member.GetCustomAttribute<NonFieldAttribute>();
+                if (isField != null)
+                    continue;
 
                 MemberProperty memberProp = new MemberPropertyImpl();
                 memberProp.SetName(member.Name);
@@ -83,18 +78,18 @@ namespace Doopec.XTypes
                 }
 
                 memberProp.SetFlag(memberFlag);
-
+                memberProp.IsProperty = false;
                 memberInfo.setProperty(memberProp);
                 listMember.Add(memberInfo);
             }
             var props = type.GetProperties(BindingFlags.Public |
-                                           BindingFlags.NonPublic |
-                                           BindingFlags.Instance |
-                                           BindingFlags.DeclaredOnly);
+                                           BindingFlags.Instance);
             foreach (var member in props)
             {
                 Member memberInfo = new MemberImpl();
-
+                NonFieldAttribute isField = member.GetCustomAttribute<NonFieldAttribute>();
+                if (isField != null) 
+                    continue;
                 MemberProperty memberProp = new MemberPropertyImpl();
                 memberProp.SetName(member.Name);
                 IDAttribute id = member.GetCustomAttribute<IDAttribute>();
@@ -105,8 +100,9 @@ namespace Doopec.XTypes
                 }
                 else
                 {
-                    lastId++;
-                    memberProp.SetMemberId(lastId);
+                    continue; // TODO. Check if only process process members with ID
+                    //lastId++;
+                    //memberProp.SetMemberId(lastId);
                 }
                 MemberFlag memberFlag = default(MemberFlag);
                 KeyAttribute isKey = member.GetCustomAttribute<KeyAttribute>();
@@ -121,7 +117,7 @@ namespace Doopec.XTypes
                 }
 
                 memberProp.SetFlag(memberFlag);
-
+                memberProp.IsProperty = true;
                 memberInfo.setProperty(memberProp);
                 listMember.Add(memberInfo);
             }

@@ -16,30 +16,34 @@
  * limitations under the License.
  */
 
+
+///
+
 namespace org.omg.dds.core
 {
 
 
-    /**
-     * A GuardCondition object is a specific Condition whose triggerValue is
-     * completely under the control of the application. When it is first created,
-     * the triggerValue is set to false.
-     * 
-     * The purpose of the GuardCondition is to provide the means for the
-     * application to manually wake up a {@link WaitSet}. This is accomplished by
-     * attaching the GuardCondition to the WaitSet and then setting the
-     * triggerValue by means of the {@link #setTriggerValue(bool)} operation.
-     */
+    /// <summary>
+    /// A GuardCondition object is a specific Condition whose triggerValue is
+    /// completely under the control of the application. When it is first created,
+    /// the triggerValue is set to false.
+    /// 
+    /// The purpose of the GuardCondition is to provide the means for the
+    /// application to manually wake up a {@link WaitSet}. This is accomplished by
+    /// attaching the GuardCondition to the WaitSet and then setting the
+    /// triggerValue by means of the {@link #setTriggerValue(bool)} operation.
+    /// </summary>
     public abstract class GuardCondition : Condition
     {
         // -----------------------------------------------------------------------
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
+        /// <returns></returns>
         public static GuardCondition newGuardCondition(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newGuardCondition();

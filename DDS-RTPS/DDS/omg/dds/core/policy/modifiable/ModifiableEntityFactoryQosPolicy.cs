@@ -26,11 +26,11 @@ namespace org.omg.dds.core.policy.modifiable
     public interface ModifiableEntityFactoryQosPolicy : EntityFactoryQosPolicy,
             ModifiableQosPolicy<EntityFactoryQosPolicy, ModifiableEntityFactoryQosPolicy>
     {
-        /**
-         * @param autoEnableCreatedEntities the autoEnableCreatedEntities to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="autoEnableCreatedEntities">The autoEnableCreatedEntities to set</param>
+        /// <returns>this</returns>
         ModifiableEntityFactoryQosPolicy setAutoEnableCreatedEntities(bool autoEnableCreatedEntities);
     }
 }

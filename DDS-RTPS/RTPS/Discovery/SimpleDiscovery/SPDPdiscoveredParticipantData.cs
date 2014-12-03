@@ -1,4 +1,6 @@
-﻿using org.omg.dds.topic;
+﻿using org.omg.dds.core.policy;
+using org.omg.dds.topic;
+using Rtps.Attributes;
 using Rtps.Behavior.Types;
 using Rtps.Messages.Types;
 using Rtps.Structure;
@@ -11,30 +13,27 @@ namespace Rtps.Discovery.Spdp
     {
         public const string PARTICIPANT_TOPIC = "DCPSParticipant";
 
+        // TODO, this constructor is defined just only for testing
+        public SPDPdiscoveredParticipantData()
+        { }
+
         public SPDPdiscoveredParticipantData(Participant participant)
         {
             ParticipantProxyData = new ParticipantProxy(participant);
-         }
+        }
+        private BuiltinTopicKey key;
+        private UserDataQosPolicy userData;
 
+        [NonField]
         public ParticipantProxy ParticipantProxyData { get; set; }
 
+        [NonField]
         public Duration LeaseDuration { get; set; }
 
-        public override BuiltinTopicKey Key
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+        public override BuiltinTopicKey Key { get { return key; } }
 
-        public override org.omg.dds.core.policy.UserDataQosPolicy UserData
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+        public override UserDataQosPolicy UserData { get { return userData; } }
+       
 
         public override ParticipantBuiltinTopicData CopyFrom(ParticipantBuiltinTopicData other)
         {

@@ -77,5 +77,11 @@ namespace org.omg.dds.type.typeobject
         /// </summary>
         /// <returns></returns>
         string Name { get; set; }
+
+        /// <summary>
+        /// Check if the member is defined as a C# Property
+        /// </summary>
+        bool IsProperty { get; set; }
+
     }
 }

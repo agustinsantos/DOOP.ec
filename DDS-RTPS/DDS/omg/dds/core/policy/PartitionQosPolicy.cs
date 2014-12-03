@@ -26,9 +26,10 @@ namespace org.omg.dds.core.policy
     public interface PartitionQosPolicy
      : QosPolicy<PartitionQosPolicy, ModifiablePartitionQosPolicy>
     {
-        /**
-         * @return  an unmodifiable collection of partition names.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable collection of partition names</returns>
         ICollection<string> getName();
     }
 }

@@ -24,9 +24,10 @@ namespace org.omg.dds.core.policy
     public interface WriterDataLifecycleQosPolicy : QosPolicy<WriterDataLifecycleQosPolicy,
                       ModifiableWriterDataLifecycleQosPolicy>
     {
-        /**
-         * @return the autDisposeUnregisteredInstances
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The autDisposeUnregisteredInstances</returns>
         bool isAutDisposeUnregisteredInstances();
 
     }

@@ -26,46 +26,45 @@ namespace org.omg.dds.core
     {
         // --- From Object: ------------------------------------------------------
 
-        /**
-         * Implementing classes should override <code>equals()</code>.
-         */
+        /// <summary>
+        /// Implementing classes should override <code>equals()</code>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
 
-        bool Equals(Object other);
+          bool Equals(Object other);
 
-        /**
-         * Implementing classes should override <code>hashCode()</code>.
-         */
+        /// <summary>
+        /// Implementing classes should override <code>hashCode()</code>
+        /// </summary>
+        /// <returns></returns>
 
-        int GetHashCode();
+          int GetHashCode();
 
-        /**
-         * Extends the concept of "cloneable" defined in <code>java.lang</code> by
-         * providing an explicit public {@link #clone()} method.
-         * 
-         * @return  a new object that with state identical to that of this object.
-         */
+        /// <summary>
+        /// Extends the concept of "cloneable" defined in <code>java.lang</code> by
+        /// providing an explicit public {@link #clone()} method.
+        /// </summary>
+        /// <returns>A new object that with state identical to that of this object</returns>
         //Value Clone();
 
 
         // --- Conversion: -------------------------------------------------------
 
-        /**
-         * If this value type is of a modifiable subtype, return this.
-         * If this value type has a modifiable subtype, return a new object
-         * of that type that is a modifiable copy of this object.
-         * Otherwise, return null.
-         * 
-         * @return  <code>this</code>, a new modifiable copy of <code>this</code>,
-         *          or <code>null</code>.
-         */
+        /// <summary>
+        /// If this value type is of a modifiable subtype, return this.
+        /// If this value type has a modifiable subtype, return a new object
+        /// of that type that is a modifiable copy of this object.
+        /// Otherwise, return null
+        /// </summary>
+        /// <returns><code>this</code>, a new modifiable copy of <code>this</code>,
+        ///          or <code>null</code></returns>
         //Value modify();
     }
 
-
     /// <summary>
     /// Implementing classes have value semantics: they can be deeply copied, and
-    /// equality is determined based on their contents, not on their object
-    /// identity.
+    /// equality is determined based on their contents, not on their object identity.
     /// </summary>
     /// <typeparam name="UNMOD_SELF"></typeparam>
     /// <typeparam name="MOD_SELF"></typeparam>
@@ -75,25 +74,25 @@ namespace org.omg.dds.core
     {
         // --- From Object: ------------------------------------------------------
 
-        /**
-         * Implementing classes should override <code>equals()</code>.
-         */
-
+        /// <summary>
+        /// Implementing classes should override <code>equals()</code>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         //bool Equals(Object other);
 
-        /**
-         * Implementing classes should override <code>hashCode()</code>.
-         */
-
+        /// <summary>
+        /// Implementing classes should override <code>hashCode()</code>
+        /// </summary>
+        /// <returns></returns>
         //int GetHashCode();
 
-        /**
-         * Extends the concept of "cloneable" defined in <code>java.lang</code> by
-         * providing an explicit public {@link #clone()} method.
-         * 
-         * @return  a new object that with state identical to that of this object.
-         */
-        //UNMOD_SELF clone();
+        /// <summary>
+        /// Extends the concept of "cloneable" defined in <code>java.lang</code> by
+        /// providing an explicit public {@link #clone()} method
+        /// </summary>
+        /// <returns>A new object that with state identical to that of this object</returns>
+         //UNMOD_SELF clone();
 
 
         // --- Conversion: -------------------------------------------------------
@@ -104,10 +103,7 @@ namespace org.omg.dds.core
         /// of that type that is a modifiable copy of this object.
         /// Otherwise, return null.
         /// </summary>
-        /// <returns>
-        /// <code>this</code>, a new modifiable copy of <code>this</code>,
-        ///          or <code>null</code>.
-        /// </returns>
+        /// <returns><code>this</code>, a new modifiable copy of <code>this</code>, or <code>null</code></returns>
         MOD_SELF Modify();
     }
 }

@@ -30,10 +30,11 @@ namespace org.omg.dds.core.status
         // Object Life Cycle
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
+        /// <returns></returns>
         public static DataAvailableStatus<TYPE> newDataAvailableStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newDataAvailableStatus<TYPE>();
