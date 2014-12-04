@@ -30,7 +30,7 @@ namespace org.omg.dds.domain
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>the entityFactory</returns>
+        /// <returns>The entityFactory</returns>
         EntityFactoryQosPolicy getEntityFactory();
 
     }

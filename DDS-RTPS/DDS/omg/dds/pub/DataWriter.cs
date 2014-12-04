@@ -35,9 +35,9 @@ namespace org.omg.dds.pub
                                         DataWriterQos>
     {
         /// <summary>
-        /// returns  the type parameter if this object's class.
+        /// 
         /// </summary>
-        /// <returns>the type parameter if this object's class.</returns>
+        /// <returns>The type parameter if this object's class.</returns>
         System.Type getType();
 
         /// <summary>
@@ -45,8 +45,8 @@ namespace org.omg.dds.pub
         /// the cast fails.
         /// </summary>
         /// <typeparam name="OTHER">The type of the data published by this writer,
-        ///                 according to the caller.</typeparam>
-        /// <returns>this data writer</returns>
+        ///                         according to the caller</typeparam>
+        /// <returns>This data writer</returns>
         /// <exception cref="ClassCastException"/>
         DataWriter<OTHER> cast<OTHER>();
 

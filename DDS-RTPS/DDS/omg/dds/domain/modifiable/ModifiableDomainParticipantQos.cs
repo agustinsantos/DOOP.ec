@@ -32,7 +32,7 @@ namespace org.omg.dds.domain.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="userData">the userData to set</param>
+        /// <param name="userData">The userData to set</param>
         /// <returns>this</returns>
         ModifiableDomainParticipantQos setUserData(UserDataQosPolicy userData);
 
@@ -41,7 +41,7 @@ namespace org.omg.dds.domain.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="entityFactory">the entityFactory to set</param>
+        /// <param name="entityFactory">The entityFactory to set</param>
         /// <returns>this</returns>
         ModifiableDomainParticipantQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
 

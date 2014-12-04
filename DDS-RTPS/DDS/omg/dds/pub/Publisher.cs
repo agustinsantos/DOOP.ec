@@ -41,26 +41,35 @@ namespace org.omg.dds.pub
         DataWriter<TYPE> createDataWriter<TYPE>(
                Topic<TYPE> topic);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer.
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         DataWriter<TYPE> createDataWriter<TYPE>(
                Topic<TYPE> topic,
                DataWriterQos qos,
                DataWriterListener<TYPE> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         DataWriter<TYPE> createDataWriter<TYPE>(
                Topic<TYPE> topic,
                string qosLibraryName,
@@ -74,26 +83,33 @@ namespace org.omg.dds.pub
         BytesDataWriter createBytesDataWriter(
                Topic<byte[]> topic);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         BytesDataWriter createBytesDataWriter(
                Topic<byte[]> topic,
                DataWriterQos qos,
                DataWriterListener<byte[]> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         BytesDataWriter createBytesDataWriter(
                Topic<byte[]> topic,
                string qosLibraryName,
@@ -107,26 +123,33 @@ namespace org.omg.dds.pub
         KeyedBytesDataWriter createKeyedBytesDataWriter(
                Topic<KeyedBytes> topic);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         KeyedBytesDataWriter createKeyedBytesDataWriter(
                Topic<KeyedBytes> topic,
                DataWriterQos qos,
                DataWriterListener<KeyedBytes> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         KeyedBytesDataWriter createKeyedBytesDataWriter(
                Topic<KeyedBytes> topic,
                string qosLibraryName,
@@ -140,26 +163,33 @@ namespace org.omg.dds.pub
         stringDataWriter createstringDataWriter(
                Topic<string> topic);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         stringDataWriter createstringDataWriter(
                Topic<string> topic,
                DataWriterQos qos,
                DataWriterListener<string> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         stringDataWriter createstringDataWriter(Topic<string> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -171,25 +201,32 @@ namespace org.omg.dds.pub
 
         KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic,
               DataWriterQos qos,
               DataWriterListener<Keyedstring> listener,
               ICollection<Type> statuses);
 
-        /**
-         * Create a new data writer.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data writer
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
         KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic,
               string qosLibraryName,
               string qosProfileName,

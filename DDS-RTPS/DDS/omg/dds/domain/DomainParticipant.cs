@@ -52,7 +52,7 @@ namespace org.omg.dds.domain
     ///     given participant ({@link #IgnoreParticipant(InstanceHandle)}),
     ///     publication ({@link #IgnorePublication(InstanceHandle)}),
     ///     subscription ({@link #IgnoreSubscription(InstanceHandle)}), or topic
-    ///     ({@link #IgnoreTopic(InstanceHandle)}).</li>
+    ///     ({@link #IgnoreTopic(InstanceHandle)})</li>
     /// </ul>
     /// </summary>
     public interface DomainParticipant : Entity<DomainParticipant,
@@ -68,9 +68,9 @@ namespace org.omg.dds.domain
         /// </summary>
         /// <param name="qos"></param>
         /// <param name="listener"></param>
-        /// <param name="statuses"> Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes</param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Publisher CreatePublisher(PublisherQos qos,
                PublisherListener listener,
@@ -83,8 +83,8 @@ namespace org.omg.dds.domain
         /// <param name="qosProfileName"></param>
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes.</param>
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Publisher CreatePublisher(string qosLibraryName, string qosProfileName,
                PublisherListener listener, ICollection<Type> statuses);
@@ -102,10 +102,9 @@ namespace org.omg.dds.domain
         /// </summary>
         /// <param name="qos"></param>
         /// <param name="listener"></param>
-        /// <param name="statuses">
-        ///  Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes.</param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Subscriber CreateSubscriber(SubscriberQos qos, SubscriberListener listener, ICollection<Type> statuses);
 
@@ -116,8 +115,8 @@ namespace org.omg.dds.domain
         /// <param name="qosProfileName"></param>
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                 changes.</param>
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Subscriber CreateSubscriber(string qosLibraryName,
                string qosProfileName,
@@ -160,8 +159,8 @@ namespace org.omg.dds.domain
         /// <param name="qosProfileName"></param>
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes.</param>
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Topic<TYPE> CreateTopic<TYPE>(string topicName, 
                                         string qosLibraryName, 
@@ -183,8 +182,8 @@ namespace org.omg.dds.domain
         /// <param name="qos"></param>
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes.</param>
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Topic<TYPE> CreateTopic<TYPE>(string topicName,
                                        TypeSupport<TYPE> type,
@@ -202,8 +201,8 @@ namespace org.omg.dds.domain
         /// <param name="qosProfileName"></param>
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
-        ///                  notified. A null collection signifies all status
-        ///                  changes.</param>
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
         /// <returns></returns>
         Topic<TYPE> CreateTopic<TYPE>(string topicName,
                                        TypeSupport<TYPE> type,

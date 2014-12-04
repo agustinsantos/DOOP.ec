@@ -27,15 +27,15 @@ namespace org.omg.dds.domain
     public interface DomainParticipantQos : EntityQos<DomainParticipantQos, ModifiableDomainParticipantQos>
     {
         /// <summary>
-        /// return the userData
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The userData</returns>
         UserDataQosPolicy getUserData();
 
         /// <summary>
-        /// return the entityFactory
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The entityFactory</returns>
         EntityFactoryQosPolicy getEntityFactory();
 
     }

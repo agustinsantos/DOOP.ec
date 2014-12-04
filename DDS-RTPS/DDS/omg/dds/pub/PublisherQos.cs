@@ -26,24 +26,28 @@ namespace org.omg.dds.pub
 
     public interface PublisherQos : EntityQos<PublisherQos, ModifiablePublisherQos>
     {
-        /**
-         * @return the presentation
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The presentation</returns>
         PresentationQosPolicy getPresentation();
 
-        /**
-         * @return the partition
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The partition</returns>
         PartitionQosPolicy getPartition();
 
-        /**
-         * @return the groupData
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The groupData</returns>
         GroupDataQosPolicy getGroupData();
 
-        /**
-         * @return the entityFactory
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The entityFactory</returns>
         EntityFactoryQosPolicy getEntityFactory();
 
     }

@@ -37,7 +37,7 @@ namespace org.omg.dds.domain
         /// Singleton Access
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the
-        ///                  object will belong.</param>
+        ///                         object will belong</param>
         /// <returns></returns>
         public static DomainParticipantFactory getInstance(Bootstrap bootstrap)
         {
@@ -54,14 +54,14 @@ namespace org.omg.dds.domain
         /// Create a new participant in the domain with ID 0 having default QoS
         /// and no listener.
         /// </summary>
-        /// <returns>new participant</returns>
+        /// <returns>New participant</returns>
         public abstract DomainParticipant CreateParticipant();
 
         /// <summary>
         /// Create a new participant in the domain with a fixed ID and having default QoS
         /// and no listener.
         /// </summary>
-        /// <returns>new participant</returns>
+        /// <returns>New participant</returns>
         public abstract DomainParticipant CreateParticipant(int domainId);
 
         
@@ -73,7 +73,7 @@ namespace org.omg.dds.domain
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
         ///                        notified. A null collection signifies all status 
-        ///                        changes.</param>
+        ///                        changes</param>
         /// <returns></returns>
         public abstract DomainParticipant CreateParticipant(
                 int domainId,
@@ -92,7 +92,7 @@ namespace org.omg.dds.domain
         /// <param name="listener"></param>
         /// <param name="statuses">Of which status changes the listener should be
         ///                        notified. A null collection signifies all status
-        ///                        changes.</param>
+        ///                        changes</param>
         /// <returns></returns>
         public abstract DomainParticipant CreateParticipant(
                 int domainId,
