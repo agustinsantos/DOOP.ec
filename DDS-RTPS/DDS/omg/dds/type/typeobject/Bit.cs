@@ -27,28 +27,30 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface Bit : ModifiableValue<Bit, Bit>
     {
-        /**
-         * @param index the index to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index">The index to set</param>
+        /// <returns>this</returns>
         Bit setIndex(int index);
 
-        /**
-         * @return the index
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The index</returns>
         int getIndex();
 
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">The name to set</param>
+        /// <returns>this</returns>
         Bit setName(string name);
 
-        /**
-         * @return the name
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The name</returns>
         string getName();
     }
 }

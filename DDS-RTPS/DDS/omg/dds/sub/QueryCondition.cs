@@ -25,9 +25,10 @@ namespace org.omg.dds.sub
     {
         string getQueryExpression();
 
-        /**
-         * @return  an unmodifiable list of the current query parameters.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable list of the current query parameters</returns>
         IList<string> getQueryParameters();
 
         void setQueryParameters(List<string> queryParameters);

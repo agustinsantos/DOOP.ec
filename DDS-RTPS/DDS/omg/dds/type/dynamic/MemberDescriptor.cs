@@ -29,39 +29,46 @@ namespace org.omg.dds.type.dynamic
     {
         bool isConsistent();
 
-        /**
-         * @return the name
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The name</returns>
         string getName();
 
-        /**
-         * @return the id
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The id</returns>
         int getId();
 
-        /**
-         * @return the type
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The type</returns>
         DynamicType getType();
 
-        /**
-         * @return the defaultValue
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The defaultValue</returns>
         string getDefaultValue();
 
-        /**
-         * @return the index
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The index</returns>
         int getIndex();
 
-        /**
-         * @return the label
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The label</returns>
         List<int> getLabel();
 
-        /**
-         * @return the defaultLabel
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The defaultLabel</returns>
         bool isDefaultLabel();
     }
 }

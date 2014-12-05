@@ -34,17 +34,21 @@ namespace org.omg.dds.type.typeobject
         [ID(MapTypeMemberId.KEY_ELEMENT_TYPE_MAPTYPE_MEMBER_ID)]
         int getKeyElementType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newKeyElementType"></param>
+        /// <returns>this</returns>
         MapType setKeyElementType(int newKeyElementType);
 
         [ID(MapTypeMemberId.BOUND_MAPTYPE_MEMBER_ID)]
         long getBound();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBound"></param>
+        /// <returns>this</returns>
         MapType setBound(long newBound);
 
     }

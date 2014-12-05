@@ -25,35 +25,39 @@ namespace org.omg.dds.type.builtin
 
     public interface KeyedBytes : ModifiableValue<KeyedBytes, KeyedBytes>
     {
-        /**
-         * @return the key
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The key</returns>
         string getKey();
 
-        /**
-         * @param key the key to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key">The key to set</param>
+        /// <returns>this</returns>
         KeyedBytes setKey(CharSequence key);
 
-        /**
-         * @return the value
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The value</returns>
         byte[] getValue();
 
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">The value to set</param>
+        /// <returns>this</returns>
         KeyedBytes setValue(byte[] value);
 
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">The value to set</param>
+        /// <param name="offset"></param>
+        /// <param name="length"></param>
+        /// <returns>this</returns>
         KeyedBytes setValue(byte[] value, int offset, int length);
     }
 }

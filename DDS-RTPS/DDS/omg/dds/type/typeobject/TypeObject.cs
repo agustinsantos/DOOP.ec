@@ -31,29 +31,31 @@ namespace org.omg.dds.type.typeobject
     [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
     public interface TypeObject : ModifiableValue<TypeObject, TypeObject>
     {
-        /**
-         * @param library the library to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library">The library to set</param>
+        /// <returns>this</returns>
         TypeObject setLibrary(TypeLibrary library);
 
-        /**
-         * @return the library
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The library</returns>
         [Shared]
         TypeLibrary getLibrary();
 
-        /**
-         * @param the_type the the_type to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="the_type">The the_type to set</param>
+        /// <returns>this</returns>
         TypeObject setTheType(int the_type);
 
-        /**
-         * @return the the_type
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The the_type</returns>
         [Optional]
         int getTheType();
     }

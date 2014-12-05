@@ -28,106 +28,110 @@ namespace org.omg.dds.topic.modifiable
 
     public interface ModifiableTopicQos : TopicQos, ModifiableEntityQos<TopicQos, ModifiableTopicQos>
     {
-        /**
-         * @param topicData the topicData to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="topicData">The topicData to set</param>
+        /// <returns>This</returns>
         ModifiableTopicQos setTopicData(TopicDataQosPolicy topicData);
 
 
-        /**
-         * @param durability the durability to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="durability">The durability to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setDurability(DurabilityQosPolicy durability);
 
-        /**
-         * @param durabilityService the durabilityService to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="durabilityService">The durabilityService to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setDurabilityService(DurabilityServiceQosPolicy durabilityService);
 
-        /**
-         * @param deadline the deadline to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="deadline">The deadline to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setDeadline(DeadlineQosPolicy deadline);
 
-        /**
-         * @param latencyBudget the latencyBudget to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="latencyBudget">The latencyBudget to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
-        /**
-         * @param liveliness the liveliness to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="liveliness">The liveliness to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setLiveliness(LivelinessQosPolicy liveliness);
 
-        /**
-         * @param reliability the reliability to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reliability">The reliability to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setReliability(ReliabilityQosPolicy reliability);
 
-        /**
-         * @param destinationOrder the destinationOrder to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="destinationOrder">The destinationOrder to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
-        /**
-         * @param history the history to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="history">The history to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setHistory(HistoryQosPolicy history);
 
-        /**
-         * @param resourceLimits the resourceLimits to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="resourceLimits">The resourceLimits to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
-        /**
-         * @param transportPriority the transportPriority to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="transportPriority">The transportPriority to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setTransportPriority(TransportPriorityQosPolicy transportPriority);
 
-        /**
-         * @param lifespan the lifespan to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lifespan">The lifespan to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setLifespan(LifespanQosPolicy lifespan);
 
-        /**
-         * @param ownership the ownership to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ownership">The ownership to set</param>
+        /// <returns>this</returns>
         ModifiableTopicQos setOwnership(OwnershipQosPolicy ownership);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="representation"></param>
+        /// <returns>this</returns>
         ModifiableTopicQos setRepresentation(DataRepresentationQosPolicy representation);
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeConsistency"></param>
+        /// <returns>this</returns>
         ModifiableTopicQos setTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
     }
 }

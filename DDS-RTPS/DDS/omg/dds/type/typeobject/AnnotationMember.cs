@@ -33,9 +33,11 @@ namespace org.omg.dds.type.typeobject
         [ID(AnnotationMemberMemberId.DEFAULT_VALUE_ANNOTATIONMEMBER_MEMBER_ID)]
         AnnotationMemberValue getDefaultValue();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newDefaultValue"></param>
+        /// <returns>this</returns>
         AnnotationMember setDefaultValue(AnnotationMemberValue newDefaultValue);
     }
 

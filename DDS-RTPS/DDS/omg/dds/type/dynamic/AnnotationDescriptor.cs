@@ -32,9 +32,10 @@ namespace org.omg.dds.type.dynamic
 
         bool isConsistent();
 
-        /**
-         * @return the type
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The type</returns>
         DynamicType getType();
     }
 }

@@ -34,9 +34,11 @@ namespace org.omg.dds.type.typeobject
         [ID(SequenceTypeMemberId.BOUND_SEQUENCETYPE_MEMBER_ID)]
         long getBound();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBound"></param>
+        /// <returns>this</returns>
         SequenceType setBound(long newBound);
     }
 

@@ -25,27 +25,25 @@ namespace org.omg.dds.type.builtin
 
     public interface Keyedstring : ModifiableValue<Keyedstring, Keyedstring>
     {
-        /**
-         * @param key the key to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key">The key to set</param>
+        /// <returns>this</returns>
         Keyedstring setKey(CharSequence key);
 
-        /**
-         * @return the key
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The key</returns>
         string getKey();
 
-        /**
-         * @param value the value to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">The value to set</param>
+        /// <returns>this</returns>
         Keyedstring setValue(CharSequence value);
 
-        /**
-         * @return the value
-         */
     }
 }

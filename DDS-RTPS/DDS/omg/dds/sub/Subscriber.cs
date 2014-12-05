@@ -36,26 +36,37 @@ namespace org.omg.dds.sub
 
         DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic,
                DataReaderQos qos,
                DataReaderListener<TYPE> listener,
                ICollection<Type> statuses);
 
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <typeparam name="TYPE"></typeparam>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic,
                                                string qosLibraryName,
                                                string qosProfileName,
@@ -67,25 +78,34 @@ namespace org.omg.dds.sub
 
         BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader.
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic,
                DataReaderQos qos,
                DataReaderListener<byte[]> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -97,25 +117,34 @@ namespace org.omg.dds.sub
 
         KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
                DataReaderQos qos,
                DataReaderListener<KeyedBytes> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status 
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -127,25 +156,34 @@ namespace org.omg.dds.sub
 
         stringDataReader createstringDataReader(TopicDescription<string> topic);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         stringDataReader createstringDataReader(TopicDescription<string> topic,
                DataReaderQos qos,
                DataReaderListener<string> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         stringDataReader createstringDataReader(TopicDescription<string> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -157,25 +195,34 @@ namespace org.omg.dds.sub
 
         KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic,
                DataReaderQos qos,
                DataReaderListener<Keyedstring> listener,
                ICollection<Type> statuses);
 
-        /**
-         * Create a new data reader.
-         * 
-         * @param statuses  Of which status changes the listener should be
-         *                  notified. A null collection signifies all status
-         *                  changes.
-         */
+        /// <summary>
+        /// Create a new data reader
+        /// </summary>
+        /// <param name="topic"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes
+        /// </param>
+        /// <returns></returns>
         KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic,
                string qosLibraryName,
                string qosProfileName,

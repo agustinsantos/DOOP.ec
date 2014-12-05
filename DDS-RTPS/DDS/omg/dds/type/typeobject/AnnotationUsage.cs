@@ -31,28 +31,30 @@ namespace org.omg.dds.type.typeobject
     public interface AnnotationUsage
      : ModifiableValue<AnnotationUsage, AnnotationUsage>
     {
-        /**
-         * @param typeId the typeId to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeId">The typeId to set</param>
+        /// <returns>this</returns>
         AnnotationUsage setTypeId(int typeId);
 
-        /**
-         * @return the typeId
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The typeId</returns>
         int getTypeId();
 
-        /**
-         * @param member the member to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="member">The member to set</param>
+        /// <returns>this</returns>
         AnnotationUsage setMember(List<AnnotationUsageMember> member);
 
-        /**
-         * @return the member
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The member</returns>
         List<AnnotationUsageMember> getMember();
     }
 }

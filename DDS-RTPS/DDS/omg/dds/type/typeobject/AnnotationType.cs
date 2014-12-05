@@ -37,17 +37,21 @@ namespace org.omg.dds.type.typeobject
         [ID(AnnotationTypeMemberId.BASE_TYPE_ANNOTATIONTYPE_MEMBER_ID)]
         int getBaseType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBaseType"></param>
+        /// <returns>this</returns>
         AnnotationType setBaseType(int newBaseType);
 
         [ID(AnnotationTypeMemberId.MEMBER_ANNOTATIONTYPE_MEMBER_ID)]
         List<AnnotationMember> getMember();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newMember"></param>
+        /// <returns>this</returns>
         AnnotationType setMember(List<AnnotationMember> newMember);
     }
 

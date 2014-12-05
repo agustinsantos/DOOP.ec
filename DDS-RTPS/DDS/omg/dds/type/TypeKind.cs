@@ -24,7 +24,9 @@ namespace org.omg.dds.type
         // Enumerated Constants
         // -----------------------------------------------------------------------
 
-        /** sentinel indicating "null" value */
+        /// <summary>
+        /// sentinel indicating "null" value
+        /// </summary>
         NO_TYPE = TypeKindValues.NO_TYPE_VALUE,
         BOOLEAN_TYPE = TypeKindValues.BOOLEAN_TYPE_VALUE,
         BYTE_TYPE = TypeKindValues.BYTE_TYPE_VALUE,
@@ -60,7 +62,9 @@ namespace org.omg.dds.type
 
     public sealed class TypeKindValues
     {
-        /** sentinel indicating "null" value */
+        /// <summary>
+        /// sentinel indicating "null" value
+        /// </summary>
         public const short NO_TYPE_VALUE = 0;
         public const short BOOLEAN_TYPE_VALUE = 1;
         public const short BYTE_TYPE_VALUE = 2;

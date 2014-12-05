@@ -28,35 +28,35 @@ namespace org.omg.dds.sub.modifiable
     public interface ModifiableSubscriberQos : SubscriberQos,
             ModifiableEntityQos<SubscriberQos, ModifiableSubscriberQos>
     {
-        /**
-         * @param presentation the presentation to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="presentation">The presentation to set</param>
+        /// <returns>this</returns>
         ModifiableSubscriberQos setPresentation(PresentationQosPolicy presentation);
 
- 
-        /**
-         * @param partition the partition to set
-         * 
-         * @return  this
-         */
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="partition">The partition to set</param>
+        /// <returns>this</returns>
         ModifiableSubscriberQos setPartition(PartitionQosPolicy partition);
 
- 
-        /**
-         * @param groupData the groupData to set
-         * 
-         * @return  this
-         */
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="groupData">The groupData to set</param>
+        /// <returns>this</returns>
         ModifiableSubscriberQos setGroupData(GroupDataQosPolicy groupData);
 
- 
-        /**
-         * @param entityFactory the entityFactory to set
-         * 
-         * @return  this
-         */
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entityFactory">The entityFactory to set</param>
+        /// <returns>this</returns>
         ModifiableSubscriberQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
     }
 }

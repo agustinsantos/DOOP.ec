@@ -37,9 +37,11 @@ namespace org.omg.dds.type.typeobject
         [ID(ArrayTypeMemberId.BOUND_ARRAYTYPE_MEMBER_ID)]
         List<long> getBound();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBound"></param>
+        /// <returns>this</returns>
         ArrayType setBound(List<long> newBound);
 
     }

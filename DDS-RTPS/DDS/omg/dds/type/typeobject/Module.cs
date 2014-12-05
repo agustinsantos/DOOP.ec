@@ -27,24 +27,27 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface Module : ModifiableValue<Module, Module>
     {
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">The name to set</param>
+        /// <returns>this</returns>
         Module setName(string name);
 
-        /**
-         * @return the name
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The name</returns>
         string getName();
 
         [Shared]
         TypeLibrary getLibrary();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newLibrary"></param>
+        /// <returns>this</returns>
         Module setLibrary(TypeLibrary newLibrary);
     }
 }
