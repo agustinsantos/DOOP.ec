@@ -19,7 +19,6 @@ namespace Rtps.Tests.Transport
         [TestInitialize]
         public void SetUp()
         {
-             // comentario
             rec = new UDPReceiver(new Uri("udp://localhost:9999"), 256);
             rec.Start();
             trans = new UDPTransmitter(new Uri("udp://localhost:9999"), 256);
