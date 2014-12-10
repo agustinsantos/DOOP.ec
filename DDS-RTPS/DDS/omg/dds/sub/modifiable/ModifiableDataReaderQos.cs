@@ -28,100 +28,104 @@ namespace org.omg.dds.sub.modifiable
 
     public interface ModifiableDataReaderQos : DataReaderQos, ModifiableEntityQos<DataReaderQos, ModifiableDataReaderQos>
     {
-        /**
-         * @param durability the durability to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="durability">The durability to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setDurability(DurabilityQosPolicy durability);
 
-        /**
-       * @param deadline the deadline to set
-       * 
-       * @return  this
-       */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="deadline">The deadline to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setDeadline(DeadlineQosPolicy deadline);
 
-        /**
-       * @param latencyBudget the latencyBudget to set
-       * 
-       * @return  this
-       */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="latencyBudget">The latencyBudget to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
 
-        /**
-         * @param liveliness the liveliness to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="liveliness">The liveliness to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setLiveliness(LivelinessQosPolicy liveliness);
 
 
-        /**
-         * @param destinationOrder the destinationOrder to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="destinationOrder">The destinationOrder to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
 
-        /**
-         * @param history the history to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="history">The history to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setHistory(HistoryQosPolicy history);
 
 
-        /**
-         * @param resourceLimits the resourceLimits to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="resourceLimits">The resourceLimits to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
 
-        /**
-         * @param userData the userData to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userData">The userData to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setUserData(UserDataQosPolicy userData);
 
-        /**
-        * @param ownership the ownership to set
-        * 
-        * @return  this
-        */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ownership">The ownership to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setOwnership(OwnershipQosPolicy ownership);
 
 
-        /**
-         * @param timeBasedFilter the timeBasedFilter to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="timeBasedFilter">The timeBasedFilter to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setTimeBasedFilter(TimeBasedFilterQosPolicy timeBasedFilter);
 
 
-        /**
-         * @param readerDataLifecycle the readerDataLifecycle to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="readerDataLifecycle">The readerDataLifecycle to set</param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setReaderDataLifecycle(ReaderDataLifecycleQosPolicy readerDataLifecycle);
 
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="representation"></param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setRepresentation(DataRepresentationQosPolicy representation);
 
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeConsistency"></param>
+        /// <returns>this</returns>
         ModifiableDataReaderQos setTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
 
         ModifiableDataReaderQos copyFrom(TopicQos src);

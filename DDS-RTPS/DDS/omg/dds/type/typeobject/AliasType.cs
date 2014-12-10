@@ -34,9 +34,11 @@ namespace org.omg.dds.type.typeobject
         [ID(AliasTypeMemberId.BASE_TYPE_ALIASTYPE_MEMBER_ID)]
         int getBaseType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBaseTypeId"></param>
+        /// <returns>this</returns>
         AliasType setBaseType(int newBaseTypeId);
 
     }

@@ -36,10 +36,13 @@ namespace org.omg.dds.topic
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /*
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                         object will belong
+        /// </param>
+        /// <returns></returns>
         public static PublicationBuiltinTopicData newPublicationBuiltinTopicData(
                 Bootstrap bootstrap)
         {
@@ -56,21 +59,21 @@ namespace org.omg.dds.topic
         [Key]
         public abstract BuiltinTopicKey Key { get; }
 
-        /**
-         * [return the participantKey
-         */
+        /// <summary>
+        /// Return the participantKey
+        /// </summary>
         [ID(0x0050)]
         public abstract BuiltinTopicKey ParticipantKey { get; }
 
-        /**
-         * @return the topicName
-         */
+        /// <summary>
+        /// Return the topicName
+        /// </summary>
         [ID(0x0005)]
         public abstract string TopicName { get; }
 
-        /**
-         * @return the typeName
-         */
+        /// <summary>
+        /// Return the typeName
+        /// </summary>
         [ID(0x0007)]
         public abstract string TypeName { get; }
 
@@ -86,93 +89,93 @@ namespace org.omg.dds.topic
         [Optional]
         public abstract TypeObject Type { get; }
 
-        /**
-         * @return the durability
-         */
+        /// <summary>
+        /// Return the durability
+        /// </summary>
         [ID(0x001D)]
         public abstract DurabilityQosPolicy Durability { get; }
 
-        /**
-         * @return the durabilityService
-         */
+        /// <summary>
+        /// Return the durabilityService
+        /// </summary>
         [ID(0x001E)]
         public abstract DurabilityServiceQosPolicy DurabilityService { get; }
 
-        /**
-         * @return the deadline
-         */
+        /// <summary>
+        /// Return the deadline
+        /// </summary>
         [ID(0x0023)]
         public abstract DeadlineQosPolicy Deadline { get; }
 
-        /**
-         * @return the latencyBudget
-         */
+        /// <summary>
+        /// Return the latencyBudget
+        /// </summary>
         [ID(0x0027)]
         public abstract LatencyBudgetQosPolicy LatencyBudget { get; }
 
-        /**
-         * @return the liveliness
-         */
+        /// <summary>
+        /// Return the liveliness
+        /// </summary>
         [ID(0x001B)]
         public abstract LivelinessQosPolicy Liveliness { get; }
 
-        /**
-         * @return the reliability
-         */
+        /// <summary>
+        /// Return the reliability
+        /// </summary>
         [ID(0x001A)]
         public abstract ReliabilityQosPolicy Reliability { get; }
 
-        /**
-         * @return the lifespan
-         */
+        /// <summary>
+        /// Return the lifespan
+        /// </summary>
         [ID(0x002B)]
         public abstract LifespanQosPolicy Lifespan { get; }
 
-        /**
-         * @return the userData
-         */
+        /// <summary>
+        /// Return the userData
+        /// </summary>
         [ID(0x002C)]
         public abstract UserDataQosPolicy UserData { get; }
 
-        /**
-         * @return the ownership
-         */
+        /// <summary>
+        /// Return the ownership
+        /// </summary>
         [ID(0x001F)]
         public abstract OwnershipQosPolicy Ownership { get; }
 
-        /**
-         * @return the ownershipStrength
-         */
+        /// <summary>
+        /// Return the ownershipStrength
+        /// </summary>
         [ID(0x0006)]
         public abstract OwnershipStrengthQosPolicy OwnershipStrength { get; }
 
-        /**
-         * @return the destinationOrder
-         */
+        /// <summary>
+        /// Return the destinationOrder
+        /// </summary>
         [ID(0x0025)]
         public abstract DestinationOrderQosPolicy DestinationOrder { get; }
 
-        /**
-         * @return the presentation
-         */
+        /// <summary>
+        /// Return the presentation
+        /// </summary>
         [ID(0x0021)]
         public abstract PresentationQosPolicy Presentation { get; }
 
-        /**
-         * @return the partition
-         */
+        /// <summary>
+        /// Return the partition
+        /// </summary>
         [ID(0x0029)]
         public abstract PartitionQosPolicy Partition { get; }
 
-        /**
-         * @return the topicData
-         */
+        /// <summary>
+        /// Return the topicData
+        /// </summary>
         [ID(0x002E)]
         public abstract TopicDataQosPolicy TopicData { get; }
 
-        /**
-         * @return the groupData
-         */
+        /// <summary>
+        /// Return the groupData
+        /// </summary>
         [ID(0x002D)]
         public abstract GroupDataQosPolicy GroupData { get; }
 

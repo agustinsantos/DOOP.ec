@@ -29,16 +29,17 @@ namespace org.omg.dds.type.typeobject
     [Nested]
     public interface TypeLibrary : ModifiableValue<TypeLibrary, TypeLibrary>
     {
-        /**
-         * @param element the element to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element">The element to set</param>
+        /// <returns>this</returns>
         TypeLibrary setElement(IList<TypeLibraryElement> element);
 
-        /**
-         * @return the element
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The element</returns>
         List<TypeLibraryElement> getElement();
     }
 }

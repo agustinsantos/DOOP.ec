@@ -34,9 +34,11 @@ namespace org.omg.dds.type.typeobject
         [ID(CollectionTypeMemberId.ELEMENT_TYPE_COLLECTIONTYPE_MEMBER_ID)]
         int getElementType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newElementType"></param>
+        /// <returns>this</returns>
         CollectionType setElementType(int newElementType);
 
     }

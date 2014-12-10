@@ -34,10 +34,13 @@ namespace org.omg.dds.topic
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                         object will belong
+        /// </param>
+        /// <returns></returns>
         public static TopicBuiltinTopicData newTopicBuiltinTopicData(
                 Bootstrap bootstrap)
         {
@@ -53,15 +56,15 @@ namespace org.omg.dds.topic
         [Key]
         public abstract BuiltinTopicKey Key { get; }
 
-        /**
-         * @return the name
-         */
+        /// <summary>
+        /// Return the name
+        /// </summary>
         [ID(0x0005)]
         public abstract string Name { get; }
 
-        /**
-         * @return the typeName
-         */
+        /// <summary>
+        /// Return the typeName
+        /// </summary>
         [ID(0x0007)]
         public abstract string TypeName { get; }
 
@@ -77,81 +80,81 @@ namespace org.omg.dds.topic
         [Optional]
         public abstract TypeObject Type { get; }
 
-        /**
-         * @return the durability
-         */
+        /// <summary>
+        /// Return the durability
+        /// </summary>
         [ID(0x001D)]
         public abstract DurabilityQosPolicy Durability { get; }
 
-        /**
-         * @return the durabilityService
-         */
+        /// <summary>
+        /// Return the durabilityService
+        /// </summary>
         [ID(0x001E)]
         public abstract DurabilityServiceQosPolicy DurabilityService { get; }
 
-        /**
-         * @return the deadline
-         */
+        /// <summary>
+        /// Return the deadline
+        /// </summary>
         [ID(0x0023)]
         public abstract DeadlineQosPolicy Deadline { get; }
 
-        /**
-         * @return the latencyBudget
-         */
+        /// <summary>
+        /// Return the latencyBudget
+        /// </summary>
         [ID(0x0027)]
         public abstract LatencyBudgetQosPolicy LatencyBudget { get; }
 
-        /**
-         * @return the liveliness
-         */
+        /// <summary>
+        /// Return the liveliness
+        /// </summary>
         [ID(0x001B)]
         public abstract LivelinessQosPolicy Liveliness { get; }
 
-        /**
-         * @return the reliability
-         */
+        /// <summary>
+        /// Return the reliability
+        /// </summary>
         [ID(0x001A)]
         public abstract ReliabilityQosPolicy Reliability { get; }
 
-        /**
-         * @return the transportPriority
-         */
+        /// <summary>
+        /// Return the transportPriority
+        /// </summary>
         [ID(0x0049)]
         public abstract TransportPriorityQosPolicy TransportPriority { get; }
 
-        /**
-         * @return the lifespan
-         */
+        /// <summary>
+        /// Return the lifespan
+        /// </summary>
         [ID(0x002B)]
         public abstract LifespanQosPolicy Lifespan { get; }
 
-        /**
-         * @return the destinationOrder
-         */
+        /// <summary>
+        /// Return the destinationOrder
+        /// </summary>
         [ID(0x0025)]
         public abstract DestinationOrderQosPolicy DestinationOrder { get; }
 
-        /**
-         * @return the history
-         */
+        /// <summary>
+        /// Return the history
+        /// </summary>
         [ID(0x0040)]
         public abstract HistoryQosPolicy History { get; }
 
-        /**
-         * @return the resourceLimits
-         */
+        /// <summary>
+        /// Return the resourceLimits
+        /// </summary>
         [ID(0x0041)]
         public abstract ResourceLimitsQosPolicy ResourceLimits { get; }
 
-        /**
-         * @return the ownership
-         */
+        /// <summary>
+        /// Return the ownership
+        /// </summary>
         [ID(0x001F)]
         public abstract OwnershipQosPolicy Ownership { get; }
 
-        /**
-         * @return the topicData
-         */
+        /// <summary>
+        /// Return the topicData
+        /// </summary>
         [ID(0x002E)]
         public abstract TopicDataQosPolicy TopicData { get; }
 

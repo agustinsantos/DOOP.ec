@@ -32,17 +32,21 @@ namespace org.omg.dds.type.typeobject
         [ID(BitSetTypeMemberId.BIT_BOUND_BITSETTYPE_MEMBER_ID)]
         int getBitBound();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBitBound"></param>
+        /// <returns>this</returns>
         BitSetType setBitBound(int newBitBound);
 
         [ID(BitSetTypeMemberId.BIT_BITSETTYPE_MEMBER_ID)]
         List<Bit> getBit();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBit"></param>
+        /// <returns>this</returns>
         BitSetType setBit(List<Bit> newBit);
 
     }

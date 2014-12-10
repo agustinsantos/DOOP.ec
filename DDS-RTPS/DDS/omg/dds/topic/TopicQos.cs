@@ -26,69 +26,82 @@ namespace org.omg.dds.topic
 
     public interface TopicQos : EntityQos<TopicQos, ModifiableTopicQos>
     {
-        /**
-         * @return the topicData
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The topicData</returns>
         TopicDataQosPolicy getTopicData();
 
-        /**
-         * @return the durability
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The durability</returns>
         DurabilityQosPolicy getDurability();
 
-        /**
-         * @return the durabilityService
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The durabilityService</returns>
         DurabilityServiceQosPolicy getDurabilityService();
 
-        /**
-         * @return the deadline
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The deadline</returns>
         DeadlineQosPolicy getDeadline();
 
-        /**
-         * @return the latencyBudget
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The latencyBudget</returns>
         LatencyBudgetQosPolicy getLatencyBudget();
 
-        /**
-         * @return the liveliness
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The liveliness</returns>
         LivelinessQosPolicy getLiveliness();
 
-        /**
-         * @return the reliability
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The reliability</returns>
         ReliabilityQosPolicy getReliability();
 
-        /**
-         * @return the destinationOrder
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The destinationOrder</returns>
         DestinationOrderQosPolicy getDestinationOrder();
 
-        /**
-         * @return the history
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The history</returns>
         HistoryQosPolicy getHistory();
 
-        /**
-         * @return the resourceLimits
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The resourceLimits</returns>
         ResourceLimitsQosPolicy getResourceLimits();
 
-        /**
-         * @return the transportPriority
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The transportPriority</returns>
         TransportPriorityQosPolicy getTransportPriority();
 
-        /**
-         * @return the lifespan
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The lifespan</returns>
         LifespanQosPolicy getLifespan();
 
-        /**
-         * @return the ownership
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The ownership</returns>
         OwnershipQosPolicy getOwnership();
 
         DataRepresentationQosPolicy getRepresentation();

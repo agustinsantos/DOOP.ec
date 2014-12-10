@@ -36,18 +36,22 @@ namespace org.omg.dds.type.typeobject
         [ID(MemberMemberId.PROPERTY_MEMBER_MEMBER_ID)]
         MemberProperty getProperty();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newProperty"></param>
+        /// <returns>this</returns>
         [ID(MemberMemberId.PROPERTY_MEMBER_MEMBER_ID)]
         Member setProperty(MemberProperty newProperty);
 
         [ID(MemberMemberId.ANNOTATION_MEMBER_MEMBER_ID)]
         IList<AnnotationUsage> getAnnotation();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newAnnotation"></param>
+        /// <returns>this</returns>
         [ID(MemberMemberId.ANNOTATION_MEMBER_MEMBER_ID)]
         Member setAnnotation(IList<AnnotationUsage> newAnnotation);
 

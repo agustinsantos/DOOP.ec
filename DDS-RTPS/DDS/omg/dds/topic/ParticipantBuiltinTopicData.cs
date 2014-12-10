@@ -36,10 +36,13 @@ namespace org.omg.dds.topic
         // Factory Methods
         // -----------------------------------------------------------------------
 
-        /*
-         * @param bootstrap Identifies the Service instance to which the new
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the new
+        ///                         object will belong
+        /// </param>
+        /// <returns></returns>
         public static ParticipantBuiltinTopicData newParticipantBuiltinTopicData(
                 Bootstrap bootstrap)
         {

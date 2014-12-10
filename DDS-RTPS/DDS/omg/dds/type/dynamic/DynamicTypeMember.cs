@@ -28,9 +28,10 @@ namespace org.omg.dds.type.dynamic
     {
         MemberDescriptor getDescriptor();
 
-        /**
-         * @return  An unmodifiable list.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable list</returns>
         List<AnnotationDescriptor> getAnnotations();
 
         void applyAnnotation(AnnotationDescriptor descriptor);

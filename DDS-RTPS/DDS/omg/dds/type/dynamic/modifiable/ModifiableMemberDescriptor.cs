@@ -26,53 +26,53 @@ namespace org.omg.dds.type.dynamic.modifiable
     public interface ModifiableMemberDescriptor : MemberDescriptor,
             ModifiableValue<MemberDescriptor, ModifiableMemberDescriptor>
     {
-        /**
-         * @param name the name to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">The name to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setName(string name);
 
-        /**
-         * @param id the id to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">The id to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setId(int id);
 
-        /**
-         * @param type the type to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">The type to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setType(DynamicType type);
 
-        /**
-         * @param defaultValue the defaultValue to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="defaultValue">The defaultValue to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setDefaultValue(string defaultValue);
 
-        /**
-         * @param index the index to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index">The index to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setIndex(int index);
 
-        /**
-         * @param label the label to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="label">The label to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setLabel(params int[] label);
 
-        /**
-         * @param defaultLabel the defaultLabel to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="defaultLabel">The defaultLabel to set</param>
+        /// <returns>this</returns>
         ModifiableMemberDescriptor setDefaultLabel(bool defaultLabel);
     }
 }

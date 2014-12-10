@@ -28,11 +28,11 @@ namespace org.omg.dds.type.dynamic.modifiable
     {
         int setValue(string key, string value);
 
-        /**
-         * @param type the type to set
-         * 
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">The type to set</param>
+        /// <returns>this</returns>
         ModifiableAnnotationDescriptor setType(DynamicType type);
     }
 }

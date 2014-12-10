@@ -25,26 +25,29 @@ namespace org.omg.dds.sub
 
     public interface ReadCondition<TYPE> : Condition
     {
-        /**
-         * @return  an unmodifiable set.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable set</returns>
         ISet<SampleState> getSampleStates();
 
-        /**
-         * @return  an unmodifiable set.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable set</returns>
         ISet<ViewState> getViewStates();
 
-        /**
-         * @return  an unmodifiable set.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>An unmodifiable set</returns>
         ISet<InstanceState> getInstanceStates();
 
         DataReader<TYPE> getDataReader();
 
-        /**
-         * Reclaim any resources associated with this condition.
-         */
+        /// <summary>
+        /// Reclaim any resources associated with this condition
+        /// </summary>
         void close();
     }
 }

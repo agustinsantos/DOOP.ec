@@ -29,10 +29,13 @@ namespace org.omg.dds.type.dynamic
         // Singleton Access
         // -----------------------------------------------------------------------
 
-        /**
-         * @param bootstrap Identifies the Service instance to which the
-         *                  object will belong.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bootstrap">Identifies the Service instance to which the
+        ///                         object will belong
+        /// </param>
+        /// <returns></returns>
         public static DynamicTypeFactory getInstance(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().getTypeFactory();

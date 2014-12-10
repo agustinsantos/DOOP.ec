@@ -35,9 +35,11 @@ namespace org.omg.dds.type.typeobject
         [ID(UnionMemberMemberId.LABEL_UNIONMEMBER_MEMBER_ID)]
         List<int> getLabel();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newLabel"></param>
+        /// <returns>this</returns>
         UnionMember setLabel(List<int> newLabel);
 
     }

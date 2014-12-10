@@ -34,14 +34,14 @@ namespace org.omg.dds.type
         { 
         }
 
-        /**
-         * When this annotation annotates an enum class, don't set this member.
-         * But if you do, set it to the type of the enumeration itself.
-         * 
-         * When it annotates an object of type java.util.EnumSet of
-         * java.util.BitSet, it indicates the BitSet-annotated enum class that
-         * defines the members of the bit set.
-         */
+        /// <summary>
+        /// When this annotation annotates an enum class, don't set this member
+        /// But if you do, set it to the type of the enumeration itself
+        /// 
+        /// When it annotates an object of type java.util.EnumSet of
+        /// java.util.BitSet, it indicates the BitSet-annotated enum class that
+        /// defines the members of the bit set
+        /// </summary>
         public Enum elementType { get; set; }// default Enum.class;
     }
 }

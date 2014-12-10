@@ -36,89 +36,111 @@ namespace org.omg.dds.type.typeobject
 
         AliasType getAliasType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setAliasType(AliasType value);
 
 
         AnnotationType getAnnotationType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setAnnotationType(AnnotationType value);
 
 
         ArrayType getArrayType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setArrayType(ArrayType value);
 
 
         BitSetType getBitsetType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setBitsetType(BitSetType value);
 
 
         EnumerationType getEnumerationType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setEnumerationType(EnumerationType value);
 
 
         MapType getMapType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setMapType(MapType value);
 
 
         SequenceType getSequenceType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setSequenceType(SequenceType value);
 
 
         stringType getstringType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setstringType(stringType value);
 
 
         StructureType getStructureType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setStructureType(StructureType value);
 
 
         UnionType getUnionType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setUnionType(UnionType value);
 
 
         Module getModule();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>this</returns>
         TypeLibraryElement setModule(Module value);
     }
 

@@ -33,9 +33,11 @@ namespace org.omg.dds.type.typeobject
         [ID(stringTypeMemberId.BOUND_STRINGTYPE_MEMBER_ID)]
         long getBound();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBound"></param>
+        /// <returns>this</returns>
         stringType setBound(long newBound);
 
     }

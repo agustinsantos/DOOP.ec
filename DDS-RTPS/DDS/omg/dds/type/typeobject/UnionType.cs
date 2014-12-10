@@ -36,9 +36,11 @@ namespace org.omg.dds.type.typeobject
         [ID(UnionTypeMemberId.MEMBER_UNIONTYPE_MEMBER_ID)]
         List<UnionMember> getMember();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newMember"></param>
+        /// <returns>this</returns>
         UnionType setMember(List<UnionMember> newMember);
 
     }

@@ -32,27 +32,32 @@ namespace org.omg.dds.sub
         // -----------------------------------------------------------------------
 
         // --- Sample data: ------------------------------------------------------
-        /**
-         * @return  the data associated with this sample. This method will return
-         *          null if this sample contains no valid data.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The data associated with this sample. This method will return
+        ///          null if this sample contains no valid data
+        /// </returns>
         TYPE getData();
 
 
         // --- Sample meta-data: -------------------------------------------------
-        /**
-         * @return the sampleState
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The sampleState</returns>
         SampleState getSampleState();
 
-        /**
-         * @return the viewState
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The viewState</returns>
         ViewState getViewState();
 
-        /**
-         * @return the instanceState
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The instanceState</returns>
         InstanceState getInstanceState();
 
         ModifiableTime getSourceTimestamp();
@@ -61,29 +66,34 @@ namespace org.omg.dds.sub
 
         ModifiableInstanceHandle getPublicationHandle();
 
-        /**
-         * @return the disposedGenerationCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The disposedGenerationCount</returns>
         int getDisposedGenerationCount();
 
-        /**
-         * @return the noWritersGenerationCount
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The noWritersGenerationCount</returns>
         int getNoWritersGenerationCount();
 
-        /**
-         * @return the sampleRank
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The sampleRank</returns>
         int getSampleRank();
 
-        /**
-         * @return the generationRank
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The generationRank</returns>
         int getGenerationRank();
 
-        /**
-         * @return the absoluteGenerationRank
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The absoluteGenerationRank</returns>
         int getAbsoluteGenerationRank();
 
 
@@ -97,26 +107,28 @@ namespace org.omg.dds.sub
 
     public interface SampleIterator<IT_DATA> : IEnumerable<Sample<IT_DATA>>
     {
-        /**
-         * The samples provided by this iterator have been loaned from a
-         * pool maintained by the Service; return that loan now.
-         */
+        /// <summary>
+        /// The samples provided by this iterator have been loaned from a 
+        /// pool maintained by the Service; return that loan now
+        /// </summary>
         void returnLoan();
 
         // --- From ListIterator: --------------------------------------------
-        /**
-         * @exception UnsupportedOperationException always.
-         */
+        /// <summary>
+        /// @exception UnsupportedOperationException always
+        /// </summary>
         void remove();
 
-        /**
-         * @exception UnsupportedOperationException always.
-         */
+        /// <summary>
+        /// @exception UnsupportedOperationException always
+        /// </summary>
+        /// <param name="o"></param>
         void set(Sample<IT_DATA> o);
-
-        /**
-         * @exception UnsupportedOperationException always.
-         */
+        ///TODO how i can comment the tag @exception
+        /// <summary>
+        /// @exception UnsupportedOperationException always
+        /// </summary>
+        /// <param name="o"></param>
         void add(Sample<IT_DATA> o);
     }
 }

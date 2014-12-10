@@ -23,9 +23,10 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.type.typeobject
 {
-    /* Literal value of an annotation member: either the default value in its
-     * definition or the value applied in its usage.
-     */
+    /// <summary>
+    /// Literal value of an annotation member: either the default value in its
+    /// definition or the value applied in its usage
+    /// </summary>
     [Extensibility(ExtensibilityKind.EXTENSIBLE_EXTENSIBILITY)]
     [Nested]
     public interface AnnotationMemberValue : ModifiableValue<AnnotationMemberValue, AnnotationMemberValue>

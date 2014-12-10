@@ -22,9 +22,9 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.type.typeobject
 {
-    /**
-     * Every type has an ID. Those of the primitive types are predefined.
-     */
+    /// <summary>
+    /// Every type has an ID. Those of the primitive types are predefined
+    /// </summary>
     public sealed class TypeId
     {
         // -----------------------------------------------------------------------

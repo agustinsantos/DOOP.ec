@@ -30,36 +30,38 @@ namespace org.omg.dds.topic
         Type Type { get; }
     }
 
-    /**
-     * This interface is the base for {@link Topic}, {@link ContentFilteredTopic},
-     * and {@link MultiTopic}.
-     * 
-     * TopicDescription represents the fact that both publications and
-     * subscriptions are tied to a single data type. Its attribute typeName
-     * defines a unique resulting type for the publication or the subscription
-     * and therefore creates an implicit association with a {@link TypeSupport}.
-     * TopicDescription has also a name that allows it to be retrieved locally.
-     *
-     * @param <TYPE>    The concrete type of the data that will be published and/
-     *                  or subscribed by the readers and writers that use this
-     *                  topic description.
-     */
+    /// <summary>
+    /// This interface is the base for {@link Topic}, {@link ContentFilteredTopic},
+    /// and {@link MultiTopic}
+    /// 
+    /// TopicDescription represents the fact that both publications and
+    /// subscriptions are tied to a single data type. Its attribute typeName
+    /// defines a unique resulting type for the publication or the subscription
+    /// and therefore creates an implicit association with a {@link TypeSupport}.
+    /// TopicDescription has also a name that allows it to be retrieved locally.
+    /// </summary>
+    /// <typeparam name="TYPE">The concrete type of the data that will be published and/
+    ///                        or subscribed by the readers and writers that use this
+    ///                        topic description
+    /// </typeparam>
     public interface TopicDescription<TYPE> : ITopicDescription, DDSObject
     {
-        /**
-         * @return  the type parameter if this object's class.
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The type parameter if this object's class</returns>
         Type getType();
 
-        /**
-         * Cast this topic description to the given type, or throw an exception if
-         * the cast fails.
-         * 
-         * @param <OTHER>   The type of the data exchanged on this topic,
-         *                  according to the caller.
-         * @return          this topic description
-         * @throws          ClassCastException if the cast fails
-         */
+        /// <summary>
+        /// Cast this topic description to the given type, or throw an exception if
+        /// the cast fails
+        /// 
+        /// @throws          ClassCastException if the cast fails
+        /// </summary>
+        /// <typeparam name="OTHER">The type of the data exchanged on this topic,
+        ///                         according to the caller
+        /// </typeparam>
+        /// <returns>This topic description</returns>
         TopicDescription<OTHER> cast<OTHER>();
 
         string getTypeName();
@@ -67,9 +69,9 @@ namespace org.omg.dds.topic
 
         DomainParticipant getParent();
 
-        /**
-         * Dispose the resources held by this object.
-         */
+        /// <summary>
+        /// Dispose the resources held by this object
+        /// </summary>
         void Close();
     }
 }

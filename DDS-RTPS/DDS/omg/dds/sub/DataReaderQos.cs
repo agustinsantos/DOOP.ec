@@ -27,39 +27,39 @@ namespace org.omg.dds.sub
     public interface DataReaderQos : EntityQos<DataReaderQos, ModifiableDataReaderQos>
     {
         /// <summary>
-        /// return the durability
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The durability</returns>
         DurabilityQosPolicy getDurability();
 
         /// <summary>
-        /// return the deadline
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The deadline</returns>
         DeadlineQosPolicy getDeadline();
 
         /// <summary>
-        /// return the latencyBudget
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The latencyBudget</returns>
         LatencyBudgetQosPolicy getLatencyBudget();
 
         /// <summary>
-        /// return the liveliness
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The liveliness</returns>
         LivelinessQosPolicy getLiveliness();
 
         /// <summary>
-        /// return the destinationOrder
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The destinationOrder</returns>
         DestinationOrderQosPolicy getDestinationOrder();
 
         /// <summary>
-        /// return the history
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The history</returns>
         HistoryQosPolicy getHistory();
 
         /// <summary>
@@ -69,27 +69,27 @@ namespace org.omg.dds.sub
         ResourceLimitsQosPolicy getResourceLimits();
 
         /// <summary>
-        /// return the userData
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The userData</returns>
         UserDataQosPolicy getUserData();
 
         /// <summary>
-        /// return the ownership
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The ownership</returns>
         OwnershipQosPolicy getOwnership();
 
         /// <summary>
-        /// return the timeBasedFilter
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The timeBasedFilter</returns>
         TimeBasedFilterQosPolicy getTimeBasedFilter();
 
         /// <summary>
-        /// return the readerDataLifecycle
+        ///
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The readerDataLifecycle</returns>
         ReaderDataLifecycleQosPolicy getReaderDataLifecycle();
 
         DataRepresentationQosPolicy getRepresentation();

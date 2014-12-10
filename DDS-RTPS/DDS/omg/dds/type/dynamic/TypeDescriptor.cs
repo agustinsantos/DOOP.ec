@@ -28,40 +28,47 @@ namespace org.omg.dds.type.dynamic
     {
         bool isConsistent();
 
-        /**
-         * @return the kind
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The kind</returns>
         TypeKind getKind();
 
-        /**
-         * @return the name
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The name</returns>
         string getName();
 
-        /**
-         * @return the baseType
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The baseType</returns>
         DynamicType getBaseType();
 
-        /**
-         * @return the discriminatorType
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The discriminatorType</returns>
         DynamicType getDiscriminatorType();
 
-        /**
-         * @return the bound, an unmodifiable list
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The bound, an unmodifiable list</returns>
         List<int> getBound();
 
-        /**
-         * @return the elementType
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The elementType</returns>
         [Optional]
         DynamicType getElementType();
 
-        /**
-         * @return the keyElementType
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The keyElementType</returns>
         [Optional]
         DynamicType getKeyElementType();
     }

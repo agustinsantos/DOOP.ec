@@ -35,31 +35,31 @@ namespace org.omg.dds.type
     {
         public TypeKind value  { get; set; }
 
-        /**
-         * The type of the elements to be stored in a collection (string,
-         * sequence, or map) or TypeKind.NO_TYPE if this annotation is not applied
-         * to a collection.
-         * 
-         * If this annotation is applied to a map, it indicates the type of the
-         * map's "value" elements. 
-         */
+        /// <summary>
+        /// The type of the elements to be stored in a collection (string,
+        /// sequence, or map) or TypeKind.NO_TYPE if this annotation is not applied
+        /// to a collection.
+        /// 
+        /// If this annotation is applied to a map, it indicates the type of the
+        /// map's "value" elements. 
+        /// </summary>
         public TypeKind collectionElementKind  { get; set; }// default TypeKind.NO_TYPE;
 
-        /**
-         * The type of the "key" elements to be stored in a map or
-         * TypeKind.NO_TYPE if this annotation is not applied to a map.
-         */
+        /// <summary>
+        /// The type of the "key" elements to be stored in a map or
+        /// TypeKind.NO_TYPE if this annotation is not applied to a map.
+        /// </summary>
         public TypeKind mapKeyElementKind  { get; set; }// default TypeKind.NO_TYPE;
 
-        /**
-         * The collection's or bit set's bound(s), if any, if this annotation is
-         * applied to a collection or bit set, or an empty array if not.
-         * 
-         * strings, sequences, and maps have a bound with a single value; an
-         * empty array indicates an unbounded collection. Bit sets have a
-         * mandatory bound of a single value. Arrays may be multidimensional;
-         * each element of the array corresponds to one of these dimensions.
-         */
+        /// <summary>
+        /// The collection's or bit set's bound(s), if any, if this annotation is
+        /// applied to a collection or bit set, or an empty array if not.
+        /// 
+        /// strings, sequences, and maps have a bound with a single value; an
+        /// empty array indicates an unbounded collection. Bit sets have a
+        /// mandatory bound of a single value. Arrays may be multidimensional;
+        /// each element of the array corresponds to one of these dimensions
+        /// </summary>
         public long[] bound { get; set; }// default { /* empty */ };
     }
 }

@@ -35,18 +35,22 @@ namespace org.omg.dds.type.typeobject
         [ID(StructureTypeMemberId.BASE_TYPE_STRUCTURETYPE_MEMBER_ID)]
         int getBaseType();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newBaseTypeId"></param>
+        /// <returns>this</returns>
         [ID(StructureTypeMemberId.BASE_TYPE_STRUCTURETYPE_MEMBER_ID)]
         StructureType setBaseType(int newBaseTypeId);
 
         [ID(StructureTypeMemberId.MEMBER_STRUCTURETYPE_MEMBER_ID)]
         IList<Member> GetMember();
 
-        /**
-         * @return  this
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newMember"></param>
+        /// <returns>this</returns>
         [ID(StructureTypeMemberId.MEMBER_STRUCTURETYPE_MEMBER_ID)]
         StructureType SetMember(IList<Member> newMember);
     }
