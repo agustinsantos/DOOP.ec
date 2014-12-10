@@ -31,6 +31,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="autoEnableCreatedEntities">The autoEnableCreatedEntities to set</param>
         /// <returns>this</returns>
-        ModifiableEntityFactoryQosPolicy setAutoEnableCreatedEntities(bool autoEnableCreatedEntities);
+        ModifiableEntityFactoryQosPolicy SetAutoEnableCreatedEntities(bool autoEnableCreatedEntities);
     }
 }

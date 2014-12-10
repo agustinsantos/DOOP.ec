@@ -32,6 +32,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableDurabilityQosPolicy setKind(DurabilityQosPolicyKind kind);
+        ModifiableDurabilityQosPolicy SetKind(DurabilityQosPolicyKind kind);
     }
 }

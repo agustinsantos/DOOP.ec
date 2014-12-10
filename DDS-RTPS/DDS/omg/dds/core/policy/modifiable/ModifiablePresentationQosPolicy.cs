@@ -30,20 +30,20 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="accessScope">The accessScope to set</param>
         /// <returns>this</returns>
-        ModifiablePresentationQosPolicy setAccessScope(AccessScopeKind accessScope);
+        ModifiablePresentationQosPolicy SetAccessScope(AccessScopeKind accessScope);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="coherentAccess">The coherentAccess to set</param>
         /// <returns>this</returns>
-        ModifiablePresentationQosPolicy setCoherentAccess(bool coherentAccess);
+        ModifiablePresentationQosPolicy SetCoherentAccess(bool coherentAccess);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="orderedAccess">The orderedAccess to set</param>
         /// <returns>this</returns>
-        ModifiablePresentationQosPolicy setOrderedAccess(bool orderedAccess);
+        ModifiablePresentationQosPolicy SetOrderedAccess(bool orderedAccess);
     }
 }

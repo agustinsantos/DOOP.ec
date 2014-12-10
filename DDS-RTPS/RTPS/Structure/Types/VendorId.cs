@@ -3,7 +3,7 @@ using System;
 namespace Rtps.Structure.Types
 {
     /// <summary>
-    /// The VendorId identifies the vendor of the middleware implementing the RTPS protocol and allows this vendor to add
+    /// The VendorId identifies the vendor of the middleware implementing the RTPS protocol and allows this vendor to Add
     /// specific extensions to the protocol. The vendor ID does not refer to the vendor of the device or product that contains DDS
     /// middleware.
     /// </summary>

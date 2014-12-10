@@ -29,7 +29,7 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The value</returns>
-        int getValue();
+        int GetValue();
 
     }
 }

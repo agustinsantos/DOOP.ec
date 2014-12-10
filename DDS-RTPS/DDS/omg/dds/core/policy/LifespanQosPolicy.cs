@@ -25,6 +25,6 @@ namespace org.omg.dds.core.policy
 
     public interface LifespanQosPolicy : QosPolicy<LifespanQosPolicy, ModifiableLifespanQosPolicy>
     {
-        Duration getDuration();
+        Duration GetDuration();
     }
 }

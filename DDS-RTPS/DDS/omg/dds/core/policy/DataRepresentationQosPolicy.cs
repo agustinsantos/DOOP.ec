@@ -30,7 +30,7 @@ namespace org.omg.dds.core.policy
         // Properties
         // -----------------------------------------------------------------------
 
-        List<short> getValue();
+        List<short> GetValue();
     }
 
     public sealed class DataRepresentationQosPolicyConst

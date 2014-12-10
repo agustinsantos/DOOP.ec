@@ -215,7 +215,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override PublicationBuiltinTopicData finishModification()
+        public override PublicationBuiltinTopicData FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -230,7 +230,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

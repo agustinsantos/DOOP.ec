@@ -30,6 +30,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="autDisposeUnregisteredInstances">The value to set</param>
         /// <returns>this</returns>
-        ModifiableWriterDataLifecycleQosPolicy setAutDisposeUnregisteredInstances(bool autDisposeUnregisteredInstances);
+        ModifiableWriterDataLifecycleQosPolicy SetAutDisposeUnregisteredInstances(bool autDisposeUnregisteredInstances);
     }
 }

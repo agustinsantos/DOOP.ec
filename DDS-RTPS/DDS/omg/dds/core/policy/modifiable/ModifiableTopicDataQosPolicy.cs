@@ -33,6 +33,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        ModifiableTopicDataQosPolicy setValue(byte[] value, int offset, int length);
+        ModifiableTopicDataQosPolicy SetValue(byte[] value, int offset, int length);
     }
 }

@@ -30,6 +30,6 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>An unmodifiable collection of partition names</returns>
-        ICollection<string> getName();
+        ICollection<string> GetName();
     }
 }

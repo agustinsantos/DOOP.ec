@@ -33,12 +33,12 @@ namespace org.omg.dds.core.policy
         ///          number of bytes copied. Callers can use this result to
         ///          determine if the output array is long enough or, if it is
         ///          long enough, what range within it contains valid data.</returns>
-        int getValue(byte[] value, int offset);
+        int GetValue(byte[] value, int offset);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The length of the <code>value</code> property.</returns>
-        int getLength();
+        int GetLength();
     }
 }

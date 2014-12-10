@@ -30,6 +30,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="name">The name to set</param>
         /// <returns>this</returns>
-        ModifiablePartitionQosPolicy setName(ICollection<string> name);
+        ModifiablePartitionQosPolicy SetName(ICollection<string> name);
     }
 }

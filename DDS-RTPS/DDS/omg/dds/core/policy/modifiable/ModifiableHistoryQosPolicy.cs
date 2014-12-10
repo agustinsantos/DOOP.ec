@@ -29,13 +29,13 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableHistoryQosPolicy setKind(HistoryQosPolicyKind kind);
+        ModifiableHistoryQosPolicy SetKind(HistoryQosPolicyKind kind);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="depth">The depth to set</param>
         /// <returns>this</returns>
-        ModifiableHistoryQosPolicy setDepth(int depth);
+        ModifiableHistoryQosPolicy SetDepth(int depth);
     }
 }

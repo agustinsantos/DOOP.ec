@@ -35,7 +35,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="minimumSeparation">The minimumSeparation to set</param>
         /// <returns>this</returns>
-        ModifiableTimeBasedFilterQosPolicy setMinimumSeparation(Duration minimumSeparation);
+        ModifiableTimeBasedFilterQosPolicy SetMinimumSeparation(Duration minimumSeparation);
 
         /// <summary>
         /// 
@@ -43,6 +43,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="minimumSeparation"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableTimeBasedFilterQosPolicy setMinimumSeparation(long minimumSeparation, TimeUnit unit);
+        ModifiableTimeBasedFilterQosPolicy SetMinimumSeparation(long minimumSeparation, TimeUnit unit);
     }
 }

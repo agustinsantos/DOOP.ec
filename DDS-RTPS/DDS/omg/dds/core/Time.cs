@@ -146,7 +146,7 @@ namespace org.omg.dds.core
 
         //public abstract Time clone();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
 
         public abstract ModifiableTime Modify();
     }

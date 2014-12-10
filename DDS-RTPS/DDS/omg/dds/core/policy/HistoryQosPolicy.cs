@@ -32,13 +32,13 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The kind</returns>
-        HistoryQosPolicyKind getKind();
+        HistoryQosPolicyKind GetKind();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The depth</returns>
-        int getDepth();
+        int GetDepth();
     }
 
 

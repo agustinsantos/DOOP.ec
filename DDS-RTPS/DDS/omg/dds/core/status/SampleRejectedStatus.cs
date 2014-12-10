@@ -36,7 +36,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static SampleRejectedStatus<TYPE> newSampleRejectedStatus(Bootstrap bootstrap)
+        public static SampleRejectedStatus<TYPE> NewSampleRejectedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newSampleRejectedStatus<TYPE>();
         }
@@ -59,21 +59,21 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The totalCount</returns>
-        public abstract int getTotalCount();
+        public abstract int GetTotalCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The totalCountChange</returns>
-        public abstract int getTotalCountChange();
+        public abstract int GetTotalCountChange();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The lastReason</returns>
-        public abstract Kind getLastReason();
+        public abstract Kind GetLastReason();
 
-        public abstract ModifiableInstanceHandle getLastInstanceHandle();
+        public abstract ModifiableInstanceHandle GetLastInstanceHandle();
 
 
 

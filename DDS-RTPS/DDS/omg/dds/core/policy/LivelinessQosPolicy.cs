@@ -33,9 +33,9 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The kind</returns>
-        LivelinessQosPolicyKind getKind();
+        LivelinessQosPolicyKind GetKind();
 
-        Duration getLeaseDuration();
+        Duration GetLeaseDuration();
     }
 
     // -----------------------------------------------------------------------

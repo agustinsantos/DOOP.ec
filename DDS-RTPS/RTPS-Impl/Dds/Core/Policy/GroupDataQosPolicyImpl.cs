@@ -5,12 +5,12 @@ namespace Doopec.Dds.Core.Policy
 {
     public class GroupDataQosPolicyImpl : QosPolicyImpl, GroupDataQosPolicy
     {
-        public int getValue(byte[] value, int offset)
+        public int GetValue(byte[] value, int offset)
         {
             throw new System.NotImplementedException();
         }
 
-        public int getLength()
+        public int GetLength()
         {
             throw new System.NotImplementedException();
         }

@@ -54,7 +54,7 @@ namespace ExampleDDS.PubSubExamples
 
             public override void onDataAvailable(DataAvailableStatus<Greeting> status)
             {
-                DataReader<Greeting> dr = status.getSource();
+                DataReader<Greeting> dr = status.GetSource();
                 SampleIterator<Greeting> it = dr.take();
                 foreach (Sample<Greeting> smp in it)
                 {

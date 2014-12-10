@@ -112,6 +112,6 @@ namespace org.omg.dds.domain
         public abstract void SetDefaultParticipantQos(string qosLibraryName, string qosProfileName);
 
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

@@ -29,13 +29,13 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The kind</returns>
-        ReliabilityQosPolicyKind getKind();
+        ReliabilityQosPolicyKind GetKind();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The max blocking time</returns>
-        Duration getMaxBlockingTime();
+        Duration GetMaxBlockingTime();
     }
 
     // -----------------------------------------------------------------------

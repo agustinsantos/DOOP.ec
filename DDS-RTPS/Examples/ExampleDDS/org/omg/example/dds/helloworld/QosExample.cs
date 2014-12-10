@@ -41,13 +41,13 @@ namespace org.omg.example.dds.helloworld
             // Set QoS:
             ModifiableDomainParticipantQos dpqMod = dpqUnmod.Modify();
             ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.getEntityFactory();
-            polMod.setAutoEnableCreatedEntities(false);
+            polMod.SetAutoEnableCreatedEntities(false);
             dp.setQos(dpqMod);
 
             // Concise version:
             dpqMod = dp.getQos().Modify();
             ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.getEntityFactory();
-            polMod2.setAutoEnableCreatedEntities(false);
+            polMod2.SetAutoEnableCreatedEntities(false);
             dp.setQos(dpqMod);
             // Restore QoS to default:
             dp.setQos(factory.getDefaultParticipantQos());

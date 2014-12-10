@@ -2,7 +2,7 @@
 
 namespace Doopec.Rtps.Utils.Config
 {
-    [ConfigurationCollection(typeof(KeyValueConfigurationElement), AddItemName = "add",
+    [ConfigurationCollection(typeof(KeyValueConfigurationElement), AddItemName = "Add",
      CollectionType = ConfigurationElementCollectionType.BasicMap)]
     public class WriterConfig : KeyValueConfigurationCollection
     {

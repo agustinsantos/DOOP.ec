@@ -34,7 +34,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static DataOnReadersStatus newDataOnReadersStatus(Bootstrap bootstrap)
+        public static DataOnReadersStatus NewDataOnReadersStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newDataOnReadersStatus();
         }

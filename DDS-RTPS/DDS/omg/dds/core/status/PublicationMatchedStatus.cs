@@ -36,7 +36,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static PublicationMatchedStatus<TYPE> newPublicationMatchedStatus(Bootstrap bootstrap)
+        public static PublicationMatchedStatus<TYPE> NewPublicationMatchedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newPublicationMatchedStatus<TYPE>();
         }
@@ -59,27 +59,27 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The totalCount</returns>
-        public abstract int getTotalCount();
+        public abstract int GetTotalCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The totalCountChange</returns>
-        public abstract int getTotalCountChange();
+        public abstract int GetTotalCountChange();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The currentCount</returns>
-        public abstract int getCurrentCount();
+        public abstract int GetCurrentCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The currentCountChange</returns>
-        public abstract int getCurrentCountChange();
+        public abstract int GetCurrentCountChange();
 
-        public abstract ModifiableInstanceHandle getLastSubscriptionHandle();
+        public abstract ModifiableInstanceHandle GetLastSubscriptionHandle();
 
     }
 }

@@ -28,7 +28,7 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The autDisposeUnregisteredInstances</returns>
-        bool isAutDisposeUnregisteredInstances();
+        bool IsAutDisposeUnregisteredInstances();
 
     }
 }

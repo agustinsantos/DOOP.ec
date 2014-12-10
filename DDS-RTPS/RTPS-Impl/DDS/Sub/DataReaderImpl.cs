@@ -410,7 +410,7 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap getBootstrap()
+        public org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

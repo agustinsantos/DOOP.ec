@@ -30,6 +30,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableDestinationOrderQosPolicy setKind(DestinationOrderQosPolicyKind kind);
+        ModifiableDestinationOrderQosPolicy SetKind(DestinationOrderQosPolicyKind kind);
     }
 }

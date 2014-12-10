@@ -34,14 +34,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableLivelinessQosPolicy setKind(LivelinessQosPolicyKind kind);
+        ModifiableLivelinessQosPolicy SetKind(LivelinessQosPolicyKind kind);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="leaseDuration">The leaseDuration to set</param>
         /// <returns>this</returns>
-        ModifiableLivelinessQosPolicy setLeaseDuration(Duration leaseDuration);
+        ModifiableLivelinessQosPolicy SetLeaseDuration(Duration leaseDuration);
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="leaseDuration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableLivelinessQosPolicy setLeaseDuration(long leaseDuration, TimeUnit unit);
+        ModifiableLivelinessQosPolicy SetLeaseDuration(long leaseDuration, TimeUnit unit);
 
     }
 }

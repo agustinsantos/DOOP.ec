@@ -29,6 +29,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableOwnershipQosPolicy setKind(OwnershipQosPolicyKind kind);
+        ModifiableOwnershipQosPolicy SetKind(OwnershipQosPolicyKind kind);
     }
 }

@@ -69,12 +69,12 @@ namespace org.omg.dds.topic
 
         public abstract BuiltinTopicKey Clone();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
 
 
         public abstract BuiltinTopicKey CopyFrom(BuiltinTopicKey other);
 
-        public abstract BuiltinTopicKey finishModification();
+        public abstract BuiltinTopicKey FinishModification();
 
         //public abstract BuiltinTopicKey clone();
 

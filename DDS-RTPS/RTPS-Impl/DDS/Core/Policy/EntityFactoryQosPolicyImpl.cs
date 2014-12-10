@@ -19,7 +19,7 @@ namespace Doopec.DDS.Core.Policy
             this.isAutoEnable = isAutoEnable;
         }
 
-        public bool isAutoEnableCreatedEntities()
+        public bool IsAutoEnableCreatedEntities()
         {
             return isAutoEnable;
         }

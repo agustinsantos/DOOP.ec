@@ -25,6 +25,6 @@ namespace org.omg.dds.core.policy
 
     public interface LatencyBudgetQosPolicy : QosPolicy<LatencyBudgetQosPolicy, ModifiableLatencyBudgetQosPolicy>
     {
-        Duration getDuration();
+        Duration GetDuration();
     }
 }

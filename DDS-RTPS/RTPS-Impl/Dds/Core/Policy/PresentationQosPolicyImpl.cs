@@ -11,17 +11,17 @@ namespace Doopec.Dds.Core.Policy
 {
     public class PresentationQosPolicyImpl : QosPolicyImpl, PresentationQosPolicy
     {
-        public AccessScopeKind getAccessScope()
+        public AccessScopeKind GetAccessScope()
         {
             throw new NotImplementedException();
         }
 
-        public bool isCoherentAccess()
+        public bool IsCoherentAccess()
         {
             throw new NotImplementedException();
         }
 
-        public bool isOrderedAccess()
+        public bool IsOrderedAccess()
         {
             throw new NotImplementedException();
         }

@@ -180,10 +180,10 @@ namespace org.omg.dds.topic
 
         public abstract SubscriptionBuiltinTopicData CopyFrom(SubscriptionBuiltinTopicData other);
 
-        public abstract SubscriptionBuiltinTopicData finishModification();
+        public abstract SubscriptionBuiltinTopicData FinishModification();
 
         public abstract SubscriptionBuiltinTopicData Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

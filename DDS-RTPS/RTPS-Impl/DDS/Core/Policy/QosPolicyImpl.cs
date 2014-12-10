@@ -6,12 +6,12 @@ namespace Doopec.DDS.Core.Policy
 {
     public class QosPolicyImpl : QosPolicy
     {
-        public QosPolicyId getId()
+        public QosPolicyId GetId()
         {
             throw new NotImplementedException();
         }
 
-        public  Bootstrap getBootstrap()
+        public  Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }
@@ -22,12 +22,12 @@ namespace Doopec.DDS.Core.Policy
         protected int policyIdValue;
         protected string policyName;
 
-        public override int getPolicyIdValue()
+        public override int GetPolicyIdValue()
         {
             return policyIdValue;
         }
 
-        public override string getPolicyName()
+        public override string GetPolicyName()
         {
             return policyName;
         }

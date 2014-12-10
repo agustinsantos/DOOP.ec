@@ -35,7 +35,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="duration">The duration to set</param>
         /// <returns>this</returns>
-        ModifiableLatencyBudgetQosPolicy setDuration(Duration duration);
+        ModifiableLatencyBudgetQosPolicy SetDuration(Duration duration);
 
         /// <summary>
         /// 
@@ -43,6 +43,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableLatencyBudgetQosPolicy setDuration(long duration, TimeUnit unit);
+        ModifiableLatencyBudgetQosPolicy SetDuration(long duration, TimeUnit unit);
     }
 }

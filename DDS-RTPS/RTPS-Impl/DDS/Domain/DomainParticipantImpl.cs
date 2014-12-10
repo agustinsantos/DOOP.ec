@@ -313,7 +313,7 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public Bootstrap getBootstrap()
+        public Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

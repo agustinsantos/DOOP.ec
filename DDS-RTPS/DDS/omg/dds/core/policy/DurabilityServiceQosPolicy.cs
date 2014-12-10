@@ -25,37 +25,37 @@ namespace org.omg.dds.core.policy
 
     public interface DurabilityServiceQosPolicy : QosPolicy<DurabilityServiceQosPolicy, ModifiableDurabilityServiceQosPolicy>
     {
-        Duration getServiceCleanupDelay();
+        Duration GetServiceCleanupDelay();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The historyKind</returns>
-        HistoryQosPolicyKind getHistoryKind();
+        HistoryQosPolicyKind GetHistoryKind();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The historyDepth</returns>
-        int getHistoryDepth();
+        int GetHistoryDepth();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The maxSamples</returns>
-        int getMaxSamples();
+        int GetMaxSamples();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The maxInstances</returns>
-        int getMaxInstances();
+        int GetMaxInstances();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The maxSamplesPerInstance</returns>
-        int getMaxSamplesPerInstance();
+        int GetMaxSamplesPerInstance();
 
     }
 }

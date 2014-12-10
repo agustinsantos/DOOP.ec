@@ -26,12 +26,12 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The policyId</returns>
-        QosPolicyId getPolicyId();
+        QosPolicyId GetPolicyId();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The count</returns>
-        int getCount();
+        int GetCount();
     }
 }

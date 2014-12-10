@@ -31,7 +31,7 @@ namespace org.omg.dds.core.policy
         // Properties
         // -----------------------------------------------------------------------
 
-        TypeConsistencyEnforcementQosPolicyKind getKind();
+        TypeConsistencyEnforcementQosPolicyKind GetKind();
 
 
     }

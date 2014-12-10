@@ -101,7 +101,7 @@ namespace Rtps.Messages.Submessages.Elements
                 for (int j = 0; j < 32 && bitCount < numBits; j++)
                 {
                     if ((bitmap & 0x8000000) == 0x8000000)
-                    { // id the MSB matches, add a new seqnum
+                    { // id the MSB matches, Add a new seqnum
                         seqNums.Add(seqNum);
                     }
 
@@ -131,7 +131,7 @@ namespace Rtps.Messages.Submessages.Elements
                 {
                     if ((bitmap & 0x8000000) == 0x0)
                     { // id the MSB does not
-                        // matches, add a new seqnum
+                        // matches, Add a new seqnum
                         seqNums.Add(seqNum);
                     }
 

@@ -35,7 +35,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="duration">The duration to set</param>
         /// <returns>this</returns>
-        ModifiableLifespanQosPolicy setDuration(Duration duration);
+        ModifiableLifespanQosPolicy SetDuration(Duration duration);
 
         /// <summary>
         /// 
@@ -43,6 +43,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableLifespanQosPolicy setDuration(long duration, TimeUnit unit);
+        ModifiableLifespanQosPolicy SetDuration(long duration, TimeUnit unit);
     }
 }

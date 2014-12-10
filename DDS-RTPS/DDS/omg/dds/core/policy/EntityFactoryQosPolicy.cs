@@ -28,7 +28,7 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The autoEnableCreatedEntities</returns>
-        bool isAutoEnableCreatedEntities();
+        bool IsAutoEnableCreatedEntities();
 
     }
 }

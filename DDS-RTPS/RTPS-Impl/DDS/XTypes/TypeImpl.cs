@@ -37,7 +37,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.typeobject.Type finishModification()
+        public org.omg.dds.type.typeobject.Type FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -47,7 +47,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap getBootstrap()
+        public org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }
