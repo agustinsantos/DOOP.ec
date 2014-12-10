@@ -21,8 +21,9 @@
       <description>Several transports are planned (UDP, Fake, shared memory, ..)</description>
       <childLayers>
         <layer Id="34500763-fbe7-4a92-847a-78e536e3f350" name="UDP/IP" />
-        <layer Id="99d01e4d-013e-4481-ba30-74aa810bebe7" name="Shared Memory" />
+        <layer Id="99d01e4d-013e-4481-ba30-74aa810bebe7" name="Pipes" />
         <layer Id="d5f8fd71-92b9-45ef-937c-e749ebd1ec98" name="Fake" />
+        <layer Id="66d0c758-15bb-4ea2-bc68-88048eb34427" name="Shared Memory" />
       </childLayers>
     </layer>
     <layer Id="ff56c1c7-fba9-4755-bc18-1940b27f6823" name="Data Local reconstruction Layer (DLRL)">
