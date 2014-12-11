@@ -22,25 +22,36 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="PublicationProcess\WriteInteractionModel.sequencediagram">
+    <Content Include="PublicationProcess\Publication Interaction\PublicationInteractionModel.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="PublicationProcess\WriteInteractionModel.sequencediagram.layout">
+    <Content Include="PublicationProcess\Publication Interaction\PublicationInteractionModel.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>PublicationProcess\WriteInteractionModel.sequencediagram</DependentUpon>
+      <DependentUpon>PublicationProcess\Publication Interaction\PublicationInteractionModel.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="PublicationProcess\PublicationInteractionModel.sequencediagram">
+    <Content Include="PublicationProcess\Write Interaction\WriteInteractionModel.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="PublicationProcess\PublicationInteractionModel.sequencediagram.layout">
+    <Content Include="PublicationProcess\Write Interaction\WriteInteractionModel.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>PublicationProcess\PublicationInteractionModel.sequencediagram</DependentUpon>
+      <DependentUpon>PublicationProcess\Write Interaction\WriteInteractionModel.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\Read Message\ReadMessage.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\Read Message\ReadMessage.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\Read Message\ReadMessage.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\GeneralModel.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="RTPS Process" />
     <Folder Include="PublicationProcess" />
+    <Folder Include="PublicationProcess\Write Interaction" />
+    <Folder Include="PublicationProcess\Publication Interaction" />
+    <Folder Include="RTPS Process\Read Message" />
   </ItemGroup>
   <ItemGroup>
     <Validate Include="GlobalLayerDiagram.layerdiagram">

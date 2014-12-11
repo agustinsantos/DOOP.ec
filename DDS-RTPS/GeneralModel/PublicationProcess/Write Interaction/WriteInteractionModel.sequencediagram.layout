@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 11.125" name="PublicationInteractionModel">
-  <SequenceDesignerModelMoniker Id="02db8de3-b2e8-494d-b968-1bad113a5f6a" />
+  <SequenceDesignerModelMoniker Id="02db8de3-b2e8-494d-b968-1bad113a5f6b" />
   <nestedChildShapes>
     <lifelineShape Id="41f7105e-09e2-4599-911e-464bb19bc7d5" absoluteBounds="1.4791666269302368, 1, 0.15, 9.65625" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="011fd52c-bc13-42fd-9954-40ac40c7cc73" LastKnownName="User Application" />

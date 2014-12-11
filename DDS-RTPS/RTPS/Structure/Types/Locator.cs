@@ -92,7 +92,20 @@ namespace Rtps.Structure.Types
 
         public IPAddress SocketAddress
         {
-            get { return new IPAddress(address); }
+            get
+            {
+                if (this.kind == LocatorKind.LOCATOR_KIND_UDPv4)
+                {
+                    byte[] bytes = new byte[4];
+                    Array.Copy(this.address, 12, bytes, 0, 4);
+
+                    return new IPAddress(bytes);
+                }
+                else
+                {
+                    return new IPAddress(address);
+                }
+            }
             set { address = value.GetAddressBytes(); }
         }
 

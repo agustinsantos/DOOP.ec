@@ -4,6 +4,7 @@ using Rtps.Messages.Submessages;
 using Rtps.Messages.Submessages.Elements;
 using System;
 using Doopec.Utils.Network.Encoders;
+using Doopec.Rtps.Messages;
 
 namespace Doopec.Rtps.Encoders
 {
@@ -79,24 +80,24 @@ namespace Doopec.Rtps.Encoders
             {
                 buffer.Align(4); // Each submessage is aligned on 32-bit boundary, @see
                 // 9.4.1 Overall Structure
-                int end_count = buffer.Position; // end of bytes read so far from the
-                // beginning
+                int end_count = buffer.Position; // end of bytes read so far from the beginning
+                int length;
 
-                byte[] serializedPayload = null;
                 if (obj.Header.SubMessageLength != 0)
                 {
-                    serializedPayload = new byte[obj.Header.SubMessageLength - (end_count - start_count)];
+                    length =  obj.Header.SubMessageLength - (end_count - start_count);
                 }
                 else
-                { // SubMessage is the last one. Rest of the bytes are read.
+                { 
+                    // SubMessage is the last one. Rest of the bytes are read.
                     // @see 8.3.3.2.3
-                    serializedPayload = new byte[buffer.Remaining];
+                    length =  buffer.Remaining;
                 }
-
-                buffer.Get(serializedPayload, 0, serializedPayload.Length);
-                throw new NotImplementedException();
-                //TODO obj.SerializedPayload.DataEncapsulation = serializedPayload.EncapsuleCDRData(BitConverter.IsLittleEndian ? ByteOrder.BigEndian : ByteOrder.BigEndian);
+                obj.SerializedPayload = new SerializedPayload();
+                obj.SerializedPayload.DataEncapsulation = EncapsulationManager.Deserialize(buffer, length);
             }
+
+
         }
     }
 }

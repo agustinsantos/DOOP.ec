@@ -41,7 +41,7 @@ namespace Rtps.Messages.Types
         {
             get
             {
-                return ((long)this.seconds) * 1000 + fraction;
+                return ((long)Seconds * 1000) + (((long)Fraction * 1000) / 0x100000000L);
             }
             set
             {
@@ -81,11 +81,18 @@ namespace Rtps.Messages.Types
                 fraction = value;
             }
         }
+
         public override string ToString()
         {
-            return this.seconds + ":" + this.fraction;
+            return string.Format("{0} [{1}:{2}]", ToUTCDateTime(), this.seconds, this.fraction);
         }
 
+        public DateTime ToUTCDateTime()
+        {
+            //**UTC** time
+            var networkDateTime = (new DateTime(1900, 1, 1, 0, 0, 0, DateTimeKind.Utc)).AddMilliseconds(TimeMillis);
+            return networkDateTime;
+        }
 
         public int CompareTo(Time other)
         {

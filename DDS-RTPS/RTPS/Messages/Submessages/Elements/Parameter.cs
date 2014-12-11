@@ -1,6 +1,7 @@
 
 
 using Rtps.Messages.Types;
+using System;
 namespace Rtps.Messages.Submessages.Elements
 {
     /// <summary>
@@ -69,6 +70,11 @@ namespace Rtps.Messages.Submessages.Elements
             {
                 bytes = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ParameterId={0}, Content={1}", parameterId, BitConverter.ToString(bytes));
         }
     }
 }
