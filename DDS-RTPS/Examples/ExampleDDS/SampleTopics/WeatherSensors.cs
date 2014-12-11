@@ -13,7 +13,7 @@ namespace ExampleDDS.SampleTopics
     }
 
     /// <summary>
-    /// Derived class, for testing inheritance
+    /// Derived class, for testing inheritance.
     /// </summary>
     public class WeatherSensor : TemperatureSensor
     {
