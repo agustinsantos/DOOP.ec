@@ -35,12 +35,15 @@ namespace Doopec.Rtps.Encoders
 
         public static void GetMessage(this IoBuffer buffer, ref Message obj)
         {
+            ByteOrder byteOrder = buffer.Order;
+            buffer.Order = ByteOrder.LittleEndian;
             obj.Header = buffer.GetHeader();
             while (buffer.HasRemaining)
             {
                 SubMessage submsg = buffer.GetSubMessage();
                 obj.SubMessages.Add(submsg);
             }
+            buffer.Order = byteOrder;
         }
     }
 }

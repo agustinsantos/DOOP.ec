@@ -154,6 +154,12 @@ namespace Doopec.Rtps.Messages
             Debug.Assert(buffer.Position == initialPos + length);
             return BuildObject<T>(parameters);
         }
+
+        public static ParameterListEncapsulation Deserialize(IoBuffer buffer, int length)
+        {
+            throw new NotImplementedException();
+        }
+
         private static T BuildObject<T>(ParameterList parameters) where T : new()
         {
             T obj = new T();

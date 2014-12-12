@@ -47,7 +47,7 @@ namespace Doopec.Rtps.Encoders
                 obj.Value.Add(param);
                 int length = buffer.Position - pos1;
 
-                log.DebugFormat("Read Parameter {0}, length {1} from position {2}", param, length, pos1);
+                //log.DebugFormat("Read Parameter {0}, length {1} from position {2}", param, length, pos1);
 
                 if (param.ParameterId == ParameterId.PID_SENTINEL)
                 {

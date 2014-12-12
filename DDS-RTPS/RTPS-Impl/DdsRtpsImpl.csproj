@@ -110,6 +110,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Rtps\Messages\EncapsulationManager.cs" />
     <Compile Include="Rtps\Messages\ParameterListEncapsulation.cs" />
     <Compile Include="Rtps\Utils\Config\ReaderConfig.cs" />
     <Compile Include="Rtps\Utils\Config\RtpsConfigurationSectionHandler.cs" />

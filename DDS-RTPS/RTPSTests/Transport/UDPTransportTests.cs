@@ -11,7 +11,7 @@ using Mina.Core.Buffer;
 namespace Rtps.Tests.Transport
 {
     [TestClass]
-    public class UDPTransportTests
+    public class UDPTransportTests 
     {
         UDPReceiver rec;
         UDPTransmitter trans;

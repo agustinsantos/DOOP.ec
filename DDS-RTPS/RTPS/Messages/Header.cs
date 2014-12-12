@@ -62,5 +62,10 @@ namespace Rtps.Messages
             get { return guidPrefix; }
             set { guidPrefix = value; }
         }
+
+        public override string ToString()
+        {
+            return string.Format("[{0}, {1}, {2}, {3}]", protocol, version, vendorId, GuidPrefix);
+        }
     }
 }

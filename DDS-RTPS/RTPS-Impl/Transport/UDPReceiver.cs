@@ -1,12 +1,14 @@
 ﻿using Doopec.Rtps.Encoders;
 using log4net;
 using Mina.Filter.Codec;
+using Mina.Filter.Logging;
 using Mina.Transport.Socket;
 using Rtps.Messages;
 using Rtps.Structure.Types;
 using System;
 using System.Net;
 using System.Reflection;
+using Data = Rtps.Messages.Submessages.Data;
 
 namespace Doopec.Utils.Transport
 {
@@ -63,7 +65,21 @@ namespace Doopec.Utils.Transport
             acceptor.MessageReceived += (s, e) =>
             {
                 Message msg = e.Message as Message;
-                log.DebugFormat("New value for {0}", e.Session.RemoteEndPoint);
+                if (log.IsDebugEnabled)
+                {
+                    log.DebugFormat("New Message has arrived from {0}", e.Session.RemoteEndPoint);
+                    log.DebugFormat("Message Header: {0}", msg.Header);
+                    foreach (var submsg in msg.SubMessages)
+                    {
+                        log.DebugFormat("SubMessage: {0}", submsg);
+                        if (submsg is Data)
+                        {
+                            Data d = submsg as Data;
+                            foreach (var par in d.InlineQos.Value)
+                                log.DebugFormat("InlineQos: {0}", par);
+                        }
+                    }
+                }
             };
             acceptor.SessionCreated += (s, e) =>
             {

@@ -61,20 +61,20 @@ namespace Doopec.Rtps.Messages
             if (order == ByteOrder.LittleEndian)
                 buffer.PutEncapsulationScheme(CDR_LE_HEADER);
             else
-                buffer.PutEncapsulationScheme(CDR_BE_HEADER); 
+                buffer.PutEncapsulationScheme(CDR_BE_HEADER);
             int initialPos = buffer.Position;
             buffer.Position += 4;
             Doopec.Serializer.Serializer.Serialize(buffer, dataObj);
             int finalPos = buffer.Position;
             buffer.Position = initialPos;
-            buffer.PutInt32(finalPos-initialPos-4);
+            buffer.PutInt32(finalPos - initialPos - 4);
             buffer.Position = finalPos;
         }
         public static T Deserialize<T>(IoBuffer buffer)
         {
             EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
             if (scheme.Equals(DataEncapsulation.CDR_BE_HEADER))
-            { 
+            {
                 buffer.Order = ByteOrder.BigEndian;
             }
             else if (scheme.Equals(DataEncapsulation.CDR_LE_HEADER))
@@ -88,7 +88,32 @@ namespace Doopec.Rtps.Messages
             int length = buffer.GetInt32();
             int initialPos = buffer.Position;
             T rst = Doopec.Serializer.Serializer.Deserialize<T>(buffer);
-            Debug.Assert(buffer.Position == initialPos+length);
+            Debug.Assert(buffer.Position == initialPos + length);
+            return rst;
+        }
+
+        public static CDREncapsulation Deserialize(IoBuffer buffer, int length)
+        {
+            int initialPos = buffer.Position;
+            EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
+            ByteOrder order;
+            if (scheme.Equals(DataEncapsulation.CDR_BE_HEADER))
+            {
+                order = buffer.Order = ByteOrder.BigEndian;
+
+            }
+            else if (scheme.Equals(DataEncapsulation.CDR_LE_HEADER))
+            {
+                order = buffer.Order = ByteOrder.LittleEndian;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+            byte[] data = new byte[length-4];
+            buffer.Get(data, 0, length-4);
+            Debug.Assert(buffer.Position == initialPos + length);
+            CDREncapsulation rst = new CDREncapsulation(data, order);
             return rst;
         }
 
