@@ -40,7 +40,7 @@ namespace org.omg.dds.core.modifiable
         /// <param name="time"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableTime setTime(long time, TimeUnit unit);
+        public abstract ModifiableTime SetTime(long time, TimeUnit unit);
 
 
         // --- Manipulation: -----------------------------------------------------
@@ -50,7 +50,7 @@ namespace org.omg.dds.core.modifiable
         /// </summary>
         /// <param name="duration"></param>
         /// <returns>this</returns>
-        public abstract ModifiableTime add(Duration duration);
+        public abstract ModifiableTime Add(Duration duration);
 
         /// <summary>
         /// Increment this time by the given amount.
@@ -58,14 +58,14 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableTime add(long duration, TimeUnit unit);
+        public abstract ModifiableTime Add(long duration, TimeUnit unit);
 
         /// <summary>
         /// Decrement this time by the given amount.
         /// </summary>
         /// <param name="duration"></param>
         /// <returns>this</returns>
-        public abstract ModifiableTime subtract(Duration duration);
+        public abstract ModifiableTime Subtract(Duration duration);
 
         /// <summary>
         /// Decrement this time by the given amount.
@@ -73,7 +73,7 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableTime subtract(long duration, TimeUnit unit);
+        public abstract ModifiableTime Subtract(long duration, TimeUnit unit);
 
 
         // --- From Object: ------------------------------------------------------
@@ -82,7 +82,7 @@ namespace org.omg.dds.core.modifiable
 
         public abstract ModifiableTime CopyFrom(Time other);
 
-        public abstract Time finishModification();
+        public abstract Time FinishModification();
 
 
         //  public abstract Value modify();

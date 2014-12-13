@@ -46,7 +46,7 @@ namespace org.omg.dds.core.modifiable
         /// used wherever the latter is required.
         /// </summary>
         /// <returns>A new unmodifiable copy of this object or null</returns>
-        UNMOD_SELF finishModification();
+        UNMOD_SELF FinishModification();
 
 
         // --- From Value: ---------------------------------------------------

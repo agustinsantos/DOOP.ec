@@ -190,7 +190,7 @@ namespace Doopec.Rtps.Discovery
             throw new NotImplementedException();
         }
 
-        public override SubscriptionBuiltinTopicData finishModification()
+        public override SubscriptionBuiltinTopicData FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -200,7 +200,7 @@ namespace Doopec.Rtps.Discovery
             throw new NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

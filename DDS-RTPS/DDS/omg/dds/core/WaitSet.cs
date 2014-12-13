@@ -80,6 +80,6 @@ namespace org.omg.dds.core
         /// <returns>An unmodifiable collection of the conditions attached to this wait set</returns>
         public abstract ICollection<Condition> getConditions();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

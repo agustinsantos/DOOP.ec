@@ -59,6 +59,6 @@ namespace org.omg.dds.core
 
         public abstract bool getTriggerValue();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

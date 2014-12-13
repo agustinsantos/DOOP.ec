@@ -21,14 +21,14 @@ namespace Doopec.DDS.Core.Policy
             this.value = value;
         }
 
-        public int getValue(byte[] result, int offset)
+        public int GetValue(byte[] result, int offset)
         {
             int length = this.value.Length;
             Array.Copy(this.value, offset, result, 0, length);
             return offset + length;
         }
 
-        public int getLength()
+        public int GetLength()
         {
             return this.value.Length;
         }

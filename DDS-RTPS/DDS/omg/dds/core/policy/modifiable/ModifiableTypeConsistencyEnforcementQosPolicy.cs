@@ -31,6 +31,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind"></param>
         /// <returns>this</returns>
-        ModifiableTypeConsistencyEnforcementQosPolicy setKind(TypeConsistencyEnforcementQosPolicyKind kind);
+        ModifiableTypeConsistencyEnforcementQosPolicy SetKind(TypeConsistencyEnforcementQosPolicyKind kind);
     }
 }

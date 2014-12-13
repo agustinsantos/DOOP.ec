@@ -33,14 +33,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="kind">The kind to set</param>
         /// <returns>this</returns>
-        ModifiableReliabilityQosPolicy setKind(ReliabilityQosPolicyKind kind);
+        ModifiableReliabilityQosPolicy SetKind(ReliabilityQosPolicyKind kind);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="maxBlockingTime">The maxBlockingTime to set</param>
         /// <returns>this</returns>
-        ModifiableReliabilityQosPolicy setMaxBlockingTime(Duration maxBlockingTime);
+        ModifiableReliabilityQosPolicy SetMaxBlockingTime(Duration maxBlockingTime);
 
         /// <summary>
         /// 
@@ -48,6 +48,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="maxBlockingTime"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableReliabilityQosPolicy setMaxBlockingTime(long maxBlockingTime, TimeUnit unit);
+        ModifiableReliabilityQosPolicy SetMaxBlockingTime(long maxBlockingTime, TimeUnit unit);
     }
 }

@@ -24,7 +24,7 @@ namespace org.omg.dds.core.policy
     /// <summary>
     /// This class is the abstract root for all the QoS policies. It provides the
     /// basic mechanism for an application to specify quality of service
-    /// parameters. It has a name (<code>getId().getPolicyName()</code>) that is
+    /// parameters. It has a name (<code>GetId().GetPolicyName()</code>) that is
     /// used to identify uniquely each QoS policy. All concrete QosPolicy classes
     /// derive from this root and include a value whose type depends on the
     /// concrete QoS policy.
@@ -57,7 +57,7 @@ namespace org.omg.dds.core.policy
     [Nested]
     public interface QosPolicy : Value
     {
-        QosPolicyId getId();
+        QosPolicyId GetId();
     }
 
     [Extensibility(ExtensibilityKind.EXTENSIBLE_EXTENSIBILITY)]
@@ -80,14 +80,14 @@ namespace org.omg.dds.core.policy
         /// <param name="policyClass"></param>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns></returns>
-        public static QosPolicyId getId(System.Type policyClass, Bootstrap bootstrap)
+        public static QosPolicyId GetId(System.Type policyClass, Bootstrap bootstrap)
         {
             return bootstrap.getSPI().getQosPolicyId(policyClass);
         }
 
         // --- Instance Methods: ---------------------------------------------
-        public abstract int getPolicyIdValue();
+        public abstract int GetPolicyIdValue();
 
-        public abstract string getPolicyName();
+        public abstract string GetPolicyName();
     }
 }

@@ -25,7 +25,7 @@ namespace org.omg.dds.core.policy
 
     public interface DeadlineQosPolicy : QosPolicy<DeadlineQosPolicy, ModifiableDeadlineQosPolicy>
     {
-        Duration getPeriod();
+        Duration GetPeriod();
 
     }
 }

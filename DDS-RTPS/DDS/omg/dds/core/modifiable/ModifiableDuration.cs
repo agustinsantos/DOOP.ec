@@ -38,7 +38,7 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableDuration setDuration(long duration, TimeUnit unit);
+        public abstract ModifiableDuration SetDuration(long duration, TimeUnit unit);
 
 
         // --- Manipulation: -----------------------------------------------------
@@ -48,7 +48,7 @@ namespace org.omg.dds.core.modifiable
         /// </summary>
         /// <param name="duration"></param>
         /// <returns>this</returns>
-        public abstract ModifiableDuration add(Duration duration);
+        public abstract ModifiableDuration Add(Duration duration);
 
         /// <summary>
         /// Increase this duration by the given amount.
@@ -56,14 +56,14 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableDuration add(long duration, TimeUnit unit);
+        public abstract ModifiableDuration Add(long duration, TimeUnit unit);
 
         /// <summary>
         /// Decrease this duration by the given amount.
         /// </summary>
         /// <param name="duration"></param>
         /// <returns>this</returns>
-        public abstract ModifiableDuration subtract(Duration duration);
+        public abstract ModifiableDuration Subtract(Duration duration);
 
         /// <summary>
         /// Decrease this duration by the given amount.
@@ -71,7 +71,7 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        public abstract ModifiableDuration subtract(long duration, TimeUnit unit);
+        public abstract ModifiableDuration Subtract(long duration, TimeUnit unit);
 
 
         // --- From Object: ------------------------------------------------------
@@ -81,6 +81,6 @@ namespace org.omg.dds.core.modifiable
 
         public abstract ModifiableDuration CopyFrom(Duration other);
 
-        public abstract Duration finishModification();
+        public abstract Duration FinishModification();
     }
 }

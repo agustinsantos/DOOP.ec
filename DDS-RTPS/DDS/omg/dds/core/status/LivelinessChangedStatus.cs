@@ -36,7 +36,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static LivelinessChangedStatus<TYPE>        newLivelinessChangedStatus(Bootstrap bootstrap)
+        public static LivelinessChangedStatus<TYPE>        NewLivelinessChangedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newLivelinessChangedStatus<TYPE>();
         }
@@ -59,27 +59,27 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The aliveCount</returns>
-        public abstract int getAliveCount();
+        public abstract int GetAliveCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The notAliveCount</returns>
-        public abstract int getNotAliveCount();
+        public abstract int GetNotAliveCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The aliveCountChange</returns>
-        public abstract int getAliveCountChange();
+        public abstract int GetAliveCountChange();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The notAliveCountChange</returns>
-        public abstract int getNotAliveCountChange();
+        public abstract int GetNotAliveCountChange();
 
-        public abstract ModifiableInstanceHandle getLastPublicationHandle();
+        public abstract ModifiableInstanceHandle GetLastPublicationHandle();
 
     }
 }

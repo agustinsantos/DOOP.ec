@@ -25,9 +25,9 @@ namespace org.omg.dds.core.policy
     public interface ReaderDataLifecycleQosPolicy     : QosPolicy<ReaderDataLifecycleQosPolicy,
                       ModifiableReaderDataLifecycleQosPolicy>
     {
-         Duration getAutoPurgeNoWriterSamplesDelay();
+         Duration GetAutoPurgeNoWriterSamplesDelay();
 
-         Duration getAutoPurgeDisposedSamplesDelay();
+         Duration GetAutoPurgeDisposedSamplesDelay();
 
     }
 }

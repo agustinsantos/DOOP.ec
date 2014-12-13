@@ -34,7 +34,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="autoPurgeNoWriterSamplesDelay">The autoPurgeNoWriterSamplesDelay to set</param>
         /// <returns>this</returns>
-        ModifiableReaderDataLifecycleQosPolicy setAutoPurgeNoWriterSamplesDelay(Duration autoPurgeNoWriterSamplesDelay);
+        ModifiableReaderDataLifecycleQosPolicy SetAutoPurgeNoWriterSamplesDelay(Duration autoPurgeNoWriterSamplesDelay);
 
         /// <summary>
         /// 
@@ -42,14 +42,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="autoPurgeNoWriterSamplesDelay"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableReaderDataLifecycleQosPolicy setAutoPurgeNoWriterSamplesDelay( long autoPurgeNoWriterSamplesDelay, TimeUnit unit);
+        ModifiableReaderDataLifecycleQosPolicy SetAutoPurgeNoWriterSamplesDelay( long autoPurgeNoWriterSamplesDelay, TimeUnit unit);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="autoPurgeDisposedSamplesDelay">The autoPurgeDisposedSamplesDelay to set</param>
         /// <returns>this</returns>
-        ModifiableReaderDataLifecycleQosPolicy setAutoPurgeDisposedSamplesDelay(Duration autoPurgeDisposedSamplesDelay);
+        ModifiableReaderDataLifecycleQosPolicy SetAutoPurgeDisposedSamplesDelay(Duration autoPurgeDisposedSamplesDelay);
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="autoPurgeDisposedSamplesDelay"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableReaderDataLifecycleQosPolicy setAutoPurgeDisposedSamplesDelay(
+        ModifiableReaderDataLifecycleQosPolicy SetAutoPurgeDisposedSamplesDelay(
                long autoPurgeDisposedSamplesDelay, TimeUnit unit);
     }
 }

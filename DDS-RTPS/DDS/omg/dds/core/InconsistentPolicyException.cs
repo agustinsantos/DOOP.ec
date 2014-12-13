@@ -34,7 +34,7 @@ namespace org.omg.dds.core
         {
         }
 
-        public override Bootstrap getBootstrap()
+        public override Bootstrap GetBootstrap()
         { throw new System.NotImplementedException(); }
 
     }

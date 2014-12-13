@@ -171,11 +171,11 @@ namespace org.omg.dds.topic
 
         public abstract TopicBuiltinTopicData CopyFrom(TopicBuiltinTopicData other);
 
-        public abstract TopicBuiltinTopicData finishModification();
+        public abstract TopicBuiltinTopicData FinishModification();
 
         public abstract TopicBuiltinTopicData Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
 
     }
 }

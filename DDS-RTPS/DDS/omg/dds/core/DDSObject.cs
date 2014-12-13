@@ -30,6 +30,6 @@ namespace org.omg.dds.core
         /// <summary>
         /// The Bootstrap object that directly or indirectly created this object.
         /// </summary>
-        Bootstrap getBootstrap();
+        Bootstrap GetBootstrap();
     }
 }

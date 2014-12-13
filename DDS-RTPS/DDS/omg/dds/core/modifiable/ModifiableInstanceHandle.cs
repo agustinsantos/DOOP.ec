@@ -32,7 +32,7 @@ namespace org.omg.dds.core.modifiable
 
         public abstract ModifiableInstanceHandle CopyFrom(InstanceHandle other);
 
-        public abstract InstanceHandle finishModification();
+        public abstract InstanceHandle FinishModification();
 
         //        public abstract Value modify();
 
@@ -40,6 +40,6 @@ namespace org.omg.dds.core.modifiable
 
         //        protected abstract ModifiableInstanceHandle ModifiableValue<InstanceHandle, ModifiableInstanceHandle>.clone();
 
-        //       protected abstract Bootstrap getBootstrap();
+        //       protected abstract Bootstrap GetBootstrap();
     }
 }

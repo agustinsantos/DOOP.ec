@@ -37,7 +37,7 @@ namespace org.omg.dds.core.status
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
         public static InconsistentTopicStatus<TYPE>
-        newInconsistentTopicStatus(Bootstrap bootstrap)
+        NewInconsistentTopicStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newInconsistentTopicStatus<TYPE>();
         }
@@ -60,13 +60,13 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The totalCount</returns>
-        public abstract int getTotalCount();
+        public abstract int GetTotalCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The totalCountChange</returns>
-        public abstract int getTotalCountChange();
+        public abstract int GetTotalCountChange();
 
     }
 }

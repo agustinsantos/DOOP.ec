@@ -33,7 +33,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="period">The period to set</param>
         /// <returns>this</returns>
-        ModifiableDeadlineQosPolicy setPeriod(Duration period);
+        ModifiableDeadlineQosPolicy SetPeriod(Duration period);
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="period"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        ModifiableDeadlineQosPolicy setPeriod(long period, TimeUnit unit);
+        ModifiableDeadlineQosPolicy SetPeriod(long period, TimeUnit unit);
 
      }
 }

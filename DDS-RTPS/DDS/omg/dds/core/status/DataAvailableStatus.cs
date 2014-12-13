@@ -35,7 +35,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static DataAvailableStatus<TYPE> newDataAvailableStatus(Bootstrap bootstrap)
+        public static DataAvailableStatus<TYPE> NewDataAvailableStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newDataAvailableStatus<TYPE>();
         }

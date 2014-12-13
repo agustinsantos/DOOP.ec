@@ -190,7 +190,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override TopicBuiltinTopicData finishModification()
+        public override TopicBuiltinTopicData FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -200,7 +200,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override Bootstrap getBootstrap()
+        public override Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

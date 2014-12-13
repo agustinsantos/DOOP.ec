@@ -32,6 +32,6 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <returns>this</returns>
-        ModifiableTransportPriorityQosPolicy setValue(int value);
+        ModifiableTransportPriorityQosPolicy SetValue(int value);
     }
 }

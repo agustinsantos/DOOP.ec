@@ -29,19 +29,19 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The maxSamples</returns>
-        int getMaxSamples();
+        int GetMaxSamples();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The maxInstances</returns>
-        int getMaxInstances();
+        int GetMaxInstances();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The maxSamplesPerInstance</returns>
-        int getMaxSamplesPerInstance();
+        int GetMaxSamplesPerInstance();
 
     }
 

@@ -67,6 +67,6 @@ namespace org.omg.dds.core
 
         public abstract ModifiableInstanceHandle Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

@@ -123,7 +123,7 @@ namespace org.omg.dds.core
         /// This method is equivalent to the following pseudo-code:
         /// 
         /// <code>
-        /// (this - getDuration(primaryUnit)).getDuration(remainderUnit)
+        /// (this - GetDuration(primaryUnit)).GetDuration(remainderUnit)
         /// </code>
         /// 
         /// If <code>remainderUnit</code> is represents a coarser granularity than
@@ -133,7 +133,7 @@ namespace org.omg.dds.core
         /// If the resulting duration cannot be expressed in the given units
         /// without overflowing, this method shall return {@link Long#MAX_VALUE}.
         /// 
-        /// @see     #getDuration(TimeUnit)
+        /// @see     #GetDuration(TimeUnit)
         /// @see     Long#MAX_VALUE
         /// @see     TimeUnit
         /// </summary>
@@ -148,9 +148,9 @@ namespace org.omg.dds.core
         /// <summary>
         /// Report whether this duration lasts no time at all. The result of this
         /// method is equivalent to the following:
-        /// <code>this.getDuration(TimeUnit.NANOSECONDS) == 0;</code>
+        /// <code>this.GetDuration(TimeUnit.NANOSECONDS) == 0;</code>
         /// 
-        /// @see     #getDuration(TimeUnit)
+        /// @see     #GetDuration(TimeUnit)
         /// </summary>
         /// <returns></returns>
         public abstract bool isZero();
@@ -161,7 +161,7 @@ namespace org.omg.dds.core
         /// If this duration is infinite, the following relationship shall be
         /// true:
         /// 
-        /// <code>this.equals(infiniteDuration(this.getBootstrap()))</code>
+        /// <code>this.equals(infiniteDuration(this.GetBootstrap()))</code>
         /// 
         /// @see     #infiniteDuration(Bootstrap)
         /// </summary>
@@ -177,6 +177,6 @@ namespace org.omg.dds.core
 
         public abstract ModifiableDuration Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

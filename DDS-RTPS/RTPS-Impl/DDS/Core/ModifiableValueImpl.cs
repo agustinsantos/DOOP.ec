@@ -13,7 +13,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public UNMOD_SELF finishModification()
+        public UNMOD_SELF FinishModification()
         {
             throw new NotImplementedException();
         }

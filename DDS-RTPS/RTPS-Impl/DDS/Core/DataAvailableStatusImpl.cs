@@ -15,7 +15,7 @@ namespace Doopec.DDS.Core
         {
         }
 
-        public override DataReader<TYPE> getSource()
+        public override DataReader<TYPE> GetSource()
         {
             return source as DataReader<TYPE>;
         }
@@ -25,7 +25,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public override DataAvailableStatus<TYPE> finishModification()
+        public override DataAvailableStatus<TYPE> FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -40,7 +40,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

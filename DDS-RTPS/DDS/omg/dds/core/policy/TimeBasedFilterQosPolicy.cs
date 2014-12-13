@@ -25,7 +25,7 @@ namespace org.omg.dds.core.policy
     public interface TimeBasedFilterQosPolicy
      : QosPolicy<TimeBasedFilterQosPolicy, ModifiableTimeBasedFilterQosPolicy>
     {
-        Duration getMinimumSeparation();
+        Duration GetMinimumSeparation();
 
     }
 }

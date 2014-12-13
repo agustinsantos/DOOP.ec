@@ -115,7 +115,7 @@ namespace org.omg.dds.core
         /// invocations of this method. As a result, execution of this method is
         /// expected to be relatively expensive. However, as any DDS object can
         /// provide a reference to its creating Bootstrap via
-        /// {@link DDSObject#getBootstrap()}, executions of this method are also
+        /// {@link DDSObject#GetBootstrap()}, executions of this method are also
         /// expected to be rare.
         /// </summary>
         /// <param name="implClassNameProperty">The name of a system property,
@@ -292,7 +292,7 @@ namespace org.omg.dds.core
 
         // --- From DDSObject: ---------------------------------------------------
 
-        public Bootstrap getBootstrap()
+        public Bootstrap GetBootstrap()
         {
             return this;
         }

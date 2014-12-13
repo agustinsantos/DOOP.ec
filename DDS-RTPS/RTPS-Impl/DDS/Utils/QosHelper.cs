@@ -99,16 +99,16 @@ namespace Doopec.DDS.Utils
 
         public static bool IsValid(LifespanQosPolicy qos)
         {
-            return valid_duration(qos.getDuration());
+            return valid_duration(qos.GetDuration());
         }
 
         public static bool IsValid(DurabilityQosPolicy qos)
         {
             return
-              (qos.getKind() == DurabilityQosPolicyKind.VOLATILE
-               || qos.getKind() == DurabilityQosPolicyKind.TRANSIENT_LOCAL
-               || qos.getKind() == DurabilityQosPolicyKind.TRANSIENT
-               || qos.getKind() == DurabilityQosPolicyKind.PERSISTENT);
+              (qos.GetKind() == DurabilityQosPolicyKind.VOLATILE
+               || qos.GetKind() == DurabilityQosPolicyKind.TRANSIENT_LOCAL
+               || qos.GetKind() == DurabilityQosPolicyKind.TRANSIENT
+               || qos.GetKind() == DurabilityQosPolicyKind.PERSISTENT);
         }
 
         public static bool IsValid(DurabilityServiceQosPolicy qos)
@@ -117,14 +117,14 @@ namespace Doopec.DDS.Utils
         public static bool IsValid(PresentationQosPolicy qos)
         {
             return
-              (qos.getAccessScope() == AccessScopeKind.INSTANCE
-               || qos.getAccessScope() == AccessScopeKind.TOPIC
-               || qos.getAccessScope() == AccessScopeKind.GROUP);
+              (qos.GetAccessScope() == AccessScopeKind.INSTANCE
+               || qos.GetAccessScope() == AccessScopeKind.TOPIC
+               || qos.GetAccessScope() == AccessScopeKind.GROUP);
         }
 
         public static bool IsValid(DeadlineQosPolicy qos)
         {
-            return valid_duration(qos.getPeriod());
+            return valid_duration(qos.GetPeriod());
         }
 
         public static bool valid(LatencyBudgetQosPolicy qos)

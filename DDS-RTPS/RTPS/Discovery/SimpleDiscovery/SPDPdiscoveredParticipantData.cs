@@ -40,7 +40,7 @@ namespace Rtps.Discovery.Spdp
             throw new System.NotImplementedException();
         }
 
-        public override ParticipantBuiltinTopicData finishModification()
+        public override ParticipantBuiltinTopicData FinishModification()
         {
             throw new System.NotImplementedException();
         }
@@ -55,7 +55,7 @@ namespace Rtps.Discovery.Spdp
             throw new System.NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new System.NotImplementedException();
         }

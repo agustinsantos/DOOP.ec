@@ -32,7 +32,7 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The kind</returns>
-          DurabilityQosPolicyKind getKind();
+          DurabilityQosPolicyKind GetKind();
 
     }
 

@@ -35,7 +35,7 @@ namespace org.omg.dds.type
         /// Create a new TypeSupport object for the given physical type.
         /// This method is equivalent to:
         /// 
-        /// <code>newTypeSupport(type, type.getClass().getName(), bootstrap)</code>
+        /// <code>newTypeSupport(type, type.getClass().GetName(), bootstrap)</code>
         /// @see #newTypeSupport(Class, string, Bootstrap)
         /// </summary>
         /// <param name="type"></param>
@@ -90,7 +90,7 @@ namespace org.omg.dds.type
 
         public abstract string getTypeName();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
 
     }
 }

@@ -193,13 +193,13 @@ namespace org.omg.dds.topic
 
         public abstract PublicationBuiltinTopicData CopyFrom(PublicationBuiltinTopicData other);
 
-        public abstract PublicationBuiltinTopicData finishModification();
+        public abstract PublicationBuiltinTopicData FinishModification();
 
 
         public abstract PublicationBuiltinTopicData Clone();
 
         public abstract PublicationBuiltinTopicData Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

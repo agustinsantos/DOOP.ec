@@ -54,7 +54,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns></returns>
-        public static ISet<Type> allStatuses(Bootstrap bootstrap)
+        public static ISet<Type> AllStatuses(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().allStatusKinds();
         }
@@ -65,7 +65,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns></returns>
-        public static ISet<Type> noStatuses(Bootstrap bootstrap)
+        public static ISet<Type> NoStatuses(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().noStatusKinds();
         }
@@ -86,27 +86,27 @@ namespace org.omg.dds.core.status
 
         // --- API: --------------------------------------------------------------
 
-        public abstract SOURCE getSource();
+        public abstract SOURCE GetSource();
 
         //public abstract SELF clone();
 
 
         // --- SPI: --------------------------------------------------------------
 
-        protected void setSource(SOURCE source)
+        protected void SetSource(SOURCE source)
         {
             base.source = source;
         }
 
         public abstract SELF CopyFrom(SELF other);
 
-        public abstract SELF finishModification();
+        public abstract SELF FinishModification();
 
         public abstract SELF Clone();
 
         public abstract SELF Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
 
     }
 }

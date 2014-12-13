@@ -69,12 +69,12 @@ namespace org.omg.dds.topic
 
         public abstract ParticipantBuiltinTopicData CopyFrom(ParticipantBuiltinTopicData other);
 
-        public abstract ParticipantBuiltinTopicData finishModification();
+        public abstract ParticipantBuiltinTopicData FinishModification();
 
         public abstract ParticipantBuiltinTopicData Clone();
 
         public abstract ParticipantBuiltinTopicData Modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap();
     }
 }

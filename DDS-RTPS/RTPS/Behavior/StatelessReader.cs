@@ -10,7 +10,7 @@ namespace Rtps.Behavior
     /// <summary>
     /// Specialization of RTPS Reader. The RTPS StatelessReader has no knowledge of the number of matched writers, nor does 
     /// it maintain any state for each matched RTPS Writer.
-    /// In the current Reference Implementation, the StatelessReader does not add any configuration attributes or operations to 
+    /// In the current Reference Implementation, the StatelessReader does not Add any configuration attributes or operations to 
     /// those inherited from the Reader super class. Both classes are therefore identical.
     /// </summary>
     public class StatelessReader<T> : Reader<T>

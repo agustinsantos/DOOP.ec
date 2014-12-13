@@ -35,7 +35,7 @@ namespace org.omg.dds.core.status
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static OfferedDeadlineMissedStatus<TYPE> newOfferedDeadlineMissedStatus(Bootstrap bootstrap)
+        public static OfferedDeadlineMissedStatus<TYPE> NewOfferedDeadlineMissedStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newOfferedDeadlineMissedStatus<TYPE>();
         }
@@ -58,15 +58,15 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The totalCount</returns>
-        public abstract int getTotalCount();
+        public abstract int GetTotalCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The totalCountChange</returns>
-        public abstract int getTotalCountChange();
+        public abstract int GetTotalCountChange();
 
-        public abstract ModifiableInstanceHandle getLastInstanceHandle();
+        public abstract ModifiableInstanceHandle GetLastInstanceHandle();
 
     }
 }

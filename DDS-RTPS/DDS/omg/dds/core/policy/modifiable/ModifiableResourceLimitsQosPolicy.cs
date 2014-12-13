@@ -30,14 +30,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="maxSamples">The maxSamples to set</param>
         /// <returns>this</returns>
-        ModifiableResourceLimitsQosPolicy setMaxSamples(int maxSamples);
+        ModifiableResourceLimitsQosPolicy SetMaxSamples(int maxSamples);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="maxInstances">The maxInstances to set</param>
         /// <returns>this</returns>
-        ModifiableResourceLimitsQosPolicy setMaxInstances(
+        ModifiableResourceLimitsQosPolicy SetMaxInstances(
               int maxInstances);
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// </summary>
         /// <param name="maxSamplesPerInstance">The maxSamplesPerInstance to set</param>
         /// <returns>this</returns>
-        ModifiableResourceLimitsQosPolicy setMaxSamplesPerInstance(
+        ModifiableResourceLimitsQosPolicy SetMaxSamplesPerInstance(
               int maxSamplesPerInstance);
     }
 }

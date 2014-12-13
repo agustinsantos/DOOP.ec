@@ -21,12 +21,12 @@ namespace Doopec.Dds.Core.Policy
             this.maxBlockingTime = maxBlockingTime;
         }
 
-        public ReliabilityQosPolicyKind getKind()
+        public ReliabilityQosPolicyKind GetKind()
         {
             return kind;
         }
 
-        public Duration getMaxBlockingTime()
+        public Duration GetMaxBlockingTime()
         {
             return maxBlockingTime;
         }

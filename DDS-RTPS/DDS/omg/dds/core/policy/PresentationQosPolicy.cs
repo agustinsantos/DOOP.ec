@@ -32,19 +32,19 @@ namespace org.omg.dds.core.policy
         /// 
         /// </summary>
         /// <returns>The accessScope</returns>
-        AccessScopeKind getAccessScope();
+        AccessScopeKind GetAccessScope();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The coherentAccess</returns>
-        bool isCoherentAccess();
+        bool IsCoherentAccess();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The orderedAccess</returns>
-        bool isOrderedAccess();
+        bool IsOrderedAccess();
 
 
     }

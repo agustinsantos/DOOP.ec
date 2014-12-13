@@ -44,7 +44,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public MemberProperty finishModification()
+        public MemberProperty FinishModification()
         {
             throw new NotImplementedException();
         }
@@ -54,7 +54,7 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap getBootstrap()
+        public org.omg.dds.core.Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

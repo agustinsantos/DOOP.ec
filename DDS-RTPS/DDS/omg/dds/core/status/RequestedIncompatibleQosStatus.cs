@@ -38,7 +38,7 @@ namespace org.omg.dds.core.status
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
         public static RequestedIncompatibleQosStatus<TYPE>
-        newRequestedIncompatibleQosStatus(Bootstrap bootstrap)
+        NewRequestedIncompatibleQosStatus(Bootstrap bootstrap)
         {
             return bootstrap.getSPI().newRequestedIncompatibleQosStatus<TYPE>();
         }
@@ -61,25 +61,25 @@ namespace org.omg.dds.core.status
         /// 
         /// </summary>
         /// <returns>The totalCount</returns>
-        public abstract int getTotalCount();
+        public abstract int GetTotalCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The totalCountChange</returns>
-        public abstract int getTotalCountChange();
+        public abstract int GetTotalCountChange();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The lastPolicyId</returns>
-        public abstract QosPolicyId getLastPolicyId();
+        public abstract QosPolicyId GetLastPolicyId();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>An unmodifiable set</returns>
-        public abstract ISet<QosPolicyCount> getPolicies();
+        public abstract ISet<QosPolicyCount> GetPolicies();
 
     }
 }

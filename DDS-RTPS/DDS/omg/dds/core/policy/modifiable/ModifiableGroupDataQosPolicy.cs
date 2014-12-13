@@ -31,7 +31,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        ModifiableGroupDataQosPolicy setValue(
+        ModifiableGroupDataQosPolicy SetValue(
               byte[] value, int offset, int length);
     }
 }
