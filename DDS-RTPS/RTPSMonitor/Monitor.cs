@@ -12,6 +12,7 @@ namespace RTPSMonitor
         static void Main(string[] args)
         {
             UDPReceiver rec = new UDPReceiver(new Uri("udp://172.16.0.169:9999"), 256);
+            //UDPReceiver rec = new UDPReceiver(new Uri("udp://239.255.0.1:9650"), 256);
             rec.Start();
 
             Console.WriteLine("Enter finish to end");

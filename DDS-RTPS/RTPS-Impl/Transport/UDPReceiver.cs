@@ -1,17 +1,41 @@
 ﻿using Doopec.Rtps.Encoders;
 using log4net;
+using Mina.Core.Session;
 using Mina.Filter.Codec;
-using Mina.Filter.Logging;
 using Mina.Transport.Socket;
 using Rtps.Messages;
 using Rtps.Structure.Types;
 using System;
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
-using Data = Rtps.Messages.Submessages.Data;
 
 namespace Doopec.Utils.Transport
 {
+    /// <summary>
+    /// Provides data for <see cref="IoSession"/>'s message receive/sent event.
+    /// </summary>
+    public class RTPSMessageEventArgs : IoSessionEventArgs
+    {
+        private readonly Message _message;
+
+        /// <summary>
+        /// </summary>
+        public RTPSMessageEventArgs(IoSession session, Message message)
+            : base(session)
+        {
+            _message = message;
+        }
+
+        /// <summary>
+        /// Gets the associated message.
+        /// </summary>
+        public Message Message
+        {
+            get { return _message; }
+        }
+    }
+
     /// <summary>
     /// This class receives UDP packets from the network. 
     /// </summary>
@@ -26,6 +50,8 @@ namespace Doopec.Utils.Transport
         private readonly int participantId;
         private readonly bool discovery;
         private AsyncDatagramAcceptor acceptor;
+
+        public event EventHandler<RTPSMessageEventArgs> MessageReceived;
 
         public UDPReceiver(Uri uri, int bufferSize)
         {
@@ -52,10 +78,31 @@ namespace Doopec.Utils.Transport
             if (locator == null)
                 throw new ApplicationException();
 
-            acceptor = new AsyncDatagramAcceptor();
+            IPEndPoint ep = new IPEndPoint(locator.SocketAddress, locator.Port);
+            bool isMultiCastAddr;
+            if (ep.AddressFamily == AddressFamily.InterNetwork) //IP v4
+            {
+                byte byteIp = ep.Address.GetAddressBytes()[0];
+                isMultiCastAddr = (byteIp >= 224 && byteIp < 240) ? true : false;
+            }
+            else if (ep.AddressFamily == AddressFamily.InterNetworkV6)
+            {
+                isMultiCastAddr = ep.Address.IsIPv6Multicast;
+            }
+            else
+            {
+                throw new NotImplementedException("Address family not supported yet: " + ep.AddressFamily);
+            }
+            if (isMultiCastAddr)
+
+                acceptor = new AsyncMulticastAcceptor();
+            else
+                acceptor = new AsyncDatagramAcceptor();
+
             //acceptor.FilterChain.AddLast("logger", new LoggingFilter());
             acceptor.FilterChain.AddLast("RTPS", new ProtocolCodecFilter(new MessageCodecFactory()));
-            acceptor.SessionConfig.ReuseAddress = true;
+            //acceptor.SessionConfig.ReuseAddress = true;
+            acceptor.SessionConfig.EnableBroadcast = true;
 
             acceptor.ExceptionCaught += (s, e) =>
             {
@@ -65,21 +112,23 @@ namespace Doopec.Utils.Transport
             acceptor.MessageReceived += (s, e) =>
             {
                 Message msg = e.Message as Message;
-                if (log.IsDebugEnabled)
-                {
-                    log.DebugFormat("New Message has arrived from {0}", e.Session.RemoteEndPoint);
-                    log.DebugFormat("Message Header: {0}", msg.Header);
-                    foreach (var submsg in msg.SubMessages)
-                    {
-                        log.DebugFormat("SubMessage: {0}", submsg);
-                        if (submsg is Data)
-                        {
-                            Data d = submsg as Data;
-                            foreach (var par in d.InlineQos.Value)
-                                log.DebugFormat("InlineQos: {0}", par);
-                        }
-                    }
-                }
+                if (MessageReceived != null)
+                    MessageReceived(s, new RTPSMessageEventArgs(e.Session, msg));
+                //if (log.IsDebugEnabled)
+                //{
+                //    log.DebugFormat("New Message has arrived from {0}", e.Session.RemoteEndPoint);
+                //    log.DebugFormat("Message Header: {0}", msg.Header);
+                //    foreach (var submsg in msg.SubMessages)
+                //    {
+                //        log.DebugFormat("SubMessage: {0}", submsg);
+                //        if (submsg is Data)
+                //        {
+                //            Data d = submsg as Data;
+                //            foreach (var par in d.InlineQos.Value)
+                //                log.DebugFormat("InlineQos: {0}", par);
+                //        }
+                //    }
+                //}
             };
             acceptor.SessionCreated += (s, e) =>
             {
@@ -97,7 +146,6 @@ namespace Doopec.Utils.Transport
             {
                 log.Debug("Session idle...");
             };
-
             acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
             log.DebugFormat("Listening on udp://{0}:{1} for {2}", uri.Host, locator.Port, discovery ? "discovery traffic" : "user traffic");
         }
@@ -114,7 +162,8 @@ namespace Doopec.Utils.Transport
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            if (acceptor != null)
+                acceptor.Dispose();
         }
     }
 }

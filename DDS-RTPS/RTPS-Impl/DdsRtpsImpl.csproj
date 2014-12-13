@@ -36,7 +36,8 @@
     <Reference Include="log4net">
       <HintPath>..\Libs\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Mina.NET">
+    <Reference Include="Mina.NET, Version=2.0.8.0, Culture=neutral, PublicKeyToken=bc4dde96e5154fe5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\Mina.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
