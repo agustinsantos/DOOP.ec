@@ -47,7 +47,7 @@ namespace Doopec.Dds.Domain
         public DomainParticipantImpl(int domainId)
             : this(domainId, null, null)
         {
-            // Check default values for qos and listener
+            // Check default values for qos and listener 
             throw new NotImplementedException();
         }
 

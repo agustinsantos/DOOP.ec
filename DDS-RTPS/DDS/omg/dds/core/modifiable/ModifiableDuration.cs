@@ -62,7 +62,7 @@ namespace org.omg.dds.core.modifiable
         /// Decrease this duration by the given amount.
         /// </summary>
         /// <param name="duration"></param>
-        /// <returns>this</returns>
+        /// <returns>This</returns>
         public abstract ModifiableDuration Subtract(Duration duration);
 
         /// <summary>
