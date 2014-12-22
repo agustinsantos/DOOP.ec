@@ -11,7 +11,7 @@ namespace Doopec.Dds.Core
     {
         private SPI SPIInstance;
 
-        public override Bootstrap.ServiceProviderInterface getSPI()
+        public override Bootstrap.ServiceProviderInterface GetSPI()
         {
             if (SPIInstance == null)
                 SPIInstance = new SPI(this);
@@ -30,52 +30,52 @@ namespace Doopec.Dds.Core
             this.boostrap = boostrap;
         }
 
-        public org.omg.dds.domain.DomainParticipantFactory getParticipantFactory()
+        public org.omg.dds.domain.DomainParticipantFactory GetParticipantFactory()
         {
             return new DomainParticipantFactoryImpl(this.boostrap);
         }
 
-        public org.omg.dds.type.dynamic.DynamicTypeFactory getTypeFactory()
+        public org.omg.dds.type.dynamic.DynamicTypeFactory GetTypeFactory()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.dynamic.DynamicDataFactory getDataFactory()
+        public org.omg.dds.type.dynamic.DynamicDataFactory GetDataFactory()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.TypeSupport<TYPE> newTypeSupport<TYPE>(Type type, string registeredName)
+        public org.omg.dds.type.TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration, TimeUnit unit)
+        public org.omg.dds.core.modifiable.ModifiableDuration NewDuration(long duration, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
 
-        public Duration infiniteDuration()
+        public Duration InfiniteDuration()
         {
             throw new NotImplementedException();
         }
 
-        public Duration zeroDuration()
+        public Duration ZeroDuration()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time, TimeUnit units)
+        public org.omg.dds.core.modifiable.ModifiableTime NewTime(long time, TimeUnit units)
         {
             throw new NotImplementedException();
         }
 
-        public Time invalidTime()
+        public Time InvalidTime()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle newInstanceHandle()
+        public org.omg.dds.core.modifiable.ModifiableInstanceHandle NewInstanceHandle()
         {
             throw new NotImplementedException();
         }
@@ -85,137 +85,137 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public GuardCondition newGuardCondition()
+        public GuardCondition NewGuardCondition()
         {
             throw new NotImplementedException();
         }
 
-        public WaitSet newWaitSet()
+        public WaitSet NewWaitSet()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.BuiltinTopicKey newBuiltinTopicKey()
+        public org.omg.dds.topic.BuiltinTopicKey NewBuiltinTopicKey()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.ParticipantBuiltinTopicData newParticipantBuiltinTopicData()
+        public org.omg.dds.topic.ParticipantBuiltinTopicData NewParticipantBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.PublicationBuiltinTopicData newPublicationBuiltinTopicData()
+        public org.omg.dds.topic.PublicationBuiltinTopicData NewPublicationBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.SubscriptionBuiltinTopicData newSubscriptionBuiltinTopicData()
+        public org.omg.dds.topic.SubscriptionBuiltinTopicData NewSubscriptionBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.TopicBuiltinTopicData newTopicBuiltinTopicData()
+        public org.omg.dds.topic.TopicBuiltinTopicData NewTopicBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.QosPolicyId getQosPolicyId(Type policyClass)
+        public org.omg.dds.core.policy.QosPolicyId GetQosPolicyId(Type policyClass)
         {
             throw new NotImplementedException();
         }
 
-        public ISet<Type> allStatusKinds()
+        public ISet<Type> AllStatusKinds()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<Type> noStatusKinds()
+        public ISet<Type> NoStatusKinds()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.LivelinessLostStatus<TYPE> newLivelinessLostStatus<TYPE>()
+        public org.omg.dds.core.status.LivelinessLostStatus<TYPE> NewLivelinessLostStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.OfferedDeadlineMissedStatus<TYPE> newOfferedDeadlineMissedStatus<TYPE>()
+        public org.omg.dds.core.status.OfferedDeadlineMissedStatus<TYPE> NewOfferedDeadlineMissedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.OfferedIncompatibleQosStatus<TYPE> newOfferedIncompatibleQosStatus<TYPE>()
+        public org.omg.dds.core.status.OfferedIncompatibleQosStatus<TYPE> NewOfferedIncompatibleQosStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.PublicationMatchedStatus<TYPE> newPublicationMatchedStatus<TYPE>()
+        public org.omg.dds.core.status.PublicationMatchedStatus<TYPE> NewPublicationMatchedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.LivelinessChangedStatus<TYPE> newLivelinessChangedStatus<TYPE>()
+        public org.omg.dds.core.status.LivelinessChangedStatus<TYPE> NewLivelinessChangedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> newRequestedDeadlineMissedStatus<TYPE>()
+        public org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> NewRequestedDeadlineMissedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> newRequestedIncompatibleQosStatus<TYPE>()
+        public org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> NewRequestedIncompatibleQosStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SampleLostStatus<TYPE> newSampleLostStatus<TYPE>()
+        public org.omg.dds.core.status.SampleLostStatus<TYPE> NewSampleLostStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SampleRejectedStatus<TYPE> newSampleRejectedStatus<TYPE>()
+        public org.omg.dds.core.status.SampleRejectedStatus<TYPE> NewSampleRejectedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> newSubscriptionMatchedStatus<TYPE>()
+        public org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> NewSubscriptionMatchedStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.DataAvailableStatus<TYPE> newDataAvailableStatus<TYPE>()
+        public org.omg.dds.core.status.DataAvailableStatus<TYPE> NewDataAvailableStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.DataOnReadersStatus newDataOnReadersStatus()
+        public org.omg.dds.core.status.DataOnReadersStatus NewDataOnReadersStatus()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.InconsistentTopicStatus<TYPE> newInconsistentTopicStatus<TYPE>()
+        public org.omg.dds.core.status.InconsistentTopicStatus<TYPE> NewInconsistentTopicStatus<TYPE>()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<org.omg.dds.sub.InstanceState> anyInstanceStateSet()
+        public ISet<org.omg.dds.sub.InstanceState> AnyInstanceStateSet()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<org.omg.dds.sub.InstanceState> notAliveInstanceStateSet()
+        public ISet<org.omg.dds.sub.InstanceState> NotAliveInstanceStateSet()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<org.omg.dds.sub.SampleState> anySampleStateSet()
+        public ISet<org.omg.dds.sub.SampleState> AnySampleStateSet()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<org.omg.dds.sub.ViewState> anyViewStateSet()
+        public ISet<org.omg.dds.sub.ViewState> AnyViewStateSet()
         {
             throw new NotImplementedException();
         }

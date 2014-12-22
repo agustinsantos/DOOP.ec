@@ -40,7 +40,7 @@ namespace org.omg.dds.core.status
         public static RequestedIncompatibleQosStatus<TYPE>
         NewRequestedIncompatibleQosStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newRequestedIncompatibleQosStatus<TYPE>();
+            return bootstrap.GetSPI().NewRequestedIncompatibleQosStatus<TYPE>();
         }
 
 

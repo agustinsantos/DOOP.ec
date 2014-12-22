@@ -15,22 +15,22 @@ namespace Doopec.Dds.Pub
         private GroupDataQosPolicy groupDataQosPolicy = new GroupDataQosPolicyImpl();
         private EntityFactoryQosPolicy entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl();
 
-        public PresentationQosPolicy getPresentation()
+        public PresentationQosPolicy GetPresentation()
         {
             return presentationQosPolicy;
         }
 
-        public PartitionQosPolicy getPartition()
+        public PartitionQosPolicy GetPartition()
         {
             return partitionQosPolicy;
         }
 
-        public GroupDataQosPolicy getGroupData()
+        public GroupDataQosPolicy GetGroupData()
         {
             return groupDataQosPolicy;
         }
 
-        public EntityFactoryQosPolicy getEntityFactory()
+        public EntityFactoryQosPolicy GetEntityFactory()
         {
             return entityFactoryQosPolicy;
         }

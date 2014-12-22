@@ -38,89 +38,89 @@ namespace org.omg.dds.pub
         /// 
         /// </summary>
         /// <returns>The type parameter if this object's class.</returns>
-        System.Type getType();
+        System.Type GetType();
 
         /// <summary>
         /// Cast this data writer to the given type, or throw an exception if
-        /// the cast fails.
+        /// the Cast fails.
         /// </summary>
         /// <typeparam name="OTHER">The type of the data published by this writer,
         ///                         according to the caller</typeparam>
         /// <returns>This data writer</returns>
         /// <exception cref="ClassCastException"/>
-        DataWriter<OTHER> cast<OTHER>();
+        DataWriter<OTHER> Cast<OTHER>();
 
-        Topic<TYPE> getTopic();
+        Topic<TYPE> GetTopic();
 
-        void waitForAcknowledgments(Duration maxWait);
+        void WaitForAcknowledgments(Duration maxWait);
 
-        void waitForAcknowledgments(long maxWait, TimeUnit unit);
+        void WaitForAcknowledgments(long maxWait, TimeUnit unit);
 
-        LivelinessLostStatus<TYPE> getLivelinessLostStatus(LivelinessLostStatus<TYPE> status);
+        LivelinessLostStatus<TYPE> GetLivelinessLostStatus(LivelinessLostStatus<TYPE> status);
 
-        OfferedDeadlineMissedStatus<TYPE> getOfferedDeadlineMissedStatus(OfferedDeadlineMissedStatus<TYPE> status);
+        OfferedDeadlineMissedStatus<TYPE> GetOfferedDeadlineMissedStatus(OfferedDeadlineMissedStatus<TYPE> status);
 
-        OfferedIncompatibleQosStatus<TYPE> getOfferedIncompatibleQosStatus(OfferedIncompatibleQosStatus<TYPE> status);
+        OfferedIncompatibleQosStatus<TYPE> GetOfferedIncompatibleQosStatus(OfferedIncompatibleQosStatus<TYPE> status);
 
-        PublicationMatchedStatus<TYPE> getPublicationMatchedStatus(PublicationMatchedStatus<TYPE> status);
+        PublicationMatchedStatus<TYPE> GetPublicationMatchedStatus(PublicationMatchedStatus<TYPE> status);
 
-        void assertLiveliness();
+        void AssertLiveliness();
 
-        ICollection<InstanceHandle> getMatchedSubscriptions(ICollection<InstanceHandle> subscriptionHandles);
-        SubscriptionBuiltinTopicData getMatchedSubscriptionData(SubscriptionBuiltinTopicData subscriptionData,
+        ICollection<InstanceHandle> GetMatchedSubscriptions(ICollection<InstanceHandle> subscriptionHandles);
+        SubscriptionBuiltinTopicData GetMatchedSubscriptionData(SubscriptionBuiltinTopicData subscriptionData,
                InstanceHandle subscriptionHandle);
 
 
         // --- Type-specific interface: ------------------------------------------
-        InstanceHandle registerInstance(TYPE instanceData);
-        InstanceHandle registerInstance(TYPE instanceData,
+        InstanceHandle RegisterInstance(TYPE instanceData);
+        InstanceHandle RegisterInstance(TYPE instanceData,
                Time sourceTimestamp);
-        InstanceHandle registerInstance(TYPE instanceData,
+        InstanceHandle RegisterInstance(TYPE instanceData,
                long sourceTimestamp,
                TimeUnit unit);
 
-        void unregisterInstance(InstanceHandle handle);
-        void unregisterInstance(InstanceHandle handle,
+        void UnregisterInstance(InstanceHandle handle);
+        void UnregisterInstance(InstanceHandle handle,
                TYPE instanceData);
-        void unregisterInstance(InstanceHandle handle,
+        void UnregisterInstance(InstanceHandle handle,
                TYPE instanceData,
                Time sourceTimestamp);
-        void unregisterInstance(InstanceHandle handle,
+        void UnregisterInstance(InstanceHandle handle,
                TYPE instanceData,
                long sourceTimestamp,
                TimeUnit unit);
 
-        void write(TYPE instanceData);
-        void write(TYPE instanceData,
+        void Write(TYPE instanceData);
+        void Write(TYPE instanceData,
                Time sourceTimestamp);
-        void write(TYPE instanceData,
+        void Write(TYPE instanceData,
                long sourceTimestamp,
                TimeUnit unit);
-        void write(TYPE instanceData,
+        void Write(TYPE instanceData,
                InstanceHandle handle);
-        void write(TYPE instanceData,
+        void Write(TYPE instanceData,
                InstanceHandle handle,
                Time sourceTimestamp);
-        void write(TYPE instanceData,
+        void Write(TYPE instanceData,
                InstanceHandle handle,
                long sourceTimestamp,
                TimeUnit unit);
 
-        void dispose(InstanceHandle instanceHandle);
-        void dispose(InstanceHandle instanceHandle,
+        void Dispose(InstanceHandle instanceHandle);
+        void Dispose(InstanceHandle instanceHandle,
                TYPE instanceData);
-        void dispose(InstanceHandle instanceHandle,
+        void Dispose(InstanceHandle instanceHandle,
                TYPE instanceData,
                Time sourceTimestamp);
-        void dispose(InstanceHandle instanceHandle,
+        void Dispose(InstanceHandle instanceHandle,
                TYPE instanceData,
                long sourceTimestamp,
                TimeUnit unit);
 
-        TYPE getKeyValue(TYPE keyHolder,
+        TYPE GetKeyValue(TYPE keyHolder,
                InstanceHandle handle);
 
-        ModifiableInstanceHandle lookupInstance(ModifiableInstanceHandle handle,
+        ModifiableInstanceHandle LookupInstance(ModifiableInstanceHandle handle,
                TYPE keyHolder);
     }
 }

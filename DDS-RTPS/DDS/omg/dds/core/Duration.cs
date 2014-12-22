@@ -46,16 +46,16 @@ namespace org.omg.dds.core
         /// A duration of magnitude {@link Long#MAX_VALUE} indicates an infinite
         /// duration, regardless of the units specified.
         /// 
-        /// @see     #isInfinite()
-        /// @see     #infiniteDuration(Bootstrap)
+        /// @see     #IsInfinite()
+        /// @see     #InfiniteDuration(Bootstrap)
         /// </summary>
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static ModifiableDuration newDuration(long duration, TimeUnit unit, Bootstrap bootstrap)
+        public static ModifiableDuration NewDuration(long duration, TimeUnit unit, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newDuration(duration, unit);
+            return bootstrap.GetSPI().NewDuration(duration, unit);
         }
 
 
@@ -64,9 +64,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns>An unmodifiable {@link Duration} of infinite length</returns>
-        public static Duration infiniteDuration(Bootstrap bootstrap)
+        public static Duration InfiniteDuration(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().infiniteDuration();
+            return bootstrap.GetSPI().InfiniteDuration();
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns>A {@link Duration} of zero length</returns>
-        public static Duration zeroDuration(Bootstrap bootstrap)
+        public static Duration ZeroDuration(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().zeroDuration();
+            return bootstrap.GetSPI().ZeroDuration();
         }
 
 
@@ -99,16 +99,16 @@ namespace org.omg.dds.core
         /// If this duration cannot be expressed in the given units without
         /// overflowing, this method shall return {@link Long#MAX_VALUE}. In such
         /// a case, the caller may wish to use this method in combination with
-        /// {@link #getRemainder(TimeUnit, TimeUnit)} to obtain the full duration
+        /// {@link #GetRemainder(TimeUnit, TimeUnit)} to obtain the full duration
         /// without lack of precision.
         /// 
-        /// @see     #getRemainder(TimeUnit, TimeUnit)
+        /// @see     #GetRemainder(TimeUnit, TimeUnit)
         /// @see     Long#MAX_VALUE
         /// @see     TimeUnit
         /// </summary>
         /// <param name="inThisUnit">The time unit in which the return result will be measured</param>
         /// <returns></returns>
-        public abstract long getDuration(TimeUnit inThisUnit);
+        public abstract long GetDuration(TimeUnit inThisUnit);
 
         /// <summary>
         /// If getting the magnitude of this duration in the given
@@ -140,7 +140,7 @@ namespace org.omg.dds.core
         /// <param name="primaryUnit"></param>
         /// <param name="remainderUnit">The time unit in which the return result will be measured</param>
         /// <returns></returns>
-        public abstract long getRemainder(TimeUnit primaryUnit, TimeUnit remainderUnit);
+        public abstract long GetRemainder(TimeUnit primaryUnit, TimeUnit remainderUnit);
 
 
         // --- Query: ------------------------------------------------------------
@@ -153,7 +153,7 @@ namespace org.omg.dds.core
         /// @see     #GetDuration(TimeUnit)
         /// </summary>
         /// <returns></returns>
-        public abstract bool isZero();
+        public abstract bool IsZero();
 
         /// <summary>
         /// Report whether this duration lasts forever.
@@ -161,12 +161,12 @@ namespace org.omg.dds.core
         /// If this duration is infinite, the following relationship shall be
         /// true:
         /// 
-        /// <code>this.equals(infiniteDuration(this.GetBootstrap()))</code>
+        /// <code>this.equals(InfiniteDuration(this.GetBootstrap()))</code>
         /// 
-        /// @see     #infiniteDuration(Bootstrap)
+        /// @see     #InfiniteDuration(Bootstrap)
         /// </summary>
         /// <returns></returns>
-        public abstract bool isInfinite();
+        public abstract bool IsInfinite();
 
 
         // --- From Object: ------------------------------------------------------

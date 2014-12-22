@@ -31,7 +31,7 @@ namespace org.omg.dds.core.modifiable
     {
         /// <summary>
         /// Overwrite the value of the indicated policy with the given new value.
-        /// Subsequent calls to {@link #get(Object)} may return the given object
+        /// Subsequent calls to {@link #Get(Object)} may return the given object
         /// or a copy of it.
         /// 
         /// @throws  NullPointerException    if the given key or value is <code>null</code>.
@@ -43,7 +43,7 @@ namespace org.omg.dds.core.modifiable
         ///          applies to this <code>EntityQos</code>'s {@link Entity} or
         ///          <code>null</code> otherwise. If the returned object is not
         ///          <code>null</code>, changes to it will <em>not</em> be
-        ///          reflected by subsequent calls to {@link #get(Object)}.
+        ///          reflected by subsequent calls to {@link #Get(Object)}.
         /// </returns>
         POLICY put<POLICY>(QosPolicyId key, POLICY value) where POLICY : QosPolicy;
     }

@@ -41,7 +41,7 @@ namespace org.omg.dds.core.status
         public static SubscriptionMatchedStatus<TYPE>
         NewSubscriptionMatchedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newSubscriptionMatchedStatus<TYPE>();
+            return bootstrap.GetSPI().NewSubscriptionMatchedStatus<TYPE>();
         }
 
 

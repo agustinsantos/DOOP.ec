@@ -20,7 +20,7 @@ namespace Doopec.Rtps.Encoders
 
         public void Dispose(IoSession session)
         {
-            // nothing to dispose
+            // nothing to Dispose
         }
     }
 

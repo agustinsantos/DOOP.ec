@@ -39,7 +39,7 @@ namespace org.omg.dds.core.status
         public static InconsistentTopicStatus<TYPE>
         NewInconsistentTopicStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newInconsistentTopicStatus<TYPE>();
+            return bootstrap.GetSPI().NewInconsistentTopicStatus<TYPE>();
         }
 
 

@@ -39,12 +39,12 @@ namespace org.omg.dds.core.policy
     /// {@link DomainParticipant} supports different QosPolicy than a {@link Topic}
     /// or a {@link Publisher}.
     /// QosPolicy can be set when the Entity is created, or modified with the
-    /// {@link Entity#setQos(org.omg.dds.core.EntityQos)} method. Each QosPolicy
+    /// {@link Entity#SetQos(org.omg.dds.core.EntityQos)} method. Each QosPolicy
     /// in collection list is treated independently from the others. This approach
     /// has the advantage of being very extensible. However, there may be cases
     /// where several policies are in conflict. Consistency checking is performed
     /// each time the policies are modified via the
-    /// {@link Entity#setQos(org.omg.dds.core.EntityQos) }operation.
+    /// {@link Entity#SetQos(org.omg.dds.core.EntityQos) }operation.
     /// 
     /// When a policy is changed after being set to a given value, it is not
     /// required that the new value be applied instantaneously; the Service is
@@ -82,7 +82,7 @@ namespace org.omg.dds.core.policy
         /// <returns></returns>
         public static QosPolicyId GetId(System.Type policyClass, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getQosPolicyId(policyClass);
+            return bootstrap.GetSPI().GetQosPolicyId(policyClass);
         }
 
         // --- Instance Methods: ---------------------------------------------

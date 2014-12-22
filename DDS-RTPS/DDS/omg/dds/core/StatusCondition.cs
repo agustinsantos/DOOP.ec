@@ -35,15 +35,15 @@ namespace org.omg.dds.core
     public interface StatusCondition<ENTITY> : Condition
         where ENTITY : IEntity
     {
-        ICollection<Type> getEnabledStatuses(ICollection<Type> statuses);
+        ICollection<Type> GetEnabledStatuses(ICollection<Type> statuses);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="statuses">For which status changes the condition should trigger
         ///                        A null collection signifies all status changes</param>
-        void setEnabledStatuses(              ICollection<Type> statuses);
+        void SetEnabledStatuses(              ICollection<Type> statuses);
 
-        ENTITY getEntity();
+        ENTITY GetEntity();
     }
 }

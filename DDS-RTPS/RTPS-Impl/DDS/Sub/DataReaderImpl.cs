@@ -350,32 +350,32 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public Subscriber getParent()
+        public Subscriber GetParent()
         {
             throw new NotImplementedException();
         }
 
-        public DataReaderListener<TYPE> getListener()
+        public DataReaderListener<TYPE> GetListener()
         {
             throw new NotImplementedException();
         }
 
-        public void setListener(DataReaderListener<TYPE> listener)
+        public void SetListener(DataReaderListener<TYPE> listener)
         {
             throw new NotImplementedException();
         }
 
-        public DataReaderQos getQos()
+        public DataReaderQos GetQos()
         {
             throw new NotImplementedException();
         }
 
-        public void setQos(DataReaderQos qos)
+        public void SetQos(DataReaderQos qos)
         {
             throw new NotImplementedException();
         }
 
-        public void setQos(string qosLibraryName, string qosProfileName)
+        public void SetQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
@@ -385,17 +385,17 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.StatusCondition<DataReader<TYPE>> getStatusCondition()
+        public org.omg.dds.core.StatusCondition<DataReader<TYPE>> GetStatusCondition()
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses)
+        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.InstanceHandle getInstanceHandle()
+        public org.omg.dds.core.InstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }

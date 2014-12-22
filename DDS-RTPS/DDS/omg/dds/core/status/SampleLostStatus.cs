@@ -38,7 +38,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static SampleLostStatus<TYPE> NewSampleLostStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newSampleLostStatus<TYPE>();
+            return bootstrap.GetSPI().NewSampleLostStatus<TYPE>();
         }
 
 

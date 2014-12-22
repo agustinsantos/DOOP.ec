@@ -36,7 +36,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static DataOnReadersStatus NewDataOnReadersStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newDataOnReadersStatus();
+            return bootstrap.GetSPI().NewDataOnReadersStatus();
         }
 
 

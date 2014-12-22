@@ -43,8 +43,8 @@ namespace org.omg.dds.sub
         ///TODO how I comment a throw???
         /// <summary>
         /// Cast this data reader to the given type, or throw an exception if
-        /// the cast fails
-        /// @throws          ClassCastException if the cast fails
+        /// the Cast fails
+        /// @throws          ClassCastException if the Cast fails
         /// </summary>
         /// <typeparam name="OTHER">The type of the data subscribed to by this reader,
         ///                         according to the caller

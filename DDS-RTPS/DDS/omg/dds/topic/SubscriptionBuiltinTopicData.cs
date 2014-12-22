@@ -46,7 +46,7 @@ namespace org.omg.dds.topic
         public static SubscriptionBuiltinTopicData newSubscriptionBuiltinTopicData(
                 Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newSubscriptionBuiltinTopicData();
+            return bootstrap.GetSPI().NewSubscriptionBuiltinTopicData();
         }
 
 

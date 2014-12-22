@@ -38,7 +38,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static LivelinessChangedStatus<TYPE>        NewLivelinessChangedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newLivelinessChangedStatus<TYPE>();
+            return bootstrap.GetSPI().NewLivelinessChangedStatus<TYPE>();
         }
 
 

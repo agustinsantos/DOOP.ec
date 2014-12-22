@@ -44,17 +44,17 @@ namespace org.omg.dds.core
         /// Negative values are considered invalid and will result in the
         /// construction of a time <code>t</code> such that:
         /// 
-        /// <code>t.isValid() == false</code>
+        /// <code>t.IsValid() == false</code>
         /// 
-        /// @see     #isValid()
+        /// @see     #IsValid()
         /// </summary>
         /// <param name="time"></param>
         /// <param name="units"></param>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static ModifiableTime newTime(long time, TimeUnit units, Bootstrap bootstrap)
+        public static ModifiableTime NewTime(long time, TimeUnit units, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newTime(time, units);
+            return bootstrap.GetSPI().NewTime(time, units);
         }
 
 
@@ -63,9 +63,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns>An unmodifiable {@link Time} that is not valid</returns>
-        public static Time invalidTime(Bootstrap bootstrap)
+        public static Time InvalidTime(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().invalidTime();
+            return bootstrap.GetSPI().InvalidTime();
         }
 
 
@@ -89,17 +89,17 @@ namespace org.omg.dds.core
         /// If this time cannot be expressed in the given units without
         /// overflowing, this method shall return {@link Long#MAX_VALUE}. In such
         /// a case, the caller may wish to use this method in combination with
-        /// {@link #getRemainder(TimeUnit, TimeUnit)} to obtain the full time
+        /// {@link #GetRemainder(TimeUnit, TimeUnit)} to obtain the full time
         /// without lack of precision.
         /// 
-        /// @see     #getRemainder(TimeUnit, TimeUnit)
+        /// @see     #GetRemainder(TimeUnit, TimeUnit)
         /// @see     Long#MAX_VALUE
         /// @see     TimeUnit
         /// </summary>
         /// <param name="inThisUnit">The time unit in which the return result will
         ///                          be measured</param>
         /// <returns></returns>
-        public abstract long getTime(TimeUnit inThisUnit);
+        public abstract long GetTime(TimeUnit inThisUnit);
 
         /// <summary>
         /// If getting the magnitude of this time in the given
@@ -113,7 +113,7 @@ namespace org.omg.dds.core
         /// 
         /// This method is equivalent to the following pseudo-code:
         /// 
-        /// <code>(this - getTime(primaryUnit)).getTime(remainderUnit)</code>
+        /// <code>(this - GetTime(primaryUnit)).GetTime(remainderUnit)</code>
         /// 
         /// If <code>remainderUnit</code> is represents a coarser granularity than
         /// <code>primaryUnit</code> (for example, the former is
@@ -123,14 +123,14 @@ namespace org.omg.dds.core
         /// If the resulting time cannot be expressed in the given units
         /// without overflowing, this method shall return {@link Long#MAX_VALUE}.
         /// 
-        /// @see     #getTime(TimeUnit)
+        /// @see     #GetTime(TimeUnit)
         /// @see     Long#MAX_VALUE
         /// @see     TimeUnit
         /// </summary>
         /// <param name="primaryUnit"></param>
         /// <param name="remainderUnit">The time unit in which the return result will be measured</param>
         /// <returns></returns>
-        public abstract long getRemainder(TimeUnit primaryUnit, TimeUnit remainderUnit);
+        public abstract long GetRemainder(TimeUnit primaryUnit, TimeUnit remainderUnit);
 
 
         // --- Query: ------------------------------------------------------------
@@ -139,7 +139,7 @@ namespace org.omg.dds.core
         /// 
         /// </summary>
         /// <returns>Whether this time represents a meaningful instant in time</returns>
-        public abstract bool isValid();
+        public abstract bool IsValid();
 
 
         // --- From Object: ------------------------------------------------------

@@ -24,7 +24,7 @@ namespace Doopec.Dds.Pub
             datawriters = new System.Collections.ArrayList();
         }
 
-        public DataWriter<TYPE> createDataWriter<TYPE>(Topic<TYPE> topic)
+        public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic)
         {
             DataWriter<TYPE> dw = null;
             dw = new DataWriterImpl<TYPE>(this, topic);
@@ -32,187 +32,187 @@ namespace Doopec.Dds.Pub
             return dw;
         }
 
-        public DataWriter<TYPE> createDataWriter<TYPE>(Topic<TYPE> topic, DataWriterQos qos, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
+        public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic, DataWriterQos qos, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataWriter<TYPE> createDataWriter<TYPE>(Topic<TYPE> topic, string qosLibraryName, string qosProfileName, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
+        public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic, string qosLibraryName, string qosProfileName, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataWriter createBytesDataWriter(Topic<byte[]> topic)
+        public org.omg.dds.type.builtin.BytesDataWriter CreateBytesDataWriter(Topic<byte[]> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataWriter createBytesDataWriter(Topic<byte[]> topic, DataWriterQos qos, DataWriterListener<byte[]> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.BytesDataWriter CreateBytesDataWriter(Topic<byte[]> topic, DataWriterQos qos, DataWriterListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataWriter createBytesDataWriter(Topic<byte[]> topic, string qosLibraryName, string qosProfileName, DataWriterListener<byte[]> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.BytesDataWriter CreateBytesDataWriter(Topic<byte[]> topic, string qosLibraryName, string qosProfileName, DataWriterListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataWriter createKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic)
+        public org.omg.dds.type.builtin.KeyedBytesDataWriter CreateKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataWriter createKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic, DataWriterQos qos, DataWriterListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.KeyedBytesDataWriter CreateKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic, DataWriterQos qos, DataWriterListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataWriter createKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataWriterListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.KeyedBytesDataWriter CreateKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataWriterListener<org.omg.dds.type.builtin.KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataWriter createstringDataWriter(org.omg.dds.topic.Topic<string> topic)
+        public org.omg.dds.type.builtin.stringDataWriter CreatestringDataWriter(org.omg.dds.topic.Topic<string> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataWriter createstringDataWriter(org.omg.dds.topic.Topic<string> topic, DataWriterQos qos, DataWriterListener<string> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.stringDataWriter CreatestringDataWriter(org.omg.dds.topic.Topic<string> topic, DataWriterQos qos, DataWriterListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataWriter createstringDataWriter(org.omg.dds.topic.Topic<string> topic, string qosLibraryName, string qosProfileName, DataWriterListener<string> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.stringDataWriter CreatestringDataWriter(org.omg.dds.topic.Topic<string> topic, string qosLibraryName, string qosProfileName, DataWriterListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataWriter createKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic)
+        public org.omg.dds.type.builtin.KeyedstringDataWriter CreateKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataWriter createKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic, DataWriterQos qos, DataWriterListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.KeyedstringDataWriter CreateKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic, DataWriterQos qos, DataWriterListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataWriter createKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic, string qosLibraryName, string qosProfileName, DataWriterListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
+        public org.omg.dds.type.builtin.KeyedstringDataWriter CreateKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topic, string qosLibraryName, string qosProfileName, DataWriterListener<org.omg.dds.type.builtin.Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataWriter<TYPE> lookupDataWriter<TYPE>(string topicName)
+        public DataWriter<TYPE> LookupDataWriter<TYPE>(string topicName)
         {
             throw new NotImplementedException();
         }
 
-        public DataWriter<TYPE> lookupDataWriter<TYPE>(org.omg.dds.topic.Topic<TYPE> topicName)
+        public DataWriter<TYPE> LookupDataWriter<TYPE>(org.omg.dds.topic.Topic<TYPE> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.BytesDataWriter lookupBytesDataWriter(org.omg.dds.topic.Topic<byte[]> topicName)
+        public org.omg.dds.type.builtin.BytesDataWriter LookupBytesDataWriter(org.omg.dds.topic.Topic<byte[]> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedBytesDataWriter lookupKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topicName)
+        public org.omg.dds.type.builtin.KeyedBytesDataWriter LookupKeyedBytesDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.KeyedBytes> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.stringDataWriter lookupstringDataWriter(org.omg.dds.topic.Topic<string> topicName)
+        public org.omg.dds.type.builtin.stringDataWriter LookupstringDataWriter(org.omg.dds.topic.Topic<string> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.builtin.KeyedstringDataWriter lookupKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topicName)
+        public org.omg.dds.type.builtin.KeyedstringDataWriter LookupKeyedstringDataWriter(org.omg.dds.topic.Topic<org.omg.dds.type.builtin.Keyedstring> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public void closeContainedEntities()
+        public void CloseContainedEntities()
         {
             throw new NotImplementedException();
         }
 
-        public void suspendPublications()
+        public void SuspendPublications()
         {
             throw new NotImplementedException();
         }
 
-        public void resumePublications()
+        public void ResumePublications()
         {
             throw new NotImplementedException();
         }
 
-        public void beginCoherentChanges()
+        public void BeginCoherentChanges()
         {
             throw new NotImplementedException();
         }
 
-        public void endCoherentChanges()
+        public void EndCoherentChanges()
         {
             throw new NotImplementedException();
         }
 
-        public void waitForAcknowledgments(org.omg.dds.core.Duration maxWait)
+        public void WaitForAcknowledgments(org.omg.dds.core.Duration maxWait)
         {
             throw new NotImplementedException();
         }
 
-        public void waitForAcknowledgments(long maxWait,  TimeUnit unit)
+        public void WaitForAcknowledgments(long maxWait,  TimeUnit unit)
         {
             throw new NotImplementedException();
         }
 
-        public DataWriterQos getDefaultDataWriterQos()
+        public DataWriterQos GetDefaultDataWriterQos()
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultDataWriterQos(DataWriterQos qos)
+        public void SetDefaultDataWriterQos(DataWriterQos qos)
         {
             throw new NotImplementedException();
         }
 
-        public void setDefaultDataWriterQos(string qosLibraryName, string qosProfileName)
+        public void SetDefaultDataWriterQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
 
-        public void copyFromTopicQos(DataWriterQos dst, org.omg.dds.topic.TopicQos src)
+        public void CopyFromTopicQos(DataWriterQos dst, org.omg.dds.topic.TopicQos src)
         {
             throw new NotImplementedException();
         }
 
-        public DomainParticipant getParent()
+        public DomainParticipant GetParent()
         {
             return this.parent;
         }
 
-        public PublisherListener getListener()
+        public PublisherListener GetListener()
         {
             return this.listener;
         }
 
-        public void setListener(PublisherListener listener)
+        public void SetListener(PublisherListener listener)
         {
             this.listener = listener;
         }
 
-        public PublisherQos getQos()
+        public PublisherQos GetQos()
         {
             return this.qos;
         }
 
-        public void setQos(PublisherQos qos)
+        public void SetQos(PublisherQos qos)
         {
             this.qos = qos;
         }
 
-        public void setQos(string qosLibraryName, string qosProfileName)
+        public void SetQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
@@ -222,17 +222,17 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.StatusCondition<Publisher> getStatusCondition()
+        public org.omg.dds.core.StatusCondition<Publisher> GetStatusCondition()
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses)
+        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.InstanceHandle getInstanceHandle()
+        public org.omg.dds.core.InstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }

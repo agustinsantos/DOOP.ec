@@ -56,7 +56,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static ISet<Type> AllStatuses(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().allStatusKinds();
+            return bootstrap.GetSPI().AllStatusKinds();
         }
 
 
@@ -67,7 +67,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static ISet<Type> NoStatuses(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().noStatusKinds();
+            return bootstrap.GetSPI().NoStatusKinds();
         }
 
 

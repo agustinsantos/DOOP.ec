@@ -25,12 +25,12 @@ namespace org.omg.dds.pub
 
     public interface DataWriterListener<TYPE> : EventListener
     {
-        void onOfferedDeadlineMissed(OfferedDeadlineMissedStatus<TYPE> status);
+        void OnOfferedDeadlineMissed(OfferedDeadlineMissedStatus<TYPE> status);
 
-        void onOfferedIncompatibleQos(OfferedIncompatibleQosStatus<TYPE> status);
+        void OnOfferedIncompatibleQos(OfferedIncompatibleQosStatus<TYPE> status);
 
-        void onLivelinessLost(LivelinessLostStatus<TYPE> status);
+        void OnLivelinessLost(LivelinessLostStatus<TYPE> status);
 
-        void onPublicationMatched(PublicationMatchedStatus<TYPE> status);
+        void OnPublicationMatched(PublicationMatchedStatus<TYPE> status);
     }
 }

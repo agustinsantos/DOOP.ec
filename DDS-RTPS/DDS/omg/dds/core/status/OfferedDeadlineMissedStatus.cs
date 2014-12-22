@@ -37,7 +37,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static OfferedDeadlineMissedStatus<TYPE> NewOfferedDeadlineMissedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newOfferedDeadlineMissedStatus<TYPE>();
+            return bootstrap.GetSPI().NewOfferedDeadlineMissedStatus<TYPE>();
         }
 
 

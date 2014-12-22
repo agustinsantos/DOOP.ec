@@ -41,26 +41,26 @@ namespace org.omg.dds.core
         where QOS : EntityQos
     // TODO: Entity deberia ser IDisposable, no??. Comprobar esto 
     {
-        LISTENER getListener();
-        void setListener(LISTENER listener);
+        LISTENER GetListener();
+        void SetListener(LISTENER listener);
 
-        // TODO: Cambiar get/setListener por una propiedad llamada Listener 
+        // TODO: Cambiar Get/SetListener por una propiedad llamada Listener 
 #if TODO
         LISTENER Listener { get; set; }
 #endif
 
-        // TODO: Cambiar get/setQos por una propiedad llamada Qos 
+        // TODO: Cambiar Get/SetQos por una propiedad llamada Qos 
 #if TODO
         QOS Qos { get; set; }
 #endif
 
-        QOS getQos();
+        QOS GetQos();
 
         /// <summary>
         /// Set the QoS to that specified in the given QoS
         /// </summary>
         /// <param name="qos"></param>
-        void setQos(QOS qos);
+        void SetQos(QOS qos);
 
         /// <summary>
         /// Set the QoS to that specified in the given QoS profile in the given
@@ -68,18 +68,18 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="qosLibraryName"></param>
         /// <param name="qosProfileName"></param>
-        void setQos(string qosLibraryName, string qosProfileName);
+        void SetQos(string qosLibraryName, string qosProfileName);
 
         void Enable();
 
-        StatusCondition<SELF> getStatusCondition();
+        StatusCondition<SELF> GetStatusCondition();
 
-        ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses);
+        ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses);
 
-        InstanceHandle getInstanceHandle();
+        InstanceHandle GetInstanceHandle();
 
         /// <summary>
-        /// Halt communication and dispose the resources held by this entity.
+        /// Halt communication and Dispose the resources held by this entity.
         /// </summary>
         void Close();
 

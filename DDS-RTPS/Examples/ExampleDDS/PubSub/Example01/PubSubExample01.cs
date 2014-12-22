@@ -19,7 +19,7 @@ namespace ExampleDDS.PubSubExamples
         {
             base.RunExample(args);
 
-            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
@@ -27,7 +27,7 @@ namespace ExampleDDS.PubSubExamples
 
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
-            DataWriter<Greeting> dw = pub.createDataWriter(tp);
+            DataWriter<Greeting> dw = pub.CreateDataWriter(tp);
 
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
@@ -40,7 +40,7 @@ namespace ExampleDDS.PubSubExamples
             // Now Publish some piece of data
             Greeting data = new Greeting("Hello, World with DDS");
             log.InfoFormat("Sending data:\"{0}\"", data.Value);
-            dw.write(data);
+            dw.Write(data);
 
             //and check that the reader has this data
             dr.waitForHistoricalData(10, TimeUnit.SECONDS);
@@ -59,7 +59,7 @@ namespace ExampleDDS.PubSubExamples
                 foreach (Sample<Greeting> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
-                    // InstanceHandle inst = smp.getInstanceHandle();
+                    // InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
                     Greeting dt = smp.getData();
                     log.InfoFormat("Received data:\"{0}\"", dt.Value);

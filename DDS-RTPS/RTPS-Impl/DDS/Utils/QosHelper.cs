@@ -315,7 +315,7 @@ namespace Doopec.DDS.Utils
             // Note that it doesn't make much sense for users to set
             // durations less than 10 milliseconds since the underlying
             // timer resolution is generally no better than that.
-            return t.isInfinite() || t.getDuration(TimeUnit.MILLISECONDS) > 0;
+            return t.IsInfinite() || t.GetDuration(TimeUnit.MILLISECONDS) > 0;
         }
     }
 }

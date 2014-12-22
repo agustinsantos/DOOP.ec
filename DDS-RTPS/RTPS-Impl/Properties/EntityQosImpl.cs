@@ -11,7 +11,7 @@ namespace Doopec.DDS.Core
         where UNMOD_SELF : EntityQos<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
-        public POLICY get<POLICY>(org.omg.dds.core.policy.QosPolicyId id) where POLICY : org.omg.dds.core.policy.QosPolicy
+        public POLICY Get<POLICY>(org.omg.dds.core.policy.QosPolicyId id) where POLICY : org.omg.dds.core.policy.QosPolicy
         {
             throw new NotImplementedException();
         }

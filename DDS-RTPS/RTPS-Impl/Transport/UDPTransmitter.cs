@@ -37,7 +37,7 @@ namespace Doopec.Utils.Transport
         /// Constructor for UDPTransmitter.
         /// </summary>
         /// <param name="locator">Locator where the messages will be sent.</param>
-        /// <param name="bufferSize">Size of the buffer that will be used to write messages.</param>
+        /// <param name="bufferSize">Size of the buffer that will be used to Write messages.</param>
         public UDPTransmitter(Locator locator, int bufferSize)
         {
             this.locator = locator;

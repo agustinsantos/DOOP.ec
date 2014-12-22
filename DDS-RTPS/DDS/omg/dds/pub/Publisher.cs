@@ -38,7 +38,7 @@ namespace org.omg.dds.pub
     {
         // --- Create (any) DataWriter: ------------------------------------------
 
-        DataWriter<TYPE> createDataWriter<TYPE>(
+        DataWriter<TYPE> CreateDataWriter<TYPE>(
                Topic<TYPE> topic);
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        DataWriter<TYPE> createDataWriter<TYPE>(
+        DataWriter<TYPE> CreateDataWriter<TYPE>(
                Topic<TYPE> topic,
                DataWriterQos qos,
                DataWriterListener<TYPE> listener,
@@ -70,7 +70,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        DataWriter<TYPE> createDataWriter<TYPE>(
+        DataWriter<TYPE> CreateDataWriter<TYPE>(
                Topic<TYPE> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -80,7 +80,7 @@ namespace org.omg.dds.pub
 
         // --- Create DataWriter for built-in bytes type: ------------------------
 
-        BytesDataWriter createBytesDataWriter(
+        BytesDataWriter CreateBytesDataWriter(
                Topic<byte[]> topic);
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        BytesDataWriter createBytesDataWriter(
+        BytesDataWriter CreateBytesDataWriter(
                Topic<byte[]> topic,
                DataWriterQos qos,
                DataWriterListener<byte[]> listener,
@@ -110,7 +110,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        BytesDataWriter createBytesDataWriter(
+        BytesDataWriter CreateBytesDataWriter(
                Topic<byte[]> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -120,7 +120,7 @@ namespace org.omg.dds.pub
 
         // --- Create DataWriter for built-in KeyedBytes type: -------------------
 
-        KeyedBytesDataWriter createKeyedBytesDataWriter(
+        KeyedBytesDataWriter CreateKeyedBytesDataWriter(
                Topic<KeyedBytes> topic);
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        KeyedBytesDataWriter createKeyedBytesDataWriter(
+        KeyedBytesDataWriter CreateKeyedBytesDataWriter(
                Topic<KeyedBytes> topic,
                DataWriterQos qos,
                DataWriterListener<KeyedBytes> listener,
@@ -150,7 +150,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        KeyedBytesDataWriter createKeyedBytesDataWriter(
+        KeyedBytesDataWriter CreateKeyedBytesDataWriter(
                Topic<KeyedBytes> topic,
                string qosLibraryName,
                string qosProfileName,
@@ -160,7 +160,7 @@ namespace org.omg.dds.pub
 
         // --- Create DataWriter for built-in string type: -----------------------
 
-        stringDataWriter createstringDataWriter(
+        stringDataWriter CreatestringDataWriter(
                Topic<string> topic);
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        stringDataWriter createstringDataWriter(
+        stringDataWriter CreatestringDataWriter(
                Topic<string> topic,
                DataWriterQos qos,
                DataWriterListener<string> listener,
@@ -190,7 +190,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        stringDataWriter createstringDataWriter(Topic<string> topic,
+        stringDataWriter CreatestringDataWriter(Topic<string> topic,
                string qosLibraryName,
                string qosProfileName,
                DataWriterListener<string> listener,
@@ -199,7 +199,7 @@ namespace org.omg.dds.pub
 
         // --- Create DataWriter for built-in Keyedstring type: ------------------
 
-        KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic);
+        KeyedstringDataWriter CreateKeyedstringDataWriter(Topic<Keyedstring> topic);
 
         /// <summary>
         /// Create a new data writer
@@ -211,7 +211,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic,
+        KeyedstringDataWriter CreateKeyedstringDataWriter(Topic<Keyedstring> topic,
               DataWriterQos qos,
               DataWriterListener<Keyedstring> listener,
               ICollection<Type> statuses);
@@ -227,7 +227,7 @@ namespace org.omg.dds.pub
         ///                        notified. A null collection signifies all status
         ///                        changes</param>
         /// <returns></returns>
-        KeyedstringDataWriter createKeyedstringDataWriter(Topic<Keyedstring> topic,
+        KeyedstringDataWriter CreateKeyedstringDataWriter(Topic<Keyedstring> topic,
               string qosLibraryName,
               string qosProfileName,
               DataWriterListener<Keyedstring> listener,
@@ -236,37 +236,37 @@ namespace org.omg.dds.pub
 
         // --- Lookup operations: ------------------------------------------------
 
-        DataWriter<TYPE> lookupDataWriter<TYPE>(string topicName);
-        DataWriter<TYPE> lookupDataWriter<TYPE>(Topic<TYPE> topicName);
+        DataWriter<TYPE> LookupDataWriter<TYPE>(string topicName);
+        DataWriter<TYPE> LookupDataWriter<TYPE>(Topic<TYPE> topicName);
 
-        BytesDataWriter lookupBytesDataWriter(Topic<byte[]> topicName);
-        KeyedBytesDataWriter lookupKeyedBytesDataWriter(
+        BytesDataWriter LookupBytesDataWriter(Topic<byte[]> topicName);
+        KeyedBytesDataWriter LookupKeyedBytesDataWriter(
               Topic<KeyedBytes> topicName);
-        stringDataWriter lookupstringDataWriter(Topic<string> topicName);
-        KeyedstringDataWriter lookupKeyedstringDataWriter(
+        stringDataWriter LookupstringDataWriter(Topic<string> topicName);
+        KeyedstringDataWriter LookupKeyedstringDataWriter(
               Topic<Keyedstring> topicName);
 
 
         // --- Other operations: -------------------------------------------------
 
-        void closeContainedEntities();
+        void CloseContainedEntities();
 
-        void suspendPublications();
-        void resumePublications();
+        void SuspendPublications();
+        void ResumePublications();
 
-        void beginCoherentChanges();
-        void endCoherentChanges();
+        void BeginCoherentChanges();
+        void EndCoherentChanges();
 
-        void waitForAcknowledgments(Duration maxWait);
+        void WaitForAcknowledgments(Duration maxWait);
 
-        void waitForAcknowledgments(long maxWait, TimeUnit unit);
+        void WaitForAcknowledgments(long maxWait, TimeUnit unit);
 
-        DataWriterQos getDefaultDataWriterQos();
-        void setDefaultDataWriterQos(DataWriterQos qos);
-        void setDefaultDataWriterQos(
+        DataWriterQos GetDefaultDataWriterQos();
+        void SetDefaultDataWriterQos(DataWriterQos qos);
+        void SetDefaultDataWriterQos(
               string qosLibraryName,
               string qosProfileName);
 
-        void copyFromTopicQos(DataWriterQos dst, TopicQos src);
+        void CopyFromTopicQos(DataWriterQos dst, TopicQos src);
     }
 }

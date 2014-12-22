@@ -21,7 +21,7 @@ namespace ExampleDDS.DiscoveryExamples
         {
             base.RunExample(args);
 
-            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant();
 
 
@@ -32,8 +32,8 @@ namespace ExampleDDS.DiscoveryExamples
 
            // // Create the publisher
            // Publisher pub = dp.CreatePublisher();
-           // DataWriter<SPDPdiscoveredParticipantData> dw = pub.createDataWriter(tp);
-           //// dw.write(data);
+           // DataWriter<SPDPdiscoveredParticipantData> dw = pub.CreateDataWriter(tp);
+           //// dw.Write(data);
 
             Thread.Sleep(100*1000);
             dp.Close();

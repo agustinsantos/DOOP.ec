@@ -42,7 +42,7 @@ namespace org.omg.dds.topic
         /// <returns></returns>
         public static BuiltinTopicKey newBuiltinTopicKey(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newBuiltinTopicKey();
+            return bootstrap.GetSPI().NewBuiltinTopicKey();
         }
 
 

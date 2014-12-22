@@ -33,7 +33,7 @@ namespace org.omg.dds.domain.modifiable
         /// </summary>
         /// <param name="entityFactory">The entityFactory to set</param>
         /// <returns>this</returns>
-        ModifiableDomainParticipantFactoryQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
+        ModifiableDomainParticipantFactoryQos SetEntityFactory(EntityFactoryQosPolicy entityFactory);
 
   
     }

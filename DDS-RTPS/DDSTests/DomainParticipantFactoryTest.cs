@@ -11,7 +11,7 @@ namespace DDSTests
         [TestMethod]
         public void TestGetInstance()
         {
-            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
 
             Assert.IsNotNull(factory);
             Assert.AreEqual(typeof(Doopec.Dds.Domain.DomainParticipantFactoryImpl), factory.GetType());

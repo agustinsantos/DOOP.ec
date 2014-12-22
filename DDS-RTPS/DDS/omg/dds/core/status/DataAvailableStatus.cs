@@ -37,7 +37,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static DataAvailableStatus<TYPE> NewDataAvailableStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newDataAvailableStatus<TYPE>();
+            return bootstrap.GetSPI().NewDataAvailableStatus<TYPE>();
         }
 
 

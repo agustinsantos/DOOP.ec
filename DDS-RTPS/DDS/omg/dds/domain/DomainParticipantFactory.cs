@@ -28,7 +28,7 @@ namespace org.omg.dds.domain
     /// The sole purpose of this class is to allow the creation and destruction of
     ///  {@link DomainParticipant} objects. DomainParticipantFactory itself has no
     ///  factory. It is a pre-existing per-{@link Bootstrap} singleton object that
-    ///  can be accessed by means of the {@link #getInstance(Bootstrap)} operation
+    ///  can be accessed by means of the {@link #GetInstance(Bootstrap)} operation
     ///  on the DomainParticipantFactory.
     /// </summary>
     public abstract class DomainParticipantFactory : DDSObject
@@ -39,9 +39,9 @@ namespace org.omg.dds.domain
         /// <param name="bootstrap">Identifies the Service instance to which the
         ///                         object will belong</param>
         /// <returns></returns>
-        public static DomainParticipantFactory getInstance(Bootstrap bootstrap)
+        public static DomainParticipantFactory GetInstance(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getParticipantFactory();
+            return bootstrap.GetSPI().GetParticipantFactory();
         }
 
 
@@ -105,7 +105,7 @@ namespace org.omg.dds.domain
 
         public abstract DomainParticipantFactoryQos Qos {get ; set; }
 
-        public abstract DomainParticipantQos getDefaultParticipantQos();
+        public abstract DomainParticipantQos GetDefaultParticipantQos();
 
         public abstract void SetDefaultParticipantQos(DomainParticipantQos qos);
 

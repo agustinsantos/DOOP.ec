@@ -40,7 +40,7 @@ namespace org.omg.dds.core.status
         public static RequestedDeadlineMissedStatus<TYPE>
         NewRequestedDeadlineMissedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newRequestedDeadlineMissedStatus<TYPE>();
+            return bootstrap.GetSPI().NewRequestedDeadlineMissedStatus<TYPE>();
         }
 
 

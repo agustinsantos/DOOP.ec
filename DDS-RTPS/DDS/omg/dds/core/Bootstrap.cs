@@ -287,7 +287,7 @@ namespace org.omg.dds.core
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        public abstract ServiceProviderInterface getSPI();
+        public abstract ServiceProviderInterface GetSPI();
 
 
         // --- From DDSObject: ---------------------------------------------------
@@ -312,11 +312,11 @@ namespace org.omg.dds.core
         {
             // --- Singleton factories: ------------------------------------------
 
-            DomainParticipantFactory getParticipantFactory();
+            DomainParticipantFactory GetParticipantFactory();
 
-            DynamicTypeFactory getTypeFactory();
+            DynamicTypeFactory GetTypeFactory();
 
-            DynamicDataFactory getDataFactory();
+            DynamicDataFactory GetDataFactory();
 
 
             // --- Types: --------------------------------------------------------
@@ -347,7 +347,7 @@ namespace org.omg.dds.core
             ///          subsequently be used to create one or more
             ///          {@link org.omg.dds.topic.Topic}s
             /// </returns>
-            TypeSupport<TYPE> newTypeSupport<TYPE>(Type type, string registeredName);
+            TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName);
 
 
             // --- Time & Duration: ----------------------------------------------
@@ -362,19 +362,19 @@ namespace org.omg.dds.core
             /// <param name="duration"></param>
             /// <param name="unit"></param>
             /// <returns></returns>
-            ModifiableDuration newDuration(long duration, TimeUnit unit);
+            ModifiableDuration NewDuration(long duration, TimeUnit unit);
 
             /// <summary>
             /// 
             /// </summary>
             /// <returns>A {@link Duration} of infinite length</returns>
-            Duration infiniteDuration();
+            Duration InfiniteDuration();
 
             /// <summary>
             /// 
             /// </summary>
             /// <returns>A {@link Duration} of zero length</returns>
-            Duration zeroDuration();
+            Duration ZeroDuration();
 
             /// <summary>
             /// Construct a specific instant in time.
@@ -382,94 +382,94 @@ namespace org.omg.dds.core
             /// Negative values are considered invalid and will result in the
             /// construction of a time <code>t</code> such that:
             /// 
-            /// <code>t.isValid() == false</code>
+            /// <code>t.IsValid() == false</code>
             /// </summary>
             /// <param name="time"></param>
             /// <param name="units"></param>
             /// <returns></returns>
-            ModifiableTime newTime(long time, TimeUnit units);
+            ModifiableTime NewTime(long time, TimeUnit units);
 
             /// <summary>
             /// 
             /// </summary>
             /// <returns>A {@link Time} that is not valid</returns>
-            Time invalidTime();
+            Time InvalidTime();
 
 
             // --- Instance handle: ----------------------------------------------
 
-            ModifiableInstanceHandle newInstanceHandle();
+            ModifiableInstanceHandle NewInstanceHandle();
 
             InstanceHandle nilHandle();
 
 
             // --- Conditions & WaitSet: -----------------------------------------
 
-            GuardCondition newGuardCondition();
+            GuardCondition NewGuardCondition();
 
-            WaitSet newWaitSet();
+            WaitSet NewWaitSet();
 
 
             // --- Built-in topics: ----------------------------------------------
 
-            BuiltinTopicKey newBuiltinTopicKey();
+            BuiltinTopicKey NewBuiltinTopicKey();
 
-            ParticipantBuiltinTopicData newParticipantBuiltinTopicData();
+            ParticipantBuiltinTopicData NewParticipantBuiltinTopicData();
 
-            PublicationBuiltinTopicData newPublicationBuiltinTopicData();
+            PublicationBuiltinTopicData NewPublicationBuiltinTopicData();
 
-            SubscriptionBuiltinTopicData newSubscriptionBuiltinTopicData();
+            SubscriptionBuiltinTopicData NewSubscriptionBuiltinTopicData();
 
-            TopicBuiltinTopicData newTopicBuiltinTopicData();
+            TopicBuiltinTopicData NewTopicBuiltinTopicData();
 
 
             // --- QoS: ----------------------------------------------------------
 
-            QosPolicyId getQosPolicyId(Type policyClass);
+            QosPolicyId GetQosPolicyId(Type policyClass);
 
 
             // --- Status: -------------------------------------------------------
 
-            ISet<Type> allStatusKinds();
+            ISet<Type> AllStatusKinds();
 
-            ISet<Type> noStatusKinds();
+            ISet<Type> NoStatusKinds();
 
-            LivelinessLostStatus<TYPE> newLivelinessLostStatus<TYPE>();
+            LivelinessLostStatus<TYPE> NewLivelinessLostStatus<TYPE>();
 
-            OfferedDeadlineMissedStatus<TYPE> newOfferedDeadlineMissedStatus<TYPE>();
+            OfferedDeadlineMissedStatus<TYPE> NewOfferedDeadlineMissedStatus<TYPE>();
 
-            OfferedIncompatibleQosStatus<TYPE> newOfferedIncompatibleQosStatus<TYPE>();
+            OfferedIncompatibleQosStatus<TYPE> NewOfferedIncompatibleQosStatus<TYPE>();
 
-            PublicationMatchedStatus<TYPE> newPublicationMatchedStatus<TYPE>();
+            PublicationMatchedStatus<TYPE> NewPublicationMatchedStatus<TYPE>();
 
-            LivelinessChangedStatus<TYPE> newLivelinessChangedStatus<TYPE>();
+            LivelinessChangedStatus<TYPE> NewLivelinessChangedStatus<TYPE>();
 
-            RequestedDeadlineMissedStatus<TYPE> newRequestedDeadlineMissedStatus<TYPE>();
+            RequestedDeadlineMissedStatus<TYPE> NewRequestedDeadlineMissedStatus<TYPE>();
 
-            RequestedIncompatibleQosStatus<TYPE> newRequestedIncompatibleQosStatus<TYPE>();
+            RequestedIncompatibleQosStatus<TYPE> NewRequestedIncompatibleQosStatus<TYPE>();
 
-            SampleLostStatus<TYPE> newSampleLostStatus<TYPE>();
+            SampleLostStatus<TYPE> NewSampleLostStatus<TYPE>();
 
-            SampleRejectedStatus<TYPE> newSampleRejectedStatus<TYPE>();
+            SampleRejectedStatus<TYPE> NewSampleRejectedStatus<TYPE>();
 
-            SubscriptionMatchedStatus<TYPE> newSubscriptionMatchedStatus<TYPE>();
+            SubscriptionMatchedStatus<TYPE> NewSubscriptionMatchedStatus<TYPE>();
 
-            DataAvailableStatus<TYPE> newDataAvailableStatus<TYPE>();
+            DataAvailableStatus<TYPE> NewDataAvailableStatus<TYPE>();
 
-            DataOnReadersStatus newDataOnReadersStatus();
+            DataOnReadersStatus NewDataOnReadersStatus();
 
-            InconsistentTopicStatus<TYPE> newInconsistentTopicStatus<TYPE>();
+            InconsistentTopicStatus<TYPE> NewInconsistentTopicStatus<TYPE>();
 
 
             // --- Sample & Instance Life Cycle: ---------------------------------
 
-            ISet<InstanceState> anyInstanceStateSet();
+            ISet<InstanceState> AnyInstanceStateSet();
 
-            ISet<InstanceState> notAliveInstanceStateSet();
+            ISet<InstanceState> NotAliveInstanceStateSet();
 
-            ISet<SampleState> anySampleStateSet();
+            ISet<SampleState> AnySampleStateSet();
 
-            ISet<ViewState> anyViewStateSet();
+            ISet<ViewState> AnyViewStateSet();
         }
     }
 }

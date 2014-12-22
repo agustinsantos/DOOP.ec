@@ -38,14 +38,14 @@ namespace Doopec.Dds.Domain
         public override DomainParticipant CreateParticipant()
         {
             int domainId = config.DefaultDomainId;
-            DomainParticipantQos qos = this.getDefaultParticipantQos();
+            DomainParticipantQos qos = this.GetDefaultParticipantQos();
 
             return this.CreateParticipant(domainId, qos, null, null);
         }
 
         public override DomainParticipant CreateParticipant(int domainId)
         {
-            DomainParticipantQos qos = this.getDefaultParticipantQos();
+            DomainParticipantQos qos = this.GetDefaultParticipantQos();
 
             return this.CreateParticipant(domainId, qos, null, null);
         }
@@ -88,7 +88,7 @@ namespace Doopec.Dds.Domain
         }
 
 
-        public override DomainParticipantQos getDefaultParticipantQos()
+        public override DomainParticipantQos GetDefaultParticipantQos()
         {
             return this.default_participant_qos_;
         }

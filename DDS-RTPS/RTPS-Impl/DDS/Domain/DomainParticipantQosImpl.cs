@@ -25,12 +25,12 @@ namespace Doopec.DDS.Domain
             this.entityFactoryQosPolicy = entityFactoryQosPolicy;
         }
 
-        public UserDataQosPolicy getUserData()
+        public UserDataQosPolicy GetUserData()
         {
             return userData;
         }
 
-        public EntityFactoryQosPolicy getEntityFactory()
+        public EntityFactoryQosPolicy GetEntityFactory()
         {
             return entityFactoryQosPolicy;
         }

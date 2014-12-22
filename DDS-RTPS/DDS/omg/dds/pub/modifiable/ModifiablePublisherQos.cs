@@ -32,7 +32,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="presentation">The presentation to set</param>
         /// <returns>this</returns>
-        ModifiablePublisherQos setPresentation(
+        ModifiablePublisherQos SetPresentation(
               PresentationQosPolicy presentation);
 
         /// <summary>
@@ -40,21 +40,21 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="partition">The partition to set</param>
         /// <returns>this</returns>
-        ModifiablePublisherQos setPartition(PartitionQosPolicy partition);
+        ModifiablePublisherQos SetPartition(PartitionQosPolicy partition);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="groupData">The groupData to set</param>
         /// <returns>this</returns>
-        ModifiablePublisherQos setGroupData(GroupDataQosPolicy groupData);
+        ModifiablePublisherQos SetGroupData(GroupDataQosPolicy groupData);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entityFactory">The entityFactory to set</param>
         /// <returns>this</returns>
-        ModifiablePublisherQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
+        ModifiablePublisherQos SetEntityFactory(EntityFactoryQosPolicy entityFactory);
 
     }
 }

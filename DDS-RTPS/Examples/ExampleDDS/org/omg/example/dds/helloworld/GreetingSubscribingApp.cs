@@ -35,7 +35,7 @@ namespace org.omg.example.dds.helloworld
         public static void RunExample(string[] args)
         {
             Bootstrap bstp = Bootstrap.CreateInstance();
-            DomainParticipant dp = DomainParticipantFactory.getInstance(bstp).CreateParticipant();
+            DomainParticipant dp = DomainParticipantFactory.GetInstance(bstp).CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
             Topic<Greeting> tp = dp.CreateTopic<Greeting>("My Topic");

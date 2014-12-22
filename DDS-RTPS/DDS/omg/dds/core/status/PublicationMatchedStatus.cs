@@ -38,7 +38,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static PublicationMatchedStatus<TYPE> NewPublicationMatchedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newPublicationMatchedStatus<TYPE>();
+            return bootstrap.GetSPI().NewPublicationMatchedStatus<TYPE>();
         }
 
 

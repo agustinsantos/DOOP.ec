@@ -31,7 +31,7 @@ namespace org.omg.dds.core
     /// The purpose of the GuardCondition is to provide the means for the
     /// application to manually wake up a {@link WaitSet}. This is accomplished by
     /// attaching the GuardCondition to the WaitSet and then setting the
-    /// triggerValue by means of the {@link #setTriggerValue(bool)} operation.
+    /// triggerValue by means of the {@link #SetTriggerValue(bool)} operation.
     /// </summary>
     public abstract class GuardCondition : Condition
     {
@@ -44,9 +44,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static GuardCondition newGuardCondition(Bootstrap bootstrap)
+        public static GuardCondition NewGuardCondition(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newGuardCondition();
+            return bootstrap.GetSPI().NewGuardCondition();
         }
 
 
@@ -55,9 +55,9 @@ namespace org.omg.dds.core
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        public abstract void setTriggerValue(bool value);
+        public abstract void SetTriggerValue(bool value);
 
-        public abstract bool getTriggerValue();
+        public abstract bool GetTriggerValue();
 
         public abstract Bootstrap GetBootstrap();
     }

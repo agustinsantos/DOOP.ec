@@ -30,25 +30,25 @@ namespace org.omg.dds.pub
         /// 
         /// </summary>
         /// <returns>The presentation</returns>
-        PresentationQosPolicy getPresentation();
+        PresentationQosPolicy GetPresentation();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The partition</returns>
-        PartitionQosPolicy getPartition();
+        PartitionQosPolicy GetPartition();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The groupData</returns>
-        GroupDataQosPolicy getGroupData();
+        GroupDataQosPolicy GetGroupData();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The entityFactory</returns>
-        EntityFactoryQosPolicy getEntityFactory();
+        EntityFactoryQosPolicy GetEntityFactory();
 
     }
 }

@@ -46,7 +46,7 @@ namespace org.omg.dds.topic
         public static PublicationBuiltinTopicData newPublicationBuiltinTopicData(
                 Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newPublicationBuiltinTopicData();
+            return bootstrap.GetSPI().NewPublicationBuiltinTopicData();
         }
 
 

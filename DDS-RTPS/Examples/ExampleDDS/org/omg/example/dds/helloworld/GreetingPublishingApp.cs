@@ -31,7 +31,7 @@ namespace org.omg.example.dds.helloworld
     {
         public static void RunExample(string[] args)
         {
-            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
@@ -47,11 +47,11 @@ namespace org.omg.example.dds.helloworld
             //         ctx.createTypeSupport(Greeting.class, "MyType"));
 
             Publisher pub = dp.CreatePublisher();
-            DataWriter<Greeting> dw = pub.createDataWriter(tp);
+            DataWriter<Greeting> dw = pub.CreateDataWriter(tp);
 
             try
             {
-                dw.write(new Greeting("Hello, World"));
+                dw.Write(new Greeting("Hello, World"));
             }
             catch (Exception tx)
             {

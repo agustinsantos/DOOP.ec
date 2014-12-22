@@ -10,7 +10,7 @@ namespace Doopec.Dds.Topic
 {
     public class TopicBuiltinTopicDataImpl : TopicBuiltinTopicData
     {
-        protected static readonly ReliabilityQosPolicy reliabilityQosPolicy = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, Duration.newDuration(200, TimeUnit.MILLISECONDS, null));
+        protected static readonly ReliabilityQosPolicy reliabilityQosPolicy = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, Duration.NewDuration(200, TimeUnit.MILLISECONDS, null));
 
         protected BuiltinTopicKey key;
         protected string topicName;

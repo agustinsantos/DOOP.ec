@@ -258,27 +258,27 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public DomainParticipantListener getListener()
+        public DomainParticipantListener GetListener()
         {
             throw new NotImplementedException();
         }
 
-        public void setListener(DomainParticipantListener listener)
+        public void SetListener(DomainParticipantListener listener)
         {
             throw new NotImplementedException();
         }
 
-        public DomainParticipantQos getQos()
+        public DomainParticipantQos GetQos()
         {
             throw new NotImplementedException();
         }
 
-        public void setQos(DomainParticipantQos qos)
+        public void SetQos(DomainParticipantQos qos)
         {
             throw new NotImplementedException();
         }
 
-        public void setQos(string qosLibraryName, string qosProfileName)
+        public void SetQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
@@ -288,17 +288,17 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public StatusCondition<DomainParticipant> getStatusCondition()
+        public StatusCondition<DomainParticipant> GetStatusCondition()
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses)
+        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public InstanceHandle getInstanceHandle()
+        public InstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }

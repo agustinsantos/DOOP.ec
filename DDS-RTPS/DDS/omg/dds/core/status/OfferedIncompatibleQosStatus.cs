@@ -39,7 +39,7 @@ namespace org.omg.dds.core.status
         public static OfferedIncompatibleQosStatus<TYPE>
         NewOfferedIncompatibleQosStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newOfferedIncompatibleQosStatus<TYPE>();
+            return bootstrap.GetSPI().NewOfferedIncompatibleQosStatus<TYPE>();
         }
 
 

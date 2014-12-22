@@ -33,9 +33,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static ModifiableInstanceHandle newInstanceHandle(Bootstrap bootstrap)
+        public static ModifiableInstanceHandle NewInstanceHandle(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newInstanceHandle();
+            return bootstrap.GetSPI().NewInstanceHandle();
         }
 
 
@@ -44,9 +44,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
         /// <returns>An unmodifiable nil instance handle</returns>
-        public static InstanceHandle nilHandle(Bootstrap bootstrap)
+        public static InstanceHandle NilHandle(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().nilHandle();
+            return bootstrap.GetSPI().nilHandle();
         }
 
 
@@ -55,7 +55,7 @@ namespace org.omg.dds.core
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        public abstract bool isNil();
+        public abstract bool IsNil();
 
 
         // --- From Object: ------------------------------------------------------

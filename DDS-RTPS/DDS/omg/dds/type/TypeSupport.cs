@@ -35,8 +35,8 @@ namespace org.omg.dds.type
         /// Create a new TypeSupport object for the given physical type.
         /// This method is equivalent to:
         /// 
-        /// <code>newTypeSupport(type, type.getClass().GetName(), bootstrap)</code>
-        /// @see #newTypeSupport(Class, string, Bootstrap)
+        /// <code>NewTypeSupport(type, type.getClass().GetName(), bootstrap)</code>
+        /// @see #NewTypeSupport(Class, string, Bootstrap)
         /// </summary>
         /// <param name="type"></param>
         /// <param name="bootstrap"></param>
@@ -52,7 +52,7 @@ namespace org.omg.dds.type
         /// The Service will register this type under the given name with any
         /// participant with which the TypeSupport is used.
         /// 
-        /// @see #newTypeSupport(Class, Bootstrap)
+        /// @see #NewTypeSupport(Class, Bootstrap)
         /// </summary>
         /// <typeparam name="TYPE">The physical type of all samples read or written by
         ///                        any {@link org.omg.dds.sub.DataReader} or
@@ -79,7 +79,7 @@ namespace org.omg.dds.type
         /// </returns>
         public static TypeSupport<TYPE> newTypeSupport(Type type, string registeredName, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newTypeSupport<TYPE>(type, registeredName);
+            return bootstrap.GetSPI().NewTypeSupport<TYPE>(type, registeredName);
         }
 
 

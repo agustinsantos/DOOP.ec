@@ -33,6 +33,6 @@ namespace org.omg.dds.core
     /// </summary>
     public interface Condition : DDSObject
     {
-        bool getTriggerValue();
+        bool GetTriggerValue();
     }
 }

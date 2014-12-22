@@ -33,21 +33,21 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="durability">The durability to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setDurability(DurabilityQosPolicy durability);
+        ModifiableDataReaderQos SetDurability(DurabilityQosPolicy durability);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="deadline">The deadline to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setDeadline(DeadlineQosPolicy deadline);
+        ModifiableDataReaderQos SetDeadline(DeadlineQosPolicy deadline);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="latencyBudget">The latencyBudget to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
+        ModifiableDataReaderQos SetLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="liveliness">The liveliness to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setLiveliness(LivelinessQosPolicy liveliness);
+        ModifiableDataReaderQos SetLiveliness(LivelinessQosPolicy liveliness);
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="destinationOrder">The destinationOrder to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setDestinationOrder(DestinationOrderQosPolicy destinationOrder);
+        ModifiableDataReaderQos SetDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="history">The history to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setHistory(HistoryQosPolicy history);
+        ModifiableDataReaderQos SetHistory(HistoryQosPolicy history);
 
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="resourceLimits">The resourceLimits to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setResourceLimits(ResourceLimitsQosPolicy resourceLimits);
+        ModifiableDataReaderQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
 
         /// <summary>
@@ -87,14 +87,14 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="userData">The userData to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setUserData(UserDataQosPolicy userData);
+        ModifiableDataReaderQos SetUserData(UserDataQosPolicy userData);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ownership">The ownership to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setOwnership(OwnershipQosPolicy ownership);
+        ModifiableDataReaderQos SetOwnership(OwnershipQosPolicy ownership);
 
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="timeBasedFilter">The timeBasedFilter to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setTimeBasedFilter(TimeBasedFilterQosPolicy timeBasedFilter);
+        ModifiableDataReaderQos SetTimeBasedFilter(TimeBasedFilterQosPolicy timeBasedFilter);
 
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="readerDataLifecycle">The readerDataLifecycle to set</param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setReaderDataLifecycle(ReaderDataLifecycleQosPolicy readerDataLifecycle);
+        ModifiableDataReaderQos SetReaderDataLifecycle(ReaderDataLifecycleQosPolicy readerDataLifecycle);
 
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="representation"></param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setRepresentation(DataRepresentationQosPolicy representation);
+        ModifiableDataReaderQos SetRepresentation(DataRepresentationQosPolicy representation);
 
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="typeConsistency"></param>
         /// <returns>this</returns>
-        ModifiableDataReaderQos setTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
+        ModifiableDataReaderQos SetTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
 
-        ModifiableDataReaderQos copyFrom(TopicQos src);
+        ModifiableDataReaderQos CopyFrom(TopicQos src);
     }
 }

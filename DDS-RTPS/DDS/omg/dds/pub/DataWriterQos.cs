@@ -30,94 +30,94 @@ namespace org.omg.dds.pub
         /// 
         /// </summary>
         /// <returns>The durability</returns>
-        DurabilityQosPolicy getDurability();
+        DurabilityQosPolicy GetDurability();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The durabilityService</returns>
-        DurabilityServiceQosPolicy getDurabilityService();
+        DurabilityServiceQosPolicy GetDurabilityService();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The deadline</returns>
-        DeadlineQosPolicy getDeadline();
+        DeadlineQosPolicy GetDeadline();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The latencyBudget</returns>
-        LatencyBudgetQosPolicy getLatencyBudget();
+        LatencyBudgetQosPolicy GetLatencyBudget();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The liveliness</returns>
-        LivelinessQosPolicy getLiveliness();
+        LivelinessQosPolicy GetLiveliness();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The reliability</returns>
-        ReliabilityQosPolicy getReliability();
+        ReliabilityQosPolicy GetReliability();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The destinationOrder</returns>
-        DestinationOrderQosPolicy getDestinationOrder();
+        DestinationOrderQosPolicy GetDestinationOrder();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The history</returns>
-        HistoryQosPolicy getHistory();
+        HistoryQosPolicy GetHistory();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The resourceLimits</returns>
-        ResourceLimitsQosPolicy getResourceLimits();
+        ResourceLimitsQosPolicy GetResourceLimits();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The transportPriority</returns>
-        TransportPriorityQosPolicy getTransportPriority();
+        TransportPriorityQosPolicy GetTransportPriority();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The lifespan</returns>
-        LifespanQosPolicy getLifespan();
+        LifespanQosPolicy GetLifespan();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The userData</returns>
-        UserDataQosPolicy getUserData();
+        UserDataQosPolicy GetUserData();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The ownership</returns>
-        OwnershipQosPolicy getOwnership();
+        OwnershipQosPolicy GetOwnership();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The ownershipStrength</returns>
-        OwnershipStrengthQosPolicy getOwnershipStrength();
+        OwnershipStrengthQosPolicy GetOwnershipStrength();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The writerDataLifecycle</returns>
-        WriterDataLifecycleQosPolicy getWriterDataLifecycle();
+        WriterDataLifecycleQosPolicy GetWriterDataLifecycle();
 
-        DataRepresentationQosPolicy getRepresentation();
+        DataRepresentationQosPolicy GetRepresentation();
 
-        TypeConsistencyEnforcementQosPolicy getTypeConsistency();
+        TypeConsistencyEnforcementQosPolicy GetTypeConsistency();
     }
 }

@@ -38,7 +38,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static SampleRejectedStatus<TYPE> NewSampleRejectedStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newSampleRejectedStatus<TYPE>();
+            return bootstrap.GetSPI().NewSampleRejectedStatus<TYPE>();
         }
 
 

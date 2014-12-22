@@ -54,9 +54,9 @@ namespace org.omg.dds.topic
 
         /// <summary>
         /// Cast this topic description to the given type, or throw an exception if
-        /// the cast fails
+        /// the Cast fails
         /// 
-        /// @throws          ClassCastException if the cast fails
+        /// @throws          ClassCastException if the Cast fails
         /// </summary>
         /// <typeparam name="OTHER">The type of the data exchanged on this topic,
         ///                         according to the caller
@@ -67,7 +67,7 @@ namespace org.omg.dds.topic
         string getTypeName();
         string getName();
 
-        DomainParticipant getParent();
+        DomainParticipant GetParent();
 
         /// <summary>
         /// Dispose the resources held by this object

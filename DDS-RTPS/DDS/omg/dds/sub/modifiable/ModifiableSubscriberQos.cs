@@ -33,7 +33,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="presentation">The presentation to set</param>
         /// <returns>this</returns>
-        ModifiableSubscriberQos setPresentation(PresentationQosPolicy presentation);
+        ModifiableSubscriberQos SetPresentation(PresentationQosPolicy presentation);
 
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="partition">The partition to set</param>
         /// <returns>this</returns>
-        ModifiableSubscriberQos setPartition(PartitionQosPolicy partition);
+        ModifiableSubscriberQos SetPartition(PartitionQosPolicy partition);
 
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="groupData">The groupData to set</param>
         /// <returns>this</returns>
-        ModifiableSubscriberQos setGroupData(GroupDataQosPolicy groupData);
+        ModifiableSubscriberQos SetGroupData(GroupDataQosPolicy groupData);
 
 
         /// <summary>
@@ -57,6 +57,6 @@ namespace org.omg.dds.sub.modifiable
         /// </summary>
         /// <param name="entityFactory">The entityFactory to set</param>
         /// <returns>this</returns>
-        ModifiableSubscriberQos setEntityFactory(EntityFactoryQosPolicy entityFactory);
+        ModifiableSubscriberQos SetEntityFactory(EntityFactoryQosPolicy entityFactory);
     }
 }

@@ -38,7 +38,7 @@ namespace org.omg.dds.type.dynamic
         /// <returns></returns>
         public static DynamicTypeFactory getInstance(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getTypeFactory();
+            return bootstrap.GetSPI().GetTypeFactory();
         }
 
 

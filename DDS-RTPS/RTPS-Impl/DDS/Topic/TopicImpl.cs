@@ -50,7 +50,7 @@ namespace Doopec.Dds.Topic
             return topicName;
         }
 
-        public DomainParticipant getParent()
+        public DomainParticipant GetParent()
         {
             return parent;
         }
@@ -70,22 +70,22 @@ namespace Doopec.Dds.Topic
             return listener;
         }
 
-        public void setListener(ITopicListener listener)
+        public void SetListener(ITopicListener listener)
         {
             this.listener = listener;
         }
 
-        public TopicQos getQos()
+        public TopicQos GetQos()
         {
             return qos;
         }
 
-        public void setQos(TopicQos qos)
+        public void SetQos(TopicQos qos)
         {
             this.qos = qos;
         }
 
-        public void setQos(string qosLibraryName, string qosProfileName)
+        public void SetQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
@@ -100,12 +100,12 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses)
+        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public InstanceHandle getInstanceHandle()
+        public InstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }
@@ -131,17 +131,17 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        TopicListener<TYPE> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.getListener()
+        TopicListener<TYPE> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.GetListener()
         {
             throw new NotImplementedException();
         }
 
-        public void setListener(TopicListener<TYPE> listener)
+        public void SetListener(TopicListener<TYPE> listener)
         {
             throw new NotImplementedException();
         }
 
-        StatusCondition<Topic<TYPE>> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.getStatusCondition()
+        StatusCondition<Topic<TYPE>> Entity<Topic<TYPE>, TopicListener<TYPE>, TopicQos>.GetStatusCondition()
         {
             throw new NotImplementedException();
         }

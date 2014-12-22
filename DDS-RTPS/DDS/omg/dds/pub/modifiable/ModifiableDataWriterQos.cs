@@ -33,7 +33,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="durability">The durability to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setDurability(DurabilityQosPolicy durability);
+        ModifiableDataWriterQos SetDurability(DurabilityQosPolicy durability);
 
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="durabilityService">The durabilityService to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setDurabilityService(DurabilityServiceQosPolicy durabilityService);
+        ModifiableDataWriterQos SetDurabilityService(DurabilityServiceQosPolicy durabilityService);
 
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="deadline">The deadline to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setDeadline(DeadlineQosPolicy deadline);
+        ModifiableDataWriterQos SetDeadline(DeadlineQosPolicy deadline);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="latencyBudget">The latencyBudget to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
+        ModifiableDataWriterQos SetLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="liveliness">The liveliness to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setLiveliness(LivelinessQosPolicy liveliness);
+        ModifiableDataWriterQos SetLiveliness(LivelinessQosPolicy liveliness);
 
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="reliability">The reliability to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setReliability(ReliabilityQosPolicy reliability);
+        ModifiableDataWriterQos SetReliability(ReliabilityQosPolicy reliability);
 
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="destinationOrder">The destinationOrder to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setDestinationOrder(DestinationOrderQosPolicy destinationOrder);
+        ModifiableDataWriterQos SetDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="history">The history to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setHistory(HistoryQosPolicy history);
+        ModifiableDataWriterQos SetHistory(HistoryQosPolicy history);
 
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="resourceLimits">The resourceLimits to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setResourceLimits(ResourceLimitsQosPolicy resourceLimits);
+        ModifiableDataWriterQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
 
         /// <summary>
@@ -104,21 +104,21 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="transportPriority">The transportPriority to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setTransportPriority(TransportPriorityQosPolicy transportPriority);
+        ModifiableDataWriterQos SetTransportPriority(TransportPriorityQosPolicy transportPriority);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="lifespan">The lifespan to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setLifespan(LifespanQosPolicy lifespan);
+        ModifiableDataWriterQos SetLifespan(LifespanQosPolicy lifespan);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="userData">The userData to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setUserData(UserDataQosPolicy userData);
+        ModifiableDataWriterQos SetUserData(UserDataQosPolicy userData);
 
 
         /// <summary>
@@ -126,21 +126,21 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="ownership">The ownership to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setOwnership(OwnershipQosPolicy ownership);
+        ModifiableDataWriterQos SetOwnership(OwnershipQosPolicy ownership);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ownershipStrength">The ownershipStrength to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setOwnershipStrength(OwnershipStrengthQosPolicy ownershipStrength);
+        ModifiableDataWriterQos SetOwnershipStrength(OwnershipStrengthQosPolicy ownershipStrength);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="writerDataLifecycle">The writerDataLifecycle to set</param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setWriterDataLifecycle(WriterDataLifecycleQosPolicy writerDataLifecycle);
+        ModifiableDataWriterQos SetWriterDataLifecycle(WriterDataLifecycleQosPolicy writerDataLifecycle);
 
 
         /// <summary>
@@ -148,15 +148,15 @@ namespace org.omg.dds.pub.modifiable
         /// </summary>
         /// <param name="representation"></param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setRepresentation(DataRepresentationQosPolicy representation);
+        ModifiableDataWriterQos SetRepresentation(DataRepresentationQosPolicy representation);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="typeConsistency"></param>
         /// <returns>this</returns>
-        ModifiableDataWriterQos setTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
+        ModifiableDataWriterQos SetTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
 
-        ModifiableDataWriterQos copyFrom(TopicQos src);
+        ModifiableDataWriterQos CopyFrom(TopicQos src);
     }
 }

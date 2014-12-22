@@ -186,32 +186,32 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public DomainParticipant getParent()
+        public DomainParticipant GetParent()
         {
             return this.parent;
         }
 
-        public SubscriberListener getListener()
+        public SubscriberListener GetListener()
         {
             return this.listener;
         }
 
-        public void setListener(SubscriberListener listener)
+        public void SetListener(SubscriberListener listener)
         {
             this.listener = listener;
         }
 
-        public SubscriberQos getQos()
+        public SubscriberQos GetQos()
         {
             return this.qos;
         }
 
-        public void setQos(SubscriberQos qos)
+        public void SetQos(SubscriberQos qos)
         {
             this.qos = qos;
         }
 
-        public void setQos(string qosLibraryName, string qosProfileName)
+        public void SetQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
@@ -221,17 +221,17 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.StatusCondition<Subscriber> getStatusCondition()
+        public org.omg.dds.core.StatusCondition<Subscriber> GetStatusCondition()
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<TYPE> getStatusChanges<TYPE>(ICollection<TYPE> statuses)
+        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.InstanceHandle getInstanceHandle()
+        public org.omg.dds.core.InstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }

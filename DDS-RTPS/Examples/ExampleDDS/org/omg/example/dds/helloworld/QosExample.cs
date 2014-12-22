@@ -31,26 +31,26 @@ namespace org.omg.example.dds.helloworld
     {
         public static void RunExample(string[] args)
         {
-            DomainParticipantFactory factory = DomainParticipantFactory.getInstance(Bootstrap.CreateInstance());
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant();
 
             // Get unmodifiable QoS for inspection:
-            DomainParticipantQos dpqUnmod = dp.getQos();
-            EntityFactoryQosPolicy polUnmod = dpqUnmod.getEntityFactory();
+            DomainParticipantQos dpqUnmod = dp.GetQos();
+            EntityFactoryQosPolicy polUnmod = dpqUnmod.GetEntityFactory();
             Console.WriteLine(polUnmod);
             // Set QoS:
             ModifiableDomainParticipantQos dpqMod = dpqUnmod.Modify();
-            ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.getEntityFactory();
+            ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
             polMod.SetAutoEnableCreatedEntities(false);
-            dp.setQos(dpqMod);
+            dp.SetQos(dpqMod);
 
             // Concise version:
-            dpqMod = dp.getQos().Modify();
-            ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.getEntityFactory();
+            dpqMod = dp.GetQos().Modify();
+            ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
             polMod2.SetAutoEnableCreatedEntities(false);
-            dp.setQos(dpqMod);
+            dp.SetQos(dpqMod);
             // Restore QoS to default:
-            dp.setQos(factory.getDefaultParticipantQos());
+            dp.SetQos(factory.GetDefaultParticipantQos());
         }
 
 

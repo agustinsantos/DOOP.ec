@@ -34,10 +34,10 @@ namespace org.omg.dds.topic
     /// Domain.
     /// Topic is the only TopicDescription that can be used for publications and
     /// therefore associated to a {@link DataWriter}. All operations except for
-    /// the inherited operations {@link #setQos(org.omg.dds.core.EntityQos)},
-    /// {@link #Qos()}, {@link #setListener(java.util.EventListener)},
-    /// {@link #getListener()}, {@link #Enable()}, and
-    /// {@link #getStatusCondition()} may fail with the exception
+    /// the inherited operations {@link #SetQos(org.omg.dds.core.EntityQos)},
+    /// {@link #Qos()}, {@link #SetListener(java.util.EventListener)},
+    /// {@link #GetListener()}, {@link #Enable()}, and
+    /// {@link #GetStatusCondition()} may fail with the exception
     /// {@link NotEnabledException}
     /// </summary>
     /// <typeparam name="TYPE">The concrete type of the data that will be published and/

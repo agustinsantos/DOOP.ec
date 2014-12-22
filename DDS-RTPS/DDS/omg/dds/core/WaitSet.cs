@@ -44,9 +44,9 @@ namespace org.omg.dds.core
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the new object will belong</param>
         /// <returns></returns>
-        public static WaitSet newWaitSet(Bootstrap bootstrap)
+        public static WaitSet NewWaitSet(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newWaitSet();
+            return bootstrap.GetSPI().NewWaitSet();
         }
 
 
@@ -55,30 +55,30 @@ namespace org.omg.dds.core
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        public abstract void waitForConditions();
+        public abstract void WaitForConditions();
 
-        public abstract void waitForConditions(ICollection<Condition> activeConditions);
+        public abstract void WaitForConditions(ICollection<Condition> activeConditions);
 
-        public abstract void waitForConditions(Duration timeout)
+        public abstract void WaitForConditions(Duration timeout)
          ;
 
-        public abstract void waitForConditions(long timeout, TimeUnit unit);
+        public abstract void WaitForConditions(long timeout, TimeUnit unit);
 
-        public abstract void waitForConditions(ICollection<Condition> activeConditions,
+        public abstract void WaitForConditions(ICollection<Condition> activeConditions,
                 Duration timeout);
 
-        public abstract void waitForConditions(ICollection<Condition> activeConditions,
+        public abstract void WaitForConditions(ICollection<Condition> activeConditions,
                 long timeout,
                 TimeUnit unit);
 
-        public abstract void attachCondition(Condition cond);
-        public abstract void detachCondition(Condition cond);
+        public abstract void AttachCondition(Condition cond);
+        public abstract void DetachCondition(Condition cond);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>An unmodifiable collection of the conditions attached to this wait set</returns>
-        public abstract ICollection<Condition> getConditions();
+        public abstract ICollection<Condition> GetConditions();
 
         public abstract Bootstrap GetBootstrap();
     }

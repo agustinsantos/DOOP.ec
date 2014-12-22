@@ -30,13 +30,13 @@ namespace org.omg.dds.domain
         /// 
         /// </summary>
         /// <returns>The userData</returns>
-        UserDataQosPolicy getUserData();
+        UserDataQosPolicy GetUserData();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The entityFactory</returns>
-        EntityFactoryQosPolicy getEntityFactory();
+        EntityFactoryQosPolicy GetEntityFactory();
 
     }
 }

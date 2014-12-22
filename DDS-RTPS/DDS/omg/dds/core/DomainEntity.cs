@@ -46,6 +46,6 @@ namespace org.omg.dds.core
         /// 
         /// </summary>
         /// <returns>The factory object that created this entity</returns>
-        PARENT getParent();
+        PARENT GetParent();
     }
 }

@@ -59,7 +59,7 @@ namespace DDSTests
             // Create and return a new instance of a concrete implementation of Doopec.Dds.Core.BootstrapImpl
             Bootstrap boostrap = Bootstrap.CreateInstance();
             Assert.IsNotNull(boostrap);
-            Bootstrap.ServiceProviderInterface spi = boostrap.getSPI();
+            Bootstrap.ServiceProviderInterface spi = boostrap.GetSPI();
             Assert.IsNotNull(spi);
             Assert.AreEqual(typeof(Doopec.Dds.Core.SPI), spi.GetType());
         }

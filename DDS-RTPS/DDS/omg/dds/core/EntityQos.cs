@@ -53,7 +53,7 @@ namespace org.omg.dds.core
         ///          to the returned object will be reflected in subsequent
         ///          accesses.
         /// </returns>
-        POLICY get<POLICY>(QosPolicyId id) where POLICY : QosPolicy;
+        POLICY Get<POLICY>(QosPolicyId id) where POLICY : QosPolicy;
 
         /// <summary>
         ///  @throws  UnsupportedOperationException   if this <code>EntityQos</code> is
