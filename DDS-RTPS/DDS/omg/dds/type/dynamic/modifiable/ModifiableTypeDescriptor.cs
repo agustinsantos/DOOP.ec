@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,50 +30,50 @@ namespace org.omg.dds.type.dynamic.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="kind">The kind to set</param>
+        /// <param name="kind">The kind to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setKind(TypeKind kind);
+        ModifiableTypeDescriptor SetKind(TypeKind kind);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="name">The name to set</param>
+        /// <param name="name">The name to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setName(string name);
+        ModifiableTypeDescriptor SetName(string name);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="baseType">The baseType to set</param>
+        /// <param name="baseType">The baseType to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setBaseType(DynamicType baseType);
+        ModifiableTypeDescriptor SetBaseType(DynamicType baseType);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="discriminatorType">The discriminatorType to set</param>
+        /// <param name="discriminatorType">The discriminatorType to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setDiscriminatorType(DynamicType discriminatorType);
+        ModifiableTypeDescriptor SetDiscriminatorType(DynamicType discriminatorType);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="bound">The bound to set</param>
+        /// <param name="Bound">The Bound to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setBound(params int[] bound);
+        ModifiableTypeDescriptor SetBound(params int[] bound);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="elementType">The elementType to set</param>
+        /// <param name="ElementType">The ElementType to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setElementType(DynamicType elementType);
+        ModifiableTypeDescriptor SetElementType(DynamicType elementType);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="keyElementType">The keyElementType to set</param>
+        /// <param name="keyElementType">The keyElementType to Set</param>
         /// <returns>this</returns>
-        ModifiableTypeDescriptor setKeyElementType(DynamicType keyElementType);
+        ModifiableTypeDescriptor SetKeyElementType(DynamicType keyElementType);
     }
 }

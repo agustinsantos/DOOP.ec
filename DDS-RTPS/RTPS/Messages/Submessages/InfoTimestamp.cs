@@ -11,7 +11,7 @@ namespace Rtps.Messages.Submessages
     {
 
         /// <summary>
-        /// Present only if the InvalidateFlag is not set in the header. Contains the
+        /// Present only if the InvalidateFlag is not Set in the header. Contains the
         /// timestamp that should be used to interpret the subsequent Submessages.
         /// </summary>
         /// <param name="systemCurrentMillis"></param>
@@ -32,7 +32,7 @@ namespace Rtps.Messages.Submessages
         /// <summary>
         /// Indicates whether subsequent Submessages should be considered as having a
         /// timestamp or not. Timestamp is present in _this_ submessage only if the
-        /// InvalidateFlag is not set in the header.
+        /// InvalidateFlag is not Set in the header.
         /// </summary>
         /// <returns></returns>
         public bool HasInvalidateFlag

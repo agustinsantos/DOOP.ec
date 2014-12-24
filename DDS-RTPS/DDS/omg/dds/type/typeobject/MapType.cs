@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -32,24 +32,24 @@ namespace org.omg.dds.type.typeobject
         // -----------------------------------------------------------------------
 
         [ID(MapTypeMemberId.KEY_ELEMENT_TYPE_MAPTYPE_MEMBER_ID)]
-        int getKeyElementType();
+        int GetKeyElementType();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newKeyElementType"></param>
         /// <returns>this</returns>
-        MapType setKeyElementType(int newKeyElementType);
+        MapType SetKeyElementType(int newKeyElementType);
 
         [ID(MapTypeMemberId.BOUND_MAPTYPE_MEMBER_ID)]
-        long getBound();
+        long GetBound();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newBound"></param>
         /// <returns>this</returns>
-        MapType setBound(long newBound);
+        MapType SetBound(long newBound);
 
     }
     // -----------------------------------------------------------------------

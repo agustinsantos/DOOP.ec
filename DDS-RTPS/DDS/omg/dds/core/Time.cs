@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -80,11 +80,11 @@ namespace org.omg.dds.core
         /// Truncate this time to a whole-number quantity of the given time
         /// unit. For example, if this time is equal to one second plus 100
         /// nanoseconds since the start of the epoch, calling this method with an
-        /// argument of {@link TimeUnit#SECONDS} will result in the value
+        /// argument of {@link TimeUnit#SECONDS} will result in the Value
         /// <code>1</code>.
         /// 
         /// If this time is invalid, this method shall return
-        /// a negative value, regardless of the units given.
+        /// a negative Value, regardless of the units given.
         /// 
         /// If this time cannot be expressed in the given units without
         /// overflowing, this method shall return {@link Long#MAX_VALUE}. In such
@@ -109,7 +109,7 @@ namespace org.omg.dds.core
         /// if this time is equal to one second plus 100 nanoseconds since the
         /// start of the epoch, calling this method with arguments of
         /// {@link TimeUnit#SECONDS} and {@link TimeUnit#NANOSECONDS} respectively
-        /// will result in the value <code>100</code>.
+        /// will result in the Value <code>100</code>.
         /// 
         /// This method is equivalent to the following pseudo-code:
         /// 

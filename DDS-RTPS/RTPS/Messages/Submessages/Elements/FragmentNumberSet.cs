@@ -15,9 +15,9 @@ namespace Rtps.Messages.Submessages.Elements
         }
 
         /**
-         * TODO: constructor weak: it can't set the size of the CDR encoded element...
+         * TODO: constructor weak: it can't Set the size of the CDR encoded element...
          * @param base
-         * @param set
+         * @param Set
          */
         public FragmentNumberSet(FragmentNumber base_, int nBits, int[] set)
             : base(base_)

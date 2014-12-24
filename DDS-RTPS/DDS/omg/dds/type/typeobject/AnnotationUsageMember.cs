@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -23,7 +23,7 @@ using org.omg.dds.type;
 
 namespace org.omg.dds.type.typeobject
 {
-    // The assignment of a value to a member of an annotation
+    // The assignment of a Value to a member of an annotation
     [Extensibility(ExtensibilityKind.EXTENSIBLE_EXTENSIBILITY)]
     [Nested]
     public interface AnnotationUsageMember
@@ -32,27 +32,27 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="memberId">The memberId to set</param>
+        /// <param name="memberId">The memberId to Set</param>
         /// <returns>this</returns>
-        AnnotationUsageMember setMemberId(int memberId);
+        AnnotationUsageMember SetMemberId(int memberId);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The memberId</returns>
-        int getMemberId();
+        int GetMemberId();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value">The value to set</param>
+        /// <param name="Value">The Value to Set</param>
         /// <returns>this</returns>
-        AnnotationUsageMember setValue(AnnotationMemberValue value);
+        AnnotationUsageMember SetValue(AnnotationMemberValue value);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>The value</returns>
-        AnnotationMemberValue getValue();
+        /// <returns>The Value</returns>
+        AnnotationMemberValue GetValue();
     }
 }

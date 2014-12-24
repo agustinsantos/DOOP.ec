@@ -78,7 +78,7 @@ namespace Rtps.Structure
         }
 
         /// <summary>
-        /// This operation retrieves the smallest value of the CacheChange.SequenceNumber attribute among the CacheChange
+        /// This operation retrieves the smallest Value of the CacheChange.SequenceNumber attribute among the CacheChange
         /// stored in the HistoryCache. 
         /// </summary>
         /// <returns></returns>

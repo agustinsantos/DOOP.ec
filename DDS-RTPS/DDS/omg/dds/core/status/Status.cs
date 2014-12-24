@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,8 +30,8 @@ namespace org.omg.dds.core.status
     /// Status is the abstract root class for all communication status objects.
     /// All concrete kinds of Status classes extend this class.
     /// 
-    /// Each concrete {@link Entity} is associated with a set of Status objects
-    /// whose value represents the "communication status" of that entity. These
+    /// Each concrete {@link Entity} is associated with a Set of Status objects
+    /// whose Value represents the "communication status" of that entity. These
     /// status values can be accessed with corresponding methods on the Entity.
     /// The changes on these status values are the ones that both cause activation
     /// of the corresponding {@link StatusCondition} objects and trigger invocation

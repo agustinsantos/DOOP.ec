@@ -2,7 +2,7 @@ namespace Rtps.Messages
 {
     /// <summary>
     /// From OMG RTPS Standard v2.1 p30: Type used to specify a Submessage flag. 
-    /// A Submessage flag takes a bool value and affects the parsing of the
+    /// A Submessage flag takes a bool Value and affects the parsing of the
     /// Submessage by the receiver.
     /// There are 8 possible flags. The first flag (index 0) identifies the
     /// endianness used to encapsulate the Submessage. The remaining flags
@@ -41,7 +41,7 @@ namespace Rtps.Messages
         }
 
         /// <summary>
-        /// Get the endianness for SubMessage. If endianness flag is set,
+        /// Get the endianness for SubMessage. If endianness flag is Set,
         /// little-endian is used by SubMessage, otherwise big-endian is used.
         /// 
         /// Checks, if endianness flag of this SubMessageHeader represents little endian
@@ -75,7 +75,7 @@ namespace Rtps.Messages
 
         /// <summary>
         /// Indicates to the Reader that the dataPayload submessage element contains
-        ///  the serialized value of the data-object.
+        ///  the serialized Value of the data-object.
         /// </summary>
         public bool HasDataFlag
         {
@@ -84,7 +84,7 @@ namespace Rtps.Messages
 
         /// <summary>
         /// Indicates to the Reader that the dataPayload submessage element contains
-        /// the serialized value of the key of the data-object.
+        /// the serialized Value of the key of the data-object.
         /// </summary>
         public bool HasKeyFlag
         {

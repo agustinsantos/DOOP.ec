@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -27,25 +27,25 @@ namespace org.omg.dds.type.dynamic
 
     public interface DynamicType : DDSObject, ICloneable
     {
-        TypeDescriptor getDescriptor();
+        TypeDescriptor GetDescriptor();
 
-        string getName();
+        string GetName();
 
-        TypeKind getKind();
+        TypeKind GetKind();
 
-        DynamicTypeMember getMember(string name);
+        DynamicTypeMember GetMember(string name);
 
-        IDictionary<string, DynamicTypeMember> getAllMembers();
+        IDictionary<string, DynamicTypeMember> GetAllMembers();
 
-        DynamicTypeMember getMemberById(int id);
+        DynamicTypeMember GetMemberById(int id);
 
-        IDictionary<int, DynamicTypeMember> getAllMembersById();
+        IDictionary<int, DynamicTypeMember> GetAllMembersById();
 
-        List<AnnotationDescriptor> getAnnotations();
+        List<AnnotationDescriptor> GetAnnotations();
 
-        void applyAnnotation(AnnotationDescriptor descriptor);
+        void ApplyAnnotation(AnnotationDescriptor descriptor);
 
-        DynamicTypeMember addMember(MemberDescriptor descriptor);
+        DynamicTypeMember AddMember(MemberDescriptor descriptor);
 
        // DynamicType clone();
     }

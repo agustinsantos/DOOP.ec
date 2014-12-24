@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,16 +30,16 @@ namespace org.omg.dds.core.modifiable
         where MOD_SELF : UNMOD_SELF
     {
         /// <summary>
-        /// Overwrite the value of the indicated policy with the given new value.
+        /// Overwrite the Value of the indicated policy with the given new Value.
         /// Subsequent calls to {@link #Get(Object)} may return the given object
         /// or a copy of it.
         /// 
-        /// @throws  NullPointerException    if the given key or value is <code>null</code>.
+        /// @throws  NullPointerException    if the given key or Value is <code>null</code>.
         /// </summary>
         /// <typeparam name="POLICY"></typeparam>
         /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns>The previous value of the indicated policy if that policy
+        /// <param name="Value"></param>
+        /// <returns>The previous Value of the indicated policy if that policy
         ///          applies to this <code>EntityQos</code>'s {@link Entity} or
         ///          <code>null</code> otherwise. If the returned object is not
         ///          <code>null</code>, changes to it will <em>not</em> be

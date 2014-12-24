@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -39,7 +39,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <returns>The type parameter if this object's class</returns>
-        System.Type getType();
+        System.Type GetType();
         ///TODO how I comment a throw???
         /// <summary>
         /// Cast this data reader to the given type, or throw an exception if
@@ -50,45 +50,45 @@ namespace org.omg.dds.sub
         ///                         according to the caller
         ///</typeparam>
         /// <returns>This data reader</returns>
-        DataReader<OTHER> cast<OTHER>();
+        DataReader<OTHER> Cast<OTHER>();
 
-        ReadCondition<TYPE> createReadCondition();
-        ReadCondition<TYPE> createReadCondition(
+        ReadCondition<TYPE> CreateReadCondition();
+        ReadCondition<TYPE> CreateReadCondition(
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        QueryCondition<TYPE> createQueryCondition(
+        QueryCondition<TYPE> CreateQueryCondition(
               string queryExpression,
               List<string> queryParameters);
-        QueryCondition<TYPE> createQueryCondition(
+        QueryCondition<TYPE> CreateQueryCondition(
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates,
               string queryExpression,
               List<string> queryParameters);
 
-        void closeContainedEntities();
+        void CloseContainedEntities();
 
-        TopicDescription<TYPE> getTopicDescription();
+        TopicDescription<TYPE> GetTopicDescription();
 
-        SampleRejectedStatus<TYPE> getSampleRejectedStatus(SampleRejectedStatus<TYPE> status);
+        SampleRejectedStatus<TYPE> GetSampleRejectedStatus(SampleRejectedStatus<TYPE> status);
 
-        LivelinessChangedStatus<TYPE> getLivelinessChangedStatus(LivelinessChangedStatus<TYPE> status);
+        LivelinessChangedStatus<TYPE> GetLivelinessChangedStatus(LivelinessChangedStatus<TYPE> status);
 
-        RequestedDeadlineMissedStatus<TYPE> getRequestedDeadlineMissedStatus(RequestedDeadlineMissedStatus<TYPE> status);
+        RequestedDeadlineMissedStatus<TYPE> GetRequestedDeadlineMissedStatus(RequestedDeadlineMissedStatus<TYPE> status);
 
-        RequestedIncompatibleQosStatus<TYPE> getRequestedIncompatibleQosStatus(RequestedIncompatibleQosStatus<TYPE> status);
+        RequestedIncompatibleQosStatus<TYPE> GetRequestedIncompatibleQosStatus(RequestedIncompatibleQosStatus<TYPE> status);
 
-        SubscriptionMatchedStatus<TYPE> getSubscriptionMatchedStatus(SubscriptionMatchedStatus<TYPE> status);
-        SampleLostStatus<TYPE> getSampleLostStatus(SampleLostStatus<TYPE> status);
+        SubscriptionMatchedStatus<TYPE> GetSubscriptionMatchedStatus(SubscriptionMatchedStatus<TYPE> status);
+        SampleLostStatus<TYPE> GetSampleLostStatus(SampleLostStatus<TYPE> status);
 
-        void waitForHistoricalData(Duration maxWait);
+        void WaitForHistoricalData(Duration maxWait);
 
-        void waitForHistoricalData(long maxWait, TimeUnit unit);
+        void WaitForHistoricalData(long maxWait, TimeUnit unit);
 
-        ICollection<InstanceHandle> getMatchedPublications(ICollection<InstanceHandle> publicationHandles);
-        PublicationBuiltinTopicData getMatchedPublicationData(PublicationBuiltinTopicData publicationData,
+        ICollection<InstanceHandle> GetMatchedPublications(ICollection<InstanceHandle> publicationHandles);
+        PublicationBuiltinTopicData GetMatchedPublicationData(PublicationBuiltinTopicData publicationData,
               InstanceHandle publicationHandle);
 
 
@@ -100,21 +100,21 @@ namespace org.omg.dds.sub
         /// this DataReader.
         /// 
         /// Applications may use this method, for example, to preallocate samples
-        /// to be overwritten by the <code>read</code> and/or <code>take</code>
+        /// to be overwritten by the <code>Read</code> and/or <code>Take</code>
         /// methods of this interface.
         /// 
-        /// @see #read(List)
-        /// @see #take(List)
+        /// @see #Read(List)
+        /// @see #Take(List)
         /// </summary>
         /// <returns></returns>
-        Sample<TYPE> createSample();
+        Sample<TYPE> CreateSample();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> read();
-        SampleIterator<TYPE> read(ICollection<SampleState> sampleStates,
+        SampleIterator<TYPE> Read();
+        SampleIterator<TYPE> Read(ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
@@ -123,8 +123,8 @@ namespace org.omg.dds.sub
         /// might already be present
         /// </summary>
         /// <param name="samples"></param>
-        void read(IList<Sample<TYPE>> samples);
-        void read(IList<Sample<TYPE>> samples,
+        void Read(IList<Sample<TYPE>> samples);
+        void Read(IList<Sample<TYPE>> samples,
               int maxSamples,
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
@@ -134,13 +134,13 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> take();
-        SampleIterator<TYPE> take(ICollection<SampleState> sampleStates,
+        SampleIterator<TYPE> Take();
+        SampleIterator<TYPE> Take(ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        void take(IList<Sample<TYPE>> samples);
-        void take(IList<Sample<TYPE>> samples,
+        void Take(IList<Sample<TYPE>> samples);
+        void Take(IList<Sample<TYPE>> samples,
               int maxSamples,
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
@@ -151,11 +151,11 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="condition"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> read(ReadCondition<TYPE> condition);
+        SampleIterator<TYPE> Read(ReadCondition<TYPE> condition);
 
-        void read(IList<Sample<TYPE>> samples,
+        void Read(IList<Sample<TYPE>> samples,
               ReadCondition<TYPE> condition);
-        void read(IList<Sample<TYPE>> samples,
+        void Read(IList<Sample<TYPE>> samples,
               int maxSamples,
               ReadCondition<TYPE> condition);
 
@@ -164,11 +164,11 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="condition"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> take(ReadCondition<TYPE> condition);
+        SampleIterator<TYPE> Take(ReadCondition<TYPE> condition);
 
-        void take(IList<Sample<TYPE>> samples,
+        void Take(IList<Sample<TYPE>> samples,
               ReadCondition<TYPE> condition);
-        void take(IList<Sample<TYPE>> samples,
+        void Take(IList<Sample<TYPE>> samples,
               int maxSamples,
               ReadCondition<TYPE> condition);
 
@@ -176,30 +176,30 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="sample"></param>
-        /// <returns>True if data was read or false if no data was available</returns>
-        bool readNext(Sample<TYPE> sample);
+        /// <returns>True if data was Read or false if no data was available</returns>
+        bool ReadNext(Sample<TYPE> sample);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sample"></param>
         /// <returns>True if data was taken or false if no data was available</returns>
-        bool takeNext(Sample<TYPE> sample);
+        bool TakeNext(Sample<TYPE> sample);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="handle"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> read(InstanceHandle handle);
-        SampleIterator<TYPE> read(InstanceHandle handle,
+        SampleIterator<TYPE> Read(InstanceHandle handle);
+        SampleIterator<TYPE> Read(InstanceHandle handle,
             ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        void read(IList<Sample<TYPE>> samples,
+        void Read(IList<Sample<TYPE>> samples,
               InstanceHandle handle);
-        void read(IList<Sample<TYPE>> samples,
+        void Read(IList<Sample<TYPE>> samples,
               InstanceHandle handle,
               int maxSamples,
               ICollection<SampleState> sampleStates,
@@ -211,15 +211,15 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="handle"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> take(InstanceHandle handle);
-        SampleIterator<TYPE> take(InstanceHandle handle,
+        SampleIterator<TYPE> Take(InstanceHandle handle);
+        SampleIterator<TYPE> Take(InstanceHandle handle,
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        void take(List<Sample<TYPE>> samples,
+        void Take(List<Sample<TYPE>> samples,
               InstanceHandle handle);
-        void take(List<Sample<TYPE>> samples,
+        void Take(List<Sample<TYPE>> samples,
               InstanceHandle handle,
               int maxSamples,
               ICollection<SampleState> sampleStates,
@@ -231,15 +231,15 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="previousHandle"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> readNext(InstanceHandle previousHandle);
-        SampleIterator<TYPE> readNext(InstanceHandle previousHandle,
+        SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle);
+        SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle,
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        void readNext(List<Sample<TYPE>> samples,
+        void ReadNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle);
-        void readNext(List<Sample<TYPE>> samples,
+        void ReadNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               int maxSamples,
               ICollection<SampleState> sampleStates,
@@ -251,15 +251,15 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="previousHandle"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> takeNext(InstanceHandle previousHandle);
-        SampleIterator<TYPE> takeNext(InstanceHandle previousHandle,
+        SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle);
+        SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle,
               ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
               ICollection<InstanceState> instanceStates);
 
-        void takeNext(List<Sample<TYPE>> samples,
+        void TakeNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle);
-        void takeNext(List<Sample<TYPE>> samples,
+        void TakeNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               int maxSamples,
               ICollection<SampleState> sampleStates,
@@ -272,13 +272,13 @@ namespace org.omg.dds.sub
         /// <param name="previousHandle"></param>
         /// <param name="condition"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> readNext(InstanceHandle previousHandle,
+        SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
 
-        void readNext(List<Sample<TYPE>> samples,
+        void ReadNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
-        void readNext(List<Sample<TYPE>> samples,
+        void ReadNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               int maxSamples,
               ReadCondition<TYPE> condition);
@@ -289,21 +289,21 @@ namespace org.omg.dds.sub
         /// <param name="previousHandle"></param>
         /// <param name="condition"></param>
         /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
-        SampleIterator<TYPE> takeNext(InstanceHandle previousHandle,
+        SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
 
-        void takeNext(List<Sample<TYPE>> samples,
+        void TakeNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
-        void takeNext(List<Sample<TYPE>> samples,
+        void TakeNext(List<Sample<TYPE>> samples,
               InstanceHandle previousHandle,
               int maxSamples,
               ReadCondition<TYPE> condition);
 
-        TYPE getKeyValue(TYPE keyHolder,
+        TYPE GetKeyValue(TYPE keyHolder,
               InstanceHandle handle);
 
-        ModifiableInstanceHandle lookupInstance(ModifiableInstanceHandle handle,
+        ModifiableInstanceHandle LookupInstance(ModifiableInstanceHandle handle,
               TYPE keyHolder);
     }
 }

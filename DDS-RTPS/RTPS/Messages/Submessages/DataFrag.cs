@@ -6,7 +6,7 @@ namespace Rtps.Messages.Submessages
 
     /**
      * From OMG RTPS Standard v2.1 p43: Equivalent to Data, but only contains a part
-     * of the new value (one or more fragments). Allows data to be transmitted as
+     * of the new Value (one or more fragments). Allows data to be transmitted as
      * multiple fragments to overcome transport message size limitations
      * <p>
      * From OMG RTPS Standard v2.1 p49: The DataFrag Submessage  : the Data 

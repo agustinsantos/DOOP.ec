@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -29,50 +29,50 @@ namespace org.omg.dds.type.dynamic.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="name">The name to set</param>
+        /// <param name="name">The name to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setName(string name);
+        ModifiableMemberDescriptor SetName(string name);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id">The id to set</param>
+        /// <param name="id">The id to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setId(int id);
+        ModifiableMemberDescriptor SetId(int id);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="type">The type to set</param>
+        /// <param name="type">The type to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setType(DynamicType type);
+        ModifiableMemberDescriptor SetType(DynamicType type);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="defaultValue">The defaultValue to set</param>
+        /// <param name="defaultValue">The defaultValue to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setDefaultValue(string defaultValue);
+        ModifiableMemberDescriptor SetDefaultValue(string defaultValue);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="index">The index to set</param>
+        /// <param name="index">The index to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setIndex(int index);
+        ModifiableMemberDescriptor SetIndex(int index);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="label">The label to set</param>
+        /// <param name="label">The label to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setLabel(params int[] label);
+        ModifiableMemberDescriptor SetLabel(params int[] label);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="defaultLabel">The defaultLabel to set</param>
+        /// <param name="defaultLabel">The defaultLabel to Set</param>
         /// <returns>this</returns>
-        ModifiableMemberDescriptor setDefaultLabel(bool defaultLabel);
+        ModifiableMemberDescriptor SetDefaultLabel(bool defaultLabel);
     }
 }

@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,24 +30,24 @@ namespace org.omg.dds.type.typeobject
     {
 
         [ID(BitSetTypeMemberId.BIT_BOUND_BITSETTYPE_MEMBER_ID)]
-        int getBitBound();
+        int GetBitBound();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newBitBound"></param>
         /// <returns>this</returns>
-        BitSetType setBitBound(int newBitBound);
+        BitSetType SetBitBound(int newBitBound);
 
         [ID(BitSetTypeMemberId.BIT_BITSETTYPE_MEMBER_ID)]
-        List<Bit> getBit();
+        List<Bit> GetBit();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newBit"></param>
         /// <returns>this</returns>
-        BitSetType setBit(List<Bit> newBit);
+        BitSetType SetBit(List<Bit> newBit);
 
     }
 

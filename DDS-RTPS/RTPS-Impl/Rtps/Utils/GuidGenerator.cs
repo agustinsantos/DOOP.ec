@@ -31,8 +31,8 @@ namespace Doopec.Rtps.Utils
     public class GuidGenerator
     {
         /// <summary>
-        /// Vendor Id value specified for Doop-ec.
-        /// TODO. Look for the right value
+        /// Vendor Id Value specified for Doop-ec.
+        /// TODO. Look for the right Value
         /// </summary>
         public static readonly byte[] VENDORID_DOOPEC = new byte[] { 0x01, 0xAA };
 

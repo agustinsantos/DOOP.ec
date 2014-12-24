@@ -34,12 +34,12 @@ namespace Doopec.XTypes
             StructureType ddsType = new StructureTypeImpl();
 
             TypeProperty typeProp = new TypePropertyImpl();
-            typeProp.setName(type.FullName);
+            typeProp.SetName(type.FullName);
             typeProp.SetTypeId(type.GetHashCode());
             TypeFlag flag = default(TypeFlag);
             flag |= (type.IsSealed ? TypeFlag.IS_FINAL : 0);
             typeProp.SetFlag(flag);
-            ddsType.setProperty(typeProp);
+            ddsType.SetProperty(typeProp);
 
             List<Member> listMember = new List<Member>();
             var fields = type.GetFields(BindingFlags.Public |
@@ -79,7 +79,7 @@ namespace Doopec.XTypes
 
                 memberProp.SetFlag(memberFlag);
                 memberProp.IsProperty = false;
-                memberInfo.setProperty(memberProp);
+                memberInfo.SetProperty(memberProp);
                 listMember.Add(memberInfo);
             }
             var props = type.GetProperties(BindingFlags.Public |
@@ -118,7 +118,7 @@ namespace Doopec.XTypes
 
                 memberProp.SetFlag(memberFlag);
                 memberProp.IsProperty = true;
-                memberInfo.setProperty(memberProp);
+                memberInfo.SetProperty(memberProp);
                 listMember.Add(memberInfo);
             }
             ddsType.SetMember(listMember);
@@ -131,17 +131,17 @@ namespace Doopec.XTypes
             EnumerationType ddsType = new EnumerationTypeImpl();
 
             TypeProperty typeProp = new TypePropertyImpl();
-            typeProp.setName(type.FullName);
+            typeProp.SetName(type.FullName);
             typeProp.SetTypeId(type.GetHashCode());
             TypeFlag flag = default(TypeFlag);
             //TODO flag |= (type.IsSealed? TypeFlag.IS_FINAL : 0);
             typeProp.SetFlag(flag);
-            ddsType.setProperty(typeProp);
+            ddsType.SetProperty(typeProp);
 
             var bitbound = type.GetCustomAttribute<BitBoundAttribute>();
             if (bitbound != null)
             {
-                Debug.Assert(bitbound.Value >= 1 && bitbound.Value <= 32, "The value member may take any value from 1 to 32, inclusive, when this annotation is applied to an enumerated type.");
+                Debug.Assert(bitbound.Value >= 1 && bitbound.Value <= 32, "The Value member may Take any Value from 1 to 32, inclusive, when this annotation is applied to an enumerated type.");
 
                 ddsType.SetBitBound(bitbound.Value);
             }

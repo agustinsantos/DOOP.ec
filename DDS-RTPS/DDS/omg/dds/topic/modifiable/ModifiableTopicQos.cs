@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -31,107 +31,107 @@ namespace org.omg.dds.topic.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="topicData">The topicData to set</param>
+        /// <param name="topicData">The topicData to Set</param>
         /// <returns>This</returns>
-        ModifiableTopicQos setTopicData(TopicDataQosPolicy topicData);
+        ModifiableTopicQos SetTopicData(TopicDataQosPolicy topicData);
 
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="durability">The durability to set</param>
+        /// <param name="durability">The durability to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setDurability(DurabilityQosPolicy durability);
+        ModifiableTopicQos SetDurability(DurabilityQosPolicy durability);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="durabilityService">The durabilityService to set</param>
+        /// <param name="durabilityService">The durabilityService to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setDurabilityService(DurabilityServiceQosPolicy durabilityService);
+        ModifiableTopicQos SetDurabilityService(DurabilityServiceQosPolicy durabilityService);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="deadline">The deadline to set</param>
+        /// <param name="deadline">The deadline to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setDeadline(DeadlineQosPolicy deadline);
+        ModifiableTopicQos SetDeadline(DeadlineQosPolicy deadline);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="latencyBudget">The latencyBudget to set</param>
+        /// <param name="latencyBudget">The latencyBudget to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
+        ModifiableTopicQos SetLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="liveliness">The liveliness to set</param>
+        /// <param name="liveliness">The liveliness to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setLiveliness(LivelinessQosPolicy liveliness);
+        ModifiableTopicQos SetLiveliness(LivelinessQosPolicy liveliness);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="reliability">The reliability to set</param>
+        /// <param name="reliability">The reliability to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setReliability(ReliabilityQosPolicy reliability);
+        ModifiableTopicQos SetReliability(ReliabilityQosPolicy reliability);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="destinationOrder">The destinationOrder to set</param>
+        /// <param name="destinationOrder">The destinationOrder to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setDestinationOrder(DestinationOrderQosPolicy destinationOrder);
+        ModifiableTopicQos SetDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="history">The history to set</param>
+        /// <param name="history">The history to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setHistory(HistoryQosPolicy history);
+        ModifiableTopicQos SetHistory(HistoryQosPolicy history);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="resourceLimits">The resourceLimits to set</param>
+        /// <param name="resourceLimits">The resourceLimits to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setResourceLimits(ResourceLimitsQosPolicy resourceLimits);
+        ModifiableTopicQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="transportPriority">The transportPriority to set</param>
+        /// <param name="transportPriority">The transportPriority to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setTransportPriority(TransportPriorityQosPolicy transportPriority);
+        ModifiableTopicQos SetTransportPriority(TransportPriorityQosPolicy transportPriority);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="lifespan">The lifespan to set</param>
+        /// <param name="lifespan">The lifespan to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setLifespan(LifespanQosPolicy lifespan);
+        ModifiableTopicQos SetLifespan(LifespanQosPolicy lifespan);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="ownership">The ownership to set</param>
+        /// <param name="ownership">The ownership to Set</param>
         /// <returns>this</returns>
-        ModifiableTopicQos setOwnership(OwnershipQosPolicy ownership);
+        ModifiableTopicQos SetOwnership(OwnershipQosPolicy ownership);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="representation"></param>
         /// <returns>this</returns>
-        ModifiableTopicQos setRepresentation(DataRepresentationQosPolicy representation);
+        ModifiableTopicQos SetRepresentation(DataRepresentationQosPolicy representation);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="typeConsistency"></param>
         /// <returns>this</returns>
-        ModifiableTopicQos setTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
+        ModifiableTopicQos SetTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency);
     }
 }

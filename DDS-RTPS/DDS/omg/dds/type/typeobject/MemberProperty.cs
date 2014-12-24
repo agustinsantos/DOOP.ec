@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -31,7 +31,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// Set the flag and return the instance.
         /// </summary>
-        /// <param name="flag">the flag to set</param>
+        /// <param name="flag">the flag to Set</param>
         /// <returns>return this</returns>
         MemberProperty SetFlag(MemberFlag flag);
 
@@ -43,7 +43,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// Set the member Id
         /// </summary>
-        /// <param name="memberId">the memberId to set</param>
+        /// <param name="memberId">the memberId to Set</param>
         /// <returns>this</returns>
         MemberProperty SetMemberId(uint memberId);
 
@@ -56,7 +56,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// Return the information about DDS type
         /// </summary>
-        /// <param name="type">the type to set</param>
+        /// <param name="type">the type to Set</param>
         /// <returns>this</returns>
         MemberProperty SetType(int type);
 
@@ -68,7 +68,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// Set the full name
         /// </summary>
-        /// <param name="name">the name to set</param>
+        /// <param name="name">the name to Set</param>
         /// <returns>this</returns>
         MemberProperty SetName(string name);
 

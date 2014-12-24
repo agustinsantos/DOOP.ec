@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -51,14 +51,14 @@ namespace org.omg.example.dds.helloworld
 
             Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
-            DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
-                                                            sub.getDefaultDataReaderQos(),
+            DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
+                                                            sub.GetDefaultDataReaderQos(),
                                                             ls,
                                                             null /* all status changes */);
 
             try
             {
-                dr.waitForHistoricalData(10, TimeUnit.SECONDS);
+                dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
             }
             catch (Exception tx)
             {
@@ -85,13 +85,13 @@ namespace org.omg.example.dds.helloworld
             public override void onDataAvailable(DataAvailableStatus<Greeting> status)
             {
                 DataReader<Greeting> dr = status.GetSource();
-                SampleIterator<Greeting> it = dr.take();
+                SampleIterator<Greeting> it = dr.Take();
                 foreach (Sample<Greeting> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
-                    InstanceHandle inst = smp.getInstanceHandle();
+                    InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
-                    Greeting dt = smp.getData();
+                    Greeting dt = smp.GetData();
                     // ...
                 }
             }

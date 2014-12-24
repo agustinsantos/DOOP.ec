@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,82 +30,82 @@ namespace org.omg.dds.topic
         /// 
         /// </summary>
         /// <returns>The topicData</returns>
-        TopicDataQosPolicy getTopicData();
+        TopicDataQosPolicy GetTopicData();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The durability</returns>
-        DurabilityQosPolicy getDurability();
+        DurabilityQosPolicy GetDurability();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The durabilityService</returns>
-        DurabilityServiceQosPolicy getDurabilityService();
+        DurabilityServiceQosPolicy GetDurabilityService();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The deadline</returns>
-        DeadlineQosPolicy getDeadline();
+        DeadlineQosPolicy GetDeadline();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The latencyBudget</returns>
-        LatencyBudgetQosPolicy getLatencyBudget();
+        LatencyBudgetQosPolicy GetLatencyBudget();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The liveliness</returns>
-        LivelinessQosPolicy getLiveliness();
+        LivelinessQosPolicy GetLiveliness();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The reliability</returns>
-        ReliabilityQosPolicy getReliability();
+        ReliabilityQosPolicy GetReliability();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The destinationOrder</returns>
-        DestinationOrderQosPolicy getDestinationOrder();
+        DestinationOrderQosPolicy GetDestinationOrder();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The history</returns>
-        HistoryQosPolicy getHistory();
+        HistoryQosPolicy GetHistory();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The resourceLimits</returns>
-        ResourceLimitsQosPolicy getResourceLimits();
+        ResourceLimitsQosPolicy GetResourceLimits();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The transportPriority</returns>
-        TransportPriorityQosPolicy getTransportPriority();
+        TransportPriorityQosPolicy GetTransportPriority();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The lifespan</returns>
-        LifespanQosPolicy getLifespan();
+        LifespanQosPolicy GetLifespan();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The ownership</returns>
-        OwnershipQosPolicy getOwnership();
+        OwnershipQosPolicy GetOwnership();
 
-        DataRepresentationQosPolicy getRepresentation();
+        DataRepresentationQosPolicy GetRepresentation();
 
-        TypeConsistencyEnforcementQosPolicy getTypeConsistency();
+        TypeConsistencyEnforcementQosPolicy GetTypeConsistency();
     }
 }

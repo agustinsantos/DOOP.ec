@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -41,9 +41,9 @@ namespace org.omg.dds.type
         /// <param name="type"></param>
         /// <param name="bootstrap"></param>
         /// <returns></returns>
-        public static TypeSupport<TYPE> newTypeSupport(Type type, Bootstrap bootstrap)
+        public static TypeSupport<TYPE> NewTypeSupport(Type type, Bootstrap bootstrap)
         {
-            return newTypeSupport(type, type.Name, bootstrap);
+            return NewTypeSupport(type, type.Name, bootstrap);
         }
 
 
@@ -54,12 +54,12 @@ namespace org.omg.dds.type
         /// 
         /// @see #NewTypeSupport(Class, Bootstrap)
         /// </summary>
-        /// <typeparam name="TYPE">The physical type of all samples read or written by
+        /// <typeparam name="TYPE">The physical type of all samples Read or written by
         ///                        any {@link org.omg.dds.sub.DataReader} or
         ///                        {@link org.omg.dds.pub.DataWriter} typed by the
         ///                        resulting <code>TypeSupport</code>
         /// </typeparam>
-        /// <param name="type">The physical type of all samples read or written by
+        /// <param name="type">The physical type of all samples Read or written by
         ///                    any {@link org.omg.dds.sub.DataReader} or
         ///                    {@link org.omg.dds.pub.DataWriter} typed by the
         ///                    resulting <code>TypeSupport</code>
@@ -77,7 +77,7 @@ namespace org.omg.dds.type
         ///          subsequently be used to create one or more
         ///          {@link org.omg.dds.topic.Topic}s
         /// </returns>
-        public static TypeSupport<TYPE> newTypeSupport(Type type, string registeredName, Bootstrap bootstrap)
+        public static TypeSupport<TYPE> NewTypeSupport(Type type, string registeredName, Bootstrap bootstrap)
         {
             return bootstrap.GetSPI().NewTypeSupport<TYPE>(type, registeredName);
         }
@@ -88,7 +88,7 @@ namespace org.omg.dds.type
         // Instance Methods
         // -----------------------------------------------------------------------
 
-        public abstract string getTypeName();
+        public abstract string GetTypeName();
 
         public abstract Bootstrap GetBootstrap();
 

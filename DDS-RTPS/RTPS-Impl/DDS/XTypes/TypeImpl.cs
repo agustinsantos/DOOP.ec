@@ -11,23 +11,23 @@ namespace Doopec.Dds.XTypes
     {
         public TypeProperty Property { get; set; }
 
-        public TypeProperty getProperty()
+        public TypeProperty GetProperty()
         {
             return this.Property;
         }
 
-        public org.omg.dds.type.typeobject.Type setProperty(TypeProperty newProperty)
+        public org.omg.dds.type.typeobject.Type SetProperty(TypeProperty newProperty)
         {
             this.Property = newProperty;
             return this;
         }
 
-        public IList<AnnotationUsage> getAnnotation()
+        public IList<AnnotationUsage> GetAnnotation()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.typeobject.Type setAnnotation(IList<AnnotationUsage> newAnnotation)
+        public org.omg.dds.type.typeobject.Type SetAnnotation(IList<AnnotationUsage> newAnnotation)
         {
             throw new NotImplementedException();
         }

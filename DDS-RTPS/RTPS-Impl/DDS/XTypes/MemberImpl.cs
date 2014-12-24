@@ -12,23 +12,23 @@ namespace Doopec.Dds.XTypes
         public MemberProperty MemberProperty { get; set; }
         public IList<AnnotationUsage> AnnotationList { get; set; }
 
-        public MemberProperty getProperty()
+        public MemberProperty GetProperty()
         {
             return this.MemberProperty;
         }
 
-        public Member setProperty(MemberProperty newProperty)
+        public Member SetProperty(MemberProperty newProperty)
         {
             this.MemberProperty = newProperty;
             return this;
         }
 
-        public IList<AnnotationUsage> getAnnotation()
+        public IList<AnnotationUsage> GetAnnotation()
         {
             return this.AnnotationList;
         }
 
-        public Member setAnnotation(IList<AnnotationUsage> newAnnotation)
+        public Member SetAnnotation(IList<AnnotationUsage> newAnnotation)
         {
             this.AnnotationList = newAnnotation;
             return this;

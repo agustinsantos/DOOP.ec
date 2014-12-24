@@ -57,7 +57,7 @@ namespace Rtps.Behavior
         }
 
         /// <summary>
-        /// This operation finds the WriterProxy with GUID_t a_writer_guid from the set StatefulReader::matched_writers.
+        /// This operation finds the WriterProxy with GUID_t a_writer_guid from the Set StatefulReader::matched_writers.
         /// </summary>
         /// <param name="a_writer_proxy"></param>
         public WriterProxy<T> MatchedWriterLookup(GUID a_writer_guid)

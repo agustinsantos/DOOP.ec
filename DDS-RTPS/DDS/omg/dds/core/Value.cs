@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -52,8 +52,8 @@ namespace org.omg.dds.core
         // --- Conversion: -------------------------------------------------------
 
         /// <summary>
-        /// If this value type is of a modifiable subtype, return this.
-        /// If this value type has a modifiable subtype, return a new object
+        /// If this Value type is of a modifiable subtype, return this.
+        /// If this Value type has a modifiable subtype, return a new object
         /// of that type that is a modifiable copy of this object.
         /// Otherwise, return null
         /// </summary>
@@ -63,7 +63,7 @@ namespace org.omg.dds.core
     }
 
     /// <summary>
-    /// Implementing classes have value semantics: they can be deeply copied, and
+    /// Implementing classes have Value semantics: they can be deeply copied, and
     /// equality is determined based on their contents, not on their object identity.
     /// </summary>
     /// <typeparam name="UNMOD_SELF"></typeparam>
@@ -98,8 +98,8 @@ namespace org.omg.dds.core
         // --- Conversion: -------------------------------------------------------
 
         /// <summary>
-        /// If this value type is of a modifiable subtype, return this.
-        /// If this value type has a modifiable subtype, return a new object
+        /// If this Value type is of a modifiable subtype, return this.
+        /// If this Value type has a modifiable subtype, return a new object
         /// of that type that is a modifiable copy of this object.
         /// Otherwise, return null.
         /// </summary>

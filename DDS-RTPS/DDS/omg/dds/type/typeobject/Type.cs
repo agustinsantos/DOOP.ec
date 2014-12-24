@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -31,24 +31,24 @@ namespace org.omg.dds.type.typeobject
     {
 
         [ID(TypeMemberId.PROPERTY_TYPE_MEMBER_ID)]
-        TypeProperty getProperty();
+        TypeProperty GetProperty();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newProperty"></param>
         /// <returns>this</returns>
-        Type setProperty(TypeProperty newProperty);
+        Type SetProperty(TypeProperty newProperty);
 
         [ID(TypeMemberId.ANNOTATION_TYPE_MEMBER_ID)]
-        IList<AnnotationUsage> getAnnotation();
+        IList<AnnotationUsage> GetAnnotation();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newAnnotation"></param>
         /// <returns>this</returns>
-        Type setAnnotation(IList<AnnotationUsage> newAnnotation);
+        Type SetAnnotation(IList<AnnotationUsage> newAnnotation);
 
     }
 

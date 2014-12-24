@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -38,7 +38,7 @@ namespace org.omg.dds.sub
         /// <returns>The data associated with this sample. This method will return
         ///          null if this sample contains no valid data
         /// </returns>
-        TYPE getData();
+        TYPE GetData();
 
 
         // --- Sample meta-data: -------------------------------------------------
@@ -46,55 +46,55 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <returns>The sampleState</returns>
-        SampleState getSampleState();
+        SampleState GetSampleState();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The viewState</returns>
-        ViewState getViewState();
+        ViewState GetViewState();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The instanceState</returns>
-        InstanceState getInstanceState();
+        InstanceState GetInstanceState();
 
-        ModifiableTime getSourceTimestamp();
+        ModifiableTime GetSourceTimestamp();
 
-        ModifiableInstanceHandle getInstanceHandle();
+        ModifiableInstanceHandle GetInstanceHandle();
 
-        ModifiableInstanceHandle getPublicationHandle();
+        ModifiableInstanceHandle GetPublicationHandle();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The disposedGenerationCount</returns>
-        int getDisposedGenerationCount();
+        int GetDisposedGenerationCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The noWritersGenerationCount</returns>
-        int getNoWritersGenerationCount();
+        int GetNoWritersGenerationCount();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The sampleRank</returns>
-        int getSampleRank();
+        int GetSampleRank();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The generationRank</returns>
-        int getGenerationRank();
+        int GetGenerationRank();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The absoluteGenerationRank</returns>
-        int getAbsoluteGenerationRank();
+        int GetAbsoluteGenerationRank();
 
 
 
@@ -111,24 +111,24 @@ namespace org.omg.dds.sub
         /// The samples provided by this iterator have been loaned from a 
         /// pool maintained by the Service; return that loan now
         /// </summary>
-        void returnLoan();
+        void ReturnLoan();
 
         // --- From ListIterator: --------------------------------------------
         /// <summary>
         /// @exception UnsupportedOperationException always
         /// </summary>
-        void remove();
+        void Remove();
 
         /// <summary>
         /// @exception UnsupportedOperationException always
         /// </summary>
         /// <param name="o"></param>
-        void set(Sample<IT_DATA> o);
+        void Set(Sample<IT_DATA> o);
         ///TODO how i can comment the tag @exception
         /// <summary>
         /// @exception UnsupportedOperationException always
         /// </summary>
         /// <param name="o"></param>
-        void add(Sample<IT_DATA> o);
+        void Add(Sample<IT_DATA> o);
     }
 }

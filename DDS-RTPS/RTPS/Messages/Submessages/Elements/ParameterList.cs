@@ -24,7 +24,7 @@ namespace Rtps.Messages.Submessages.Elements
         public ParameterList(List<Parameter> values)
         {
             this.Value = values;
-            // set the size of the encoded element
+            // Set the size of the encoded element
             for (int i = 0; i < values.Count; i++)
             {
                 size += (4 + values.Count);

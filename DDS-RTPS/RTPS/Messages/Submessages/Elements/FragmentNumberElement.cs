@@ -9,7 +9,7 @@ namespace Rtps.Messages.Submessages.Elements
     public class FragmentNumber : IComparable<FragmentNumber>, Diff<FragmentNumber>
     {
         /// <summary>
-        /// Provides the value of the 32-bit fragment number.
+        /// Provides the Value of the 32-bit fragment number.
         /// </summary>
         protected uint value;
 

@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -26,19 +26,19 @@ namespace org.omg.dds.core.policy
     /// basic mechanism for an application to specify quality of service
     /// parameters. It has a name (<code>GetId().GetPolicyName()</code>) that is
     /// used to identify uniquely each QoS policy. All concrete QosPolicy classes
-    /// derive from this root and include a value whose type depends on the
+    /// derive from this root and include a Value whose type depends on the
     /// concrete QoS policy.
     /// 
-    /// The type of a QosPolicy value may be atomic, such as an integer or float,
+    /// The type of a QosPolicy Value may be atomic, such as an integer or float,
     /// or compound (a structure). Compound types are used whenever multiple
-    /// parameters must be set coherently to define a consistent value for a
+    /// parameters must be Set coherently to define a consistent Value for a
     /// QosPolicy.
     /// 
     /// Each {@link Entity} can be configured with a collection of QosPolicy.
     /// However, any Entity cannot support any QosPolicy. For instance, a
     /// {@link DomainParticipant} supports different QosPolicy than a {@link Topic}
     /// or a {@link Publisher}.
-    /// QosPolicy can be set when the Entity is created, or modified with the
+    /// QosPolicy can be Set when the Entity is created, or modified with the
     /// {@link Entity#SetQos(org.omg.dds.core.EntityQos)} method. Each QosPolicy
     /// in collection list is treated independently from the others. This approach
     /// has the advantage of being very extensible. However, there may be cases
@@ -46,8 +46,8 @@ namespace org.omg.dds.core.policy
     /// each time the policies are modified via the
     /// {@link Entity#SetQos(org.omg.dds.core.EntityQos) }operation.
     /// 
-    /// When a policy is changed after being set to a given value, it is not
-    /// required that the new value be applied instantaneously; the Service is
+    /// When a policy is changed after being Set to a given Value, it is not
+    /// required that the new Value be applied instantaneously; the Service is
     /// allowed to apply it after a transition phase. In addition, some QosPolicy
     /// have “immutable” semantics meaning that they can only be specified either
     /// at Entity creation time or else prior to calling the

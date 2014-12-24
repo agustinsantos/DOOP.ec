@@ -46,7 +46,7 @@ namespace Doopec.Dds.Pub
 
         public Type GetType()
         {
-            return topic_.getType();
+            return topic_.GetType();
         }
 
         public DataWriter<OTHER> Cast<OTHER>()

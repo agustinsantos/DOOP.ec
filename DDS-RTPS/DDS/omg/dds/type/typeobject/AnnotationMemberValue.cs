@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -24,88 +24,88 @@ using org.omg.dds.type;
 namespace org.omg.dds.type.typeobject
 {
     /// <summary>
-    /// Literal value of an annotation member: either the default value in its
-    /// definition or the value applied in its usage
+    /// Literal Value of an annotation member: either the default Value in its
+    /// definition or the Value applied in its usage
     /// </summary>
     [Extensibility(ExtensibilityKind.EXTENSIBLE_EXTENSIBILITY)]
     [Nested]
     public interface AnnotationMemberValue : ModifiableValue<AnnotationMemberValue, AnnotationMemberValue>
     {
-        TypeKind discriminator();
+        TypeKind Discriminator();
 
 
-        bool boolValue();
+        bool BoolValue();
 
-        void boolValue(bool value);
-
-
-        byte byteValue();
-
-        void byteValue(byte value);
+        void BoolValue(bool value);
 
 
-        short int16Value();
+        byte ByteValue();
 
-        void int16Value(short value);
-
-
-        short uint16Value();
-
-        void uint16Value(short value);
+        void ByteValue(byte value);
 
 
-        int int32Value();
+        short Int16Value();
 
-        void int32Value(int value);
-
-
-        int uint32Value();
-
-        void uint32Value(int value);
+        void Int16Value(short value);
 
 
-        long int64Value();
+        short Uint16Value();
 
-        void int64Value(long value);
-
-
-        long uint64Value();
-
-        void uint64Value(long value);
+        void Uint16Value(short value);
 
 
-        float float32Value();
+        int Int32Value();
 
-        void float32Value(float value);
-
-
-        double float64Value();
-
-        void float64Value(double value);
+        void Int32Value(int value);
 
 
-        BigDecimal float128Value();
+        int Uint32Value();
 
-        void float128Value(BigDecimal value);
-
-
-        char characterValue();
-
-        void characterValue(char value);
+        void Uint32Value(int value);
 
 
-        char wideCharacterValue();
+        long Int64Value();
 
-        void wideCharacterValue(char value);
-
-
-        int enumerationValue();
-
-        void enumerationValue(int value);
+        void Int64Value(long value);
 
 
-        string stringValue();
+        long Uint64Value();
 
-        void stringValue(string value);
+        void Uint64Value(long value);
+
+
+        float Float32Value();
+
+        void Float32Value(float value);
+
+
+        double Float64Value();
+
+        void Float64Value(double value);
+
+
+        BigDecimal Float128Value();
+
+        void Float128Value(BigDecimal value);
+
+
+        char CharacterValue();
+
+        void CharacterValue(char value);
+
+
+        char WideCharacterValue();
+
+        void WideCharacterValue(char value);
+
+
+        int EnumerationValue();
+
+        void EnumerationValue(int value);
+
+
+        string StringValue();
+
+        void StringValue(string value);
     }
 }

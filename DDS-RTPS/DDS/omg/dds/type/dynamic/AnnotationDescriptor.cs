@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -26,16 +26,16 @@ namespace org.omg.dds.type.dynamic
 
     public interface AnnotationDescriptor : Value<AnnotationDescriptor, ModifiableAnnotationDescriptor>
     {
-        string getValue(string key);
+        string GetValue(string key);
 
-        IDictionary<string, string> getAllValue(IDictionary<string, string> value);
+        IDictionary<string, string> GetAllValue(IDictionary<string, string> value);
 
-        bool isConsistent();
+        bool IsConsistent();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The type</returns>
-        DynamicType getType();
+        DynamicType GetType();
     }
 }

@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -32,14 +32,14 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="element">The element to set</param>
+        /// <param name="element">The element to Set</param>
         /// <returns>this</returns>
-        TypeLibrary setElement(IList<TypeLibraryElement> element);
+        TypeLibrary SetElement(IList<TypeLibraryElement> element);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The element</returns>
-        List<TypeLibraryElement> getElement();
+        List<TypeLibraryElement> GetElement();
     }
 }

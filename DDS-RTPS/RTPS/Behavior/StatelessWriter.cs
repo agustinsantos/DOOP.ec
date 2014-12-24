@@ -58,7 +58,7 @@ namespace Rtps.Behavior
         }
 
         /// <summary>
-        /// This operation modifies the set of ‘unsent_changes’ for all the ReaderLocators in the 
+        /// This operation modifies the Set of ‘unsent_changes’ for all the ReaderLocators in the 
         /// StatelessWriter::reader_locators. 
         /// The list of unsent changes is reset to match the complete list of changes available in
         /// the writer’s HistoryCache.

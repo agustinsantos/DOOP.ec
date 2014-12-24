@@ -24,7 +24,7 @@ namespace DDS.ConversionUtils
 /*
     public class ClassStatus<T> : Class<T> where T : Status
     {
-        public Type Type { Get; private set; }
+        public Type Type { Get; private Set; }
         public ClassStatus(Type t)
         {
             if (!typeof(T).IsAssignableFrom(t)) throw new Exception();

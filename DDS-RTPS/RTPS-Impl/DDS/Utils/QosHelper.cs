@@ -36,7 +36,7 @@ namespace Doopec.DDS.Utils
     ///         RESOURCE_LIMITS : max_samples_per_instance
     ///
     /// Other than these supported qos, any qos that is different from the
-    /// initial value is invalid.
+    /// initial Value is invalid.
     /// </summary>
     public static class QosHelper
     {
@@ -75,7 +75,7 @@ namespace Doopec.DDS.Utils
 
         // The spec does not have specification about the content of
         // UserDataQosPolicy,TopicDataQosPolicy and GroupDataQosPolicy
-        // so they are valid with any value.
+        // so they are valid with any Value.
         public static bool IsValid(UserDataQosPolicy qos)
         {
             return true;
@@ -91,7 +91,7 @@ namespace Doopec.DDS.Utils
             return true;
         }
 
-        // All values of TRANSPORT_PRIORITY.value are accepted.
+        // All values of TRANSPORT_PRIORITY.Value are accepted.
         public static bool IsValid(TransportPriorityQosPolicy qos)
         {
             return true;
@@ -312,7 +312,7 @@ namespace Doopec.DDS.Utils
             // Only accept infinite or positive finite durations.  (Zero
             // excluded).
             //
-            // Note that it doesn't make much sense for users to set
+            // Note that it doesn't make much sense for users to Set
             // durations less than 10 milliseconds since the underlying
             // timer resolution is generally no better than that.
             return t.IsInfinite() || t.GetDuration(TimeUnit.MILLISECONDS) > 0;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Rtps.Messages.Submessages.Elements
 {
     /// <summary>
-    /// SerializedData contains the serialized representation of the value of a data-object. 
+    /// SerializedData contains the serialized representation of the Value of a data-object. 
     /// The RTPS protocol does not interpret the serialized data-stream. Therefore, it is represented as opaque data. 
     /// </summary>
     public class SerializedData :  SubmessageElement

@@ -46,7 +46,7 @@ namespace Doopec.Rtps.Encoders
                         "This version of protocol does not allow Data submessage to contain both serialized data and serialized key (9.4.5.3.1)");
             }
 
-            int start_count = buffer.Position; // start of bytes read so far from the
+            int start_count = buffer.Position; // start of bytes Read so far from the
             // beginning
             Flags flgs = new Flags();
             flgs.Value = (byte)buffer.GetInt16();
@@ -80,7 +80,7 @@ namespace Doopec.Rtps.Encoders
             {
                 buffer.Align(4); // Each submessage is aligned on 32-bit boundary, @see
                 // 9.4.1 Overall Structure
-                int end_count = buffer.Position; // end of bytes read so far from the beginning
+                int end_count = buffer.Position; // end of bytes Read so far from the beginning
                 int length;
 
                 if (obj.Header.SubMessageLength != 0)
@@ -89,7 +89,7 @@ namespace Doopec.Rtps.Encoders
                 }
                 else
                 { 
-                    // SubMessage is the last one. Rest of the bytes are read.
+                    // SubMessage is the last one. Rest of the bytes are Read.
                     // @see 8.3.3.2.3
                     length =  buffer.Remaining;
                 }

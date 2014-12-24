@@ -6,7 +6,7 @@ namespace Rtps.Structure.Types
 {
 
     /// <summary>
-    /// A sequence number is a 64-bit signed integer, that can take values in the range: -2^63 <= N <= 2^63-1.
+    /// A sequence number is a 64-bit signed integer, that can Take values in the range: -2^63 <= N <= 2^63-1.
     /// The selection of 64 bits as the representation of a sequence number ensures the sequence numbers
     /// never wrap. Sequence numbers begin at 1.
     /// Using this structure, the 64-bit sequence number is:

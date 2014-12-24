@@ -37,7 +37,7 @@ namespace Rtps.Behavior
         }
         
         /// <summary>
-        /// This operation adds the ReaderProxy a_reader_proxy to the set StatefulWriter::matched_readers.
+        /// This operation adds the ReaderProxy a_reader_proxy to the Set StatefulWriter::matched_readers.
         /// </summary>
         /// <param name="a_reader_proxy"></param>
         public void MatchedReaderAdd(ReaderProxy<T> a_reader_proxy)
@@ -47,7 +47,7 @@ namespace Rtps.Behavior
         }
 
         /// <summary>
-        /// This operation removes the ReaderProxy a_reader_proxy from the set StatefulWriter::matched_readers.
+        /// This operation removes the ReaderProxy a_reader_proxy from the Set StatefulWriter::matched_readers.
         /// </summary>
         /// <param name="a_reader_proxy"></param>
         public void MatchedReaderRemove(ReaderProxy<T> a_reader_proxy)
@@ -58,7 +58,7 @@ namespace Rtps.Behavior
         }
 
         /// <summary>
-        /// This operation finds the ReaderProxy with GUID_t a_reader_guid from the set StatefulWriter::matched_readers.
+        /// This operation finds the ReaderProxy with GUID_t a_reader_guid from the Set StatefulWriter::matched_readers.
         /// </summary>
         /// <param name="a_reader_proxy"></param>
         /// <returns></returns>

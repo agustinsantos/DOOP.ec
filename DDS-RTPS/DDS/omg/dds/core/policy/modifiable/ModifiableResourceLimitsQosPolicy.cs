@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -28,14 +28,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="maxSamples">The maxSamples to set</param>
+        /// <param name="maxSamples">The maxSamples to Set</param>
         /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy SetMaxSamples(int maxSamples);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="maxInstances">The maxInstances to set</param>
+        /// <param name="maxInstances">The maxInstances to Set</param>
         /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy SetMaxInstances(
               int maxInstances);
@@ -43,7 +43,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="maxSamplesPerInstance">The maxSamplesPerInstance to set</param>
+        /// <param name="maxSamplesPerInstance">The maxSamplesPerInstance to Set</param>
         /// <returns>this</returns>
         ModifiableResourceLimitsQosPolicy SetMaxSamplesPerInstance(
               int maxSamplesPerInstance);

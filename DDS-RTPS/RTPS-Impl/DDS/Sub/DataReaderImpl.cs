@@ -41,86 +41,86 @@ namespace Doopec.Dds.Sub
         }
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
-            : this(sub, topic, sub.getDefaultDataReaderQos(), null, null)
+            : this(sub, topic, sub.GetDefaultDataReaderQos(), null, null)
         {
         }
 
-        public Type getType()
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataReader<OTHER> cast<OTHER>()
+        public Type GetType()
         {
             throw new NotImplementedException();
         }
 
-        public ReadCondition<TYPE> createReadCondition()
+        public DataReader<OTHER> Cast<OTHER>()
         {
             throw new NotImplementedException();
         }
 
-        public ReadCondition<TYPE> createReadCondition(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public ReadCondition<TYPE> CreateReadCondition()
         {
             throw new NotImplementedException();
         }
 
-        public QueryCondition<TYPE> createQueryCondition(string queryExpression, List<string> queryParameters)
+        public ReadCondition<TYPE> CreateReadCondition(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public QueryCondition<TYPE> createQueryCondition(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates, string queryExpression, List<string> queryParameters)
+        public QueryCondition<TYPE> CreateQueryCondition(string queryExpression, List<string> queryParameters)
         {
             throw new NotImplementedException();
         }
 
-        public void closeContainedEntities()
+        public QueryCondition<TYPE> CreateQueryCondition(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates, string queryExpression, List<string> queryParameters)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.TopicDescription<TYPE> getTopicDescription()
+        public void CloseContainedEntities()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SampleRejectedStatus<TYPE> getSampleRejectedStatus(org.omg.dds.core.status.SampleRejectedStatus<TYPE> status)
+        public org.omg.dds.topic.TopicDescription<TYPE> GetTopicDescription()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.LivelinessChangedStatus<TYPE> getLivelinessChangedStatus(org.omg.dds.core.status.LivelinessChangedStatus<TYPE> status)
+        public org.omg.dds.core.status.SampleRejectedStatus<TYPE> GetSampleRejectedStatus(org.omg.dds.core.status.SampleRejectedStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> getRequestedDeadlineMissedStatus(org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> status)
+        public org.omg.dds.core.status.LivelinessChangedStatus<TYPE> GetLivelinessChangedStatus(org.omg.dds.core.status.LivelinessChangedStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> getRequestedIncompatibleQosStatus(org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> status)
+        public org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> GetRequestedDeadlineMissedStatus(org.omg.dds.core.status.RequestedDeadlineMissedStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> getSubscriptionMatchedStatus(org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> status)
+        public org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> GetRequestedIncompatibleQosStatus(org.omg.dds.core.status.RequestedIncompatibleQosStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.SampleLostStatus<TYPE> getSampleLostStatus(org.omg.dds.core.status.SampleLostStatus<TYPE> status)
+        public org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> GetSubscriptionMatchedStatus(org.omg.dds.core.status.SubscriptionMatchedStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public void waitForHistoricalData(org.omg.dds.core.Duration maxWait)
+        public org.omg.dds.core.status.SampleLostStatus<TYPE> GetSampleLostStatus(org.omg.dds.core.status.SampleLostStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }
 
-        public void waitForHistoricalData(long maxWait, TimeUnit unit)
+        public void WaitForHistoricalData(org.omg.dds.core.Duration maxWait)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WaitForHistoricalData(long maxWait, TimeUnit unit)
         {
             //throw new NotImplementedException();
             //TODO For the shared memory implementation, the data is available immediately
@@ -129,223 +129,223 @@ namespace Doopec.Dds.Sub
             {
                 DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
 
-                this.listener.onDataAvailable(status);
+                this.listener.OnDataAvailable(status);
             }
         }
 
-        public ICollection<org.omg.dds.core.InstanceHandle> getMatchedPublications(ICollection<org.omg.dds.core.InstanceHandle> publicationHandles)
+        public ICollection<org.omg.dds.core.InstanceHandle> GetMatchedPublications(ICollection<org.omg.dds.core.InstanceHandle> publicationHandles)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.PublicationBuiltinTopicData getMatchedPublicationData(org.omg.dds.topic.PublicationBuiltinTopicData publicationData, org.omg.dds.core.InstanceHandle publicationHandle)
+        public org.omg.dds.topic.PublicationBuiltinTopicData GetMatchedPublicationData(org.omg.dds.topic.PublicationBuiltinTopicData publicationData, org.omg.dds.core.InstanceHandle publicationHandle)
         {
             throw new NotImplementedException();
         }
 
-        public Sample<TYPE> createSample()
+        public Sample<TYPE> CreateSample()
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> read()
+        public SampleIterator<TYPE> Read()
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> read(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> Read(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples)
+        public void Read(IList<Sample<TYPE>> samples)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void Read(IList<Sample<TYPE>> samples, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> take()
+        public SampleIterator<TYPE> Take()
         {
             SampleIterator<TYPE> it = new SampleIteratorImpl<TYPE>();
-            it.add(new SampleImpl<TYPE>( rtpsReader.ReaderCache.GetChange()));
+            it.Add(new SampleImpl<TYPE>( rtpsReader.ReaderCache.GetChange()));
             return it;
         }
 
-        public SampleIterator<TYPE> take(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> Take(ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void take(IList<Sample<TYPE>> samples)
+        public void Take(IList<Sample<TYPE>> samples)
         {
             throw new NotImplementedException();
         }
 
-        public void take(IList<Sample<TYPE>> samples, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void Take(IList<Sample<TYPE>> samples, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> read(ReadCondition<TYPE> condition)
+        public SampleIterator<TYPE> Read(ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples, ReadCondition<TYPE> condition)
+        public void Read(IList<Sample<TYPE>> samples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples, int maxSamples, ReadCondition<TYPE> condition)
+        public void Read(IList<Sample<TYPE>> samples, int maxSamples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> take(ReadCondition<TYPE> condition)
+        public SampleIterator<TYPE> Take(ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void take(IList<Sample<TYPE>> samples, ReadCondition<TYPE> condition)
+        public void Take(IList<Sample<TYPE>> samples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void take(IList<Sample<TYPE>> samples, int maxSamples, ReadCondition<TYPE> condition)
+        public void Take(IList<Sample<TYPE>> samples, int maxSamples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public bool readNext(Sample<TYPE> sample)
+        public bool ReadNext(Sample<TYPE> sample)
         {
             throw new NotImplementedException();
         }
 
-        public bool takeNext(Sample<TYPE> sample)
+        public bool TakeNext(Sample<TYPE> sample)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> read(org.omg.dds.core.InstanceHandle handle)
+        public SampleIterator<TYPE> Read(org.omg.dds.core.InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> read(org.omg.dds.core.InstanceHandle handle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> Read(org.omg.dds.core.InstanceHandle handle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle)
+        public void Read(IList<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void read(IList<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void Read(IList<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> take(org.omg.dds.core.InstanceHandle handle)
+        public SampleIterator<TYPE> Take(org.omg.dds.core.InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> take(org.omg.dds.core.InstanceHandle handle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> Take(org.omg.dds.core.InstanceHandle handle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void take(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle)
+        public void Take(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public void take(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void Take(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle handle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> readNext(org.omg.dds.core.InstanceHandle previousHandle)
+        public SampleIterator<TYPE> ReadNext(org.omg.dds.core.InstanceHandle previousHandle)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> readNext(org.omg.dds.core.InstanceHandle previousHandle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> ReadNext(org.omg.dds.core.InstanceHandle previousHandle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void readNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle)
+        public void ReadNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle)
         {
             throw new NotImplementedException();
         }
 
-        public void readNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void ReadNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> takeNext(org.omg.dds.core.InstanceHandle previousHandle)
+        public SampleIterator<TYPE> TakeNext(org.omg.dds.core.InstanceHandle previousHandle)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> takeNext(org.omg.dds.core.InstanceHandle previousHandle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public SampleIterator<TYPE> TakeNext(org.omg.dds.core.InstanceHandle previousHandle, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void takeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle)
+        public void TakeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle)
         {
             throw new NotImplementedException();
         }
 
-        public void takeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public void TakeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> readNext(org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
+        public SampleIterator<TYPE> ReadNext(org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void readNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
+        public void ReadNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void readNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ReadCondition<TYPE> condition)
+        public void ReadNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public SampleIterator<TYPE> takeNext(org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
+        public SampleIterator<TYPE> TakeNext(org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void takeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
+        public void TakeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public void takeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ReadCondition<TYPE> condition)
+        public void TakeNext(List<Sample<TYPE>> samples, org.omg.dds.core.InstanceHandle previousHandle, int maxSamples, ReadCondition<TYPE> condition)
         {
             throw new NotImplementedException();
         }
 
-        public TYPE getKeyValue(TYPE keyHolder, org.omg.dds.core.InstanceHandle handle)
+        public TYPE GetKeyValue(TYPE keyHolder, org.omg.dds.core.InstanceHandle handle)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle lookupInstance(org.omg.dds.core.modifiable.ModifiableInstanceHandle handle, TYPE keyHolder)
+        public org.omg.dds.core.modifiable.ModifiableInstanceHandle LookupInstance(org.omg.dds.core.modifiable.ModifiableInstanceHandle handle, TYPE keyHolder)
         {
             throw new NotImplementedException();
         }

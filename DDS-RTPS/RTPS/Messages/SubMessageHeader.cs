@@ -30,7 +30,7 @@ namespace Rtps.Messages
     public class SubMessageHeader
     {
         /// <summary>
-        /// Default value for endianness in sub messages.
+        /// Default Value for endianness in sub messages.
         /// </summary>
         private static readonly byte DEFAULT_ENDIANNESS_FLAG = 0x00;
 
@@ -47,7 +47,7 @@ namespace Rtps.Messages
 
         /// <summary>
         /// Constructs this SubMessageHeader with given kind and
-        /// DEFAULT_ENDIANESS_FLAG. Length of the SubMessage is set to 0. Length will
+        /// DEFAULT_ENDIANESS_FLAG. Length of the SubMessage is Set to 0. Length will
         /// be calculated during marshalling of the Message.
         /// </summary>
         /// <param name="kind"></param>
@@ -59,7 +59,7 @@ namespace Rtps.Messages
 
         /// <summary>
         /// Constructs this SubMessageHeader with given kind and flags. Length of the
-        /// SubMessage is set to 0. Length will be calculated during marshalling of
+        /// SubMessage is Set to 0. Length will be calculated during marshalling of
         /// the Message.
         /// </summary>
         /// <param name="kind"></param>
@@ -72,7 +72,7 @@ namespace Rtps.Messages
         }
 
         /// <summary>
-        /// Get the endianness for SubMessage. If endianness flag is set,
+        /// Get the endianness for SubMessage. If endianness flag is Set,
         /// little-endian is used by SubMessage, otherwise big-endian is used.
         /// 
         /// Checks, if endianness flag of this SubMessageHeader represents little endian

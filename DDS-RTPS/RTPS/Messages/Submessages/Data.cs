@@ -9,13 +9,13 @@ namespace Rtps.Messages.Submessages
     /// From OMG RTPS Standard v2.1 p13: Represents the data that may be associated with
     /// a change made to a data-object.
     /// <p>
-    /// From OMG RTPS Standard v2.1 p47: Contains information regarding the value of
+    /// From OMG RTPS Standard v2.1 p47: Contains information regarding the Value of
     /// an application Date-object. Data Submessages are sent by Writers 
     /// (NO_KEY Writer or WITH_KEY Writer) to Readers (NO_KEY Reader or WITH_KEY Reader).
     /// 
     /// From OMG RTPS Standard v2.1 p48: The Submessage notifies the RTPS Reader 
     /// of a change to a data-object belonging to the RTPS Writer. The possible 
-    /// changes include both changes in value as well as changes to the lifecycle 
+    /// changes include both changes in Value as well as changes to the lifecycle 
     /// of the data-object.
     /// </summary>
     public class Data : SubMessage
@@ -141,7 +141,7 @@ namespace Rtps.Messages.Submessages
 
         /// <summary>
         /// Indicates to the Reader that the dataPayload submessage element contains
-        ///  the serialized value of the data-object.
+        ///  the serialized Value of the data-object.
         /// </summary>
         public bool HasDataFlag
         {
@@ -150,7 +150,7 @@ namespace Rtps.Messages.Submessages
 
         /// <summary>
         /// Indicates to the Reader that the dataPayload submessage element contains
-        /// the serialized value of the key of the data-object.
+        /// the serialized Value of the key of the data-object.
         /// </summary>
         public bool HasKeyFlag
         {
@@ -158,10 +158,10 @@ namespace Rtps.Messages.Submessages
         }
 
         /// <summary>
-        // Present only if either the DataFlag or the KeyFlag are set in the header.
-        // If the DataFlag is set, then it contains the encapsulation of the 
-        // new value of the data-object after the change.
-        // If the KeyFlag is set, then it contains the encapsulation of the key 
+        // Present only if either the DataFlag or the KeyFlag are Set in the header.
+        // If the DataFlag is Set, then it contains the encapsulation of the 
+        // new Value of the data-object after the change.
+        // If the KeyFlag is Set, then it contains the encapsulation of the key 
         //of the data-object the message refers to.         
         /// </summary>
         public SerializedPayload SerializedPayload

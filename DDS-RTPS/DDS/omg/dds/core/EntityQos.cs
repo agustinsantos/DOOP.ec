@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -60,12 +60,12 @@ namespace org.omg.dds.core
         ///  not a <code>ModifiableEntityQos</code>.
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns></returns>
         QosPolicy Put(QosPolicyId key, QosPolicy value);
 
         /// <summary>
-        /// @throws  UnsupportedOperationException   always: the <tt>remove</tt>
+        /// @throws  UnsupportedOperationException   always: the <tt>Remove</tt>
         /// operation is not supported by this map.
         /// </summary>
         /// <param name="key"></param>

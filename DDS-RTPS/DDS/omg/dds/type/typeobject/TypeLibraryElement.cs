@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -31,117 +31,117 @@ namespace org.omg.dds.type.typeobject
         // Properties
         // -----------------------------------------------------------------------
 
-        TypeLibraryElementKind discriminator();
+        TypeLibraryElementKind Discriminator();
 
 
-        AliasType getAliasType();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns>this</returns>
-        TypeLibraryElement setAliasType(AliasType value);
-
-
-        AnnotationType getAnnotationType();
+        AliasType GetAliasType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setAnnotationType(AnnotationType value);
+        TypeLibraryElement SetAliasType(AliasType value);
 
 
-        ArrayType getArrayType();
+        AnnotationType GetAnnotationType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setArrayType(ArrayType value);
+        TypeLibraryElement SetAnnotationType(AnnotationType value);
 
 
-        BitSetType getBitsetType();
+        ArrayType GetArrayType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setBitsetType(BitSetType value);
+        TypeLibraryElement SetArrayType(ArrayType value);
 
 
-        EnumerationType getEnumerationType();
+        BitSetType GetBitsetType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setEnumerationType(EnumerationType value);
+        TypeLibraryElement SetBitsetType(BitSetType value);
 
 
-        MapType getMapType();
+        EnumerationType GetEnumerationType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setMapType(MapType value);
+        TypeLibraryElement SetEnumerationType(EnumerationType value);
 
 
-        SequenceType getSequenceType();
+        MapType GetMapType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setSequenceType(SequenceType value);
+        TypeLibraryElement SetMapType(MapType value);
 
 
-        stringType getstringType();
+        SequenceType GetSequenceType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setstringType(stringType value);
+        TypeLibraryElement SetSequenceType(SequenceType value);
 
 
-        StructureType getStructureType();
+        stringType GetstringType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setStructureType(StructureType value);
+        TypeLibraryElement SetstringType(stringType value);
 
 
-        UnionType getUnionType();
+        StructureType GetStructureType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setUnionType(UnionType value);
+        TypeLibraryElement SetStructureType(StructureType value);
 
 
-        Module getModule();
+        UnionType GetUnionType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        TypeLibraryElement setModule(Module value);
+        TypeLibraryElement SetUnionType(UnionType value);
+
+
+        Module GetModule();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Value"></param>
+        /// <returns>this</returns>
+        TypeLibraryElement SetModule(Module value);
     }
 
     // -----------------------------------------------------------------------

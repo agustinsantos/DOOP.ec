@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -24,37 +24,37 @@ namespace org.omg.dds.sub
 
     public class DataReaderAdapter<TYPE> : DataReaderListener<TYPE>
     {
-        public virtual void onDataAvailable(DataAvailableStatus<TYPE> status)
+        public virtual void OnDataAvailable(DataAvailableStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onLivelinessChanged(LivelinessChangedStatus<TYPE> status)
+        public virtual void OnLivelinessChanged(LivelinessChangedStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onRequestedDeadlineMissed(RequestedDeadlineMissedStatus<TYPE> status)
+        public virtual void OnRequestedDeadlineMissed(RequestedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onRequestedIncompatibleQos(RequestedIncompatibleQosStatus<TYPE> status)
+        public virtual void OnRequestedIncompatibleQos(RequestedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onSampleLost(SampleLostStatus<TYPE> status)
+        public virtual void OnSampleLost(SampleLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onSampleRejected(SampleRejectedStatus<TYPE> status)
+        public virtual void OnSampleRejected(SampleRejectedStatus<TYPE> status)
         {
             // empty
         }
 
-        public virtual void onSubscriptionMatched(SubscriptionMatchedStatus<TYPE> status)
+        public virtual void OnSubscriptionMatched(SubscriptionMatchedStatus<TYPE> status)
         {
             // empty
         }

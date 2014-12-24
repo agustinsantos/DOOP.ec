@@ -37,7 +37,7 @@ namespace Doopec.Rtps
             if (string.IsNullOrWhiteSpace(className))
             {
                 // no implementation class name specified
-                throw new ApplicationException("Please set the RTPS engine type property in the settings.");
+                throw new ApplicationException("Please Set the RTPS engine type property in the settings.");
             }
 
             Type ctxClass = Type.GetType(className, true);

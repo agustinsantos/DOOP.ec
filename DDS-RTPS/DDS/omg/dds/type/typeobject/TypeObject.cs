@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -34,29 +34,29 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="library">The library to set</param>
+        /// <param name="library">The library to Set</param>
         /// <returns>this</returns>
-        TypeObject setLibrary(TypeLibrary library);
+        TypeObject SetLibrary(TypeLibrary library);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The library</returns>
         [Shared]
-        TypeLibrary getLibrary();
+        TypeLibrary GetLibrary();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="the_type">The the_type to set</param>
+        /// <param name="the_type">The the_type to Set</param>
         /// <returns>this</returns>
-        TypeObject setTheType(int the_type);
+        TypeObject SetTheType(int the_type);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The the_type</returns>
         [Optional]
-        int getTheType();
+        int GetTheType();
     }
 }

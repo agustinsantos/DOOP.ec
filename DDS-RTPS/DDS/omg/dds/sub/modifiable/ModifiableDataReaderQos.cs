@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -31,21 +31,21 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="durability">The durability to set</param>
+        /// <param name="durability">The durability to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetDurability(DurabilityQosPolicy durability);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="deadline">The deadline to set</param>
+        /// <param name="deadline">The deadline to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetDeadline(DeadlineQosPolicy deadline);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="latencyBudget">The latencyBudget to set</param>
+        /// <param name="latencyBudget">The latencyBudget to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetLatencyBudget(LatencyBudgetQosPolicy latencyBudget);
 
@@ -53,7 +53,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="liveliness">The liveliness to set</param>
+        /// <param name="liveliness">The liveliness to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetLiveliness(LivelinessQosPolicy liveliness);
 
@@ -61,7 +61,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="destinationOrder">The destinationOrder to set</param>
+        /// <param name="destinationOrder">The destinationOrder to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetDestinationOrder(DestinationOrderQosPolicy destinationOrder);
 
@@ -69,7 +69,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="history">The history to set</param>
+        /// <param name="history">The history to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetHistory(HistoryQosPolicy history);
 
@@ -77,7 +77,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="resourceLimits">The resourceLimits to set</param>
+        /// <param name="resourceLimits">The resourceLimits to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits);
 
@@ -85,14 +85,14 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="userData">The userData to set</param>
+        /// <param name="userData">The userData to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetUserData(UserDataQosPolicy userData);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="ownership">The ownership to set</param>
+        /// <param name="ownership">The ownership to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetOwnership(OwnershipQosPolicy ownership);
 
@@ -100,7 +100,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="timeBasedFilter">The timeBasedFilter to set</param>
+        /// <param name="timeBasedFilter">The timeBasedFilter to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetTimeBasedFilter(TimeBasedFilterQosPolicy timeBasedFilter);
 
@@ -108,7 +108,7 @@ namespace org.omg.dds.sub.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="readerDataLifecycle">The readerDataLifecycle to set</param>
+        /// <param name="readerDataLifecycle">The readerDataLifecycle to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetReaderDataLifecycle(ReaderDataLifecycleQosPolicy readerDataLifecycle);
 

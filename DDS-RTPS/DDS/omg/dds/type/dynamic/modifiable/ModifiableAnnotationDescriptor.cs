@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -26,13 +26,13 @@ namespace org.omg.dds.type.dynamic.modifiable
     public interface ModifiableAnnotationDescriptor : AnnotationDescriptor,
             ModifiableValue<AnnotationDescriptor, ModifiableAnnotationDescriptor>
     {
-        int setValue(string key, string value);
+        int SetValue(string key, string value);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="type">The type to set</param>
+        /// <param name="type">The type to Set</param>
         /// <returns>this</returns>
-        ModifiableAnnotationDescriptor setType(DynamicType type);
+        ModifiableAnnotationDescriptor SetType(DynamicType type);
     }
 }

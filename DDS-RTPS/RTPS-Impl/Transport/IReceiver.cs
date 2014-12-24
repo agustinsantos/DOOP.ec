@@ -18,7 +18,7 @@ namespace Doopec.Utils.Transport
         /// <summary>
         /// Gets the participantId associated with this receiver. During creation of receiver,
         /// participantId may be given as -1, indicating that provider should generate one.
-        /// This method returns the value assigned by the provider.
+        /// This method returns the Value assigned by the provider.
         /// </summary>
         int ParticipantId { get; }
 

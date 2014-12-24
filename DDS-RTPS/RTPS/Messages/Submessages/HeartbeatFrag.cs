@@ -20,7 +20,7 @@ namespace Rtps.Messages.Submessages
     {
         /// <summary>
         /// Identifies the Reader Entity that is being informed of the availability
-        ///  of fragments. Can be set to ENTITYID_UNKNOWN to indicate all readers for
+        ///  of fragments. Can be Set to ENTITYID_UNKNOWN to indicate all readers for
         /// the writer that sent the message.
         /// </summary>
         private EntityId readerId;

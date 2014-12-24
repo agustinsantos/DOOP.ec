@@ -33,9 +33,9 @@ namespace Rtps.Messages.Submessages
         /// <summary>
         /// Communicates the state of the reader to the writer. All sequence numbers
         /// up to the one prior to readerSNState.base are confirmed as received by
-        /// the reader. The sequence numbers that appear in the set indicate missing
+        /// the reader. The sequence numbers that appear in the Set indicate missing
         /// sequence numbers on the reader side. The ones that do not appear in the
-        /// set are undetermined (could be received or not).
+        /// Set are undetermined (could be received or not).
         /// </summary>
         private SequenceNumberSet readerSNState;
 
@@ -74,7 +74,7 @@ namespace Rtps.Messages.Submessages
         /// <summary>
         /// Sets the finalFlag.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         public void SetFinalFlag(bool val)
         {
             Header.Flags.SetFinalFlag(val);
@@ -105,9 +105,9 @@ namespace Rtps.Messages.Submessages
         /// <summary>
         /// Communicates the state of the reader to the writer. All sequence numbers
         ///  up to the one prior to readerSNState.base are confirmed as received by
-        ///  the reader. The sequence numbers that appear in the set indicate missing
+        ///  the reader. The sequence numbers that appear in the Set indicate missing
         ///  sequence numbers on the reader side. The ones that do not appear in the
-        ///  set are undetermined (could be received or not).
+        ///  Set are undetermined (could be received or not).
         /// </summary>
         public SequenceNumberSet ReaderSNState
         {

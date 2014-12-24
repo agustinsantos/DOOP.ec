@@ -12,12 +12,12 @@ namespace Doopec.Dds.XTypes
         public int BaseType { get; set; }
         public IList<Member> MemberList { get; set; }
 
-        public int getBaseType()
+        public int GetBaseType()
         {
             return this.BaseType;
         }
 
-        public StructureType setBaseType(int newBaseTypeId)
+        public StructureType SetBaseType(int newBaseTypeId)
         {
             this.BaseType= newBaseTypeId;
             return this;

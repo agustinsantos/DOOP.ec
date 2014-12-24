@@ -35,7 +35,7 @@ namespace Doopec.Dds.XTypes
             return this.TypeId;
         }
 
-        public TypeProperty setName(string name)
+        public TypeProperty SetName(string name)
         {
             this.Name = name;
             return this;

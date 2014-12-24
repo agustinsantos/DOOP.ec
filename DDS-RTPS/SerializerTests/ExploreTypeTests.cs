@@ -31,8 +31,8 @@ namespace SerializerTests
             var ddsType = TypeExplorer.ExploreType(typeof(XMyClass1));
             Assert.IsNotNull(ddsType);
 
-            Assert.IsNotNull(ddsType.getProperty());
-            var propInfo = ddsType.getProperty();
+            Assert.IsNotNull(ddsType.GetProperty());
+            var propInfo = ddsType.GetProperty();
             Assert.AreEqual("SerializerTests.XMyClass1", propInfo.Name);
 
             Assert.IsInstanceOfType(ddsType, typeof(StructureType));
@@ -40,13 +40,13 @@ namespace SerializerTests
             var members = structType.GetMember();
             Assert.IsNotNull(members);
             Assert.AreEqual(3, members.Count);
-            Assert.AreEqual("m_byte", members[0].getProperty().Name);
-            Assert.AreEqual("m_int", members[1].getProperty().Name);
-            Assert.AreEqual("m_short", members[2].getProperty().Name);
+            Assert.AreEqual("m_byte", members[0].GetProperty().Name);
+            Assert.AreEqual("m_int", members[1].GetProperty().Name);
+            Assert.AreEqual("m_short", members[2].GetProperty().Name);
 
-            Assert.AreEqual((uint)0x8001, members[0].getProperty().MemberId);
-            Assert.AreEqual((uint)0x8002, members[1].getProperty().MemberId);
-            Assert.AreEqual((uint)0x8003, members[2].getProperty().MemberId);
+            Assert.AreEqual((uint)0x8001, members[0].GetProperty().MemberId);
+            Assert.AreEqual((uint)0x8002, members[1].GetProperty().MemberId);
+            Assert.AreEqual((uint)0x8003, members[2].GetProperty().MemberId);
         }
     }
 }

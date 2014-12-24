@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -28,26 +28,26 @@ namespace org.omg.dds.sub
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>An unmodifiable set</returns>
-        ISet<SampleState> getSampleStates();
+        /// <returns>An unmodifiable Set</returns>
+        ISet<SampleState> GetSampleStates();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>An unmodifiable set</returns>
-        ISet<ViewState> getViewStates();
+        /// <returns>An unmodifiable Set</returns>
+        ISet<ViewState> GetViewStates();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>An unmodifiable set</returns>
-        ISet<InstanceState> getInstanceStates();
+        /// <returns>An unmodifiable Set</returns>
+        ISet<InstanceState> GetInstanceStates();
 
-        DataReader<TYPE> getDataReader();
+        DataReader<TYPE> GetDataReader();
 
         /// <summary>
         /// Reclaim any resources associated with this condition
         /// </summary>
-        void close();
+        void Close();
     }
 }

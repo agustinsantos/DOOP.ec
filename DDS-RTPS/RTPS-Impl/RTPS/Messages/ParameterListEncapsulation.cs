@@ -110,18 +110,18 @@ namespace Doopec.Rtps.Messages
             foreach (var member in structType.GetMember())
             {
                 Parameter parameter = new Parameter();
-                //uint id = field.getProperty().MemberId;
-                parameter.ParameterId = (ParameterId)member.getProperty().MemberId; ;
+                //uint id = field.GetProperty().MemberId;
+                parameter.ParameterId = (ParameterId)member.GetProperty().MemberId; ;
                 IoBuffer buffer = ByteBufferAllocator.Instance.Allocate(64);
                 buffer.AutoExpand = true;
-                if (member.getProperty().IsProperty)
+                if (member.GetProperty().IsProperty)
                 {
-                    var field = obj.GetType().GetProperty(member.getProperty().Name);
+                    var field = obj.GetType().GetProperty(member.GetProperty().Name);
                     Doopec.Serializer.Serializer.Serialize(buffer, field.GetValue(obj));
                 }
                 else
                 {
-                    var field = obj.GetType().GetField(member.getProperty().Name);
+                    var field = obj.GetType().GetField(member.GetProperty().Name);
                     Doopec.Serializer.Serializer.Serialize(buffer, field.GetValue(obj));
                 }
 

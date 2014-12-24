@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -40,7 +40,7 @@ namespace org.omg.dds.domain
     ///     {@link Topic}, {@link ContentFilteredTopic}, and {@link MultiTopic}
     ///     objects.</li>
     /// <li>It represents the participation of the application on a communication
-    ///     plane that isolates applications running on the same set of physical
+    ///     plane that isolates applications running on the same Set of physical
     ///     computers from each other. A domain establishes a "virtual network"
     ///     linking all applications that share the same domainId and isolating
     ///     them from applications running on different domains. In this way,

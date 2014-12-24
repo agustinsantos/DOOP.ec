@@ -4,7 +4,7 @@ using System.Text;
 namespace Rtps.Messages.Submessages.Elements
 {
     /// <summary>
-    /// This class encodes a set of  SequenceNumber s in a compact way.
+    /// This class encodes a Set of  SequenceNumber s in a compact way.
     /// Please refer to the OMG RTPS-Wire Protocol standard for an extensive
     /// explanation of the encoding tecnique.
     /// </summary>
@@ -84,7 +84,7 @@ namespace Rtps.Messages.Submessages.Elements
         }
 
         /// <summary>
-        /// Gets the sequence numbers set in this SequenceNumberSet.
+        /// Gets the sequence numbers Set in this SequenceNumberSet.
         /// </summary>
         /// <returns></returns>
         public IList<long> GetSequenceNumbers()
@@ -163,7 +163,7 @@ namespace Rtps.Messages.Submessages.Elements
     }
 
     /// <summary>
-    /// This class encodes a set of  SequenceNumber s in a compact way.
+    /// This class encodes a Set of  SequenceNumber s in a compact way.
     /// Please refer to the OMG RTPS-Wire Protocol standard for an extensive
     /// explanation of the encoding tecnique.
     /// </summary>

@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -91,7 +91,7 @@ namespace org.omg.dds.core
         /// Truncate this duration to a whole-number quantity of the given time
         /// unit. For example, if this duration is equal to one second plus 100
         /// nanoseconds, calling this method with an argument of
-        /// {@link TimeUnit#SECONDS} will result in the value <code>1</code>.
+        /// {@link TimeUnit#SECONDS} will result in the Value <code>1</code>.
         /// 
         /// If this duration is infinite, this method shall return
         /// {@link Long#MAX_VALUE}, regardless of the units given.
@@ -117,7 +117,7 @@ namespace org.omg.dds.core
         /// truncation in the latter (presumably finer-grained) unit. For example,
         /// if this duration is equal to one second plus 100 nanoseconds, calling
         /// this method with arguments of {@link TimeUnit#SECONDS} and
-        /// {@link TimeUnit#NANOSECONDS} respectively will result in the value
+        /// {@link TimeUnit#NANOSECONDS} respectively will result in the Value
         /// <code>100</code>.
         /// 
         /// This method is equivalent to the following pseudo-code:

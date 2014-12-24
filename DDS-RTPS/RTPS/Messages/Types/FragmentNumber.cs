@@ -10,7 +10,7 @@ namespace Rtps.Messages.Types
         public static int FRAGMENT_NUMBER_SIZE = 4;
 
         /// <summary>
-        /// Provides the value of the 32-bit fragment number.
+        /// Provides the Value of the 32-bit fragment number.
         /// </summary>
         protected uint value;
 

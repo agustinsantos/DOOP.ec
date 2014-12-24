@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -40,7 +40,7 @@ namespace org.omg.dds.topic
         ///                         object will belong
         /// </param>
         /// <returns></returns>
-        public static BuiltinTopicKey newBuiltinTopicKey(Bootstrap bootstrap)
+        public static BuiltinTopicKey NewBuiltinTopicKey(Bootstrap bootstrap)
         {
             return bootstrap.GetSPI().NewBuiltinTopicKey();
         }
@@ -52,17 +52,17 @@ namespace org.omg.dds.topic
         // -----------------------------------------------------------------------
 
         /// <summary>
-        /// Copy the value of this key into the first four positions of the given array
+        /// Copy the Value of this key into the first four positions of the given array
         /// 
         /// Service implementations that do not support the DDS-RTPS
         /// interoperability protocol may use a key length of only three, not
-        /// four. Such implementations shall set index 3 in the given array to 0
+        /// four. Such implementations shall Set index 3 in the given array to 0
         /// </summary>
         /// <param name="dst">An array of length at least four integers. Any items
         ///                   at index 4 or higher will not be modified
         /// </param>
         /// <returns>The input array</returns>
-        public abstract int[] getValue(int[] dst);
+        public abstract int[] GetValue(int[] dst);
 
 
         // --- From Object: ------------------------------------------------------

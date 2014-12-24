@@ -13,7 +13,7 @@
 /// Unless required by applicable law or agreed to in writing, software
 /// distributed under the License is distributed on an "AS IS" BASIS,
 /// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-/// See the License for the specific language governing permissions and
+/// See the License for the specific Language governing permissions and
 /// limitations under the License.
 ///</copyright>
 
@@ -94,7 +94,7 @@ namespace org.omg.dds.core
         /// <summary>
         /// Look up the system property identified by the given string and load,
         /// then instantiate, the Bootstrap implementation class identified by its
-        /// value. The class must be accessible and have a public constructor.
+        /// Value. The class must be accessible and have a public constructor.
         /// 
         /// The public constructors of the implementation class will first be
         /// searched for one accepting a single argument of type {@link Map}. If
@@ -119,10 +119,10 @@ namespace org.omg.dds.core
         /// expected to be rare.
         /// </summary>
         /// <param name="implClassNameProperty">The name of a system property,
-        ///          the value of which will be taken as the name of a Bootstrap
+        ///          the Value of which will be taken as the name of a Bootstrap
         ///          implementation class to load.
         ///          </param>
-        /// <param name="environment">A collection of name-value pairs
+        /// <param name="environment">A collection of name-Value pairs
         ///          to be provided to the concrete Bootstrap subclass. If that
         ///          class does not provide a constructor that can accept this
         ///          environment, the environment will be ignored. This argument
@@ -147,7 +147,7 @@ namespace org.omg.dds.core
         public static Bootstrap CreateInstance(string implClassNameProperty, IDictionary<string, Object> environment)
         {
             // --- Get implementation class name --- //
-            /* System.getProperty checks the implClassNameProperty argument as
+            /* System.GetProperty checks the implClassNameProperty argument as
              * described in the specification for this method and throws
              * NullPointerException or IllegalArgumentException if necessary.
              */
@@ -156,7 +156,7 @@ namespace org.omg.dds.core
             if (string.IsNullOrWhiteSpace(className))
             {
                 // no implementation class name specified
-                throw new ServiceConfigurationException(ERROR_STRING + "Please set " + implClassNameProperty + " property.");
+                throw new ServiceConfigurationException(ERROR_STRING + "Please Set " + implClassNameProperty + " property.");
             }
 
             try
@@ -327,12 +327,12 @@ namespace org.omg.dds.core
             /// with any participant with which the <code>TypeSupport</code> is
             /// used
             /// </summary>
-            /// <typeparam name="TYPE">The physical type of all samples read or written
+            /// <typeparam name="TYPE">The physical type of all samples Read or written
             ///                        by any {@link org.omg.dds.sub.DataReader} or
             ///                        {@link org.omg.dds.pub.DataWriter} typed by the
             ///                        resulting <code>TypeSupport</code>
             /// </typeparam>
-            /// <param name="type">The physical type of all samples read or written
+            /// <param name="type">The physical type of all samples Read or written
             ///                    by any {@link org.omg.dds.sub.DataReader} or
             ///                    {@link org.omg.dds.pub.DataWriter} typed by the
             ///                    resulting <code>TypeSupport</code>

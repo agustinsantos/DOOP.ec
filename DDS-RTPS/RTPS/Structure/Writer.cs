@@ -67,7 +67,7 @@ namespace Rtps.Structure
 
         /// <summary>
         /// This operation creates a new CacheChange to be appended to the RTPS Writer’s HistoryCache. The 
-        /// sequence number of the CacheChange is automatically set to be the sequenceNumber of the previous 
+        /// sequence number of the CacheChange is automatically Set to be the sequenceNumber of the previous 
         /// change plus one. 
         /// </summary>
         /// <returns>This operation returns the new change</returns>

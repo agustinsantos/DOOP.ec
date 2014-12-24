@@ -49,8 +49,8 @@ namespace Rtps.Behavior
         public bool isActive;
 
         /// <summary>
-        /// This operation changes the ChangeForReader status of a set of changes for the reader represented by ReaderProxy
-/// ‘the_reader_proxy.’ The set of changes with sequence number smaller than or equal to the value ‘committed_seq_num’ 
+        /// This operation changes the ChangeForReader status of a Set of changes for the reader represented by ReaderProxy
+/// ‘the_reader_proxy.’ The Set of changes with sequence number smaller than or equal to the Value ‘committed_seq_num’ 
 /// have their status changed to ACKNOWLEDGED. 
         /// </summary>
         /// <param name="committed_seq_num"></param>

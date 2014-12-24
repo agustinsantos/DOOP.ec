@@ -25,7 +25,7 @@ namespace Doopec.Dds.Sub
         }
 
 
-        public DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic)
+        public DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic)
         {
             DataReader<TYPE> dw = null;
             dw = new DataReaderImpl<TYPE>(this, topic);
@@ -33,7 +33,7 @@ namespace Doopec.Dds.Sub
             return dw;
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             DataReader<TYPE> dw = null;
             dw = new DataReaderImpl<TYPE>(this, topic, qos, listener, statuses);
@@ -41,97 +41,97 @@ namespace Doopec.Dds.Sub
             return dw;
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic)
+        public BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic)
         {
             throw new NotImplementedException();
         }
 
-        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic, DataReaderQos qos, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
+        public BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic, DataReaderQos qos, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic, string qosLibraryName, string qosProfileName, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
+        public BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic, string qosLibraryName, string qosProfileName, DataReaderListener<byte[]> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic)
+        public KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, DataReaderQos qos, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
+        public KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, DataReaderQos qos, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
+        public KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic, string qosLibraryName, string qosProfileName, DataReaderListener<KeyedBytes> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public stringDataReader createstringDataReader(TopicDescription<string> topic)
+        public stringDataReader CreatestringDataReader(TopicDescription<string> topic)
         {
             throw new NotImplementedException();
         }
 
-        public stringDataReader createstringDataReader(TopicDescription<string> topic, DataReaderQos qos, DataReaderListener<string> listener, ICollection<Type> statuses)
+        public stringDataReader CreatestringDataReader(TopicDescription<string> topic, DataReaderQos qos, DataReaderListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public stringDataReader createstringDataReader(TopicDescription<string> topic, string qosLibraryName, string qosProfileName, DataReaderListener<string> listener, ICollection<Type> statuses)
+        public stringDataReader CreatestringDataReader(TopicDescription<string> topic, string qosLibraryName, string qosProfileName, DataReaderListener<string> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic)
+        public KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic, DataReaderQos qos, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
+        public KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic, DataReaderQos qos, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic, string qosLibraryName, string qosProfileName, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
+        public KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic, string qosLibraryName, string qosProfileName, DataReaderListener<Keyedstring> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> lookupDataReader<TYPE>(string topicName)
+        public DataReader<TYPE> LookupDataReader<TYPE>(string topicName)
         {
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> lookupDataReader<TYPE>(TopicDescription<TYPE> topicName)
+        public DataReader<TYPE> LookupDataReader<TYPE>(TopicDescription<TYPE> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public BytesDataReader lookupBytesDataReader(TopicDescription<byte[]> topicName)
+        public BytesDataReader LookupBytesDataReader(TopicDescription<byte[]> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedBytesDataReader lookupKeyedBytesDataReader(TopicDescription<KeyedBytes> topicName)
+        public KeyedBytesDataReader LookupKeyedBytesDataReader(TopicDescription<KeyedBytes> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public stringDataReader lookupstringDataReader(TopicDescription<string> topicName)
+        public stringDataReader LookupstringDataReader(TopicDescription<string> topicName)
         {
             throw new NotImplementedException();
         }
 
-        public KeyedstringDataReader lookupKeyedstringDataReader(TopicDescription<Keyedstring> topicName)
+        public KeyedstringDataReader LookupKeyedstringDataReader(TopicDescription<Keyedstring> topicName)
         {
             throw new NotImplementedException();
         }
@@ -141,47 +141,47 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public ICollection<DataReader<TYPE>> getDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers)
+        public ICollection<DataReader<TYPE>> GetDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers)
         {
             throw new NotImplementedException();
         }
 
-        public ICollection<DataReader<TYPE>> getDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
+        public ICollection<DataReader<TYPE>> GetDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers, ICollection<SampleState> sampleStates, ICollection<ViewState> viewStates, ICollection<InstanceState> instanceStates)
         {
             throw new NotImplementedException();
         }
 
-        public void notifyDataReaders()
+        public void NotifyDataReaders()
         {
             throw new NotImplementedException();
         }
 
-        public void beginAccess()
+        public void BeginAccess()
         {
             throw new NotImplementedException();
         }
 
-        public void endAccess()
+        public void EndAccess()
         {
             throw new NotImplementedException();
         }
 
-        public DataReaderQos getDefaultDataReaderQos()
+        public DataReaderQos GetDefaultDataReaderQos()
         {
             return this.dataReaderqos;
         }
 
-        public void setDefaultDataReaderQos(DataReaderQos qos)
+        public void SetDefaultDataReaderQos(DataReaderQos qos)
         {
             this.dataReaderqos = qos;
         }
 
-        public void setDefaultDataReaderQos(string qosLibraryName, string qosProfileName)
+        public void SetDefaultDataReaderQos(string qosLibraryName, string qosProfileName)
         {
             throw new NotImplementedException();
         }
 
-        public void copyFromTopicQos(DataReaderQos dst, TopicQos src)
+        public void CopyFromTopicQos(DataReaderQos dst, TopicQos src)
         {
             throw new NotImplementedException();
         }
@@ -252,18 +252,18 @@ namespace Doopec.Dds.Sub
         }
 
 
-        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic)
+        public DataReader<TYPE> CreateDataReader<TYPE>(ITopicDescription topic)
         {
             throw new NotImplementedException();
         }
 
 
-        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> CreateDataReader<TYPE>(ITopicDescription topic, DataReaderQos qos, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
-        public DataReader<TYPE> createDataReader<TYPE>(ITopicDescription topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
+        public DataReader<TYPE> CreateDataReader<TYPE>(ITopicDescription topic, string qosLibraryName, string qosProfileName, DataReaderListener<TYPE> listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }

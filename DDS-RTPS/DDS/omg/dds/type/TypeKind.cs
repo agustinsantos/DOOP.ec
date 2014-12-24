@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -25,7 +25,7 @@ namespace org.omg.dds.type
         // -----------------------------------------------------------------------
 
         /// <summary>
-        /// sentinel indicating "null" value
+        /// sentinel indicating "null" Value
         /// </summary>
         NO_TYPE = TypeKindValues.NO_TYPE_VALUE,
         BOOLEAN_TYPE = TypeKindValues.BOOLEAN_TYPE_VALUE,
@@ -63,7 +63,7 @@ namespace org.omg.dds.type
     public sealed class TypeKindValues
     {
         /// <summary>
-        /// sentinel indicating "null" value
+        /// sentinel indicating "null" Value
         /// </summary>
         public const short NO_TYPE_VALUE = 0;
         public const short BOOLEAN_TYPE_VALUE = 1;

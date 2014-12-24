@@ -30,7 +30,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -53,7 +53,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -114,7 +114,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -141,7 +141,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -164,7 +164,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -196,7 +196,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -229,7 +229,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -255,7 +255,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -288,7 +288,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -321,7 +321,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -354,7 +354,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal
@@ -389,7 +389,7 @@ namespace Rtps.Tests.Encoders
             // Read from bytes1 array - tests reading
             Message m2 = Read(bytes1);
 
-            // Write the message read to bytes2
+            // Write the message Read to bytes2
             byte[] bytes2 = Write(m2);
 
             // Test, that bytes1 and bytes2 are equal

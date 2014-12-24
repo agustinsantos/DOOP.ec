@@ -7,7 +7,7 @@ namespace Rtps.Structure
     /// the objects that can be used to receive messages communicating CacheChanges.
     /// It will not communicate with unknown writers. It is the
     /// responsibility of DDS layer to provide matched readers when necessary.
-    /// Likewise, DDS layer should remove matched writer, when it detects that it is
+    /// Likewise, DDS layer should Remove matched writer, when it detects that it is
     ///  not available anymore.<p>
     ///  
     /// When Samples arrive at RTPSReader, they are passed on to DDS layer through

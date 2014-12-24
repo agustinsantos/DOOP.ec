@@ -24,10 +24,10 @@ namespace Rtps.Messages.Submessages
         /**
      * Appears in the Submessage header flags. Indicates whether the Reader is
      * required to respond to the Heartbeat or if it is just an advisory
-     * heartbeat. If finalFlag is set, Reader is not required to respond with
+     * heartbeat. If finalFlag is Set, Reader is not required to respond with
      * AckNack.
      * 
-     * @return true if final flag is set and reader is not required to respond
+     * @return true if final flag is Set and reader is not required to respond
      */
         public bool HasFinalFlag
         {
@@ -38,7 +38,7 @@ namespace Rtps.Messages.Submessages
         }
 
         /**
-         * Sets the finalFlag to given value.
+         * Sets the finalFlag to given Value.
          * 
          * @param flag
          */
@@ -52,7 +52,7 @@ namespace Rtps.Messages.Submessages
          * associated with the RTPS Writer of the message has manually asserted its
          * LIVELINESS.
          * 
-         * @return true, if liveliness flag is set
+         * @return true, if liveliness flag is Set
          */
         public bool HasLivelinessFlag
         {
@@ -63,7 +63,7 @@ namespace Rtps.Messages.Submessages
         }
 
         /**
-         * Sets the livelinessFlag to given value
+         * Sets the livelinessFlag to given Value
          * 
          * @param livelinessFlag
          */
@@ -74,7 +74,7 @@ namespace Rtps.Messages.Submessages
 
         /**
          * Identifies the Reader Entity that is being informed of the availability
-         * of a set of sequence numbers. Can be set to ENTITYID_UNKNOWN to indicate
+         * of a Set of sequence numbers. Can be Set to ENTITYID_UNKNOWN to indicate
          * all readers for the writer that sent the message.
          */
         public EntityId ReaderId

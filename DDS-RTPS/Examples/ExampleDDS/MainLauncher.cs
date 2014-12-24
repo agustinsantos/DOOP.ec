@@ -13,7 +13,7 @@ namespace ExampleDDS
             ExampleApp app = new PubSubExample02();
             app.RunExample(args);
 #if DEBUG
-             Console.WriteLine("Press enter to close...");
+             Console.WriteLine("Press enter to Close...");
              Console.ReadLine();
 #endif
         }

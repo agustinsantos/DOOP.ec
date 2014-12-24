@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -33,7 +33,7 @@ namespace org.omg.dds.type
     ]
     public class SerializeAs : Attribute
     {
-        public TypeKind value  { get; set; }
+        public TypeKind Value  { get; set; }
 
         /// <summary>
         /// The type of the elements to be stored in a collection (string,
@@ -41,25 +41,25 @@ namespace org.omg.dds.type
         /// to a collection.
         /// 
         /// If this annotation is applied to a map, it indicates the type of the
-        /// map's "value" elements. 
+        /// map's "Value" elements. 
         /// </summary>
-        public TypeKind collectionElementKind  { get; set; }// default TypeKind.NO_TYPE;
+        public TypeKind CollectionElementKind  { get; set; }// default TypeKind.NO_TYPE;
 
         /// <summary>
         /// The type of the "key" elements to be stored in a map or
         /// TypeKind.NO_TYPE if this annotation is not applied to a map.
         /// </summary>
-        public TypeKind mapKeyElementKind  { get; set; }// default TypeKind.NO_TYPE;
+        public TypeKind MapKeyElementKind  { get; set; }// default TypeKind.NO_TYPE;
 
         /// <summary>
-        /// The collection's or bit set's bound(s), if any, if this annotation is
-        /// applied to a collection or bit set, or an empty array if not.
+        /// The collection's or bit Set's Bound(s), if any, if this annotation is
+        /// applied to a collection or bit Set, or an empty array if not.
         /// 
-        /// strings, sequences, and maps have a bound with a single value; an
+        /// strings, sequences, and maps have a Bound with a single Value; an
         /// empty array indicates an unbounded collection. Bit sets have a
-        /// mandatory bound of a single value. Arrays may be multidimensional;
+        /// mandatory Bound of a single Value. Arrays may be multidimensional;
         /// each element of the array corresponds to one of these dimensions
         /// </summary>
-        public long[] bound { get; set; }// default { /* empty */ };
+        public long[] Bound { get; set; }// default { /* empty */ };
     }
 }

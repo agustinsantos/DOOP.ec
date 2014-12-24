@@ -24,67 +24,67 @@ namespace Doopec.DDS.Sub
         private DataRepresentationQosPolicy qosDataRepresentation;
         private TypeConsistencyEnforcementQosPolicy qosTypeConsistencyEnforcement;
 
-        public DurabilityQosPolicy getDurability()
+        public DurabilityQosPolicy GetDurability()
         {
             throw new NotImplementedException();
         }
 
-        public DeadlineQosPolicy getDeadline()
+        public DeadlineQosPolicy GetDeadline()
         {
             throw new NotImplementedException();
         }
 
-        public LatencyBudgetQosPolicy getLatencyBudget()
+        public LatencyBudgetQosPolicy GetLatencyBudget()
         {
             throw new NotImplementedException();
         }
 
-        public LivelinessQosPolicy getLiveliness()
+        public LivelinessQosPolicy GetLiveliness()
         {
             throw new NotImplementedException();
         }
 
-        public DestinationOrderQosPolicy getDestinationOrder()
+        public DestinationOrderQosPolicy GetDestinationOrder()
         {
             throw new NotImplementedException();
         }
 
-        public HistoryQosPolicy getHistory()
+        public HistoryQosPolicy GetHistory()
         {
             throw new NotImplementedException();
         }
 
-        public ResourceLimitsQosPolicy getResourceLimits()
+        public ResourceLimitsQosPolicy GetResourceLimits()
         {
             throw new NotImplementedException();
         }
 
-        public UserDataQosPolicy getUserData()
+        public UserDataQosPolicy GetUserData()
         {
             throw new NotImplementedException();
         }
 
-        public OwnershipQosPolicy getOwnership()
+        public OwnershipQosPolicy GetOwnership()
         {
             throw new NotImplementedException();
         }
 
-        public TimeBasedFilterQosPolicy getTimeBasedFilter()
+        public TimeBasedFilterQosPolicy GetTimeBasedFilter()
         {
             throw new NotImplementedException();
         }
 
-        public ReaderDataLifecycleQosPolicy getReaderDataLifecycle()
+        public ReaderDataLifecycleQosPolicy GetReaderDataLifecycle()
         {
             throw new NotImplementedException();
         }
 
-        public DataRepresentationQosPolicy getRepresentation()
+        public DataRepresentationQosPolicy GetRepresentation()
         {
             throw new NotImplementedException();
         }
 
-        public TypeConsistencyEnforcementQosPolicy getTypeConsistency()
+        public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
         {
             throw new NotImplementedException();
         }

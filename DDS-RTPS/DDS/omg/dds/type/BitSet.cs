@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -35,13 +35,13 @@ namespace org.omg.dds.type
         }
 
         /// <summary>
-        /// When this annotation annotates an enum class, don't set this member
-        /// But if you do, set it to the type of the enumeration itself
+        /// When this annotation annotates an enum class, don't Set this member
+        /// But if you do, Set it to the type of the enumeration itself
         /// 
         /// When it annotates an object of type java.util.EnumSet of
         /// java.util.BitSet, it indicates the BitSet-annotated enum class that
-        /// defines the members of the bit set
+        /// defines the members of the bit Set
         /// </summary>
-        public Enum elementType { get; set; }// default Enum.class;
+        public Enum ElementType { get; set; }// default Enum.class;
     }
 }

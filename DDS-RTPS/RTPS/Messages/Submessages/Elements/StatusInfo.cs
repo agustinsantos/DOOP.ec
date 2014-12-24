@@ -50,8 +50,8 @@ namespace rtps.messages.elements
         }
 
         /// <summary>
-        /// If return value is <code>true</true>, means that the Data-object no longer exists.<br/>
-        ///  Otherwise (return value is <code>false</code>) the Data-object continues existing.
+        /// If return Value is <code>true</true>, means that the Data-object no longer exists.<br/>
+        ///  Otherwise (return Value is <code>false</code>) the Data-object continues existing.
         /// </summary>
         /// <returns></returns>
         public bool IsDisposed
@@ -63,9 +63,9 @@ namespace rtps.messages.elements
         }
 
         /// <summary>
-        /// If return value is <code>true</code>, means that the writer will not provide further informations
+        /// If return Value is <code>true</code>, means that the writer will not provide further informations
         /// on the Data-object, in other words it has unregistered the Data-object.
-        /// If return value is <code>false</code>, means that the writer plans to provide further informations
+        /// If return Value is <code>false</code>, means that the writer plans to provide further informations
         /// on the Data-object.<br/>
         /// </summary>
         /// <returns></returns>
@@ -94,7 +94,7 @@ namespace rtps.messages.elements
 
         /// <summary>
         /// Gets the Kind of change represented by this StatusInfo. 
-        ///  Note, that only one kind is returned, even if there are multiple flags set on
+        ///  Note, that only one kind is returned, even if there are multiple flags Set on
         ///  StatusInfo. Most significant change is DISPOSE, then UNREGISTER, and finally WRITE.
         /// </summary>
         /// <returns></returns>

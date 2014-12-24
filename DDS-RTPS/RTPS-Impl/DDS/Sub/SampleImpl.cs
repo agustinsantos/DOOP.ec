@@ -16,62 +16,62 @@ namespace Doopec.DDS.Sub
             this.data = (TYPE)change.DataValue.Value;
         }
 
-        public TYPE getData()
+        public TYPE GetData()
         {
             return data;
         }
 
-        public SampleState getSampleState()
+        public SampleState GetSampleState()
         {
             throw new NotImplementedException();
         }
 
-        public ViewState getViewState()
+        public ViewState GetViewState()
         {
             throw new NotImplementedException();
         }
 
-        public InstanceState getInstanceState()
+        public InstanceState GetInstanceState()
         {
             throw new NotImplementedException();
         }
 
-        public ModifiableTime getSourceTimestamp()
+        public ModifiableTime GetSourceTimestamp()
         {
             throw new NotImplementedException();
         }
 
-        public ModifiableInstanceHandle getInstanceHandle()
+        public ModifiableInstanceHandle GetInstanceHandle()
         {
             throw new NotImplementedException();
         }
 
-        public ModifiableInstanceHandle getPublicationHandle()
+        public ModifiableInstanceHandle GetPublicationHandle()
         {
             throw new NotImplementedException();
         }
 
-        public int getDisposedGenerationCount()
+        public int GetDisposedGenerationCount()
         {
             throw new NotImplementedException();
         }
 
-        public int getNoWritersGenerationCount()
+        public int GetNoWritersGenerationCount()
         {
             throw new NotImplementedException();
         }
 
-        public int getSampleRank()
+        public int GetSampleRank()
         {
             throw new NotImplementedException();
         }
 
-        public int getGenerationRank()
+        public int GetGenerationRank()
         {
             throw new NotImplementedException();
         }
 
-        public int getAbsoluteGenerationRank()
+        public int GetAbsoluteGenerationRank()
         {
             throw new NotImplementedException();
         }
@@ -79,22 +79,22 @@ namespace Doopec.DDS.Sub
 
     public class SampleIteratorImpl<IT_DATA> : List<Sample<IT_DATA>>, SampleIterator<IT_DATA>
     {
-        public void returnLoan()
+        public void ReturnLoan()
         {
             throw new NotImplementedException();
         }
 
-        public void remove()
+        public void Remove()
         {
             throw new NotImplementedException();
         }
 
-        public void set(Sample<IT_DATA> o)
+        public void Set(Sample<IT_DATA> o)
         {
             throw new NotImplementedException();
         }
 
-        public void add(Sample<IT_DATA> o)
+        public void Add(Sample<IT_DATA> o)
         {
             this.Add(o);
         }

@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -33,7 +33,7 @@ namespace org.omg.dds.type.typeobject
         // -----------------------------------------------------------------------
 
         [ID(StructureTypeMemberId.BASE_TYPE_STRUCTURETYPE_MEMBER_ID)]
-        int getBaseType();
+        int GetBaseType();
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace org.omg.dds.type.typeobject
         /// <param name="newBaseTypeId"></param>
         /// <returns>this</returns>
         [ID(StructureTypeMemberId.BASE_TYPE_STRUCTURETYPE_MEMBER_ID)]
-        StructureType setBaseType(int newBaseTypeId);
+        StructureType SetBaseType(int newBaseTypeId);
 
         [ID(StructureTypeMemberId.MEMBER_STRUCTURETYPE_MEMBER_ID)]
         IList<Member> GetMember();

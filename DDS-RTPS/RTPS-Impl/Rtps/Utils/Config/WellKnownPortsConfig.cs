@@ -29,7 +29,7 @@ namespace Doopec.Rtps.Config
         }
 
         /// <summary>
-        /// An integer value representing the Domain Gain. This
+        /// An integer Value representing the Domain Gain. This
         /// is a multiplier that assists in formulating Multicast
         /// or Unicast ports for RTPS.
         /// </summary>
@@ -58,7 +58,7 @@ namespace Doopec.Rtps.Config
         }
 
         /// <summary>
-        /// An integer value that assists in providing an offset
+        /// An integer Value that assists in providing an offset
         /// for calculating an assignable port in SPDP Multicast
         /// configurations. The formula used is:
         /// PB + DG * domainId + d0 
@@ -74,7 +74,7 @@ namespace Doopec.Rtps.Config
         }
 
         /// <summary>
-        /// An integer value that assists in providing an offset
+        /// An integer Value that assists in providing an offset
         /// for calculating an assignable port in SPDP Unicast
         /// configurations. The formula used is:
         /// PB + DG * domainId + d1 + PG * participantId

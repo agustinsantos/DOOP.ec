@@ -52,7 +52,7 @@ namespace Rtps.Messages.Submessages
 
 
         /// <summary>
-        /// Indicates an alternative set of unicast addresses that the Writer should
+        /// Indicates an alternative Set of unicast addresses that the Writer should
         /// use to reach the Readers when replying to the Submessages that follow.
         /// </summary>
         public IList<Locator> UnicastLocatorList
@@ -64,9 +64,9 @@ namespace Rtps.Messages.Submessages
         }
 
         /// <summary>
-        /// Indicates an alternative set of multicast addresses that the Writer
+        /// Indicates an alternative Set of multicast addresses that the Writer
         /// should use to reach the Readers when replying to the Submessages that
-        /// follow. Only present when the MulticastFlag is set.
+        /// follow. Only present when the MulticastFlag is Set.
         /// </summary>
         public IList<Locator> MulticastLocatorList
         {

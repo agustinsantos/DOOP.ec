@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -30,15 +30,15 @@ namespace org.omg.dds.type.typeobject
         // Properties
         // -----------------------------------------------------------------------
 
-        [ID(stringTypeMemberId.BOUND_STRINGTYPE_MEMBER_ID)]
-        long getBound();
+        [ID(StringTypeMemberId.BOUND_STRINGTYPE_MEMBER_ID)]
+        long GetBound();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newBound"></param>
         /// <returns>this</returns>
-        stringType setBound(long newBound);
+        stringType SetBound(long newBound);
 
     }
 
@@ -47,14 +47,14 @@ namespace org.omg.dds.type.typeobject
     // Types
     // -----------------------------------------------------------------------
 
-    public sealed class stringTypeMemberId
+    public sealed class StringTypeMemberId
     {
         // --- Constants: ----------------------------------------------------
         public const int BOUND_STRINGTYPE_MEMBER_ID = 200;
 
 
         // --- Constructor: --------------------------------------------------
-        private stringTypeMemberId()
+        private StringTypeMemberId()
         {
             // empty
         }

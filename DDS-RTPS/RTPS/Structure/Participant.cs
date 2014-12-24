@@ -55,7 +55,7 @@ namespace Rtps.Structure
         /// Default list of unicast locators (transport, address, port combinations) 
         // that can be used to send messages to the Endpoints contained in the Participant.
         // These are the unicast locators that will be used in case the Endpoint does not 
-        // specify its own set of Locators
+        // specify its own Set of Locators
         /// </summary>
         public IList<Locator> DefaultUnicastLocatorList
         {
@@ -67,7 +67,7 @@ namespace Rtps.Structure
         /// Default list of multicast locators (transport, address, port combinations) 
         /// that can be used to send messages to the Endpoints contained in the Participant.
         /// These are the multicast locators that will be used in case the Endpoint does not 
-        /// specify its own set of Locators.
+        /// specify its own Set of Locators.
         /// </summary>
         public IList<Locator> DefaultMulticastLocatorList
         {

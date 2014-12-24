@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -28,7 +28,7 @@ namespace org.omg.dds.core.policy
         /// Copy the data into the given array, starting at the index at the given
         /// offset.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <returns>The total number of bytes in the data, independent of the
         ///          number of bytes copied. Callers can use this result to
@@ -40,7 +40,7 @@ namespace org.omg.dds.core.policy
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>The length of the <code>value</code> property.</returns>
+        /// <returns>The length of the <code>Value</code> property.</returns>
         int GetLength();
     }
 }

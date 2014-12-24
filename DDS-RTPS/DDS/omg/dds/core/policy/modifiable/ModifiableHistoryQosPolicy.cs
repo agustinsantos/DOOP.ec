@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -27,14 +27,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="kind">The kind to set</param>
+        /// <param name="kind">The kind to Set</param>
         /// <returns>this</returns>
         ModifiableHistoryQosPolicy SetKind(HistoryQosPolicyKind kind);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="depth">The depth to set</param>
+        /// <param name="depth">The depth to Set</param>
         /// <returns>this</returns>
         ModifiableHistoryQosPolicy SetDepth(int depth);
     }

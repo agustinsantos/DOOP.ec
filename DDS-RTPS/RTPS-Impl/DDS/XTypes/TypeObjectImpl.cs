@@ -12,24 +12,24 @@ namespace Doopec.Dds.XTypes
         private TypeLibrary Library { get; set; }
         private int TypeId { get; set; }
 
-        public TypeObject setLibrary(TypeLibrary library)
+        public TypeObject SetLibrary(TypeLibrary library)
         {
             Library = library;
             throw new NotImplementedException();
         }
 
-        public TypeLibrary getLibrary()
+        public TypeLibrary GetLibrary()
         {
             return Library;
         }
 
-        public TypeObject setTheType(int the_type)
+        public TypeObject SetTheType(int the_type)
         {
             TypeId = the_type;
             throw new NotImplementedException();
         }
 
-        public int getTheType()
+        public int GetTheType()
         {
             return TypeId;
         }

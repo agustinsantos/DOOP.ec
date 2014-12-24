@@ -25,27 +25,27 @@ namespace Doopec.Dds.Topic
             this.parent = participant;
         }
 
-        public IInconsistentTopicStatus getInconsistentTopicStatus(IInconsistentTopicStatus status)
+        public IInconsistentTopicStatus GetInconsistentTopicStatus(IInconsistentTopicStatus status)
         {
             throw new NotImplementedException();
         }
 
-        public Type getType()
+        public Type GetType()
         {
             return type;
         }
 
-        public TopicDescription<OTHER> cast<OTHER>()
+        public TopicDescription<OTHER> Cast<OTHER>()
         {
             throw new NotImplementedException();
         }
 
-        public string getTypeName()
+        public string GetTypeName()
         {
             return type.FullName;
         }
 
-        public string getName()
+        public string GetName()
         {
             return topicName;
         }
@@ -126,7 +126,7 @@ namespace Doopec.Dds.Topic
             get { return type; }
         }
 
-        public InconsistentTopicStatus<TYPE> getInconsistentTopicStatus(InconsistentTopicStatus<TYPE> status)
+        public InconsistentTopicStatus<TYPE> GetInconsistentTopicStatus(InconsistentTopicStatus<TYPE> status)
         {
             throw new NotImplementedException();
         }

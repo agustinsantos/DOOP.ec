@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -34,7 +34,7 @@ namespace org.omg.dds.sub
     {
         // --- Create (any) DataReader: ------------------------------------------
 
-        DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic);
+        DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic);
 
         /// <summary>
         /// Create a new data reader
@@ -48,7 +48,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic,
+        DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic,
                DataReaderQos qos,
                DataReaderListener<TYPE> listener,
                ICollection<Type> statuses);
@@ -67,7 +67,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        DataReader<TYPE> createDataReader<TYPE>(TopicDescription<TYPE> topic,
+        DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic,
                                                string qosLibraryName,
                                                string qosProfileName,
                                                DataReaderListener<TYPE> listener,
@@ -76,7 +76,7 @@ namespace org.omg.dds.sub
 
         // --- Create DataReader of built-in bytes type: -------------------------
 
-        BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic);
+        BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic);
 
         /// <summary>
         /// Create a new data reader.
@@ -89,7 +89,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic,
+        BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic,
                DataReaderQos qos,
                DataReaderListener<byte[]> listener,
                ICollection<Type> statuses);
@@ -106,7 +106,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        BytesDataReader createBytesDataReader(TopicDescription<byte[]> topic,
+        BytesDataReader CreateBytesDataReader(TopicDescription<byte[]> topic,
                string qosLibraryName,
                string qosProfileName,
                DataReaderListener<byte[]> listener,
@@ -115,7 +115,7 @@ namespace org.omg.dds.sub
 
         // --- Create DataReader of built-in KeyedBytes type: --------------------
 
-        KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic);
+        KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic);
 
         /// <summary>
         /// Create a new data reader
@@ -128,7 +128,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
+        KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
                DataReaderQos qos,
                DataReaderListener<KeyedBytes> listener,
                ICollection<Type> statuses);
@@ -145,7 +145,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        KeyedBytesDataReader createKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
+        KeyedBytesDataReader CreateKeyedBytesDataReader(TopicDescription<KeyedBytes> topic,
                string qosLibraryName,
                string qosProfileName,
                DataReaderListener<KeyedBytes> listener,
@@ -154,7 +154,7 @@ namespace org.omg.dds.sub
 
         // --- Create DataReader of built-in string type: ------------------------
 
-        stringDataReader createstringDataReader(TopicDescription<string> topic);
+        stringDataReader CreatestringDataReader(TopicDescription<string> topic);
 
         /// <summary>
         /// Create a new data reader
@@ -167,7 +167,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        stringDataReader createstringDataReader(TopicDescription<string> topic,
+        stringDataReader CreatestringDataReader(TopicDescription<string> topic,
                DataReaderQos qos,
                DataReaderListener<string> listener,
                ICollection<Type> statuses);
@@ -184,7 +184,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        stringDataReader createstringDataReader(TopicDescription<string> topic,
+        stringDataReader CreatestringDataReader(TopicDescription<string> topic,
                string qosLibraryName,
                string qosProfileName,
                DataReaderListener<string> listener,
@@ -193,7 +193,7 @@ namespace org.omg.dds.sub
 
         // --- Create DataReader of built-in Keyedstring type: -------------------
 
-        KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic);
+        KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic);
 
         /// <summary>
         /// Create a new data reader
@@ -206,7 +206,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic,
+        KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic,
                DataReaderQos qos,
                DataReaderListener<Keyedstring> listener,
                ICollection<Type> statuses);
@@ -223,7 +223,7 @@ namespace org.omg.dds.sub
         ///                        changes
         /// </param>
         /// <returns></returns>
-        KeyedstringDataReader createKeyedstringDataReader(TopicDescription<Keyedstring> topic,
+        KeyedstringDataReader CreateKeyedstringDataReader(TopicDescription<Keyedstring> topic,
                string qosLibraryName,
                string qosProfileName,
                DataReaderListener<Keyedstring> listener,
@@ -232,36 +232,36 @@ namespace org.omg.dds.sub
 
         // --- Lookup operations: ------------------------------------------------
 
-        DataReader<TYPE> lookupDataReader<TYPE>(string topicName);
-        DataReader<TYPE> lookupDataReader<TYPE>(TopicDescription<TYPE> topicName);
+        DataReader<TYPE> LookupDataReader<TYPE>(string topicName);
+        DataReader<TYPE> LookupDataReader<TYPE>(TopicDescription<TYPE> topicName);
 
-        BytesDataReader lookupBytesDataReader(TopicDescription<byte[]> topicName);
-        KeyedBytesDataReader lookupKeyedBytesDataReader(TopicDescription<KeyedBytes> topicName);
-        stringDataReader lookupstringDataReader(TopicDescription<string> topicName);
-        KeyedstringDataReader lookupKeyedstringDataReader(TopicDescription<Keyedstring> topicName);
+        BytesDataReader LookupBytesDataReader(TopicDescription<byte[]> topicName);
+        KeyedBytesDataReader LookupKeyedBytesDataReader(TopicDescription<KeyedBytes> topicName);
+        stringDataReader LookupstringDataReader(TopicDescription<string> topicName);
+        KeyedstringDataReader LookupKeyedstringDataReader(TopicDescription<Keyedstring> topicName);
 
 
         // --- Other operations: -------------------------------------------------
 
         void closeContainedEntities();
 
-        ICollection<DataReader<TYPE>> getDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers);
+        ICollection<DataReader<TYPE>> GetDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers);
 
-        ICollection<DataReader<TYPE>> getDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers,
+        ICollection<DataReader<TYPE>> GetDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers,
                ICollection<SampleState> sampleStates,
                ICollection<ViewState> viewStates,
                ICollection<InstanceState> instanceStates);
 
-        void notifyDataReaders();
+        void NotifyDataReaders();
 
-        void beginAccess();
-        void endAccess();
+        void BeginAccess();
+        void EndAccess();
 
-        DataReaderQos getDefaultDataReaderQos();
-        void setDefaultDataReaderQos(DataReaderQos qos);
-        void setDefaultDataReaderQos(string qosLibraryName,
+        DataReaderQos GetDefaultDataReaderQos();
+        void SetDefaultDataReaderQos(DataReaderQos qos);
+        void SetDefaultDataReaderQos(string qosLibraryName,
                string qosProfileName);
 
-        void copyFromTopicQos(DataReaderQos dst, TopicQos src);
+        void CopyFromTopicQos(DataReaderQos dst, TopicQos src);
     }
 }

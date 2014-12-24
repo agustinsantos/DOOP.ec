@@ -22,7 +22,7 @@ namespace Rtps.Messages.Submessages.Elements
 
         /// <summary>
         /// Constructs Parameter with null bytes. 
-        /// Bytes are expected to be read by encoders
+        /// Bytes are expected to be Read by encoders
         /// </summary>
         /// <param name="id"></param>
         protected Parameter(ParameterId id)
@@ -57,7 +57,7 @@ namespace Rtps.Messages.Submessages.Elements
         }
 
         /// <summary>
-        /// Parameter value
+        /// Parameter Value
         /// </summary>
         /// <returns></returns>
         public byte[] Bytes

@@ -11,8 +11,8 @@ namespace Rtps.Messages.Submessages
     /// <p>
     /// From OMG RTPS Standard v2,1 p52: This Submessage is sent from an RTPS Writer
     /// to an RTPS Reader and indicates to the RTPS Reader that a range of sequence 
-    /// numbers is no longer relevant. The set may be a contiguous range of sequence 
-    /// numbers or a specific set of sequence numbers.
+    /// numbers is no longer relevant. The Set may be a contiguous range of sequence 
+    /// numbers or a specific Set of sequence numbers.
     /// </summary>
     public class Gap : SubMessage
     {
@@ -26,7 +26,7 @@ namespace Rtps.Messages.Submessages
         { }
 
         /// <summary>
-        /// Get the Reader Entity that is being informed of the irrelevance of a set
+        /// Get the Reader Entity that is being informed of the irrelevance of a Set
         /// of sequence numbers.
         /// </summary>
         public EntityId ReaderId

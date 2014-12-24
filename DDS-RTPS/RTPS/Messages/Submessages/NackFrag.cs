@@ -76,8 +76,8 @@ namespace Rtps.Messages.Submessages
 
         /// <summary>
         /// Communicates the state of the reader to the writer. The fragment numbers
-        ///  that appear in the set indicate missing fragments on the reader side. The
-        ///  ones that do not appear in the set are undetermined (could have been
+        ///  that appear in the Set indicate missing fragments on the reader side. The
+        ///  ones that do not appear in the Set are undetermined (could have been
         ///  received or not).
         /// </summary>
         public SequenceNumberSet FragmentNumberState

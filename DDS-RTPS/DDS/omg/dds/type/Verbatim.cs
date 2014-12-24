@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -29,8 +29,8 @@ namespace org.omg.dds.type
     ]
     public class Verbatim : Attribute
     {
-        public string language { get; set; }// default "*";
-        public string placement { get; set; } // default "before-declaration";
-        public string text { get; set; }
+        public string Language { get; set; }// default "*";
+        public string Placement { get; set; } // default "before-declaration";
+        public string Text { get; set; }
     }
 }

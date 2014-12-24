@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -28,44 +28,44 @@ namespace org.omg.dds.type.builtin
 
     public interface KeyedstringDataWriter : DataWriter<Keyedstring>
     {
-        InstanceHandle registerInstance(string key);
+        InstanceHandle RegisterInstance(string key);
 
-        InstanceHandle registerInstance(string key, Time sourceTimestamp);
+        InstanceHandle RegisterInstance(string key, Time sourceTimestamp);
 
-        InstanceHandle registerInstance(string key, long sourceTimestamp, TimeUnit unit);
+        InstanceHandle RegisterInstance(string key, long sourceTimestamp, TimeUnit unit);
 
-        void unregisterInstance(string key);
+        void UnregisterInstance(string key);
 
-        void unregisterInstance(string key, Time sourceTimestamp);
+        void UnregisterInstance(string key, Time sourceTimestamp);
 
-        void unregisterInstance(
+        void UnregisterInstance(
               string key, long sourceTimestamp, TimeUnit unit);
 
-        void write(string key, string str);
+        void Write(string key, string str);
 
-        void write(string key, string str, InstanceHandle handle);
+        void Write(string key, string str, InstanceHandle handle);
 
-        void write(
+        void Write(
               string key,
               string str,
               InstanceHandle handle,
               Time sourceTimestamp);
 
-        void write(
+        void Write(
               string key,
               string str,
               InstanceHandle handle,
               long sourceTimestamp,
               TimeUnit unit);
 
-        void dispose(string key);
+        void Dispose(string key);
 
-        void dispose(string key, Time sourceTimestamp);
+        void Dispose(string key, Time sourceTimestamp);
 
-        void dispose(string key, long sourceTimestamp, TimeUnit unit);
+        void Dispose(string key, long sourceTimestamp, TimeUnit unit);
 
-        StringBuilder getKeyValue(StringBuilder key, InstanceHandle handle);
+        StringBuilder GetKeyValue(StringBuilder key, InstanceHandle handle);
 
-        ModifiableInstanceHandle lookupInstance(ModifiableInstanceHandle handle, string key);
+        ModifiableInstanceHandle LookupInstance(ModifiableInstanceHandle handle, string key);
     }
 }

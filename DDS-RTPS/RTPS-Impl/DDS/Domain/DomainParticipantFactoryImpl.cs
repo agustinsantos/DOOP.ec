@@ -118,7 +118,7 @@ namespace Doopec.Dds.Domain
         #region Fields
         private DomainParticipantFactoryQos qos_;
 
-        /// The default qos value of DomainParticipant.
+        /// The default qos Value of DomainParticipant.
         private DomainParticipantQos default_participant_qos_;
 
         /// The collection of domain participants.

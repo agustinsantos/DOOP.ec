@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -26,50 +26,50 @@ namespace org.omg.dds.type.dynamic
 
     public interface TypeDescriptor : Value<TypeDescriptor, ModifiableTypeDescriptor>
     {
-        bool isConsistent();
+        bool IsConsistent();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The kind</returns>
-        TypeKind getKind();
+        TypeKind GetKind();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The name</returns>
-        string getName();
+        string GetName();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The baseType</returns>
-        DynamicType getBaseType();
+        DynamicType GetBaseType();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The discriminatorType</returns>
-        DynamicType getDiscriminatorType();
+        DynamicType GetDiscriminatorType();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>The bound, an unmodifiable list</returns>
-        List<int> getBound();
+        /// <returns>The Bound, an unmodifiable list</returns>
+        List<int> GetBound();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>The elementType</returns>
+        /// <returns>The ElementType</returns>
         [Optional]
-        DynamicType getElementType();
+        DynamicType GetElementType();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The keyElementType</returns>
         [Optional]
-        DynamicType getKeyElementType();
+        DynamicType GetKeyElementType();
     }
 }

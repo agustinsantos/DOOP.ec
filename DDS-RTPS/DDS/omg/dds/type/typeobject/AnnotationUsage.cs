@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -34,27 +34,27 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="typeId">The typeId to set</param>
+        /// <param name="typeId">The typeId to Set</param>
         /// <returns>this</returns>
-        AnnotationUsage setTypeId(int typeId);
+        AnnotationUsage SetTypeId(int typeId);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The typeId</returns>
-        int getTypeId();
+        int GetTypeId();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="member">The member to set</param>
+        /// <param name="member">The member to Set</param>
         /// <returns>this</returns>
-        AnnotationUsage setMember(List<AnnotationUsageMember> member);
+        AnnotationUsage SetMember(List<AnnotationUsageMember> member);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>The member</returns>
-        List<AnnotationUsageMember> getMember();
+        List<AnnotationUsageMember> GetMember();
     }
 }

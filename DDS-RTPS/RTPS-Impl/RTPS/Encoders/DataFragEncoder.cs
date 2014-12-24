@@ -40,7 +40,7 @@ namespace Doopec.Rtps.Encoders
 
         public static void GetDataFrag(this IoBuffer buffer, ref DataFrag obj)
         {
-            int start_count = buffer.Position; // start of bytes read so far from the
+            int start_count = buffer.Position; // start of bytes Read so far from the
             // beginning
 
             obj.ExtraFlags = (short)buffer.GetInt16();
@@ -70,13 +70,13 @@ namespace Doopec.Rtps.Encoders
                 obj.ParameterList = buffer.GetParameterList();
             }
 
-            int end_count = buffer.Position; // end of bytes read so far from the beginning
+            int end_count = buffer.Position; // end of bytes Read so far from the beginning
             if (obj.Header.SubMessageLength != 0)
             {
                 obj.SerializedPayload = new byte[obj.Header.SubMessageLength - (end_count - start_count)];
             }
             else
-            { // SubMessage is the last one. Rest of the bytes are read.
+            { // SubMessage is the last one. Rest of the bytes are Read.
                 // @see 8.3.3.2.3
                 obj.SerializedPayload = new byte[buffer.Remaining];
             }

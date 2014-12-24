@@ -32,8 +32,8 @@ namespace ExampleDDS.PubSubExamples
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
-            DataReader<Greeting> dr = sub.createDataReader<Greeting>(tp,
-                                                                    sub.getDefaultDataReaderQos(),
+            DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
+                                                                    sub.GetDefaultDataReaderQos(),
                                                                     ls,
                                                                     null /* all status changes */);
 
@@ -43,7 +43,7 @@ namespace ExampleDDS.PubSubExamples
             dw.Write(data);
 
             //and check that the reader has this data
-            dr.waitForHistoricalData(10, TimeUnit.SECONDS);
+            dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
 
             dp.Close();
         }
@@ -55,13 +55,13 @@ namespace ExampleDDS.PubSubExamples
             public override void onDataAvailable(DataAvailableStatus<Greeting> status)
             {
                 DataReader<Greeting> dr = status.GetSource();
-                SampleIterator<Greeting> it = dr.take();
+                SampleIterator<Greeting> it = dr.Take();
                 foreach (Sample<Greeting> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
                     // InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
-                    Greeting dt = smp.getData();
+                    Greeting dt = smp.GetData();
                     log.InfoFormat("Received data:\"{0}\"", dt.Value);
                 }
             }

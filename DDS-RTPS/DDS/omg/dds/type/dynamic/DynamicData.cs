@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -29,7 +29,7 @@ namespace org.omg.dds.type.dynamic
 
     public interface DynamicData : DDSObject, ICloneable
     {
-        DynamicType getType();
+        DynamicType GetType();
 
         /// <summary>
         /// Modifying an element of the given list modifies the descriptor of this
@@ -37,343 +37,343 @@ namespace org.omg.dds.type.dynamic
         /// is not allowed.
         /// </summary>
         /// <returns></returns>
-        List<MemberDescriptor> getDescriptors();
+        List<MemberDescriptor> GetDescriptors();
 
-        int getMemberIdByName(string name);
-        int getMemberIdAtIndex(int index);
-
-
-        void clearAllValues();
-        void clearNonkeyValues();
-        void clearValue(int id);
+        int GetMemberIdByName(string name);
+        int GetMemberIdAtIndex(int index);
 
 
-        DynamicData loanValue(int id);
-        void returnLoanedValue(DynamicData value);
+        void ClearAllValues();
+        void ClearNonkeyValues();
+        void ClearValue(int id);
 
 
-        int getInt32Value(int id);
+        DynamicData LoanValue(int id);
+        void ReturnLoanedValue(DynamicData value);
+
+
+        int GetInt32Value(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt32Value(int id, int value);
+        DynamicData SetInt32Value(int id, int value);
 
-        short getInt16Value(int id);
+        short GetInt16Value(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt16Value(int id, short value);
+        DynamicData SetInt16Value(int id, short value);
 
-        long getInt64Value(int id);
+        long GetInt64Value(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt64Value(int id, long value);
+        DynamicData SetInt64Value(int id, long value);
 
-        BigInteger getBigIntegerValue(int id);
+        BigInteger GetBigIntegerValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBigIntegerValue(int id, BigInteger value);
+        DynamicData SetBigIntegerValue(int id, BigInteger value);
 
-        float getFloat32Value(int id);
+        float GetFloat32Value(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setFloat32Value(int id, float value);
+        DynamicData SetFloat32Value(int id, float value);
 
-        double getFloat64Value(int id);
+        double GetFloat64Value(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setFloat64Value(int id, double value);
+        DynamicData SetFloat64Value(int id, double value);
 
-        BigDecimal getBigDecimalValue(int id);
+        BigDecimal GetBigDecimalValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBigDecimalValue(int id, BigDecimal value);
+        DynamicData SetBigDecimalValue(int id, BigDecimal value);
 
-        char getCharValue(int id);
+        char GetCharValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setCharValue(int id, char value);
+        DynamicData SetCharValue(int id, char value);
 
-        byte getByteValue(int id);
+        byte GetByteValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
         DynamicData setByteValue(int id, byte value);
 
-        bool getBooleanValue(int id);
+        bool GetBooleanValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBooleanValue(int id, bool value);
+        DynamicData SetBooleanValue(int id, bool value);
 
-        string getstringValue(int id);
+        string GetstringValue(int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setstringValue(int id, CharSequence value);
+        DynamicData SetstringValue(int id, CharSequence value);
 
-        DynamicData getComplexValue(DynamicData value, int id);
+        DynamicData GetComplexValue(DynamicData value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setComplexValue(int id, DynamicData value);
+        DynamicData SetComplexValue(int id, DynamicData value);
 
 
-        int getInt32Values(int[] value, int offset, int length, int id);
+        int GetInt32Values(int[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setInt32Values(int id, int[] value, int offset, int length);
+        DynamicData SetInt32Values(int id, int[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt32Values(int id, params int[] value);
+        DynamicData SetInt32Values(int id, params int[] value);
 
-        int getInt16Values(short[] value, int offset, int length, int id);
+        int GetInt16Values(short[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setInt16Values(int id, short[] value, int offset, int length);
+        DynamicData SetInt16Values(int id, short[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt16Values(int id, params short[] value);
+        DynamicData SetInt16Values(int id, params short[] value);
 
-        int getInt64Values(long[] value, int offset, int length, int id);
+        int GetInt64Values(long[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setInt64Values(int id, long[] value, int offset, int length);
+        DynamicData SetInt64Values(int id, long[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setInt64Values(int id, params long[] value);
+        DynamicData SetInt64Values(int id, params long[] value);
 
-        int getBigIntegerValues(BigInteger[] value, int offset, int length, int id);
-        List<BigInteger> getBigIntegerValues(List<BigInteger> value, int id);
+        int GetBigIntegerValues(BigInteger[] value, int offset, int length, int id);
+        List<BigInteger> GetBigIntegerValues(List<BigInteger> value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setBigIntegerValues(int id, BigInteger[] value, int offset, int length);
+        DynamicData SetBigIntegerValues(int id, BigInteger[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBigIntegerValues(int id, List<BigInteger> value);
+        DynamicData SetBigIntegerValues(int id, List<BigInteger> value);
 
-        int getFloat32Values(float[] value, int offset, int length, int id);
+        int GetFloat32Values(float[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setFloat32Values(int id, float[] value, int offset, int length);
+        DynamicData SetFloat32Values(int id, float[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setFloat32Values(int id, params float[] value);
+        DynamicData SetFloat32Values(int id, params float[] value);
 
-        int getFloat64Values(double[] value, int offset, int length, int id);
+        int GetFloat64Values(double[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setFloat64Values(int id, double[] value, int offset, int length);
+        DynamicData SetFloat64Values(int id, double[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setFloat64Values(int id, params double[] value);
+        DynamicData SetFloat64Values(int id, params double[] value);
 
-        int getBigDecimalValues(BigDecimal[] value, int offset, int length, int id);
-        List<BigDecimal> getBigDecimalValues(List<BigDecimal> value, int id);
+        int GetBigDecimalValues(BigDecimal[] value, int offset, int length, int id);
+        List<BigDecimal> GetBigDecimalValues(List<BigDecimal> value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setBigDecimalValues(int id, BigDecimal[] value, int offset, int length);
+        DynamicData SetBigDecimalValues(int id, BigDecimal[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBigDecimalValues(int id, List<BigDecimal> value);
+        DynamicData SetBigDecimalValues(int id, List<BigDecimal> value);
 
-        int getCharValues(char[] value, int offset, int length, int id);
-        StringBuilder getCharValues(StringBuilder value, int id);
+        int GetCharValues(char[] value, int offset, int length, int id);
+        StringBuilder GetCharValues(StringBuilder value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setCharValues(int id, char[] value, int offset, int length);
+        DynamicData SetCharValues(int id, char[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setCharValues(int id, params char[] value);
+        DynamicData SetCharValues(int id, params char[] value);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setCharValues(int id, CharSequence value);
+        DynamicData SetCharValues(int id, CharSequence value);
 
-        int getByteValues(byte[] value, int offset, int length, int id);
+        int GetByteValues(byte[] value, int offset, int length, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setByteValues(int id, byte[] value, int offset, int length);
+        DynamicData SetByteValues(int id, byte[] value, int offset, int length);
 
-        int getBooleanValues(
+        int GetBooleanValues(
                bool[] value, int offset, int length, int id);
 
-        void getBooleanValues(List<bool> value, int id);
+        void GetBooleanValues(List<bool> value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setBooleanValues(int id, bool[] value, int offset, int length);
+        DynamicData SetBooleanValues(int id, bool[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setBooleanValues(int id, params bool[] value);
+        DynamicData SetBooleanValues(int id, params bool[] value);
 
-        int getstringValues(
+        int GetstringValues(
                string[] value, int offset, int length, int id);
-        void getstringValues(List<string> value, int id);
+        void GetstringValues(List<string> value, int id);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
-        DynamicData setstringValues(int id, string[] value, int offset, int length);
+        DynamicData SetstringValues(int id, string[] value, int offset, int length);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setstringValues(int id, params string[] value);
+        DynamicData SetstringValues(int id, params string[] value);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="value"></param>
+        /// <param name="Value"></param>
         /// <returns>this</returns>
-        DynamicData setstringValues(int id, List<string> value);
+        DynamicData SetstringValues(int id, List<string> value);
 
 
         //DynamicData clone();

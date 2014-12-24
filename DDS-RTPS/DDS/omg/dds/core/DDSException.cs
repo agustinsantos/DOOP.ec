@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -38,7 +38,7 @@ namespace org.omg.dds.core
      * <tr>
      *     <td>NO_DATA</td>
      *     <td>Normal, successful return from a data access method such as
-     *         {@link DataReader#take()}, but no data was available.
+     *         {@link DataReader#Take()}, but no data was available.
      *     </td>
      *     <td>(<em>none</em>)</td>
      * </tr>
@@ -51,7 +51,7 @@ namespace org.omg.dds.core
      * </tr>
      * <tr>
      *     <td>BAD_PARAMETER</td>
-     *     <td>An argument passed to a method was out of range or had a value
+     *     <td>An argument passed to a method was out of range or had a Value
      *         that was otherwise illegal.
      *     </td>
      *     <td>{@link java.lang.IllegalArgumentException}</td>
@@ -116,7 +116,7 @@ namespace org.omg.dds.core
     ///  DDS recognizes a number of ways in which an operation may return, which
     ///  are mapped to exceptions in the following way:
     /// <para>OK. Normal, successful return.</para> 
-    /// <para>NO_DATA. Normal, successful return from a data access method such as DataReader take(), but no data was available.</para> 
+    /// <para>NO_DATA. Normal, successful return from a data access method such as DataReader Take(), but no data was available.</para> 
     /// </summary>
     public abstract class DDSException : SystemException, DDSObject
     {

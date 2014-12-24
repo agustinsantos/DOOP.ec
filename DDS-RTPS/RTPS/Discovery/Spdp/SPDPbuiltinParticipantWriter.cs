@@ -10,7 +10,7 @@ namespace Rtps.Discovery.Sedp
     /// SPDPbuiltinParticipantWriter and the SPDPbuiltinParticipantReader.
     /// The SPDPbuiltinParticipantWriter is an RTPS Best-Effort StatelessWriter. The HistoryCache of the
     /// SPDPbuiltinParticipantWriter contains a single data-object of type SPDPdiscoveredParticipantData. 
-    /// The value of this data-object is set from the attributes in the Participant. 
+    /// The Value of this data-object is Set from the attributes in the Participant. 
     /// If the attributes change, the data-object is replaced.
     /// </summary>
     public class SPDPbuiltinParticipantWriter : StatelessWriter<SPDPdiscoveredParticipantData>

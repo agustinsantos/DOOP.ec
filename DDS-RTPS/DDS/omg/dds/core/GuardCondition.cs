@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -26,7 +26,7 @@ namespace org.omg.dds.core
     /// <summary>
     /// A GuardCondition object is a specific Condition whose triggerValue is
     /// completely under the control of the application. When it is first created,
-    /// the triggerValue is set to false.
+    /// the triggerValue is Set to false.
     /// 
     /// The purpose of the GuardCondition is to provide the means for the
     /// application to manually wake up a {@link WaitSet}. This is accomplished by

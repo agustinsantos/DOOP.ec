@@ -12,7 +12,7 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific Language governing permissions and
  * limitations under the License.
  */
 
@@ -23,14 +23,14 @@ namespace org.omg.dds.sub
 
     public interface QueryCondition<TYPE> : ReadCondition<TYPE>
     {
-        string getQueryExpression();
+        string GetQueryExpression();
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>An unmodifiable list of the current query parameters</returns>
-        IList<string> getQueryParameters();
+        IList<string> GetQueryParameters();
 
-        void setQueryParameters(List<string> queryParameters);
+        void SetQueryParameters(List<string> queryParameters);
     }
 }

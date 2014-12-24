@@ -67,7 +67,7 @@ namespace Rtps.Structure
         }
 
         /// <summary>
-        /// The data value associated with the change. Depending on the kind of 
+        /// The data Value associated with the change. Depending on the kind of 
         /// CacheChange, there may be no associated data. 
         /// </summary>
         public Data DataValue

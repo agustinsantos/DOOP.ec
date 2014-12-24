@@ -20,8 +20,8 @@ namespace Rtps.Structure.Types
     /// <summary>
     /// Type used to represent the addressing information needed to send a message to an
     /// RTPS Endpoint using one of the supported transports.
-    /// Should be able to hold a discriminator identifying the kind of transport, an address,
-    /// and a port number. It must be possible to represent the discriminator and port
+    /// Should be able to hold a Discriminator identifying the kind of transport, an address,
+    /// and a port number. It must be possible to represent the Discriminator and port
     /// number using 4 octets, the address using 16 octets.
     /// </summary>
     public class Locator

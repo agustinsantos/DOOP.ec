@@ -33,7 +33,7 @@ namespace Rtps.Structure.Types
         }
 
         /// <summary>
-        /// Returns the value.
+        /// Returns the Value.
         /// </summary>
         public byte Major
         {
