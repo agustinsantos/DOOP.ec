@@ -52,7 +52,7 @@ namespace ExampleDDS.PubSubExamples
         {
             private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-            public override void onDataAvailable(DataAvailableStatus<Greeting> status)
+            public override void OnDataAvailable(DataAvailableStatus<Greeting> status)
             {
                 DataReader<Greeting> dr = status.GetSource();
                 SampleIterator<Greeting> it = dr.Take();
