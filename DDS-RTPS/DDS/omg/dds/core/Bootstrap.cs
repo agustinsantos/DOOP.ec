@@ -292,9 +292,12 @@ namespace org.omg.dds.core
 
         // --- From DDSObject: ---------------------------------------------------
 
-        public Bootstrap getBootstrap()
+        public Bootstrap GetBootstrap
         {
-            return this;
+            get
+            {
+                return this;
+            }
         }
 
 
@@ -312,11 +315,11 @@ namespace org.omg.dds.core
         {
             // --- Singleton factories: ------------------------------------------
 
-            DomainParticipantFactory getParticipantFactory();
+            DomainParticipantFactory ParticipantFactory { get; }
 
-            DynamicTypeFactory getTypeFactory();
+            DynamicTypeFactory TypeFactory {get;}
 
-            DynamicDataFactory getDataFactory();
+            DynamicDataFactory DataFactory { get; }
 
 
             // --- Types: --------------------------------------------------------
@@ -344,7 +347,7 @@ namespace org.omg.dds.core
              *                  subsequently be used to create one or more
              *                  {@link org.omg.dds.topic.Topic}s.
              */
-            TypeSupport<TYPE> newTypeSupport<TYPE>(Type type, string registeredName);
+            TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName);
 
 
             // --- Time & Duration: ----------------------------------------------
@@ -359,17 +362,17 @@ namespace org.omg.dds.core
             /// <param name="duration"></param>
             /// <param name="unit"></param>
             /// <returns></returns>
-            ModifiableDuration newDuration(long duration, TimeUnit unit);
+            ModifiableDuration NewDuration(long duration, TimeUnit unit);
 
             /**
              * @return      A {@link Duration} of infinite length.
              */
-            Duration infiniteDuration();
+            Duration InfiniteDuration();
 
             /**
              * @return      A {@link Duration} of zero length.
              */
-            Duration zeroDuration();
+            Duration ZeroDuration();
 
             /**
              * Construct a specific instant in time.
@@ -379,7 +382,7 @@ namespace org.omg.dds.core
              * 
              * <code>t.isValid() == false</code>
              */
-            ModifiableTime newTime(long time, TimeUnit units);
+            ModifiableTime NewTime(long time, TimeUnit units);
 
             /**
              * @return      A {@link Time} that is not valid.
@@ -389,43 +392,44 @@ namespace org.omg.dds.core
 
             // --- Instance handle: ----------------------------------------------
 
-            ModifiableInstanceHandle newInstanceHandle();
+            ModifiableInstanceHandle NewInstanceHandle();
 
-            InstanceHandle nilHandle();
+            InstanceHandle NilHandle();
 
 
             // --- Conditions & WaitSet: -----------------------------------------
 
-            GuardCondition newGuardCondition();
+            GuardCondition NewGuardCondition();
 
-            WaitSet newWaitSet();
+            WaitSet NewWaitSet();
 
 
             // --- Built-in topics: ----------------------------------------------
 
-            BuiltinTopicKey newBuiltinTopicKey();
+            BuiltinTopicKey NewBuiltinTopicKey();
 
-            ParticipantBuiltinTopicData newParticipantBuiltinTopicData();
+            ParticipantBuiltinTopicData NewParticipantBuiltinTopicData();
 
-            PublicationBuiltinTopicData newPublicationBuiltinTopicData();
+            PublicationBuiltinTopicData NewPublicationBuiltinTopicData();
 
-            SubscriptionBuiltinTopicData newSubscriptionBuiltinTopicData();
+            SubscriptionBuiltinTopicData NewSubscriptionBuiltinTopicData();
 
-            TopicBuiltinTopicData newTopicBuiltinTopicData();
+            TopicBuiltinTopicData NewTopicBuiltinTopicData();
 
 
             // --- QoS: ----------------------------------------------------------
 
+            // TODO hablar 
             QosPolicyId getQosPolicyId(Type policyClass);
 
 
             // --- Status: -------------------------------------------------------
 
-            ISet<Type> allStatusKinds();
+            ISet<Type> AllStatusKinds();
 
-            ISet<Type> noStatusKinds();
+            ISet<Type> NoStatusKinds();
 
-            LivelinessLostStatus<TYPE> newLivelinessLostStatus<TYPE>();
+            LivelinessLostStatus<TYPE> NewLivelinessLostStatus<TYPE>();
 
             OfferedDeadlineMissedStatus<TYPE> newOfferedDeadlineMissedStatus<TYPE>();
 

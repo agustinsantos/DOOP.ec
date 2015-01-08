@@ -109,9 +109,12 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public override Bootstrap getBootstrap()
+        public override Bootstrap GetBootstrap
         {
-            return bootstrap_;
+            get
+            {
+                return bootstrap_;
+            }
         }
 
         #region Fields

@@ -39,7 +39,7 @@ namespace org.omg.dds.topic
          */
         public static BuiltinTopicKey newBuiltinTopicKey(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newBuiltinTopicKey();
+            return bootstrap.getSPI().NewBuiltinTopicKey();
         }
 
 
@@ -68,7 +68,7 @@ namespace org.omg.dds.topic
 
         public abstract BuiltinTopicKey Clone();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
 
 
         public abstract BuiltinTopicKey copyFrom(BuiltinTopicKey other);

@@ -52,7 +52,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static ISet<Type> allStatuses(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().allStatusKinds();
+            return bootstrap.getSPI().AllStatusKinds();
         }
 
 
@@ -64,7 +64,7 @@ namespace org.omg.dds.core.status
         /// <returns></returns>
         public static ISet<Type> noStatuses(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().noStatusKinds();
+            return bootstrap.getSPI().NoStatusKinds();
         }
 
 
@@ -102,7 +102,7 @@ namespace org.omg.dds.core.status
 
         public abstract SELF modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
 
     }
 }

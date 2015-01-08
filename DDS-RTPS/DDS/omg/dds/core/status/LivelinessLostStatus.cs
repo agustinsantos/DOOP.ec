@@ -35,7 +35,7 @@ namespace org.omg.dds.core.status
         public static LivelinessLostStatus<TYPE>
         newLivelinessLostStatus(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newLivelinessLostStatus<TYPE>();
+            return bootstrap.getSPI().NewLivelinessLostStatus<TYPE>();
         }
 
 

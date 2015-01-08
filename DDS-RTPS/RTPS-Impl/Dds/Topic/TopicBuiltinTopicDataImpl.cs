@@ -136,9 +136,12 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override Bootstrap getBootstrap()
+        public override Bootstrap GetBootstrap
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

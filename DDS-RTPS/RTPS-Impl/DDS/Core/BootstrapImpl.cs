@@ -10,9 +10,10 @@ namespace Doopec.Dds.Core
     public class BootstrapImpl : Bootstrap
     {
         private SPI SPIInstance;
-
+        
         public override Bootstrap.ServiceProviderInterface getSPI()
         {
+            
             if (SPIInstance == null)
                 SPIInstance = new SPI(this);
 
@@ -30,42 +31,51 @@ namespace Doopec.Dds.Core
             this.boostrap = boostrap;
         }
 
-        public org.omg.dds.domain.DomainParticipantFactory getParticipantFactory()
+        public org.omg.dds.domain.DomainParticipantFactory ParticipantFactory
         {
-            return new DomainParticipantFactoryImpl(this.boostrap);
+            get
+            {
+                return new DomainParticipantFactoryImpl(this.boostrap);
+            }
         }
 
-        public org.omg.dds.type.dynamic.DynamicTypeFactory getTypeFactory()
+        public org.omg.dds.type.dynamic.DynamicTypeFactory TypeFactory
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public org.omg.dds.type.dynamic.DynamicDataFactory getDataFactory()
+        public org.omg.dds.type.dynamic.DynamicDataFactory DataFactory
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public org.omg.dds.type.TypeSupport<TYPE> newTypeSupport<TYPE>(Type type, string registeredName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public org.omg.dds.core.modifiable.ModifiableDuration newDuration(long duration, TimeUnit unit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Duration infiniteDuration()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Duration zeroDuration()
+        public org.omg.dds.type.TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime newTime(long time, TimeUnit units)
+        public org.omg.dds.core.modifiable.ModifiableDuration NewDuration(long duration, TimeUnit unit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Duration InfiniteDuration()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Duration ZeroDuration()
+        {
+            throw new NotImplementedException();
+        }
+
+        public org.omg.dds.core.modifiable.ModifiableTime NewTime(long time, TimeUnit units)
         {
             throw new NotImplementedException();
         }
@@ -75,47 +85,47 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle newInstanceHandle()
+        public org.omg.dds.core.modifiable.ModifiableInstanceHandle NewInstanceHandle()
         {
             throw new NotImplementedException();
         }
 
-        public InstanceHandle nilHandle()
+        public InstanceHandle NilHandle()
         {
             throw new NotImplementedException();
         }
 
-        public GuardCondition newGuardCondition()
+        public GuardCondition NewGuardCondition()
         {
             throw new NotImplementedException();
         }
 
-        public WaitSet newWaitSet()
+        public WaitSet NewWaitSet()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.BuiltinTopicKey newBuiltinTopicKey()
+        public org.omg.dds.topic.BuiltinTopicKey NewBuiltinTopicKey()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.ParticipantBuiltinTopicData newParticipantBuiltinTopicData()
+        public org.omg.dds.topic.ParticipantBuiltinTopicData NewParticipantBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.PublicationBuiltinTopicData newPublicationBuiltinTopicData()
+        public org.omg.dds.topic.PublicationBuiltinTopicData NewPublicationBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.SubscriptionBuiltinTopicData newSubscriptionBuiltinTopicData()
+        public org.omg.dds.topic.SubscriptionBuiltinTopicData NewSubscriptionBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.TopicBuiltinTopicData newTopicBuiltinTopicData()
+        public org.omg.dds.topic.TopicBuiltinTopicData NewTopicBuiltinTopicData()
         {
             throw new NotImplementedException();
         }
@@ -125,17 +135,17 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public ISet<Type> allStatusKinds()
+        public ISet<Type> AllStatusKinds()
         {
             throw new NotImplementedException();
         }
 
-        public ISet<Type> noStatusKinds()
+        public ISet<Type> NoStatusKinds()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.status.LivelinessLostStatus<TYPE> newLivelinessLostStatus<TYPE>()
+        public org.omg.dds.core.status.LivelinessLostStatus<TYPE> NewLivelinessLostStatus<TYPE>()
         {
             throw new NotImplementedException();
         }

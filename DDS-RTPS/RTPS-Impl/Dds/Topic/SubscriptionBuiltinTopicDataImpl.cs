@@ -143,9 +143,12 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

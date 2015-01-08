@@ -41,7 +41,7 @@ namespace org.omg.dds.domain
         /// <returns></returns>
         public static DomainParticipantFactory getInstance(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getParticipantFactory();
+            return bootstrap.getSPI().ParticipantFactory;
         }
 
 
@@ -103,6 +103,6 @@ namespace org.omg.dds.domain
         public abstract void setDefaultParticipantQos(string qosLibraryName, string qosProfileName);
 
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

@@ -54,7 +54,7 @@ namespace org.omg.dds.core
 
         public static ModifiableTime newTime(long time, TimeUnit units, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newTime(time, units);
+            return bootstrap.getSPI().NewTime(time, units);
         }
 
 
@@ -147,7 +147,7 @@ namespace org.omg.dds.core
 
         //public abstract Time clone();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
 
         public abstract ModifiableTime modify();
     }

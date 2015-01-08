@@ -42,7 +42,7 @@ namespace org.omg.dds.core
          */
         public static GuardCondition newGuardCondition(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newGuardCondition();
+            return bootstrap.getSPI().NewGuardCondition();
         }
 
 
@@ -52,9 +52,9 @@ namespace org.omg.dds.core
         // -----------------------------------------------------------------------
 
         public abstract void setTriggerValue(bool value);
-
+        
         public abstract bool getTriggerValue();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

@@ -49,9 +49,12 @@ namespace Doopec.Dds.XTypes
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap getBootstrap()
+        public org.omg.dds.core.Bootstrap GetBootstrap
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

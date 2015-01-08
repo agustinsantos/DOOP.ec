@@ -45,7 +45,7 @@ namespace org.omg.dds.core
        
         public static WaitSet newWaitSet(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newWaitSet();
+            return bootstrap.getSPI().NewWaitSet();
         }
         /// <summary>
         /// Instance Methods
@@ -76,6 +76,6 @@ namespace org.omg.dds.core
        ///        wait set.</returns>
         public abstract ICollection<Condition> getConditions();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

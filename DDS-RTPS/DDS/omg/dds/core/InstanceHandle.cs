@@ -33,7 +33,7 @@ namespace org.omg.dds.core
       
         public static ModifiableInstanceHandle newInstanceHandle(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newInstanceHandle();
+            return bootstrap.getSPI().NewInstanceHandle();
         }
         /// <summary>
         /// </summary>
@@ -43,7 +43,7 @@ namespace org.omg.dds.core
        
         public static InstanceHandle nilHandle(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().nilHandle();
+            return bootstrap.getSPI().NilHandle();
         }
         /// <summary>
         /// Instance Methods
@@ -59,6 +59,6 @@ namespace org.omg.dds.core
         /// <returns></returns>
         public abstract ModifiableInstanceHandle modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

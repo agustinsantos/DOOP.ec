@@ -34,7 +34,7 @@ namespace org.omg.dds.type.dynamic
          */
         public static DynamicDataFactory getInstance(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getDataFactory();
+            return bootstrap.getSPI().DataFactory;
         }
 
 

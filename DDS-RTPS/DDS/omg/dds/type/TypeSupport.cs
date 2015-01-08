@@ -74,7 +74,7 @@ namespace org.omg.dds.type
          */
         public static TypeSupport<TYPE> newTypeSupport(Type type, string registeredName, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newTypeSupport<TYPE>(type, registeredName);
+            return bootstrap.getSPI().NewTypeSupport<TYPE>(type, registeredName);
         }
 
 
@@ -85,7 +85,7 @@ namespace org.omg.dds.type
 
         public abstract string getTypeName();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
 
     }
 }

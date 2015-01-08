@@ -35,7 +35,7 @@ namespace org.omg.dds.type.dynamic
          */
         public static DynamicTypeFactory getInstance(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().getTypeFactory();
+            return bootstrap.getSPI().TypeFactory;
         }
 
 
@@ -57,6 +57,6 @@ namespace org.omg.dds.type.dynamic
         public abstract DynamicType loadTypeFromUrl(string documentUrl, string typeName, params string[] includePaths);
         public abstract DynamicType loadTypeFromDocument(string document, string typeName, params string[] includePaths);
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap{get;}
     }
 }

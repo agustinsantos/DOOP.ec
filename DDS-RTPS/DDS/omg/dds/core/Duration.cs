@@ -50,7 +50,7 @@ namespace org.omg.dds.core
          */
         public static ModifiableDuration newDuration(long duration, TimeUnit unit, Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newDuration(duration, unit);
+            return bootstrap.getSPI().NewDuration(duration, unit);
         }
 
 
@@ -62,7 +62,7 @@ namespace org.omg.dds.core
          */
         public static Duration infiniteDuration(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().infiniteDuration();
+            return bootstrap.getSPI().InfiniteDuration();
         }
 
 
@@ -74,7 +74,7 @@ namespace org.omg.dds.core
          */
         public static Duration zeroDuration(Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().zeroDuration();
+            return bootstrap.getSPI().ZeroDuration();
         }
 
 
@@ -177,6 +177,6 @@ namespace org.omg.dds.core
 
         public abstract ModifiableDuration modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

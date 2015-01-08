@@ -31,9 +31,12 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public Bootstrap getBootstrap()
+        public Bootstrap GetBootstrap
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void Add(org.omg.dds.core.policy.QosPolicyId key, org.omg.dds.core.policy.QosPolicy value)

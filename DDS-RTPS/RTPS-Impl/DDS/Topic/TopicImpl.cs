@@ -60,9 +60,12 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public Bootstrap getBootstrap()
+        public Bootstrap GetBootstrap
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public ITopicListener getListener()

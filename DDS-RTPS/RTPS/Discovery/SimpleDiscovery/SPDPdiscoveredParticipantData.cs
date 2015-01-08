@@ -50,9 +50,12 @@ namespace Rtps.Discovery.Spdp
             throw new System.NotImplementedException();
         }
 
-        public override org.omg.dds.core.Bootstrap getBootstrap()
+        public override org.omg.dds.core.Bootstrap GetBootstrap
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         public override string ToString()

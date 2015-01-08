@@ -43,7 +43,7 @@ namespace org.omg.dds.topic
         public static ParticipantBuiltinTopicData newParticipantBuiltinTopicData(
                 Bootstrap bootstrap)
         {
-            return bootstrap.getSPI().newParticipantBuiltinTopicData();
+            return bootstrap.getSPI().NewParticipantBuiltinTopicData();
         }
 
 
@@ -72,6 +72,6 @@ namespace org.omg.dds.topic
 
         public abstract ParticipantBuiltinTopicData modify();
 
-        public abstract Bootstrap getBootstrap();
+        public abstract Bootstrap GetBootstrap { get; }
     }
 }

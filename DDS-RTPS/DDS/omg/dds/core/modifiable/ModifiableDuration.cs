@@ -33,8 +33,8 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <param name="unit"></param>
         /// <returns>this</returns>
-        
         public abstract ModifiableDuration setDuration(long duration, TimeUnit unit);
+
         /// <summary>
         /// Manipulation:
         /// Increase this duration by the given amount.
@@ -42,6 +42,7 @@ namespace org.omg.dds.core.modifiable
         /// <param name="duration"></param>
         /// <returns>this</returns>
         public abstract ModifiableDuration add(Duration duration);
+
         /// <summary>
         /// 
         ///Increase this duration by the given amount.
@@ -69,11 +70,10 @@ namespace org.omg.dds.core.modifiable
 
         /// <summary>
         /// From Object: 
-        ///public abstract ModifiableDuration clone();
+        /// public abstract ModifiableDuration clone();
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-
         public abstract ModifiableDuration copyFrom(Duration other);
 
         public abstract Duration finishModification();
