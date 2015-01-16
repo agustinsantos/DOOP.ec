@@ -66,6 +66,7 @@
     <Compile Include="Encoders\MessageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeTests.cs" />
+    <Compile Include="Transport\RTPSPacketDetector.cs" />
     <Compile Include="Transport\UDPSimulator.cs" />
     <Compile Include="Transport\UDPTransportTests.cs" />
     <Compile Include="Transport\RTPSPacketsTests.cs" />
@@ -130,8 +131,145 @@
     <None Include="SamplePackets\packetD8.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet01.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet02.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet03.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet04.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet05.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet06.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet07.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet08.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet09.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet10.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet11.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet12.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet13.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet14.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet15.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet16.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet17.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet18.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet19.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet20.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet21.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet22.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet23.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet24.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet25.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet26.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet27.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet28.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet29.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet30.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet31.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet32.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet33.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet34.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet35.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet36.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet37.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet38.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet39.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet40.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet41.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet42.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet43.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_reliability_runtest_local\Packet44.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SamplePackets\TestOpenDDS_rtps_runtest_local\Packet001.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SamplePackets\OpenDDS_rtps_types\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
