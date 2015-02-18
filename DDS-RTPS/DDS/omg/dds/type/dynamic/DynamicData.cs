@@ -57,7 +57,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt32Value(int id, int value);
 
@@ -66,7 +66,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt16Value(int id, short value);
 
@@ -75,7 +75,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt64Value(int id, long value);
 
@@ -84,7 +84,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBigIntegerValue(int id, BigInteger value);
 
@@ -93,7 +93,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetFloat32Value(int id, float value);
 
@@ -102,7 +102,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetFloat64Value(int id, double value);
 
@@ -111,7 +111,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBigDecimalValue(int id, BigDecimal value);
 
@@ -120,7 +120,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetCharValue(int id, char value);
 
@@ -129,7 +129,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData setByteValue(int id, byte value);
 
@@ -138,7 +138,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBooleanValue(int id, bool value);
 
@@ -147,7 +147,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetstringValue(int id, CharSequence value);
 
@@ -156,7 +156,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetComplexValue(int id, DynamicData value);
 
@@ -166,7 +166,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -175,7 +175,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt32Values(int id, params int[] value);
 
@@ -184,7 +184,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -193,7 +193,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt16Values(int id, params short[] value);
 
@@ -202,7 +202,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -211,7 +211,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetInt64Values(int id, params long[] value);
 
@@ -221,7 +221,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -230,7 +230,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBigIntegerValues(int id, List<BigInteger> value);
 
@@ -239,7 +239,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -248,7 +248,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetFloat32Values(int id, params float[] value);
 
@@ -257,7 +257,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -266,7 +266,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetFloat64Values(int id, params double[] value);
 
@@ -276,7 +276,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -285,7 +285,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBigDecimalValues(int id, List<BigDecimal> value);
 
@@ -295,7 +295,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -304,14 +304,14 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetCharValues(int id, params char[] value);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetCharValues(int id, CharSequence value);
 
@@ -320,7 +320,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -334,7 +334,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -343,7 +343,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetBooleanValues(int id, params bool[] value);
 
@@ -354,7 +354,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>
@@ -363,7 +363,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetstringValues(int id, params string[] value);
 
@@ -371,7 +371,7 @@ namespace org.omg.dds.type.dynamic
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         DynamicData SetstringValues(int id, List<string> value);
 

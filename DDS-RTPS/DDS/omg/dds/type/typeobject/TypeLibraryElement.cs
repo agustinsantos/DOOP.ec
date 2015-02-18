@@ -39,7 +39,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetAliasType(AliasType value);
 
@@ -49,7 +49,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetAnnotationType(AnnotationType value);
 
@@ -59,7 +59,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetArrayType(ArrayType value);
 
@@ -69,7 +69,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetBitsetType(BitSetType value);
 
@@ -79,7 +79,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetEnumerationType(EnumerationType value);
 
@@ -89,7 +89,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetMapType(MapType value);
 
@@ -99,7 +99,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetSequenceType(SequenceType value);
 
@@ -109,7 +109,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetstringType(stringType value);
 
@@ -119,7 +119,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetStructureType(StructureType value);
 
@@ -129,7 +129,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetUnionType(UnionType value);
 
@@ -139,7 +139,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         TypeLibraryElement SetModule(Module value);
     }

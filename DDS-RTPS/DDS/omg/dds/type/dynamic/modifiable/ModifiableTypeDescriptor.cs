@@ -58,14 +58,14 @@ namespace org.omg.dds.type.dynamic.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Bound">The Bound to Set</param>
+        /// <param name="bound">The Bound to Set</param>
         /// <returns>this</returns>
         ModifiableTypeDescriptor SetBound(params int[] bound);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="ElementType">The ElementType to Set</param>
+        /// <param name="elementType">The ElementType to Set</param>
         /// <returns>this</returns>
         ModifiableTypeDescriptor SetElementType(DynamicType elementType);
 

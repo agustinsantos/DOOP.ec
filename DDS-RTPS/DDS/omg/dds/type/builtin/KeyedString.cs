@@ -41,7 +41,7 @@ namespace org.omg.dds.type.builtin
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <returns>this</returns>
         Keyedstring SetValue(CharSequence value);
 

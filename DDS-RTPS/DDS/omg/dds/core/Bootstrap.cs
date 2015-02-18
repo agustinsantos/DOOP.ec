@@ -400,7 +400,7 @@ namespace org.omg.dds.core
 
             ModifiableInstanceHandle NewInstanceHandle();
 
-            InstanceHandle nilHandle();
+            InstanceHandle NilHandle();
 
 
             // --- Conditions & WaitSet: -----------------------------------------

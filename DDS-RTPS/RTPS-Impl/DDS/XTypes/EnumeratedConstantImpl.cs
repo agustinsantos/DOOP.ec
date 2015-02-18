@@ -18,7 +18,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public int getValue()
+        public int GetValue()
         {
             return this.Value;
         }
@@ -29,7 +29,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public string getName()
+        public string GetName()
         {
             return this.Name;
         }

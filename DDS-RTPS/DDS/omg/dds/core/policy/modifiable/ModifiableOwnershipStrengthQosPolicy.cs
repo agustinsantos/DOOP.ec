@@ -27,7 +27,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <returns>this</returns>
         ModifiableOwnershipStrengthQosPolicy SetValue(int value);
     }

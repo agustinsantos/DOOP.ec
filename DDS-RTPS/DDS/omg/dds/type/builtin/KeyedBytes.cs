@@ -47,14 +47,14 @@ namespace org.omg.dds.type.builtin
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <returns>this</returns>
         KeyedBytes SetValue(byte[] value);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>

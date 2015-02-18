@@ -38,7 +38,7 @@ namespace org.omg.dds.core.modifiable
         /// </summary>
         /// <typeparam name="POLICY"></typeparam>
         /// <param name="key"></param>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>The previous Value of the indicated policy if that policy
         ///          applies to this <code>EntityQos</code>'s {@link Entity} or
         ///          <code>null</code> otherwise. If the returned object is not

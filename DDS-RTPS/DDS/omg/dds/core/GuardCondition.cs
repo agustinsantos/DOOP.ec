@@ -17,7 +17,6 @@
  */
 
 
-///
 
 namespace org.omg.dds.core
 {

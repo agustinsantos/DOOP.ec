@@ -46,7 +46,7 @@ namespace org.omg.dds.core
         /// <returns>An unmodifiable nil instance handle</returns>
         public static InstanceHandle NilHandle(Bootstrap bootstrap)
         {
-            return bootstrap.GetSPI().nilHandle();
+            return bootstrap.GetSPI().NilHandle();
         }
 
 

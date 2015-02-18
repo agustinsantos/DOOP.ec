@@ -80,7 +80,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public InstanceHandle nilHandle()
+        public InstanceHandle NilHandle()
         {
             throw new NotImplementedException();
         }

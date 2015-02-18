@@ -136,7 +136,7 @@ namespace Doopec.Dds.Sub
             throw new NotImplementedException();
         }
 
-        public void closeContainedEntities()
+        public void CloseContainedEntities()
         {
             throw new NotImplementedException();
         }

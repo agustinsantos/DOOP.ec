@@ -19,7 +19,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public TypeFlag getFlag()
+        public TypeFlag GetFlag()
         {
             return this.Flag;
         }
@@ -30,7 +30,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public int getTypeId()
+        public int GetTypeId()
         {
             return this.TypeId;
         }
@@ -41,7 +41,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public string getName()
+        public string GetName()
         {
             return this.Name;
         }

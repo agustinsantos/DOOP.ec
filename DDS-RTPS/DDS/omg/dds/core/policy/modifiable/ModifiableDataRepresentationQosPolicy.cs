@@ -31,14 +31,14 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         ModifiableDataRepresentationQosPolicy SetValue(List<short> value);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <returns>this</returns>
         ModifiableDataRepresentationQosPolicy SetValue(params short[] value);
     }

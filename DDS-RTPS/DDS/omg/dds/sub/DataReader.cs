@@ -40,16 +40,15 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <returns>The type parameter if this object's class</returns>
         System.Type GetType();
-        ///TODO how I comment a throw???
         /// <summary>
         /// Cast this data reader to the given type, or throw an exception if
         /// the Cast fails
-        /// @throws          ClassCastException if the Cast fails
         /// </summary>
         /// <typeparam name="OTHER">The type of the data subscribed to by this reader,
         ///                         according to the caller
         ///</typeparam>
         /// <returns>This data reader</returns>
+        /// <exception cref="ClassCastException">if the Cast fails</exception>
         DataReader<OTHER> Cast<OTHER>();
 
         ReadCondition<TYPE> CreateReadCondition();
@@ -92,15 +91,14 @@ namespace org.omg.dds.sub
               InstanceHandle publicationHandle);
 
 
-        // --- Type-specific interface: ------------------------------------------
+        
 
-        ///TODO how I can comment the tag @see
         /// <summary>
         /// Create and return a new Sample of the same type as may be accessed by
         /// this DataReader.
         /// 
         /// Applications may use this method, for example, to preallocate samples
-        /// to be overwritten by the <code>Read</code> and/or <code>Take</code>
+        /// to be overwritten by the <code>Read</code> and-or <code>Take</code>
         /// methods of this interface.
         /// 
         /// @see #Read(List)
@@ -112,7 +110,7 @@ namespace org.omg.dds.sub
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Read();
         SampleIterator<TYPE> Read(ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
@@ -133,7 +131,7 @@ namespace org.omg.dds.sub
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Take();
         SampleIterator<TYPE> Take(ICollection<SampleState> sampleStates,
               ICollection<ViewState> viewStates,
@@ -150,7 +148,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="condition"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Read(ReadCondition<TYPE> condition);
 
         void Read(IList<Sample<TYPE>> samples,
@@ -163,7 +161,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="condition"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Take(ReadCondition<TYPE> condition);
 
         void Take(IList<Sample<TYPE>> samples,
@@ -190,7 +188,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="handle"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Read(InstanceHandle handle);
         SampleIterator<TYPE> Read(InstanceHandle handle,
             ICollection<SampleState> sampleStates,
@@ -210,7 +208,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="handle"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> Take(InstanceHandle handle);
         SampleIterator<TYPE> Take(InstanceHandle handle,
               ICollection<SampleState> sampleStates,
@@ -230,7 +228,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="previousHandle"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle);
         SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle,
               ICollection<SampleState> sampleStates,
@@ -250,7 +248,7 @@ namespace org.omg.dds.sub
         /// 
         /// </summary>
         /// <param name="previousHandle"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle);
         SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle,
               ICollection<SampleState> sampleStates,
@@ -271,7 +269,7 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="previousHandle"></param>
         /// <param name="condition"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> ReadNext(InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
 
@@ -288,7 +286,7 @@ namespace org.omg.dds.sub
         /// </summary>
         /// <param name="previousHandle"></param>
         /// <param name="condition"></param>
-        /// <returns>A non-null unmodifiable iterator over loaned samples</returns>
+        /// <returns>A non null unmodifiable iterator over loaned samples</returns>
         SampleIterator<TYPE> TakeNext(InstanceHandle previousHandle,
               ReadCondition<TYPE> condition);
 

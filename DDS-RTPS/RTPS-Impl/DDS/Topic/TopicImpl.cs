@@ -64,16 +64,21 @@ namespace Doopec.Dds.Topic
         {
             throw new NotImplementedException();
         }
+         public ITopicListener Listener
+         {
+             get { return listener; }
+             set { listener = value; }
+         }
+         /*
+          public ITopicListener GetListener()
+          {
+              return listener;
+          }
 
-        public ITopicListener getListener()
-        {
-            return listener;
-        }
-
-        public void SetListener(ITopicListener listener)
-        {
-            this.listener = listener;
-        }
+          public void SetListener(ITopicListener listener)
+          {
+              this.listener = listener;
+          }*/
 
         public TopicQos GetQos()
         {
@@ -95,7 +100,7 @@ namespace Doopec.Dds.Topic
             throw new NotImplementedException();
         }
 
-        public StatusCondition<ITopic> getStatusCondition()
+        public StatusCondition<ITopic> GetStatusCondition()
         {
             throw new NotImplementedException();
         }

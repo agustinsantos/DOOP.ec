@@ -115,20 +115,23 @@ namespace org.omg.dds.sub
 
         // --- From ListIterator: --------------------------------------------
         /// <summary>
-        /// @exception UnsupportedOperationException always
+        /// 
         /// </summary>
+        /// <exception cref="UnsupportedOperationException">Always</exception>
         void Remove();
 
         /// <summary>
-        /// @exception UnsupportedOperationException always
+        /// 
         /// </summary>
         /// <param name="o"></param>
+        /// <exception cref="UnsupportedOperationException">Always</exception>
         void Set(Sample<IT_DATA> o);
-        ///TODO how i can comment the tag @exception
+       
         /// <summary>
-        /// @exception UnsupportedOperationException always
+        /// 
         /// </summary>
         /// <param name="o"></param>
+        /// <exception cref="UnsupportedOperationException">Always</exception>
         void Add(Sample<IT_DATA> o);
     }
 }

@@ -47,7 +47,7 @@ namespace org.omg.dds.pub
         /// <typeparam name="OTHER">The type of the data published by this writer,
         ///                         according to the caller</typeparam>
         /// <returns>This data writer</returns>
-        /// <exception cref="ClassCastException"/>
+        /// <exception cref="ClassCastException"></exception>
         DataWriter<OTHER> Cast<OTHER>();
 
         Topic<TYPE> GetTopic();

@@ -38,7 +38,7 @@ namespace org.omg.dds.core.policy
     /// However, any Entity cannot support any QosPolicy. For instance, a
     /// {@link DomainParticipant} supports different QosPolicy than a {@link Topic}
     /// or a {@link Publisher}.
-    /// QosPolicy can be Set when the Entity is created, or modified with the
+    /// QosPolicy can be Set when the Entity is created, or modified with the 
     /// {@link Entity#SetQos(org.omg.dds.core.EntityQos)} method. Each QosPolicy
     /// in collection list is treated independently from the others. This approach
     /// has the advantage of being very extensible. However, there may be cases
@@ -49,7 +49,7 @@ namespace org.omg.dds.core.policy
     /// When a policy is changed after being Set to a given Value, it is not
     /// required that the new Value be applied instantaneously; the Service is
     /// allowed to apply it after a transition phase. In addition, some QosPolicy
-    /// have “immutable” semantics meaning that they can only be specified either
+    /// have immutable semantics meaning that they can only be specified either
     /// at Entity creation time or else prior to calling the
     /// {@link Entity#Enable()} operation on the Entity.
     /// </summary>

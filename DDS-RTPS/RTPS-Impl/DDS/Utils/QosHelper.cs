@@ -99,7 +99,7 @@ namespace Doopec.DDS.Utils
 
         public static bool IsValid(LifespanQosPolicy qos)
         {
-            return valid_duration(qos.GetDuration());
+            return Valid_duration(qos.GetDuration());
         }
 
         public static bool IsValid(DurabilityQosPolicy qos)
@@ -124,10 +124,10 @@ namespace Doopec.DDS.Utils
 
         public static bool IsValid(DeadlineQosPolicy qos)
         {
-            return valid_duration(qos.GetPeriod());
+            return Valid_duration(qos.GetPeriod());
         }
 
-        public static bool valid(LatencyBudgetQosPolicy qos)
+        public static bool Valid(LatencyBudgetQosPolicy qos)
         {
             return true;
         }
@@ -306,7 +306,7 @@ namespace Doopec.DDS.Utils
         { throw new NotImplementedException(); }
 
 
-        private static bool valid_duration(Duration t)
+        private static bool Valid_duration(Duration t)
         {
 
             // Only accept infinite or positive finite durations.  (Zero

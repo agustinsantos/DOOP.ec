@@ -28,7 +28,7 @@ namespace org.omg.dds.core.policy
         /// Copy the data into the given array, starting at the index at the given
         /// offset.
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="value"></param>
         /// <param name="offset"></param>
         /// <returns>The total number of bytes in the data, independent of the
         ///          number of bytes copied. Callers can use this result to

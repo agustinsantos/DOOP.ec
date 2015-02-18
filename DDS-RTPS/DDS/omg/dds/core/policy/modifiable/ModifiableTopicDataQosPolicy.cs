@@ -29,7 +29,7 @@ namespace org.omg.dds.core.policy.modifiable
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns>this</returns>

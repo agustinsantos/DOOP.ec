@@ -45,7 +45,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Value">The Value to Set</param>
+        /// <param name="value">The Value to Set</param>
         /// <returns>this</returns>
         AnnotationUsageMember SetValue(AnnotationMemberValue value);
 

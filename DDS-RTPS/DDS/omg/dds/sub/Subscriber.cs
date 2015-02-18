@@ -243,7 +243,7 @@ namespace org.omg.dds.sub
 
         // --- Other operations: -------------------------------------------------
 
-        void closeContainedEntities();
+        void CloseContainedEntities();
 
         ICollection<DataReader<TYPE>> GetDataReaders<TYPE>(ICollection<DataReader<TYPE>> readers);
 

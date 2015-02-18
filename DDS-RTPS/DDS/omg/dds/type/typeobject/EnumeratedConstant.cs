@@ -30,7 +30,7 @@ namespace org.omg.dds.type.typeobject
         /// <summary>
         /// Sets the Value of a constant
         /// </summary>
-        /// <param name="name">the new Value</param>
+        /// <param name="value">the new Value</param>
         /// <returns>this</returns>
         EnumeratedConstant SetValue(int value);
 

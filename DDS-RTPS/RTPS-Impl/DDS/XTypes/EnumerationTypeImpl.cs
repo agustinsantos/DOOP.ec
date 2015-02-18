@@ -13,7 +13,7 @@ namespace Doopec.Dds.XTypes
         
         public IList<EnumeratedConstant> Constants { get; set; }
 
-        public int getBitBound()
+        public int GetBitBound()
         {
             return this.BitBound;
         }
@@ -24,7 +24,7 @@ namespace Doopec.Dds.XTypes
             return this;
         }
 
-        public IList<EnumeratedConstant> getConstant()
+        public IList<EnumeratedConstant> GetConstant()
         {
             return this.Constants;
         }
