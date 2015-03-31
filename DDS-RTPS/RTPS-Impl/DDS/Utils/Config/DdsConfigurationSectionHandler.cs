@@ -78,7 +78,7 @@ namespace Doopec.Dds.Config
         }
     }
 
-    [ConfigurationCollection(typeof(KeyValueConfigurationElement), AddItemName = "Add",
+    [ConfigurationCollection(typeof(KeyValueConfigurationElement), AddItemName = "add",
      CollectionType = ConfigurationElementCollectionType.BasicMap)]
     public class DdsSettingCollection : KeyValueConfigurationCollection
     {

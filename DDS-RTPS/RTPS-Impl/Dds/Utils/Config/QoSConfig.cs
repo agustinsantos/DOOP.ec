@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Doopec.Dds.Config
 {
-     [ConfigurationCollection(typeof(KeyValueElement), AddItemName = "Add", CollectionType = ConfigurationElementCollectionType.BasicMap)]
+     [ConfigurationCollection(typeof(KeyValueElement), AddItemName = "add", CollectionType = ConfigurationElementCollectionType.BasicMap)]
     public class QoSConfig : ConfigurationElementCollection
     {
         protected override ConfigurationElement CreateNewElement()
