@@ -2,6 +2,7 @@
 using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
 using Doopec.Rtps;
+using Doopec.Rtps.RtpsTransport;
 using Doopec.Rtps.SharedMem;
 using Doopec.Rtps.Structure;
 using Mina.Filter.Statistic;

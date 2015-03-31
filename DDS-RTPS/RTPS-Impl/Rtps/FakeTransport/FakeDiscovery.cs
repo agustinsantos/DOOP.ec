@@ -23,14 +23,12 @@ namespace Doopec.Rtps.SharedMem
         public object EventData { get; set; }
     }
 
-    public class FakeDiscovery
+    public class FakeDiscovery : IRtpsDiscovery
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private List<Participant> participants = new List<Participant>();
         private List<Endpoint> endpoints = new List<Endpoint>();
-
-        public delegate void DiscoveryEventHandler(object sender, DiscoveryEventArgs e);
 
         public event DiscoveryEventHandler ParticipantDiscovery;
         public event DiscoveryEventHandler EndpointDiscovery;
