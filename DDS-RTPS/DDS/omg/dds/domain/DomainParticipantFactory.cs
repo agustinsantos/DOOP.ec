@@ -27,8 +27,8 @@ namespace org.omg.dds.domain
     /// <summary>
     /// The sole purpose of this class is to allow the creation and destruction of
     ///  {@link DomainParticipant} objects. DomainParticipantFactory itself has no
-    ///  factory. It is a pre-existing per-{@link Bootstrap} singleton object that
-    ///  can be accessed by means of the {@link #GetInstance(Bootstrap)} operation
+    ///  factory. It is a pre-existing per-<see cref="Bootstrap"/> singleton object that
+    ///  can be accessed by means of the <see cref="GetInstance(Bootstrap)"/> operation
     ///  on the DomainParticipantFactory.
     /// </summary>
     public abstract class DomainParticipantFactory : DDSObject

@@ -40,12 +40,12 @@ namespace Doopec.Dds.Config
             }
         }
 
-        [ConfigurationProperty("Value", IsRequired = true, IsKey = true)]
+        [ConfigurationProperty("value", IsRequired = true, IsKey = true)]
         public string Value
         {
             get
             {
-                return (string)base["Value"];
+                return (string)base["value"];
             }
         }
     }

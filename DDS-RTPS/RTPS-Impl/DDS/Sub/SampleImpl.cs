@@ -96,7 +96,7 @@ namespace Doopec.DDS.Sub
 
         public void Add(Sample<IT_DATA> o)
         {
-            this.Add(o);
+            //this.Add(o);
         }
     }
 }

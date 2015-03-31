@@ -43,10 +43,10 @@ namespace org.omg.dds.core
         /// <summary>
         ///  Construct a time duration of the given magnitude.
         ///  
-        /// A duration of magnitude {@link Long#MAX_VALUE} indicates an infinite
+        /// A duration of magnitude <see cref="long.MaxValue"/> indicates an infinite
         /// duration, regardless of the units specified.
         /// 
-        /// @see     #IsInfinite()
+        ///<see cref="IsInfinite()"/>
         /// @see     #InfiniteDuration(Bootstrap)
         /// </summary>
         /// <param name="duration"></param>
