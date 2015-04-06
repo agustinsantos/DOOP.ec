@@ -24,24 +24,24 @@ namespace org.omg.dds.pub
 
     public class DataWriterAdapter<TYPE> : DataWriterListener<TYPE>
     {
-        public void OnLivelinessLost(LivelinessLostStatus<TYPE> status)
+        public virtual void OnLivelinessLost(LivelinessLostStatus<TYPE> status)
         {
             // empty
         }
 
-        public void OnOfferedDeadlineMissed(
+        public virtual void OnOfferedDeadlineMissed(
                 OfferedDeadlineMissedStatus<TYPE> status)
         {
             // empty
         }
 
-        public void OnOfferedIncompatibleQos(
+        public virtual void OnOfferedIncompatibleQos(
                 OfferedIncompatibleQosStatus<TYPE> status)
         {
             // empty
         }
 
-        public void OnPublicationMatched(PublicationMatchedStatus<TYPE> status)
+        public virtual void OnPublicationMatched(PublicationMatchedStatus<TYPE> status)
         {
             // empty
         }

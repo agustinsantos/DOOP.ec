@@ -43,6 +43,16 @@ namespace Doopec.Dds.Pub
             Participant participant = new ParticipantImpl();
             this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
          }
+        public DataWriterImpl(Publisher pub, Topic<TYPE> topic, DataWriterQos qos, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
+        {
+            this.pub_ = pub;
+            this.topic_ = topic;
+            this.listener = listener;
+
+            Participant participant = new ParticipantImpl();
+            this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
+        }
+
 
         public Type GetType()
         {

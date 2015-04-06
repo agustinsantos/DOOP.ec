@@ -43,6 +43,13 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\Read Message\ReadMessage.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\UMLClassDiagram1.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\UMLClassDiagram1.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\UMLClassDiagram1.classdiagram</DependentUpon>
+    </Content>
     <Content Include="UMLClassDiagram1.classdiagram">
       <SubType>Content</SubType>
     </Content>

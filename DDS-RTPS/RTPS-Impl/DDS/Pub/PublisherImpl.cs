@@ -34,7 +34,10 @@ namespace Doopec.Dds.Pub
 
         public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic, DataWriterQos qos, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
         {
-            throw new NotImplementedException();
+            DataWriter<TYPE> dw = null;
+            dw = new DataWriterImpl<TYPE>(this, topic, qos, listener, statuses);
+            datawriters.Add(dw);
+            return dw;
         }
 
         public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic, string qosLibraryName, string qosProfileName, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
@@ -169,7 +172,7 @@ namespace Doopec.Dds.Pub
 
         public DataWriterQos GetDefaultDataWriterQos()
         {
-            throw new NotImplementedException();
+            return this.dataWriterqos;
         }
 
         public void SetDefaultDataWriterQos(DataWriterQos qos)
