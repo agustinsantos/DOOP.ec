@@ -87,10 +87,6 @@ namespace ExampleDDS.PubSubExamples
                 }
             }*/
         }
-        private class MyCollection : ICollection 
-        {
-
-
-        }
+        
     }
 }
