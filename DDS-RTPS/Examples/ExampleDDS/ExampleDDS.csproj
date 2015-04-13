@@ -68,6 +68,7 @@
     <Compile Include="PubSub\Example02\PubSubExample02.cs" />
     <Compile Include="PubSub\Example01\PubSubExample01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubSub\Example04\PubSubExample04.cs" />
     <Compile Include="PubSub\Example03\PubSubExample03.cs" />
     <Compile Include="SampleTopics\WeatherSensors.cs" />
   </ItemGroup>
@@ -102,6 +103,7 @@
   <ItemGroup>
     <Content Include="PubSub\Example01\Readme.txt" />
     <Content Include="PubSub\Example02\Readme.txt" />
+    <Content Include="PubSub\Example04\Readme.txt" />
     <Content Include="PubSub\Example03\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
