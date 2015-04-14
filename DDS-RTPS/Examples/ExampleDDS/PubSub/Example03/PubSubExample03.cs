@@ -11,6 +11,9 @@ using org.omg.dds.topic;
 using System;
 using System.Reflection;
 using System.Collections;
+using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
+using Doopec.Dds.Core.Policy;
 
 namespace ExampleDDS.PubSubExamples
 {
@@ -29,8 +32,16 @@ namespace ExampleDDS.PubSubExamples
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
             DataWriterListener<Greeting> lis = new MyListener1();
-            
+
             DataWriter<Greeting> dw = pub.CreateDataWriter(tp,pub.GetDefaultDataWriterQos(),lis,null);
+            DataWriterQos qosDW = dw.GetQos();
+            ReliabilityQosPolicy polUnmod = qosDW.GetReliability();
+            ModifiableReliabilityQosPolicy dpqMod = polUnmod.Modify();
+            ReliabilityQosPolicy newQos = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, null);
+            dpqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
+            //qosDW.SetDurabilityService(newQos);
+            dw.SetQos(qosDW);
+           
 
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
