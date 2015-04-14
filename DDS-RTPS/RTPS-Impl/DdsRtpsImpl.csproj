@@ -55,6 +55,7 @@
     <Compile Include="Dds\Core\DataAvailableStatusImpl.cs" />
     <Compile Include="Dds\Core\Policy\DurabilityQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\GroupDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\HistoryQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\PartitionQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\PresentationQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\ReliabilityQosPolicyImpl.cs" />
