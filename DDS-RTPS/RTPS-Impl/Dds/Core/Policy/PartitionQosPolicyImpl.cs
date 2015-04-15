@@ -8,9 +8,18 @@ namespace Doopec.Dds.Core.Policy
 {
     public class PartitionQosPolicyImpl : QosPolicyImpl, PartitionQosPolicy
     {
+        private readonly ICollection<string> getName;
+        public PartitionQosPolicyImpl ()
+        {
+
+        }
+        public PartitionQosPolicyImpl(ICollection<string> getName)
+        {
+            this.getName = getName;
+        }
         public ICollection<string> GetName()
         {
-            throw new NotImplementedException();
+            return getName;
         }
 
         public ModifiablePartitionQosPolicy Modify()

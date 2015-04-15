@@ -1,4 +1,5 @@
 ﻿using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace Doopec.DDS.Core.Policy
             return this.value.Length;
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableUserDataQosPolicy Modify()
+        public ModifiableUserDataQosPolicy Modify()
         {
             throw new NotImplementedException();
         }
