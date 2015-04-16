@@ -1,11 +1,19 @@
 ﻿using Common.Logging;
 using Doopec.Rtps.Utils;
+using Doopec.Utils.Transport;
+using Mina.Core.Buffer;
+using Rtps.Messages;
+using Rtps.Messages.Submessages;
+using Rtps.Messages.Submessages.Elements;
+using Rtps.Structure;
+using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Doopec.Rtps.Behavior
 {
@@ -16,9 +24,14 @@ namespace Doopec.Rtps.Behavior
         public delegate void PeriodicWorkDelegate();
 
         private PeriodicWorkDelegate periodicWork;
-
-        public WriterWorker()
+       
+        public WriterWorker( )
         {
+
+        }
+        public override void End()
+        {
+            
         }
 
         public WriterWorker(PeriodicWorkDelegate periodicWork)
@@ -29,10 +42,10 @@ namespace Doopec.Rtps.Behavior
         public override void DoPeriodicWork()
         {
             base.DoPeriodicWork();
-            // the RTPS Writer to repeatedly announce the availability of data by sending a Heartbeat Message.
-            Console.WriteLine("I have to send a Heartbeat Message,  at {0}", DateTime.Now);
             if (periodicWork != null)
                 periodicWork();
         }
+
+        
     }
 }

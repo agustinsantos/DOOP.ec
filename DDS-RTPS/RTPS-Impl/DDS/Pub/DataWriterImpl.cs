@@ -4,6 +4,7 @@ using Doopec.Rtps.Structure;
 using org.omg.dds.core;
 using org.omg.dds.pub;
 using org.omg.dds.topic;
+using Rtps.Messages;
 using Rtps.Structure;
 using Rtps.Structure.Types;
 using System;
@@ -36,13 +37,10 @@ namespace Doopec.Dds.Pub
         protected readonly HistoryCache<TYPE> historyCache;
 
         public DataWriterImpl(Publisher pub, Topic<TYPE> topic)
+            : this(pub, topic, pub.GetDefaultDataWriterQos(), null, null)
         {
-            this.pub_ = pub;
-            this.topic_ = topic;
-            //TODO. Just to test it. The participant should be create at the DomainParticipant level, isnt??
-            Participant participant = new ParticipantImpl();
-            this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
-         }
+        }
+
         public DataWriterImpl(Publisher pub, Topic<TYPE> topic, DataWriterQos qos, DataWriterListener<TYPE> listener, ICollection<Type> statuses)
         {
             this.pub_ = pub;
@@ -50,7 +48,7 @@ namespace Doopec.Dds.Pub
             this.listener = listener;
 
             Participant participant = new ParticipantImpl();
-            this.rtpsWriter = new FakeRtpsWriter<TYPE>(participant);
+            this.rtpsWriter = new RtpsWriter<TYPE>(participant);
         }
 
 
@@ -277,6 +275,7 @@ namespace Doopec.Dds.Pub
         {
             throw new NotImplementedException();
         }
+
 
     }
 }

@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Common.Logging;
+using Doopec.Rtps.SharedMem;
+using Rtps.Structure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,28 +12,91 @@ namespace Doopec.Rtps.RtpsTransport
 {
     public class RtpsDiscovery : IRtpsDiscovery
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        private List<Participant> participants = new List<Participant>();
+        private List<Endpoint> endpoints = new List<Endpoint>();
+
         public event DiscoveryEventHandler ParticipantDiscovery;
 
         public event DiscoveryEventHandler EndpointDiscovery;
 
-        public void RegisterParticipant(global::Rtps.Structure.Participant participant)
+        
+
+        public IList<Participant> Participants
         {
-            throw new NotImplementedException();
+            get { return participants.AsReadOnly(); }
         }
 
-        public void UnregisterParticipant(global::Rtps.Structure.Participant participant)
+        public IList<Endpoint> Endpoints
         {
-            throw new NotImplementedException();
+            get { return endpoints.AsReadOnly(); }
         }
 
-        public void RegisterEndpoint(global::Rtps.Structure.Endpoint endpoint)
+        public void RegisterParticipant(Participant participant)
         {
-            throw new NotImplementedException();
+            if (participant != null)
+            {
+                participants.Add(participant);
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.NEW_PARTICIPANT;
+                dea.EventData = participant;
+                NotifyParticipantChanges(dea);
+            }
         }
 
-        public void UnregisterEndpoint(global::Rtps.Structure.Endpoint endpoint)
+        public void UnregisterParticipant(Participant participant)
         {
-            throw new NotImplementedException();
+            if (participant != null)
+            {
+                participants.Remove(participant);
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.DELETED_PARTICIPANT;
+                dea.EventData = participant;
+                NotifyParticipantChanges(dea);
+            }
+        }
+
+        public void RegisterEndpoint(Endpoint endpoint)
+        {
+            if (endpoint != null)
+            {
+                endpoints.Add(endpoint);
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.NEW_ENDPOINT;
+                dea.EventData = endpoint;
+                NotifyEndpointsChanges(dea);
+            }
+        }
+
+        public void UnregisterEndpoint(Endpoint endpoint)
+        {
+            if (endpoint != null)
+            {
+                endpoints.Remove(endpoint);
+                DiscoveryEventArgs dea = new DiscoveryEventArgs();
+                dea.Reason = EventReason.DELETED_ENDPOINT;
+                dea.EventData = endpoint;
+                NotifyEndpointsChanges(dea);
+            }
+        }
+
+        private void NotifyParticipantChanges(DiscoveryEventArgs dea)
+        {
+            log.Debug("The information about Participants has changed");
+            if (ParticipantDiscovery != null)
+            {
+                ParticipantDiscovery(this, dea);
+            }
+        }
+
+        private void NotifyEndpointsChanges(DiscoveryEventArgs dea)
+        {
+            log.Debug("The information about Endpoints has changed");
+            if (EndpointDiscovery != null)
+            {
+                EndpointDiscovery(this, dea);
+            }
         }
     }
 }

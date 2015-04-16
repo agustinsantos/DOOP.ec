@@ -34,7 +34,7 @@ namespace Doopec.Dds.Domain
         public DomainParticipantImpl()
         {
             rtpsParticipant = new ParticipantImpl();
-            ((FakeEngine)RtpsEngine.Instance).DiscoveryModule.RegisterParticipant(rtpsParticipant);
+            RtpsEngineFactory.Instance.DiscoveryModule.RegisterParticipant(rtpsParticipant);
         }
 
         public DomainParticipantImpl(int domainId, DomainParticipantQos qos, DomainParticipantListener listener)
@@ -306,7 +306,7 @@ namespace Doopec.Dds.Domain
 
         public void Close()
         {
-            ((FakeEngine)RtpsEngine.Instance).DiscoveryModule.UnregisterParticipant(rtpsParticipant);
+            RtpsEngineFactory.Instance.DiscoveryModule.UnregisterParticipant(rtpsParticipant);
         }
 
         public void Retain()

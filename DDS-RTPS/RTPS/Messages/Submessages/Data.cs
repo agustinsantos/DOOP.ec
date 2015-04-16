@@ -8,7 +8,7 @@ namespace Rtps.Messages.Submessages
     /// <summary>
     /// From OMG RTPS Standard v2.1 p13: Represents the data that may be associated with
     /// a change made to a data-object.
-    /// <p>
+    /// 
     /// From OMG RTPS Standard v2.1 p47: Contains information regarding the Value of
     /// an application Date-object. Data Submessages are sent by Writers 
     /// (NO_KEY Writer or WITH_KEY Writer) to Readers (NO_KEY Reader or WITH_KEY Reader).

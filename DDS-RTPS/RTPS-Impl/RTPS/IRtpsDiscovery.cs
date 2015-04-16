@@ -6,7 +6,7 @@ namespace Doopec.Rtps
 {
 
     public delegate void DiscoveryEventHandler(object sender, DiscoveryEventArgs e);
-    
+
     public interface IRtpsDiscovery
     {
         event DiscoveryEventHandler ParticipantDiscovery;
@@ -19,6 +19,10 @@ namespace Doopec.Rtps
         void RegisterEndpoint(Endpoint endpoint);
 
         void UnregisterEndpoint(Endpoint endpoint);
+
+        IList<Participant> Participants { get; }
+
+        IList<Endpoint> Endpoints { get; }
 
     }
 }

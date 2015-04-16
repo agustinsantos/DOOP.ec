@@ -93,10 +93,5 @@ namespace Doopec.DDS.Sub
         {
             throw new NotImplementedException();
         }
-
-        public void Add(Sample<IT_DATA> o)
-        {
-            //this.Add(o);
-        }
     }
 }

@@ -110,6 +110,8 @@
     <Compile Include="Dds\Topic\TopicImpl.cs" />
     <Compile Include="Dds\Utils\QosHelper.cs" />
     <Compile Include="Encoders\IEncoder.cs" />
+    <Compile Include="Rtps\Behavior\RtpsWriter.cs" />
+    <Compile Include="Rtps\Behavior\RtpsReader.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsWriter.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsReader.cs" />
     <Compile Include="Rtps\Behavior\WriterWorker.cs" />

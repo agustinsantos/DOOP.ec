@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace Doopec.Rtps.Behavior
 {
-    public class FakeRtpsReader<T> : StatefulReader<T>, IDisposable
+    public class RtpsReader<T> : StatefulReader<T>, IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private IList<Writer<T>> writers = new List<Writer<T>>();
 
-        public FakeRtpsReader(Participant participant)
+        public RtpsReader(Participant participant)
             : base(participant)
         {
             IRtpsDiscovery discoveryModule =  RtpsEngineFactory.Instance.DiscoveryModule;
@@ -52,8 +52,8 @@ namespace Doopec.Rtps.Behavior
             //WriterProxy<T> writerProxy = new WriterProxy<T>();
             //this.MatchedWriterAdd(writerProxy);
 
-            writers.Add(writer);
-            writer.HistoryCache.Changed += OnChangedHistoryCache;
+            //writers.Add(writer);
+            //writer.HistoryCache.Changed += OnChangedHistoryCache;
         }
 
         private void AddWriters(IRtpsDiscovery discoveryModule)

@@ -10,7 +10,7 @@ namespace ExampleDDS
         public static void Main(string[] args)
         {
             //ExampleApp app = new DiscoveryExample01();
-            ExampleApp app = new PubSubExample04();
+            ExampleApp app = new PubSubExample01();
             app.RunExample(args);
 #if DEBUG
              Console.WriteLine("Press enter to Close...");

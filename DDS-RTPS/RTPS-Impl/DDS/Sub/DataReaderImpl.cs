@@ -12,6 +12,7 @@ using Rtps.Behavior;
 using Rtps.Structure;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Doopec.Dds.Sub
 {
@@ -37,7 +38,7 @@ namespace Doopec.Dds.Sub
             this.listener = listener;
 
             Participant participant = new ParticipantImpl();
-            this.rtpsReader = new FakeRtpsReader<TYPE>(participant);
+            this.rtpsReader = new RtpsReader<TYPE>(participant);
         }
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
@@ -122,8 +123,11 @@ namespace Doopec.Dds.Sub
 
         public void WaitForHistoricalData(long maxWait, TimeUnit unit)
         {
+            Thread.Sleep((int)maxWait);
             //throw new NotImplementedException();
             //TODO For the shared memory implementation, the data is available immediately
+            if (rtpsReader.ReaderCache.Changes.Count == 0)
+                return;
             CacheChange<TYPE> change = rtpsReader.ReaderCache.GetChange();
             if (this.listener != null)
             {

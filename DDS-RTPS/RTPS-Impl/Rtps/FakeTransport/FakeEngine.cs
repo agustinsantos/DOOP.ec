@@ -11,7 +11,7 @@ namespace Doopec.Rtps.SharedMem
         protected FakeDiscovery discoveryModule = new FakeDiscovery();
 
 
-        public FakeDiscovery DiscoveryModule
+        public IRtpsDiscovery DiscoveryModule
         {
             get { return discoveryModule; }
         }

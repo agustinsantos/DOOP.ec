@@ -13,23 +13,24 @@ namespace Doopec.Rtps.Behavior
     public class FakeRtpsWriter<T> : StatefulWriter<T>, IDisposable
     {
         private IList<Reader<T>> readers = new List<Reader<T>>();
-        private WriterWorker worker = new WriterWorker();
+        private WriterWorker worker;
 
         public FakeRtpsWriter(Participant participant)
             : base(participant)
         {
-            FakeDiscovery discoveryModule = ((FakeEngine)RtpsEngine.Instance).DiscoveryModule;
+            IRtpsDiscovery discoveryModule =  RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);
             discoveryModule.EndpointDiscovery += OnDiscoveryEndpoints;
             AddReaders(discoveryModule);
 
+            worker = new WriterWorker();
             worker.Start((int)this.heartbeatPeriod.AsMillis());
         }
 
         public void Dispose()
         {
             readers.Clear();
-            FakeDiscovery discoveryModule = ((FakeEngine)RtpsEngine.Instance).DiscoveryModule;
+            IRtpsDiscovery discoveryModule = RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.UnregisterEndpoint(this);
             discoveryModule.EndpointDiscovery -= OnDiscoveryEndpoints;
             worker.End();
@@ -51,7 +52,7 @@ namespace Doopec.Rtps.Behavior
             readers.Add(writer);
         }
 
-        private void AddReaders(FakeDiscovery discoveryModule)
+        private void AddReaders(IRtpsDiscovery discoveryModule)
         {
             foreach (var endpoint in discoveryModule.Endpoints)
             {

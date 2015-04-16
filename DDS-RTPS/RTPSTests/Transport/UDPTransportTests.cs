@@ -46,9 +46,7 @@ namespace Rtps.Tests.Transport
             byte[] buff = BitConverter.GetBytes(number);
             SerializedPayload payload = new SerializedPayload();
             //TODO payload.DataEncapsulation = buff.EncapsuleCDRData(BitConverter.IsLittleEndian ? ByteOrder.BigEndian : ByteOrder.BigEndian);
-            throw new NotImplementedException();
             msg.SubMessages.Add(new Data(id1, id2, 1, null, payload));
-
             trans.SendMessage(msg);
         }
     }

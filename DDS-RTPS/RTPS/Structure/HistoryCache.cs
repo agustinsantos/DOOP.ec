@@ -42,7 +42,7 @@ namespace Rtps.Structure
         /// <summary>
         /// A collection of CacheChanges contained in the HistoryCache
         /// </summary>
-        internal protected IList<CacheChange<T>> Changes
+        public IList<CacheChange<T>> Changes
         {
             get { return changes; }
         }

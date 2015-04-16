@@ -5,9 +5,7 @@ using System.Configuration;
 
 namespace Doopec.Rtps.RtpsTransport
 {
-
-
-    public class RtpsEngine : IRtpsEngine
+    public static class RtpsEngineFactory
     {
         private static IRtpsEngine theInstance;
 
@@ -16,13 +14,9 @@ namespace Doopec.Rtps.RtpsTransport
             get
             {
                 if (theInstance == null)
-                { theInstance = CreateEngine(null); }
+                { theInstance = RtpsEngineFactory.CreateEngine(null); }
                 return theInstance;
             }
-        }
-
-        private RtpsEngine()
-        {
         }
 
         public static IRtpsEngine CreateEngine(IDictionary<string, Object> environment)
@@ -60,6 +54,17 @@ namespace Doopec.Rtps.RtpsTransport
                 return (IRtpsEngine)newInstance;
             }
             throw new ApplicationException("Exception building a RTPS engine using " + className);
+        }
+    }
+
+    public class RtpsEngine : IRtpsEngine
+    {
+        protected RtpsDiscovery discoveryModule = new RtpsDiscovery();
+
+
+        public IRtpsDiscovery DiscoveryModule
+        {
+            get { return discoveryModule; }
         }
     }
 }

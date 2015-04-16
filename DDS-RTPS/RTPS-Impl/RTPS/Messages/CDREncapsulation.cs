@@ -51,7 +51,8 @@ namespace Doopec.Rtps.Messages
             int initialPos = buffer.Position;
             Doopec.Serializer.Serializer.Serialize(buffer, dataObj);
             var serializedData = new byte[buffer.Position - initialPos];
-            buffer.Get(serializedData, initialPos, serializedData.Length);
+            buffer.Position = initialPos;
+            buffer.Get(serializedData, 0, serializedData.Length);
             data = serializedData;
         }
 
