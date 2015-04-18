@@ -13,7 +13,11 @@ namespace Doopec.Rtps.Encoders
         public static void PutDataSubMessage(this IoBuffer buffer, Data obj)
         {
             buffer.PutInt16(obj.ExtraFlags.Value);
-            short octetsToInlineQos = 4 + 4 + 8;// EntityId.LENGTH + EntityId.LENGTH + SequenceNumber.LENGTH;
+            short octetsToInlineQos = 0;
+            if (obj.HasInlineQosFlag)
+            {
+                octetsToInlineQos = 4 + 4 + 8;// EntityId.LENGTH + EntityId.LENGTH + SequenceNumber.LENGTH;
+            }
             buffer.PutInt16(octetsToInlineQos);
             buffer.PutEntityId(obj.ReaderId);
             buffer.PutEntityId(obj.WriterId);

@@ -19,6 +19,7 @@ namespace Doopec.Rtps.Encoders
 
         public static int PutSubMessage(this IoBuffer buffer, SubMessage msg)
         {
+            // The PSM aligns each Submessage on a 32-bit boundary with respect to the start of the Message (page 159).
             buffer.Align(4);
             buffer.Order = (msg.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian); // Set the endianess
             buffer.PutSubMessageHeader(msg.Header);
@@ -67,6 +68,7 @@ namespace Doopec.Rtps.Encoders
                 default:
                     break;
             }
+            buffer.Align(4);
             int subMessageLength = buffer.Position - position;
 
             // Position to 'submessageLength' -2 is for short (2 bytes)

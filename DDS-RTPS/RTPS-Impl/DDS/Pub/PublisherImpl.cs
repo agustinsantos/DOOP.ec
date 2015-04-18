@@ -1,10 +1,16 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Dds.Config;
+using Doopec.Dds.Core.Policy;
+using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
 using org.omg.dds.domain;
 using org.omg.dds.pub;
+using org.omg.dds.pub.modifiable;
 using org.omg.dds.topic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace Doopec.Dds.Pub
 {
@@ -12,9 +18,10 @@ namespace Doopec.Dds.Pub
     {
         private PublisherQos qos;
         private DomainParticipant parent;
-        private DataWriterQos dataWriterqos;
+        private DataWriterQosImpl dataWriterqos;
         private PublisherListener listener;
         private IList datawriters;
+        private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
 
         public PublisherImpl(PublisherQos qos, PublisherListener listener, DomainParticipant dp)
         {
@@ -22,6 +29,30 @@ namespace Doopec.Dds.Pub
             this.listener = listener;
             this.parent = dp;
             datawriters = new System.Collections.ArrayList();
+            dataWriterqos = new DataWriterQosImpl();
+            if (config.Settings["DefaultDataWriterQoS"] != null)
+            {
+                string dataWriterqosName = config.Settings["DefaultDataWriterQoS"].Value;
+                // TODO Assign values to dataWriterqos from configuration
+                foreach (KeyValueElement dwqos in config.QoSDataWriterCollection)
+                {
+                    if (dwqos.Key.Equals("realibility", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        string reabilityVal = dwqos.Value;
+                        ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl();
+                        if (reabilityVal.ToLowerInvariant().Contains("RELIABLE"))
+                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE);
+                        else if (reabilityVal.ToLowerInvariant().Contains("BEST_EFFORT"))
+                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT);
+                        dataWriterqos.Reliability = dpqMod;
+                    }
+                    else if (dwqos.Key.Equals("durability", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        string durabilityVal = dwqos.Value;
+                    }
+                }
+
+            }
         }
 
         public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic)
@@ -165,7 +196,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public void WaitForAcknowledgments(long maxWait,  TimeUnit unit)
+        public void WaitForAcknowledgments(long maxWait, TimeUnit unit)
         {
             throw new NotImplementedException();
         }

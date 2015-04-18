@@ -33,6 +33,7 @@ namespace ExampleDDS.PubSubExamples
             DomainParticipantQos dpqUnmod = dp.GetQos();
             EntityFactoryQosPolicy polUnmod = dpqUnmod.GetEntityFactory();
             Console.WriteLine(polUnmod);
+
             // Set QoS:
             ModifiableDomainParticipantQos dpqMod = dpqUnmod.Modify();
             ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();

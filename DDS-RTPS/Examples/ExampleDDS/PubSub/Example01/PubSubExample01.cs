@@ -38,7 +38,7 @@ namespace ExampleDDS.PubSubExamples
                                                                     null /* all status changes */);
 
             // Now Publish some piece of data
-            Greeting data = new Greeting("Hello, World with DDS");
+            Greeting data = new Greeting("Hello, World with DDS.");
             log.InfoFormat("Sending data:\"{0}\"", data.Value);
             dw.Write(data);
 

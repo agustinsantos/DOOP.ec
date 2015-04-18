@@ -68,12 +68,39 @@ namespace Doopec.Dds.Config
             }
         }
 
-        [ConfigurationProperty("Doopec.Dds.QoS", IsKey = false, IsRequired = false)]
-        public QoSConfig QoSCollection
+        [ConfigurationProperty("Doopec.Dds.QoS.Domain", IsKey = false, IsRequired = false)]
+        public QoSConfig QoSDomainCollection
         {
             get
             {
-                return (QoSConfig)this["Doopec.Dds.QoS"];
+                return (QoSConfig)this["Doopec.Dds.QoS.Domain"];
+            }
+        }
+
+        [ConfigurationProperty("Doopec.Dds.QoS.Topic", IsKey = false, IsRequired = false)]
+        public QoSConfig QoSTopicCollection
+        {
+            get
+            {
+                return (QoSConfig)this["Doopec.Dds.QoS.Topic"];
+            }
+        }
+
+        [ConfigurationProperty("Doopec.Dds.QoS.DataWriter", IsKey = false, IsRequired = false)]
+        public QoSConfig QoSDataWriterCollection
+        {
+            get
+            {
+                return (QoSConfig)this["Doopec.Dds.QoS.DataWriter"];
+            }
+        }
+
+        [ConfigurationProperty("Doopec.Dds.QoS.DataReader", IsKey = false, IsRequired = false)]
+        public QoSConfig QoSDataReaderCollection
+        {
+            get
+            {
+                return (QoSConfig)this["Doopec.Dds.QoS.DataReader"];
             }
         }
     }

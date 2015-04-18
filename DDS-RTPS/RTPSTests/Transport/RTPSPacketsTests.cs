@@ -29,13 +29,13 @@ namespace Rtps.Tests.Transport
         {
             simulator = new UDPSimulator();
         }
-        /*
+
         [TestMethod]
-        public void TestPublishData()
+        public void TestPublishPacket1()
         {
             object key = new object();
             UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
-            
+
             rec.MessageReceived += (s, m) =>
             {
                 Message msg = m.Message;
@@ -48,11 +48,27 @@ namespace Rtps.Tests.Transport
                 foreach (var submsg in msg.SubMessages)
                 {
                     Debug.WriteLine("SubMessage: {0}", submsg);
-                    if (submsg is Data)
+                    switch (submsg.Kind)
                     {
-                        Data d = submsg as Data;
-                        foreach (var par in d.InlineQos.Value)
-                            Debug.WriteLine("InlineQos: {0}", par);
+                        case SubMessageKind.DATA:
+                            Data d = submsg as Data;
+                            foreach (var par in d.InlineQos.Value)
+                                Debug.WriteLine("InlineQos: {0}", par);
+                            break;
+                        case SubMessageKind.INFO_TS:
+                            InfoTimestamp its = submsg as InfoTimestamp;
+                            Debug.WriteLine("The TimeStampFlag value state is: {0}", its.HasInvalidateFlag);
+                            Debug.WriteLine("The EndiannessFlag value state is: {0}", its.Header.Flags.IsLittleEndian);
+                            Debug.WriteLine("The octetsToNextHeader value is: {0}", its.Header.SubMessageLength);
+                            if (its.HasInvalidateFlag == false)
+                            {
+                                Debug.WriteLine("The Timestamp value is: {0}", its.TimeStamp);
+
+                            }
+                            break;
+                        default:
+                            Assert.Fail("Only Timestamp and Data submesages are expected");
+                            break;
                     }
                 }
                 lock (key) Monitor.Pulse(key);
@@ -63,12 +79,64 @@ namespace Rtps.Tests.Transport
             simulator.SendUDPPacket("SamplePackets/packet1.dat", Host, Port);
             lock (key)
             {
-               Assert.IsTrue( Monitor.Wait(key, 1000),"Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
 
-        */
+        [TestMethod]
+        public void TestPublishPacket2()
+        {
+            object key = new object();
+            UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
+
+            rec.MessageReceived += (s, m) =>
+            {
+                Message msg = m.Message;
+                Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
+                Debug.WriteLine("Message Header: {0}", msg.Header);
+                Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
+                Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
+                Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
+                Assert.AreEqual(2, msg.SubMessages.Count);
+                foreach (var submsg in msg.SubMessages)
+                {
+                    Debug.WriteLine("SubMessage: {0}", submsg);
+                    switch (submsg.Kind)
+                    {
+                        case SubMessageKind.DATA:
+                            Data d = submsg as Data;
+                            foreach (var par in d.InlineQos.Value)
+                                Debug.WriteLine("InlineQos: {0}", par);
+                            break;
+                        case SubMessageKind.INFO_TS:
+                            InfoTimestamp its = submsg as InfoTimestamp;
+                            Debug.WriteLine("The TimeStampFlag value state is: {0}", its.HasInvalidateFlag);
+                            Debug.WriteLine("The EndiannessFlag value state is: {0}", its.Header.Flags.IsLittleEndian);
+                            Debug.WriteLine("The octetsToNextHeader value is: {0}", its.Header.SubMessageLength);
+                            if (its.HasInvalidateFlag == false)
+                            {
+                                Debug.WriteLine("The Timestamp value is: {0}", its.TimeStamp);
+
+                            }
+                            break;
+                        default:
+                            Assert.Fail("Only Timestamp and Data submesages are expected");
+                            break;
+                    }
+                }
+                lock (key) Monitor.Pulse(key);
+            };
+
+            rec.Start();
+
+            simulator.SendUDPPacket("SamplePackets/packet3.dat", Host, Port);
+            lock (key)
+            {
+                Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");
+            }
+            rec.Close();
+        }
 
         /// <summary>
         /// This method is able to test all kinds of submessages ( not tested PAD INF_SrC_
@@ -88,14 +156,14 @@ namespace Rtps.Tests.Transport
                 Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
                 Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
                 Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
-             
+
                 Debug.WriteLine("The number of SubMessages in the message is: {0}", msg.SubMessages.Count);
                 //Assert.AreEqual(2, msg.SubMessages.Count);
                 foreach (var submsg in msg.SubMessages)
                 {
                     Debug.WriteLine("SubMessage: {0}", submsg.Kind);
 
-                    switch(submsg.Kind )
+                    switch (submsg.Kind)
                     {
                         case SubMessageKind.DATA:
                             {
@@ -106,11 +174,11 @@ namespace Rtps.Tests.Transport
                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
                                 Debug.WriteLine("The extraFlags value is: {0}", d.ExtraFlags.Value);
-                                Debug.WriteLine("The octetsToInlineQos value is: Aun no logro" );
+                                Debug.WriteLine("The octetsToInlineQos value is: Aun no logro");
                                 Debug.WriteLine("The readerID is: {0}", d.ReaderId);
                                 Debug.WriteLine("The writerID is: {0}", d.WriterId);
                                 Debug.WriteLine("The writerSN is: {0}", d.WriterSN);
-                                if(d.HasInlineQosFlag)
+                                if (d.HasInlineQosFlag)
                                 {
                                     foreach (var par in d.InlineQos.Value)
                                     {
@@ -118,12 +186,12 @@ namespace Rtps.Tests.Transport
                                     }
 
                                 }
-                                if(d.HasDataFlag||d.Header.Flags.IsLittleEndian)
+                                if (d.HasDataFlag || d.Header.Flags.IsLittleEndian)
                                 {
-                                    
-                                    for(int i=0;i<=d.SerializedPayload.DataEncapsulation.SerializedPayload.Length-1;i++)
+
+                                    for (int i = 0; i <= d.SerializedPayload.DataEncapsulation.SerializedPayload.Length - 1; i++)
                                     {
-                                        
+
                                         Debug.WriteLine("SerializedPayload: {0}", d.SerializedPayload.DataEncapsulation.SerializedPayload.GetValue(i));
                                     }
                                 }
@@ -144,18 +212,18 @@ namespace Rtps.Tests.Transport
                         case SubMessageKind.NACK_FRAG:
                             {
                                 NackFrag d = submsg as NackFrag;
-                                
+
                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
                                 Debug.WriteLine("The readerID is: {0}", d.ReaderId);
                                 Debug.WriteLine("The writerID is: {0}", d.WriterId);
                                 Debug.WriteLine("The writerSN is: {0}", d.WriterSequenceNumber);
-                                Debug.WriteLine("The fragmentNumberState value is: {0}",d.FragmentNumberState);
+                                Debug.WriteLine("The fragmentNumberState value is: {0}", d.FragmentNumberState);
                                 break;
                             }
                         case SubMessageKind.DATA_FRAG:
                             {
-                                DataFrag d = submsg as DataFrag ;
+                                DataFrag d = submsg as DataFrag;
                                 Debug.WriteLine("The KeyFlag value state is: {0}", d.HasKeyFlag);
                                 Debug.WriteLine("The InlineQoSFlag value state is: {0}", d.HasInlineQosFlag);
                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
@@ -178,7 +246,7 @@ namespace Rtps.Tests.Transport
                                 }
                                 for (int i = 0; i <= d.SerializedPayload.Length - 1; i++)
                                 {
-                                
+
                                     Debug.WriteLine("SerializedPayload: {0}", d.SerializedPayload.GetValue(i));
                                 }
                                 break;
@@ -237,7 +305,7 @@ namespace Rtps.Tests.Transport
                                 Debug.WriteLine("The TimeStampFlag value state is: {0}", d.HasInvalidateFlag);
                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
-                                if(d.HasInvalidateFlag ==false )
+                                if (d.HasInvalidateFlag == false)
                                 {
                                     Debug.WriteLine("The Timestamp value is: {0}", d.TimeStamp);
 
@@ -263,7 +331,7 @@ namespace Rtps.Tests.Transport
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
                                 Debug.WriteLine("The MulticastFlag value state is: {0}", d.HasMulticastFlag);
                                 Debug.WriteLine("The unicastLocatorList value state is: {0}", d.UnicastLocatorList);
-                                if(d.HasMulticastFlag)
+                                if (d.HasMulticastFlag)
                                 {
                                     Debug.WriteLine("The multicastLocatorList value state is: {0}", d.MulticastLocatorList);
                                 }
@@ -271,8 +339,8 @@ namespace Rtps.Tests.Transport
                             }
                         case SubMessageKind.INFO_REPLY_IP4:
                             {
-                                InfoReplyIp4 d= submsg as InfoReplyIp4;
-                                
+                                InfoReplyIp4 d = submsg as InfoReplyIp4;
+
                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
                                 Debug.WriteLine("The MulticastFlag value state is: {0}", d.HasMulticastFlag);
@@ -290,21 +358,8 @@ namespace Rtps.Tests.Transport
                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
                                 break;
                             }
-                      
-                       
-                          
-                        
-
-
-
                     }
 
-                   /* if (submsg is Data)
-                    {
-                        Data d = submsg as Data;
-                        foreach (var par in d.InlineQos.Value)
-                            Debug.WriteLine("InlineQos: {0}", par);
-                    }*/
                 }
                 lock (key) Monitor.Pulse(key);
             };

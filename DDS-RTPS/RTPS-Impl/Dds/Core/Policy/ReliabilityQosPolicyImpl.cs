@@ -12,13 +12,21 @@ namespace Doopec.Dds.Core.Policy
 {
     public class ReliabilityQosPolicyImpl : QosPolicyImpl, ReliabilityQosPolicy
     {
-        private readonly ReliabilityQosPolicyKind kind;
-        private readonly Duration maxBlockingTime;
+        private readonly ReliabilityQosPolicyKind kind = ReliabilityQosPolicyKind.RELIABLE;
+        private readonly Duration maxBlockingTime = Duration.ZeroDuration(null);
+
+        public ReliabilityQosPolicyImpl()
+        { }
 
         public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind, Duration maxBlockingTime)
         {
             this.kind = kind;
             this.maxBlockingTime = maxBlockingTime;
+        }
+
+        public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind)
+        {
+            this.kind = kind;
         }
 
         public ReliabilityQosPolicyKind GetKind()

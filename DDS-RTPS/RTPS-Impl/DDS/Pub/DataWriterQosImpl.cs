@@ -40,7 +40,7 @@ namespace Doopec.Dds.Pub
 
         public org.omg.dds.core.policy.ReliabilityQosPolicy GetReliability()
         {
-            throw new NotImplementedException();
+            return Reliability;
         }
 
         public org.omg.dds.core.policy.DestinationOrderQosPolicy GetDestinationOrder()
@@ -102,5 +102,9 @@ namespace Doopec.Dds.Pub
         {
             throw new NotImplementedException();
         }
+
+
+        internal ReliabilityQosPolicy  Reliability {get; set;}
+
     }
 }

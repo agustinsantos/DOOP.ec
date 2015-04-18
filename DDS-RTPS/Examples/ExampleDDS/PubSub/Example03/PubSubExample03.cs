@@ -14,6 +14,7 @@ using System.Collections;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using Doopec.Dds.Core.Policy;
+using org.omg.dds.pub.modifiable;
 
 namespace ExampleDDS.PubSubExamples
 {
@@ -22,8 +23,8 @@ namespace ExampleDDS.PubSubExamples
         public override void RunExample(string[] args)
         {
             base.RunExample(args);
-
-            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            Bootstrap boostrap = Bootstrap.CreateInstance();
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(boostrap);
             DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
@@ -31,17 +32,15 @@ namespace ExampleDDS.PubSubExamples
 
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
-            DataWriterListener<Greeting> lis = new MyListener1();
 
-            DataWriter<Greeting> dw = pub.CreateDataWriter(tp,pub.GetDefaultDataWriterQos(),lis,null);
-            DataWriterQos qosDW = dw.GetQos();
-            ReliabilityQosPolicy polUnmod = qosDW.GetReliability();
-            ModifiableReliabilityQosPolicy dpqMod = polUnmod.Modify();
-            ReliabilityQosPolicy newQos = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, null);
+            ModifiableDataWriterQos qosDW = pub.GetDefaultDataWriterQos().Modify();
+            ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
             dpqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
-            //qosDW.SetDurabilityService(newQos);
-            dw.SetQos(qosDW);
-           
+            qosDW.SetReliability(dpqMod);
+
+            DataWriterListener<Greeting> lis = new MyListener1();
+            DataWriter<Greeting> dw = pub.CreateDataWriter(tp, qosDW, lis, null);
+            
 
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();

@@ -38,7 +38,7 @@ namespace Doopec.Rtps.Behavior
             AddReaders(discoveryModule);
 
             // TODO Andres. Revisar esta direccion. Deberia venir de alguna configuracion
-            trans = new UDPTransmitter(new Uri("udp://localhost:9999"), 256);
+            trans = new UDPTransmitter(new Uri("udp://224.0.1.111:9999"), 256);
             trans.Start();
             worker = new WriterWorker(this.PeriodicWork);
             worker.Start((int)this.heartbeatPeriod.AsMillis());
@@ -86,7 +86,9 @@ namespace Doopec.Rtps.Behavior
             if (HistoryCache.Changes.Count > 0)
                 foreach (var change in HistoryCache.Changes)
                 {
-                    SendData(change);
+                    //SendHeartbeat();
+                    //SendData(change);
+                    SendDataHeartbeat(change);
                 }
         }
         private void SendHeartbeat()
@@ -111,17 +113,40 @@ namespace Doopec.Rtps.Behavior
         public void SendData(CacheChange<T> change)
         {
             // Create a Message with InfoSource
-            Message m1 = new Message();
-            EntityId id1 = EntityId.ENTITYID_UNKNOWN;
-            EntityId id2 = EntityId.ENTITYID_UNKNOWN;
+            Message msg = new Message();
+            EntityId readerId = EntityId.ENTITYID_UNKNOWN;
+            EntityId writerId = change.WriterGuid.EntityId; 
             SerializedPayload payload = new SerializedPayload();
             IoBuffer buff = IoBuffer.Allocate(1024);
             payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
-            Data data = new Data(id1, id2, 1, null, payload);
-            m1.SubMessages.Add(data);
+            Data data = new Data(readerId, writerId, change.SequenceNumber.LongValue, null, payload);
+            msg.SubMessages.Add(data);
 
             // Write Message to bytes1 array 
-            SendData(m1);
+            SendData(msg);
+        }
+
+        public void SendDataHeartbeat(CacheChange<T> change)
+        {
+            // Create a Message with InfoSource
+            Message msg = new Message();
+            EntityId readerId = EntityId.ENTITYID_UNKNOWN;
+            EntityId writerId = change.WriterGuid.EntityId;
+            SerializedPayload payload = new SerializedPayload();
+            IoBuffer buff = IoBuffer.Allocate(1024);
+            payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+            Data data = new Data(readerId, writerId, change.SequenceNumber.LongValue, null, payload);
+            msg.SubMessages.Add(data);
+
+            Heartbeat heartbeat = new Heartbeat();
+            heartbeat.readerId = readerId;
+            heartbeat.writerId = writerId;
+            heartbeat.firstSN = change.SequenceNumber;
+            heartbeat.lastSN = change.SequenceNumber;
+            heartbeat.count = 1;
+            msg.SubMessages.Add(heartbeat);
+
+            SendData(msg);
         }
 
         /// <summary>
