@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class OwnershipStrengthQosPolicyImpl : QosPolicy,OwnershipStrengthQosPolicy
+    public class OwnershipStrengthQosPolicyImpl : QosPolicy, OwnershipStrengthQosPolicy
     {
-        private readonly int getValue;
-        public OwnershipStrengthQosPolicyImpl(int getValue)
+        public int StrengthQos { get; protected internal set; }
+
+        public OwnershipStrengthQosPolicyImpl(int strength)
         {
-            this.getValue=getValue;
+            this.StrengthQos = strength;
         }
+
         public int GetValue()
         {
-            return getValue;
+            return StrengthQos;
         }
 
         public QosPolicyId GetId()
@@ -33,7 +35,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableOwnershipStrengthQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDataRepresentationQosPolicy(this);
         }
     }
 }
