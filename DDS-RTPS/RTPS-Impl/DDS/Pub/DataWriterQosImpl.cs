@@ -1,4 +1,5 @@
 ﻿using Doopec.DDS.Core;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.pub;
 using org.omg.dds.pub.modifiable;
@@ -13,6 +14,11 @@ namespace Doopec.Dds.Pub
 {
     public class DataWriterQosImpl : EntityQosImpl<DataWriterQos, ModifiableDataWriterQos>, DataWriterQos
     {
+        public DataWriterQosImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+
         public DurabilityQosPolicy GetDurability()
         {
             throw new NotImplementedException();
@@ -103,6 +109,11 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
+        public override ModifiableDataWriterQos Modify()
+        {
+            throw new NotImplementedException();
+            //return new ModifiableDataWriterQosImpl(this);
+        }
 
         internal ReliabilityQosPolicy  Reliability {get; set;}
 

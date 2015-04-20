@@ -7,10 +7,26 @@ namespace ExampleDDS
 {
     class MainLauncher
     {
+        private const String Example = "01";
+
         public static void Main(string[] args)
         {
-            //ExampleApp app = new DiscoveryExample01();
-            ExampleApp app = new PubSubExample03();
+            ExampleApp app;
+            switch (Example)
+            {
+                case "01":
+                    app = new PubSubExample01();
+                    break;
+                case "02":
+                    app = new PubSubExample02();
+                    break;
+                case "03":
+                    app = new PubSubExample03();
+                    break;
+                default:
+                    app = new DiscoveryExample01();
+                    break;
+            }
             app.RunExample(args);
 #if DEBUG
              Console.WriteLine("Press enter to Close...");

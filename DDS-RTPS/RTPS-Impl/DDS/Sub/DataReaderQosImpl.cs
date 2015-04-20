@@ -1,4 +1,5 @@
 ﻿using Doopec.DDS.Core;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.sub;
 using org.omg.dds.sub.modifiable;
@@ -8,7 +9,7 @@ namespace Doopec.DDS.Sub
 {
     public class DataReaderQosImpl : EntityQosImpl<DataReaderQos, ModifiableDataReaderQos>, DataReaderQos
     {
-        public static readonly DataReaderQos DDS_READER_QOS_DEFAULT = new DataReaderQosImpl();
+        public readonly DataReaderQos DDS_READER_QOS_DEFAULT;
 
         private DurabilityQosPolicy qosDurability;
         private DeadlineQosPolicy qosDeadLine;
@@ -23,6 +24,12 @@ namespace Doopec.DDS.Sub
         private ReaderDataLifecycleQosPolicy qosReaderDataLifecycle;
         private DataRepresentationQosPolicy qosDataRepresentation;
         private TypeConsistencyEnforcementQosPolicy qosTypeConsistencyEnforcement;
+
+        public DataReaderQosImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+            DDS_READER_QOS_DEFAULT = new DataReaderQosImpl(boostrap);
+        }
 
         public DurabilityQosPolicy GetDurability()
         {
@@ -85,6 +92,11 @@ namespace Doopec.DDS.Sub
         }
 
         public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ModifiableDataReaderQos Modify()
         {
             throw new NotImplementedException();
         }

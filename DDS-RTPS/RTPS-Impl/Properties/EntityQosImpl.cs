@@ -11,6 +11,13 @@ namespace Doopec.DDS.Core
         where UNMOD_SELF : EntityQos<UNMOD_SELF, MOD_SELF>
         where MOD_SELF : UNMOD_SELF
     {
+        public Bootstrap Boostrap { get; private set; }
+
+        public EntityQosImpl(Bootstrap boostrap)
+        {
+            this.Boostrap = boostrap;
+        }
+
         public POLICY Get<POLICY>(org.omg.dds.core.policy.QosPolicyId id) where POLICY : org.omg.dds.core.policy.QosPolicy
         {
             throw new NotImplementedException();
@@ -33,7 +40,7 @@ namespace Doopec.DDS.Core
 
         public Bootstrap GetBootstrap()
         {
-            throw new NotImplementedException();
+            return Boostrap;
         }
 
         public void Add(org.omg.dds.core.policy.QosPolicyId key, org.omg.dds.core.policy.QosPolicy value)
@@ -119,9 +126,7 @@ namespace Doopec.DDS.Core
             throw new NotImplementedException();
         }
 
-        public MOD_SELF Modify()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract MOD_SELF Modify();
+
     }
 }

@@ -26,27 +26,29 @@ namespace Doopec.Dds.Domain
         List<Subscriber> subscribers_ = new List<Subscriber>();
         DomainParticipantQos qos_;
         DomainParticipantListener listener_ = null;
+        public Bootstrap Bootstrap { get; internal set; }
 
         List<ITopic> topics_ = new List<ITopic>();
 
         Participant rtpsParticipant;
 
-        public DomainParticipantImpl()
+        public DomainParticipantImpl(Bootstrap bootstrap)
         {
+            this.Bootstrap = bootstrap;
             rtpsParticipant = new ParticipantImpl();
             RtpsEngineFactory.Instance.DiscoveryModule.RegisterParticipant(rtpsParticipant);
         }
 
-        public DomainParticipantImpl(int domainId, DomainParticipantQos qos, DomainParticipantListener listener)
-            : this()
+        public DomainParticipantImpl(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, Bootstrap bootstrap)
+            : this(bootstrap)
         {
             this.domainId_ = domainId;
             this.qos_ = qos;
             this.listener_ = listener;
         }
 
-        public DomainParticipantImpl(int domainId)
-            : this(domainId, null, null)
+        public DomainParticipantImpl(int domainId, Bootstrap bootstrap)
+            : this(domainId, null, null, bootstrap)
         {
             // Check default values for qos and listener 
             throw new NotImplementedException();
@@ -54,7 +56,7 @@ namespace Doopec.Dds.Domain
 
         public Publisher CreatePublisher()
         {
-            Publisher pub = new PublisherImpl(null, null, this);
+            Publisher pub = new PublisherImpl(null, null, this, this.Bootstrap);
             AddPublisher(pub);
             return pub;
         }

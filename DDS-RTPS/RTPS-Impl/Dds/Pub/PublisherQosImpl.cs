@@ -1,6 +1,7 @@
 ﻿using Doopec.Dds.Core.Policy;
 using Doopec.DDS.Core;
 using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.pub;
 using org.omg.dds.pub.modifiable;
@@ -15,7 +16,8 @@ namespace Doopec.Dds.Pub
         private GroupDataQosPolicy groupDataQosPolicy;
         private EntityFactoryQosPolicy entityFactoryQosPolicy;
 
-        public PublisherQosImpl()
+        public PublisherQosImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
             presentationQosPolicy = new PresentationQosPolicyImpl(this.GetBootstrap());
             partitionQosPolicy = new PartitionQosPolicyImpl(this.GetBootstrap());
@@ -44,6 +46,11 @@ namespace Doopec.Dds.Pub
         }
 
         public new System.Collections.IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ModifiablePublisherQos Modify()
         {
             throw new NotImplementedException();
         }

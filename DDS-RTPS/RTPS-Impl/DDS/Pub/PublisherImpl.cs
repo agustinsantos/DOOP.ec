@@ -1,6 +1,7 @@
 ﻿using DDS.ConversionUtils;
 using Doopec.Dds.Config;
 using Doopec.Dds.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using org.omg.dds.domain;
@@ -22,14 +23,16 @@ namespace Doopec.Dds.Pub
         private PublisherListener listener;
         private IList datawriters;
         private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+        public Bootstrap Bootstrap { get; internal set; }
 
-        public PublisherImpl(PublisherQos qos, PublisherListener listener, DomainParticipant dp)
+        public PublisherImpl(PublisherQos qos, PublisherListener listener, DomainParticipant dp, Bootstrap bootstrap)
         {
             this.qos = qos;
             this.listener = listener;
             this.parent = dp;
+            this.Bootstrap = bootstrap;
             datawriters = new System.Collections.ArrayList();
-            dataWriterqos = new DataWriterQosImpl();
+            dataWriterqos = new DataWriterQosImpl(this.GetBootstrap());
             if (config.Settings["DefaultDataWriterQoS"] != null)
             {
                 string dataWriterqosName = config.Settings["DefaultDataWriterQoS"].Value;
@@ -281,9 +284,9 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap GetBootstrap()
+        public  Bootstrap GetBootstrap()
         {
-            throw new NotImplementedException();
+            return Bootstrap;
         }
     }
 }

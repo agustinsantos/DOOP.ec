@@ -2,6 +2,11 @@
 using DDS.ConversionUtils;
 using Doopec.Dds.Domain;
 using org.omg.dds.core;
+using org.omg.dds.core.modifiable;
+using org.omg.dds.domain;
+using org.omg.dds.topic;
+using org.omg.dds.type;
+using org.omg.dds.type.dynamic;
 using System;
 using System.Collections.Generic;
 
@@ -30,27 +35,27 @@ namespace Doopec.Dds.Core
             this.boostrap = boostrap;
         }
 
-        public org.omg.dds.domain.DomainParticipantFactory GetParticipantFactory()
+        public DomainParticipantFactory GetParticipantFactory()
         {
             return new DomainParticipantFactoryImpl(this.boostrap);
         }
 
-        public org.omg.dds.type.dynamic.DynamicTypeFactory GetTypeFactory()
+        public DynamicTypeFactory GetTypeFactory()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.dynamic.DynamicDataFactory GetDataFactory()
+        public DynamicDataFactory GetDataFactory()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.type.TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName)
+        public TypeSupport<TYPE> NewTypeSupport<TYPE>(Type type, string registeredName)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableDuration NewDuration(long duration, TimeUnit unit)
+        public ModifiableDuration NewDuration(long duration, TimeUnit unit)
         {
             throw new NotImplementedException();
         }
@@ -65,7 +70,7 @@ namespace Doopec.Dds.Core
             return new DurationImpl(this.boostrap, 0);
         }
 
-        public org.omg.dds.core.modifiable.ModifiableTime NewTime(long time, TimeUnit units)
+        public ModifiableTime NewTime(long time, TimeUnit units)
         {
             throw new NotImplementedException();
         }
@@ -75,7 +80,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.modifiable.ModifiableInstanceHandle NewInstanceHandle()
+        public ModifiableInstanceHandle NewInstanceHandle()
         {
             throw new NotImplementedException();
         }
@@ -95,7 +100,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.topic.BuiltinTopicKey NewBuiltinTopicKey()
+        public BuiltinTopicKey NewBuiltinTopicKey()
         {
             throw new NotImplementedException();
         }

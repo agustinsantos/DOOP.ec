@@ -25,7 +25,7 @@ namespace Doopec.Dds.Domain
             this.bootstrap_ = bootstrap;
             if (default_participant_qos_ == null)
             {
-                default_participant_qos_ = new DomainParticipantQosImpl();
+                default_participant_qos_ = new DomainParticipantQosImpl(bootstrap);
 
                 if (config.Settings["DefaultDomainQoS"] != null)
                 {
@@ -52,7 +52,7 @@ namespace Doopec.Dds.Domain
 
         public override DomainParticipant CreateParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
         {
-            DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener);
+            DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener, this.bootstrap_);
             participants_.Add(domainId, dp);
             return dp;
         }
