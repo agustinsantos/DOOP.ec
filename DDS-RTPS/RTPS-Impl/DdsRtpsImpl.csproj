@@ -64,6 +64,7 @@
     <Compile Include="Dds\Core\Policy\LatencyBudgetQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\LifespanQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\LivelinessQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableDeadlineQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableOwnershipStrengthQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipStrengthQosPolicyImpl.cs" />

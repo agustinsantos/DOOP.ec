@@ -6,25 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using org.omg.dds.core.policy.modifiable;
+using Doopec.Dds.Core.Policy.modifiable;
+
+
+
 
 namespace Doopec.Dds.Core.Policy
 {
     public class DeadlineQosPolicyImpl : QosPolicy, DeadlineQosPolicy
     {
-        private readonly Duration getPeriod;
+        
+
+        public Duration GetPeriodQos { get; protected internal set; }
         public DeadlineQosPolicyImpl(Duration getPeriod)
         {
-            this.getPeriod = getPeriod;
+            this.GetPeriodQos = getPeriod;
         }
 
-
-
-
-
-
+        
         public Duration GetPeriod()
         {
-            return getPeriod;
+            return GetPeriodQos;
         }
 
         public QosPolicyId GetId()
@@ -39,7 +41,8 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableDeadlineQosPolicy Modify()
         {
-            throw new NotImplementedException();
+           //throw new NotImplementedException();
+            return new ModifiableDeadlineQosPolicyImpl(this);
         }
     }
 }
