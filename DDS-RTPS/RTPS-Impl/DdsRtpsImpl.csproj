@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Dds\Core\BootstrapImpl.cs" />
     <Compile Include="Dds\Core\DataAvailableStatusImpl.cs" />
+    <Compile Include="Dds\Core\DurationImpl.cs" />
     <Compile Include="Dds\Core\Policy\DataRepresentationQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\DeadlineQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\DestinationOrderQosPolicyImpl.cs" />

@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core.policy;
+﻿using org.omg.dds.core;
+using org.omg.dds.core.policy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,13 @@ namespace Doopec.DDS.Core.Policy
     {
         private readonly bool isAutoEnable = true;
 
-        public EntityFactoryQosPolicyImpl()
-        { }
+        public EntityFactoryQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
 
-        public EntityFactoryQosPolicyImpl(bool isAutoEnable)
+        public EntityFactoryQosPolicyImpl(bool isAutoEnable, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.isAutoEnable = isAutoEnable;
         }

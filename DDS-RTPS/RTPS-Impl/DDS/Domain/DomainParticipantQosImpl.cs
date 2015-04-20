@@ -15,8 +15,8 @@ namespace Doopec.DDS.Domain
 
         public DomainParticipantQosImpl()
         {
-            userData = new UserDataQosPolicyImpl();
-            entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl();
+            userData = new UserDataQosPolicyImpl(this.GetBootstrap());
+            entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl(this.GetBootstrap());
         }
 
         public DomainParticipantQosImpl(UserDataQosPolicy userData, EntityFactoryQosPolicy entityFactoryQosPolicy)

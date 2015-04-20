@@ -57,12 +57,12 @@ namespace Doopec.Dds.Core
 
         public Duration InfiniteDuration()
         {
-            throw new NotImplementedException();
+            return new DurationImpl(this.boostrap, long.MaxValue);
         }
 
         public Duration ZeroDuration()
         {
-            throw new NotImplementedException();
+            return new DurationImpl(this.boostrap, 0);
         }
 
         public org.omg.dds.core.modifiable.ModifiableTime NewTime(long time, TimeUnit units)

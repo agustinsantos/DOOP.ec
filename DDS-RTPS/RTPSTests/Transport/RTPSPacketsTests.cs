@@ -43,6 +43,7 @@ namespace Rtps.Tests.Transport
                 Debug.WriteLine("Message Header: {0}", msg.Header);
                 Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
                 Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
+                Assert.AreEqual(new byte[] { 0, 1, 3, 0, 0, 1, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef }, msg.Header.GuidPrefix.Prefix);
                 Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
                 Assert.AreEqual(2, msg.SubMessages.Count);
                 foreach (var submsg in msg.SubMessages)

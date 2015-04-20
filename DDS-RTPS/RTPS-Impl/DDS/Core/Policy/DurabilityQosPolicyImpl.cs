@@ -1,4 +1,5 @@
 ﻿using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -13,7 +14,8 @@ namespace Doopec.Dds.Core.Policy
     {
         private readonly DurabilityQosPolicyKind kind;
 
-        public DurabilityQosPolicyImpl(DurabilityQosPolicyKind kind)
+        public DurabilityQosPolicyImpl(DurabilityQosPolicyKind kind, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.kind = kind;
         }

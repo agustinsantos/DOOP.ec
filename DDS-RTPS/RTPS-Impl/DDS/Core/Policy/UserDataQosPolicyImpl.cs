@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core.policy;
+﻿using org.omg.dds.core;
+using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,14 @@ namespace Doopec.DDS.Core.Policy
     {
         private readonly byte[] value;
 
-        public UserDataQosPolicyImpl()
+        public UserDataQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
             this.value = new byte[0];
         }
 
-        public UserDataQosPolicyImpl(byte[] value)
+        public UserDataQosPolicyImpl(byte[] value, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.value = value;
         }

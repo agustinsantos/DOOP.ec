@@ -11,12 +11,17 @@ namespace Doopec.Dds.Topic
 {
     public class PublicationBuiltinTopicDataImpl : PublicationBuiltinTopicData
     {
-        protected static readonly ReliabilityQosPolicy reliabilityQosPolicy = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE,   Duration.NewDuration(200, TimeUnit.MILLISECONDS, null));
+        protected readonly ReliabilityQosPolicy reliabilityQosPolicy;
 
         protected BuiltinTopicKey key;
         protected BuiltinTopicKey participantKey;
         protected string topicName;
         protected string typeName;
+
+        public PublicationBuiltinTopicDataImpl()
+        {
+            reliabilityQosPolicy = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, Duration.NewDuration(200, TimeUnit.MILLISECONDS, null), this.GetBootstrap());
+        }
 
         public override BuiltinTopicKey Key
         {

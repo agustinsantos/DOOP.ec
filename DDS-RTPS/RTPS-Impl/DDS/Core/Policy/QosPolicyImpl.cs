@@ -6,6 +6,13 @@ namespace Doopec.DDS.Core.Policy
 {
     public class QosPolicyImpl : QosPolicy
     {
+        public Bootstrap Boostrap { get; internal set; }
+
+        public QosPolicyImpl(Bootstrap boostrap)
+        {
+            Boostrap = boostrap;
+        }
+
         public QosPolicyId GetId()
         {
             throw new NotImplementedException();
@@ -13,7 +20,7 @@ namespace Doopec.DDS.Core.Policy
 
         public  Bootstrap GetBootstrap()
         {
-            throw new NotImplementedException();
+            return Boostrap;
         }
     }
 

@@ -1,10 +1,16 @@
 ﻿using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 
 namespace Doopec.Dds.Core.Policy
 {
     public class GroupDataQosPolicyImpl : QosPolicyImpl, GroupDataQosPolicy
     {
+        public GroupDataQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+
         public int GetValue(byte[] value, int offset)
         {
             throw new System.NotImplementedException();

@@ -15,16 +15,20 @@ namespace Doopec.Dds.Core.Policy
         private readonly ReliabilityQosPolicyKind kind = ReliabilityQosPolicyKind.RELIABLE;
         private readonly Duration maxBlockingTime = Duration.ZeroDuration(null);
 
-        public ReliabilityQosPolicyImpl()
-        { }
+        public ReliabilityQosPolicyImpl( Bootstrap boostrap)
+            : base(boostrap)
+        { 
+        }
 
-        public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind, Duration maxBlockingTime)
+        public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind, Duration maxBlockingTime, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.kind = kind;
             this.maxBlockingTime = maxBlockingTime;
         }
 
-        public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind)
+        public ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind kind, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.kind = kind;
         }

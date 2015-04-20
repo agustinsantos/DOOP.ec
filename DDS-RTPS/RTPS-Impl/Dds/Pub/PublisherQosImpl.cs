@@ -10,11 +10,19 @@ namespace Doopec.Dds.Pub
 {
     public class PublisherQosImpl : EntityQosImpl<PublisherQos, ModifiablePublisherQos>, PublisherQos
     {
-        private PresentationQosPolicy presentationQosPolicy = new PresentationQosPolicyImpl();
-        private PartitionQosPolicy partitionQosPolicy = new PartitionQosPolicyImpl();
-        private GroupDataQosPolicy groupDataQosPolicy = new GroupDataQosPolicyImpl();
-        private EntityFactoryQosPolicy entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl();
+        private PresentationQosPolicy presentationQosPolicy;
+        private PartitionQosPolicy partitionQosPolicy;
+        private GroupDataQosPolicy groupDataQosPolicy;
+        private EntityFactoryQosPolicy entityFactoryQosPolicy;
 
+        public PublisherQosImpl()
+        {
+            presentationQosPolicy = new PresentationQosPolicyImpl(this.GetBootstrap());
+            partitionQosPolicy = new PartitionQosPolicyImpl(this.GetBootstrap());
+            groupDataQosPolicy = new GroupDataQosPolicyImpl(this.GetBootstrap());
+            entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl(this.GetBootstrap());
+
+        }
         public PresentationQosPolicy GetPresentation()
         {
             return presentationQosPolicy;

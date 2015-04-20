@@ -1,4 +1,5 @@
 ﻿using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,6 +12,10 @@ namespace Doopec.Dds.Core.Policy
 {
     public class PresentationQosPolicyImpl : QosPolicyImpl, PresentationQosPolicy
     {
+        public PresentationQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
         public AccessScopeKind GetAccessScope()
         {
             throw new NotImplementedException();

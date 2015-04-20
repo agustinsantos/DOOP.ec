@@ -40,7 +40,7 @@ namespace Rtps.Tests
         [TestMethod]
         public void TestTimeCurrentTimeMillis()
         {
-            long currentTimeMillis = DateTime.Now.Ticks/1000000;
+            long currentTimeMillis = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             Time t = new Time(currentTimeMillis);
             long timeMillis = t.TimeMillis;
 

@@ -39,11 +39,11 @@ namespace Doopec.Dds.Pub
                     if (dwqos.Key.Equals("realibility", StringComparison.InvariantCultureIgnoreCase))
                     {
                         string reabilityVal = dwqos.Value;
-                        ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl();
+                        ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl(this.GetBootstrap());
                         if (reabilityVal.ToLowerInvariant().Contains("RELIABLE"))
-                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE);
+                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, this.GetBootstrap());
                         else if (reabilityVal.ToLowerInvariant().Contains("BEST_EFFORT"))
-                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT);
+                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT, this.GetBootstrap());
                         dataWriterqos.Reliability = dpqMod;
                     }
                     else if (dwqos.Key.Equals("durability", StringComparison.InvariantCultureIgnoreCase))
