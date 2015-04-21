@@ -73,7 +73,7 @@ namespace Doopec.Dds.Domain
 
         public Subscriber CreateSubscriber()
         {
-            Subscriber sub = new SubscriberImpl(null, null, this);
+            Subscriber sub = new SubscriberImpl(null, null, this, this.Bootstrap);
             AddSubscriber(sub);
             return sub;
         }
@@ -90,10 +90,11 @@ namespace Doopec.Dds.Domain
 
         public Subscriber BuiltinSubscriber
         {
-            get {
+            get
+            {
                 throw new NotImplementedException();
             }
-            
+
         }
 
         public Topic<TYPE> CreateTopic<TYPE>(string topicName)
@@ -200,7 +201,7 @@ namespace Doopec.Dds.Domain
 
         public PublisherQos DefaultPublisherQos
         {
-            get {throw new NotImplementedException(); }
+            get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
 

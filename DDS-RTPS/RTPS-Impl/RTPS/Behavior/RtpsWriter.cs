@@ -24,7 +24,7 @@ namespace Doopec.Rtps.Behavior
     {
         private IList<Reader<T>> readers = new List<Reader<T>>();
         private WriterWorker worker;
-        UDPTransmitter trans;
+        private UDPTransmitter trans;
 
         public RtpsWriter(Participant participant)
             : base(participant)
@@ -37,7 +37,8 @@ namespace Doopec.Rtps.Behavior
             discoveryModule.EndpointDiscovery += OnDiscoveryEndpoints;
             AddReaders(discoveryModule);
 
-            // TODO Andres. Revisar esta direccion. Deberia venir de alguna configuracion
+            //TODO Andres. Revisar esta direccion. Deberia venir de alguna configuracion
+            //TODO use configuration for host and port
             trans = new UDPTransmitter(new Uri("udp://224.0.1.111:9999"), 256);
             trans.Start();
             worker = new WriterWorker(this.PeriodicWork);

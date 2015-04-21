@@ -9,8 +9,6 @@ namespace Doopec.DDS.Sub
 {
     public class DataReaderQosImpl : EntityQosImpl<DataReaderQos, ModifiableDataReaderQos>, DataReaderQos
     {
-        public readonly DataReaderQos DDS_READER_QOS_DEFAULT;
-
         private DurabilityQosPolicy qosDurability;
         private DeadlineQosPolicy qosDeadLine;
         private LatencyBudgetQosPolicy qosLatencyBudget;
@@ -28,7 +26,6 @@ namespace Doopec.DDS.Sub
         public DataReaderQosImpl(Bootstrap boostrap)
             : base(boostrap)
         {
-            DDS_READER_QOS_DEFAULT = new DataReaderQosImpl(boostrap);
         }
 
         public DurabilityQosPolicy GetDurability()
