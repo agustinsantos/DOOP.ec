@@ -21,6 +21,7 @@ namespace Doopec.Dds.Sub
         TopicDescription<TYPE> topic_;
         Subscriber sub_;
         DataReaderListener<TYPE> listener;
+        public readonly ManualResetEvent ManualResetEvent = new ManualResetEvent(false);
 
         /// <summary>
         /// 
@@ -38,7 +39,9 @@ namespace Doopec.Dds.Sub
             this.listener = listener;
 
             Participant participant = new ParticipantImpl();
-            this.rtpsReader = new RtpsReader<TYPE>(participant);
+            RtpsReader<TYPE> reader = new RtpsReader<TYPE>(participant);
+            reader.ReaderCache.Changed += NewMessage;
+            this.rtpsReader = reader;
         }
 
         public DataReaderImpl(Subscriber sub, TopicDescription<TYPE> topic)
@@ -120,20 +123,43 @@ namespace Doopec.Dds.Sub
         {
             throw new NotImplementedException();
         }
+        private void NewMessage(object sender, EventArgs e)
+        {
+            ManualResetEvent.Set();
+        }
 
         public void WaitForHistoricalData(long maxWait, TimeUnit unit)
         {
-            Thread.Sleep((int)maxWait);
-            //throw new NotImplementedException();
-            //TODO For the shared memory implementation, the data is available immediately
-            if (rtpsReader.ReaderCache.Changes.Count == 0)
-                return;
-            CacheChange<TYPE> change = rtpsReader.ReaderCache.GetChange();
-            if (this.listener != null)
+            long tiks = 0;
+            switch (unit)
             {
-                DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
+                case TimeUnit.DAYS:
+                    tiks = maxWait * TimeSpan.TicksPerDay;
+                    break;
+                case TimeUnit.HOURS:
+                    tiks = maxWait * TimeSpan.TicksPerHour;
+                    break;
+                case TimeUnit.MILLISECONDS:
+                    tiks = maxWait * TimeSpan.TicksPerMillisecond;
+                    break;
+                case TimeUnit.MINUTES:
+                    tiks = maxWait * TimeSpan.TicksPerMinute;
+                    break;
+                case TimeUnit.SECONDS:
+                    tiks = maxWait * TimeSpan.TicksPerSecond;
+                    break;
+                default:
+                    throw new NotSupportedException("Time Unit " + unit);
+            }
+            if (rtpsReader.ReaderCache.Changes.Count > 0  || ManualResetEvent.WaitOne(new TimeSpan(tiks)))
+            {
+                if (rtpsReader.ReaderCache.Changes.Count <= 0) return;
+                if (this.listener != null)
+                {
+                    DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
 
-                this.listener.OnDataAvailable(status);
+                    this.listener.OnDataAvailable(status);
+                }
             }
         }
 
@@ -175,7 +201,7 @@ namespace Doopec.Dds.Sub
         public SampleIterator<TYPE> Take()
         {
             SampleIterator<TYPE> it = new SampleIteratorImpl<TYPE>();
-            it.Add(new SampleImpl<TYPE>( rtpsReader.ReaderCache.GetChange()));
+            it.Add(new SampleImpl<TYPE>(rtpsReader.ReaderCache.GetChange()));
             return it;
         }
 

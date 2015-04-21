@@ -7,6 +7,7 @@ using Rtps.Behavior;
 using Rtps.Messages;
 using Rtps.Messages.Types;
 using Rtps.Structure;
+using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Data = Rtps.Messages.Submessages.Data;
-
+using DataObj = Rtps.Structure.Types.Data;
 namespace Doopec.Rtps.Behavior
 {
     public class RtpsReader<T> : StatefulReader<T>, IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         private IList<Writer<T>> writers = new List<Writer<T>>();
         private UDPReceiver rec;
         public RtpsReader(Participant participant)
@@ -61,8 +61,8 @@ namespace Doopec.Rtps.Behavior
                         IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
                         buf.Order = ByteOrder.LittleEndian; //(d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
                         object obj = Doopec.Serializer.Serializer.Deserialize<T>(buf);
-
-                        Console.WriteLine("He leido un objeto de tipo {0}, y con valor {1}", obj.GetType(), obj.ToString());
+                        CacheChange<T> change = new CacheChange<T>(ChangeKind.ALIVE, new GUID(msg.Header.GuidPrefix, d.WriterId), d.WriterSN, new DataObj(obj), new InstanceHandle());
+                        ReaderCache.AddChange(change);
                         break;
                     default:
                         log.DebugFormat("SubMessage: {0}", submsg.Kind);

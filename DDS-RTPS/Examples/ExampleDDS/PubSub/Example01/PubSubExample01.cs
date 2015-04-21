@@ -39,7 +39,7 @@ namespace ExampleDDS.PubSubExamples
 
             // Now Publish some piece of data
             Greeting data = new Greeting("Hello, World with DDS.");
-            log.InfoFormat("Sending data:\"{0}\"", data.Value);
+            Console.WriteLine("Sending data:\"{0}\"", data.Value);
             dw.Write(data);
 
             //and check that the reader has this data
@@ -62,7 +62,7 @@ namespace ExampleDDS.PubSubExamples
                     // InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
                     Greeting dt = smp.GetData();
-                    log.InfoFormat("Received data:\"{0}\"", dt.Value);
+                    Console.WriteLine("Received data:\"{0}\"", dt.Value);
                 }
             }
         }
