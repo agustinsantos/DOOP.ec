@@ -2,6 +2,7 @@
 using Doopec.Rtps.RtpsTransport;
 using Doopec.Rtps.SharedMem;
 using Doopec.Utils.Transport;
+using Mina.Core.Buffer;
 using Rtps.Behavior;
 using Rtps.Messages;
 using Rtps.Messages.Types;
@@ -29,7 +30,7 @@ namespace Doopec.Rtps.Behavior
             rec = new UDPReceiver(new Uri("udp://224.0.1.111:9999"), 1024);
             rec.Start();
             rec.MessageReceived += NewMessage;
-            IRtpsDiscovery discoveryModule =  RtpsEngineFactory.Instance.DiscoveryModule;
+            IRtpsDiscovery discoveryModule = RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);
             discoveryModule.EndpointDiscovery += OnDiscoveryEndpoints;
             AddWriters(discoveryModule);
@@ -57,6 +58,11 @@ namespace Doopec.Rtps.Behavior
                         log.DebugFormat("The readerID is: {0}", d.ReaderId);
                         log.DebugFormat("The writerID is: {0}", d.WriterId);
                         log.DebugFormat("The writerSN is: {0}", d.WriterSN);
+                        IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
+                        buf.Order = ByteOrder.LittleEndian; //(d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+                        object obj = Doopec.Serializer.Serializer.Deserialize<T>(buf);
+
+                        Console.WriteLine("He leido un objeto de tipo {0}, y con valor {1}", obj.GetType(), obj.ToString());
                         break;
                     default:
                         log.DebugFormat("SubMessage: {0}", submsg.Kind);
@@ -69,7 +75,7 @@ namespace Doopec.Rtps.Behavior
         {
             rec.MessageReceived -= NewMessage;
             rec.Dispose();
-            
+
             RemoveAllWriters();
             IRtpsDiscovery discoveryModule = RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.UnregisterEndpoint(this);
@@ -108,7 +114,7 @@ namespace Doopec.Rtps.Behavior
 
         private void RemoveAllWriters()
         {
-            foreach(var writer in writers)
+            foreach (var writer in writers)
                 writer.HistoryCache.Changed -= OnChangedHistoryCache;
 
             writers.Clear();

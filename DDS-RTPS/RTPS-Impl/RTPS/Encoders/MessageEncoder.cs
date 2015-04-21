@@ -13,6 +13,7 @@ namespace Doopec.Rtps.Encoders
         {
             Message msg = (Message)message;
             IoBuffer buffer = IoBuffer.Allocate(1024);
+            buffer.AutoExpand = true;
             buffer.PutMessage(msg);
             buffer.Flip();
             output.Write(buffer);

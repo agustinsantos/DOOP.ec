@@ -24,6 +24,7 @@ namespace Doopec.Rtps.Encoders
         {
             obj.SubMessageKind = (SubMessageKind)buffer.Get();
             obj.FlagsValue = buffer.Get();
+            buffer.Order = (obj.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian); // Set the endianess
             obj.SubMessageLength = (ushort)buffer.GetInt16();
         }
     }

@@ -42,13 +42,14 @@ namespace Doopec.Rtps.Messages
 
         public CDREncapsulation(IoBuffer buffer, object dataObj, ByteOrder order)
         {
+            int initialPos = buffer.Position;
             this.order = order;
             buffer.Order = this.order;
             if (order == ByteOrder.LittleEndian)
                 buffer.PutEncapsulationScheme(CDR_LE_HEADER);
             else
                 buffer.PutEncapsulationScheme(CDR_BE_HEADER);
-            int initialPos = buffer.Position;
+            
             Doopec.Serializer.Serializer.Serialize(buffer, dataObj);
             var serializedData = new byte[buffer.Position - initialPos];
             buffer.Position = initialPos;
