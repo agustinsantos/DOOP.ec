@@ -41,7 +41,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableDeadlineQosPolicy Modify()
         {
-           //throw new NotImplementedException();
+          
             return new ModifiableDeadlineQosPolicyImpl(this);
         }
     }

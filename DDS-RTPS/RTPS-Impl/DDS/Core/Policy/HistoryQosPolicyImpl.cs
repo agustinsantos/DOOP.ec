@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core.policy;
+﻿using org.omg.dds.core;
+using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +35,12 @@ namespace Doopec.Dds.Core.Policy
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.Bootstrap GetBootstrap()
+        public Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableHistoryQosPolicy Modify()
+        public ModifiableHistoryQosPolicy Modify()
         {
             throw new NotImplementedException();
         }

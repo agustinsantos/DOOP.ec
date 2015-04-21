@@ -1,6 +1,7 @@
 ﻿using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
 
 namespace Doopec.Dds.Core.Policy
 {
@@ -21,7 +22,7 @@ namespace Doopec.Dds.Core.Policy
             throw new System.NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.modifiable.ModifiableGroupDataQosPolicy Modify()
+        public ModifiableGroupDataQosPolicy Modify()
         {
             throw new System.NotImplementedException();
         }

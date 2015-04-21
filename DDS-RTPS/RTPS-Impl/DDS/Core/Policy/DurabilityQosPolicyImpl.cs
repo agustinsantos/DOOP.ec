@@ -1,4 +1,5 @@
-﻿using Doopec.DDS.Core.Policy;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
@@ -12,22 +13,22 @@ namespace Doopec.Dds.Core.Policy
 {
     public class DurabilityQosPolicyImpl : QosPolicyImpl, DurabilityQosPolicy
     {
-        private readonly DurabilityQosPolicyKind kind;
-
+        
+        public DurabilityQosPolicyKind KindQos {get; protected internal set; }
         public DurabilityQosPolicyImpl(DurabilityQosPolicyKind kind, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.kind = kind;
+            this.KindQos = kind;
         }
 
         public DurabilityQosPolicyKind GetKind()
         {
-            return kind;
+            return KindQos;
         }
 
         public ModifiableDurabilityQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDurabilityQosPolicyImpl(this);
         }
     }
 }

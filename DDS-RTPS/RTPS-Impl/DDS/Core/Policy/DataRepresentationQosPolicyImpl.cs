@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,15 +12,15 @@ namespace Doopec.Dds.Core.Policy
 {
     public class DataRepresentationQosPolicyImpl : QosPolicy,DataRepresentationQosPolicy
     {
-        private readonly List<short> getValue;
-
+        
+        public List<short> GetValueQos { get; protected internal set; }
         public DataRepresentationQosPolicyImpl(List<short> getValue)
         {
-            this.getValue = getValue;
+            this.GetValueQos = getValue;
         }
         public List<short> GetValue()
         {
-            return getValue;
+            return GetValueQos;
         }
 
         public QosPolicyId GetId()
@@ -34,7 +35,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableDataRepresentationQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDataRepresentationQosPolicyImpl(this);
         }
     }
 }

@@ -6,20 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Doopec.Dds.Core.Policy.modifiable;
 
 namespace Doopec.Dds.Core.Policy
 {
     public class DestinationOrderQosPolicyImpl: QosPolicy, DestinationOrderQosPolicy
     {
-        private readonly DestinationOrderQosPolicyKind kind;
-
+       
+        public DestinationOrderQosPolicyKind KindQos { get; protected internal set; }
         public DestinationOrderQosPolicyImpl(DestinationOrderQosPolicyKind kind)
         {
-            this.kind = kind;
+            this.KindQos = kind;
         }
         public DestinationOrderQosPolicyKind GetKind()
         {
-            return kind;
+            return KindQos;
         }
 
         public QosPolicyId GetId()
@@ -34,7 +35,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableDestinationOrderQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDestinationOrderQosPolicyImpl(this);
         }
     }
 }
