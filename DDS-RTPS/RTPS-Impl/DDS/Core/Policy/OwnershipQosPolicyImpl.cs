@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,15 +12,15 @@ namespace Doopec.Dds.Core.Policy
 {
     public class OwnershipQosPolicyImpl : QosPolicy, OwnershipQosPolicy
     {
-        private readonly OwnershipQosPolicyKind kind;
-
+        
+        public OwnershipQosPolicyKind KindQos { get; protected internal set; }
         public OwnershipQosPolicyImpl(OwnershipQosPolicyKind kind)
         {
-            this.kind = kind;
+            this.KindQos = kind;
         }
         public OwnershipQosPolicyKind GetKind()
         {
-            return kind;
+            return KindQos;
         }
 
         public QosPolicyId GetId()
@@ -34,7 +35,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableOwnershipQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableOwnershipQosPolicyImpl(this);
         }
     }
 }

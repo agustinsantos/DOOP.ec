@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,23 +12,24 @@ namespace Doopec.Dds.Core.Policy
 {
     public class LivelinessQosPolicyImpl : QosPolicy,LivelinessQosPolicy
     {
-        private readonly LivelinessQosPolicyKind kind;
-        private readonly Duration getLeaseDuration;
+      
+        public LivelinessQosPolicyKind KindQos { get; protected internal set; }
+        public Duration GetLeaseDurationQos { get; protected internal set; }
 
         public LivelinessQosPolicyImpl(LivelinessQosPolicyKind kind, Duration getLeaseDuration)
         {
-            this.kind = kind;
-            this.getLeaseDuration = getLeaseDuration;
+            this.KindQos  = kind;
+            this.GetLeaseDurationQos = getLeaseDuration;
 
         }
         public LivelinessQosPolicyKind GetKind()
         {
-            return kind;
+            return KindQos ;
         }
 
         public Duration GetLeaseDuration()
         {
-            return getLeaseDuration;
+            return GetLeaseDurationQos;
         }
 
         public QosPolicyId GetId()
@@ -42,7 +44,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableLivelinessQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableLivelinessQosPolicyImpl(this);
         }
     }
 }
