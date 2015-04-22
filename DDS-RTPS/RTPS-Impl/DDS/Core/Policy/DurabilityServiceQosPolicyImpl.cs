@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,23 +10,33 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class DurabilityServiceQosPolicyImpl : QosPolicy, DurabilityServiceQosPolicy
+    public class DurabilityServiceQosPolicyImpl : QosPolicyImpl, DurabilityServiceQosPolicy
     {
-        
-       
+        public HistoryQosPolicyKind HistoryQosPolicyKind { get; protected internal set; }
+        public Duration ServiceCleanupDelay { get; protected internal set; }
+
+        public int HistoryDepth { get; protected internal set; }
+
+        public DurabilityServiceQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+
+
+
         public Duration GetServiceCleanupDelay()
         {
-            throw new NotImplementedException();
+            return ServiceCleanupDelay;
         }
 
         public HistoryQosPolicyKind GetHistoryKind()
         {
-            throw new NotImplementedException();
+            return HistoryQosPolicyKind;
         }
 
         public int GetHistoryDepth()
         {
-            throw new NotImplementedException();
+            return HistoryDepth;
         }
 
         public int GetMaxSamples()
@@ -39,16 +50,6 @@ namespace Doopec.Dds.Core.Policy
         }
 
         public int GetMaxSamplesPerInstance()
-        {
-            throw new NotImplementedException();
-        }
-
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
         {
             throw new NotImplementedException();
         }

@@ -18,7 +18,9 @@ namespace Doopec.Dds.Core.Policy.modifiable
        
         public ModifiableGroupDataQosPolicy SetValue(byte[] value, int offset, int length)
         {
-            throw new NotImplementedException();
+            Value = new byte[length];
+            Array.Copy(value, offset, Value, 0, length);
+            return this;
         }
 
         public ModifiableGroupDataQosPolicy CopyFrom(GroupDataQosPolicy other)

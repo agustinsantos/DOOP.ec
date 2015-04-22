@@ -8,6 +8,8 @@ namespace Doopec.Dds.Core.Policy
 {
     public class GroupDataQosPolicyImpl : QosPolicyImpl, GroupDataQosPolicy
     {
+        public byte[] Value { get; protected internal set; }
+
         public GroupDataQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
@@ -15,12 +17,14 @@ namespace Doopec.Dds.Core.Policy
 
         public int GetValue(byte[] value, int offset)
         {
-            throw new NotImplementedException();
+            Array.Copy(Value, 0, value, offset, Value.Length - offset);
+
+            return Value.Length;
         }
 
         public int GetLength()
         {
-            throw new NotImplementedException();
+            return Value.Length;
         }
 
         public ModifiableGroupDataQosPolicy Modify()

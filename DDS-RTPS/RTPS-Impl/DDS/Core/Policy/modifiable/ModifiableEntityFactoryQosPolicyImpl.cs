@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy.modifiable
 {
-    class ModifiableEntityFactoryQosPolicyImpl : EntityFactoryQosPolicyImpl, ModifiableEntityFactoryQosPolicy
+    public class ModifiableEntityFactoryQosPolicyImpl : EntityFactoryQosPolicyImpl, ModifiableEntityFactoryQosPolicy
     {
 
         public ModifiableEntityFactoryQosPolicyImpl(EntityFactoryQosPolicy qos)

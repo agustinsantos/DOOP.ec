@@ -9,11 +9,19 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy.modifiable
 {
-    class ModifiableDurabilityServiceQosPolicyImpl : DurabilityServiceQosPolicyImpl, ModifiableDurabilityServiceQosPolicy
+    public class ModifiableDurabilityServiceQosPolicyImpl : DurabilityServiceQosPolicyImpl, ModifiableDurabilityServiceQosPolicy
     {
+        public ModifiableDurabilityServiceQosPolicyImpl(DurabilityServiceQosPolicy qos)
+            : base(qos.GetBootstrap())
+        {
+        }
+
+
+
         public ModifiableDurabilityServiceQosPolicy SetServiceCleanupDelay(Duration serviceCleanupDelay)
         {
-            throw new NotImplementedException();
+            ServiceCleanupDelay = serviceCleanupDelay;
+            return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetServiceCleanupDelay(long serviceCleanupDelay, global::DDS.ConversionUtils.TimeUnit unit)
@@ -23,12 +31,14 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableDurabilityServiceQosPolicy SetHistoryKind(HistoryQosPolicyKind historyKind)
         {
-            throw new NotImplementedException();
+            HistoryQosPolicyKind = historyKind;
+            return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetHistoryDepth(int historyDepth)
         {
-            throw new NotImplementedException();
+            HistoryDepth = historyDepth;
+            return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetMaxSamples(int maxSamples)
