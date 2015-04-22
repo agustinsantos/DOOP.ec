@@ -2,6 +2,7 @@
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
+using System;
 
 namespace Doopec.Dds.Core.Policy
 {
@@ -14,12 +15,12 @@ namespace Doopec.Dds.Core.Policy
 
         public int GetValue(byte[] value, int offset)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public int GetLength()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ModifiableGroupDataQosPolicy Modify()

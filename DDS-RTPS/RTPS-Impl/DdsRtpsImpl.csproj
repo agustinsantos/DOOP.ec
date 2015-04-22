@@ -68,6 +68,12 @@
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableDeadlineQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableDestinationOrderQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableDurabilityQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableDurabilityServiceQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableEntityFactoryQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableGroupDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableHistoryQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableLatencyBudgetQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableLifespanQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableOwnershipStrengthQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipStrengthQosPolicyImpl.cs" />

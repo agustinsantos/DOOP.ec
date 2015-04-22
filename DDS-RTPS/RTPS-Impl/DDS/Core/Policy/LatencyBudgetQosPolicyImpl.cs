@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,17 +12,17 @@ namespace Doopec.Dds.Core.Policy
 {
     public class LatencyBudgetQosPolicyImpl : QosPolicy, LatencyBudgetQosPolicy
     {
-        private readonly Duration getDuration;
+        
 
-
+        public Duration GetDurationQos { get; protected internal set; }
         public LatencyBudgetQosPolicyImpl(Duration getDuration)
         {
-            this.getDuration = getDuration;
+            this.GetDurationQos= getDuration;
 
         }
         public Duration GetDuration()
         {
-            return getDuration;
+            return GetDurationQos;
         }
 
         public QosPolicyId GetId()
@@ -36,7 +37,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableLatencyBudgetQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableLatencyBudgetQosPolicyImpl(this);
         }
     }
 }

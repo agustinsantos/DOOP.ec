@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,8 +12,8 @@ namespace Doopec.DDS.Core.Policy
 {
     public class EntityFactoryQosPolicyImpl : QosPolicyImpl, EntityFactoryQosPolicy
     {
-        private readonly bool isAutoEnable = true;
-
+       
+        public bool IsAutoEnableQos { get; protected internal set; }
         public EntityFactoryQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
@@ -21,17 +22,17 @@ namespace Doopec.DDS.Core.Policy
         public EntityFactoryQosPolicyImpl(bool isAutoEnable, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.isAutoEnable = isAutoEnable;
+            this.IsAutoEnableQos  = isAutoEnable;
         }
 
         public bool IsAutoEnableCreatedEntities()
         {
-            return isAutoEnable;
+            return IsAutoEnableQos;
         }
 
         public ModifiableEntityFactoryQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableEntityFactoryQosPolicyImpl(this);
         }
     }
 }

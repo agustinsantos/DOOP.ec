@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,23 +12,26 @@ namespace Doopec.Dds.Core.Policy
 {
     public class HistoryQosPolicyImpl : QosPolicy, HistoryQosPolicy
     {
-        private readonly HistoryQosPolicyKind kind;
-        private readonly int getDepth;
+       
+
+
+        public HistoryQosPolicyKind KindQos { get; protected internal set; }
+        public int GetDepthQos { get; protected internal set; }
 
         public HistoryQosPolicyImpl(HistoryQosPolicyKind kind, int getDepth)
         {
-            this.kind = kind;
-            this.getDepth = getDepth;
+            this.KindQos  = kind;
+            this.GetDepthQos = getDepth;
         }
 
         public HistoryQosPolicyKind GetKind()
         {
-            return kind;
+            return KindQos;
         }
 
         public int GetDepth()
         {
-            return getDepth ;
+            return GetDepthQos ;
         }
 
         public QosPolicyId GetId()
@@ -42,7 +46,7 @@ namespace Doopec.Dds.Core.Policy
 
         public ModifiableHistoryQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableHistoryQosPolicyImpl(this);
         }
     }
 }
