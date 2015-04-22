@@ -12,12 +12,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
     class ModifiableOwnershipQosPolicyImpl : OwnershipQosPolicyImpl, ModifiableOwnershipQosPolicy
     {
         public ModifiableOwnershipQosPolicyImpl(OwnershipQosPolicy qos)
-            : base(qos.GetKind())
+            : base(qos.GetKind(),qos.GetBootstrap())
         {
         }
 
-        public ModifiableOwnershipQosPolicyImpl(OwnershipQosPolicyKind kind)
-            : base(kind)
+        public ModifiableOwnershipQosPolicyImpl(OwnershipQosPolicyKind kind,Bootstrap boostrap)
+            : base(kind,boostrap)
         {
 
         }
@@ -27,44 +27,17 @@ namespace Doopec.Dds.Core.Policy.modifiable
             return this;
         }
 
-        public OwnershipQosPolicyKind GetKind()
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Equals(object other)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetHashCode()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ModifiableOwnershipQosPolicy Modify()
-        {
-            throw new NotImplementedException();
-        }
 
         public ModifiableOwnershipQosPolicy CopyFrom(OwnershipQosPolicy other)
         {
-            return new ModifiableOwnershipQosPolicyImpl(other.GetKind());
+            return new ModifiableOwnershipQosPolicyImpl(other);
         }
 
         public OwnershipQosPolicy FinishModification()
         {
-            return new OwnershipQosPolicyImpl(this.GetKind());
+            return new OwnershipQosPolicyImpl(this.GetKind(),this.GetBootstrap());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Doopec.DDS.Core.Policy;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
@@ -17,11 +18,27 @@ namespace Doopec.Dds.Core.Policy
 
         public int HistoryDepth { get; protected internal set; }
 
+        public int MaxSamplesQos { get; protected internal set; }
+        public int MaxInstancesQos { get; protected internal set; }
+        public int MaxSamplesPerInstanceQos { get; protected internal set; }
+
+
         public DurabilityServiceQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
         }
 
+        public DurabilityServiceQosPolicyImpl(HistoryQosPolicyKind kind, Duration serviceCleanupDelay
+            , int historyDepth, int getMaxSamplesQos, int getMaxInstancesQos, int getMaxSamplesPerInstanceQos, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.HistoryQosPolicyKind = kind;
+            this.ServiceCleanupDelay = serviceCleanupDelay;
+            this.HistoryDepth = historyDepth;
+            this.MaxSamplesQos = getMaxSamplesQos;
+            this.MaxInstancesQos = getMaxInstancesQos;
+            this.MaxSamplesPerInstanceQos = getMaxSamplesPerInstanceQos;
+        }
 
 
         public Duration GetServiceCleanupDelay()
@@ -41,22 +58,22 @@ namespace Doopec.Dds.Core.Policy
 
         public int GetMaxSamples()
         {
-            throw new NotImplementedException();
+            return MaxSamplesQos;
         }
 
         public int GetMaxInstances()
         {
-            throw new NotImplementedException();
+            return MaxInstancesQos;
         }
 
         public int GetMaxSamplesPerInstance()
         {
-            throw new NotImplementedException();
+            return MaxSamplesPerInstanceQos;
         }
 
         public ModifiableDurabilityServiceQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDurabilityServiceQosPolicyImpl(this);
         }
     }
 }

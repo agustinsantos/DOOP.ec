@@ -12,15 +12,21 @@ namespace Doopec.Dds.Core.Policy.modifiable
     public class ModifiableDurabilityServiceQosPolicyImpl : DurabilityServiceQosPolicyImpl, ModifiableDurabilityServiceQosPolicy
     {
         public ModifiableDurabilityServiceQosPolicyImpl(DurabilityServiceQosPolicy qos)
-            : base(qos.GetBootstrap())
+            : base(qos.GetHistoryKind(),qos.GetServiceCleanupDelay(), qos.GetHistoryDepth(),
+            qos.GetMaxSamples(),qos.GetMaxInstances(),qos.GetMaxSamplesPerInstance(),qos.GetBootstrap())
         {
         }
 
+        public ModifiableDurabilityServiceQosPolicyImpl(HistoryQosPolicyKind historyKind, Duration serviceCleanupDelay, int historyDepth
+            , int maxSamples, int maxInstances,int maxSamplesPerInstance, Bootstrap boostrap)
+            : base(historyKind,serviceCleanupDelay,historyDepth,maxSamples,maxInstances,maxSamplesPerInstance,boostrap)
+        {
 
+        }
 
         public ModifiableDurabilityServiceQosPolicy SetServiceCleanupDelay(Duration serviceCleanupDelay)
         {
-            ServiceCleanupDelay = serviceCleanupDelay;
+            this.ServiceCleanupDelay = serviceCleanupDelay;
             return this;
         }
 
@@ -31,39 +37,44 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableDurabilityServiceQosPolicy SetHistoryKind(HistoryQosPolicyKind historyKind)
         {
-            HistoryQosPolicyKind = historyKind;
+            this.HistoryQosPolicyKind = historyKind;
             return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetHistoryDepth(int historyDepth)
         {
-            HistoryDepth = historyDepth;
+            this.HistoryDepth = historyDepth;
             return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetMaxSamples(int maxSamples)
         {
-            throw new NotImplementedException();
+            this.MaxInstancesQos=maxSamples ;
+            return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetMaxInstances(int maxInstances)
         {
-            throw new NotImplementedException();
+            this.MaxInstancesQos =maxInstances ;
+            return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy SetMaxSamplesPerInstance(int maxSamplesPerInstance)
         {
-            throw new NotImplementedException();
+           this.MaxSamplesPerInstanceQos =maxSamplesPerInstance ;
+           return this;
         }
 
         public ModifiableDurabilityServiceQosPolicy CopyFrom(DurabilityServiceQosPolicy other)
         {
-            throw new NotImplementedException();
+            return new ModifiableDurabilityServiceQosPolicyImpl(other);
         }
 
         public DurabilityServiceQosPolicy FinishModification()
         {
-            throw new NotImplementedException();
+            return new DurabilityServiceQosPolicyImpl(this.GetHistoryKind(),this.GetServiceCleanupDelay()
+                ,this.GetHistoryDepth(),this.GetMaxSamples(),this.GetMaxInstances()
+                ,this.GetMaxSamplesPerInstance(),this.GetBootstrap());
         }
     }
 }

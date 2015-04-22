@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,48 +11,43 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class ResourceLimitsQosPolicyImpl : QosPolicy, ResourceLimitsQosPolicy
+    public class ResourceLimitsQosPolicyImpl : QosPolicyImpl, ResourceLimitsQosPolicy
     {
-        private readonly int getMaxSamples;
+        public int MaxSamplesQos { get; protected internal set; }
 
-        private readonly int getMaxInstances;
+        public int MaxInstancesQos { get; protected internal set; }
 
-        private readonly int getMaxSamplesPerInstance;
-
-        public ResourceLimitsQosPolicyImpl (int getMaxSamples, int getMaxInstances, int getMaxSamplesPerInstance)
+        public int MaxSamplesPerInstanceQos { get; protected internal set; }
+        public ResourceLimitsQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
-            this.getMaxSamples = getMaxSamples;
-            this.getMaxInstances = getMaxInstances;
-            this.getMaxSamplesPerInstance = getMaxSamplesPerInstance;
+        }
+        public ResourceLimitsQosPolicyImpl (int getMaxSamples, int getMaxInstances, int getMaxSamplesPerInstance,Bootstrap boostrap)
+            :base(boostrap)
+        {
+            this.MaxSamplesQos = getMaxSamples;
+            this.MaxInstancesQos = getMaxInstances;
+            this.MaxSamplesPerInstanceQos = getMaxSamplesPerInstance;
         }
         public int GetMaxSamples()
         {
-            return getMaxSamples;
+            return MaxSamplesQos;
         }
 
         public int GetMaxInstances()
         {
-            return getMaxInstances;
+            return MaxInstancesQos;
         }
 
         public int GetMaxSamplesPerInstance()
         {
-            return getMaxSamplesPerInstance;
+            return MaxSamplesPerInstanceQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
 
         public ModifiableResourceLimitsQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableResourceLimitsQosPolicyImpl(this);
         }
     }
 }

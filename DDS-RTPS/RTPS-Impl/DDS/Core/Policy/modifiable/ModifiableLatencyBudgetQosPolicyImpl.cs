@@ -12,12 +12,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
     class ModifiableLatencyBudgetQosPolicyImpl: LatencyBudgetQosPolicyImpl, ModifiableLatencyBudgetQosPolicy
     {
         public ModifiableLatencyBudgetQosPolicyImpl(LatencyBudgetQosPolicy qos)
-            : base(qos.GetDuration())
+            : base(qos.GetDuration(),qos.GetBootstrap())
         {
         }
 
-        public ModifiableLatencyBudgetQosPolicyImpl(Duration duration)
-            : base(duration)
+        public ModifiableLatencyBudgetQosPolicyImpl(Duration duration,Bootstrap boostrap)
+            : base(duration, boostrap)
         {
 
         }
@@ -35,12 +35,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableLatencyBudgetQosPolicy CopyFrom(LatencyBudgetQosPolicy other)
         {
-            return new ModifiableLatencyBudgetQosPolicyImpl (other.GetDuration());
+            return new ModifiableLatencyBudgetQosPolicyImpl (other);
         }
 
         public LatencyBudgetQosPolicy FinishModification()
         {
-            return new LatencyBudgetQosPolicyImpl(this.GetDuration());
+            return new LatencyBudgetQosPolicyImpl(this.GetDuration(),this.GetBootstrap());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Doopec.DDS.Core.Policy;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
@@ -14,7 +15,12 @@ namespace Doopec.Dds.Core.Policy
             : base(boostrap)
         {
         }
-
+        public GroupDataQosPolicyImpl(byte[] value, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.Value  = value;
+        }
+        
         public int GetValue(byte[] value, int offset)
         {
             Array.Copy(Value, 0, value, offset, Value.Length - offset);
@@ -24,12 +30,13 @@ namespace Doopec.Dds.Core.Policy
 
         public int GetLength()
         {
+
             return Value.Length;
         }
 
         public ModifiableGroupDataQosPolicy Modify()
         {
-            throw new System.NotImplementedException();
+            return new ModifiableGroupDataQosPolicyImpl(this);
         }
     }
 }

@@ -15,6 +15,10 @@ namespace Doopec.Dds.Core.Policy
     {
         
         public DurabilityQosPolicyKind KindQos {get; protected internal set; }
+         public DurabilityQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
         public DurabilityQosPolicyImpl(DurabilityQosPolicyKind kind, Bootstrap boostrap)
             : base(boostrap)
         {

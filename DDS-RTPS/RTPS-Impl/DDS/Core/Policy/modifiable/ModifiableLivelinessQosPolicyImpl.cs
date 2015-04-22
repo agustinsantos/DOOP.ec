@@ -12,12 +12,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
     class ModifiableLivelinessQosPolicyImpl : LivelinessQosPolicyImpl, ModifiableLivelinessQosPolicy
     {
         public ModifiableLivelinessQosPolicyImpl(LivelinessQosPolicy qos)
-            : base(qos.GetKind(),qos.GetLeaseDuration())
+            : base(qos.GetKind(),qos.GetLeaseDuration(),qos.GetBootstrap())
         {
         }
 
-        public ModifiableLivelinessQosPolicyImpl(LivelinessQosPolicyKind kind, Duration leaseDuration)
-            : base(kind,leaseDuration)
+        public ModifiableLivelinessQosPolicyImpl(LivelinessQosPolicyKind kind, Duration leaseDuration,Bootstrap boostrap)
+            : base(kind,leaseDuration,boostrap)
         {
 
         }
@@ -42,12 +42,13 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableLivelinessQosPolicy CopyFrom(LivelinessQosPolicy other)
         {
-            return new ModifiableLivelinessQosPolicyImpl (other.GetKind(),other.GetLeaseDuration());
+            return new ModifiableLivelinessQosPolicyImpl (other.GetKind(),other.GetLeaseDuration()
+                ,other.GetBootstrap());
         }
 
         public LivelinessQosPolicy FinishModification()
         {
-            return new LivelinessQosPolicyImpl (this.GetKind(),this.GetLeaseDuration());
+            return new LivelinessQosPolicyImpl (this.GetKind(),this.GetLeaseDuration(),this.GetBootstrap());
         }
     }
 }

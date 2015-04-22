@@ -25,12 +25,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableGroupDataQosPolicy CopyFrom(GroupDataQosPolicy other)
         {
-            throw new NotImplementedException();
+            return new ModifiableGroupDataQosPolicyImpl (other);
         }
 
         public GroupDataQosPolicy FinishModification()
         {
-            throw new NotImplementedException();
+            return new GroupDataQosPolicyImpl (this.GetBootstrap());
         }
     }
 }

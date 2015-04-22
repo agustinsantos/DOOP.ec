@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,31 +11,27 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class TimeBasedFilterQosPolicyImpl : QosPolicy, TimeBasedFilterQosPolicy
+    public class TimeBasedFilterQosPolicyImpl : QosPolicyImpl, TimeBasedFilterQosPolicy
     {
-        private readonly Duration getMinimumSeparation;
-        public TimeBasedFilterQosPolicyImpl(Duration getMinimumSeparation)
+        public Duration MinimumSeparationQos { get; protected internal set; }
+        public TimeBasedFilterQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
-            this.getMinimumSeparation = getMinimumSeparation;
+        }
+        public TimeBasedFilterQosPolicyImpl(Duration getMinimumSeparation,Bootstrap boostrap)
+            :base(boostrap)
+        {
+            this.MinimumSeparationQos = getMinimumSeparation;
         }
         public Duration GetMinimumSeparation()
         {
-            return getMinimumSeparation;
+            return MinimumSeparationQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public ModifiableTimeBasedFilterQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableTimeBasedFilterQosPolicyImpl(this);
         }
     }
 }

@@ -14,11 +14,11 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
 
         public ModifiableDeadlineQosPolicyImpl(DeadlineQosPolicy qos)
-            : base(qos.GetPeriod())
+            : base(qos.GetPeriod(),qos.GetBootstrap())
         {
         } 
-        public ModifiableDeadlineQosPolicyImpl(Duration getPeriod)
-            : base(getPeriod)
+        public ModifiableDeadlineQosPolicyImpl(Duration getPeriod, Bootstrap boostrap)
+            : base(getPeriod, boostrap )
         {
 
         }
@@ -26,7 +26,7 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableDeadlineQosPolicy SetPeriod(Duration period)
         {
-            this.GetPeriodQos = period;
+            this.PeriodQos = period;
             return this;
         }
 
@@ -37,12 +37,11 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableDeadlineQosPolicy CopyFrom(DeadlineQosPolicy other)
         {
-            return new ModifiableDeadlineQosPolicyImpl(other.GetPeriod());
+            return new ModifiableDeadlineQosPolicyImpl(other.GetPeriod(), other.GetBootstrap());
         }
-
         public DeadlineQosPolicy FinishModification()
         {
-            return new DeadlineQosPolicyImpl(this.GetPeriod());
+            return new DeadlineQosPolicyImpl(this.GetPeriod(),this.GetBootstrap());
         }
     }
 }

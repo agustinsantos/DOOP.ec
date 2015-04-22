@@ -78,6 +78,16 @@
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableOwnershipQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableOwnershipStrengthQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiablePartitionQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiablePresentationQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableReaderDataLifecycleQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableReliabilityQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableResourceLimitsQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableTimeBasedFilterQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableTopicDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableTransportPriorityQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableTypeConsistencyEnforcementQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableUserDataQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableWriterDataLifecycleQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\OwnershipStrengthQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\PartitionQosPolicyImpl.cs" />

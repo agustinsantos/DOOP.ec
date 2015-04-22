@@ -27,17 +27,18 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableEntityFactoryQosPolicy SetAutoEnableCreatedEntities(bool autoEnableCreatedEntities)
         {
-            throw new NotImplementedException();
+            this.IsAutoEnableQos=autoEnableCreatedEntities;
+            return this;
         }
 
         public ModifiableEntityFactoryQosPolicy CopyFrom(EntityFactoryQosPolicy other)
         {
-            throw new NotImplementedException();
+            return new ModifiableEntityFactoryQosPolicyImpl (other.IsAutoEnableCreatedEntities(),other.GetBootstrap());
         }
 
         public EntityFactoryQosPolicy FinishModification()
         {
-            throw new NotImplementedException();
+            return new EntityFactoryQosPolicyImpl(this.IsAutoEnableCreatedEntities(), this.GetBootstrap());
         }
     }
 }

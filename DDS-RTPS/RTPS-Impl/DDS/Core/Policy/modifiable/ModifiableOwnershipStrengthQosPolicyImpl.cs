@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core.policy;
+﻿using org.omg.dds.core;
+using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
     class ModifiableOwnershipStrengthQosPolicyImpl : OwnershipStrengthQosPolicyImpl, ModifiableOwnershipStrengthQosPolicy
     {
         public ModifiableOwnershipStrengthQosPolicyImpl(OwnershipStrengthQosPolicy qos)
-            : base(qos.GetValue())
+            : base(qos.GetValue(),qos.GetBootstrap())
         {
         } 
 
-        public ModifiableOwnershipStrengthQosPolicyImpl(int strength)
-            : base(strength)
+        public ModifiableOwnershipStrengthQosPolicyImpl(int strength, Bootstrap boostrap)
+            : base(strength,boostrap)
         {
         } 
 
@@ -28,12 +29,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableOwnershipStrengthQosPolicy CopyFrom(OwnershipStrengthQosPolicy other)
         {
-            return new ModifiableOwnershipStrengthQosPolicyImpl(other.GetValue());
+            return new ModifiableOwnershipStrengthQosPolicyImpl(other);
         }
 
         public OwnershipStrengthQosPolicy FinishModification()
         {
-            return new OwnershipStrengthQosPolicyImpl(this.GetValue());
+            return new OwnershipStrengthQosPolicyImpl(this.GetValue(),this.GetBootstrap());
         }
     }
 }

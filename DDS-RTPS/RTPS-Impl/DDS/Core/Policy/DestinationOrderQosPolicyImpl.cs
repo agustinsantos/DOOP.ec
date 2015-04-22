@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class DestinationOrderQosPolicyImpl: QosPolicy, DestinationOrderQosPolicy
+    public class DestinationOrderQosPolicyImpl: QosPolicyImpl, DestinationOrderQosPolicy
     {
        
         public DestinationOrderQosPolicyKind KindQos { get; protected internal set; }
-        public DestinationOrderQosPolicyImpl(DestinationOrderQosPolicyKind kind)
+
+
+        public DestinationOrderQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+
+        public DestinationOrderQosPolicyImpl(DestinationOrderQosPolicyKind kind, Bootstrap boostrap)
+            : base(boostrap)
         {
             this.KindQos = kind;
         }
@@ -23,16 +32,7 @@ namespace Doopec.Dds.Core.Policy
             return KindQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public ModifiableDestinationOrderQosPolicy Modify()
         {
             return new ModifiableDestinationOrderQosPolicyImpl(this);

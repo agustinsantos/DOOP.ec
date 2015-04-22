@@ -1,4 +1,5 @@
 ﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
@@ -10,12 +11,19 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class LifespanQosPolicyImpl : QosPolicy, LifespanQosPolicy
+    public class LifespanQosPolicyImpl : QosPolicyImpl, LifespanQosPolicy
     {
         
 
         public Duration GetDurationQos { get; protected internal set; }
-        public LifespanQosPolicyImpl(Duration getDuration)
+
+
+         public LifespanQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+        public LifespanQosPolicyImpl(Duration getDuration,Bootstrap boostrap)
+            :base(boostrap)
         {
             this.GetDurationQos = getDuration;
 
@@ -25,15 +33,7 @@ namespace Doopec.Dds.Core.Policy
             return GetDurationQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public ModifiableLifespanQosPolicy Modify()
         {

@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,32 +11,29 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    class TransportPriorityQosPolicyImpl : QosPolicy,TransportPriorityQosPolicy
+    class TransportPriorityQosPolicyImpl : QosPolicyImpl,TransportPriorityQosPolicy
     {
-        private readonly int getValue;
-        public TransportPriorityQosPolicyImpl(int getValue)
+        public int ValueQos { get; protected internal set; }
+
+        public TransportPriorityQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
-            this.getValue = getValue;
+        }
+        public TransportPriorityQosPolicyImpl(int getValue, Bootstrap boostrap)
+            :base(boostrap)
+        {
+            this.ValueQos = getValue;
         }
 
         public int GetValue()
         {
-            return getValue;
+            return ValueQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public ModifiableTransportPriorityQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableTransportPriorityQosPolicyImpl(this) ;
         }
     }
 }

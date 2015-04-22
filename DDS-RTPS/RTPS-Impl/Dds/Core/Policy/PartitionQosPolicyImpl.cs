@@ -11,7 +11,7 @@ namespace Doopec.Dds.Core.Policy
     public class PartitionQosPolicyImpl : QosPolicyImpl, PartitionQosPolicy
     {
         
-        public ICollection<string> GetNameQos { get; protected internal set; }
+        public ICollection<string> NameQos { get; protected internal set; }
         public PartitionQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
@@ -20,11 +20,11 @@ namespace Doopec.Dds.Core.Policy
         public PartitionQosPolicyImpl(ICollection<string> getName, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.GetNameQos = getName;
+            this.NameQos = getName;
         }
         public ICollection<string> GetName()
         {
-            return GetNameQos;
+            return NameQos;
         }
 
         public ModifiablePartitionQosPolicy Modify()

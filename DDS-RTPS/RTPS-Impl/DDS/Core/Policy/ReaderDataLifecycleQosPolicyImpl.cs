@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,38 +11,36 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class ReaderDataLifecycleQosPolicyImpl : QosPolicy,ReaderDataLifecycleQosPolicy
+    public class ReaderDataLifecycleQosPolicyImpl : QosPolicyImpl,ReaderDataLifecycleQosPolicy
     {
-        private readonly Duration getAutoPurgeNoWriterSamplesDelay;
-        private readonly Duration getAutoPurgeDisposedSamplesDelay;
-        public ReaderDataLifecycleQosPolicyImpl(Duration getAutoPurgeNoWriterSamplesDelay , Duration getAutoPurgeDisposedSamplesDelay )
+        public Duration AutoPurgeNoWriterSamplesDelay { get; protected internal set; }
+        public Duration AutoPurgeDisposedSamplesDelay { get; protected internal set; }
+        public ReaderDataLifecycleQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
         {
-            this.getAutoPurgeNoWriterSamplesDelay = getAutoPurgeNoWriterSamplesDelay;
-            this.getAutoPurgeDisposedSamplesDelay = getAutoPurgeDisposedSamplesDelay;
+        }
+
+        public ReaderDataLifecycleQosPolicyImpl(Duration getAutoPurgeNoWriterSamplesDelay , Duration getAutoPurgeDisposedSamplesDelay,Bootstrap boostrap )
+            :base(boostrap)
+        {
+            this.AutoPurgeNoWriterSamplesDelay = getAutoPurgeNoWriterSamplesDelay;
+            this.AutoPurgeDisposedSamplesDelay = getAutoPurgeDisposedSamplesDelay;
         }
         public Duration GetAutoPurgeNoWriterSamplesDelay()
         {
-            return getAutoPurgeNoWriterSamplesDelay;
+            return AutoPurgeNoWriterSamplesDelay;
         }
 
         public Duration GetAutoPurgeDisposedSamplesDelay()
         {
-            return getAutoPurgeDisposedSamplesDelay;
+            return AutoPurgeDisposedSamplesDelay;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public ModifiableReaderDataLifecycleQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableReaderDataLifecycleQosPolicyImpl(this);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,31 +11,24 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class TypeConsistencyEnforcementQosPolicyImpl: QosPolicy,TypeConsistencyEnforcementQosPolicy
+    public class TypeConsistencyEnforcementQosPolicyImpl: QosPolicyImpl,TypeConsistencyEnforcementQosPolicy
     {
-        private readonly TypeConsistencyEnforcementQosPolicyKind getKind;
-        public TypeConsistencyEnforcementQosPolicyImpl(TypeConsistencyEnforcementQosPolicyKind getKind)
+        public TypeConsistencyEnforcementQosPolicyKind KindQos { get; protected internal set; }
+
+        public TypeConsistencyEnforcementQosPolicyImpl(TypeConsistencyEnforcementQosPolicyKind getKind,Bootstrap boostrap)
+            :base(boostrap)
         {
-            this.getKind = getKind;
+            this.KindQos = getKind;
         }
         public TypeConsistencyEnforcementQosPolicyKind GetKind()
         {
-            return getKind;
+            return KindQos;
         }
 
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public ModifiableTypeConsistencyEnforcementQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableTypeConsistencyEnforcementQosPolicyImpl(this);
         }
     }
 }

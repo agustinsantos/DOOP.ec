@@ -25,7 +25,7 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiablePartitionQosPolicy SetName(ICollection<string> name)
         {
-            this.GetNameQos=name;
+            this.NameQos=name;
             return this;
         }
 

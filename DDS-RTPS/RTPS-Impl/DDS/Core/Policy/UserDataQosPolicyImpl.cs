@@ -1,4 +1,5 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -11,35 +12,35 @@ namespace Doopec.DDS.Core.Policy
 {
     public class UserDataQosPolicyImpl : QosPolicyImpl, UserDataQosPolicy
     {
-        private readonly byte[] value;
+        public byte[] ValueQos { get; protected internal set; }
 
         public UserDataQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
-            this.value = new byte[0];
+            this.ValueQos = new byte[0];
         }
 
         public UserDataQosPolicyImpl(byte[] value, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.value = value;
+            this.ValueQos = value;
         }
 
         public int GetValue(byte[] result, int offset)
         {
-            int length = this.value.Length;
-            Array.Copy(this.value, offset, result, 0, length);
+            int length = this.ValueQos.Length;
+            Array.Copy(this.ValueQos, offset, result, 0, length);
             return offset + length;
         }
 
         public int GetLength()
         {
-            return this.value.Length;
+            return this.ValueQos.Length;
         }
 
         public ModifiableUserDataQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableUserDataQosPolicyImpl(this);
         }
     }
 }

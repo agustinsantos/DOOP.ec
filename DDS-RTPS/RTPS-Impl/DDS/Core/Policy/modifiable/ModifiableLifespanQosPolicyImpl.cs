@@ -12,12 +12,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
     class ModifiableLifespanQosPolicyImpl : LifespanQosPolicyImpl, ModifiableLifespanQosPolicy
     {
         public ModifiableLifespanQosPolicyImpl(LifespanQosPolicy qos)
-            : base(qos.GetDuration())
+            : base(qos.GetDuration(),qos.GetBootstrap())
         {
         }
 
-        public ModifiableLifespanQosPolicyImpl(Duration duration)
-            : base(duration)
+        public ModifiableLifespanQosPolicyImpl(Duration duration,Bootstrap boostrap)
+            : base(duration,boostrap )
         {
 
         }
@@ -36,12 +36,12 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableLifespanQosPolicy CopyFrom(LifespanQosPolicy other)
         {
-            return new ModifiableLifespanQosPolicyImpl(other.GetDuration());
+            return new ModifiableLifespanQosPolicyImpl(other);
         }
 
         public LifespanQosPolicy FinishModification()
         {
-            return new LifespanQosPolicyImpl (this.GetDuration());
+            return new LifespanQosPolicyImpl (this.GetDuration(),this.GetBootstrap());
         }
     }
 }
