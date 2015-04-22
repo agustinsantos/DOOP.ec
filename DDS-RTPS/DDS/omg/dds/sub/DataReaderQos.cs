@@ -90,6 +90,14 @@ namespace org.omg.dds.sub
         ///
         /// </summary>
         /// <returns>The readerDataLifecycle</returns>
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>The reliability</returns>
+        ReliabilityQosPolicy GetReliability();
+
         ReaderDataLifecycleQosPolicy GetReaderDataLifecycle();
 
         DataRepresentationQosPolicy GetRepresentation();

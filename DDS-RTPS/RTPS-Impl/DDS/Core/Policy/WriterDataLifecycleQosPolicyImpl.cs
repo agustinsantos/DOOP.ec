@@ -1,4 +1,6 @@
-﻿using org.omg.dds.core;
+﻿using Doopec.Dds.Core.Policy.modifiable;
+using Doopec.DDS.Core.Policy;
+using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using System;
@@ -9,26 +11,28 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy
 {
-    public class WriterDataLifecycleQosPolicyImpl :QosPolicy,WriterDataLifecycleQosPolicy
+    public class WriterDataLifecycleQosPolicyImpl : QosPolicyImpl, WriterDataLifecycleQosPolicy
     {
+        public bool IsAutDisposeUnregisteredInstancesQos { get; protected internal set; }
+
+        public WriterDataLifecycleQosPolicyImpl(Bootstrap boostrap)
+            : base(boostrap)
+        {
+        }
+        public WriterDataLifecycleQosPolicyImpl(bool isAutDisposeUnregisteredInstancesQos, Bootstrap boostrap)
+            :base(boostrap)
+        {
+            this.IsAutDisposeUnregisteredInstancesQos =isAutDisposeUnregisteredInstancesQos;
+        }
+
         public bool IsAutDisposeUnregisteredInstances()
         {
-            throw new NotImplementedException();
-        }
-
-        public QosPolicyId GetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
-        {
-            throw new NotImplementedException();
+            return IsAutDisposeUnregisteredInstancesQos;
         }
 
         public ModifiableWriterDataLifecycleQosPolicy Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableWriterDataLifecycleQosPolicyImpl(this);
         }
     }
 }

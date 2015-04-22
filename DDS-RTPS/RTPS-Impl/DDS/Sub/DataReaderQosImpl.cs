@@ -87,6 +87,10 @@ namespace Doopec.DDS.Sub
         {
             throw new NotImplementedException();
         }
+        public ReliabilityQosPolicy GetReliability()
+        {
+            return Reliability;
+        }
 
         public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
         {
@@ -97,5 +101,6 @@ namespace Doopec.DDS.Sub
         {
             throw new NotImplementedException();
         }
+        internal ReliabilityQosPolicy Reliability { get; set; }
     }
 }

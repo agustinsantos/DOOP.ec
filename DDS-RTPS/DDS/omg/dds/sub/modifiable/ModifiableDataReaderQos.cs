@@ -80,7 +80,12 @@ namespace org.omg.dds.sub.modifiable
         /// <param name="resourceLimits">The resourceLimits to Set</param>
         /// <returns>this</returns>
         ModifiableDataReaderQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reliability">The reliability to Set</param>
+        /// <returns>this</returns>
+        ModifiableDataReaderQos SetReliability(ReliabilityQosPolicy reliability);
 
         /// <summary>
         /// 

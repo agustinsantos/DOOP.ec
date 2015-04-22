@@ -15,6 +15,7 @@ using org.omg.dds.core.policy;
 using org.omg.dds.core.policy.modifiable;
 using Doopec.Dds.Core.Policy;
 using org.omg.dds.pub.modifiable;
+using org.omg.dds.sub.modifiable;
 
 namespace ExampleDDS.PubSubExamples
 {
@@ -44,9 +45,14 @@ namespace ExampleDDS.PubSubExamples
 
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
+
+            ModifiableDataReaderQos qosDR = sub.GetDefaultDataReaderQos().Modify();
+            ModifiableReliabilityQosPolicy dsqMod=qosDR.GetReliability().Modify();
+            dsqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
+            qosDR.SetReliability(dsqMod);
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
-                                                                    sub.GetDefaultDataReaderQos(),
+                                                                    qosDR,
                                                                     ls, null /* all status changes */);
 
             // Now Publish some piece of data
