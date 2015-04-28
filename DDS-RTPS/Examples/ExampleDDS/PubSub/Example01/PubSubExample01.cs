@@ -41,9 +41,13 @@ namespace ExampleDDS.PubSubExamples
             Greeting data = new Greeting("Hello, World with DDS.");
             Console.WriteLine("Sending data:\"{0}\"", data.Value);
             dw.Write(data);
-
             //and check that the reader has this data
             dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
+           
+            
+           
+        
+
 
             dp.Close();
         }

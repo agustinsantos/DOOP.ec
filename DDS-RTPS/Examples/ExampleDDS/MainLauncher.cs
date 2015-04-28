@@ -7,7 +7,7 @@ namespace ExampleDDS
 {
     class MainLauncher
     {
-        private const String Example = "03";
+        private const String Example = "01";
 
         public static void Main(string[] args)
         {

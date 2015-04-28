@@ -155,8 +155,11 @@ namespace Rtps.Tests.Transport
                 Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
                 Debug.WriteLine("Message Header: {0}", msg.Header);
                 Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
+                Debug.WriteLine("The Header Protocol is: {0}", msg.Header.Protocol);
                 Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
+                Debug.WriteLine("The VendorId value state is: {0}", msg.Header.VendorId);
                 Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
+                Debug.WriteLine("The Protocol Version value state is: {0}", msg.Header.Version);
 
                 Debug.WriteLine("The number of SubMessages in the message is: {0}", msg.SubMessages.Count);
                 //Assert.AreEqual(2, msg.SubMessages.Count);
@@ -169,6 +172,7 @@ namespace Rtps.Tests.Transport
                         case SubMessageKind.DATA:
                             {
                                 Data d = submsg as Data;
+                               
                                 Debug.WriteLine("The KeyFlag value state is: {0}", d.HasKeyFlag);
                                 Debug.WriteLine("The DataFlag value state is: {0}", d.HasDataFlag);
                                 Debug.WriteLine("The InlineQoSFlag value state is: {0}", d.HasInlineQosFlag);
@@ -367,17 +371,18 @@ namespace Rtps.Tests.Transport
 
             rec.Start();
 
-            simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet09.dat", Host, Port);
+            simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet04.dat", Host, Port);
             lock (key)
             {
                 Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
-
-        /*
-        [TestMethod]
-        public void TestPublishDataOpenDdsRtpsReliabilityRuntestLocal01()
+        /// <summary>
+        /// Data Submessage Reference
+        /// </summary>
+         [TestMethod]
+        public void TesOpenDDS_rtps_reliability_runtest_localPacket01()
         {
             object key = new object();
             UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
@@ -386,56 +391,91 @@ namespace Rtps.Tests.Transport
             {
                 Message msg = m.Message;
                 Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
+                
                 Debug.WriteLine("Message Header: {0}", msg.Header);
-                Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
-                Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
-                Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
+                Assert.AreEqual(ProtocolId.PROTOCOL_RTPS.ToString(), msg.Header.Protocol.ToString());
+                Debug.WriteLine("The Header Protocol is: {0}", msg.Header.Protocol);
+                Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1.ToString(), msg.Header.Version.ToString());
+                Debug.WriteLine("The Protocol Version value state is: {0}", msg.Header.Version);
+                Assert.AreEqual(VendorId.OCI.ToString(), msg.Header.VendorId.ToString());
+                Debug.WriteLine("The VendorId value state is: {0}", msg.Header.VendorId);
+                Assert.AreEqual("01-03-08-00-27-B9-29-47-0A-AF-00-00", msg.Header.GuidPrefix.ToString());
+
+                Debug.WriteLine("The guidPrefix value state is: {0}", msg.Header.GuidPrefix);
+
+
                 Assert.AreEqual(1, msg.SubMessages.Count);
-               
+                Debug.WriteLine("The number of SubMessages in the message is: {0}", msg.SubMessages.Count);
+                
                 foreach (var submsg in msg.SubMessages)
                 {
-                    Debug.WriteLine("SubMessage: {0}", submsg);
-                    if (submsg is Data)
+                    Assert.AreEqual(SubMessageKind.DATA, submsg.Kind );
+                    Debug.WriteLine("SubMessage: {0}", submsg.Kind);
+                    
+                    switch (submsg.Kind)
                     {
-                        Data d = submsg as Data;
-
-
-                        if (d.HasDataFlag)
-                        {
-                            Debug.WriteLine("DataFlag: {0}", d.HasDataFlag);
-                        }
-                        else if(d.HasDataFlag==false )
-                        {
-                            Debug.WriteLine("DataFlag: {0}", d.HasDataFlag);
-                        }
-                      
-
-                        
-                        if (d.HasInlineQosFlag)
-                        {
-                            Debug.WriteLine("InlineQosFlag: {0}", d.HasInlineQosFlag);
-                            foreach (var par in d.InlineQos.Value)
+                        case SubMessageKind.DATA:
                             {
-                                Debug.WriteLine("InlineQos: {0}", par);
+                                Data d = submsg as Data;
+                                
+                                Assert.AreEqual(false, d.HasKeyFlag);
+                                Debug.WriteLine("The KeyFlag value state is: {0}", d.HasKeyFlag);
+                                Assert.AreEqual(true, d.HasDataFlag);
+                                Debug.WriteLine("The DataFlag value state is: {0}", d.HasDataFlag);
+                                Assert.AreEqual(false, d.HasInlineQosFlag);
+                                Debug.WriteLine("The InlineQoSFlag value state is: {0}", d.HasInlineQosFlag);
+                                Assert.AreEqual(true, d.Header.Flags.IsLittleEndian);
+                                Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
+                                Assert.AreEqual(0, d.Header.SubMessageLength);
+                                Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
+                                Assert.AreEqual(0, d.ExtraFlags .Value);
+                                Debug.WriteLine("The extraFlags value is: {0}", d.ExtraFlags.Value);
+                                Debug.WriteLine("The octetsToInlineQos value is: ");
+                                Assert.AreEqual(0, d.ReaderId.EntityKey0);
+                                Assert.AreEqual(0, d.ReaderId.EntityKey1);
+                                Assert.AreEqual(0, d.ReaderId.EntityKey2);
+                                Debug.WriteLine("The readerIDEntityKey is: {0}-{1}-{2}", d.ReaderId.EntityKey0,d.ReaderId.EntityKey1,d.ReaderId.EntityKey2);
+                                Assert.AreEqual(0,(int) d.ReaderId.TypeID);
+                                Debug.WriteLine("The readerIDEntityKind value is: {0} ",(int)d.ReaderId.TypeID);
+                                Assert.AreEqual(0, d.WriterId.EntityKey0);
+                                Assert.AreEqual(1, d.WriterId.EntityKey1);
+                                Assert.AreEqual(2, d.WriterId.EntityKey2);
+                                Debug.WriteLine("The writerID is: {0}-{1}-{2}", d.WriterId.EntityKey0, d.WriterId.EntityKey1, d.WriterId.EntityKey2);
+                                Assert.AreEqual(2, (int)d.WriterId.TypeID);
+                                Debug.WriteLine("The writerIDEntityKind value is:{0} ",(int) d.WriterId.TypeID);
+                                Assert.AreEqual("1", d.WriterSN.ToString());
+                                
+                                Debug.WriteLine("The writerSN is: {0}", d.WriterSN);
+                                if (d.HasInlineQosFlag)
+                                {
+                                    /*foreach (var par in d.InlineQos.Value)
+                                    {
+                                        Debug.WriteLine("InlineQos: {0}", par);
+                                    }*/
+
+                                }
+
+
+                                
+                                
+                                if (d.HasDataFlag || d.Header.Flags.IsLittleEndian)
+                                {
+
+                                    for (int i = 0; i <= d.SerializedPayload.DataEncapsulation.SerializedPayload.Length - 1; i++)
+                                    {
+                                        
+                                        Debug.WriteLine("SerializedPayload: {0}", d.SerializedPayload.DataEncapsulation.SerializedPayload.GetValue(i));
+                                    }
+                                }
+                                break;
                             }
-                        }
-                        else if (d.HasInlineQosFlag == false)
-                        {
-                            Debug.WriteLine("InlineQosFlag: {0}", d.HasInlineQosFlag);
-                        }
-
-                       
-
                     }
+
                 }
                 lock (key) Monitor.Pulse(key);
             };
 
             rec.Start();
-         
-
-
-
 
             simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet01.dat", Host, Port);
             lock (key)
@@ -444,85 +484,184 @@ namespace Rtps.Tests.Transport
             }
             rec.Close();
         }
-        */
-        /*
-        [TestMethod]
-        public void TestPublishDataOpenDdsRtpsReliabilityRuntestLocal03()
-        {
-            object key = new object();
-            UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
-
-            rec.MessageReceived += (s, m) =>
-            {
-                Message msg = m.Message;
-                Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
-                Debug.WriteLine("Message Header: {0}", msg.Header);
-                Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
-                Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
-                Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
-                Assert.AreEqual(2, msg.SubMessages.Count);
-
-                foreach (var submsg in msg.SubMessages)
-                {
-                    Debug.WriteLine("SubMessage: {0}", submsg);
-                    if (submsg is InfoDestination)
-                    {
-                        InfoDestination d = submsg as InfoDestination;
-
-                        if (d.Header.Flags.IsLittleEndian)
-                        {
-                            Debug.WriteLine("HasFinalFlag: {0}", d.Header.Flags.IsLittleEndian);
-                            
-                        }
-                        else if (d.Header.Flags.HasFinalFlag == false)
-                        {
-                            Debug.WriteLine("HasFinalFlag: {0}", d.Header.Flags.HasFinalFlag);
-                        }
-
-                    }
-
-                    if (submsg is AckNack)
-                    {
-                        AckNack d = submsg as AckNack;
-
-                        if (d.Header.Flags.IsLittleEndian)
-                        {
-                            Debug.WriteLine("EndiannessFlag: {0}", d.Header.Flags.IsLittleEndian);
-
-                        }
-                        else if (d.Header.Flags.IsLittleEndian == false)
-                        {
-                            Debug.WriteLine("EndiannessFlag: {0}", d.Header.Flags.IsLittleEndian);
-                        }
-                        if (d.Header.Flags.HasFinalFlag)
-                        {
-                            Debug.WriteLine("HasFinalFlag: {0}", d.Header.Flags.HasFinalFlag);
-                        }
-                        else if (d.Header.Flags.HasFinalFlag == false)
-                        {
-                            Debug.WriteLine("HasFinalFlag: {0}", d.Header.Flags.HasFinalFlag);
-                        }
-
-                    }
 
 
+         [TestMethod]
+         public void TesOpenDDS_rtps_reliability_runtest_localPacket02()
+         {
+             object key = new object();
+             UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
 
-                }
-                lock (key) Monitor.Pulse(key);
-            };
+             rec.MessageReceived += (s, m) =>
+             {
+                 Message msg = m.Message;
+                 Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
 
-            rec.Start();
+                 Debug.WriteLine("Message Header: {0}", msg.Header);
+                 Assert.AreEqual(ProtocolId.PROTOCOL_RTPS.ToString(), msg.Header.Protocol.ToString());
+                 Debug.WriteLine("The Header Protocol is: {0}", msg.Header.Protocol);
+                 Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1.ToString(), msg.Header.Version.ToString());
+                 Debug.WriteLine("The Protocol Version value state is: {0}", msg.Header.Version);
+                 Assert.AreEqual(VendorId.OCI.ToString(), msg.Header.VendorId.ToString());
+                 Debug.WriteLine("The VendorId value state is: {0}", msg.Header.VendorId);
+                 Assert.AreEqual("01-03-08-00-27-B9-29-47-0A-AF-00-00", msg.Header.GuidPrefix.ToString());
+
+                 Debug.WriteLine("The guidPrefix value state is: {0}", msg.Header.GuidPrefix);
 
 
+                 Assert.AreEqual(1, msg.SubMessages.Count);
+                 Debug.WriteLine("The number of SubMessages in the message is: {0}", msg.SubMessages.Count);
+
+                 foreach (var submsg in msg.SubMessages)
+                 {
+                     Assert.AreEqual(SubMessageKind.HEARTBEAT, submsg.Kind);
+                     Debug.WriteLine("SubMessage: {0}", submsg.Kind);
+
+                     switch (submsg.Kind)
+                     {
+                         case SubMessageKind.HEARTBEAT:
+                            {
+                                Heartbeat d = submsg as Heartbeat;
+                                Assert.AreEqual(false, d.HasLivelinessFlag);
+                                Debug.WriteLine("The LivelinessFlag value state is: {0}", d.HasLivelinessFlag);
+                                Assert.AreEqual(false, d.HasFinalFlag);
+                                Debug.WriteLine("The FinalFlag value state is: {0}", d.HasFinalFlag);
+                                Assert.AreEqual(true, d.Header.Flags.IsLittleEndian);
+                                Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
+                                Assert.AreEqual(0, d.Header.SubMessageLength);
+                                Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
+                                Assert.AreEqual(0, d.ReaderId.EntityKey0);
+                                Assert.AreEqual(0, d.ReaderId.EntityKey1);
+                                Assert.AreEqual(0, d.ReaderId.EntityKey2);
+                                Debug.WriteLine("The readerIDEntityKey is: {0}-{1}-{2}", d.ReaderId.EntityKey0, d.ReaderId.EntityKey1, d.ReaderId.EntityKey2);
+                                Assert.AreEqual(0, (int)d.ReaderId.TypeID);
+                                Debug.WriteLine("The readerIDEntityKind value is: {0} ", (int)d.ReaderId.TypeID);
+                                Assert.AreEqual(0, d.WriterId.EntityKey0);
+                                Assert.AreEqual(1, d.WriterId.EntityKey1);
+                                Assert.AreEqual(2, d.WriterId.EntityKey2);
+                                Debug.WriteLine("The writerID is: {0}-{1}-{2}", d.WriterId.EntityKey0, d.WriterId.EntityKey1, d.WriterId.EntityKey2);
+                                Assert.AreEqual(2, (int)d.WriterId.TypeID);
+                                
+                                Debug.WriteLine("The writerIDEntityKind value is:{0} ", (int)d.WriterId.TypeID);
+                                Assert.AreEqual(1,d.FirstSequenceNumber);
+                                Debug.WriteLine("The firstSN is: {0}", d.FirstSequenceNumber);
+                                Assert.AreEqual(1,d.LastSequenceNumber);
+                                Debug.WriteLine("The lastSN is: {0}", d.LastSequenceNumber);
+                                Assert.AreEqual(1,d.Count);
+                                Debug.WriteLine("The Count is: {0}", d.Count);
+
+                                break;
+                            }
+                                
+                     }
+
+                 }
+                 lock (key) Monitor.Pulse(key);
+             };
+
+             rec.Start();
+
+             simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet02.dat", Host, Port);
+             lock (key)
+             {
+                 Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
+             }
+             rec.Close();
+         }
+
+         [TestMethod]
+         public void TesOpenDDS_rtps_reliability_runtest_localPacket03()
+         {
+             object key = new object();
+             UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
+
+             rec.MessageReceived += (s, m) =>
+             {
+                 Message msg = m.Message;
+                 Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
+
+                 Debug.WriteLine("Message Header: {0}", msg.Header);
+                 Assert.AreEqual(ProtocolId.PROTOCOL_RTPS.ToString(), msg.Header.Protocol.ToString());
+                 Debug.WriteLine("The Header Protocol is: {0}", msg.Header.Protocol);
+                 Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1.ToString(), msg.Header.Version.ToString());
+                 Debug.WriteLine("The Protocol Version value state is: {0}", msg.Header.Version);
+                 Assert.AreEqual(VendorId.OCI.ToString(), msg.Header.VendorId.ToString());
+                 Debug.WriteLine("The VendorId value state is: {0}", msg.Header.VendorId);
+                 Assert.AreEqual("01-03-08-00-27-B9-29-47-0A-AF-00-01", msg.Header.GuidPrefix.ToString());
+
+                 Debug.WriteLine("The guidPrefix value state is: {0}", msg.Header.GuidPrefix);
 
 
-            simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet03.dat", Host, Port);
-            lock (key)
-            {
-                Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
-            }
-            rec.Close();
-        }
-        */
+                 Assert.AreEqual(2, msg.SubMessages.Count);
+                 Debug.WriteLine("The number of SubMessages in the message is: {0}", msg.SubMessages.Count);
+
+                 foreach (var submsg in msg.SubMessages)
+                 {
+                     
+                     Debug.WriteLine("SubMessage: {0}", submsg.Kind);
+
+                     switch (submsg.Kind)
+                     {
+                         case SubMessageKind.INFO_DST:
+                             {
+                                 InfoDestination d = submsg as InfoDestination;
+
+                                 Assert.AreEqual(true, d.Header.Flags.IsLittleEndian);
+                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
+                                 Assert.AreEqual(12, d.Header.SubMessageLength);
+                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
+                                 Assert.AreEqual("01-03-08-00-27-B9-29-47-0A-AF-00-00", d.GuidPrefix.ToString());
+
+                                 Debug.WriteLine("The guidPrefix value is: {0}", d.GuidPrefix);
+                                 break;
+                             }
+                         case SubMessageKind.ACKNACK:
+                             {
+                                 AckNack d = submsg as AckNack;
+                                 Assert.AreEqual(true, d.HasFinalFlag);
+                                 Debug.WriteLine("The FinalFlag value state is: {0}", d.HasFinalFlag);
+                                 Assert.AreEqual(true, d.Header.Flags.IsLittleEndian);
+                                 Debug.WriteLine("The EndiannessFlag value state is: {0}", d.Header.Flags.IsLittleEndian);
+                                 Debug.WriteLine("The octetsToNextHeader value is: {0}", d.Header.SubMessageLength);
+                                 Assert.AreEqual(0, d.ReaderId.EntityKey0);
+                                 Assert.AreEqual(1, d.ReaderId.EntityKey1);
+                                 Assert.AreEqual(5, d.ReaderId.EntityKey2);
+                                 Debug.WriteLine("The readerIDEntityKey is: {0}-{1}-{2}", d.ReaderId.EntityKey0, d.ReaderId.EntityKey1, d.ReaderId.EntityKey2);
+                                 Assert.AreEqual(7, (int)d.ReaderId.TypeID);
+                                 Debug.WriteLine("The readerIDEntityKind value is: {0} ", (int)d.ReaderId.TypeID);
+                                 Assert.AreEqual(0, d.WriterId.EntityKey0);
+                                 Assert.AreEqual(1, d.WriterId.EntityKey1);
+                                 Assert.AreEqual(2, d.WriterId.EntityKey2);
+                                 Debug.WriteLine("The writerID is: {0}-{1}-{2}", d.WriterId.EntityKey0, d.WriterId.EntityKey1, d.WriterId.EntityKey2);
+                                 Assert.AreEqual(2, (int)d.WriterId.TypeID);
+
+                                 Debug.WriteLine("The writerIDEntityKind value is:{0} ", (int)d.WriterId.TypeID);
+                                 Assert.AreEqual("2", d.ReaderSNState.BitmapBase.ToString());
+                                 Assert.AreEqual(1, d.ReaderSNState.NumBits);
+                                 Assert.AreEqual(0, d.ReaderSNState.Bitmaps[0]);
+                                 
+                                 Debug.WriteLine("The readerSNState is: {0}", d.ReaderSNState);
+                                 Debug.WriteLine("The Count is: {0}", d.Count);
+                                 break;
+                             }
+
+
+                     }
+
+                 }
+                 lock (key) Monitor.Pulse(key);
+             };
+
+             rec.Start();
+
+             simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet03.dat", Host, Port);
+             lock (key)
+             {
+                 Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
+             }
+             rec.Close();
+         }
+
+        
     }
 }
