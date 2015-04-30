@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigurationSection.csd.cs">
+      <DependentUpon>ConfigurationSection.csd.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dds\Core\BootstrapImpl.cs" />
     <Compile Include="Dds\Core\DataAvailableStatusImpl.cs" />
     <Compile Include="Dds\Core\DurationImpl.cs" />
@@ -235,6 +238,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Configuration\ConfigurationSection.csd.config" />
+    <None Include="Configuration\ConfigurationSection.csd.diagram" />
+    <None Include="Configuration\ConfigurationSection.csd.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="SQL-DDS\SqlDDSGrammar.g4" />
   </ItemGroup>
   <ItemGroup>
