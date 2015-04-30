@@ -1,5 +1,5 @@
-﻿using Common.Logging;
-using Doopec.Rtps.SharedMem;
+﻿using Doopec.Rtps.SharedMem;
+using log4net;
 using Rtps.Structure;
 using System;
 using System.Collections.Generic;

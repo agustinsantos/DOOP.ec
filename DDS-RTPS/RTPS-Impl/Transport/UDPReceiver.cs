@@ -94,14 +94,21 @@ namespace Doopec.Utils.Transport
                 throw new NotImplementedException("Address family not supported yet: " + ep.AddressFamily);
             }
             if (isMultiCastAddr)
-
-                acceptor = new AsyncMulticastAcceptor();
+            {
+                acceptor = new AsyncDatagramAcceptor();
+                // Define a MulticastOption object specifying the multicast group  
+                // address and the local IPAddress. 
+                // The multicast group address is the same as the address used by the client.
+                MulticastOption mcastOption = new MulticastOption(locator.SocketAddress, IPAddress.Any);
+                acceptor.SessionConfig.MulticastOption = mcastOption;
+                acceptor.SessionConfig.ExclusiveAddressUse = false;
+                acceptor.SessionConfig.ReuseAddress = true;
+            }
             else
                 acceptor = new AsyncDatagramAcceptor();
 
             //acceptor.FilterChain.AddLast("logger", new LoggingFilter());
             acceptor.FilterChain.AddLast("RTPS", new ProtocolCodecFilter(new MessageCodecFactory()));
-            //acceptor.SessionConfig.ReuseAddress = true;
             acceptor.SessionConfig.EnableBroadcast = true;
 
             acceptor.ExceptionCaught += (s, e) =>
@@ -146,7 +153,10 @@ namespace Doopec.Utils.Transport
             {
                 log.Debug("Session idle...");
             };
-            acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
+            if (isMultiCastAddr)
+                acceptor.Bind(new IPEndPoint(IPAddress.Any, locator.Port));
+            else
+                acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
             log.DebugFormat("Listening on udp://{0}:{1} for {2}", uri.Host, locator.Port, discovery ? "discovery traffic" : "user traffic");
         }
 

@@ -75,7 +75,8 @@ namespace ChatClient
                 dw.Write(data);
 
                 //and check that the reader has this data
-                dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
+                dr.WaitForHistoricalData(20, TimeUnit.SECONDS);
+                Console.Write(">");
                 msg = Console.ReadLine();
             }
 

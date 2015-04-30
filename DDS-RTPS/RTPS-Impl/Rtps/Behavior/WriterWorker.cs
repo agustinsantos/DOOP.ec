@@ -1,4 +1,4 @@
-﻿using Common.Logging;
+﻿using log4net;
 using Doopec.Rtps.Utils;
 using Doopec.Utils.Transport;
 using Mina.Core.Buffer;

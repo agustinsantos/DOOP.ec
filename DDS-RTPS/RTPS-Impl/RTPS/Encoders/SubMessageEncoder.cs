@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
-using Common.Logging;
+using log4net;
 using Rtps.Messages;
 using Rtps.Messages.Types;
 using Rtps.Messages.Submessages;

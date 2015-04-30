@@ -1,4 +1,4 @@
-﻿using Common.Logging;
+﻿using log4net;
 using Doopec.Rtps.RtpsTransport;
 using Doopec.Rtps.SharedMem;
 using Doopec.Utils.Transport;

@@ -9,6 +9,7 @@ using Rtps.Messages;
 using Rtps.Structure.Types;
 using System;
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 
 namespace Doopec.Utils.Transport
@@ -18,7 +19,7 @@ namespace Doopec.Utils.Transport
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private readonly Locator locator;
-        private IoConnector connector;
+        private AsyncDatagramConnector connector;
         private int bufferSize;
 
 
@@ -48,8 +49,42 @@ namespace Doopec.Utils.Transport
 
         public void Start()
         {
+            IPEndPoint ep = new IPEndPoint(locator.SocketAddress, locator.Port);
+            bool isMultiCastAddr;
+            if (ep.AddressFamily == AddressFamily.InterNetwork) //IP v4
+            {
+                byte byteIp = ep.Address.GetAddressBytes()[0];
+                isMultiCastAddr = (byteIp >= 224 && byteIp < 240) ? true : false;
+            }
+            else if (ep.AddressFamily == AddressFamily.InterNetworkV6)
+            {
+                isMultiCastAddr = ep.Address.IsIPv6Multicast;
+            }
+            else
+            {
+                throw new NotImplementedException("Address family not supported yet: " + ep.AddressFamily);
+            }
+
             connector = new AsyncDatagramConnector();
+
             connector.FilterChain.AddLast("RTPS", new ProtocolCodecFilter(new MessageCodecFactory()));
+
+            if (isMultiCastAddr)
+            {
+                // Set the local IP address used by the listener and the sender to 
+                // exchange multicast messages. 
+                connector.DefaultLocalEndPoint = new IPEndPoint(IPAddress.Any, 0);
+
+                // Define a MulticastOption object specifying the multicast group  
+                // address and the local IP address. 
+                // The multicast group address is the same as the address used by the listener.
+                MulticastOption mcastOption = new MulticastOption(locator.SocketAddress, IPAddress.Any);
+                connector.SessionConfig.MulticastOption = mcastOption;
+
+                // Call Connect() to force binding to the local IP address,
+                // and get the associated multicast session.
+                IoSession session = connector.Connect(ep).Await().Session;
+            }
 
             connector.ExceptionCaught += (s, e) =>
             {
