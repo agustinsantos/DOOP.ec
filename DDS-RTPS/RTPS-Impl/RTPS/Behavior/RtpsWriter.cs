@@ -1,6 +1,8 @@
-﻿using Doopec.Rtps.Encoders;
+﻿using Common.Logging;
+using Doopec.Encoders;
 using Doopec.Rtps.RtpsTransport;
 using Doopec.Rtps.SharedMem;
+using Doopec.Serializer;
 using Doopec.Utils.Transport;
 using Mina.Core.Buffer;
 using Rtps.Behavior;
@@ -11,17 +13,15 @@ using Rtps.Structure;
 using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using Data = Rtps.Messages.Submessages.Data;
-using Doopec.Encoders;
-using Doopec.Serializer;
 
 namespace Doopec.Rtps.Behavior
 {
     public class RtpsWriter<T> : StatefulWriter<T>, IDisposable
     {
+        protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private IList<Reader<T>> readers = new List<Reader<T>>();
         private WriterWorker worker;
         private UDPTransmitter trans;
@@ -82,15 +82,18 @@ namespace Doopec.Rtps.Behavior
         private void PeriodicWork()
         {
             // the RTPS Writer to repeatedly announce the availability of data by sending a Heartbeat Message.
-            Console.WriteLine("I have to send a Heartbeat Message,  at {0}", DateTime.Now);
+            log.DebugFormat("I have to send a Heartbeat Message,  at {0}", DateTime.Now);
             SendHeartbeat();
             if (HistoryCache.Changes.Count > 0)
+            {
                 foreach (var change in HistoryCache.Changes)
                 {
                     //SendHeartbeat();
                     //SendData(change);
                     SendDataHeartbeat(change);
                 }
+                HistoryCache.Changes.Clear(); //TODO
+            }
         }
         private void SendHeartbeat()
         {

@@ -19,7 +19,6 @@ namespace Doopec.Dds.Domain
     /// </summary>
     public class DomainParticipantFactoryImpl : DomainParticipantFactory
     {
-
         public DomainParticipantFactoryImpl(Bootstrap bootstrap)
         {
             this.bootstrap_ = bootstrap;
@@ -123,6 +122,8 @@ namespace Doopec.Dds.Domain
 
         /// The collection of domain participants.
         private IDictionary<long, DomainParticipant> participants_ = new Dictionary<long, DomainParticipant>();
+        private static Dictionary<long, IList<DomainParticipant>> participantsInDomains = new Dictionary<long, IList<DomainParticipant>>();
+
 
         private readonly Bootstrap bootstrap_ = null;
 

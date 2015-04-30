@@ -53,31 +53,31 @@ namespace Doopec.Utils.Transport
 
             connector.ExceptionCaught += (s, e) =>
             {
-                Console.WriteLine(e.Exception);
+                log.Error(e.Exception);
             };
             connector.MessageReceived += (s, e) =>
             {
-                Console.WriteLine("Session recv...");
+                log.Debug("Session recv...");
             };
             connector.MessageSent += (s, e) =>
             {
-                Console.WriteLine("Session sent...");
+                log.Debug("Session sent...");
             };
             connector.SessionCreated += (s, e) =>
             {
-                Console.WriteLine("Session created...");
+                log.Debug("Session created...");
             };
             connector.SessionOpened += (s, e) =>
             {
-                Console.WriteLine("Session opened...");
+                log.Debug("Session opened...");
             };
             connector.SessionClosed += (s, e) =>
             {
-                Console.WriteLine("Session closed...");
+                log.Debug("Session closed...");
             };
             connector.SessionIdle += (s, e) =>
             {
-                Console.WriteLine("Session idle...");
+                log.Debug("Session idle...");
             };
             IConnectFuture connFuture = connector.Connect(new IPEndPoint(locator.SocketAddress, locator.Port));
             connFuture.Await();
@@ -87,12 +87,12 @@ namespace Doopec.Utils.Transport
                 IConnectFuture f = (IConnectFuture)e.Future;
                 if (f.Connected)
                 {
-                    Console.WriteLine("...connected");
+                    log.Debug("...connected");
                     session = f.Session;
                 }
                 else
                 {
-                    Console.WriteLine("Not connected...exiting");
+                    log.Warn("Not connected...exiting");
                 }
             };
         }

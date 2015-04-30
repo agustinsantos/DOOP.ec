@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Common.Logging;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -31,6 +33,8 @@ namespace Doopec.Dds.Config
     /// </example>
     public class DdsConfigurationSectionHandler : ConfigurationSection
     {
+        protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         #region Public Instance Constructors
 
         /// <summary>
@@ -63,7 +67,8 @@ namespace Doopec.Dds.Config
             {
                 int rst = 0;
                 if (this.Settings["DefaultDomainId"] != null && !string.IsNullOrWhiteSpace(this.Settings["DefaultDomainId"].Value))
-                    rst = int.Parse(this.Settings["DefaultDomainId"].Value);
+                    if (!int.TryParse(this.Settings["DefaultDomainId"].Value, out rst))
+                        log.WarnFormat("Invalid Domain Id: {0}. It should be a integer value.");
                 return rst;
             }
         }

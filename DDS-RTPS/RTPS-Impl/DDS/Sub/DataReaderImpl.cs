@@ -151,6 +151,7 @@ namespace Doopec.Dds.Sub
                 default:
                     throw new NotSupportedException("Time Unit " + unit);
             }
+            ManualResetEvent.Reset();
             if (rtpsReader.ReaderCache.Changes.Count > 0  || ManualResetEvent.WaitOne(new TimeSpan(tiks)))
             {
                 if (rtpsReader.ReaderCache.Changes.Count <= 0) return;
@@ -201,7 +202,12 @@ namespace Doopec.Dds.Sub
         public SampleIterator<TYPE> Take()
         {
             SampleIterator<TYPE> it = new SampleIteratorImpl<TYPE>();
-            it.Add(new SampleImpl<TYPE>(rtpsReader.ReaderCache.GetChange()));
+            while (rtpsReader.ReaderCache.Changes.Count > 0)
+            {
+                CacheChange<TYPE> change = rtpsReader.ReaderCache.GetChange();
+                it.Add(new SampleImpl<TYPE>(change));
+                rtpsReader.ReaderCache.RemoveChange(change);
+            }
             return it;
         }
 
