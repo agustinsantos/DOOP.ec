@@ -4,6 +4,8 @@ using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.domain;
 using org.omg.dds.domain.modifiable;
+using System;
+using System.Text;
 
 namespace Doopec.DDS.Domain
 {
@@ -11,38 +13,46 @@ namespace Doopec.DDS.Domain
     {
         public readonly DomainParticipantQosImpl DDS_PARTICIPANT_QOS_DEFAULT;
 
-        private readonly UserDataQosPolicy userData;
-        private readonly EntityFactoryQosPolicy entityFactoryQosPolicy;
+        public UserDataQosPolicy UserData {get; internal set;}
+        public EntityFactoryQosPolicy EntityFactoryQosPolicy { get; internal set; }
 
         public DomainParticipantQosImpl(Bootstrap boostrap)
             : base(boostrap)
         {
             // TODO 
             // DDS_PARTICIPANT_QOS_DEFAULT = new DomainParticipantQosImpl(boostrap);
-            userData = new UserDataQosPolicyImpl(boostrap);
-            entityFactoryQosPolicy = new EntityFactoryQosPolicyImpl(boostrap);
+            UserData = new UserDataQosPolicyImpl(boostrap);
+            EntityFactoryQosPolicy = new EntityFactoryQosPolicyImpl(boostrap);
         }
 
         public DomainParticipantQosImpl(UserDataQosPolicy userData, EntityFactoryQosPolicy entityFactoryQosPolicy, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.userData = userData;
-            this.entityFactoryQosPolicy = entityFactoryQosPolicy;
+            this.UserData = userData;
+            this.EntityFactoryQosPolicy = entityFactoryQosPolicy;
         }
 
         public UserDataQosPolicy GetUserData()
         {
-            return userData;
+            return UserData;
         }
 
         public EntityFactoryQosPolicy GetEntityFactory()
         {
-            return entityFactoryQosPolicy;
+            return EntityFactoryQosPolicy;
         }
 
         public override ModifiableDomainParticipantQos Modify()
         {
             throw new System.NotImplementedException();
+        }
+
+        public static DomainParticipantQosImpl ConvertTo(Doopec.Configuration.Dds.DomainParticipantQoS qosConfig, Bootstrap boostrap)
+        {
+            DomainParticipantQosImpl rst = new DomainParticipantQosImpl(boostrap);
+            rst.UserData = new UserDataQosPolicyImpl(UTF8Encoding.Unicode.GetBytes(qosConfig.UserData.Value), boostrap);
+            rst.EntityFactoryQosPolicy = new EntityFactoryQosPolicyImpl(qosConfig.EntityFactory.AutoenableCreatedEntities, boostrap);
+            return rst;
         }
     }
 }

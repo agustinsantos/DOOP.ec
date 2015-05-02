@@ -187,7 +187,9 @@ namespace Doopec.DDS.Utils
         { throw new NotImplementedException(); }
 
         public static bool IsValid(DomainParticipantFactoryQos qos)
-        { throw new NotImplementedException(); }
+        {
+            return qos != null && qos.GetEntityFactory() != null;
+        }
 
         public static bool IsChangeable(UserDataQosPolicy qos1,
                                UserDataQosPolicy qos2)
@@ -301,9 +303,19 @@ namespace Doopec.DDS.Utils
                               SubscriberQos qos2)
         { throw new NotImplementedException(); }
 
+
+        /// <summary>
+        /// ENTITY_FACTORY policy is mutable. A change in the policy affects only the entities created after the change; 
+        /// not the previously created entities.
+        /// </summary>
+        /// <param name="qos1"></param>
+        /// <param name="qos2"></param>
+        /// <returns></returns>
         public static bool IsChangeable(DomainParticipantFactoryQos qos1,
-                              DomainParticipantFactoryQos qos2)
-        { throw new NotImplementedException(); }
+                                        DomainParticipantFactoryQos qos2)
+        { 
+            return true;
+        }
 
 
         private static bool Valid_duration(Duration t)

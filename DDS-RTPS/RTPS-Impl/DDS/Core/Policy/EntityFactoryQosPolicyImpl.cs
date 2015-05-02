@@ -13,7 +13,8 @@ namespace Doopec.DDS.Core.Policy
     public class EntityFactoryQosPolicyImpl : QosPolicyImpl, EntityFactoryQosPolicy
     {
        
-        public bool IsAutoEnableQos { get; protected internal set; }
+        public bool AutoenableCreatedEntities { get; protected internal set; }
+
         public EntityFactoryQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
         {
@@ -22,12 +23,12 @@ namespace Doopec.DDS.Core.Policy
         public EntityFactoryQosPolicyImpl(bool isAutoEnable, Bootstrap boostrap)
             : base(boostrap)
         {
-            this.IsAutoEnableQos  = isAutoEnable;
+            this.AutoenableCreatedEntities  = isAutoEnable;
         }
 
         public bool IsAutoEnableCreatedEntities()
         {
-            return IsAutoEnableQos;
+            return AutoenableCreatedEntities;
         }
 
         public ModifiableEntityFactoryQosPolicy Modify()

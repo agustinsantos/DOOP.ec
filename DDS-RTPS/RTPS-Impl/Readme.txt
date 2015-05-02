@@ -10,3 +10,6 @@ and http://coding-time.blogspot.com.es/2011/07/how-to-implement-rule-engine-in-c
 TODO. Review this code and apply if appropiate.
 
 
+TODO. Domain configuration: set default and set id as a key
+TODO. DomainParticipantFactoryQosImpl should be defined outside Domains. 
+TODO. UserData is wrong in domainParticipantQos. 

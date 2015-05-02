@@ -27,7 +27,7 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableEntityFactoryQosPolicy SetAutoEnableCreatedEntities(bool autoEnableCreatedEntities)
         {
-            this.IsAutoEnableQos=autoEnableCreatedEntities;
+            this.AutoenableCreatedEntities=autoEnableCreatedEntities;
             return this;
         }
 

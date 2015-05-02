@@ -1,4 +1,5 @@
-﻿using Doopec.Dds.Pub;
+﻿using Doopec.Dds.Core;
+using Doopec.Dds.Pub;
 using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
 using Doopec.Rtps;
@@ -19,22 +20,20 @@ using System.Collections.Generic;
 
 namespace Doopec.Dds.Domain
 {
-    public class DomainParticipantImpl : DomainParticipant
+    public class DomainParticipantImpl : EntityImpl<DomainParticipant,
+                                                DomainParticipantListener,
+                                                DomainParticipantQos>, DomainParticipant
     {
         int domainId_ = 0;
         List<Publisher> publishers_ = new List<Publisher>();
         List<Subscriber> subscribers_ = new List<Subscriber>();
-        DomainParticipantQos qos_;
-        DomainParticipantListener listener_ = null;
-        public Bootstrap Bootstrap { get; internal set; }
-
         List<ITopic> topics_ = new List<ITopic>();
 
         Participant rtpsParticipant;
 
         public DomainParticipantImpl(Bootstrap bootstrap)
+            : base(bootstrap)
         {
-            this.Bootstrap = bootstrap;
             rtpsParticipant = new ParticipantImpl();
             RtpsEngineFactory.Instance.DiscoveryModule.RegisterParticipant(rtpsParticipant);
         }
@@ -43,15 +42,18 @@ namespace Doopec.Dds.Domain
             : this(bootstrap)
         {
             this.domainId_ = domainId;
-            this.qos_ = qos;
-            this.listener_ = listener;
+            if (qos != null)
+                this.SetQos(qos);
+            else
+                // Check default values for qos 
+                throw new NotImplementedException();
+            if (listener != null)
+            this.SetListener(listener);
         }
 
         public DomainParticipantImpl(int domainId, Bootstrap bootstrap)
             : this(domainId, null, null, bootstrap)
         {
-            // Check default values for qos and listener 
-            throw new NotImplementedException();
         }
 
         public Publisher CreatePublisher()
@@ -261,81 +263,18 @@ namespace Doopec.Dds.Domain
         {
             throw new NotImplementedException();
         }
-
-        public DomainParticipantListener GetListener()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetListener(DomainParticipantListener listener)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DomainParticipantQos GetQos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetQos(DomainParticipantQos qos)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetQos(string qosLibraryName, string qosProfileName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Enable()
-        {
-            throw new NotImplementedException();
-        }
-
-        public StatusCondition<DomainParticipant> GetStatusCondition()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<TYPE> GetStatusChanges<TYPE>(ICollection<TYPE> statuses)
-        {
-            throw new NotImplementedException();
-        }
-
-        public InstanceHandle GetInstanceHandle()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Close()
+        public override void Close()
         {
             RtpsEngineFactory.Instance.DiscoveryModule.UnregisterParticipant(rtpsParticipant);
         }
 
-        public void Retain()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Bootstrap GetBootstrap()
+        public override void Retain()
         {
             throw new NotImplementedException();
         }
 
 
         #region API Extensions
-
-        public DomainParticipantQos Qos
-        {
-            get { return qos_; }
-            set { qos_ = value; }
-        }
-
-        public DomainParticipantListener Listener
-        {
-            get { return listener_; }
-            set { listener_ = value; }
-        }
 
         internal protected void AddPublisher(Publisher pub)
         {
@@ -367,9 +306,6 @@ namespace Doopec.Dds.Domain
             this.topics_.Remove(topic);
         }
         #endregion
-
-
-
 
         public Topic<TYPE> FindTopic<TYPE>(string topicName, long timeout, global::DDS.ConversionUtils.TimeUnit unit)
         {

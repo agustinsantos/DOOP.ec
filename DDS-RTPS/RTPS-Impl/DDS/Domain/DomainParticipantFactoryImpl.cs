@@ -1,4 +1,6 @@
-﻿using Doopec.Dds.Config;
+﻿using Doopec.Configuration;
+using Doopec.Dds.Config;
+using Doopec.Dds.Core;
 using Doopec.DDS.Domain;
 using Doopec.DDS.Utils;
 using org.omg.dds.core;
@@ -19,32 +21,25 @@ namespace Doopec.Dds.Domain
     /// </summary>
     public class DomainParticipantFactoryImpl : DomainParticipantFactory
     {
+        private const int DEFAULT_DOMAINID = 0;
         public DomainParticipantFactoryImpl(Bootstrap bootstrap)
         {
             this.bootstrap_ = bootstrap;
-            if (default_participant_qos_ == null)
-            {
-                default_participant_qos_ = new DomainParticipantQosImpl(bootstrap);
+            Doopec.Configuration.Dds.DomainParticipantFactoryQoS qos = ddsConfig.Domains["0"].QoS.DomainParticipantFactoryQos;
 
-                if (config.Settings["DefaultDomainQoS"] != null)
-                {
-                    string defaultQoS = config.Settings["DefaultDomainQoS"].Value;
-                    // TODO Assign values to default_participant_qos_ from configuration
-                }
-            }
+            this.Qos = DomainParticipantFactoryQosImpl.ConvertTo(qos, bootstrap);
         }
 
         public override DomainParticipant CreateParticipant()
         {
-            int domainId = config.DefaultDomainId;
-            DomainParticipantQos qos = this.GetDefaultParticipantQos();
-
-            return this.CreateParticipant(domainId, qos, null, null);
+            return this.CreateParticipant(DEFAULT_DOMAINID);
         }
 
         public override DomainParticipant CreateParticipant(int domainId)
         {
-            DomainParticipantQos qos = this.GetDefaultParticipantQos();
+            Doopec.Configuration.Dds.DomainParticipantQoS qosConfig = ddsConfig.Domains[domainId].QoS.DomainParticipantQos;
+
+            DomainParticipantQos qos = DomainParticipantQosImpl.ConvertTo(qosConfig, this.bootstrap_);
 
             return this.CreateParticipant(domainId, qos, null, null);
         }
@@ -52,6 +47,9 @@ namespace Doopec.Dds.Domain
         public override DomainParticipant CreateParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
         {
             DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener, this.bootstrap_);
+            if (((DomainParticipantFactoryQosImpl)this.Qos).EntityFactoryQosPolicy.IsAutoEnableCreatedEntities())
+                dp.Enable();
+
             participants_.Add(domainId, dp);
             return dp;
         }
@@ -127,7 +125,7 @@ namespace Doopec.Dds.Domain
 
         private readonly Bootstrap bootstrap_ = null;
 
-        private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+        private DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
 
         #endregion
     }

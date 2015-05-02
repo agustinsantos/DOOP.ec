@@ -22,11 +22,6 @@ namespace org.omg.dds.core
 
     public interface DDSObject
     {
-        // TODO: Cambiar getBoostrap por una propiedad llamada Boostrap 
- #if TODO
-        Boostrap Boostrap { get; set; }
-#endif
-
         /// <summary>
         /// The Bootstrap object that directly or indirectly created this object.
         /// </summary>
