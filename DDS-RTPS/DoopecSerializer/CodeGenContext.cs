@@ -63,7 +63,10 @@ namespace Doopec.Serializer
 
         public bool HasSwitch(Type type)
         {
-            return m_typeMap[type].HasSwitch;
+            if (m_typeMap.ContainsKey(type))
+                return m_typeMap[type].HasSwitch;
+            else
+                return false;
         }
     }
 }

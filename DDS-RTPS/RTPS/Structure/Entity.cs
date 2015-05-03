@@ -9,20 +9,23 @@ namespace Rtps.Structure
     /// represents the class of objects that are visible to other RTPS Entities on the
     /// network. As such, RTPS Entity objects have a globally-unique identifier (GUID)
     /// and can be referenced inside RTPS messages.
+    /// Maps to the value of the DDS BuiltinTopicKey_t
+    /// used to describe the corresponding DDS Entity.
+    /// Refer to the DDS specification for more details.
     /// </summary>
     public class Entity
     {
         //RTPS Attributes
         protected GUID guid;
 
-        public Entity()
+        public Entity(GuidPrefix guidPrefix, EntityId entityId)
         {
-            this.guid = new GUID(); 
+            this.guid = new GUID(guidPrefix, entityId);
         }
 
-        public Entity(GUID pGuid)
+        public Entity(GUID guid)
         {
-            this.guid = pGuid;
+            this.guid = guid;
         }
 
         /// <summary>

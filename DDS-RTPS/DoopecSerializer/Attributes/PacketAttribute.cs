@@ -62,5 +62,10 @@ namespace Doopec.Serializer.Attributes
         {
             return type.GetCustomAttributes(typeof(PacketAttribute), false).Any();
         }
+
+        public static PacketAttribute GetAttribute(Type type)
+        {
+            return type.GetCustomAttributes(typeof(PacketAttribute), false).FirstOrDefault() as PacketAttribute;
+        }
     }
 }

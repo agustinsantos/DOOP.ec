@@ -18,7 +18,7 @@ using Data = Rtps.Messages.Submessages.Data;
 
 namespace Doopec.Rtps.Behavior
 {
-    public class RtpsWriter<T> : StatefulWriter<T>, IDisposable
+    public class RtpsStatefulWriter<T> : StatefulWriter<T>, IDisposable
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -26,8 +26,8 @@ namespace Doopec.Rtps.Behavior
         private WriterWorker worker;
         private UDPTransmitter trans;
 
-        public RtpsWriter(Participant participant)
-            : base(participant)
+        public RtpsStatefulWriter(GUID guid)
+            : base(guid)
         {
             ITypeSerializer[] customSerializers = new ITypeSerializer[0];
             Doopec.Serializer.Serializer.Initialize(new Type[] { typeof(T) }, customSerializers);

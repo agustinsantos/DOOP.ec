@@ -5,13 +5,16 @@ using Rtps.Structure.Types;
 
 namespace Doopec.Rtps.Discovery
 {
+
+    /// <summary>
+    /// TODO esta clase ya no vale. Tengo que borrarla y poner en su lugar la que se 
+    /// llama SPDPbuiltinParticipantReaderImpl
+    /// </summary>
     public class SPDPbuiltinParticipantReader : StatelessReader<SPDPdiscoveredParticipantData>
     {
-        public SPDPbuiltinParticipantReader(Participant participant)
-            : base(participant)
+        public SPDPbuiltinParticipantReader(GUID guid)
+            : base(guid)
         {
-            this.guid = new GUID(participant.Guid.Prefix, EntityId.ENTITYID_SPDP_BUILTIN_PARTICIPANT_READER);
-
             this.TopicKind = TopicKind.WITH_KEY;
             this.ReliabilityLevel = ReliabilityKind.BEST_EFFORT;
         }

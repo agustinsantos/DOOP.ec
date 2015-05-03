@@ -43,19 +43,17 @@ namespace Doopec.Utils.Transport
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private readonly Uri uri;
         private readonly int bufferSize;
 
         private readonly Locator locator;
-        private readonly int participantId;
-        private readonly bool discovery;
+        private GUID participantId;
         private AsyncDatagramAcceptor acceptor;
 
         public event EventHandler<RTPSMessageEventArgs> MessageReceived;
+        public bool IsDiscovery { get; set; }
 
         public UDPReceiver(Uri uri, int bufferSize)
         {
-            this.uri = uri;
             this.bufferSize = bufferSize;
             var addresses = System.Net.Dns.GetHostAddresses(uri.Host);
             int port = (uri.Port < 0 ? 0 : uri.Port);
@@ -63,14 +61,21 @@ namespace Doopec.Utils.Transport
                 this.locator = new Locator(addresses[0], port);
         }
 
+        public UDPReceiver(Locator locator, int bufferSize)
+        {
+            this.bufferSize = bufferSize;
+            this.locator = locator;
+        }
+
         public Locator Locator
         {
             get { return locator; }
         }
 
-        public int ParticipantId
+        public GUID ParticipantId
         {
             get { return participantId; }
+            set { participantId = value; }
         }
 
         public void Start()
@@ -157,7 +162,7 @@ namespace Doopec.Utils.Transport
                 acceptor.Bind(new IPEndPoint(IPAddress.Any, locator.Port));
             else
                 acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
-            log.DebugFormat("Listening on udp://{0}:{1} for {2}", uri.Host, locator.Port, discovery ? "discovery traffic" : "user traffic");
+            log.DebugFormat("Listening on udp://{0}:{1} for {2}", locator.SocketAddress, locator.Port, IsDiscovery ? "IsDiscovery traffic" : "user traffic");
         }
 
         public void Close()

@@ -1,6 +1,7 @@
 ﻿using Doopec.Configuration;
 using Doopec.Dds.Config;
 using Doopec.Dds.Core;
+using Doopec.Dds.Utils;
 using Doopec.DDS.Domain;
 using Doopec.DDS.Utils;
 using org.omg.dds.core;
@@ -21,7 +22,6 @@ namespace Doopec.Dds.Domain
     /// </summary>
     public class DomainParticipantFactoryImpl : DomainParticipantFactory
     {
-        private const int DEFAULT_DOMAINID = 0;
         public DomainParticipantFactoryImpl(Bootstrap bootstrap)
         {
             this.bootstrap_ = bootstrap;
@@ -30,11 +30,21 @@ namespace Doopec.Dds.Domain
             this.Qos = DomainParticipantFactoryQosImpl.ConvertTo(qos, bootstrap);
         }
 
+        /// <summary>
+        /// Create a new participant in the domain with ID 0 having default QoS
+        /// and no listener.
+        /// </summary>
+        /// <returns>New participant</returns>
         public override DomainParticipant CreateParticipant()
         {
-            return this.CreateParticipant(DEFAULT_DOMAINID);
+            return this.CreateParticipant(0);
         }
 
+        /// <summary>
+        /// Create a new participant in the domain with a fixed ID and having default QoS
+        /// and no listener.
+        /// </summary>
+        /// <returns>New participant</returns>
         public override DomainParticipant CreateParticipant(int domainId)
         {
             Doopec.Configuration.Dds.DomainParticipantQoS qosConfig = ddsConfig.Domains[domainId].QoS.DomainParticipantQos;
@@ -44,25 +54,54 @@ namespace Doopec.Dds.Domain
             return this.CreateParticipant(domainId, qos, null, null);
         }
 
+        /// <summary>
+        /// Create a new domain participant.
+        /// </summary>
+        /// <param name="domainId"></param>
+        /// <param name="qos"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status 
+        ///                        changes</param>
+        /// <returns></returns>
+
         public override DomainParticipant CreateParticipant(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, ICollection<Type> statuses)
         {
             DomainParticipant dp = new DomainParticipantImpl(domainId, qos, listener, this.bootstrap_);
             if (((DomainParticipantFactoryQosImpl)this.Qos).EntityFactoryQosPolicy.IsAutoEnableCreatedEntities())
                 dp.Enable();
 
-            participants_.Add(domainId, dp);
             return dp;
         }
+
+        /// <summary>
+        /// Create a new domain participant.
+        /// </summary>
+        /// <param name="domainId"></param>
+        /// <param name="qosLibraryName"></param>
+        /// <param name="qosProfileName"></param>
+        /// <param name="listener"></param>
+        /// <param name="statuses">Of which status changes the listener should be
+        ///                        notified. A null collection signifies all status
+        ///                        changes</param>
+        /// <returns></returns>
 
         public override DomainParticipant CreateParticipant(int domainId, string qosLibraryName, string qosProfileName, DomainParticipantListener listener, ICollection<Type> statuses)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// This operation retrieves a previously created DomainParticipant belonging to specified domain_id. If no such
+        /// DomainParticipant exists, the operation will return a ‘nil’ value.
+        /// If multiple DomainParticipant entities belonging to that domain_id exist, then the operation will return one of them. It is not
+        /// specified which one.
+        /// </summary>
+        /// <param name="domainId">The Domain identified by the domainId argument</param>
+        /// <returns></returns>
         public override DomainParticipant LookupParticipant(int domainId)
         {
-            DomainParticipant dp = null;
-            participants_.TryGetValue(domainId, out dp);
+            DomainParticipant dp = DiscoveryService.Instance.LookupParticipant(domainId);
             return dp;
         }
 
@@ -117,10 +156,6 @@ namespace Doopec.Dds.Domain
 
         /// The default qos Value of DomainParticipant.
         private DomainParticipantQos default_participant_qos_;
-
-        /// The collection of domain participants.
-        private IDictionary<long, DomainParticipant> participants_ = new Dictionary<long, DomainParticipant>();
-        private static Dictionary<long, IList<DomainParticipant>> participantsInDomains = new Dictionary<long, IList<DomainParticipant>>();
 
 
         private readonly Bootstrap bootstrap_ = null;

@@ -18,9 +18,9 @@ namespace Rtps.Structure
         private IList<Locator> multicastLocatorList = new List<Locator>();
 
 
-        public Endpoint(Participant participant)
+        public Endpoint(GUID guid)
+            : base(guid)
         {
-            this.Guid.Prefix = participant.Guid.Prefix;
         }
 
         /// <summary>

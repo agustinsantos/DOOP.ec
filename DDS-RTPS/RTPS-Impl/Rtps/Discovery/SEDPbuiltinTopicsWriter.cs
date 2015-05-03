@@ -6,10 +6,10 @@ namespace Doopec.Rtps.Discovery
 {
     public class SEDPbuiltinTopicsWriter : StatefulWriter<DiscoveredTopicData>
     {
-        public SEDPbuiltinTopicsWriter(Participant participant)
-            : base(participant)
+        public SEDPbuiltinTopicsWriter(GUID guid)
+            : base(guid)
         {
-            this.guid = new GUID(participant.Guid.Prefix, EntityId.ENTITYID_SEDP_BUILTIN_TOPIC_WRITER);
+            this.guid = new GUID(guid.Prefix, EntityId.ENTITYID_SEDP_BUILTIN_TOPIC_WRITER);
         }
 
     }

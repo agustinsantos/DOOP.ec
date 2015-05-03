@@ -18,13 +18,13 @@ using Data = Rtps.Messages.Submessages.Data;
 using DataObj = Rtps.Structure.Types.Data;
 namespace Doopec.Rtps.Behavior
 {
-    public class RtpsReader<T> : StatefulReader<T>, IDisposable
+    public class RtpsStatefulReader<T> : StatefulReader<T>, IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private IList<Writer<T>> writers = new List<Writer<T>>();
         private UDPReceiver rec;
-        public RtpsReader(Participant participant)
-            : base(participant)
+        public RtpsStatefulReader(GUID guid)
+            : base(guid)
         {
             //TODO use configuration for host and port
             rec = new UDPReceiver(new Uri("udp://224.0.1.111:9999"), 1024);

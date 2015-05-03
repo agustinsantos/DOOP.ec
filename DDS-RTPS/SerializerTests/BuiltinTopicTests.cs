@@ -58,7 +58,7 @@ namespace SerializerTests
         [TestMethod]
         public void TestSerializeParticipantBuiltinTopicData()
         {
-            Participant participant = new ParticipantImpl();
+            Participant participant = new ParticipantImpl(0, 0);
             SPDPdiscoveredParticipantData v1 = new SPDPdiscoveredParticipantData(participant);
             int expectedSize = headerSize + paramHeaderSize + byteBoundary + paramSentinelSize;
             string expectedRst = "00 03 00 00 0C 00 00 00 " + // Header 

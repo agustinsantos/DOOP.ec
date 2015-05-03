@@ -147,11 +147,7 @@ namespace org.omg.dds.core
         public static Bootstrap CreateInstance(string implClassNameProperty, IDictionary<string, Object> environment)
         {
             // --- Get implementation class name --- //
-            /* System.GetProperty checks the implClassNameProperty argument as
-             * described in the specification for this method and throws
-             * NullPointerException or IllegalArgumentException if necessary.
-             */
-            
+            // TODO. Use DDS config instead            
             string className = ConfigurationManager.AppSettings[implClassNameProperty];
             if (string.IsNullOrWhiteSpace(className))
             {

@@ -15,10 +15,10 @@ namespace Rtps.Discovery.Sedp
     /// </summary>
     public class SPDPbuiltinParticipantWriter : StatelessWriter<SPDPdiscoveredParticipantData>
     {
-        public SPDPbuiltinParticipantWriter(Participant participant)
-            : base(participant)
+        public SPDPbuiltinParticipantWriter(GUID guid)
+            : base(guid)
         {
-            this.guid = new GUID(participant.Guid.Prefix, EntityId.ENTITYID_SPDP_BUILTIN_PARTICIPANT_WRITER);
+            this.guid = new GUID(guid.Prefix, EntityId.ENTITYID_SPDP_BUILTIN_PARTICIPANT_WRITER);
 
             this.TopicKind = TopicKind.WITH_KEY;
             this.ReliabilityLevel = ReliabilityKind.BEST_EFFORT;

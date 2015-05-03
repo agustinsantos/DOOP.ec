@@ -23,12 +23,21 @@ namespace Rtps.Structure.Types
 
         public GuidPrefix(byte[] value)
         {
+            if (value.Length != 12)
+                throw new ArgumentException("Invalid guidprefix length");
             this.prefix = value;
         }
 
         public GuidPrefix()
             : this(new byte[12])
         {
+        }
+
+        public GuidPrefix(long value)
+        {
+           this.prefix = new byte[12];
+           Array.Copy(BitConverter.GetBytes(value), 0, this.prefix, 4, 8);
+
         }
 
         public  byte[] Prefix

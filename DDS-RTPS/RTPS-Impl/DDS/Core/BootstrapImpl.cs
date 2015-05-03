@@ -1,6 +1,7 @@
 ﻿
 using DDS.ConversionUtils;
 using Doopec.Dds.Domain;
+using Doopec.Dds.Utils;
 using org.omg.dds.core;
 using org.omg.dds.core.modifiable;
 using org.omg.dds.domain;
@@ -12,9 +13,42 @@ using System.Collections.Generic;
 
 namespace Doopec.Dds.Core
 {
+
+    /// <summary>
+    /// A Bootstrap object represents an instantiation of a Service implementation within a process. It
+    /// is the “root” for all other DDS objects and assists in their creation by means of an internal
+    /// service-provider interface. All stateful types in this PSM implement an interface DDSObject,
+    /// through a getBootstrap method on which they can provide access to the Bootstrap from
+    /// which they are ultimately derived. (Bootstrap itself implements this interface; a Bootstrap
+    /// always returns this from its getBootstrap operation.)
+    /// The Bootstrap class allows implementations to avoid the presence of static state, if desired. It
+    /// also allows multiple DDS implementations—or multiple versions of the “same”
+    /// implementation—to potentially coexist within the same Java run-time environment. A DDS
+    /// application’s first step is to instantiate a Bootstrap, which represents the DDS implementation
+    /// that it will use. From there, it can create all of its additional DDS objects.
+    /// The Bootstrap class is abstract. To avoid compile-time dependencies on concrete
+    /// Bootstrap implementations, an application can instantiate a Bootstrap by means of a static
+    /// createInstance method on the Bootstrap class. This method looks up a concrete
+    /// Bootstrap subclass using a Java system property containing the name of that subclass. This
+    /// subclass must be provided by implementers and will therefore have an implementation-specific
+    /// name.
+    /// </summary>
     public class BootstrapImpl : Bootstrap
     {
         private SPI SPIInstance;
+
+        static BootstrapImpl()
+        {
+            // Activate the Discovery Service
+            var dicovery = DiscoveryService.Instance;
+        }
+
+        public BootstrapImpl()
+            : this(null)
+        { }
+
+        public BootstrapImpl(IDictionary<string, Object> environment)
+        { }
 
         public override Bootstrap.ServiceProviderInterface GetSPI()
         {

@@ -2,6 +2,7 @@
 using Doopec.Dds.Pub;
 using Doopec.Dds.Sub;
 using Doopec.Dds.Topic;
+using Doopec.Dds.Utils;
 using Doopec.Rtps;
 using Doopec.Rtps.RtpsTransport;
 using Doopec.Rtps.SharedMem;
@@ -17,30 +18,58 @@ using org.omg.dds.type;
 using Rtps.Structure;
 using System;
 using System.Collections.Generic;
+using GUID = Rtps.Structure.Types.GUID;
 
 namespace Doopec.Dds.Domain
 {
     public class DomainParticipantImpl : EntityImpl<DomainParticipant,
                                                 DomainParticipantListener,
-                                                DomainParticipantQos>, DomainParticipant
+                                                DomainParticipantQos>, DomainParticipant, IComparable
     {
-        int domainId_ = 0;
-        List<Publisher> publishers_ = new List<Publisher>();
-        List<Subscriber> subscribers_ = new List<Subscriber>();
-        List<ITopic> topics_ = new List<ITopic>();
+        private int domainId_ = 0;
+        private List<Publisher> publishers_ = new List<Publisher>();
+        private List<Subscriber> subscribers_ = new List<Subscriber>();
+        private List<ITopic> topics_ = new List<ITopic>();
 
-        Participant rtpsParticipant;
+        private ParticipantImpl rtpsParticipant;
+
+        public GUID ParticipantGuid
+        {
+            get
+            {
+                return rtpsParticipant.Guid;
+            }
+        }
+        public int RtpsParticipantId
+        {
+            get
+            {
+                return rtpsParticipant.ParticipantId;
+            }
+        }
 
         public DomainParticipantImpl(Bootstrap bootstrap)
-            : base(bootstrap)
+            : this(0, bootstrap)
         {
-            rtpsParticipant = new ParticipantImpl();
-            RtpsEngineFactory.Instance.DiscoveryModule.RegisterParticipant(rtpsParticipant);
+        }
+
+        public DomainParticipantImpl(int domainId, Bootstrap bootstrap)
+            : this(domainId, null, null, bootstrap)
+        {
         }
 
         public DomainParticipantImpl(int domainId, DomainParticipantQos qos, DomainParticipantListener listener, Bootstrap bootstrap)
-            : this(bootstrap)
+            : base(bootstrap)
         {
+            lock (typeof(DomainParticipantImpl))
+            {
+                int nextId = 0;
+                DomainParticipantImpl lastParticipant = DiscoveryService.Instance.LookupParticipant(domainId) as DomainParticipantImpl;
+                if (lastParticipant != null)
+                    nextId = lastParticipant.rtpsParticipant.ParticipantId + 1;
+                rtpsParticipant = new ParticipantImpl(domainId, nextId);
+            }
+            
             this.domainId_ = domainId;
             if (qos != null)
                 this.SetQos(qos);
@@ -48,12 +77,15 @@ namespace Doopec.Dds.Domain
                 // Check default values for qos 
                 throw new NotImplementedException();
             if (listener != null)
-            this.SetListener(listener);
+                this.SetListener(listener);
+
+            DiscoveryService.Instance.RegisterParticipant(this);
         }
 
-        public DomainParticipantImpl(int domainId, Bootstrap bootstrap)
-            : this(domainId, null, null, bootstrap)
+        public override void Enable()
         {
+            base.Enable();
+            rtpsParticipant.Enable();
         }
 
         public Publisher CreatePublisher()
@@ -192,7 +224,7 @@ namespace Doopec.Dds.Domain
         {
             get
             {
-                throw new NotImplementedException();
+                return this.domainId_;
             }
         }
 
@@ -265,7 +297,9 @@ namespace Doopec.Dds.Domain
         }
         public override void Close()
         {
-            RtpsEngineFactory.Instance.DiscoveryModule.UnregisterParticipant(rtpsParticipant);
+            rtpsParticipant.Close();
+            DiscoveryService.Instance.UnregisterParticipant(this);
+            base.Close();
         }
 
         public override void Retain()
@@ -310,6 +344,57 @@ namespace Doopec.Dds.Domain
         public Topic<TYPE> FindTopic<TYPE>(string topicName, long timeout, global::DDS.ConversionUtils.TimeUnit unit)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Participant ID:{0} at Domain {1}", this.rtpsParticipant.Guid, this.domainId_);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj != null && obj is DomainParticipantImpl)
+            {
+                DomainParticipantImpl other = obj as DomainParticipantImpl;
+                if (this.rtpsParticipant != null != null && other.rtpsParticipant != null &&
+                    this.rtpsParticipant.Guid == other.rtpsParticipant.Guid)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return this.rtpsParticipant.Guid.GetHashCode();
+        }
+
+        /// <summary>
+        /// Compares the current instance with another object of the same type and returns
+        /// an integer that indicates whether the current instance precedes, follows,
+        ///  or occurs in the same position in the sort order as the other object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// A value that indicates the relative order of the objects being compared.
+        /// The return value has these meanings: Value Meaning Less than zero This instance
+        /// precedes obj in the sort order. Zero This instance occurs in the same position
+        /// in the sort order as obj. Greater than zero This instance follows obj in
+        /// the sort order.
+        ///</returns>
+        public int CompareTo(object obj)
+        {
+            if (obj == null || !(obj is DomainParticipantImpl))
+                throw new System.ArgumentException();
+
+            DomainParticipantImpl other = (DomainParticipantImpl)obj;
+            if (this.rtpsParticipant != null != null && other.rtpsParticipant != null)
+            {
+                return this.rtpsParticipant.ParticipantId - other.rtpsParticipant.ParticipantId;
+            }
+            else
+                throw new System.ArgumentException();
         }
     }
 }

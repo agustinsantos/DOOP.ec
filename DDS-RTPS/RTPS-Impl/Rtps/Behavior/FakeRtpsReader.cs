@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Rtps.Structure.Types;
 
 namespace Doopec.Rtps.Behavior
 {
@@ -18,8 +19,8 @@ namespace Doopec.Rtps.Behavior
 
         private IList<Writer<T>> writers = new List<Writer<T>>();
 
-        public FakeRtpsReader(Participant participant)
-            : base(participant)
+        public FakeRtpsReader(GUID guid)
+            : base(guid)
         {
             IRtpsDiscovery discoveryModule =  RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);

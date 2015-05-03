@@ -2,6 +2,7 @@
 using Doopec.Rtps.SharedMem;
 using Rtps.Behavior;
 using Rtps.Structure;
+using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace Doopec.Rtps.Behavior
         private IList<Reader<T>> readers = new List<Reader<T>>();
         private WriterWorker worker;
 
-        public FakeRtpsWriter(Participant participant)
-            : base(participant)
+        public FakeRtpsWriter(GUID guid)
+            : base(guid)
         {
             IRtpsDiscovery discoveryModule =  RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);

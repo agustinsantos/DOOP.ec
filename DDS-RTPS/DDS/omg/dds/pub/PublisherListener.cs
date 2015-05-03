@@ -25,11 +25,9 @@ namespace org.omg.dds.pub
 
     public interface PublisherListener : EventListener
     {
-        void OnOfferedDeadlineMissed<Type>(
-              OfferedDeadlineMissedStatus<Type> status);
+        void OnOfferedDeadlineMissed<Type>(OfferedDeadlineMissedStatus<Type> status);
 
-        void OnOfferedIncompatibleQos<Type>(
-              OfferedIncompatibleQosStatus<Type> status);
+        void OnOfferedIncompatibleQos<Type>(OfferedIncompatibleQosStatus<Type> status);
 
         void OnLivelinessLost<Type>(LivelinessLostStatus<Type> status);
 

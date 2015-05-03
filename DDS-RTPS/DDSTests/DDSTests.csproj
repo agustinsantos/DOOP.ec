@@ -53,6 +53,7 @@
     <Compile Include="BoostrapTests.cs" />
     <Compile Include="DomainParticipantFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DomainParticipantTests.cs" />
     <Compile Include="XTypes\SampleClassTypes.cs" />
     <Compile Include="XTypes\SampleEnumTypes.cs" />
     <Compile Include="XTypes\TypeExplorerTest.cs" />

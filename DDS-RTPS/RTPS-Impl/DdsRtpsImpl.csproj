@@ -115,6 +115,7 @@
     <Compile Include="Dds\Topic\TopicBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Utils\Config\DdsConfigurationSectionHandler.cs" />
     <Compile Include="Dds\Utils\Config\QoSConfig.cs" />
+    <Compile Include="Dds\Utils\DiscoveryService.cs" />
     <Compile Include="Dds\XTypes\EnumeratedConstantImpl.cs" />
     <Compile Include="Dds\XTypes\EnumerationTypeImpl.cs" />
     <Compile Include="Dds\XTypes\MemberImpl.cs" />
@@ -142,10 +143,12 @@
     <Compile Include="Dds\Topic\TopicImpl.cs" />
     <Compile Include="Dds\Utils\QosHelper.cs" />
     <Compile Include="Encoders\IEncoder.cs" />
-    <Compile Include="Rtps\Behavior\RtpsWriter.cs" />
-    <Compile Include="Rtps\Behavior\RtpsReader.cs" />
+    <Compile Include="Rtps\Behavior\RtpsStatefulWriter.cs" />
+    <Compile Include="Rtps\Behavior\RtpsStatefulReader.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsWriter.cs" />
     <Compile Include="Rtps\Behavior\FakeRtpsReader.cs" />
+    <Compile Include="Rtps\Behavior\RtpsStatelessReader.cs" />
+    <Compile Include="Rtps\Behavior\RtpsStatelessWriter.cs" />
     <Compile Include="Rtps\Behavior\WriterWorker.cs" />
     <Compile Include="Rtps\Discovery\DiscoveredReaderData.cs" />
     <Compile Include="Rtps\Discovery\DiscoveredTopicData.cs" />

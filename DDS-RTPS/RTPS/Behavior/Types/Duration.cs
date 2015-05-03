@@ -22,6 +22,15 @@ namespace Rtps.Behavior.Types
             this.sec = (int)(millis / 1000);
             this.nano = 0;
         }
+        /// <summary>
+        /// Constructor for Duration
+        /// </summary>
+        /// <param name="millis">Duration expressed in milliseconds.</param>
+        public Duration(long millis)
+        {
+            this.sec = (int)(millis / 1000);
+            this.nano = 0;
+        }
 
         /// <summary>
         /// Constructor for Duration

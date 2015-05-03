@@ -7,13 +7,20 @@ using System.Collections.Generic;
 namespace Doopec.Rtps.Discovery
 {
     /// <summary>
-    /// Discovery Strategy class that implements RTPS discovery
+    /// Discovery Strategy class that implements RTPS IsDiscovery
     /// This class implements the Discovery interface for Rtps-based
-    /// discovery.
+    /// IsDiscovery.
     /// </summary>
-    public class DiscoveryImpl
+    public class DiscoveryImpl : IDisposable
     {
         GuidGenerator generator = new GuidGenerator();
+        public void StartDiscovery()
+        {
+        }
+
+        public void CloseDiscovery()
+        {
+        }
 
         // Participant operations:
         public virtual bool AttachParticipant(int domainId, int participantId)
@@ -71,6 +78,11 @@ namespace Doopec.Rtps.Discovery
 
         private IDictionary<int, IDictionary<GUID, Spdp>> participants_ = new Dictionary<int, IDictionary<GUID, Spdp>>();
 
+
+        public void Dispose()
+        {
+            this.CloseDiscovery();
+        }
     }
 
     // Information returned from call to add_domain_participant()

@@ -1,4 +1,5 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Dds.Domain;
 using Doopec.Rtps.Behavior;
 using Doopec.Rtps.Structure;
 using org.omg.dds.core;
@@ -47,8 +48,7 @@ namespace Doopec.Dds.Pub
             this.topic_ = topic;
             this.listener = listener;
 
-            Participant participant = new ParticipantImpl();
-            this.rtpsWriter = new RtpsWriter<TYPE>(participant);
+            this.rtpsWriter = new RtpsStatefulWriter<TYPE>((pub.GetParent() as DomainParticipantImpl).ParticipantGuid);
         }
 
 

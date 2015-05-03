@@ -25,8 +25,8 @@ namespace Rtps.Behavior
             set { matched_writers = value; }
         }
 
-        public StatefulReader(Participant participant)
-            : base(participant)
+        public StatefulReader(GUID guid)
+            : base(guid)
         {
             // This operation creates a new RTPS StatefulReader. The newly-created stateful reader ‘this’ is initialized as follows:
             // this.attributes := <as specified in the constructor>;

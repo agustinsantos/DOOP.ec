@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core
 {
-    public abstract class EntityImpl<SELF, LISTENER, QOS> : DDSObjectImpl, Entity<SELF, LISTENER, QOS>
+    public abstract class EntityImpl<SELF, LISTENER, QOS> : DDSObjectImpl, Entity<SELF, LISTENER, QOS>, IDisposable
         where SELF : Entity<SELF, LISTENER, QOS>
         where LISTENER : EventListener
         where QOS : EntityQos
@@ -16,6 +16,9 @@ namespace Doopec.Dds.Core
         public LISTENER Listener { get; set; }
         public QOS QoS { get; set; }
         public bool IsEnabled { get; set; }
+        
+        public bool IsClosed{ get; set; }
+
         public StatusCondition<SELF> StatusCondition { get; set; }
         public InstanceHandle InstanceHandle { get; set; }
 
@@ -23,6 +26,7 @@ namespace Doopec.Dds.Core
             : base(bootstrap)
         {
             this.IsEnabled = false;
+            this.IsClosed = false;
         }
 
         public LISTENER GetListener()
@@ -50,7 +54,7 @@ namespace Doopec.Dds.Core
             throw new NotImplementedException();
         }
 
-        public void Enable()
+        public virtual void Enable()
         {
             this.IsEnabled = true;
         }
@@ -72,12 +76,18 @@ namespace Doopec.Dds.Core
 
         public virtual void Close()
         {
-            throw new NotImplementedException();
+            this.IsClosed = true;
+            this.IsEnabled = false;
         }
 
         public virtual void Retain()
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            this.Close();
         }
     }
 }

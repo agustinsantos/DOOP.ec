@@ -14,9 +14,8 @@ namespace Rtps.Structure
     {
         private ProtocolVersion protocolVersion = ProtocolVersion.PROTOCOLVERSION;
         private VendorId vendorId = VendorId.VENDORID_UNKNOWN;
-        private IList<Locator> defaultUnicastLocatorList = new List<Locator>();
-        private IList<Locator> defaultMulticastLocatorList = new List<Locator>();
-
+        private List<Locator> defaultUnicastLocatorList = new List<Locator>();
+        private List<Locator> defaultMulticastLocatorList = new List<Locator>();
 
         private IList<Endpoint> endpoints_ = new List<Endpoint>();
 
@@ -26,9 +25,9 @@ namespace Rtps.Structure
         /// </summary>
         //private readonly Dictionary<GuidPrefix, Participant> discoveredParticipants;
 
-        public Participant()
+        public Participant(GUID guid)
+            : base(guid)
         {
-            this.Guid.EntityId = EntityId.ENTITYID_PARTICIPANT;
         }
 
         /// <summary>
@@ -57,7 +56,7 @@ namespace Rtps.Structure
         // These are the unicast locators that will be used in case the Endpoint does not 
         // specify its own Set of Locators
         /// </summary>
-        public IList<Locator> DefaultUnicastLocatorList
+        public List<Locator> DefaultUnicastLocatorList
         {
             get { return defaultUnicastLocatorList; }
             set { defaultUnicastLocatorList = value; }
@@ -69,7 +68,7 @@ namespace Rtps.Structure
         /// These are the multicast locators that will be used in case the Endpoint does not 
         /// specify its own Set of Locators.
         /// </summary>
-        public IList<Locator> DefaultMulticastLocatorList
+        public List<Locator> DefaultMulticastLocatorList
         {
             get { return defaultMulticastLocatorList; }
             set { defaultMulticastLocatorList = value; }

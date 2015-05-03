@@ -46,6 +46,15 @@ namespace Doopec.Serializer
             Initialize(rootTypes, new ITypeSerializer[0]);
         }
 
+        public static void Initialize(Type rootType)
+        {
+            if (IsInitialized && typeDataMap.ContainsKey(rootType))
+                return;
+
+            ITypeSerializer[] customSerializers = new ITypeSerializer[0];
+            Doopec.Serializer.Serializer.Initialize(new Type[] { rootType }, customSerializers);
+        }
+
         /// <summary>
         /// Initialize Serializer
         /// </summary>

@@ -556,7 +556,41 @@ namespace SerializerTests
         }
         public override Int32 GetHashCode()
         {
-            throw new NotImplementedException();
+            return (int)(m_byte * m_int * m_short);
+        }
+
+
+        [Packet(EncapsulationScheme = Encapsulation.PL_CDR_BE)]
+        public class XMyClass_PL_CDR_BE
+        {
+            [Field]
+            [ID(0x8001)]
+            public byte m_byte;
+
+            [Field]
+            [ID(0x8002)]
+            public int m_int;
+
+            [Field]
+            [ID(0x8003)]
+            public short m_short;
+
+            public static int Size()
+            {
+                return sizeof(byte) + sizeof(int) + sizeof(long);
+            }
+
+            public override bool Equals(object other)
+            {
+                XMyClass_PL_CDR_BE otherObj = (XMyClass_PL_CDR_BE)other;
+                return this.m_byte == otherObj.m_byte &&
+                        this.m_int == otherObj.m_int &&
+                        this.m_short == otherObj.m_short;
+            }
+            public override Int32 GetHashCode()
+            {
+                return (int)(m_byte * m_int * m_short);
+            }
         }
     }
 #endregion

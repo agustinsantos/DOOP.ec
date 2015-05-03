@@ -20,7 +20,7 @@ namespace Doopec.Utils.Transport
         /// participantId may be given as -1, indicating that provider should generate one.
         /// This method returns the Value assigned by the provider.
         /// </summary>
-        int ParticipantId { get; }
+        GUID ParticipantId { get; }
 
         void Start();
 

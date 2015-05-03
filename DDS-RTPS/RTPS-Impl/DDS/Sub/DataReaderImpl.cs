@@ -1,4 +1,5 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Dds.Domain;
 using Doopec.DDS.Core;
 using Doopec.DDS.Sub;
 using Doopec.Rtps;
@@ -38,8 +39,7 @@ namespace Doopec.Dds.Sub
             this.topic_ = topic;
             this.listener = listener;
 
-            Participant participant = new ParticipantImpl();
-            RtpsReader<TYPE> reader = new RtpsReader<TYPE>(participant);
+            RtpsStatefulReader<TYPE> reader = new RtpsStatefulReader<TYPE>((sub.GetParent() as DomainParticipantImpl).ParticipantGuid);
             reader.ReaderCache.Changed += NewMessage;
             this.rtpsReader = reader;
         }

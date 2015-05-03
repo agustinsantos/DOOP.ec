@@ -1,4 +1,5 @@
 using Rtps.Behavior.Types;
+using Rtps.Structure.Types;
 namespace Rtps.Structure
 {
 
@@ -39,8 +40,8 @@ namespace Rtps.Structure
         public bool ExpectsInlineQos { get; set; }
 
 
-        public Reader(Participant participant)
-            : base(participant)
+        public Reader(GUID guid)
+            : base(guid)
         {
             //The following timing-related values are used as the defaults in order to facilitate 
             // ‘out-of-the-box’ interoperability between implementations.

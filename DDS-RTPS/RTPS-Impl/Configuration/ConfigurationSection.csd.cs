@@ -313,10 +313,10 @@ namespace Doopec.Configuration.Rtps
         internal const string TTLPropertyName = "ttl";
         
         /// <summary>
-        /// Gets or sets the value of the Time-To-Live (TTL) field of multicast datagrams sent as part of discovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.
+        /// Gets or sets the value of the Time-To-Live (TTL) field of multicast datagrams sent as part of IsDiscovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute(@"The value of the Time-To-Live (TTL) field of multicast datagrams sent as part of discovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.")]
+        [global::System.ComponentModel.DescriptionAttribute(@"The value of the Time-To-Live (TTL) field of multicast datagrams sent as part of IsDiscovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.TTLPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.TTL TTL
         {
@@ -357,18 +357,18 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region RtpsWriter Property
+        #region RtpsStatefulWriter Property
         /// <summary>
-        /// The XML name of the <see cref="RtpsWriter"/> property.
+        /// The XML name of the <see cref="RtpsStatefulWriter"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         internal const string RtpsWriterPropertyName = "rtpsWriter";
         
         /// <summary>
-        /// Gets or sets the RtpsWriter.
+        /// Gets or sets the RtpsStatefulWriter.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The RtpsWriter.")]
+        [global::System.ComponentModel.DescriptionAttribute("The RtpsStatefulWriter.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.RtpsWriterPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.RtpsWriter RtpsWriter
         {
@@ -383,18 +383,18 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region RtpsReader Property
+        #region RtpsStatefulReader Property
         /// <summary>
-        /// The XML name of the <see cref="RtpsReader"/> property.
+        /// The XML name of the <see cref="RtpsStatefulReader"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         internal const string RtpsReaderPropertyName = "rtpsReader";
         
         /// <summary>
-        /// Gets or sets the RtpsReader.
+        /// Gets or sets the RtpsStatefulReader.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The RtpsReader.")]
+        [global::System.ComponentModel.DescriptionAttribute("The RtpsStatefulReader.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.RtpsReaderPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.RtpsReader RtpsReader
         {
@@ -1031,10 +1031,10 @@ namespace Doopec.Configuration.Rtps
         internal const string PortBasePropertyName = "portBase";
         
         /// <summary>
-        /// Gets or sets port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS discovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
+        /// Gets or sets port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS IsDiscovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute(@"Port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS discovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
+        [global::System.ComponentModel.DescriptionAttribute(@"Port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS IsDiscovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.PortBasePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.PortBase PortBase
         {
@@ -1188,10 +1188,10 @@ namespace Doopec.Configuration.Rtps
         internal const string MulticastLocatorListPropertyName = "multicastLocatorList";
         
         /// <summary>
-        /// Gets or sets a network address specifying the multicast group to be used for SPDP discovery. This overrides the interoperability group of the specification. It ca be used, for example, to specify use of a routed group address to provide a larger discovery scope.
+        /// Gets or sets a network address specifying the multicast group to be used for SPDP IsDiscovery. This overrides the interoperability group of the specification. It ca be used, for example, to specify use of a routed group address to provide a larger IsDiscovery scope.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("A network address specifying the multicast group to be used for SPDP discovery. T" +
+        [global::System.ComponentModel.DescriptionAttribute("A network address specifying the multicast group to be used for SPDP IsDiscovery. T" +
             "his overrides the interoperability group of the specification. It ca be used, fo" +
             "r example, to specify use of a routed group address to provide a larger discover" +
             "y scope.")]
@@ -3749,7 +3749,7 @@ namespace Doopec.Configuration.Rtps
     
     
     /// <summary>
-    /// The RtpsWriter Configuration Element.
+    /// The RtpsStatefulWriter Configuration Element.
     /// </summary>
     public partial class RtpsWriter : global::System.Configuration.ConfigurationElement
     {
@@ -3882,7 +3882,7 @@ namespace Doopec.Configuration.Rtps
     
     
     /// <summary>
-    /// The RtpsReader Configuration Element.
+    /// The RtpsStatefulReader Configuration Element.
     /// </summary>
     public partial class RtpsReader : global::System.Configuration.ConfigurationElement
     {

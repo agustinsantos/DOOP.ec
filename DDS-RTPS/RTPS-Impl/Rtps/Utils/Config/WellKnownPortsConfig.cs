@@ -17,7 +17,7 @@ namespace Doopec.Rtps.Config
         /// Endpoint Discovery Protocol (SEDP). This property
         /// is used in conjunction with DG, PG, D0 (or DX), and D1
         /// to construct the necessary Endpoints for RTPS
-        /// discovery communication. (see section 9.6.1.1 in the
+        /// IsDiscovery communication. (see section 9.6.1.1 in the
         /// OMG DDS-RTPS specification in how these
         /// Endpoints are constructed)
         /// </summary>

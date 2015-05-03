@@ -1,4 +1,5 @@
 ﻿using Rtps.Structure;
+using Rtps.Structure.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace Rtps.Behavior
     /// </summary>
     public class StatelessReader<T> : Reader<T>
     {
-        public StatelessReader(Participant participant)
-            : base(participant)
+
+        public StatelessReader(GUID guid)
+            : base(guid)
         {
         }
     }

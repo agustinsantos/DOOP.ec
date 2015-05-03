@@ -51,8 +51,8 @@ namespace Rtps.Structure
             get { return writer_cache; }
         }
 
-        public Writer(Participant participant)
-            : base(participant)
+        public Writer(GUID guid)
+            : base(guid)
         {
             this.heartbeatPeriod = new Duration(1000);
             

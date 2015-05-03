@@ -56,7 +56,7 @@ namespace Doopec.Rtps.Messages
     /// |          PID_SENTINEL         |           ignored             |
     /// +---------------+---------------+---------------+---------------+
     /// 
-    /// This encapsulation is used by discovery.
+    /// This encapsulation is used by IsDiscovery.
     /// </summary>
     public class ParameterListEncapsulation : DataEncapsulation
     {

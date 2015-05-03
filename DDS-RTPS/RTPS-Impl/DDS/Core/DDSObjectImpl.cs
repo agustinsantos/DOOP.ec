@@ -9,6 +9,9 @@ namespace Doopec.Dds.Core
 {
     public class DDSObjectImpl : DDSObject
     {
+        /// <summary>
+        /// The Bootstrap object that directly or indirectly created this object.
+        /// </summary>
         private readonly Bootstrap bootstrap;
 
         public DDSObjectImpl(Bootstrap bootstrap)
@@ -16,6 +19,9 @@ namespace Doopec.Dds.Core
             this.bootstrap = bootstrap;
         }
 
+        /// <summary>
+        /// The Bootstrap object that directly or indirectly created this object.
+        /// </summary>
         public Bootstrap Bootstrap
         {
             get { return this.bootstrap; }

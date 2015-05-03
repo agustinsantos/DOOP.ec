@@ -35,8 +35,8 @@ namespace Rtps.Behavior
         /// </summary>
         public IList<ReaderLocator> reader_locators = new List<ReaderLocator>();
 
-        public StatelessWriter(Participant participant)
-            : base(participant)
+        public StatelessWriter(GUID guid)
+            : base(guid)
         {
         }
 

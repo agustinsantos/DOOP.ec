@@ -14,17 +14,30 @@ using System.Reflection;
 
 namespace Doopec.Utils.Transport
 {
-    public class UDPTransmitter : ITransmitter
+    public class UDPTransmitter : ITransmitter, IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private readonly Locator locator;
+        private GUID participantId;
         private AsyncDatagramConnector connector;
         private int bufferSize;
+        private IoSession session;
 
+        public bool IsDiscovery { get; set; }
 
-        IoSession session;
+        public Locator Locator
+        {
+            get { return locator; }
+        }
 
+        public GUID ParticipantId
+        {
+            get { return participantId; }
+            set { participantId = value; }
+        }
+
+        
         public UDPTransmitter(Uri uri, int bufferSize)
         {
             var addresses = System.Net.Dns.GetHostAddresses(uri.Host);
@@ -32,7 +45,6 @@ namespace Doopec.Utils.Transport
             if (addresses != null && addresses.Length >= 1)
                 this.locator = new Locator(addresses[0], port);
         }
-
 
         /// <summary>
         /// Constructor for UDPTransmitter.
@@ -43,8 +55,6 @@ namespace Doopec.Utils.Transport
         {
             this.locator = locator;
             this.bufferSize = bufferSize;
-
-
         }
 
         public void Start()
@@ -151,6 +161,13 @@ namespace Doopec.Utils.Transport
         public void Close()
         {
             session.Close(false);
+        }
+
+
+
+        public void Dispose()
+        {
+            this.Close();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using org.omg.dds.core.policy;
 using org.omg.dds.topic;
+using org.omg.dds.type;
 using Rtps.Attributes;
 using Rtps.Behavior.Types;
 using Rtps.Messages.Types;
@@ -9,18 +10,48 @@ using System.Collections.Generic;
 
 namespace Rtps.Discovery.Spdp
 {
-    public class SPDPdiscoveredParticipantData : ParticipantBuiltinTopicData
+    /// <summary>
+    /// The SPDPdiscoveredParticipantData defines the data exchanged as part of the SPDP. 
+    /// </summary>
+    [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
+    public class SPDPdiscoveredParticipantData
+    {
+        [ID(0x0050)]
+        [Key]
+        public GUID Key { get; set; }
+
+        [ID(0x002C)]
+        public byte[] UserData { get; set; }
+
+        public ParticipantProxy ParticipantProxy { get; set; }
+        
+        public SPDPdiscoveredParticipantData()
+        {
+        }
+
+        public SPDPdiscoveredParticipantData(Participant participant)
+        {
+            this.Key = participant.Guid;
+            this.ParticipantProxy = new ParticipantProxy(participant);
+        }
+        public override string ToString()
+        {
+            return string.Format("DCPSParticipant{key: {0}, QoS: {1}}", this.Key, this.UserData);
+        }
+    }
+    public class SPDPdiscoveredParticipantData_OLD : ParticipantBuiltinTopicData
     {
         public const string PARTICIPANT_TOPIC = "DCPSParticipant";
 
         // TODO, this constructor is defined just only for testing
-        public SPDPdiscoveredParticipantData()
+        public SPDPdiscoveredParticipantData_OLD()
         { }
 
-        public SPDPdiscoveredParticipantData(Participant participant)
+        public SPDPdiscoveredParticipantData_OLD(Participant participant)
         {
             ParticipantProxyData = new ParticipantProxy(participant);
         }
+
         private BuiltinTopicKey key;
         private UserDataQosPolicy userData;
 

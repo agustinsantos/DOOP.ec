@@ -43,8 +43,7 @@ namespace org.omg.dds.topic
         ///                         object will belong
         /// </param>
         /// <returns></returns>
-        public static ParticipantBuiltinTopicData NewParticipantBuiltinTopicData(
-                Bootstrap bootstrap)
+        public static ParticipantBuiltinTopicData NewParticipantBuiltinTopicData(Bootstrap bootstrap)
         {
             return bootstrap.GetSPI().NewParticipantBuiltinTopicData();
         }

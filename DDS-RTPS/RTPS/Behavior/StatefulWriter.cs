@@ -31,8 +31,8 @@ namespace Rtps.Behavior
             set { matched_readers = value; }
         }
 
-        public StatefulWriter(Participant participant)
-            : base(participant)
+        public StatefulWriter(GUID guid)
+            : base(guid)
         {
         }
         
