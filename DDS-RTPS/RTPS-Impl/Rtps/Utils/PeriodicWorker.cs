@@ -45,10 +45,10 @@ namespace Doopec.Rtps.Utils
             {
                 while (isRunning)
                 {
-                    // put the task to sleep for this.Period milliseconds
-                    bool cancelled = token.WaitHandle.WaitOne(this.Period);
                     // Doing some periodic work
                     DoPeriodicWork();
+                    // put the task to sleep for this.Period milliseconds
+                    bool cancelled = token.WaitHandle.WaitOne(this.Period);
                     Count++;
                     // check to see if we have been cancelled
                     if (cancelled)

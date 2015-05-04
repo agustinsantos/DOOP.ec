@@ -117,24 +117,31 @@ namespace Doopec.Serializer.TypeSerializers
 
         public static void WriteListPrimitive<T>(IoBuffer stream, List<T> value)
         {
-            var pArray = new T[value.Count];
+            T[] pArray = null;
+            if (value != null)
+            {
+                pArray = new T[value.Count];
 
-            int i = 0;
-            foreach (var kvp in value)
-                pArray[i++] = kvp;
-
+                int i = 0;
+                foreach (var kvp in value)
+                    pArray[i++] = kvp;
+            }
             Serializer.SerializeInternal(stream, pArray);
         }
 
         public static void ReadListPrimitive<T>(IoBuffer stream, out List<T> value)
         {
+            value = null;
             var tmp = Serializer.DeserializeInternal(stream);
 
             T[] pArray = (T[])tmp;
-            value = new List<T>(pArray.Length);
+            if (pArray != null)
+            {
+                value = new List<T>(pArray.Length);
 
-            foreach (var p in pArray)
-                value.Add(p);
+                foreach (var p in pArray)
+                    value.Add(p);
+            }
         }
     }
 }

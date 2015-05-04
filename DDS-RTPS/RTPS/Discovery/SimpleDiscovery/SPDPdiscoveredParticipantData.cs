@@ -21,9 +21,6 @@ namespace Rtps.Discovery.Spdp
         [Key]
         public GUID Key { get; set; }
 
-        [ID(0x002D)]
-        public List<Locator> Locator { get; set; }
-
         [ID(0x002C)]
         public byte[] UserData { get; set; }
 
@@ -36,10 +33,8 @@ namespace Rtps.Discovery.Spdp
             : base(participant)
         {
             this.Key = participant.Guid;
-            Locator = new List<Locator>();
-            Locator.Add(new Locator(IPAddress.Parse("127.0.0.1"), 1111));
-            //Locator = new Locator(IPAddress.Parse("127.0.0.1"), 1111);
         }
+
         public override string ToString()
         {
             return string.Format("DCPSParticipant{key: {0}, QoS: {1}}", this.Key, this.UserData);

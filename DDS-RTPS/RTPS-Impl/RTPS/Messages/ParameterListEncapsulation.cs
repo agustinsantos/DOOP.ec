@@ -66,17 +66,18 @@ namespace Doopec.Rtps.Messages
 
         public ParameterListEncapsulation(IoBuffer buffer, object dataObj, ByteOrder order)
         {
+            int initialPos = buffer.Position;
             this.order = order;
             if (order == ByteOrder.LittleEndian)
                 buffer.PutEncapsulationScheme(PL_CDR_LE_HEADER);
             else
                 buffer.PutEncapsulationScheme(PL_CDR_BE_HEADER);
             buffer.Order = this.order;
-            int initialPos = buffer.Position;
             ParameterList parameters = BuildParameters(dataObj);
             buffer.PutParameterList(parameters);
-            var serializedData = new byte[buffer.Position - initialPos];
-            buffer.Get(serializedData, initialPos, serializedData.Length);
+            data = new byte[buffer.Position - initialPos];
+            buffer.Position = initialPos;
+            buffer.Get(data, 0, data.Length);
         }
 
         public static void Serialize(IoBuffer buffer, object dataObj, ByteOrder order)

@@ -59,7 +59,7 @@ namespace Doopec.Rtps.Behavior
             {
                 trans.Start();
             }
-            worker.Start((int)this.heartbeatPeriod.AsMillis());
+            worker.Start((int)this.ResendDataPeriod.AsMillis());
         }
         protected virtual void PeriodicWork()
         {

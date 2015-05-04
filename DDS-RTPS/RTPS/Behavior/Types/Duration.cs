@@ -20,8 +20,9 @@ namespace Rtps.Behavior.Types
         public Duration(int millis)
         {
             this.sec = (int)(millis / 1000);
-            this.nano = 0;
+            this.nano = ((int)millis - sec * 1000) * 1000;
         }
+
         /// <summary>
         /// Constructor for Duration
         /// </summary>
@@ -29,7 +30,7 @@ namespace Rtps.Behavior.Types
         public Duration(long millis)
         {
             this.sec = (int)(millis / 1000);
-            this.nano = 0;
+            this.nano = ((int)millis - sec * 1000)*1000;
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Rtps.Behavior.Types
             long n = 0;
             if (nano != 0)
             {
-                n = nano / 1000000;
+                n = nano / 1000;
             }
             return (long)sec * 1000 + n;
         }
