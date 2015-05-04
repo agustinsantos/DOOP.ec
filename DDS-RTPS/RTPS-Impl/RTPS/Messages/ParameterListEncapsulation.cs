@@ -73,6 +73,7 @@ namespace Doopec.Rtps.Messages
                 buffer.PutEncapsulationScheme(PL_CDR_BE_HEADER);
             buffer.Order = this.order;
             int initialPos = buffer.Position;
+            ParameterList parameters = BuildParameters(dataObj);
             buffer.PutParameterList(parameters);
             var serializedData = new byte[buffer.Position - initialPos];
             buffer.Get(serializedData, initialPos, serializedData.Length);
@@ -117,7 +118,10 @@ namespace Doopec.Rtps.Messages
                 if (member.GetProperty().IsProperty)
                 {
                     var field = obj.GetType().GetProperty(member.GetProperty().Name);
-                    Doopec.Serializer.Serializer.Serialize(buffer, field.GetValue(obj));
+                    object data = field.GetValue(obj);
+                    if (data == null)
+                        continue;
+                    Doopec.Serializer.Serializer.Serialize(buffer, data);
                 }
                 else
                 {

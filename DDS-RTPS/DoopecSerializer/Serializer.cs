@@ -28,8 +28,9 @@ namespace Doopec.Serializer
             new PrimitivesSerializer(),
             new ArraySerializer(),
             new EnumSerializer(),
-            new PacketSerializer(),
             new DictionarySerializer(),
+            new ListSerializer(),
+            new PacketSerializer(),
             new GenericSerializer(),
 		};
 

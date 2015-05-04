@@ -1,6 +1,7 @@
 ﻿using Doopec.Serializer.Attributes;
 using System;
 using org.omg.dds.type;
+using System.Collections.Generic;
 
 namespace SerializerTests
 {
@@ -522,6 +523,31 @@ namespace SerializerTests
         public override Int32 GetHashCode()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    [Packet]
+    public class MyClassList
+    {
+        [Field]
+        public int m_int;
+
+        [Field]
+        public List<int> m_intlist;
+
+        public static int Size()
+        {
+            return 16+4;
+        }
+
+        public override bool Equals(object other)
+        {
+            MyClassList otherObj = (MyClassList)other;
+            return this.m_int == otherObj.m_int && m_intlist.Count == m_intlist.Count;
+        }
+        public override Int32 GetHashCode()
+        {
+            return this.m_intlist.GetHashCode();
         }
     }
     #endregion

@@ -13,8 +13,8 @@ namespace Doopec.Serializer.TypeSerializers
         {
             bool packetCompatible = SwitchedPacketAttribute.IsCompatible(type);
 
-            if (!packetCompatible)
-                throw new NotSupportedException(String.Format("Type {0} is not marked with SwitchedPacket attribute", type.FullName));
+            //if (!packetCompatible)
+            //    throw new NotSupportedException(String.Format("Type {0} is not marked with SwitchedPacket attribute", type.FullName));
             return true;
         }
 

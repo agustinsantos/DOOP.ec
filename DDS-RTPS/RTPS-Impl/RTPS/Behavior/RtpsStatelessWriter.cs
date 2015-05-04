@@ -16,6 +16,7 @@ using System.Reflection;
 using System.Text;
 using Data = Rtps.Messages.Submessages.Data;
 using Doopec.Rtps.Messages;
+using Doopec.Serializer.Attributes;
 
 namespace Doopec.Rtps.Behavior
 {
@@ -24,12 +25,14 @@ namespace Doopec.Rtps.Behavior
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         protected List<UDPTransmitter> UDPTransmitters { get; private set; }
         private WriterWorker worker;
+        protected Encapsulation Scheme { get; set; }
 
         public RtpsStatelessWriter(GUID guid)
             : base(guid)
         {
             Doopec.Serializer.Serializer.Initialize(typeof(T));
             UDPTransmitters = new List<UDPTransmitter>();
+            Scheme = Encapsulation.CDR_BE;
         }
 
         protected void InitTransmitters()
@@ -102,8 +105,8 @@ namespace Doopec.Rtps.Behavior
             SerializedPayload payload = new SerializedPayload();
             IoBuffer buff = IoBuffer.Allocate(1024);
 
-            payload.DataEncapsulation = EncapsulationManager.Serialize<T>();
-            payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+            payload.DataEncapsulation = EncapsulationManager.Serialize<T>((T)change.DataValue.Value, Scheme);
+            //payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
             Data data = new Data(readerId, writerId, change.SequenceNumber.LongValue, null, payload);
             msg.SubMessages.Add(data);
 

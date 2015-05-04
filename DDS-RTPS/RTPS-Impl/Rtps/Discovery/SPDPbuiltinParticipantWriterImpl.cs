@@ -1,6 +1,7 @@
 ﻿using Doopec.Configuration.Rtps;
 using Doopec.Rtps.Behavior;
 using Doopec.Rtps.Structure;
+using Doopec.Serializer.Attributes;
 using Rtps.Behavior;
 using Rtps.Behavior.Types;
 using Rtps.Discovery.Sedp;
@@ -52,6 +53,7 @@ namespace Doopec.Rtps.Discovery
             {
                 trans.IsDiscovery = true;
             }
+            this.Scheme = Encapsulation.PL_CDR_BE;
 
             worker = new WriterWorker(this.PeriodicWork);
         }

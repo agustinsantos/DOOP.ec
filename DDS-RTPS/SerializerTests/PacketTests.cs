@@ -17,11 +17,13 @@ namespace SerializerTests
         [TestInitialize]
         public void SetUp()
         {
+
             var rootTypes = typeof(U8Packet).Assembly.GetTypes().Where(t => PacketAttribute.IsCompatible(t)).ToArray();
 
             ITypeSerializer[] customSerializers = new ITypeSerializer[0];
 
-            Serializer.Initialize(rootTypes, customSerializers);
+            //Serializer.Initialize(rootTypes, customSerializers);
+            Serializer.Initialize(typeof(MyClassList));
         }
 
         [TestMethod]
@@ -266,6 +268,22 @@ namespace SerializerTests
 
             buffer.Rewind();
             MyClass1 v2 = Serializer.Deserialize<MyClass1>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestMyClassListMessagePacket()
+        {
+            int size = 16 + 2; // (2 + 1)* 4 + 1 * 4
+            MyClassList v1 = new MyClassList();
+            v1.m_intlist = new List<int>() { 1, 2 };
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            MyClassList v2 = Serializer.Deserialize<MyClassList>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }

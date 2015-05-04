@@ -7,6 +7,7 @@ using Rtps.Messages.Types;
 using Rtps.Structure;
 using Rtps.Structure.Types;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Rtps.Discovery.Spdp
 {
@@ -14,25 +15,30 @@ namespace Rtps.Discovery.Spdp
     /// The SPDPdiscoveredParticipantData defines the data exchanged as part of the SPDP. 
     /// </summary>
     [Extensibility(ExtensibilityKind.MUTABLE_EXTENSIBILITY)]
-    public class SPDPdiscoveredParticipantData
+    public class SPDPdiscoveredParticipantData : ParticipantProxy
     {
         [ID(0x0050)]
         [Key]
         public GUID Key { get; set; }
 
+        [ID(0x002D)]
+        public List<Locator> Locator { get; set; }
+
         [ID(0x002C)]
         public byte[] UserData { get; set; }
 
-        public ParticipantProxy ParticipantProxy { get; set; }
-        
         public SPDPdiscoveredParticipantData()
+            : base(null)
         {
         }
 
         public SPDPdiscoveredParticipantData(Participant participant)
+            : base(participant)
         {
             this.Key = participant.Guid;
-            this.ParticipantProxy = new ParticipantProxy(participant);
+            Locator = new List<Locator>();
+            Locator.Add(new Locator(IPAddress.Parse("127.0.0.1"), 1111));
+            //Locator = new Locator(IPAddress.Parse("127.0.0.1"), 1111);
         }
         public override string ToString()
         {
@@ -64,7 +70,7 @@ namespace Rtps.Discovery.Spdp
         public override BuiltinTopicKey Key { get { return key; } }
 
         public override UserDataQosPolicy UserData { get { return userData; } }
-       
+
 
         public override ParticipantBuiltinTopicData CopyFrom(ParticipantBuiltinTopicData other)
         {
