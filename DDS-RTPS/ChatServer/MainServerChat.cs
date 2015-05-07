@@ -64,7 +64,6 @@ namespace ChatClient
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-
         static void Main(string[] args)
         {
 #if DEBUG
@@ -80,14 +79,13 @@ namespace ChatClient
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<ChatMessage> ls = new MyListener();
-           
             DataReader<ChatMessage> dr = sub.CreateDataReader<ChatMessage>(tp,
                                                                             sub.GetDefaultDataReaderQos(),
                                                                             ls,
                                                                             null /* all status changes */);
-         
             var ct = new CancellationTokenSource();
             new Task(() => dr.WaitForHistoricalData(2, TimeUnit.SECONDS)).Repeat(ct.Token, TimeSpan.FromSeconds(1));
+
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
             DataWriter<ChatMessage> dw = pub.CreateDataWriter(tp);
@@ -105,8 +103,6 @@ namespace ChatClient
                 msg = Console.ReadLine();
             }
             ct.Cancel();
-
-
             dp.Close();
         }
 

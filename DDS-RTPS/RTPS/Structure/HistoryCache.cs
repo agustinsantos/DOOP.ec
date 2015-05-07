@@ -69,7 +69,11 @@ namespace Rtps.Structure
         /// <param name="a_change"></param>
         public void RemoveChange(CacheChange<T> a_change)
         {
-            changes.Remove(a_change);
+            try { 
+                changes.Remove(a_change);
+            }
+            catch (Exception e)
+            {}
         }
 
         public CacheChange<T> GetChange()

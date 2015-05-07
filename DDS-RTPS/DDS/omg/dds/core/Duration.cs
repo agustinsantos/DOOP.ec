@@ -47,7 +47,7 @@ namespace org.omg.dds.core
         /// duration, regardless of the units specified.
         /// 
         ///<see cref="IsInfinite()"/>
-        /// @see     #InfiniteDuration(Bootstrap)
+        /// <see cref="InfiniteDuration(Bootstrap)"/>
         /// </summary>
         /// <param name="duration"></param>
         /// <param name="unit"></param>
@@ -63,7 +63,7 @@ namespace org.omg.dds.core
         /// 
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
-        /// <returns>An unmodifiable {@link Duration} of infinite length</returns>
+        /// <returns>An unmodifiable <see cref="Duration"/> of infinite length</returns>
         public static Duration InfiniteDuration(Bootstrap bootstrap)
         {
             return bootstrap.GetSPI().InfiniteDuration();
@@ -73,7 +73,7 @@ namespace org.omg.dds.core
         /// 
         /// </summary>
         /// <param name="bootstrap">Identifies the Service instance to which the object will belong</param>
-        /// <returns>A {@link Duration} of zero length</returns>
+        /// <returns>A <see cref="Duration"/> of zero length</returns>
         public static Duration ZeroDuration(Bootstrap bootstrap)
         {
             return bootstrap.GetSPI().ZeroDuration();
@@ -91,24 +91,25 @@ namespace org.omg.dds.core
         /// Truncate this duration to a whole-number quantity of the given time
         /// unit. For example, if this duration is equal to one second plus 100
         /// nanoseconds, calling this method with an argument of
-        /// {@link TimeUnit#SECONDS} will result in the Value <code>1</code>.
+        /// <see cref="TimeUnit.SECONDS"/> will result in the Value <code>1</code>.
         /// 
         /// If this duration is infinite, this method shall return
-        /// {@link Long#MAX_VALUE}, regardless of the units given.
+        /// <see cref="long.MaxValue"/>, regardless of the units given.
         /// 
         /// If this duration cannot be expressed in the given units without
-        /// overflowing, this method shall return {@link Long#MAX_VALUE}. In such
+        /// overflowing, this method shall return <see cref="long.MaxValue"/>. In such
         /// a case, the caller may wish to use this method in combination with
-        /// {@link #GetRemainder(TimeUnit, TimeUnit)} to obtain the full duration
+        /// <see cref="GetRemainder(TimeUnit, TimeUnit)"/> to obtain the full duration
         /// without lack of precision.
         /// 
-        /// @see     #GetRemainder(TimeUnit, TimeUnit)
-        /// @see     Long#MAX_VALUE
-        /// @see     TimeUnit
+        /// <see cref="GetRemainder(TimeUnit, TimeUnit)"/>
+        /// <see cref="long.MaxValue"/>
+        /// <see cref="TimeUnit"/>
         /// </summary>
         /// <param name="inThisUnit">The time unit in which the return result will be measured</param>
         /// <returns></returns>
         public abstract long GetDuration(TimeUnit inThisUnit);
+        
 
         /// <summary>
         /// If getting the magnitude of this duration in the given
@@ -116,8 +117,8 @@ namespace org.omg.dds.core
         /// given <code>remainderUnit</code>, return the magnitude of the
         /// truncation in the latter (presumably finer-grained) unit. For example,
         /// if this duration is equal to one second plus 100 nanoseconds, calling
-        /// this method with arguments of {@link TimeUnit#SECONDS} and
-        /// {@link TimeUnit#NANOSECONDS} respectively will result in the Value
+        /// this method with arguments of <see cref="TimeUnit.SECONDS"/> and
+        /// <see cref="TimeUnit.SECONDS"/> respectively will result in the Value
         /// <code>100</code>.
         /// 
         /// This method is equivalent to the following pseudo-code:
@@ -128,14 +129,14 @@ namespace org.omg.dds.core
         /// 
         /// If <code>remainderUnit</code> is represents a coarser granularity than
         /// <code>primaryUnit</code> (for example, the former is
-        /// {@link TimeUnit#HOURS} but the latter is {@link TimeUnit#SECONDS}),
+        /// <see cref="TimeUnit.HOURS"/> but the latter is <see cref="TimeUnit.SECONDS"/>),
         /// this method shall return <code>0</code>.
         /// If the resulting duration cannot be expressed in the given units
-        /// without overflowing, this method shall return {@link Long#MAX_VALUE}.
+        /// without overflowing, this method shall return <see cref="long.MaxValue"/>.
         /// 
-        /// @see     #GetDuration(TimeUnit)
-        /// @see     Long#MAX_VALUE
-        /// @see     TimeUnit
+        /// <see cref="GetDuration(TimeUnit)"/>
+        /// <see cref="long.MaxValue"/>
+        /// <see cref="TimeUnit"/>
         /// </summary>
         /// <param name="primaryUnit"></param>
         /// <param name="remainderUnit">The time unit in which the return result will be measured</param>
@@ -150,7 +151,7 @@ namespace org.omg.dds.core
         /// method is equivalent to the following:
         /// <code>this.GetDuration(TimeUnit.NANOSECONDS) == 0;</code>
         /// 
-        /// @see     #GetDuration(TimeUnit)
+        /// <see cref="GetDuration(TimeUnit)"/>
         /// </summary>
         /// <returns></returns>
         public abstract bool IsZero();
@@ -163,7 +164,7 @@ namespace org.omg.dds.core
         /// 
         /// <code>this.equals(InfiniteDuration(this.GetBootstrap()))</code>
         /// 
-        /// @see     #InfiniteDuration(Bootstrap)
+        /// <see cref="InfiniteDuration(Bootstrap)"/>
         /// </summary>
         /// <returns></returns>
         public abstract bool IsInfinite();
