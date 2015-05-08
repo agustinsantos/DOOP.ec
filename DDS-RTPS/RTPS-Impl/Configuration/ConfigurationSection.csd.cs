@@ -313,10 +313,10 @@ namespace Doopec.Configuration.Rtps
         internal const string TTLPropertyName = "ttl";
         
         /// <summary>
-        /// Gets or sets the value of the Time-To-Live (TTL) field of multicast datagrams sent as part of IsDiscovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.
+        /// Gets or sets the value of the Time-To-Live (TTL) field of multicast datagrams sent as part of discovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute(@"The value of the Time-To-Live (TTL) field of multicast datagrams sent as part of IsDiscovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.")]
+        [global::System.ComponentModel.DescriptionAttribute(@"The value of the Time-To-Live (TTL) field of multicast datagrams sent as part of discovery. This value specifies the number of hops the datagram will traverse before being discarded by the network. he default value of 1 means that all data is restricted to the local network subnet.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.TTLPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.TTL TTL
         {
@@ -357,18 +357,18 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region RtpsStatefulWriter Property
+        #region RtpsWriter Property
         /// <summary>
-        /// The XML name of the <see cref="RtpsStatefulWriter"/> property.
+        /// The XML name of the <see cref="RtpsWriter"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         internal const string RtpsWriterPropertyName = "rtpsWriter";
         
         /// <summary>
-        /// Gets or sets the RtpsStatefulWriter.
+        /// Gets or sets the RtpsWriter.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The RtpsStatefulWriter.")]
+        [global::System.ComponentModel.DescriptionAttribute("The RtpsWriter.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.RtpsWriterPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.RtpsWriter RtpsWriter
         {
@@ -383,18 +383,18 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region RtpsStatefulReader Property
+        #region RtpsReader Property
         /// <summary>
-        /// The XML name of the <see cref="RtpsStatefulReader"/> property.
+        /// The XML name of the <see cref="RtpsReader"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         internal const string RtpsReaderPropertyName = "rtpsReader";
         
         /// <summary>
-        /// Gets or sets the RtpsStatefulReader.
+        /// Gets or sets the RtpsReader.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The RtpsStatefulReader.")]
+        [global::System.ComponentModel.DescriptionAttribute("The RtpsReader.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Transport.RtpsReaderPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.RtpsReader RtpsReader
         {
@@ -648,7 +648,7 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
         {
-            return ((global::Doopec.Configuration.Dds.Domain)(element)).Name;
+            return ((global::Doopec.Configuration.Dds.Domain)(element)).Id;
         }
         
         /// <summary>
@@ -681,13 +681,13 @@ namespace Doopec.Configuration.Dds
         /// <summary>
         /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> with the specified key.
         /// </summary>
-        /// <param name="name">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain this[object name]
+        public global::Doopec.Configuration.Dds.Domain this[object id]
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(name)));
+                return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(id)));
             }
         }
         #endregion
@@ -730,11 +730,11 @@ namespace Doopec.Configuration.Dds
         /// <summary>
         /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> with the specified key.
         /// </summary>
-        /// <param name="name">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain GetItemByKey(string name)
+        public global::Doopec.Configuration.Dds.Domain GetItemByKey(int id)
         {
-            return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(((object)(name)))));
+            return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(((object)(id)))));
         }
         #endregion
         
@@ -784,7 +784,7 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The Name.")]
         [global::System.ComponentModel.ReadOnlyAttribute(true)]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false, DefaultValue="")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.NamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue="")]
         public virtual string Name
         {
             get
@@ -808,7 +808,7 @@ namespace Doopec.Configuration.Dds
         [global::System.ComponentModel.DescriptionAttribute("Domain IDs should be between 0 and 231 (inclusive) due to the way UDP ports are a" +
             "ssigned to domain IDs. In each  process, up to 120 domain participants are suppo" +
             "rted in each domain")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.IdPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=0)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.IdPropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false, DefaultValue=0)]
         public virtual int Id
         {
             get
@@ -822,28 +822,28 @@ namespace Doopec.Configuration.Dds
         }
         #endregion
         
-        #region Transport Property
+        #region TransportProfile Property
         /// <summary>
-        /// The XML name of the <see cref="Transport"/> property.
+        /// The XML name of the <see cref="TransportProfile"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string TransportPropertyName = "transport";
+        internal const string TransportProfilePropertyName = "transportProfile";
         
         /// <summary>
-        /// Gets or sets the Transport.
+        /// Gets or sets the TransportProfile.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The Transport.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.TransportPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Rtps.Transport Transport
+        [global::System.ComponentModel.DescriptionAttribute("The TransportProfile.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Dds.TransportProfile TransportProfile
         {
             get
             {
-                return ((global::Doopec.Configuration.Rtps.Transport)(base[global::Doopec.Configuration.Dds.Domain.TransportPropertyName]));
+                return ((global::Doopec.Configuration.Dds.TransportProfile)(base[global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.Domain.TransportPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName] = value;
             }
         }
         #endregion
@@ -861,11 +861,11 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The QoS.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.QoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.DomainQoS QoS
+        public virtual global::Doopec.Configuration.Dds.DomainQoS QoS
         {
             get
             {
-                return ((global::Doopec.Configuration.DomainQoS)(base[global::Doopec.Configuration.Dds.Domain.QoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DomainQoS)(base[global::Doopec.Configuration.Dds.Domain.QoSPropertyName]));
             }
             set
             {
@@ -1031,10 +1031,10 @@ namespace Doopec.Configuration.Rtps
         internal const string PortBasePropertyName = "portBase";
         
         /// <summary>
-        /// Gets or sets port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS IsDiscovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
+        /// Gets or sets port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS discovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute(@"Port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS IsDiscovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
+        [global::System.ComponentModel.DescriptionAttribute(@"Port Base number. This number sets the starting point for deriving port numbers used for Simple Endpoint Discovery Protocol (SEDP). This property is used in conjunction with DG, PG, D0, and D1 to construct the necessary Endpoints for RTPS discovery communication. (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.PortBasePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Rtps.PortBase PortBase
         {
@@ -1076,54 +1076,54 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region OffsetUnicast Property
+        #region OffsetMetatrafficUnicast Property
         /// <summary>
-        /// The XML name of the <see cref="OffsetUnicast"/> property.
+        /// The XML name of the <see cref="OffsetMetatrafficUnicast"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string OffsetUnicastPropertyName = "offsetUnicast";
+        internal const string OffsetMetatrafficUnicastPropertyName = "offsetMetatrafficUnicast";
         
         /// <summary>
         /// Gets or sets d0. An integer value that assists in providing an offset for calculating an assignable port in SPDP Multicast configurations. The formula used is: PB + DG * domainId + d0 (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute(@"D0. An integer value that assists in providing an offset for calculating an assignable port in SPDP Multicast configurations. The formula used is: PB + DG * domainId + d0 (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetUnicastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Rtps.OffsetUnicast OffsetUnicast
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficUnicastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.OffsetUnicast OffsetMetatrafficUnicast
         {
             get
             {
-                return ((global::Doopec.Configuration.Rtps.OffsetUnicast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetUnicastPropertyName]));
+                return ((global::Doopec.Configuration.Rtps.OffsetUnicast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficUnicastPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Rtps.Discovery.OffsetUnicastPropertyName] = value;
+                base[global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficUnicastPropertyName] = value;
             }
         }
         #endregion
         
-        #region OffsetMulticast Property
+        #region OffsetMetatrafficMulticast Property
         /// <summary>
-        /// The XML name of the <see cref="OffsetMulticast"/> property.
+        /// The XML name of the <see cref="OffsetMetatrafficMulticast"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string OffsetMulticastPropertyName = "offsetMulticast";
+        internal const string OffsetMetatrafficMulticastPropertyName = "offsetMetatrafficMulticast";
         
         /// <summary>
         /// Gets or sets d1. An integer value that assists in providing an offset for calculating an assignable port in SPDP Unicast configurations. The formula used is: PB + DG * domainId + d1 + PG * participantId (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute(@"D1. An integer value that assists in providing an offset for calculating an assignable port in SPDP Unicast configurations. The formula used is: PB + DG * domainId + d1 + PG * participantId (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetMulticastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Rtps.OffsetMulticast OffsetMulticast
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficMulticastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.OffsetMulticast OffsetMetatrafficMulticast
         {
             get
             {
-                return ((global::Doopec.Configuration.Rtps.OffsetMulticast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetMulticastPropertyName]));
+                return ((global::Doopec.Configuration.Rtps.OffsetMulticast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficMulticastPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Rtps.Discovery.OffsetMulticastPropertyName] = value;
+                base[global::Doopec.Configuration.Rtps.Discovery.OffsetMetatrafficMulticastPropertyName] = value;
             }
         }
         #endregion
@@ -1154,57 +1154,57 @@ namespace Doopec.Configuration.Rtps
         }
         #endregion
         
-        #region UnicastLocatorList Property
+        #region MetatrafficUnicastLocatorList Property
         /// <summary>
-        /// The XML name of the <see cref="UnicastLocatorList"/> property.
+        /// The XML name of the <see cref="MetatrafficUnicastLocatorList"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string UnicastLocatorListPropertyName = "unicastLocatorList";
+        internal const string MetatrafficUnicastLocatorListPropertyName = "metatrafficUnicastLocatorList";
         
         /// <summary>
-        /// Gets or sets the UnicastLocatorList.
+        /// Gets or sets the MetatrafficUnicastLocatorList.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The UnicastLocatorList.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.UnicastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs UnicastLocatorList
+        [global::System.ComponentModel.DescriptionAttribute("The MetatrafficUnicastLocatorList.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.MetatrafficUnicastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs MetatrafficUnicastLocatorList
         {
             get
             {
-                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.UnicastLocatorListPropertyName]));
+                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.MetatrafficUnicastLocatorListPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Rtps.Discovery.UnicastLocatorListPropertyName] = value;
+                base[global::Doopec.Configuration.Rtps.Discovery.MetatrafficUnicastLocatorListPropertyName] = value;
             }
         }
         #endregion
         
-        #region MulticastLocatorList Property
+        #region MetatrafficMulticastLocatorList Property
         /// <summary>
-        /// The XML name of the <see cref="MulticastLocatorList"/> property.
+        /// The XML name of the <see cref="MetatrafficMulticastLocatorList"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string MulticastLocatorListPropertyName = "multicastLocatorList";
+        internal const string MetatrafficMulticastLocatorListPropertyName = "metatrafficMulticastLocatorList";
         
         /// <summary>
-        /// Gets or sets a network address specifying the multicast group to be used for SPDP IsDiscovery. This overrides the interoperability group of the specification. It ca be used, for example, to specify use of a routed group address to provide a larger IsDiscovery scope.
+        /// Gets or sets a network address specifying the multicast group to be used for SPDP discovery. This overrides the interoperability group of the specification. It ca be used, for example, to specify use of a routed group address to provide a larger discovery scope.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("A network address specifying the multicast group to be used for SPDP IsDiscovery. T" +
+        [global::System.ComponentModel.DescriptionAttribute("A network address specifying the multicast group to be used for SPDP discovery. T" +
             "his overrides the interoperability group of the specification. It ca be used, fo" +
             "r example, to specify use of a routed group address to provide a larger discover" +
             "y scope.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.MulticastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs MulticastLocatorList
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.MetatrafficMulticastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs MetatrafficMulticastLocatorList
         {
             get
             {
-                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.MulticastLocatorListPropertyName]));
+                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.MetatrafficMulticastLocatorListPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Rtps.Discovery.MulticastLocatorListPropertyName] = value;
+                base[global::Doopec.Configuration.Rtps.Discovery.MetatrafficMulticastLocatorListPropertyName] = value;
             }
         }
         #endregion
@@ -1231,6 +1231,139 @@ namespace Doopec.Configuration.Rtps
             set
             {
                 base[global::Doopec.Configuration.Rtps.Discovery.ParticipantGainPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region DefaultUnicastLocatorList Property
+        /// <summary>
+        /// The XML name of the <see cref="DefaultUnicastLocatorList"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string DefaultUnicastLocatorListPropertyName = "defaultUnicastLocatorList";
+        
+        /// <summary>
+        /// Gets or sets the DefaultUnicastLocatorList.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The DefaultUnicastLocatorList.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.DefaultUnicastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs DefaultUnicastLocatorList
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.DefaultUnicastLocatorListPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Discovery.DefaultUnicastLocatorListPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region DefaultMulticastLocatorList Property
+        /// <summary>
+        /// The XML name of the <see cref="DefaultMulticastLocatorList"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string DefaultMulticastLocatorListPropertyName = "defaultMulticastLocatorList";
+        
+        /// <summary>
+        /// Gets or sets a network address specifying the multicast group to be used for SPDP discovery. This overrides the interoperability group of the specification. It ca be used, for example, to specify use of a routed group address to provide a larger discovery scope.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("A network address specifying the multicast group to be used for SPDP discovery. T" +
+            "his overrides the interoperability group of the specification. It ca be used, fo" +
+            "r example, to specify use of a routed group address to provide a larger discover" +
+            "y scope.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.DefaultMulticastLocatorListPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.LocatorAddrs DefaultMulticastLocatorList
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Rtps.LocatorAddrs)(base[global::Doopec.Configuration.Rtps.Discovery.DefaultMulticastLocatorListPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Discovery.DefaultMulticastLocatorListPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region OffsetUserTrafficUnicast Property
+        /// <summary>
+        /// The XML name of the <see cref="OffsetUserTrafficUnicast"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string OffsetUserTrafficUnicastPropertyName = "offsetUserTrafficUnicast";
+        
+        /// <summary>
+        /// Gets or sets d0. An integer value that assists in providing an offset for calculating an assignable port in SPDP Multicast configurations. The formula used is: PB + DG * domainId + d0 (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute(@"D0. An integer value that assists in providing an offset for calculating an assignable port in SPDP Multicast configurations. The formula used is: PB + DG * domainId + d0 (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficUnicastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.OffsetUnicast OffsetUserTrafficUnicast
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Rtps.OffsetUnicast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficUnicastPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficUnicastPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region OffsetUserTrafficMulticast Property
+        /// <summary>
+        /// The XML name of the <see cref="OffsetUserTrafficMulticast"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string OffsetUserTrafficMulticastPropertyName = "offsetUserTrafficMulticast";
+        
+        /// <summary>
+        /// Gets or sets d1. An integer value that assists in providing an offset for calculating an assignable port in SPDP Unicast configurations. The formula used is: PB + DG * domainId + d1 + PG * participantId (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute(@"D1. An integer value that assists in providing an offset for calculating an assignable port in SPDP Unicast configurations. The formula used is: PB + DG * domainId + d1 + PG * participantId (see section 9.6.1.1 in the OMG DDS-RTPS specification in how these Endpoints are constructed)")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficMulticastPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.OffsetMulticast OffsetUserTrafficMulticast
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Rtps.OffsetMulticast)(base[global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficMulticastPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Discovery.OffsetUserTrafficMulticastPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region AvailableBuiltinEndpoints Property
+        /// <summary>
+        /// The XML name of the <see cref="AvailableBuiltinEndpoints"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string AvailableBuiltinEndpointsPropertyName = "availableBuiltinEndpoints";
+        
+        /// <summary>
+        /// Gets or sets the AvailableBuiltinEndpoints.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The AvailableBuiltinEndpoints.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Discovery.AvailableBuiltinEndpointsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Rtps.Generic_TODO AvailableBuiltinEndpoints
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Rtps.Generic_TODO)(base[global::Doopec.Configuration.Rtps.Discovery.AvailableBuiltinEndpointsPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Discovery.AvailableBuiltinEndpointsPropertyName] = value;
             }
         }
         #endregion
@@ -1269,7 +1402,7 @@ namespace Doopec.Configuration.Rtps
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The Val.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.ResendPeriod.ValPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=30000l)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.ResendPeriod.ValPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=30000L)]
         public virtual long Val
         {
             get
@@ -2190,7 +2323,7 @@ namespace Doopec.Configuration.Dds
         #endregion
     }
 }
-namespace Doopec.Configuration
+namespace Doopec.Configuration.Dds
 {
     
     
@@ -2223,16 +2356,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DomainParticipantQos.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.DomainParticipantQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DomainParticipantQoS DomainParticipantQos
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DomainParticipantQoS)(base[global::Doopec.Configuration.DomainQoS.DomainParticipantQosPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DomainParticipantQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.DomainParticipantQosPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName] = value;
             }
         }
         #endregion
@@ -2249,16 +2382,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The PublisherQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.PublisherQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.PublisherQoS PublisherQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.PublisherQoS)(base[global::Doopec.Configuration.DomainQoS.PublisherQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.PublisherQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.PublisherQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2275,16 +2408,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The SubscriberQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.SubscriberQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.SubscriberQoS SubscriberQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.SubscriberQoS)(base[global::Doopec.Configuration.DomainQoS.SubscriberQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.SubscriberQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.SubscriberQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2301,16 +2434,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The TopicQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.TopicQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.TopicQoS TopicQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.TopicQoS)(base[global::Doopec.Configuration.DomainQoS.TopicQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.TopicQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.TopicQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2327,16 +2460,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DataWriterQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.DataWriterQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DataWriterQoS DataWriterQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DataWriterQoS)(base[global::Doopec.Configuration.DomainQoS.DataWriterQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DataWriterQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.DataWriterQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2353,16 +2486,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DataReaderQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.DataReaderQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DataReaderQoS DataReaderQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DataReaderQoS)(base[global::Doopec.Configuration.DomainQoS.DataReaderQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DataReaderQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.DataReaderQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2379,16 +2512,16 @@ namespace Doopec.Configuration
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DomainParticipantFactoryQos.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DomainQoS.DomainParticipantFactoryQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS DomainParticipantFactoryQos
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS)(base[global::Doopec.Configuration.DomainQoS.DomainParticipantFactoryQosPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.DomainQoS.DomainParticipantFactoryQosPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName] = value;
             }
         }
         #endregion
@@ -3749,7 +3882,7 @@ namespace Doopec.Configuration.Rtps
     
     
     /// <summary>
-    /// The RtpsStatefulWriter Configuration Element.
+    /// The RtpsWriter Configuration Element.
     /// </summary>
     public partial class RtpsWriter : global::System.Configuration.ConfigurationElement
     {
@@ -3882,7 +4015,7 @@ namespace Doopec.Configuration.Rtps
     
     
     /// <summary>
-    /// The RtpsStatefulReader Configuration Element.
+    /// The RtpsReader Configuration Element.
     /// </summary>
     public partial class RtpsReader : global::System.Configuration.ConfigurationElement
     {
@@ -4635,7 +4768,7 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The LeaseDuration.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSLiveliness.LeaseDurationPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=0l)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSLiveliness.LeaseDurationPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=0L)]
         public virtual long LeaseDuration
         {
             get
@@ -4809,7 +4942,7 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The ServiceCleanupDelay.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSDurabilityService.ServiceCleanupDelayPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=0l)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSDurabilityService.ServiceCleanupDelayPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=0L)]
         public virtual long ServiceCleanupDelay
         {
             get
@@ -5045,6 +5178,102 @@ namespace Doopec.Configuration.Dds
             set
             {
                 base[global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS.EntityFactoryPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace Doopec.Configuration.Dds
+{
+    
+    
+    /// <summary>
+    /// The TransportProfile Configuration Element.
+    /// </summary>
+    public partial class TransportProfile : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Name.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.TransportProfile.NamePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Name
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.TransportProfile.NamePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.TransportProfile.NamePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace Doopec.Configuration.Rtps
+{
+    
+    
+    /// <summary>
+    /// The Generic_TODO Configuration Element.
+    /// </summary>
+    public partial class Generic_TODO : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Val Property
+        /// <summary>
+        /// The XML name of the <see cref="Val"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string ValPropertyName = "val";
+        
+        /// <summary>
+        /// Gets or sets the Val.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Val.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Rtps.Generic_TODO.ValPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Val
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Rtps.Generic_TODO.ValPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Rtps.Generic_TODO.ValPropertyName] = value;
             }
         }
         #endregion

@@ -40,6 +40,7 @@ namespace Rtps.Discovery.Spdp
             return string.Format("DCPSParticipant{key: {0}, QoS: {1}}", this.Key, this.UserData);
         }
     }
+#if DELETEME
     public class SPDPdiscoveredParticipantData_OLD : ParticipantBuiltinTopicData
     {
         public const string PARTICIPANT_TOPIC = "DCPSParticipant";
@@ -97,4 +98,5 @@ namespace Rtps.Discovery.Spdp
             return PARTICIPANT_TOPIC + string.Format("{key: {0}, QoS: {1}}", this.Key, this.UserData);
         }
     }
+#endif
 }

@@ -53,7 +53,7 @@ namespace Doopec.Rtps.Messages
             {
                 return CDREncapsulation.Deserialize(buffer, length);
             }
-            else if (scheme.Equals(DataEncapsulation.CDR_BE_HEADER) || scheme.Equals(DataEncapsulation.CDR_LE_HEADER))
+            else if (scheme.Equals(DataEncapsulation.PL_CDR_BE_HEADER) || scheme.Equals(DataEncapsulation.PL_CDR_LE_HEADER))
             {
                 return ParameterListEncapsulation.Deserialize(buffer, length);
             }

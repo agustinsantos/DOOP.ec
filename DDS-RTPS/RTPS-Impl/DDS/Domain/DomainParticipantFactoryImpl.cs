@@ -25,7 +25,7 @@ namespace Doopec.Dds.Domain
         public DomainParticipantFactoryImpl(Bootstrap bootstrap)
         {
             this.bootstrap_ = bootstrap;
-            Doopec.Configuration.Dds.DomainParticipantFactoryQoS qos = ddsConfig.Domains["0"].QoS.DomainParticipantFactoryQos;
+            Doopec.Configuration.Dds.DomainParticipantFactoryQoS qos = ddsConfig.Domains[0].QoS.DomainParticipantFactoryQos;
 
             this.Qos = DomainParticipantFactoryQosImpl.ConvertTo(qos, bootstrap);
         }

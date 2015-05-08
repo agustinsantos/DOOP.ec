@@ -47,10 +47,10 @@ namespace Doopec.Rtps.Discovery
             int PB = transport.Discovery.PortBase.Val;
             int DG = transport.Discovery.DomainGain.Val;
             int PG = transport.Discovery.ParticipantGain.Val;
-            int d0 = transport.Discovery.OffsetMulticast.Val;
-            int d1 = transport.Discovery.OffsetUnicast.Val;
+            int d0 = transport.Discovery.OffsetMetatrafficMulticast.Val;
+            int d1 = transport.Discovery.OffsetMetatrafficUnicast.Val;
 
-            string[] unicastStr = transport.Discovery.UnicastLocatorList.Val.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] unicastStr = transport.Discovery.MetatrafficUnicastLocatorList.Val.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string addr in unicastStr)
             {
                 string[] parts = addr.Split(':');
@@ -84,7 +84,7 @@ namespace Doopec.Rtps.Discovery
                 }
             }
 
-            string[] multicastStr = transport.Discovery.MulticastLocatorList.Val.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] multicastStr = transport.Discovery.MetatrafficMulticastLocatorList.Val.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string addr in multicastStr)
             {
                 string[] parts = addr.Split(':');

@@ -29,8 +29,7 @@ namespace Doopec.Rtps.Behavior
         public RtpsStatefulWriter(GUID guid)
             : base(guid)
         {
-            ITypeSerializer[] customSerializers = new ITypeSerializer[0];
-            Doopec.Serializer.Serializer.Initialize(new Type[] { typeof(T) }, customSerializers);
+            Doopec.Serializer.Serializer.Initialize(typeof(T));
 
             IRtpsDiscovery discoveryModule = RtpsEngineFactory.Instance.DiscoveryModule;
             discoveryModule.RegisterEndpoint(this);

@@ -45,9 +45,11 @@ namespace ChatClient
 #if DEBUG
             LogAssemblyInfo();
 #endif
-
+            int domainId = 0;
+            if (args.Length > 0)
+                domainId = int.Parse(args[0]);
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp = factory.CreateParticipant();
+            DomainParticipant dp = factory.CreateParticipant(domainId);
 
             // Implicitly create TypeSupport and register type:
             Topic<ChatMessage> tp = dp.CreateTopic<ChatMessage>("Greetings Topic");
@@ -69,6 +71,8 @@ namespace ChatClient
             String msg = "Hello, World with DDS.";
             while (msg != "quit")
             {
+                Console.Write(">");
+                msg = Console.ReadLine();
                 // Now Publish some piece of data
                 ChatMessage data = new ChatMessage(msg);
                 Console.WriteLine("Sending data:\"{0}\"", data.Value);
@@ -76,8 +80,6 @@ namespace ChatClient
 
                 //and check that the reader has this data
                 dr.WaitForHistoricalData(20, TimeUnit.SECONDS);
-                Console.Write(">");
-                msg = Console.ReadLine();
             }
 
 

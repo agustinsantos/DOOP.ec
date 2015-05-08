@@ -20,7 +20,7 @@ namespace Rtps.Tests.Transport
         //private static string Host = "localhost"; //192.168.4.111";
         //private static string Host = "172.16.0.111";
         private static string Host = "224.0.1.111";
-        private const int Port = 9999;
+        private const int Port = 7400;
 
         private UDPSimulator simulator;
 
@@ -139,6 +139,59 @@ namespace Rtps.Tests.Transport
             rec.Close();
         }
 
+        [TestMethod]
+        public void TestDiscoveryPacket()
+        {
+            object key = new object();
+            UDPReceiver rec = new UDPReceiver(new Uri("udp://" + Host + ":" + Port), 1024);
+
+            rec.MessageReceived += (s, m) =>
+            {
+                Message msg = m.Message;
+                Debug.WriteLine("New Message has arrived from {0}", m.Session.RemoteEndPoint);
+                Debug.WriteLine("Message Header: {0}", msg.Header);
+                Assert.AreEqual(ProtocolId.PROTOCOL_RTPS, msg.Header.Protocol);
+                Assert.AreEqual(VendorId.OCI, msg.Header.VendorId);
+                Assert.AreEqual(ProtocolVersion.PROTOCOLVERSION_2_1, msg.Header.Version);
+                Assert.AreEqual(2, msg.SubMessages.Count);
+                foreach (var submsg in msg.SubMessages)
+                {
+                    Debug.WriteLine("SubMessage: {0}", submsg);
+                    switch (submsg.Kind)
+                    {
+                        case SubMessageKind.DATA:
+                            Data d = submsg as Data;
+                            foreach (var par in d.InlineQos.Value)
+                                Debug.WriteLine("InlineQos: {0}", par);
+                            break;
+                        case SubMessageKind.INFO_TS:
+                            InfoTimestamp its = submsg as InfoTimestamp;
+                            Debug.WriteLine("The TimeStampFlag value state is: {0}", its.HasInvalidateFlag);
+                            Debug.WriteLine("The EndiannessFlag value state is: {0}", its.Header.Flags.IsLittleEndian);
+                            Debug.WriteLine("The octetsToNextHeader value is: {0}", its.Header.SubMessageLength);
+                            if (its.HasInvalidateFlag == false)
+                            {
+                                Debug.WriteLine("The Timestamp value is: {0}", its.TimeStamp);
+
+                            }
+                            break;
+                        default:
+                            Assert.Fail("Only Timestamp and Data submesages are expected");
+                            break;
+                    }
+                }
+                lock (key) Monitor.Pulse(key);
+            };
+
+            rec.Start();
+
+            simulator.SendUDPPacket("SamplePackets/packetD1.dat", Host, Port);
+            lock (key)
+            {
+                Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");
+            }
+            rec.Close();
+        }
         /// <summary>
         /// This method is able to test all kinds of submessages ( not tested PAD INF_SrC_
         /// INF_REPLY, INFO_REPLY_IP4, PAD)

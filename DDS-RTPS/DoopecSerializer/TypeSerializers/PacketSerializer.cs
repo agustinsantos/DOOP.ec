@@ -14,10 +14,12 @@ namespace Doopec.Serializer.TypeSerializers
 
         public bool Handles(Type type)
         {
+#if TODO
             bool packetCompatible = PacketAttribute.IsCompatible(type);
 
             if (!packetCompatible)
                 log.WarnFormat("Type {0} is not marked with Packet attribute", type.FullName);
+#endif
             return true;
         }
 

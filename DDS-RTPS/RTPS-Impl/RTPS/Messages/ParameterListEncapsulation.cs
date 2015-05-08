@@ -80,6 +80,13 @@ namespace Doopec.Rtps.Messages
             buffer.Get(data, 0, data.Length);
         }
 
+        internal ParameterListEncapsulation(IoBuffer buffer, ByteOrder order, int length)
+        {
+            this.order = order;
+            this.data = new byte[length - 4];
+            buffer.Get(data, 0, data.Length);
+        }
+
         public static void Serialize(IoBuffer buffer, object dataObj, ByteOrder order)
         {
             buffer.Order = order;
@@ -162,7 +169,20 @@ namespace Doopec.Rtps.Messages
 
         public static ParameterListEncapsulation Deserialize(IoBuffer buffer, int length)
         {
-            throw new NotImplementedException();
+            EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
+            if (scheme.Equals(DataEncapsulation.PL_CDR_BE_HEADER))
+            {
+                buffer.Order = ByteOrder.BigEndian;
+            }
+            else if (scheme.Equals(DataEncapsulation.PL_CDR_LE_HEADER))
+            {
+                buffer.Order = ByteOrder.LittleEndian;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+            return new ParameterListEncapsulation(buffer, buffer.Order, length);
         }
 
         private static T BuildObject<T>(ParameterList parameters) where T : new()

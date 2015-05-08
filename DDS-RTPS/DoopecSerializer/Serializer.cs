@@ -63,9 +63,6 @@ namespace Doopec.Serializer
         /// <param name="userTypeSerializers">Array of custom serializers</param>
         public static void Initialize(IEnumerable<Type> rootTypes, ITypeSerializer[] userTypeSerializers)
         {
-            if (IsInitialized)
-                return;
-
             if (userTypeSerializers.All(s => s is IDynamicTypeSerializer || s is IStaticTypeSerializer) == false)
                 throw new ArgumentException("TypeSerializers have to implement IDynamicTypeSerializer or  IStaticTypeSerializer");
 
@@ -135,11 +132,23 @@ namespace Doopec.Serializer
 
         static Dictionary<Type, TypeData> GenerateTypeData(IEnumerable<Type> rootTypes)
         {
-            var map = new Dictionary<Type, TypeData>();
-            var stack = new Stack<Type>(PrimitivesSerializer.GetSupportedTypes().Concat(rootTypes));
+
+            Dictionary<Type, TypeData> map;
+            Stack<Type> stack;
+
+            if (typeDataMap != null)
+            {
+                map = typeDataMap;
+                stack = new Stack<Type>(rootTypes);
+            }
+            else
+            {
+                map = new Dictionary<Type, TypeData>();
+                stack = new Stack<Type>(PrimitivesSerializer.GetSupportedTypes().Concat(rootTypes));
+            }
 
             // TypeID 0 is reserved for null
-            ushort typeID = 1;
+            ushort typeID = (ushort)(map.Count + 1);
 
             while (stack.Count > 0)
             {

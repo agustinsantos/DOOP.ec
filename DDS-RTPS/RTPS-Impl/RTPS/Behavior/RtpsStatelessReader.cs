@@ -78,12 +78,14 @@ namespace Doopec.Rtps.Behavior
                         log.DebugFormat("The readerID is: {0}", d.ReaderId);
                         log.DebugFormat("The writerID is: {0}", d.WriterId);
                         log.DebugFormat("The writerSN is: {0}", d.WriterSN);
-                        IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
-                        buf.Order = ByteOrder.LittleEndian; //(d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
-                        object obj = Doopec.Serializer.Serializer.Deserialize<T>(buf);
-                        CacheChange<T> change = new CacheChange<T>(ChangeKind.ALIVE, new GUID(msg.Header.GuidPrefix, d.WriterId), d.WriterSN, new DataObj(obj), new InstanceHandle());
-                        ReaderCache.AddChange(change);
+                        log.DebugFormat("TODO. ");
                         break;
+                        //IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
+                        //buf.Order = ByteOrder.LittleEndian; //(d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+                        //object obj = Doopec.Serializer.Serializer.Deserialize<T>(buf);
+                        //CacheChange<T> change = new CacheChange<T>(ChangeKind.ALIVE, new GUID(msg.Header.GuidPrefix, d.WriterId), d.WriterSN, new DataObj(obj), new InstanceHandle());
+                        //ReaderCache.AddChange(change);
+                        //break;
                     default:
                         log.DebugFormat("SubMessage: {0}", submsg.Kind);
                         break;

@@ -36,8 +36,8 @@ namespace Doopec.Rtps.Structure
         {
             DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
             RTPSConfigurationSection rtpsConfig = Doopec.Configuration.RTPSConfigurationSection.Instance;
-            Domain domain = ddsConfig.Domains[this.DomainId.ToString()];
-            Transport transport = rtpsConfig.Transports[domain.Transport.Name];
+            Domain domain = ddsConfig.Domains[this.DomainId];
+            Transport transport = rtpsConfig.Transports[domain.TransportProfile.Name];
 
             spdpReader = new SPDPbuiltinParticipantReaderImpl(transport, this);
             spdpWriter = new SPDPbuiltinParticipantWriterImpl(transport, this);

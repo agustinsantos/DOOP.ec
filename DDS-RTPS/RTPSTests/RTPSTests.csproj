@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="SamplePackets\DiscoveryPacketSample.dat" />
     <None Include="SamplePackets\packet1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

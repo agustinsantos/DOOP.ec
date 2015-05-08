@@ -19,10 +19,10 @@ namespace Rtps.Discovery.Spdp
             this.VendorId = participant.VendorId;
             this.GuidPrefix = participant.Guid.Prefix;
             //this.ExpectsInlineQos = participant.ExpectsInlineQos;
-            this.DefaultMulticastLocatorList = participant.DefaultMulticastLocatorList;
-            this.DefaultUnicastLocatorList = participant.DefaultUnicastLocatorList;
-            this.MetatrafficUnicastLocatorList = new List<Locator>();
-            this.MetatrafficMulticastLocatorList = new List<Locator>();
+            this.DefaultMulticastLocatorList = new List<Locator>();
+            this.DefaultUnicastLocatorList = new List<Locator>();
+            this.MetatrafficUnicastLocatorList = participant.DefaultUnicastLocatorList;
+            this.MetatrafficMulticastLocatorList = participant.DefaultMulticastLocatorList;
         }
 
         [ID(0x0015)]
