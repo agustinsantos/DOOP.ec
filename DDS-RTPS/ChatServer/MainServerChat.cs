@@ -64,17 +64,14 @@ namespace ChatClient
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-
         static void Main(string[] args)
         {
 #if DEBUG
             LogAssemblyInfo();
 #endif
-            int domainId = 0;
-            if (args.Length > 0)
-                domainId = int.Parse(args[0]);
+
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
-            DomainParticipant dp = factory.CreateParticipant(domainId);
+            DomainParticipant dp = factory.CreateParticipant();
 
             // Implicitly create TypeSupport and register type:
             Topic<ChatMessage> tp = dp.CreateTopic<ChatMessage>("Greetings Topic");
@@ -82,14 +79,13 @@ namespace ChatClient
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<ChatMessage> ls = new MyListener();
-
             DataReader<ChatMessage> dr = sub.CreateDataReader<ChatMessage>(tp,
                                                                             sub.GetDefaultDataReaderQos(),
                                                                             ls,
                                                                             null /* all status changes */);
-
             var ct = new CancellationTokenSource();
             new Task(() => dr.WaitForHistoricalData(2, TimeUnit.SECONDS)).Repeat(ct.Token, TimeSpan.FromSeconds(1));
+
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
             DataWriter<ChatMessage> dw = pub.CreateDataWriter(tp);
@@ -97,17 +93,16 @@ namespace ChatClient
             String msg = "Hello, World with DDS.";
             while (msg != "quit")
             {
-                Console.Write(">");
-                msg = Console.ReadLine();
                 // Now Publish some piece of data
                 ChatMessage data = new ChatMessage(msg);
                 Console.WriteLine("Sending data:\"{0}\"", data.Value);
                 dw.Write(data);
                 //and check that the reader has this data
+                //dr.WaitForHistoricalData(2, TimeUnit.SECONDS);
+                Console.Write(">");
+                msg = Console.ReadLine();
             }
             ct.Cancel();
-
-
             dp.Close();
         }
 

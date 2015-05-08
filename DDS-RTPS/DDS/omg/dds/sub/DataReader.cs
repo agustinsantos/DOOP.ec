@@ -303,5 +303,6 @@ namespace org.omg.dds.sub
 
         ModifiableInstanceHandle LookupInstance(ModifiableInstanceHandle handle,
               TYPE keyHolder);
+
     }
 }
