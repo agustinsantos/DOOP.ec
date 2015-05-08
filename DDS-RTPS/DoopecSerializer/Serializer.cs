@@ -26,6 +26,7 @@ namespace Doopec.Serializer
 
         static ITypeSerializer[] s_typeSerializers = new ITypeSerializer[] {
             new PrimitivesSerializer(),
+   //         new CDRSequenceSerializer(),
             new ArraySerializer(),
             new EnumSerializer(),
             new DictionarySerializer(),

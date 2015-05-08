@@ -247,12 +247,27 @@ namespace SerializerTests
         {
             int size = StructMessage.Size();
             StructMessage v1 = new StructMessage();
-             var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
 
             buffer.Rewind();
             StructMessage v2 = Serializer.Deserialize<StructMessage>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestSequenceMessagePacket()
+        {
+            SequencePacket v1 = new SequencePacket(new int[] { 1, 2, 3 });
+            int size = 4 + v1.m_val.Length;
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }

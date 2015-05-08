@@ -2,6 +2,7 @@
 using System;
 using org.omg.dds.type;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SerializerTests
 {
@@ -548,6 +549,36 @@ namespace SerializerTests
         public override Int32 GetHashCode()
         {
             return this.m_intlist.GetHashCode();
+        }
+    }
+
+    [Packet]
+    public sealed class SequencePacket
+    {
+        [Field]
+        public int[] m_val;
+
+        public SequencePacket()
+        { }
+
+        public SequencePacket(int[] v)
+        {
+            m_val = v;
+        }
+
+        public override bool Equals(object other)
+        {
+            SequencePacket otherObj = (SequencePacket)other;
+            return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
+        }
+        public override Int32 GetHashCode()
+        {
+            int hc = this.m_val.Length;
+            for (int i = 0; i < this.m_val.Length; ++i)
+            {
+                hc = unchecked(hc * 314159 + this.m_val[i]);
+            }
+            return hc;
         }
     }
     #endregion
