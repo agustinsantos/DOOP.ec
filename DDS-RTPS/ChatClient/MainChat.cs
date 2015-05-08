@@ -64,13 +64,13 @@ namespace ChatClient
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        protected static int domainId = 0;
 
         static void Main(string[] args)
         {
 #if DEBUG
             LogAssemblyInfo();
 #endif
-            int domainId = 0;
             if (args.Length > 0)
                 domainId = int.Parse(args[0]);
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
@@ -88,8 +88,6 @@ namespace ChatClient
                                                                             ls,
                                                                             null /* all status changes */);
 
-            var ct = new CancellationTokenSource();
-            new Task(() => dr.WaitForHistoricalData(2, TimeUnit.SECONDS)).Repeat(ct.Token, TimeSpan.FromSeconds(1));
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
             DataWriter<ChatMessage> dw = pub.CreateDataWriter(tp);
@@ -99,15 +97,12 @@ namespace ChatClient
             {
                 Console.Write(">");
                 msg = Console.ReadLine();
-                // Now Publish some piece of data
+                // Now Publish the message
                 ChatMessage data = new ChatMessage(msg);
                 Console.WriteLine("Sending data:\"{0}\"", data.Value);
                 dw.Write(data);
                 //and check that the reader has this data
             }
-            ct.Cancel();
-
-
             dp.Close();
         }
 
@@ -125,7 +120,7 @@ namespace ChatClient
                     // InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
                     ChatMessage dt = smp.GetData();
-                    Console.WriteLine("Console 1.- Received data:\"{0}\"", dt.Value);
+                    Console.WriteLine("Console {0}.- Received data:\"{1}\"", domainId, dt.Value);
                 }
             }
         }

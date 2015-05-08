@@ -125,6 +125,12 @@ namespace Doopec.Dds.Sub
         }
         private void NewMessage(object sender, EventArgs e)
         {
+            if (this.listener != null)
+            {
+                DataAvailableStatus<TYPE> status = new DataAvailableStatusImpl<TYPE>(this);
+
+                this.listener.OnDataAvailable(status);
+            }
             ManualResetEvent.Set();
         }
 
