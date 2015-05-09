@@ -40,18 +40,24 @@ namespace ChatClient
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        protected static int domainId = 0;
+        protected static int domainId = -1;
 
         static void Main(string[] args)
         {
 #if DEBUG
             LogAssemblyInfo();
 #endif
-            if (args.Length > 0)
-                domainId = int.Parse(args[0]);
+
+            while (domainId < 0)
+            {
+                Console.WriteLine("Enter the domain participant id, It should be a positive number >= 0.");
+                string id = Console.ReadLine();
+                int.TryParse(id, out domainId);
+            }
+
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant(domainId);
-
+            Console.WriteLine("Domain ID = {0} has been created", domainId);
             // Implicitly create TypeSupport and register type:
             Topic<ChatMessage> tp = dp.CreateTopic<ChatMessage>("Greetings Topic");
             // Create the subscriber
