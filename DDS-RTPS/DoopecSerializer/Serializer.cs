@@ -17,22 +17,24 @@ namespace Doopec.Serializer
         static Dictionary<Type, TypeData> typeDataMap;
 
         delegate void SerializerSwitch(IoBuffer buffer, object ob);
+        delegate void SerializerSwitchTyped(IoBuffer buffer, object ob, ushort typeId);
         delegate void DeserializerSwitch(IoBuffer buffer, out object ob);
         delegate void DeserializerSwitchTyped(IoBuffer buffer, out object o, ushort typeId);
 
         static SerializerSwitch s_serializerSwitch;
+        static SerializerSwitchTyped s_serializerSwitchTyped;
         static DeserializerSwitch s_deserializerSwitch;
         static DeserializerSwitchTyped s_deserializerSwitchTyped;
 
         static ITypeSerializer[] s_typeSerializers = new ITypeSerializer[] {
             new PrimitivesSerializer(),
-   //         new CDRSequenceSerializer(),
-            new ArraySerializer(),
+            new CDRSequenceSerializer(),
+            //new ArraySerializer(),
             new EnumSerializer(),
             new DictionarySerializer(),
             new ListSerializer(),
             new PacketSerializer(),
-            new GenericSerializer(),
+            //new GenericSerializer(),
 		};
 
         static ITypeSerializer[] s_userTypeSerializers;
@@ -87,7 +89,17 @@ namespace Doopec.Serializer
             if (!IsInitialized)
                 throw new InvalidOperationException("Serializer not initialized");
 
-            Serialize(buffer, data);
+            s_serializerSwitch(buffer, (T)data);
+        }
+
+        public static void SerializeSwitchTyped<T>(IoBuffer buffer, object data)
+        {
+            if (!IsInitialized)
+                throw new InvalidOperationException("Serializer not initialized");
+
+            ushort id = GetTypeID(typeof(T));
+
+            s_serializerSwitchTyped(buffer, (T)data, id);
         }
 
         public static void Serialize(IoBuffer buffer, object data)
@@ -188,7 +200,7 @@ namespace Doopec.Serializer
 
                     Debug.Assert(writer != null && reader != null);
 
-                    typeData = new TypeData(typeID++, writer, reader);
+                    typeData = new TypeData(typeID++, writer, writer, reader);
 
                 }
                 else if (serializer is IDynamicTypeSerializer)
@@ -221,6 +233,7 @@ namespace Doopec.Serializer
 
                 var writerDm = SerializerCodegen.GenerateDynamicSerializerStub(type);
                 td.WriterMethodInfo = writerDm;
+                td.WriterTypedMethodInfo = writerDm;
                 td.WriterILGen = writerDm.GetILGenerator();
 
                 var readerDm = DeserializerCodegen.GenerateDynamicDeserializerStub(type);
@@ -234,6 +247,14 @@ namespace Doopec.Serializer
             serializerSwitchMethod.DefineParameter(1, ParameterAttributes.None, "buffer");
             serializerSwitchMethod.DefineParameter(2, ParameterAttributes.None, "value");
             var serializerSwitchMethodInfo = serializerSwitchMethod;
+
+            var serializerSwitchTypedMethod = new DynamicMethod("SerializerSwitchTyped", null,
+                new Type[] { typeof(IoBuffer), typeof(object), typeof(ushort) },
+                typeof(Serializer), true);
+            serializerSwitchTypedMethod.DefineParameter(1, ParameterAttributes.None, "buffer");
+            serializerSwitchTypedMethod.DefineParameter(2, ParameterAttributes.None, "value");
+            serializerSwitchTypedMethod.DefineParameter(3, ParameterAttributes.None, "typeId");
+            var serializerSwitchTypedMethodInfo = serializerSwitchTypedMethod;
 
             var deserializerSwitchMethod = new DynamicMethod("DeserializerSwitch", null,
                 new Type[] { typeof(IoBuffer), typeof(object).MakeByRefType() },
@@ -251,7 +272,7 @@ namespace Doopec.Serializer
             var deserializerSwitchTypedMethodInfo = deserializerSwitchTypedMethod;
 
 
-            var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, deserializerSwitchMethodInfo);
+            var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, serializerSwitchTypedMethodInfo, deserializerSwitchMethodInfo);
 
             /* generate bodies */
 
@@ -270,6 +291,10 @@ namespace Doopec.Serializer
             var ilGen = serializerSwitchMethod.GetILGenerator();
             SerializerCodegen.GenerateSerializerSwitch(ctx, ilGen, map);
             s_serializerSwitch = (SerializerSwitch)serializerSwitchMethod.CreateDelegate(typeof(SerializerSwitch));
+
+            ilGen = serializerSwitchTypedMethod.GetILGenerator();
+            SerializerCodegen.GenerateSerializerSwitchTyped(ctx, ilGen, map);
+            s_serializerSwitchTyped = (SerializerSwitchTyped)serializerSwitchTypedMethod.CreateDelegate(typeof(SerializerSwitchTyped));
 
             ilGen = deserializerSwitchMethod.GetILGenerator();
             DeserializerCodegen.GenerateDeserializerSwitch(ctx, ilGen, map);
@@ -321,7 +346,7 @@ namespace Doopec.Serializer
             deserializerSwitchTypedMethod.DefineParameter(3, ParameterAttributes.None, "typeId");
             var deserializerSwitchTypedMethodInfo = deserializerSwitchTypedMethod;
 
-            var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, deserializerSwitchMethodInfo);
+            var ctx = new CodeGenContext(map, serializerSwitchMethodInfo, serializerSwitchMethodInfo, deserializerSwitchMethodInfo);
 
             /* generate bodies */
 

@@ -31,17 +31,18 @@ namespace Doopec.Serializer.TypeSerializers
             il.Emit(OpCodes.Ldarg_1);
             il.Emit(OpCodes.Brtrue_S, notNullLabel);
 
-            // if value == null, write -1
+            // if value == null, write uint.MaxValue
             il.Emit(OpCodes.Ldarg_0);
-            il.Emit(OpCodes.Ldc_I4, -1);
+            il.Emit(OpCodes.Ldc_I4, uint.MaxValue);
             il.EmitCall(OpCodes.Call, ctx.GetWriterMethodInfo(typeof(uint)), null);
             il.Emit(OpCodes.Ret);
 
             il.MarkLabel(notNullLabel);
 
-            // write array len
+            // write array len 
             il.Emit(OpCodes.Ldarg_0);
-            il.Emit(OpCodes.Ldlen);
+            il.Emit(OpCodes.Ldarg_1);
+            il.Emit(OpCodes.Ldlen);;
             il.EmitCall(OpCodes.Call, ctx.GetWriterMethodInfo(typeof(uint)), null);
 
             // declare i
@@ -99,9 +100,12 @@ namespace Doopec.Serializer.TypeSerializers
 
             var notNullLabel = il.DefineLabel();
 
-            /* if len == -1, return null */
+            /* if len == uint.MaxValue, return null */
+            il.Emit(OpCodes.Ldc_I4, uint.MaxValue);
             il.Emit(OpCodes.Ldloc_S, lenLocal);
+            il.Emit(OpCodes.Clt);
             il.Emit(OpCodes.Brtrue_S, notNullLabel);
+
 
             il.Emit(OpCodes.Ldarg_1);
             il.Emit(OpCodes.Ldnull);
@@ -167,7 +171,7 @@ namespace Doopec.Serializer.TypeSerializers
 
         public bool HasSwitch
         {
-            get { return true; }
+            get { return false; }
         }
     }
 }

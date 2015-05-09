@@ -13,10 +13,11 @@ namespace Doopec.Serializer
             this.TypeSerializer = serializer;
         }
 
-        public TypeData(ushort typeID, MethodInfo writer, MethodInfo reader)
+        public TypeData(ushort typeID, MethodInfo writer, MethodInfo writerTyped, MethodInfo reader)
         {
             this.TypeID = typeID;
             this.WriterMethodInfo = writer;
+            this.WriterTypedMethodInfo = writer;
             this.ReaderMethodInfo = reader;
         }
 
@@ -26,6 +27,7 @@ namespace Doopec.Serializer
 
         public readonly IDynamicTypeSerializer TypeSerializer;
         public MethodInfo WriterMethodInfo;
+        public MethodInfo WriterTypedMethodInfo;
         public MethodInfo ReaderMethodInfo;
 
         public ILGenerator WriterILGen;
@@ -36,19 +38,25 @@ namespace Doopec.Serializer
     {
         readonly Dictionary<Type, TypeData> m_typeMap;
 
-        public CodeGenContext(Dictionary<Type, TypeData> typeMap, MethodInfo serializerSwitch, MethodInfo deserializerSwitch)
+        public CodeGenContext(Dictionary<Type, TypeData> typeMap, MethodInfo serializerSwitch, MethodInfo serializerSwitchTyped, MethodInfo deserializerSwitch)
         {
             m_typeMap = typeMap;
             this.SerializerSwitchMethodInfo = serializerSwitch;
+            this.SerializerSwitchTypedMethodInfo = serializerSwitchTyped;
             this.DeserializerSwitchMethodInfo = deserializerSwitch;
         }
 
         public MethodInfo SerializerSwitchMethodInfo { get; private set; }
+        public MethodInfo SerializerSwitchTypedMethodInfo { get; private set; }
         public MethodInfo DeserializerSwitchMethodInfo { get; private set; }
 
         public MethodInfo GetWriterMethodInfo(Type type)
         {
             return m_typeMap[type].WriterMethodInfo;
+        }
+        public MethodInfo GetWriterTypedMethodInfo(Type type)
+        {
+            return m_typeMap[type].WriterTypedMethodInfo;
         }
 
         public MethodInfo GetReaderMethodInfo(Type type)

@@ -568,7 +568,12 @@ namespace SerializerTests
 
         public override bool Equals(object other)
         {
+            if (other == null)
+                return false;
+
             SequencePacket otherObj = (SequencePacket)other;
+            if (this.m_val == null && otherObj.m_val == null)
+                return true;
             return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
         }
         public override Int32 GetHashCode()

@@ -94,5 +94,46 @@ namespace Doopec.Serializer
                 il.Emit(OpCodes.Ret);
             }
         }
+
+        public static void GenerateSerializerSwitchTyped(CodeGenContext ctx, ILGenerator il, IDictionary<Type, TypeData> map)
+        {
+            // arg0: Stream, arg1: object, arg2: ushort
+
+            var idLocal = il.DeclareLocal(typeof(ushort));
+
+            // +1 for 0 (null)
+            var jumpTable = new Label[map.Count + 1];
+            jumpTable[0] = il.DefineLabel();
+            foreach (var kvp in map)
+                jumpTable[kvp.Value.TypeID] = il.DefineLabel();
+
+            // get TypeID from object's Type
+            il.Emit(OpCodes.Ldarg_2);
+            il.Emit(OpCodes.Switch, jumpTable);
+
+            il.Emit(OpCodes.Newobj, Helpers.ExceptionCtorInfo);
+            il.Emit(OpCodes.Throw);
+
+            /* null case */
+            il.MarkLabel(jumpTable[0]);
+            il.Emit(OpCodes.Ret);
+
+            /* cases for types */
+            foreach (var kvp in map)
+            {
+                var type = kvp.Key;
+                var data = kvp.Value;
+
+                il.MarkLabel(jumpTable[data.TypeID]);
+
+                il.Emit(OpCodes.Ldarg_0);
+                il.Emit(OpCodes.Ldarg_1);
+                il.Emit(type.IsValueType ? OpCodes.Unbox_Any : OpCodes.Castclass, type);
+
+                il.EmitCall(OpCodes.Call, data.WriterTypedMethodInfo, null);
+
+                il.Emit(OpCodes.Ret);
+            }
+        }
     }
 }

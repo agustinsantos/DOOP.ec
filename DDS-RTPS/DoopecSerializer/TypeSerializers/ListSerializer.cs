@@ -119,22 +119,15 @@ namespace Doopec.Serializer.TypeSerializers
         {
             T[] pArray = null;
             if (value != null)
-            {
-                pArray = new T[value.Count];
-
-                int i = 0;
-                foreach (var kvp in value)
-                    pArray[i++] = kvp;
-            }
-            Serializer.SerializeInternal(stream, pArray);
+                pArray = value.ToArray();
+            Serializer.SerializeSwitchTyped<T[]>(stream, pArray);
         }
 
         public static void ReadListPrimitive<T>(IoBuffer stream, out List<T> value)
         {
             value = null;
-            var tmp = Serializer.DeserializeInternal(stream);
+            T[] pArray = Serializer.Deserialize<T[]>(stream);
 
-            T[] pArray = (T[])tmp;
             if (pArray != null)
             {
                 value = new List<T>(pArray.Length);

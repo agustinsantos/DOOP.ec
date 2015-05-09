@@ -261,7 +261,37 @@ namespace SerializerTests
         public void TestSequenceMessagePacket()
         {
             SequencePacket v1 = new SequencePacket(new int[] { 1, 2, 3 });
-            int size = 4 + v1.m_val.Length;
+            int size = (1 + v1.m_val.Length) * sizeof(int);
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestSequenceMessagePacket2()
+        {
+            SequencePacket v1 = new SequencePacket(new int[] { });
+            int size = (1 + v1.m_val.Length) * sizeof(int);
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
+
+            buffer.Rewind();
+            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
+            Assert.AreEqual(v1, v2);
+            Assert.AreEqual(size, buffer.Position);
+        }
+
+        [TestMethod]
+        public void TestSequenceMessagePacket3()
+        {
+            SequencePacket v1 = new SequencePacket(null);
+            int size = (1) * sizeof(int);
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
@@ -290,9 +320,9 @@ namespace SerializerTests
         [TestMethod]
         public void TestMyClassListMessagePacket1()
         {
-            int size = 16 + 2; // (2 + 1)* 4 + 1 * 4
             MyClassList v1 = new MyClassList();
-            v1.m_intlist = new List<int>() { 1, 2 };
+            v1.m_intlist = new List<int>() { 5, 6, 7 };
+            int size = (v1.m_intlist.Count + 1) * 4 + 1 * 4;
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
@@ -306,9 +336,9 @@ namespace SerializerTests
         [TestMethod]
         public void TestMyClassListMessagePacket2()
         {
-            int size = 10;
             MyClassList v1 = new MyClassList();
             v1.m_intlist = new List<int>();
+            int size = (v1.m_intlist.Count + 1) * 4 + 1 * 4;
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
@@ -319,22 +349,22 @@ namespace SerializerTests
             Assert.AreEqual(size, buffer.Position);
         }
 
-        //[TestMethod]
-        //public void TestMyClassListMessagePacket3()
-        //{
-        //    int size = 4;
-        //    MyClassList v1 = new MyClassList();
-        //    v1.m_intlist = null;
-        //    var buffer = ByteBufferAllocator.Instance.Allocate(size);
-        //    Serializer.Serialize(buffer, v1);
-        //    Assert.AreEqual(size, buffer.Position);
+        [TestMethod]
+        public void TestMyClassListMessagePacket3()
+        {
+            MyClassList v1 = new MyClassList();
+            v1.m_intlist = null;
+            int size = 1 * 4 + 1 * 4;
+            var buffer = ByteBufferAllocator.Instance.Allocate(size);
+            Serializer.Serialize(buffer, v1);
+            Assert.AreEqual(size, buffer.Position);
 
-        //    buffer.Rewind();
-        //    MyClassList v2 = Serializer.Deserialize<MyClassList>(buffer);
-        //    Assert.IsNull(v1.m_intlist);
-        //    Assert.IsNull(v2.m_intlist);
-        //    Assert.AreEqual(v1.m_int, v2.m_int);
-        //    Assert.AreEqual(size, buffer.Position);
-        //}
+            buffer.Rewind();
+            MyClassList v2 = Serializer.Deserialize<MyClassList>(buffer);
+            Assert.IsNull(v1.m_intlist);
+            Assert.IsNull(v2.m_intlist);
+            Assert.AreEqual(v1.m_int, v2.m_int);
+            Assert.AreEqual(size, buffer.Position);
+        }
     }
 }
