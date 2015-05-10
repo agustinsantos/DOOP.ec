@@ -260,14 +260,14 @@ namespace SerializerTests
         [TestMethod]
         public void TestSequenceMessagePacket()
         {
-            SequencePacket v1 = new SequencePacket(new int[] { 1, 2, 3 });
+            IntSequencePacket v1 = new IntSequencePacket(new int[] { 1, 2, 3 });
             int size = (1 + v1.m_val.Length) * sizeof(int);
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
 
             buffer.Rewind();
-            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
+            IntSequencePacket v2 = Serializer.Deserialize<IntSequencePacket>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }
@@ -275,14 +275,14 @@ namespace SerializerTests
         [TestMethod]
         public void TestSequenceMessagePacket2()
         {
-            SequencePacket v1 = new SequencePacket(new int[] { });
+            IntSequencePacket v1 = new IntSequencePacket(new int[] { });
             int size = (1 + v1.m_val.Length) * sizeof(int);
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
 
             buffer.Rewind();
-            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
+            IntSequencePacket v2 = Serializer.Deserialize<IntSequencePacket>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }
@@ -290,14 +290,14 @@ namespace SerializerTests
         [TestMethod]
         public void TestSequenceMessagePacket3()
         {
-            SequencePacket v1 = new SequencePacket(null);
+            IntSequencePacket v1 = new IntSequencePacket(null);
             int size = (1) * sizeof(int);
             var buffer = ByteBufferAllocator.Instance.Allocate(size);
             Serializer.Serialize(buffer, v1);
             Assert.AreEqual(size, buffer.Position);
 
             buffer.Rewind();
-            SequencePacket v2 = Serializer.Deserialize<SequencePacket>(buffer);
+            IntSequencePacket v2 = Serializer.Deserialize<IntSequencePacket>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(size, buffer.Position);
         }

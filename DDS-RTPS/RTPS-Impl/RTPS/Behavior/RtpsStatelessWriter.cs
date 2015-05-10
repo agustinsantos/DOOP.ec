@@ -20,7 +20,7 @@ using Doopec.Serializer.Attributes;
 
 namespace Doopec.Rtps.Behavior
 {
-    public class RtpsStatelessWriter<T> : StatelessWriter<T>, IDisposable
+    public class RtpsStatelessWriter<T> : StatelessWriter<T>, IDisposable where T : new()
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         protected List<UDPTransmitter> UDPTransmitters { get; private set; }
@@ -44,12 +44,13 @@ namespace Doopec.Rtps.Behavior
                 UDPTransmitters.Add(rec);
             }
 
-            foreach (var locator in UnicastLocatorList)
-            {
-                UDPTransmitter trans = new UDPTransmitter(locator, 1024);
-                trans.ParticipantId = this.Guid;
-                UDPTransmitters.Add(trans);
-            }
+            // TODO. Just for testing. I dont like so many messages
+            //foreach (var locator in UnicastLocatorList)
+            //{
+            //    UDPTransmitter trans = new UDPTransmitter(locator, 1024);
+            //    trans.ParticipantId = this.Guid;
+            //    UDPTransmitters.Add(trans);
+            //}
             worker = new WriterWorker(this.PeriodicWork);
         }
 
@@ -106,7 +107,6 @@ namespace Doopec.Rtps.Behavior
             IoBuffer buff = IoBuffer.Allocate(1024);
 
             payload.DataEncapsulation = EncapsulationManager.Serialize<T>((T)change.DataValue.Value, Scheme);
-            //payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
             Data data = new Data(readerId, writerId, change.SequenceNumber.LongValue, null, payload);
             msg.SubMessages.Add(data);
 

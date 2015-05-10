@@ -83,7 +83,7 @@ namespace Doopec.Rtps.Messages
         internal ParameterListEncapsulation(IoBuffer buffer, ByteOrder order, int length)
         {
             this.order = order;
-            this.data = new byte[length - 4];
+            this.data = new byte[length];
             buffer.Get(data, 0, data.Length);
         }
 
@@ -160,15 +160,14 @@ namespace Doopec.Rtps.Messages
             {
                 throw new NotImplementedException();
             }
-            int length = buffer.GetInt32();
             int initialPos = buffer.Position;
             ParameterList parameters = buffer.GetParameterList();
-            Debug.Assert(buffer.Position == initialPos + length);
             return BuildObject<T>(parameters);
         }
 
         public static ParameterListEncapsulation Deserialize(IoBuffer buffer, int length)
         {
+            int initialPos = buffer.Position;
             EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
             if (scheme.Equals(DataEncapsulation.PL_CDR_BE_HEADER))
             {
@@ -182,6 +181,7 @@ namespace Doopec.Rtps.Messages
             {
                 throw new NotImplementedException();
             }
+            buffer.Position = initialPos;
             return new ParameterListEncapsulation(buffer, buffer.Order, length);
         }
 

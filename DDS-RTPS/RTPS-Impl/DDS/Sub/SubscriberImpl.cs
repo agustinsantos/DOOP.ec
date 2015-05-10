@@ -1,4 +1,4 @@
-﻿using Doopec.Dds.Config;
+﻿using Doopec.Configuration;
 using Doopec.Dds.Core.Policy;
 using Doopec.DDS.Sub;
 using org.omg.dds.core;
@@ -21,7 +21,7 @@ namespace Doopec.Dds.Sub
         private DataReaderQos dataReaderqos;
         private SubscriberListener listener;
         private IList datawriters;
-        private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+        private DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
         public Bootstrap Bootstrap { get; internal set; }
 
         public SubscriberImpl(SubscriberQos qos, SubscriberListener listener, DomainParticipant dp, Bootstrap bootstrap)
@@ -33,6 +33,7 @@ namespace Doopec.Dds.Sub
             datawriters = new System.Collections.ArrayList();
 
             dataReaderqos = new DataReaderQosImpl(this.GetBootstrap());
+#if TODO
             if (config.Settings["DefaultDataWriterQoS"] != null)
             {
                 string dataReaderqosName = config.Settings["DefaultDataReaderQoS"].Value;
@@ -44,8 +45,8 @@ namespace Doopec.Dds.Sub
                         string durabilityVal = dwqos.Value;
                     }
                 }
-
             }
+#endif
         }
 
 

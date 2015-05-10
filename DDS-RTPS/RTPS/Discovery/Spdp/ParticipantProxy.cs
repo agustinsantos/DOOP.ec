@@ -15,14 +15,17 @@ namespace Rtps.Discovery.Spdp
     {
         public ParticipantProxy(Participant participant)
         {
-            this.ProtocolVersion = participant.ProtocolVersion;
-            this.VendorId = participant.VendorId;
-            this.GuidPrefix = participant.Guid.Prefix;
-            //this.ExpectsInlineQos = participant.ExpectsInlineQos;
-            this.DefaultMulticastLocatorList = new List<Locator>();
-            this.DefaultUnicastLocatorList = new List<Locator>();
-            this.MetatrafficUnicastLocatorList = participant.DefaultUnicastLocatorList;
-            this.MetatrafficMulticastLocatorList = participant.DefaultMulticastLocatorList;
+            if (participant != null)
+            {
+                this.ProtocolVersion = participant.ProtocolVersion;
+                this.VendorId = participant.VendorId;
+                this.GuidPrefix = participant.Guid.Prefix;
+                //this.ExpectsInlineQos = participant.ExpectsInlineQos;
+                this.DefaultMulticastLocatorList = new List<Locator>();
+                this.DefaultUnicastLocatorList = new List<Locator>();
+                this.MetatrafficUnicastLocatorList = participant.DefaultUnicastLocatorList;
+                this.MetatrafficMulticastLocatorList = participant.DefaultMulticastLocatorList;
+            }
         }
 
         [ID(0x0015)]

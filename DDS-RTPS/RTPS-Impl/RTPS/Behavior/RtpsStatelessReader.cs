@@ -1,4 +1,5 @@
-﻿using Doopec.Serializer;
+﻿using Doopec.Rtps.Messages;
+using Doopec.Serializer;
 using Doopec.Utils.Transport;
 using log4net;
 using Mina.Core.Buffer;
@@ -17,7 +18,7 @@ using DataObj = Rtps.Structure.Types.Data;
 
 namespace Doopec.Rtps.Behavior
 {
-    public class RtpsStatelessReader<T> : StatelessReader<T>, IDisposable
+    public class RtpsStatelessReader<T> : StatelessReader<T>, IDisposable where T : new()
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         protected List<UDPReceiver> UDPReceivers { get; private set; }
@@ -78,14 +79,15 @@ namespace Doopec.Rtps.Behavior
                         log.DebugFormat("The readerID is: {0}", d.ReaderId);
                         log.DebugFormat("The writerID is: {0}", d.WriterId);
                         log.DebugFormat("The writerSN is: {0}", d.WriterSN);
-                        log.DebugFormat("TODO. ");
+
+                        IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
+                        buf.Order = (d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+                        T obj = EncapsulationManager.Deserialize<T>(buf);
+#if TODO
+                        CacheChange<T> change = new CacheChange<T>(ChangeKind.ALIVE, new GUID(msg.Header.GuidPrefix, d.WriterId), d.WriterSN, new DataObj(obj), new InstanceHandle());
+                        ReaderCache.AddChange(change);
+#endif
                         break;
-                        //IoBuffer buf = IoBuffer.Wrap(d.SerializedPayload.DataEncapsulation.SerializedPayload);
-                        //buf.Order = ByteOrder.LittleEndian; //(d.Header.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
-                        //object obj = Doopec.Serializer.Serializer.Deserialize<T>(buf);
-                        //CacheChange<T> change = new CacheChange<T>(ChangeKind.ALIVE, new GUID(msg.Header.GuidPrefix, d.WriterId), d.WriterSN, new DataObj(obj), new InstanceHandle());
-                        //ReaderCache.AddChange(change);
-                        //break;
                     default:
                         log.DebugFormat("SubMessage: {0}", submsg.Kind);
                         break;

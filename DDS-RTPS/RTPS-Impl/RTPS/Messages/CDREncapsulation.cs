@@ -49,7 +49,7 @@ namespace Doopec.Rtps.Messages
                 buffer.PutEncapsulationScheme(CDR_LE_HEADER);
             else
                 buffer.PutEncapsulationScheme(CDR_BE_HEADER);
-            
+
             Doopec.Serializer.Serializer.Serialize(buffer, dataObj);
             var serializedData = new byte[buffer.Position - initialPos];
             buffer.Position = initialPos;
@@ -64,14 +64,9 @@ namespace Doopec.Rtps.Messages
                 buffer.PutEncapsulationScheme(CDR_LE_HEADER);
             else
                 buffer.PutEncapsulationScheme(CDR_BE_HEADER);
-            int initialPos = buffer.Position;
-            buffer.Position += 4;
             Doopec.Serializer.Serializer.Serialize(buffer, dataObj);
-            int finalPos = buffer.Position;
-            buffer.Position = initialPos;
-            buffer.PutInt32(finalPos - initialPos - 4);
-            buffer.Position = finalPos;
         }
+
         public static T Deserialize<T>(IoBuffer buffer)
         {
             EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
@@ -87,10 +82,7 @@ namespace Doopec.Rtps.Messages
             {
                 throw new NotImplementedException();
             }
-            int length = buffer.GetInt32();
-            int initialPos = buffer.Position;
             T rst = Doopec.Serializer.Serializer.Deserialize<T>(buffer);
-            Debug.Assert(buffer.Position == initialPos + length);
             return rst;
         }
 
@@ -112,8 +104,8 @@ namespace Doopec.Rtps.Messages
             {
                 throw new NotImplementedException();
             }
-            byte[] data = new byte[length-4];
-            buffer.Get(data, 0, length-4);
+            byte[] data = new byte[length - 4];
+            buffer.Get(data, 0, length - 4);
             Debug.Assert(buffer.Position == initialPos + length);
             CDREncapsulation rst = new CDREncapsulation(data, order);
             return rst;

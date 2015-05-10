@@ -113,8 +113,6 @@
     <Compile Include="Dds\Topic\PublicationBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Topic\SubscriptionBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Topic\TopicBuiltinTopicDataImpl.cs" />
-    <Compile Include="Dds\Utils\Config\DdsConfigurationSectionHandler.cs" />
-    <Compile Include="Dds\Utils\Config\QoSConfig.cs" />
     <Compile Include="Dds\Utils\DiscoveryService.cs" />
     <Compile Include="Dds\XTypes\EnumeratedConstantImpl.cs" />
     <Compile Include="Dds\XTypes\EnumerationTypeImpl.cs" />

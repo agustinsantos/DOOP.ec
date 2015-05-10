@@ -8,8 +8,7 @@ using System.Linq;
 namespace SerializerTests
 {
     /// <summary>
-    /// ParameterListEncapsulation is a specialization of DataEncapsulation.
-    /// ParamaterList
+    /// 
     /// ....2...........8...............16.............24...............32
     /// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     /// |       short parameterId_1     |       short length_1          |
@@ -32,6 +31,31 @@ namespace SerializerTests
     /// |          PID_SENTINEL         |           ignored             |
     /// +---------------+---------------+---------------+---------------+
     /// 
+    /// 
+    /// In addition to the encapsulation schema identifier, the ParameterList encapsulation specifies a 16-bit options field
+    /// followed by the data encoded using a ParameterList. The options field is left for future extensions. This version of the
+    /// specification should set it to zero when it writes it and not interpret it when it reads it.
+    /// 
+    /// 0...2...........8...............16..............24..............32
+    /// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    /// |           PL_CDR_BE           |         ushort options        |
+    /// +---------------+---------------+---------------+---------------+
+    /// |                                                               |
+    /// ~            Serialized Data (ParameterList CDR Big Endian)     ~
+    /// |                                                               |
+    /// +---------------+---------------+---------------+---------------+
+    /// 0...2...........8...............16..............24..............32
+    /// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    /// |            PL_CDR_LE          |         ushort options        |
+    /// +---------------+---------------+---------------+---------------+
+    /// |                                                               |
+    /// ~         Serialized Data (ParameterList CDR Little Endian)     ~
+    /// |                                                               |
+    /// +---------------+---------------+---------------+---------------+
+    /// 
+    /// where 
+    ///     PL_CDR_BE {0x00, 0x02} means ParameterList (9.4.2.11). Both the parameter list and its parameters are encapsulated using OMG CDR Big Endian.
+    ///     PL_CDR_LE {0x00, 0x03} means ParameterList (9.4.2.11). Both the parameter list and its parameters are encapsulated using OMG CDR Little Endian.
     /// </summary>
     [TestClass]
     public class ParameterListEncapsulationTests
@@ -86,7 +110,7 @@ namespace SerializerTests
             Assert.AreEqual(expectedSize, buffer.Position);
 
             buffer.Rewind();
-             Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
+            Assert.AreEqual(expectedRst, buffer.GetHexDump(expectedSize));
             CharPacket v2 = ParameterListEncapsulation.Deserialize<CharPacket>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(expectedSize, buffer.Position);
@@ -130,7 +154,7 @@ namespace SerializerTests
             U16Packet v2 = ParameterListEncapsulation.Deserialize<U16Packet>(buffer);
             Assert.AreEqual(v1, v2);
             Assert.AreEqual(expectedSize, buffer.Position);
-        } 
+        }
         /*
         [TestMethod]
         public void TestU32PacketLE()

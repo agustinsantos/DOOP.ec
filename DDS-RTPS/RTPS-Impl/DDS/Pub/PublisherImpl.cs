@@ -1,5 +1,5 @@
 ﻿using DDS.ConversionUtils;
-using Doopec.Dds.Config;
+using Doopec.Configuration;
 using Doopec.Dds.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
@@ -22,7 +22,7 @@ namespace Doopec.Dds.Pub
         private DataWriterQosImpl dataWriterqos;
         private PublisherListener listener;
         private IList datawriters;
-        private DdsConfigurationSectionHandler config = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
+        private DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
         public Bootstrap Bootstrap { get; internal set; }
 
         public PublisherImpl(PublisherQos qos, PublisherListener listener, DomainParticipant dp, Bootstrap bootstrap)
@@ -33,6 +33,7 @@ namespace Doopec.Dds.Pub
             this.Bootstrap = bootstrap;
             datawriters = new System.Collections.ArrayList();
             dataWriterqos = new DataWriterQosImpl(this.GetBootstrap());
+#if TODO
             if (config.Settings["DefaultDataWriterQoS"] != null)
             {
                 string dataWriterqosName = config.Settings["DefaultDataWriterQoS"].Value;
@@ -54,8 +55,8 @@ namespace Doopec.Dds.Pub
                         string durabilityVal = dwqos.Value;
                     }
                 }
-
             }
+#endif
         }
 
         public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic)

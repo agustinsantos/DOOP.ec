@@ -1,5 +1,4 @@
 ﻿using Doopec.Configuration;
-using Doopec.Dds.Config;
 using Doopec.Dds.Core;
 using Doopec.Dds.Utils;
 using Doopec.DDS.Domain;
@@ -25,7 +24,8 @@ namespace Doopec.Dds.Domain
         public DomainParticipantFactoryImpl(Bootstrap bootstrap)
         {
             this.bootstrap_ = bootstrap;
-            Doopec.Configuration.Dds.DomainParticipantFactoryQoS qos = ddsConfig.Domains[0].QoS.DomainParticipantFactoryQos;
+            string qosProfile = ddsConfig.Domains[0].QoSProfile.Name;
+            Doopec.Configuration.Dds.DomainParticipantFactoryQoS qos = ddsConfig.QoSProfiles[qosProfile].DomainParticipantFactoryQos;
 
             this.Qos = DomainParticipantFactoryQosImpl.ConvertTo(qos, bootstrap);
         }
@@ -47,7 +47,8 @@ namespace Doopec.Dds.Domain
         /// <returns>New participant</returns>
         public override DomainParticipant CreateParticipant(int domainId)
         {
-            Doopec.Configuration.Dds.DomainParticipantQoS qosConfig = ddsConfig.Domains[domainId].QoS.DomainParticipantQos;
+            string qosProfile = ddsConfig.Domains[domainId].QoSProfile.Name;
+            Doopec.Configuration.Dds.DomainParticipantQoS qosConfig = ddsConfig.QoSProfiles[qosProfile].DomainParticipantQos;
 
             DomainParticipantQos qos = DomainParticipantQosImpl.ConvertTo(qosConfig, this.bootstrap_);
 

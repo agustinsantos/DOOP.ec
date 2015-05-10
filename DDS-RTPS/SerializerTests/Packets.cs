@@ -527,6 +527,8 @@ namespace SerializerTests
         }
     }
 
+
+
     [Packet]
     public class MyClassList
     {
@@ -538,7 +540,7 @@ namespace SerializerTests
 
         public static int Size()
         {
-            return 16+4;
+            return 16 + 4;
         }
 
         public override bool Equals(object other)
@@ -553,15 +555,20 @@ namespace SerializerTests
     }
 
     [Packet]
-    public sealed class SequencePacket
+    public sealed class BoolSequencePacket
     {
         [Field]
-        public int[] m_val;
+        private bool[] m_val;
 
-        public SequencePacket()
+        public int Size
+        {
+            get { return m_val.Length * sizeof(bool); }
+        }
+
+        public BoolSequencePacket()
         { }
 
-        public SequencePacket(int[] v)
+        public BoolSequencePacket(bool[] v)
         {
             m_val = v;
         }
@@ -571,7 +578,128 @@ namespace SerializerTests
             if (other == null)
                 return false;
 
-            SequencePacket otherObj = (SequencePacket)other;
+            BoolSequencePacket otherObj = (BoolSequencePacket)other;
+            if (this.m_val == null && otherObj.m_val == null)
+                return true;
+            return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
+        }
+
+        public override Int32 GetHashCode()
+        {
+            int hc = this.m_val.Length;
+            for (int i = 0; i < this.m_val.Length; ++i)
+            {
+                hc = unchecked(hc * 314159 + (this.m_val[i] ? 1 : 0));
+            }
+            return hc;
+        }
+    }
+
+    [Packet]
+    public sealed class ShortSequencePacket
+    {
+        [Field]
+        private short[] m_val;
+
+        public int Size
+        {
+            get { return m_val.Length * sizeof(short); }
+        }
+        public ShortSequencePacket()
+        { }
+
+        public ShortSequencePacket(short[] v)
+        {
+            m_val = v;
+        }
+
+        public override bool Equals(object other)
+        {
+            if (other == null)
+                return false;
+
+            ShortSequencePacket otherObj = (ShortSequencePacket)other;
+            if (this.m_val == null && otherObj.m_val == null)
+                return true;
+            return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
+        }
+
+        public override Int32 GetHashCode()
+        {
+            int hc = this.m_val.Length;
+            for (int i = 0; i < this.m_val.Length; ++i)
+            {
+                hc = unchecked(hc * 314159 + this.m_val[i]);
+            }
+            return hc;
+        }
+    }
+    [Packet]
+    public sealed class EnumSequencePacket
+    {
+        [Field]
+        private MyEnum[] m_val;
+
+        public int Size
+        {
+            get { return m_val.Length * sizeof(MyEnum); }
+        }
+
+        public EnumSequencePacket()
+        { }
+
+        public EnumSequencePacket(MyEnum[] v)
+        {
+            m_val = v;
+        }
+
+        public override bool Equals(object other)
+        {
+            if (other == null)
+                return false;
+
+            EnumSequencePacket otherObj = (EnumSequencePacket)other;
+            if (this.m_val == null && otherObj.m_val == null)
+                return true;
+            return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
+        }
+
+        public override Int32 GetHashCode()
+        {
+            int hc = this.m_val.Length;
+            for (int i = 0; i < this.m_val.Length; ++i)
+            {
+                hc = unchecked(hc * 314159 + (int)this.m_val[i]);
+            }
+            return hc;
+        }
+    }
+
+    [Packet]
+    public sealed class IntSequencePacket
+    {
+        [Field]
+        public int[] m_val;
+
+        public int Size
+        {
+            get { return m_val.Length * sizeof(int); }
+        }
+
+        public IntSequencePacket()
+        { }
+
+        public IntSequencePacket(int[] v)
+        {
+            m_val = v;
+        }
+
+        public override bool Equals(object other)
+        {
+            if (other == null)
+                return false;
+
+            IntSequencePacket otherObj = (IntSequencePacket)other;
             if (this.m_val == null && otherObj.m_val == null)
                 return true;
             return Enumerable.SequenceEqual(this.m_val, otherObj.m_val);
@@ -655,5 +783,5 @@ namespace SerializerTests
             }
         }
     }
-#endregion
+    #endregion
 }

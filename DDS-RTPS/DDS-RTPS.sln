@@ -35,11 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializerTests", "Serializ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTPSMonitor", "RTPSMonitor\RTPSMonitor.csproj", "{BFA80509-ADD0-4A52-BADB-4F7C2197E9D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A00F94DC-8D67-48E2-AE49-ACA54FA400ED}"
-	ProjectSection(SolutionItems) = preProject
-		Performance1.psess = Performance1.psess
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{D8A80507-D421-45D4-8B5F-BD72F3841867}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationTests", "ConfigurationTests\ConfigurationTests.csproj", "{BA939B14-D44F-4DD3-83C3-C1A6485528AE}"

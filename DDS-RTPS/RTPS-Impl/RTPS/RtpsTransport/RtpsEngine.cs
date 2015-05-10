@@ -1,4 +1,4 @@
-﻿using Doopec.Dds.Config;
+﻿using Doopec.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -21,8 +21,10 @@ namespace Doopec.Rtps.RtpsTransport
 
         public static IRtpsEngine CreateEngine(IDictionary<string, Object> environment)
         {
-            DdsConfigurationSectionHandler ddsConfig = ConfigurationManager.GetSection("Doopec.Dds") as DdsConfigurationSectionHandler;
-            string className = ddsConfig.Settings["TransportEngine"].Value;
+            DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
+            RTPSConfigurationSection rtpsConfig = Doopec.Configuration.RTPSConfigurationSection.Instance;
+            string transportProfile = ddsConfig.Domains[0].TransportProfile.Name;
+            string className = rtpsConfig.Transports[transportProfile].Type;
             if (string.IsNullOrWhiteSpace(className))
             {
                 // no implementation class name specified

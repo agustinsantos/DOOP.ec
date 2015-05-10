@@ -185,7 +185,7 @@ namespace Rtps.Tests.Transport
 
             rec.Start();
 
-            simulator.SendUDPPacket("SamplePackets/packetD1.dat", Host, Port);
+            simulator.SendUDPPacket("SamplePackets/DiscoveryPacketSample.dat", Host, Port);
             lock (key)
             {
                 Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");

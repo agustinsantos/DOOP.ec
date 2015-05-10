@@ -80,6 +80,58 @@ namespace Doopec.Configuration
         }
         #endregion
         
+        #region Version Property
+        /// <summary>
+        /// The XML name of the <see cref="Version"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string VersionPropertyName = "version";
+        
+        /// <summary>
+        /// Gets or sets the Version.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Version.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DDSConfigurationSection.VersionPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Version
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.DDSConfigurationSection.VersionPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.DDSConfigurationSection.VersionPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Vendor Property
+        /// <summary>
+        /// The XML name of the <see cref="Vendor"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string VendorPropertyName = "vendor";
+        
+        /// <summary>
+        /// Gets or sets the Vendor.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Vendor.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DDSConfigurationSection.VendorPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Vendor
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.DDSConfigurationSection.VendorPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.DDSConfigurationSection.VendorPropertyName] = value;
+            }
+        }
+        #endregion
+        
         #region Domains Property
         /// <summary>
         /// The XML name of the <see cref="Domains"/> property.
@@ -128,6 +180,58 @@ namespace Doopec.Configuration
             set
             {
                 base[global::Doopec.Configuration.DDSConfigurationSection.LogLevelPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region BoostrapType Property
+        /// <summary>
+        /// The XML name of the <see cref="BoostrapType"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string BoostrapTypePropertyName = "boostrapType";
+        
+        /// <summary>
+        /// Gets or sets the BoostrapType.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The BoostrapType.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DDSConfigurationSection.BoostrapTypePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Dds.BoostrapType BoostrapType
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Dds.BoostrapType)(base[global::Doopec.Configuration.DDSConfigurationSection.BoostrapTypePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.DDSConfigurationSection.BoostrapTypePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region QoSProfiles Property
+        /// <summary>
+        /// The XML name of the <see cref="QoSProfiles"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string QoSProfilesPropertyName = "qoSProfiles";
+        
+        /// <summary>
+        /// Gets or sets the QoSProfiles.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The QoSProfiles.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.DDSConfigurationSection.QoSProfilesPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Dds.QoSProfiles QoSProfiles
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Dds.QoSProfiles)(base[global::Doopec.Configuration.DDSConfigurationSection.QoSProfilesPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.DDSConfigurationSection.QoSProfilesPropertyName] = value;
             }
         }
         #endregion
@@ -585,18 +689,18 @@ namespace Doopec.Configuration.Dds
     
     
     /// <summary>
-    /// A collection of Domain instances.
+    /// A collection of DomainParticipant instances.
     /// </summary>
-    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::Doopec.Configuration.Dds.Domain), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate, AddItemName=global::Doopec.Configuration.Dds.Domains.DomainPropertyName)]
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::Doopec.Configuration.Dds.DomainParticipant), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate, AddItemName=global::Doopec.Configuration.Dds.Domains.DomainParticipantPropertyName)]
     public partial class Domains : global::System.Configuration.ConfigurationElementCollection
     {
         
         #region Constants
         /// <summary>
-        /// The XML name of the individual <see cref="global::Doopec.Configuration.Dds.Domain"/> instances in this collection.
+        /// The XML name of the individual <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> instances in this collection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string DomainPropertyName = "domain";
+        internal const string DomainParticipantPropertyName = "domain";
         #endregion
         
         #region Overrides
@@ -621,7 +725,7 @@ namespace Doopec.Configuration.Dds
         {
             get
             {
-                return global::Doopec.Configuration.Dds.Domains.DomainPropertyName;
+                return global::Doopec.Configuration.Dds.Domains.DomainParticipantPropertyName;
             }
         }
         
@@ -635,7 +739,7 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         protected override bool IsElementName(string elementName)
         {
-            return (elementName == global::Doopec.Configuration.Dds.Domains.DomainPropertyName);
+            return (elementName == global::Doopec.Configuration.Dds.Domains.DomainParticipantPropertyName);
         }
         
         /// <summary>
@@ -648,57 +752,57 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
         {
-            return ((global::Doopec.Configuration.Dds.Domain)(element)).Id;
+            return ((global::Doopec.Configuration.Dds.DomainParticipant)(element)).Id;
         }
         
         /// <summary>
-        /// Creates a new <see cref="global::Doopec.Configuration.Dds.Domain"/>.
+        /// Creates a new <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/>.
         /// </summary>
         /// <returns>
-        /// A new <see cref="global::Doopec.Configuration.Dds.Domain"/>.
+        /// A new <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/>.
         /// </returns>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         protected override global::System.Configuration.ConfigurationElement CreateNewElement()
         {
-            return new global::Doopec.Configuration.Dds.Domain();
+            return new global::Doopec.Configuration.Dds.DomainParticipant();
         }
         #endregion
         
         #region Indexer
         /// <summary>
-        /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> at the specified index.
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> at the specified index.
         /// </summary>
-        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain this[int index]
+        public global::Doopec.Configuration.Dds.DomainParticipant this[int index]
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(index)));
+                return ((global::Doopec.Configuration.Dds.DomainParticipant)(base.BaseGet(index)));
             }
         }
         
         /// <summary>
-        /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> with the specified key.
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> with the specified key.
         /// </summary>
-        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain this[object id]
+        public global::Doopec.Configuration.Dds.DomainParticipant this[object id]
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(id)));
+                return ((global::Doopec.Configuration.Dds.DomainParticipant)(base.BaseGet(id)));
             }
         }
         #endregion
         
         #region Add
         /// <summary>
-        /// Adds the specified <see cref="global::Doopec.Configuration.Dds.Domain"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// Adds the specified <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
-        /// <param name="domain">The <see cref="global::Doopec.Configuration.Dds.Domain"/> to add.</param>
+        /// <param name="domain">The <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to add.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public void Add(global::Doopec.Configuration.Dds.Domain domain)
+        public void Add(global::Doopec.Configuration.Dds.DomainParticipant domain)
         {
             base.BaseAdd(domain);
         }
@@ -706,11 +810,11 @@ namespace Doopec.Configuration.Dds
         
         #region Remove
         /// <summary>
-        /// Removes the specified <see cref="global::Doopec.Configuration.Dds.Domain"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// Removes the specified <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
-        /// <param name="domain">The <see cref="global::Doopec.Configuration.Dds.Domain"/> to remove.</param>
+        /// <param name="domain">The <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to remove.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public void Remove(global::Doopec.Configuration.Dds.Domain domain)
+        public void Remove(global::Doopec.Configuration.Dds.DomainParticipant domain)
         {
             base.BaseRemove(this.GetElementKey(domain));
         }
@@ -718,23 +822,23 @@ namespace Doopec.Configuration.Dds
         
         #region GetItem
         /// <summary>
-        /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> at the specified index.
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> at the specified index.
         /// </summary>
-        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain GetItemAt(int index)
+        public global::Doopec.Configuration.Dds.DomainParticipant GetItemAt(int index)
         {
-            return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(index)));
+            return ((global::Doopec.Configuration.Dds.DomainParticipant)(base.BaseGet(index)));
         }
         
         /// <summary>
-        /// Gets the <see cref="global::Doopec.Configuration.Dds.Domain"/> with the specified key.
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> with the specified key.
         /// </summary>
-        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.Domain"/> to retrieve.</param>
+        /// <param name="id">The key of the <see cref="global::Doopec.Configuration.Dds.DomainParticipant"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        public global::Doopec.Configuration.Dds.Domain GetItemByKey(int id)
+        public global::Doopec.Configuration.Dds.DomainParticipant GetItemByKey(int id)
         {
-            return ((global::Doopec.Configuration.Dds.Domain)(base.BaseGet(((object)(id)))));
+            return ((global::Doopec.Configuration.Dds.DomainParticipant)(base.BaseGet(((object)(id)))));
         }
         #endregion
         
@@ -755,9 +859,9 @@ namespace Doopec.Configuration.Dds
     
     
     /// <summary>
-    /// The Domain Configuration Element.
+    /// The DomainParticipant Configuration Element.
     /// </summary>
-    public partial class Domain : global::System.Configuration.ConfigurationElement
+    public partial class DomainParticipant : global::System.Configuration.ConfigurationElement
     {
         
         #region IsReadOnly override
@@ -784,12 +888,12 @@ namespace Doopec.Configuration.Dds
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The Name.")]
         [global::System.ComponentModel.ReadOnlyAttribute(true)]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.NamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue="")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainParticipant.NamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue="")]
         public virtual string Name
         {
             get
             {
-                return ((string)(base[global::Doopec.Configuration.Dds.Domain.NamePropertyName]));
+                return ((string)(base[global::Doopec.Configuration.Dds.DomainParticipant.NamePropertyName]));
             }
         }
         #endregion
@@ -808,16 +912,16 @@ namespace Doopec.Configuration.Dds
         [global::System.ComponentModel.DescriptionAttribute("Domain IDs should be between 0 and 231 (inclusive) due to the way UDP ports are a" +
             "ssigned to domain IDs. In each  process, up to 120 domain participants are suppo" +
             "rted in each domain")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.IdPropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false, DefaultValue=0)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainParticipant.IdPropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false, DefaultValue=0)]
         public virtual int Id
         {
             get
             {
-                return ((int)(base[global::Doopec.Configuration.Dds.Domain.IdPropertyName]));
+                return ((int)(base[global::Doopec.Configuration.Dds.DomainParticipant.IdPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.Domain.IdPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainParticipant.IdPropertyName] = value;
             }
         }
         #endregion
@@ -834,42 +938,68 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The TransportProfile.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainParticipant.TransportProfilePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.TransportProfile TransportProfile
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.TransportProfile)(base[global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName]));
+                return ((global::Doopec.Configuration.Dds.TransportProfile)(base[global::Doopec.Configuration.Dds.DomainParticipant.TransportProfilePropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.Domain.TransportProfilePropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainParticipant.TransportProfilePropertyName] = value;
             }
         }
         #endregion
         
-        #region QoS Property
+        #region QoSProfile Property
         /// <summary>
-        /// The XML name of the <see cref="QoS"/> property.
+        /// The XML name of the <see cref="QoSProfile"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        internal const string QoSPropertyName = "qoS";
+        internal const string QoSProfilePropertyName = "qoSProfile";
         
         /// <summary>
-        /// Gets or sets the QoS.
+        /// Gets or sets the QoSProfile.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
-        [global::System.ComponentModel.DescriptionAttribute("The QoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.Domain.QoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public virtual global::Doopec.Configuration.Dds.DomainQoS QoS
+        [global::System.ComponentModel.DescriptionAttribute("The QoSProfile.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainParticipant.QoSProfilePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Dds.QoSProfile QoSProfile
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DomainQoS)(base[global::Doopec.Configuration.Dds.Domain.QoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.QoSProfile)(base[global::Doopec.Configuration.Dds.DomainParticipant.QoSProfilePropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.Domain.QoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.DomainParticipant.QoSProfilePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Guid Property
+        /// <summary>
+        /// The XML name of the <see cref="Guid"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string GuidPropertyName = "guid";
+        
+        /// <summary>
+        /// Gets or sets the Guid.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Guid.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainParticipant.GuidPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.Dds.GuiKind Guid
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Dds.GuiKind)(base[global::Doopec.Configuration.Dds.DomainParticipant.GuidPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.DomainParticipant.GuidPropertyName] = value;
             }
         }
         #endregion
@@ -2328,9 +2458,9 @@ namespace Doopec.Configuration.Dds
     
     
     /// <summary>
-    /// The DomainQoS Configuration Element.
+    /// The QoSProfilePolicy Configuration Element.
     /// </summary>
-    public partial class DomainQoS : global::System.Configuration.ConfigurationElement
+    public partial class QoSProfilePolicy : global::System.Configuration.ConfigurationElement
     {
         
         #region IsReadOnly override
@@ -2341,6 +2471,58 @@ namespace Doopec.Configuration.Dds
         public override bool IsReadOnly()
         {
             return false;
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Name.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
+        public virtual string Name
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.NamePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.NamePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region ExtendsQos Property
+        /// <summary>
+        /// The XML name of the <see cref="ExtendsQos"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string ExtendsQosPropertyName = "extendsQos";
+        
+        /// <summary>
+        /// Gets or sets the ExtendsQos.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The ExtendsQos.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.ExtendsQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string ExtendsQos
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.ExtendsQosPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.ExtendsQosPropertyName] = value;
+            }
         }
         #endregion
         
@@ -2356,16 +2538,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DomainParticipantQos.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DomainParticipantQoS DomainParticipantQos
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DomainParticipantQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DomainParticipantQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantQosPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantQosPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantQosPropertyName] = value;
             }
         }
         #endregion
@@ -2382,16 +2564,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The PublisherQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.PublisherQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.PublisherQoS PublisherQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.PublisherQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.PublisherQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.PublisherQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.PublisherQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.PublisherQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2408,16 +2590,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The SubscriberQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.SubscriberQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.SubscriberQoS SubscriberQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.SubscriberQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.SubscriberQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.SubscriberQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.SubscriberQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.SubscriberQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2434,16 +2616,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The TopicQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.TopicQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.TopicQoS TopicQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.TopicQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.TopicQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.TopicQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.TopicQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.TopicQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2460,16 +2642,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DataWriterQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.DataWriterQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DataWriterQoS DataWriterQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DataWriterQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DataWriterQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DataWriterQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.DataWriterQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DataWriterQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2486,16 +2668,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DataReaderQoS.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.DataReaderQoSPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DataReaderQoS DataReaderQoS
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DataReaderQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DataReaderQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DataReaderQoSPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.DataReaderQoSPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DataReaderQoSPropertyName] = value;
             }
         }
         #endregion
@@ -2512,16 +2694,16 @@ namespace Doopec.Configuration.Dds
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
         [global::System.ComponentModel.DescriptionAttribute("The DomainParticipantFactoryQos.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantFactoryQosPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public virtual global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS DomainParticipantFactoryQos
         {
             get
             {
-                return ((global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS)(base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName]));
+                return ((global::Doopec.Configuration.Dds.DomainParticipantFactoryQoS)(base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantFactoryQosPropertyName]));
             }
             set
             {
-                base[global::Doopec.Configuration.Dds.DomainQoS.DomainParticipantFactoryQosPropertyName] = value;
+                base[global::Doopec.Configuration.Dds.QoSProfilePolicy.DomainParticipantFactoryQosPropertyName] = value;
             }
         }
         #endregion
@@ -5279,6 +5461,398 @@ namespace Doopec.Configuration.Rtps
         #endregion
     }
 }
+namespace Doopec.Configuration.Dds
+{
+    
+    
+    /// <summary>
+    /// The BoostrapType Configuration Element.
+    /// </summary>
+    public partial class BoostrapType : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Type Property
+        /// <summary>
+        /// The XML name of the <see cref="Type"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string TypePropertyName = "type";
+        
+        /// <summary>
+        /// Gets or sets the Type.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Type.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.BoostrapType.TypePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Type
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.BoostrapType.TypePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.BoostrapType.TypePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Name.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.BoostrapType.NamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Name
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.BoostrapType.NamePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.BoostrapType.NamePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace Doopec.Configuration.Dds
+{
+    
+    
+    /// <summary>
+    /// A collection of QoSProfilePolicy instances.
+    /// </summary>
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::Doopec.Configuration.Dds.QoSProfilePolicy), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate, AddItemName=global::Doopec.Configuration.Dds.QoSProfiles.QoSProfilePolicyPropertyName)]
+    public partial class QoSProfiles : global::System.Configuration.ConfigurationElementCollection
+    {
+        
+        #region Constants
+        /// <summary>
+        /// The XML name of the individual <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> instances in this collection.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string QoSProfilePolicyPropertyName = "qoSProfileDef";
+        #endregion
+        
+        #region Overrides
+        /// <summary>
+        /// Gets the type of the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <returns>The <see cref="global::System.Configuration.ConfigurationElementCollectionType"/> of this collection.</returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override global::System.Configuration.ConfigurationElementCollectionType CollectionType
+        {
+            get
+            {
+                return global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the name used to identify this collection of elements
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        protected override string ElementName
+        {
+            get
+            {
+                return global::Doopec.Configuration.Dds.QoSProfiles.QoSProfilePolicyPropertyName;
+            }
+        }
+        
+        /// <summary>
+        /// Indicates whether the specified <see cref="global::System.Configuration.ConfigurationElement"/> exists in the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <param name="elementName">The name of the element to verify.</param>
+        /// <returns>
+        /// <see langword="true"/> if the element exists in the collection; otherwise, <see langword="false"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        protected override bool IsElementName(string elementName)
+        {
+            return (elementName == global::Doopec.Configuration.Dds.QoSProfiles.QoSProfilePolicyPropertyName);
+        }
+        
+        /// <summary>
+        /// Gets the element key for the specified configuration element.
+        /// </summary>
+        /// <param name="element">The <see cref="global::System.Configuration.ConfigurationElement"/> to return the key for.</param>
+        /// <returns>
+        /// An <see cref="object"/> that acts as the key for the specified <see cref="global::System.Configuration.ConfigurationElement"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
+        {
+            return ((global::Doopec.Configuration.Dds.QoSProfilePolicy)(element)).Name;
+        }
+        
+        /// <summary>
+        /// Creates a new <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/>.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        protected override global::System.Configuration.ConfigurationElement CreateNewElement()
+        {
+            return new global::Doopec.Configuration.Dds.QoSProfilePolicy();
+        }
+        #endregion
+        
+        #region Indexer
+        /// <summary>
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public global::Doopec.Configuration.Dds.QoSProfilePolicy this[int index]
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Dds.QoSProfilePolicy)(base.BaseGet(index)));
+            }
+        }
+        
+        /// <summary>
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> with the specified key.
+        /// </summary>
+        /// <param name="name">The key of the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public global::Doopec.Configuration.Dds.QoSProfilePolicy this[object name]
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.Dds.QoSProfilePolicy)(base.BaseGet(name)));
+            }
+        }
+        #endregion
+        
+        #region Add
+        /// <summary>
+        /// Adds the specified <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <param name="qoSProfileDef">The <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to add.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public void Add(global::Doopec.Configuration.Dds.QoSProfilePolicy qoSProfileDef)
+        {
+            base.BaseAdd(qoSProfileDef);
+        }
+        #endregion
+        
+        #region Remove
+        /// <summary>
+        /// Removes the specified <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <param name="qoSProfileDef">The <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to remove.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public void Remove(global::Doopec.Configuration.Dds.QoSProfilePolicy qoSProfileDef)
+        {
+            base.BaseRemove(this.GetElementKey(qoSProfileDef));
+        }
+        #endregion
+        
+        #region GetItem
+        /// <summary>
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index of the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public global::Doopec.Configuration.Dds.QoSProfilePolicy GetItemAt(int index)
+        {
+            return ((global::Doopec.Configuration.Dds.QoSProfilePolicy)(base.BaseGet(index)));
+        }
+        
+        /// <summary>
+        /// Gets the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> with the specified key.
+        /// </summary>
+        /// <param name="name">The key of the <see cref="global::Doopec.Configuration.Dds.QoSProfilePolicy"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public global::Doopec.Configuration.Dds.QoSProfilePolicy GetItemByKey(string name)
+        {
+            return ((global::Doopec.Configuration.Dds.QoSProfilePolicy)(base.BaseGet(((object)(name)))));
+        }
+        #endregion
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region IncludeFile Property
+        /// <summary>
+        /// The XML name of the <see cref="IncludeFile"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string IncludeFilePropertyName = "includeFile";
+        
+        /// <summary>
+        /// Gets or sets the IncludeFile.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The IncludeFile.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfiles.IncludeFilePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string IncludeFile
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.QoSProfiles.IncludeFilePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.QoSProfiles.IncludeFilePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace Doopec.Configuration.Dds
+{
+    
+    
+    /// <summary>
+    /// The QoSProfile Configuration Element.
+    /// </summary>
+    public partial class QoSProfile : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Name.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.QoSProfile.NamePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Name
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.QoSProfile.NamePropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.QoSProfile.NamePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace Doopec.Configuration.Dds
+{
+    
+    
+    /// <summary>
+    /// The GuiKind Configuration Element.
+    /// </summary>
+    public partial class GuiKind : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Kind Property
+        /// <summary>
+        /// The XML name of the <see cref="Kind"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string KindPropertyName = "kind";
+        
+        /// <summary>
+        /// Gets or sets the Kind.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Kind.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.GuiKind.KindPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::Doopec.Configuration.GuiKind Kind
+        {
+            get
+            {
+                return ((global::Doopec.Configuration.GuiKind)(base[global::Doopec.Configuration.Dds.GuiKind.KindPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.GuiKind.KindPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Val Property
+        /// <summary>
+        /// The XML name of the <see cref="Val"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        internal const string ValPropertyName = "val";
+        
+        /// <summary>
+        /// Gets or sets the Val.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+        [global::System.ComponentModel.DescriptionAttribute("The Val.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Doopec.Configuration.Dds.GuiKind.ValPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Val
+        {
+            get
+            {
+                return ((string)(base[global::Doopec.Configuration.Dds.GuiKind.ValPropertyName]));
+            }
+            set
+            {
+                base[global::Doopec.Configuration.Dds.GuiKind.ValPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
 namespace Doopec.Configuration
 {
     
@@ -5552,5 +6126,42 @@ namespace Doopec.Configuration
         /// ASSIGNABLE_TYPE_CONSISTENCY.
         /// </summary>
         ASSIGNABLE_TYPE_CONSISTENCY = 3,
+    }
+}
+namespace Doopec.Configuration
+{
+    
+    
+    /// <summary>
+    /// GuiKind.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.7")]
+    public enum GuiKind
+    {
+        
+        /// <summary>
+        /// Fixed.
+        /// </summary>
+        Fixed,
+        
+        /// <summary>
+        /// Random.
+        /// </summary>
+        Random,
+        
+        /// <summary>
+        /// AutoId.
+        /// </summary>
+        AutoId,
+        
+        /// <summary>
+        /// AutoIdFromIP.
+        /// </summary>
+        AutoIdFromIP,
+        
+        /// <summary>
+        /// AutoIdFromMac.
+        /// </summary>
+        AutoIdFromMac,
     }
 }

@@ -80,9 +80,30 @@
         <enumerationLiteral name="ASSIGNABLE_TYPE_CONSISTENCY" value="3" />
       </literals>
     </enumeratedType>
+    <enumeratedType name="GuiKind" namespace="Doopec.Configuration">
+      <literals>
+        <enumerationLiteral name="Fixed" />
+        <enumerationLiteral name="Random" />
+        <enumerationLiteral name="AutoId" />
+        <enumerationLiteral name="AutoIdFromIP" />
+        <enumerationLiteral name="AutoIdFromMac" />
+      </literals>
+    </enumeratedType>
   </typeDefinitions>
   <configurationElements>
     <configurationSection name="DDSConfigurationSection" namespace="Doopec.Configuration" codeGenOptions="Singleton, XmlnsProperty" xmlSectionName="DDS">
+      <attributeProperties>
+        <attributeProperty name="Version" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="version" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Vendor" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="vendor" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
       <elementProperties>
         <elementProperty name="Domains" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="domains" isReadOnly="false">
           <type>
@@ -92,6 +113,16 @@
         <elementProperty name="LogLevel" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="logLevel" isReadOnly="false">
           <type>
             <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/Log4NetLevel" />
+          </type>
+        </elementProperty>
+        <elementProperty name="BoostrapType" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="boostrapType" isReadOnly="false">
+          <type>
+            <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/BoostrapType" />
+          </type>
+        </elementProperty>
+        <elementProperty name="QoSProfiles" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="qoSProfiles" isReadOnly="false">
+          <type>
+            <configurationElementCollectionMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/QoSProfiles" />
           </type>
         </elementProperty>
       </elementProperties>
@@ -148,10 +179,10 @@
     </configurationElementCollection>
     <configurationElementCollection name="Domains" namespace="Doopec.Configuration.Dds" xmlItemName="domain" codeGenOptions="Indexer, AddMethod, RemoveMethod, GetItemMethods">
       <itemType>
-        <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/Domain" />
+        <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/DomainParticipant" />
       </itemType>
     </configurationElementCollection>
-    <configurationElement name="Domain" namespace="Doopec.Configuration.Dds">
+    <configurationElement name="DomainParticipant" namespace="Doopec.Configuration.Dds">
       <attributeProperties>
         <attributeProperty name="Name" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="name" isReadOnly="true" defaultValue="&quot;&quot;">
           <type>
@@ -170,9 +201,14 @@
             <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/TransportProfile" />
           </type>
         </elementProperty>
-        <elementProperty name="QoS" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="qoS" isReadOnly="false">
+        <elementProperty name="QoSProfile" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="qoSProfile" isReadOnly="false">
           <type>
-            <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/DomainQoS" />
+            <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/QoSProfile" />
+          </type>
+        </elementProperty>
+        <elementProperty name="Guid" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="guid" isReadOnly="false">
+          <type>
+            <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/GuiKind" />
           </type>
         </elementProperty>
       </elementProperties>
@@ -461,7 +497,19 @@
         </elementProperty>
       </elementProperties>
     </configurationElement>
-    <configurationElement name="DomainQoS" namespace="Doopec.Configuration.Dds">
+    <configurationElement name="QoSProfilePolicy" namespace="Doopec.Configuration.Dds">
+      <attributeProperties>
+        <attributeProperty name="Name" isRequired="true" isKey="true" isDefaultCollection="false" xmlName="name" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="ExtendsQos" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="extendsQos" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
       <elementProperties>
         <elementProperty name="DomainParticipantQos" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="domainParticipantQos" isReadOnly="false">
           <type>
@@ -859,7 +907,7 @@
         </attributeProperty>
       </attributeProperties>
     </configurationElement>
-    <configurationElement name="QoSOwnershipStrength" namespace="Configuration.Dds">
+    <configurationElement name="QoSOwnershipStrength" namespace="Doopec.Configuration.Dds">
       <attributeProperties>
         <attributeProperty name="Value" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="value" isReadOnly="false">
           <type>
@@ -1003,7 +1051,7 @@
         </attributeProperty>
       </attributeProperties>
     </configurationElement>
-    <configurationElement name="DomainParticipantFactoryQoS" namespace="Configuration.Dds">
+    <configurationElement name="DomainParticipantFactoryQoS" namespace="Doopec.Configuration.Dds">
       <baseClass>
         <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/QoS" />
       </baseClass>
@@ -1027,6 +1075,55 @@
     <configurationElement name="Generic_TODO" namespace="Doopec.Configuration.Rtps">
       <attributeProperties>
         <attributeProperty name="Val" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="val" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElement name="BoostrapType" namespace="Doopec.Configuration.Dds">
+      <attributeProperties>
+        <attributeProperty name="Type" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="type" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Name" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="name" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElementCollection name="QoSProfiles" namespace="Doopec.Configuration.Dds" xmlItemName="qoSProfileDef" codeGenOptions="Indexer, AddMethod, RemoveMethod, GetItemMethods">
+      <attributeProperties>
+        <attributeProperty name="IncludeFile" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="includeFile" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+      <itemType>
+        <configurationElementMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/QoSProfilePolicy" />
+      </itemType>
+    </configurationElementCollection>
+    <configurationElement name="QoSProfile" namespace="Doopec.Configuration.Dds">
+      <attributeProperties>
+        <attributeProperty name="Name" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="name" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElement name="GuiKind" namespace="Doopec.Configuration.Dds">
+      <attributeProperties>
+        <attributeProperty name="Kind" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="kind" isReadOnly="false">
+          <type>
+            <enumeratedTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/GuiKind" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Val" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="val" isReadOnly="false">
           <type>
             <externalTypeMoniker name="/d0ed9acb-0435-4532-afdd-b5115bc4d562/String" />
           </type>

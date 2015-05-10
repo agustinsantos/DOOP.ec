@@ -25,6 +25,7 @@ namespace Doopec.Rtps.Messages
             }
            
              IoBuffer buff = IoBuffer.Allocate(1024);
+             buff.AutoExpand = true;
              switch (scheme)
              {
                  default:
@@ -56,6 +57,24 @@ namespace Doopec.Rtps.Messages
             else if (scheme.Equals(DataEncapsulation.PL_CDR_BE_HEADER) || scheme.Equals(DataEncapsulation.PL_CDR_LE_HEADER))
             {
                 return ParameterListEncapsulation.Deserialize(buffer, length);
+            }
+            else
+                throw new ApplicationException("Unkonw scheme encapsulation " + scheme);
+
+        }
+
+        public static T Deserialize<T>(IoBuffer buffer) where T : new()
+        {
+            int pos = buffer.Position;
+            EncapsulationScheme scheme = buffer.GetEncapsulationScheme();
+            buffer.Position = pos;
+            if (scheme.Equals(DataEncapsulation.CDR_BE_HEADER) || scheme.Equals(DataEncapsulation.CDR_LE_HEADER))
+            {
+                return CDREncapsulation.Deserialize<T>(buffer);
+            }
+            else if (scheme.Equals(DataEncapsulation.PL_CDR_BE_HEADER) || scheme.Equals(DataEncapsulation.PL_CDR_LE_HEADER))
+            {
+                return ParameterListEncapsulation.Deserialize<T>(buffer);
             }
             else
                 throw new ApplicationException("Unkonw scheme encapsulation " + scheme);

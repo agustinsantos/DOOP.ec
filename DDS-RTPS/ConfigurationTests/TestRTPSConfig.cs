@@ -30,7 +30,7 @@ namespace ConfigurationTests
             Assert.AreEqual(1, rtpsConfig.Transports.Count);
             Assert.AreEqual("defaultRtps", rtpsConfig.Transports[0].Name);
             Assert.AreEqual("defaultRtps", rtpsConfig.Transports["defaultRtps"].Name);
-            Assert.AreEqual("namespace.class, assembly", rtpsConfig.Transports["defaultRtps"].Type);
+            Assert.AreEqual("Doopec.Rtps.RtpsTransport.RtpsEngine, Doopec", rtpsConfig.Transports["defaultRtps"].Type);
         }
 
         [TestMethod]

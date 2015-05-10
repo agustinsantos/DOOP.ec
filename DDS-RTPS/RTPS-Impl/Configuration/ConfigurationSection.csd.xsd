@@ -22,7 +22,27 @@
 					<xs:documentation>The LogLevel.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="boostrapType" type="tns:Doopec.Configuration.Dds.BoostrapTypeCT">
+				<xs:annotation>
+					<xs:documentation>The BoostrapType.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="qoSProfiles" type="tns:Doopec.Configuration.Dds.QoSProfilesCT">
+				<xs:annotation>
+					<xs:documentation>The QoSProfiles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:choice>
+		<xs:attribute name="version" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Version.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vendor" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Vendor.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="Doopec.Configuration.RTPSConfigurationSectionCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -78,23 +98,28 @@
 	</xs:complexType>
 	<xs:complexType name="Doopec.Configuration.Dds.DomainsCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="domain" type="tns:Doopec.Configuration.Dds.DomainCT">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="domain" type="tns:Doopec.Configuration.Dds.DomainParticipantCT">
 				<xs:annotation>
-					<xs:documentation>The Domain Configuration Element.</xs:documentation>
+					<xs:documentation>The DomainParticipant Configuration Element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="Doopec.Configuration.Dds.DomainCT">
+	<xs:complexType name="Doopec.Configuration.Dds.DomainParticipantCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element minOccurs="1" name="transportProfile" type="tns:Doopec.Configuration.Dds.TransportProfileCT">
 				<xs:annotation>
 					<xs:documentation>The TransportProfile.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="qoS" type="tns:Doopec.Configuration.Dds.DomainQoSCT">
+			<xs:element minOccurs="0" name="qoSProfile" type="tns:Doopec.Configuration.Dds.QoSProfileCT">
 				<xs:annotation>
-					<xs:documentation>The QoS.</xs:documentation>
+					<xs:documentation>The QoSProfile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="guid" type="tns:Doopec.Configuration.Dds.GuiKindCT">
+				<xs:annotation>
+					<xs:documentation>The Guid.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -371,7 +396,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="Doopec.Configuration.Dds.DomainQoSCT">
+	<xs:complexType name="Doopec.Configuration.Dds.QoSProfilePolicyCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element minOccurs="0" name="domainParticipantQos" type="tns:Doopec.Configuration.Dds.DomainParticipantQoSCT">
 				<xs:annotation>
@@ -403,12 +428,22 @@
 					<xs:documentation>The DataReaderQoS.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="domainParticipantFactoryQos" type="tns:Configuration.Dds.DomainParticipantFactoryQoSCT">
+			<xs:element minOccurs="0" name="domainParticipantFactoryQos" type="tns:Doopec.Configuration.Dds.DomainParticipantFactoryQoSCT">
 				<xs:annotation>
 					<xs:documentation>The DomainParticipantFactoryQos.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
+		<xs:attribute name="name" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="extendsQos" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The ExtendsQos.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="Doopec.Configuration.Dds.TopicQoSCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -538,7 +573,7 @@
 					<xs:documentation>The Ownership.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="ownershipStrength" type="tns:Configuration.Dds.QoSOwnershipStrengthCT">
+			<xs:element minOccurs="0" name="ownershipStrength" type="tns:Doopec.Configuration.Dds.QoSOwnershipStrengthCT">
 				<xs:annotation>
 					<xs:documentation>The OwnershipStrength.</xs:documentation>
 				</xs:annotation>
@@ -755,7 +790,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="Configuration.Dds.QoSOwnershipStrengthCT">
+	<xs:complexType name="Doopec.Configuration.Dds.QoSOwnershipStrengthCT">
 		<xs:attribute name="value" use="required" type="xs:int">
 			<xs:annotation>
 				<xs:documentation>The Value.</xs:documentation>
@@ -877,7 +912,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="Configuration.Dds.DomainParticipantFactoryQoSCT">
+	<xs:complexType name="Doopec.Configuration.Dds.DomainParticipantFactoryQoSCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element minOccurs="0" name="entityFactory" type="tns:Doopec.Configuration.Dds.QoSEntityFactoryCT">
 				<xs:annotation>
@@ -900,6 +935,51 @@
 	</xs:complexType>
 	<xs:complexType name="Doopec.Configuration.Rtps.Generic_TODOCT">
 		<xs:attribute name="val" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Val.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Doopec.Configuration.Dds.BoostrapTypeCT">
+		<xs:attribute name="type" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Type.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Doopec.Configuration.Dds.QoSProfilesCT">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="qoSProfileDef" type="tns:Doopec.Configuration.Dds.QoSProfilePolicyCT">
+				<xs:annotation>
+					<xs:documentation>The QoSProfilePolicy Configuration Element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="includeFile" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The IncludeFile.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Doopec.Configuration.Dds.QoSProfileCT">
+		<xs:attribute name="name" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Doopec.Configuration.Dds.GuiKindCT">
+		<xs:attribute name="kind" use="required" type="tns:GuiKind">
+			<xs:annotation>
+				<xs:documentation>The Kind.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="val" use="optional" type="xs:string">
 			<xs:annotation>
 				<xs:documentation>The Val.</xs:documentation>
 			</xs:annotation>
@@ -1126,6 +1206,38 @@
 			<xs:enumeration value="ASSIGNABLE_TYPE_CONSISTENCY">
 				<xs:annotation>
 					<xs:documentation>ASSIGNABLE_TYPE_CONSISTENCY.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GuiKind">
+		<xs:annotation>
+			<xs:documentation>GuiKind.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fixed">
+				<xs:annotation>
+					<xs:documentation>Fixed.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Random">
+				<xs:annotation>
+					<xs:documentation>Random.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AutoId">
+				<xs:annotation>
+					<xs:documentation>AutoId.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AutoIdFromIP">
+				<xs:annotation>
+					<xs:documentation>AutoIdFromIP.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AutoIdFromMac">
+				<xs:annotation>
+					<xs:documentation>AutoIdFromMac.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
