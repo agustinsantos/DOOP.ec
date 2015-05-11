@@ -12,7 +12,7 @@ namespace Rtps.Messages
     {
         private ProtocolId protocol = ProtocolId.PROTOCOL_RTPS;
         private ProtocolVersion version = ProtocolVersion.PROTOCOLVERSION;
-        private VendorId vendorId = VendorId.Sxta;
+        private VendorId vendorId = VendorId.Doopec;
         private GuidPrefix guidPrefix;
 
         public Header()

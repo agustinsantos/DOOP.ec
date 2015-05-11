@@ -26,7 +26,7 @@ namespace Rtps.Structure.Types
         public static readonly VendorId PrismTechGateway = new VendorId() { vendorId = new byte[] { 1, 0xC } };
         public static readonly VendorId PrismTechLite = new VendorId() { vendorId = new byte[] { 1, 0xD } };
         public static readonly VendorId Technicolor = new VendorId() { vendorId = new byte[] { 1, 0xE } };
-        public static readonly VendorId Sxta = new VendorId() { vendorId = new byte[] { 1, 0xF } };
+        public static readonly VendorId Doopec = new VendorId() { vendorId = new byte[] { 1, 0xF } };
 
         /// <summary>
         /// Identifies the vendor of the middleware that implements the protocol.

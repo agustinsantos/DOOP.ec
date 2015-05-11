@@ -162,6 +162,7 @@
     <Compile Include="Rtps\Discovery\SPDPSubscriptionBuiltinTopicData.cs" />
     <Compile Include="Rtps\Discovery\SPDPTopicBuiltinTopicData.cs" />
     <Compile Include="Rtps\Encoders\EncapsulationSchemeEncoder.cs" />
+    <Compile Include="Rtps\Encoders\GuidEncoder.cs" />
     <Compile Include="Rtps\IRtpsDiscovery.cs" />
     <Compile Include="Rtps\IRtpsEngine.cs" />
     <Compile Include="Rtps\Messages\CDREncapsulation.cs">

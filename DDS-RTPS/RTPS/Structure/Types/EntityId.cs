@@ -152,7 +152,7 @@ namespace Rtps.Structure.Types
             }
             EntityId other = (EntityId)obj;
             return comparer.Equals(this.entityKey, other.entityKey) &&
-                        this.entityKey == other.entityKey;
+                        this.entityKind == other.entityKind;
         }
 
         // override object.GetHashCode

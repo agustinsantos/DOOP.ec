@@ -50,7 +50,7 @@ namespace Rtps.Structure.Types
         public GuidPrefix Prefix
         {
             get { return guidPrefix; }
-            internal set { guidPrefix = value; }
+            set { guidPrefix = value; }
         }
 
 
@@ -63,8 +63,8 @@ namespace Rtps.Structure.Types
                 return false;
             }
             GUID other = (GUID)obj;
-            return this.guidPrefix == other.guidPrefix &&
-                        this.entityId == other.entityId;
+            return this.guidPrefix.Equals(other.guidPrefix) &&
+                        this.entityId.Equals(other.entityId);
         }
 
         // override object.GetHashCode

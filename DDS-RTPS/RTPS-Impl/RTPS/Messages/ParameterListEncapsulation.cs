@@ -73,7 +73,7 @@ namespace Doopec.Rtps.Messages
             else
                 buffer.PutEncapsulationScheme(PL_CDR_BE_HEADER);
             buffer.Order = this.order;
-            ParameterList parameters = BuildParameters(dataObj);
+            ParameterList parameters = BuildParameters(dataObj, order);
             buffer.PutParameterList(parameters);
             data = new byte[buffer.Position - initialPos];
             buffer.Position = initialPos;
@@ -90,7 +90,7 @@ namespace Doopec.Rtps.Messages
         public static void Serialize(IoBuffer buffer, object dataObj, ByteOrder order)
         {
             buffer.Order = order;
-            ParameterList parameters = BuildParameters(dataObj);
+            ParameterList parameters = BuildParameters(dataObj, order);
             Serialize(buffer, parameters, order);
         }
         public static void Serialize(IoBuffer buffer, ParameterList parameters, ByteOrder order)
@@ -109,7 +109,7 @@ namespace Doopec.Rtps.Messages
             buffer.Position = finalPos;
         }
 
-        private static ParameterList BuildParameters(object obj)
+        private static ParameterList BuildParameters(object obj, ByteOrder order)
         {
             var type = TypeExplorer.ExploreType(obj.GetType());
             //var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
@@ -122,6 +122,7 @@ namespace Doopec.Rtps.Messages
                 //uint id = field.GetProperty().MemberId;
                 parameter.ParameterId = (ParameterId)member.GetProperty().MemberId; ;
                 IoBuffer buffer = ByteBufferAllocator.Instance.Allocate(64);
+                buffer.Order = order;
                 buffer.AutoExpand = true;
                 if (member.GetProperty().IsProperty)
                 {
@@ -162,7 +163,7 @@ namespace Doopec.Rtps.Messages
             }
             int initialPos = buffer.Position;
             ParameterList parameters = buffer.GetParameterList();
-            return BuildObject<T>(parameters);
+            return BuildObject<T>(parameters, buffer.Order);
         }
 
         public static ParameterListEncapsulation Deserialize(IoBuffer buffer, int length)
@@ -185,7 +186,7 @@ namespace Doopec.Rtps.Messages
             return new ParameterListEncapsulation(buffer, buffer.Order, length);
         }
 
-        private static T BuildObject<T>(ParameterList parameters) where T : new()
+        private static T BuildObject<T>(ParameterList parameters, ByteOrder order) where T : new()
         {
             T obj = new T();
             var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
@@ -194,6 +195,7 @@ namespace Doopec.Rtps.Messages
             foreach (var field in fields)
             {
                 IoBuffer buffer = IoBuffer.Wrap(parameters.Value[cnt].Bytes);
+                buffer.Order = order;
                 MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethods().Where(x => x.Name == "Deserialize" && x.IsGenericMethod).SingleOrDefault(); ;
                 //MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethod("Deserialize", new Type[] { buffer.GetType() });
                 MethodInfo generic = method.MakeGenericMethod(field.FieldType);
