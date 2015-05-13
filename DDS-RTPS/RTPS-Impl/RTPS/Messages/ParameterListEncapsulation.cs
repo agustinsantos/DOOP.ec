@@ -188,19 +188,35 @@ namespace Doopec.Rtps.Messages
 
         private static T BuildObject<T>(ParameterList parameters, ByteOrder order) where T : new()
         {
+            var type = TypeExplorer.ExploreType(typeof(T));
+
             T obj = new T();
-            var fields = obj.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                               .Where(fi => (fi.Attributes & FieldAttributes.NotSerialized) == 0);
             int cnt = 0;
-            foreach (var field in fields)
+            StructureType structType = type as StructureType;
+            foreach (var member in structType.GetMember())
             {
-                IoBuffer buffer = IoBuffer.Wrap(parameters.Value[cnt].Bytes);
+                Parameter parameter = parameters.Value.Where(p => (uint)p.ParameterId == member.GetProperty().MemberId).FirstOrDefault();
+                if (parameter == null)
+                    continue;
+                IoBuffer buffer = IoBuffer.Wrap(parameter.Bytes);
                 buffer.Order = order;
                 MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethods().Where(x => x.Name == "Deserialize" && x.IsGenericMethod).SingleOrDefault(); ;
-                //MethodInfo method = typeof(Doopec.Serializer.Serializer).GetMethod("Deserialize", new Type[] { buffer.GetType() });
-                MethodInfo generic = method.MakeGenericMethod(field.FieldType);
-                object val = generic.Invoke(null, new object[] { buffer });
-                field.SetValue(obj, val);
+                if (member.GetProperty().IsProperty)
+                {
+                    var field = obj.GetType().GetProperty(member.GetProperty().Name);
+
+                    MethodInfo generic = method.MakeGenericMethod(field.PropertyType);
+                    object val = generic.Invoke(null, new object[] { buffer });
+                    field.SetValue(obj, val);
+                }
+                else
+                {
+                    var field = obj.GetType().GetField(member.GetProperty().Name);
+
+                    MethodInfo generic = method.MakeGenericMethod(field.FieldType);
+                    object val = generic.Invoke(null, new object[] { buffer });
+                    field.SetValue(obj, val);
+                }
             }
             return obj;
         }

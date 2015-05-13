@@ -6,6 +6,7 @@ using Rtps.Behavior.Types;
 using Rtps.Messages.Types;
 using Rtps.Structure;
 using Rtps.Structure.Types;
+using System;
 using System.Collections.Generic;
 using System.Net;
 
@@ -37,7 +38,7 @@ namespace Rtps.Discovery.Spdp
 
         public override string ToString()
         {
-            return string.Format("DCPSParticipant{key: {0}, QoS: {1}}", this.Key, this.UserData);
+            return string.Format("DCPSParticipant{key: {0}, QoS: {1}}", this.Key, BitConverter.ToString(this.UserData));
         }
     }
 #if DELETEME

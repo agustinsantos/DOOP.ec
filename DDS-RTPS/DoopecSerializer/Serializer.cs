@@ -121,6 +121,17 @@ namespace Doopec.Serializer
             return (T)o;
         }
 
+        public static object Deserialize(IoBuffer buffer, Type type)
+        {
+            if (!IsInitialized)
+                throw new InvalidOperationException("Serializer not initialized");
+
+            ushort id = GetTypeID(type);
+            object o;
+            s_deserializerSwitchTyped(buffer, out o, id);
+            return o;
+        }
+
         public static object Deserialize(IoBuffer buffer)
         {
             if (!IsInitialized)

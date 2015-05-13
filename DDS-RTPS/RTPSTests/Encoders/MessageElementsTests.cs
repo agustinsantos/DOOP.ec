@@ -411,6 +411,51 @@ namespace Rtps.Tests.Encoders
             Assert.AreEqual(v1, v2);
         }
         #endregion CDR Tests
+        #region PL_CDR Tests
+        [TestMethod]
+        public void TestGUIDPL_CDR_BE()
+        {
+            Encapsulation Scheme = Encapsulation.PL_CDR_BE;
+            int bufferSize = 24 + CDRHeaderSize;
+
+            ClassWithGUID v1 = new ClassWithGUID()
+            {
+                Key = new GUID(new GuidPrefix(new byte[] { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xA, 0xB }),
+                               new EntityId(new byte[] { 0x0, 0x1, 0x2 }, EntityKinds.BUILT_IN_PARTICIPANT))
+            };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ClassWithGUID>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 02 00 00 00 50 00 10 00 01 02 03 04 05 06 07 08 09 0A 0B 00 01 02 C1 00 01 00 00", buffer.GetHexDump());
+            ClassWithGUID v2 = EncapsulationManager.Deserialize<ClassWithGUID>(buffer);
+
+            Assert.AreEqual(v1.Key, v2.Key);
+        }
+
+        [TestMethod]
+        public void TestGUIDPL_CDR_LE()
+        {
+            Encapsulation Scheme = Encapsulation.PL_CDR_LE;
+            int bufferSize = 24 + CDRHeaderSize;
+
+            ClassWithGUID v1 = new ClassWithGUID()
+            {
+                Key = new GUID(new GuidPrefix(new byte[] { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xA, 0xB }),
+                               new EntityId(new byte[] { 0x0, 0x1, 0x2 }, EntityKinds.BUILT_IN_PARTICIPANT))
+            };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ClassWithGUID>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 03 00 00 50 00 10 00 00 01 02 03 04 05 06 07 08 09 0A 0B 00 01 02 C1 01 00 00 00", buffer.GetHexDump());
+            ClassWithGUID v2 = EncapsulationManager.Deserialize<ClassWithGUID>(buffer);
+
+            Assert.AreEqual(v1.Key, v2.Key);
+        }
+        #endregion PL_CDR Tests
         #endregion GUID
 
         #region VendorId
@@ -452,6 +497,125 @@ namespace Rtps.Tests.Encoders
         }
         #endregion CDR Tests
         #endregion VendorId
+
+        #region ProtocolVersion
+        #region CDR Tests
+        [TestMethod]
+        public void TestProtocolVersionCDR_BE()
+        {
+            Encapsulation Scheme = Encapsulation.CDR_BE;
+            int bufferSize = 2 + CDRHeaderSize;
+
+            ProtocolVersion v1 = ProtocolVersion.PROTOCOLVERSION_2_1;
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ProtocolVersion>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 00 00 00 02 01", buffer.GetHexDump());
+            ProtocolVersion v2 = EncapsulationManager.Deserialize<ProtocolVersion>(buffer);
+
+            Assert.AreEqual(v1, v2);
+        }
+
+        [TestMethod]
+        public void TestProtocolVersionCDR_LE()
+        {
+            Encapsulation Scheme = Encapsulation.CDR_LE;
+            int bufferSize = 2 + CDRHeaderSize;
+
+            ProtocolVersion v1 = ProtocolVersion.PROTOCOLVERSION_2_1;
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ProtocolVersion>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 01 00 00 02 01", buffer.GetHexDump());
+            ProtocolVersion v2 = EncapsulationManager.Deserialize<ProtocolVersion>(buffer);
+
+            Assert.AreEqual(v1, v2);
+        }
+        #endregion CDR Tests
+        #region PL_CDR Tests
+        [TestMethod]
+        public void TestProtocolVersionPL_CDR_BE()
+        {
+            Encapsulation Scheme = Encapsulation.PL_CDR_BE;
+            int bufferSize = 12 + CDRHeaderSize;
+
+            ClassWithProtocolVersion v1 = new ClassWithProtocolVersion() { ProtocolVersion = ProtocolVersion.PROTOCOLVERSION_2_1 };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ClassWithProtocolVersion>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 02 00 00 00 15 00 04 02 01 00 00 00 01 00 00", buffer.GetHexDump());
+            ClassWithProtocolVersion v2 = EncapsulationManager.Deserialize<ClassWithProtocolVersion>(buffer);
+
+            Assert.AreEqual(v1.ProtocolVersion, v2.ProtocolVersion);
+        }
+
+        [TestMethod]
+        public void TestProtocolVersionPL_CDR_LE()
+        {
+            Encapsulation Scheme = Encapsulation.PL_CDR_LE;
+            int bufferSize = 12 + CDRHeaderSize;
+
+            ClassWithProtocolVersion v1 = new ClassWithProtocolVersion() { ProtocolVersion = ProtocolVersion.PROTOCOLVERSION_2_1 };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<ClassWithProtocolVersion>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 03 00 00 15 00 04 00 02 01 00 00 01 00 00 00", buffer.GetHexDump());
+            ClassWithProtocolVersion v2 = EncapsulationManager.Deserialize<ClassWithProtocolVersion>(buffer);
+
+            Assert.AreEqual(v1.ProtocolVersion, v2.ProtocolVersion);
+        }
+        #endregion PL_CDR Tests
+        #endregion ProtocolVersion
+
+        #region List<Locator>
+        #region CDR Tests
+        [TestMethod]
+        public void TestListLocatorCDR_BE()
+        {
+            Encapsulation Scheme = Encapsulation.CDR_BE;
+            int bufferSize = 16 + 4 + 4 + 4 + CDRHeaderSize;
+
+            List<Locator> v1 = new List<Locator>() { new Locator(IPAddress.Parse("10.20.30.40"), 2700) };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<List<Locator>>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 00 00 00 00 00 00 01 00 00 00 01 00 00 0A 8C 00 00 00 00 00 00 00 00 00 00 00 00 0A 14 1E 28", buffer.GetHexDump());
+            List<Locator> v2 = EncapsulationManager.Deserialize<List<Locator>>(buffer);
+
+            Assert.AreEqual(v1.Count, v2.Count);
+            Assert.AreEqual(v1[0], v2[0]);
+        }
+
+        [TestMethod]
+        public void TestListLocatorCDR_LE()
+        {
+            Encapsulation Scheme = Encapsulation.CDR_LE;
+            int bufferSize = 16 + 4 + 4 + 4 + CDRHeaderSize;
+
+            List<Locator> v1 = new List<Locator>() { new Locator(IPAddress.Parse("10.20.30.40"), 2700) };
+            SerializedPayload payload = new SerializedPayload();
+            payload.DataEncapsulation = EncapsulationManager.Serialize<List<Locator>>(v1, Scheme);
+            IoBuffer buffer = IoBuffer.Wrap(payload.DataEncapsulation.SerializedPayload);
+            Assert.AreEqual(bufferSize, buffer.Remaining);
+
+            Assert.AreEqual("00 01 00 00 01 00 00 00 01 00 00 00 8C 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0A 14 1E 28", buffer.GetHexDump());
+            List<Locator> v2 = EncapsulationManager.Deserialize<List<Locator>>(buffer);
+
+            Assert.AreEqual(v1.Count, v2.Count);
+            Assert.AreEqual(v1[0], v2[0]);
+        }
+        #endregion CDR Tests
+        #endregion List<Locator>
 
         #region SPDPdiscoveredParticipantData
         [TestMethod]
@@ -501,6 +665,12 @@ namespace Rtps.Tests.Encoders
     {
         [ID(0x0016)]
         public VendorId VendorId { get; set; }
+
+    }
+    public class ClassWithProtocolVersion
+    {
+        [ID(0x0015)]
+        public ProtocolVersion ProtocolVersion { get; set; }
 
     }
     #endregion Sample Classes
