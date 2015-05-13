@@ -1,4 +1,5 @@
 ﻿using DDS.ConversionUtils;
+using Doopec.Dds.Core.Policy.modifiable;
 using Doopec.Rtps;
 using ExampleDDS.Common;
 using log4net;
@@ -19,7 +20,7 @@ namespace ExampleDDS.PubSubExamples
 {
     class PubSubExample02 : ExampleApp
     {
-        public const int MY_DOMAIN = 123;
+        public const int MY_DOMAIN = 1;
 
         public override void RunExample(string[] args)
         {
@@ -36,14 +37,14 @@ namespace ExampleDDS.PubSubExamples
 
             // Set QoS:
             ModifiableDomainParticipantQos dpqMod = dpqUnmod.Modify();
-            ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
-            polMod.SetAutoEnableCreatedEntities(false);
+            //ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
+            //polMod.SetAutoEnableCreatedEntities(false);
             dp.SetQos(dpqMod);
 
             // Concise version:
             dpqMod = dp.GetQos().Modify();
-            ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
-            polMod2.SetAutoEnableCreatedEntities(false);
+            //ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
+            //polMod2.SetAutoEnableCreatedEntities(false);
             dp.SetQos(dpqMod);
             // Restore QoS to default:
             dp.SetQos(factory.GetDefaultParticipantQos());

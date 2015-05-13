@@ -1,4 +1,6 @@
-﻿using Doopec.DDS.Core;
+﻿using Doopec.Dds.Domain;
+using Doopec.Dds.Domain.modifiable;
+using Doopec.DDS.Core;
 using Doopec.DDS.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
@@ -44,7 +46,8 @@ namespace Doopec.DDS.Domain
 
         public override ModifiableDomainParticipantQos Modify()
         {
-            throw new System.NotImplementedException();
+            return new ModifiableDomainParticipantQosImpl(this);
+            //throw new NotImplementedException();
         }
 
         public static DomainParticipantQosImpl ConvertTo(Doopec.Configuration.Dds.DomainParticipantQoS qosConfig, Bootstrap boostrap)

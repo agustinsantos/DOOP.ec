@@ -107,8 +107,10 @@
     <Compile Include="Dds\Core\Policy\TypeConsistencyEnforcementQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\WriterDataLifecycleQosPolicyImpl.cs" />
     <Compile Include="Dds\Domain\DomainParticipantFactoryQosImpl.cs" />
-    <Compile Include="Dds\Domain\ModifiableDomainParticipantFactoryQosImpl.cs" />
+    <Compile Include="Dds\Domain\modifiable\ModifiableDomainParticipantFactoryQosImpl.cs" />
+    <Compile Include="Dds\Domain\modifiable\ModifiableDomainParticipantQosImpl.cs" />
     <Compile Include="Dds\Pub\DataWriterQosImpl.cs" />
+    <Compile Include="Dds\Pub\modifiable\ModifiableDataWriterQosImpl.cs" />
     <Compile Include="Dds\Pub\PublisherQosImpl.cs" />
     <Compile Include="Dds\Topic\PublicationBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Topic\SubscriptionBuiltinTopicDataImpl.cs" />

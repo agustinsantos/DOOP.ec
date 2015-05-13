@@ -12,6 +12,7 @@ namespace Doopec.Dds.Core.Policy.modifiable
 {
     public class ModifiableEntityFactoryQosPolicyImpl : EntityFactoryQosPolicyImpl, ModifiableEntityFactoryQosPolicy
     {
+        
 
         public ModifiableEntityFactoryQosPolicyImpl(EntityFactoryQosPolicy qos)
             : base(qos.IsAutoEnableCreatedEntities(), qos.GetBootstrap())

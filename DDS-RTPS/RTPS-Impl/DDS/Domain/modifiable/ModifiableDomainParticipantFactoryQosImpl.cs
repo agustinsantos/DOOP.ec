@@ -1,5 +1,6 @@
 ﻿using Doopec.DDS.Core;
 using org.omg.dds.core;
+using org.omg.dds.core.policy;
 using org.omg.dds.domain;
 using org.omg.dds.domain.modifiable;
 using System;
@@ -23,12 +24,12 @@ namespace Doopec.Dds.Domain
             throw new NotImplementedException();
         }
 
-        public ModifiableDomainParticipantFactoryQos SetEntityFactory(org.omg.dds.core.policy.EntityFactoryQosPolicy entityFactory)
+        public ModifiableDomainParticipantFactoryQos SetEntityFactory(EntityFactoryQosPolicy entityFactory)
         {
             throw new NotImplementedException();
         }
 
-        public org.omg.dds.core.policy.EntityFactoryQosPolicy GetEntityFactory()
+        public EntityFactoryQosPolicy GetEntityFactory()
         {
             throw new NotImplementedException();
         }
