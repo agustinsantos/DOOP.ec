@@ -1,4 +1,5 @@
-﻿using Doopec.DDS.Core;
+﻿using Doopec.Dds.Sub.modifiable;
+using Doopec.DDS.Core;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.sub;
@@ -99,7 +100,7 @@ namespace Doopec.DDS.Sub
 
         public override ModifiableDataReaderQos Modify()
         {
-            throw new NotImplementedException();
+            return new ModifiableDataReaderQosImpl(this);
         }
         internal ReliabilityQosPolicy Reliability { get; set; }
     }

@@ -13,6 +13,11 @@ namespace Doopec.Dds.Domain
 {
     public class ModifiableDomainParticipantFactoryQosImpl : EntityQosImpl<DomainParticipantFactoryQos, ModifiableDomainParticipantFactoryQos>, ModifiableDomainParticipantFactoryQos
     {
+        public ModifiableDomainParticipantFactoryQosImpl(DomainParticipantFactoryQosImpl qos)
+            : base(qos.GetBootstrap())
+        {
+
+        }
         public ModifiableDomainParticipantFactoryQosImpl(Bootstrap boostrap)
             : base(boostrap)
         {
@@ -42,12 +47,12 @@ namespace Doopec.Dds.Domain
 
         public ModifiableDomainParticipantFactoryQos CopyFrom(DomainParticipantFactoryQos other)
         {
-            throw new NotImplementedException();
+            return new ModifiableDomainParticipantFactoryQosImpl(other.GetBootstrap());
         }
 
         public DomainParticipantFactoryQos FinishModification()
         {
-            throw new NotImplementedException();
+            return new DomainParticipantFactoryQosImpl(this.GetBootstrap());
         }
     }
 }

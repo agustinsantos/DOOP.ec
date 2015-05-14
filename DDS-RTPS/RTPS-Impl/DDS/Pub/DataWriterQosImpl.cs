@@ -1,4 +1,5 @@
-﻿using Doopec.DDS.Core;
+﻿using Doopec.Dds.Pub.modifiable;
+using Doopec.DDS.Core;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
 using org.omg.dds.pub;
@@ -19,89 +20,107 @@ namespace Doopec.Dds.Pub
         {
         }
 
+        public DataWriterQosImpl(DurabilityQosPolicy durability, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.Durability = durability;
+        }
+        public DataWriterQosImpl(DurabilityServiceQosPolicy durabilityService, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.DurabilityService = durabilityService;
+        }
+        public DataWriterQosImpl(ReliabilityQosPolicy reliability, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.Reliability = reliability;
+        }
+        
+       
+
         public DurabilityQosPolicy GetDurability()
         {
-            throw new NotImplementedException();
+            return Durability ;
         }
 
         public DurabilityServiceQosPolicy GetDurabilityService()
         {
-            throw new NotImplementedException();
+            return DurabilityService ;
         }
 
         public DeadlineQosPolicy GetDeadline()
         {
-            throw new NotImplementedException();
+            return Deadline ;
         }
 
         public LatencyBudgetQosPolicy GetLatencyBudget()
         {
-            throw new NotImplementedException();
+            return LatencyBudget ;
         }
 
-        public org.omg.dds.core.policy.LivelinessQosPolicy GetLiveliness()
+        public LivelinessQosPolicy GetLiveliness()
         {
-            throw new NotImplementedException();
+            return Liveliness;
         }
 
-        public org.omg.dds.core.policy.ReliabilityQosPolicy GetReliability()
+        public ReliabilityQosPolicy GetReliability()
         {
             return Reliability;
         }
 
-        public org.omg.dds.core.policy.DestinationOrderQosPolicy GetDestinationOrder()
+        public DestinationOrderQosPolicy GetDestinationOrder()
         {
-            throw new NotImplementedException();
+            return DestinationOrder ;
         }
 
-        public org.omg.dds.core.policy.HistoryQosPolicy GetHistory()
+        public HistoryQosPolicy GetHistory()
         {
-            throw new NotImplementedException();
+            return History;
         }
 
-        public org.omg.dds.core.policy.ResourceLimitsQosPolicy GetResourceLimits()
+        public ResourceLimitsQosPolicy GetResourceLimits()
         {
-            throw new NotImplementedException();
+            return ResourceLimits ;
         }
 
-        public org.omg.dds.core.policy.TransportPriorityQosPolicy GetTransportPriority()
+        public TransportPriorityQosPolicy GetTransportPriority()
         {
-            throw new NotImplementedException();
+            return TransportPriority ;
         }
 
-        public org.omg.dds.core.policy.LifespanQosPolicy GetLifespan()
+        public LifespanQosPolicy GetLifespan()
         {
-            throw new NotImplementedException();
+            return Lifespan ;
         }
 
-        public org.omg.dds.core.policy.UserDataQosPolicy GetUserData()
+        public UserDataQosPolicy GetUserData()
         {
-            throw new NotImplementedException();
+            return UserData ;
         }
 
-        public org.omg.dds.core.policy.OwnershipQosPolicy GetOwnership()
+        public OwnershipQosPolicy GetOwnership()
         {
-            throw new NotImplementedException();
+            return Ownership ;
         }
 
         public OwnershipStrengthQosPolicy GetOwnershipStrength()
         {
-            throw new NotImplementedException();
+            return OwnershipStrength ;
         }
 
         public WriterDataLifecycleQosPolicy GetWriterDataLifecycle()
         {
-            throw new NotImplementedException();
+            return WriterDataLifecycle;
         }
 
         public DataRepresentationQosPolicy GetRepresentation()
         {
-            throw new NotImplementedException();
+            return Representation;
         }
 
         public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
         {
-            throw new NotImplementedException();
+            return TypeConsistency;
         }
 
         public new IEnumerator GetEnumerator()
@@ -111,11 +130,28 @@ namespace Doopec.Dds.Pub
 
         public override ModifiableDataWriterQos Modify()
         {
-            throw new NotImplementedException();
-            //return new ModifiableDataWriterQosImpl(this);
+          // throw new NotImplementedException();
+            return new  ModifiableDataWriterQosImpl(this);
         }
 
-        internal ReliabilityQosPolicy  Reliability {get; set;}
+        internal DurabilityQosPolicy Durability { get; set; }
+        internal DurabilityServiceQosPolicy DurabilityService { get; set; }
+        internal DeadlineQosPolicy Deadline { get; set; }
+        internal LatencyBudgetQosPolicy LatencyBudget { get; set; }
+        internal DestinationOrderQosPolicy DestinationOrder { get; set; }
+        internal HistoryQosPolicy History { get; set; }
+        internal ResourceLimitsQosPolicy ResourceLimits { get; set; }
+        internal TransportPriorityQosPolicy TransportPriority { get; set; }
+        internal LifespanQosPolicy Lifespan { get; set; }
+        internal UserDataQosPolicy UserData { get; set; }
+        internal OwnershipQosPolicy Ownership { get; set; }
+        internal OwnershipStrengthQosPolicy OwnershipStrength { get; set; }
+        internal WriterDataLifecycleQosPolicy WriterDataLifecycle { get; set; }
+        internal DataRepresentationQosPolicy Representation { get; set; }
+        internal TypeConsistencyEnforcementQosPolicy TypeConsistency { get; set; }
+        internal ReliabilityQosPolicy Reliability { get; set; }
+        internal LivelinessQosPolicy Liveliness { get; set; }
+
 
     }
 }

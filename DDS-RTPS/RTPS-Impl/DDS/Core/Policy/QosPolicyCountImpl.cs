@@ -10,25 +10,33 @@ namespace Doopec.Dds.Core.Policy
 {
     public class QosPolicyCountImpl : QosPolicy, QosPolicyCount
     {
-        private readonly QosPolicyId getPolicyId;
+        public QosPolicyId PolicyIdQos{ get; protected internal set; }
 
-        private readonly int getCount;
+        public int CountQos{ get; protected internal set; }
 
-        public QosPolicyCountImpl(QosPolicyId getPolicyId,int getCount)
+
+        public QosPolicyCountImpl(Bootstrap boostrap)
+            : base()
         {
-            this.getPolicyId = getPolicyId;
-            this.getCount = getCount;
         }
+
+        public QosPolicyCountImpl(QosPolicyId getPolicyId, int getCount)
+            : base()
+        {
+            this.PolicyIdQos = getPolicyId;
+            this.CountQos = getCount;
+        }
+      
 
 
         public QosPolicyId GetPolicyId()
         {
-            return getPolicyId;
+            return PolicyIdQos;
         }
 
         public int GetCount()
         {
-            return getCount;
+            return CountQos;
         }
         /// <summary>
         /// To Review
@@ -40,17 +48,17 @@ namespace Doopec.Dds.Core.Policy
         }
         public QosPolicyCount CopyFrom(QosPolicyCount other)
         {
-            throw new NotImplementedException();
+            return new QosPolicyCountImpl(other.GetPolicyId(),other.GetCount());
         }
 
         public QosPolicyCount FinishModification()
         {
-            throw new NotImplementedException();
+            return new QosPolicyCountImpl (this.GetPolicyId(),this.GetCount());
         }
 
         public QosPolicyCount Modify()
         {
-            throw new NotImplementedException();
+            return new QosPolicyCountImpl(this.GetPolicyId(), this.GetCount());
         }
 
         public Bootstrap GetBootstrap()

@@ -37,14 +37,14 @@ namespace ExampleDDS.PubSubExamples
 
             // Set QoS:
             ModifiableDomainParticipantQos dpqMod = dpqUnmod.Modify();
-            //ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
-            //polMod.SetAutoEnableCreatedEntities(false);
+            ModifiableEntityFactoryQosPolicy polMod = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
+            polMod.SetAutoEnableCreatedEntities(false);
             dp.SetQos(dpqMod);
 
             // Concise version:
             dpqMod = dp.GetQos().Modify();
-            //ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
-            //polMod2.SetAutoEnableCreatedEntities(false);
+            ModifiableEntityFactoryQosPolicy polMod2 = (ModifiableEntityFactoryQosPolicy)dpqMod.GetEntityFactory();
+            polMod2.SetAutoEnableCreatedEntities(false);
             dp.SetQos(dpqMod);
             // Restore QoS to default:
             dp.SetQos(factory.GetDefaultParticipantQos());

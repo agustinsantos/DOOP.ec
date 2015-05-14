@@ -1,10 +1,13 @@
 ﻿using DDS.ConversionUtils;
 using log4net;
 using org.omg.dds.core;
+using org.omg.dds.core.policy;
+using org.omg.dds.core.policy.modifiable;
 using org.omg.dds.core.status;
 using org.omg.dds.domain;
 using org.omg.dds.pub;
 using org.omg.dds.sub;
+using org.omg.dds.sub.modifiable;
 using org.omg.dds.topic;
 using System;
 using System.Collections.Generic;
@@ -68,8 +71,11 @@ namespace ChatClient
             DataReader<ChatMessage> dr = sub.CreateDataReader<ChatMessage>(tp,
                                                                             sub.GetDefaultDataReaderQos(),
                                                                             ls,
-                                                                            null /* all status changes */);
+                                                                            null );
 
+
+
+            
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
             DataWriter<ChatMessage> dw = pub.CreateDataWriter(tp);

@@ -115,9 +115,15 @@ namespace org.omg.dds.pub
         /// </summary>
         /// <returns>The writerDataLifecycle</returns>
         WriterDataLifecycleQosPolicy GetWriterDataLifecycle();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         DataRepresentationQosPolicy GetRepresentation();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         TypeConsistencyEnforcementQosPolicy GetTypeConsistency();
     }
 }

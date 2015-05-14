@@ -84,6 +84,7 @@
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableOwnershipStrengthQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiablePartitionQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiablePresentationQosPolicyImpl.cs" />
+    <Compile Include="Dds\Core\Policy\modifiable\ModifiableQosPolicyCountImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableReaderDataLifecycleQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableReliabilityQosPolicyImpl.cs" />
     <Compile Include="Dds\Core\Policy\modifiable\ModifiableResourceLimitsQosPolicyImpl.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Dds\Pub\DataWriterQosImpl.cs" />
     <Compile Include="Dds\Pub\modifiable\ModifiableDataWriterQosImpl.cs" />
     <Compile Include="Dds\Pub\PublisherQosImpl.cs" />
+    <Compile Include="Dds\Sub\modifiable\ModifiableDataReaderQosImpl.cs" />
     <Compile Include="Dds\Topic\PublicationBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Topic\SubscriptionBuiltinTopicDataImpl.cs" />
     <Compile Include="Dds\Topic\TopicBuiltinTopicDataImpl.cs" />
