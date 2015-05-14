@@ -1,6 +1,7 @@
 ﻿using Doopec.Configuration;
 using Doopec.Dds.Core;
 using Doopec.Dds.Core.Policy;
+using Doopec.DDS.Core.Policy;
 using Doopec.DDS.Sub;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
@@ -88,46 +89,105 @@ namespace Doopec.Dds.Sub
                     }
                     dataReaderqos.Durability = dpqMod;
                 }
+
+               
                 
                 if (dataReaderProfileQos.Deadline != null)
                 {
                     // TODO dataWriterProfileQos.Deadline
+                    DeadlineQosPolicyImpl dpqMod = new DeadlineQosPolicyImpl(this.GetBootstrap());
                 }
                 if (dataReaderProfileQos.LatencyBudget != null)
                 {
                     // TODO dataReaderProfileQos.LatencyBudget
+                    LatencyBudgetQosPolicyImpl dpqMod = new LatencyBudgetQosPolicyImpl(this.GetBootstrap());
+                    
                 }
                 if (dataReaderProfileQos.Liveliness != null)
                 {
                     // TODO dataReaderProfileQos.LatencyBudget
+                    LivelinessQosPolicyImpl dpqMod = new LivelinessQosPolicyImpl(this.GetBootstrap());
+                     switch (dataReaderProfileQos.Liveliness.Kind)
+                     {
+                         case Liveliness.AUTOMATIC:
+                             dpqMod.KindQos = LivelinessQosPolicyKind.AUTOMATIC;
+                             break;
+                         case Liveliness.MANUAL_BY_PARTICIPANT:
+                             dpqMod.KindQos = LivelinessQosPolicyKind.MANUAL_BY_PARTICIPANT;
+                             break;
+                         case Liveliness.MANUAL_BY_TOPIC:
+                             dpqMod.KindQos = LivelinessQosPolicyKind.MANUAL_BY_TOPIC;
+                             break;
+                        
+                     }
+                     dataReaderqos.Liveliness = dpqMod;
+                    
                 }
                 if (dataReaderProfileQos.DestinationOrder != null)
                 {
                     // TODO dataWriterProfileQos.DestinationOrder
+                    DestinationOrderQosPolicyImpl dpqMod = new DestinationOrderQosPolicyImpl(this.GetBootstrap());
+                    switch (dataReaderProfileQos.DestinationOrder.Kind)
+                    {
+                        case DestinationOrder.BY_RECEPTION_TIMESTAMP:
+                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_RECEPTION_TIMESTAMP;
+                            break;
+                        case DestinationOrder.BY_SOURCE_TIMESTAMP:
+                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_SOURCE_TIMESTAMP;
+                            break;
+                     }
+                    dataReaderqos.DestinationOrder = dpqMod;
                 }
                 if (dataReaderProfileQos.History != null)
                 {
                     // TODO dataReaderProfileQos.History
+                    HistoryQosPolicyImpl dpqMod = new HistoryQosPolicyImpl(this.GetBootstrap());
+                    switch (dataReaderProfileQos.History.Kind)
+                    {
+                        case History.KEEP_ALL:
+                            dpqMod.KindQos = HistoryQosPolicyKind.KEEP_ALL;
+                            break;
+                        case History.KEEP_LAST:
+                            dpqMod.KindQos = HistoryQosPolicyKind.KEEP_LAST;
+                            break;
+                     }
+                    dataReaderqos.History = dpqMod;
                 }
                 if (dataReaderProfileQos.ResourceLimits != null)
                 {
                     // TODO dataReaderProfileQos.ResourceLimits
+                    ResourceLimitsQosPolicyImpl dpqMod = new ResourceLimitsQosPolicyImpl(this.GetBootstrap());
                 }
                 if (dataReaderProfileQos.UserData != null)
                 {
                     // TODO dataReaderProfileQos.UserData
+                    UserDataQosPolicyImpl dpqMod = new UserDataQosPolicyImpl(this.GetBootstrap());
                 }
                 if (dataReaderProfileQos.Ownership != null)
                 {
                     // TODO dataReaderProfileQos.Ownership
+                    OwnershipQosPolicyImpl dpqMod = new OwnershipQosPolicyImpl(this.GetBootstrap());
+                    switch (dataReaderProfileQos.Ownership.Kind)
+                    {
+                        case Ownership.EXCLUSIVE:
+                            dpqMod.KindQos = OwnershipQosPolicyKind.EXCLUSIVE;
+                            break;
+                        case Ownership.SHARED:
+                            dpqMod.KindQos = OwnershipQosPolicyKind.SHARED;
+                            break;
+                        
+                    }
+                    dataReaderqos.Ownership = dpqMod;
                 }
                 if (dataReaderProfileQos.TimeBasedFilter != null)
                 {
                     // TODO dataReaderProfileQos.TimeBasedFilter
+                    TimeBasedFilterQosPolicyImpl dpqMod = new TimeBasedFilterQosPolicyImpl(this.GetBootstrap());
                 }
                 if (dataReaderProfileQos.ReaderDataLifecycle != null)
                 {
                     // TODO dataReaderProfileQos.ReaderDataLifecycle
+                    ReaderDataLifecycleQosPolicyImpl dpqMod = new ReaderDataLifecycleQosPolicyImpl(this.GetBootstrap());
                 }
             }
         }
