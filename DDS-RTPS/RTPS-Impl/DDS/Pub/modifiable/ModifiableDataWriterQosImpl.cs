@@ -12,102 +12,121 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Pub.modifiable
 {
-    class ModifiableDataWriterQosImpl : DataWriterQosImpl, ModifiableDataWriterQos
+    class ModifiableDataWriterQosImpl : ModifiableDataWriterQos
     {
+        private DataWriterQosImpl innerQos;
+
         public ModifiableDataWriterQosImpl(DataWriterQosImpl qos)
-            :base(qos.GetBootstrap())
-        {
+         {
+            this.innerQos = qos;
+         }
 
-        }
         public ModifiableDataWriterQosImpl(Bootstrap boostrap)
-            : base(boostrap)
+ 
         {
-
+            this.innerQos = new DataWriterQosImpl(boostrap);
         }
+
         public ModifiableDataWriterQos SetDurability(DurabilityQosPolicy durability)
         {
-            throw new NotImplementedException();
+            this.innerQos.Durability = durability;
+            return this;
         }
 
         public ModifiableDataWriterQos SetDurabilityService(DurabilityServiceQosPolicy durabilityService)
         {
-            throw new NotImplementedException();
+            this.innerQos.DurabilityService = durabilityService;
+            return this;
         }
 
         public ModifiableDataWriterQos SetDeadline(DeadlineQosPolicy deadline)
         {
-            throw new NotImplementedException();
+            this.innerQos.Deadline = deadline;
+            return this;
         }
 
         public ModifiableDataWriterQos SetLatencyBudget(LatencyBudgetQosPolicy latencyBudget)
         {
-            throw new NotImplementedException();
+            this.innerQos.LatencyBudget = latencyBudget;
+            return this;
         }
 
         public ModifiableDataWriterQos SetLiveliness(LivelinessQosPolicy liveliness)
         {
-            throw new NotImplementedException();
+            this.innerQos.Liveliness = liveliness;
+            return this;
         }
 
         public ModifiableDataWriterQos SetReliability(ReliabilityQosPolicy reliability)
         {
-            this.Reliability =reliability;
+            this.innerQos.Reliability = reliability;
             return this;
         }
 
         public ModifiableDataWriterQos SetDestinationOrder(DestinationOrderQosPolicy destinationOrder)
         {
-            throw new NotImplementedException();
+            this.innerQos.DestinationOrder = destinationOrder;
+            return this;
         }
 
         public ModifiableDataWriterQos SetHistory(HistoryQosPolicy history)
         {
-            throw new NotImplementedException();
+            this.innerQos.History = history;
+            return this;
         }
 
         public ModifiableDataWriterQos SetResourceLimits(ResourceLimitsQosPolicy resourceLimits)
         {
-            throw new NotImplementedException();
+            this.innerQos.ResourceLimits = resourceLimits;
+            return this;
         }
 
         public ModifiableDataWriterQos SetTransportPriority(TransportPriorityQosPolicy transportPriority)
         {
-            throw new NotImplementedException();
+            this.innerQos.TransportPriority = transportPriority;
+            return this;
         }
 
         public ModifiableDataWriterQos SetLifespan(LifespanQosPolicy lifespan)
         {
-            throw new NotImplementedException();
+            this.innerQos.Lifespan = lifespan;
+            return this;
         }
 
         public ModifiableDataWriterQos SetUserData(UserDataQosPolicy userData)
         {
-            throw new NotImplementedException();
+            this.innerQos.UserData = userData;
+            return this;
         }
 
         public ModifiableDataWriterQos SetOwnership(OwnershipQosPolicy ownership)
         {
-            throw new NotImplementedException();
+            this.innerQos.Ownership = ownership;
+            return this;
         }
 
         public ModifiableDataWriterQos SetOwnershipStrength(OwnershipStrengthQosPolicy ownershipStrength)
         {
-            throw new NotImplementedException();
+            this.innerQos.OwnershipStrength = ownershipStrength;
+            return this;
         }
 
         public ModifiableDataWriterQos SetWriterDataLifecycle(WriterDataLifecycleQosPolicy writerDataLifecycle)
         {
-            throw new NotImplementedException();
+            this.innerQos.WriterDataLifecycle = writerDataLifecycle;
+            return this;
         }
 
         public ModifiableDataWriterQos SetRepresentation(DataRepresentationQosPolicy representation)
         {
-            throw new NotImplementedException();
+            this.innerQos.Representation = representation;
+            return this;
         }
 
         public ModifiableDataWriterQos SetTypeConsistency(TypeConsistencyEnforcementQosPolicy typeConsistency)
         {
-            throw new NotImplementedException();
+            this.innerQos.TypeConsistency = typeConsistency;
+            return this;
         }
 
         public ModifiableDataWriterQos CopyFrom(TopicQos src)
@@ -122,12 +141,209 @@ namespace Doopec.Dds.Pub.modifiable
 
         public ModifiableDataWriterQos CopyFrom(DataWriterQos other)
         {
-            return new ModifiableDataWriterQosImpl(other.GetBootstrap());
+            throw new NotImplementedException();
         }
 
         public DataWriterQos FinishModification()
         {
-            return new DataWriterQosImpl (this.GetBootstrap());
+            return this.innerQos;
+        }
+
+        public DurabilityQosPolicy GetDurability()
+        {
+            return this.innerQos.GetDurability();
+        }
+
+        public DurabilityServiceQosPolicy GetDurabilityService()
+        {
+            return this.innerQos.GetDurabilityService();
+        }
+
+        public DeadlineQosPolicy GetDeadline()
+        {
+            return this.innerQos.GetDeadline();
+        }
+
+        public LatencyBudgetQosPolicy GetLatencyBudget()
+        {
+            return this.innerQos.GetLatencyBudget();
+        }
+
+        public LivelinessQosPolicy GetLiveliness()
+        {
+            return this.innerQos.GetLiveliness();
+        }
+
+        public ReliabilityQosPolicy GetReliability()
+        {
+            return this.innerQos.GetReliability();
+        }
+
+        public DestinationOrderQosPolicy GetDestinationOrder()
+        {
+            return this.innerQos.GetDestinationOrder();
+        }
+
+        public HistoryQosPolicy GetHistory()
+        {
+            return this.innerQos.GetHistory();
+        }
+
+        public ResourceLimitsQosPolicy GetResourceLimits()
+        {
+            return this.innerQos.GetResourceLimits();
+        }
+
+        public TransportPriorityQosPolicy GetTransportPriority()
+        {
+            return this.innerQos.GetTransportPriority();
+        }
+
+        public LifespanQosPolicy GetLifespan()
+        {
+            return this.innerQos.GetLifespan();
+        }
+
+        public UserDataQosPolicy GetUserData()
+        {
+            return this.innerQos.GetUserData();
+        }
+
+        public OwnershipQosPolicy GetOwnership()
+        {
+            return this.innerQos.GetOwnership();
+        }
+
+        public OwnershipStrengthQosPolicy GetOwnershipStrength()
+        {
+            return this.innerQos.GetOwnershipStrength();
+        }
+
+        public WriterDataLifecycleQosPolicy GetWriterDataLifecycle()
+        {
+            return this.innerQos.GetWriterDataLifecycle();
+        }
+
+        public DataRepresentationQosPolicy GetRepresentation()
+        {
+            return this.innerQos.GetRepresentation();
+        }
+
+        public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
+        {
+            return this.innerQos.GetTypeConsistency();
+        }
+
+        public POLICY Get<POLICY>(QosPolicyId id) where POLICY : QosPolicy
+        {
+            throw new NotImplementedException();
+        }
+
+        public QosPolicy Put(QosPolicyId key, QosPolicy value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public QosPolicy Remove(object key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Clear()
+        {
+            this.innerQos.Clear();
+        }
+
+        public Bootstrap GetBootstrap()
+        {
+            return this.innerQos.GetBootstrap();
+        }
+
+        public void Add(QosPolicyId key, QosPolicy value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ContainsKey(QosPolicyId key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<QosPolicyId> Keys
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public bool Remove(QosPolicyId key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool TryGetValue(QosPolicyId key, out QosPolicy value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<QosPolicy> Values
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public QosPolicy this[QosPolicyId key]
+        {
+            get
+            {
+                return this.innerQos[key];
+            }
+            set
+            {
+                this.innerQos[key] = value;
+            }
+        }
+
+        public void Add(KeyValuePair<QosPolicyId, QosPolicy> item)
+        {
+            this.innerQos.Add(item);
+        }
+
+        public bool Contains(KeyValuePair<QosPolicyId, QosPolicy> item)
+        {
+            return this.innerQos.Contains(item);
+        }
+
+        public void CopyTo(KeyValuePair<QosPolicyId, QosPolicy>[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Count
+        {
+            get { return this.innerQos.Count; }
+        }
+
+        public bool IsReadOnly
+        {
+            get { return this.innerQos.IsReadOnly; }
+        }
+
+        public bool Remove(KeyValuePair<QosPolicyId, QosPolicy> item)
+        {
+            return this.innerQos.Remove(item);
+        }
+
+        public IEnumerator<KeyValuePair<QosPolicyId, QosPolicy>> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.innerQos.GetEnumerator();
+        }
+
+        public ModifiableDataWriterQos Modify()
+        {
+            return this;
         }
     }
 }

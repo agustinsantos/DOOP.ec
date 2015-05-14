@@ -10,19 +10,24 @@ namespace Doopec.DDS.Sub
 {
     public class DataReaderQosImpl : EntityQosImpl<DataReaderQos, ModifiableDataReaderQos>, DataReaderQos
     {
-        private DurabilityQosPolicy qosDurability;
-        private DeadlineQosPolicy qosDeadLine;
-        private LatencyBudgetQosPolicy qosLatencyBudget;
-        private LivelinessQosPolicy qosLiveliness;
-        private DestinationOrderQosPolicy qosDestinationOrder;
-        private HistoryQosPolicy qosHistory;
-        private ResourceLimitsQosPolicy qosResourceLimits;
-        private UserDataQosPolicy qosUserData;
-        private OwnershipQosPolicy qosOwnership;
-        private TimeBasedFilterQosPolicy qosTimeBasedFilter;
-        private ReaderDataLifecycleQosPolicy qosReaderDataLifecycle;
-        private DataRepresentationQosPolicy qosDataRepresentation;
-        private TypeConsistencyEnforcementQosPolicy qosTypeConsistencyEnforcement;
+        internal DurabilityQosPolicy Durability { get; set; }
+        internal DurabilityServiceQosPolicy DurabilityService { get; set; }
+        internal DeadlineQosPolicy Deadline { get; set; }
+        internal LatencyBudgetQosPolicy LatencyBudget { get; set; }
+        internal LivelinessQosPolicy Liveliness { get; set; }
+        internal DestinationOrderQosPolicy DestinationOrder { get; set; }
+        internal HistoryQosPolicy History { get; set; }
+        internal ResourceLimitsQosPolicy ResourceLimits { get; set; }
+        internal UserDataQosPolicy UserData { get; set; }
+        internal OwnershipQosPolicy Ownership { get; set; }
+        internal OwnershipStrengthQosPolicy OwnershipStrength { get; set; }
+        internal TimeBasedFilterQosPolicy TimeBasedFilter { get; set; }
+        internal ReaderDataLifecycleQosPolicy ReaderDataLifecycle { get; set; }
+        internal DataRepresentationQosPolicy DataRepresentation { get; set; }
+        internal TypeConsistencyEnforcementQosPolicy TypeConsistencyEnforcement { get; set; }
+        internal ReliabilityQosPolicy Reliability { get; set; }
+        internal TransportPriorityQosPolicy TransportPriority { get; set; }
+        internal LifespanQosPolicy Lifespan { get; set; }
 
         public DataReaderQosImpl(Bootstrap boostrap)
             : base(boostrap)
@@ -31,63 +36,64 @@ namespace Doopec.DDS.Sub
 
         public DurabilityQosPolicy GetDurability()
         {
-            throw new NotImplementedException();
+            return Durability;
         }
 
         public DeadlineQosPolicy GetDeadline()
         {
-            throw new NotImplementedException();
+            return Deadline;
         }
 
         public LatencyBudgetQosPolicy GetLatencyBudget()
         {
-            throw new NotImplementedException();
+            return LatencyBudget;
         }
 
         public LivelinessQosPolicy GetLiveliness()
         {
-            throw new NotImplementedException();
+            return Liveliness;
         }
 
         public DestinationOrderQosPolicy GetDestinationOrder()
         {
-            throw new NotImplementedException();
+            return DestinationOrder;
         }
 
         public HistoryQosPolicy GetHistory()
         {
-            throw new NotImplementedException();
+            return History;
         }
 
         public ResourceLimitsQosPolicy GetResourceLimits()
         {
-            throw new NotImplementedException();
+            return ResourceLimits;
         }
 
         public UserDataQosPolicy GetUserData()
         {
-            throw new NotImplementedException();
+            return UserData;
         }
 
         public OwnershipQosPolicy GetOwnership()
         {
-            throw new NotImplementedException();
+            return Ownership;
         }
 
         public TimeBasedFilterQosPolicy GetTimeBasedFilter()
         {
-            throw new NotImplementedException();
+            return TimeBasedFilter;
         }
 
         public ReaderDataLifecycleQosPolicy GetReaderDataLifecycle()
         {
-            throw new NotImplementedException();
+            return ReaderDataLifecycle;
         }
 
         public DataRepresentationQosPolicy GetRepresentation()
         {
-            throw new NotImplementedException();
+            return DataRepresentation;
         }
+
         public ReliabilityQosPolicy GetReliability()
         {
             return Reliability;
@@ -95,13 +101,12 @@ namespace Doopec.DDS.Sub
 
         public TypeConsistencyEnforcementQosPolicy GetTypeConsistency()
         {
-            throw new NotImplementedException();
+            return TypeConsistencyEnforcement;
         }
 
         public override ModifiableDataReaderQos Modify()
         {
             return new ModifiableDataReaderQosImpl(this);
         }
-        internal ReliabilityQosPolicy Reliability { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DDS.ConversionUtils;
 using Doopec.Configuration;
+using Doopec.Dds.Core;
 using Doopec.Dds.Core.Policy;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
@@ -33,30 +34,85 @@ namespace Doopec.Dds.Pub
             this.Bootstrap = bootstrap;
             datawriters = new System.Collections.ArrayList();
             dataWriterqos = new DataWriterQosImpl(this.GetBootstrap());
-#if TODO
-            if (config.Settings["DefaultDataWriterQoS"] != null)
+
+            string qosConfigProfile = ddsConfig.Domains[dp.DomainId].QoSProfile.Name;
+            Doopec.Configuration.Dds.QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[qosConfigProfile];
+
+            if (qosProfile != null)
             {
-                string dataWriterqosName = config.Settings["DefaultDataWriterQoS"].Value;
+                Doopec.Configuration.Dds.DataWriterQoS dataWriterProfileQos = qosProfile.DataWriterQoS;
                 // TODO Assign values to dataWriterqos from configuration
-                foreach (KeyValueElement dwqos in config.QoSDataWriterCollection)
+                if (dataWriterProfileQos == null)
+                    return;
+                if (dataWriterProfileQos.Reliability != null)
                 {
-                    if (dwqos.Key.Equals("realibility", StringComparison.InvariantCultureIgnoreCase))
+                    ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl(this.GetBootstrap());
+                    if (dataWriterProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.RELIABLE)
+                        dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, this.GetBootstrap());
+                    else if (dataWriterProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.BEST_EFFORT)
+                        dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT, this.GetBootstrap());
+                    dpqMod.MaxBlockingTimeQos = new DurationImpl(this.GetBootstrap(), dataWriterProfileQos.Reliability.MaxBlockingTime);
+                    dataWriterqos.Reliability = dpqMod;
+                }
+
+                if (dataWriterProfileQos.Durability != null)
+                {
+                    DurabilityQosPolicyImpl dpqMod = new DurabilityQosPolicyImpl(this.GetBootstrap());
+                    switch (dataWriterProfileQos.Durability.Kind)
                     {
-                        string reabilityVal = dwqos.Value;
-                        ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl(this.GetBootstrap());
-                        if (reabilityVal.ToLowerInvariant().Contains("RELIABLE"))
-                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, this.GetBootstrap());
-                        else if (reabilityVal.ToLowerInvariant().Contains("BEST_EFFORT"))
-                            dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT, this.GetBootstrap());
-                        dataWriterqos.Reliability = dpqMod;
+                        case Durability.PERSISTENT:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.PERSISTENT;
+                            break;
+                        case Durability.TRANSIENT:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT;
+                            break;
+                        case Durability.TRANSIENT_LOCAL:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT_LOCAL;
+                            break;
+                        case Durability.VOLATILE:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.VOLATILE;
+                            break;
                     }
-                    else if (dwqos.Key.Equals("durability", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        string durabilityVal = dwqos.Value;
-                    }
+                    dataWriterqos.Durability = dpqMod;
+                }
+                if (dataWriterProfileQos.Deadline != null)
+                {
+                    // TODO dataWriterProfileQos.Deadline
+                }
+                if (dataWriterProfileQos.DurabilityService != null)
+                {
+                    // TODO dataWriterProfileQos.Deadline
+                }
+                if (dataWriterProfileQos.LatencyBudget != null)
+                {
+                    // TODO dataWriterProfileQos.LatencyBudget
+                }
+                if (dataWriterProfileQos.Liveliness != null)
+                {
+                    // TODO dataWriterProfileQos.LatencyBudget
+                }
+                if (dataWriterProfileQos.DestinationOrder != null)
+                {
+                    // TODO dataWriterProfileQos.DestinationOrder
+                }
+                if (dataWriterProfileQos.History != null)
+                {
+                    // TODO dataWriterProfileQos.History
+                }
+                if (dataWriterProfileQos.ResourceLimits != null)
+                {
+                    // TODO dataWriterProfileQos.ResourceLimits
+                }
+                if (dataWriterProfileQos.UserData != null)
+                {
+                    // TODO dataWriterProfileQos.UserData
+                }
+                if (dataWriterProfileQos.Ownership != null)
+                {
+                    // TODO dataWriterProfileQos.Ownership
                 }
             }
-#endif
+
         }
 
         public DataWriter<TYPE> CreateDataWriter<TYPE>(Topic<TYPE> topic)
@@ -285,7 +341,7 @@ namespace Doopec.Dds.Pub
             throw new NotImplementedException();
         }
 
-        public  Bootstrap GetBootstrap()
+        public Bootstrap GetBootstrap()
         {
             return Bootstrap;
         }

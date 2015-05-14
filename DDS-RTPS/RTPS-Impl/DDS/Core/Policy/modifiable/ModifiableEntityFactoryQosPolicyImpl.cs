@@ -10,36 +10,56 @@ using System.Threading.Tasks;
 
 namespace Doopec.Dds.Core.Policy.modifiable
 {
-    public class ModifiableEntityFactoryQosPolicyImpl : EntityFactoryQosPolicyImpl, ModifiableEntityFactoryQosPolicy
+    public class ModifiableEntityFactoryQosPolicyImpl : ModifiableEntityFactoryQosPolicy
     {
-        
+
+        private EntityFactoryQosPolicyImpl innerQos;
 
         public ModifiableEntityFactoryQosPolicyImpl(EntityFactoryQosPolicy qos)
-            : base(qos.IsAutoEnableCreatedEntities(), qos.GetBootstrap())
         {
+            this.innerQos = qos as EntityFactoryQosPolicyImpl;
         }
 
         public ModifiableEntityFactoryQosPolicyImpl(bool autoEnableCreatedEntities, Bootstrap boostrap)
-            : base(autoEnableCreatedEntities, boostrap)
         {
-
+            this.innerQos = new EntityFactoryQosPolicyImpl(autoEnableCreatedEntities, boostrap);
         }
 
 
         public ModifiableEntityFactoryQosPolicy SetAutoEnableCreatedEntities(bool autoEnableCreatedEntities)
         {
-            this.AutoenableCreatedEntities=autoEnableCreatedEntities;
+            this.innerQos.AutoenableCreatedEntities = autoEnableCreatedEntities;
             return this;
         }
 
         public ModifiableEntityFactoryQosPolicy CopyFrom(EntityFactoryQosPolicy other)
         {
-            return new ModifiableEntityFactoryQosPolicyImpl (other.IsAutoEnableCreatedEntities(),other.GetBootstrap());
+            return new ModifiableEntityFactoryQosPolicyImpl(other.IsAutoEnableCreatedEntities(), other.GetBootstrap());
         }
 
         public EntityFactoryQosPolicy FinishModification()
         {
-            return new EntityFactoryQosPolicyImpl(this.IsAutoEnableCreatedEntities(), this.GetBootstrap());
+            return this.innerQos;
+        }
+
+        public bool IsAutoEnableCreatedEntities()
+        {
+            return innerQos.IsAutoEnableCreatedEntities();
+        }
+
+        public QosPolicyId GetId()
+        {
+            return innerQos.GetId();
+        }
+
+        public Bootstrap GetBootstrap()
+        {
+            return innerQos.GetBootstrap();
+        }
+
+        public ModifiableEntityFactoryQosPolicy Modify()
+        {
+            return this;
         }
     }
 }
