@@ -36,7 +36,7 @@ namespace ExampleDDS.PubSubExamples
 
             ModifiableDataWriterQos qosDW = pub.GetDefaultDataWriterQos().Modify();
             ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
-            dpqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
+            dpqMod.SetKind(ReliabilityQosPolicyKind.BEST_EFFORT);
             qosDW.SetReliability(dpqMod);
 
             DataWriterListener<Greeting> lis = new MyListener1();
@@ -48,7 +48,7 @@ namespace ExampleDDS.PubSubExamples
 
             ModifiableDataReaderQos qosDR = sub.GetDefaultDataReaderQos().Modify();
             ModifiableReliabilityQosPolicy dsqMod=qosDR.GetReliability().Modify();
-            dsqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
+            dsqMod.SetKind(ReliabilityQosPolicyKind.BEST_EFFORT);
             qosDR.SetReliability(dsqMod);
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,

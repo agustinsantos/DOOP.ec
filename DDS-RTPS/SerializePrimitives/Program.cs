@@ -18,7 +18,7 @@ namespace SerializePrimitives
             double v3 = 38423423434.434;
             double v4 = .0;
 
-            int loops = 100000;
+            int loops = 10000;
             var stream = ByteBufferAllocator.Instance.Allocate(loops * 4 * sizeof(double));
 
             {

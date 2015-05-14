@@ -1,4 +1,5 @@
 ﻿using Doopec.Configuration;
+using Doopec.Dds.Core;
 using Doopec.Dds.Core.Policy;
 using Doopec.DDS.Sub;
 using org.omg.dds.core;
@@ -18,7 +19,7 @@ namespace Doopec.Dds.Sub
     {
         private SubscriberQos qos;
         private DomainParticipant parent;
-        private DataReaderQos dataReaderqos;
+        private DataReaderQosImpl dataReaderqos;
         private SubscriberListener listener;
         private IList datawriters;
         private DDSConfigurationSection ddsConfig = Doopec.Configuration.DDSConfigurationSection.Instance;
@@ -47,6 +48,88 @@ namespace Doopec.Dds.Sub
                 }
             }
 #endif
+            string qosConfigProfile = ddsConfig.Domains[dp.DomainId].QoSProfile.Name;
+            Doopec.Configuration.Dds.QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[qosConfigProfile];
+
+            if (qosProfile != null)
+            {
+                Doopec.Configuration.Dds.DataReaderQoS dataReaderProfileQos = qosProfile.DataReaderQoS;
+                // TODO Assign values to dataReaderqos from configuration
+                if (dataReaderProfileQos == null)
+                    return;
+                if (dataReaderProfileQos.Reliability != null)
+                {
+                    ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl(this.GetBootstrap());
+                    if (dataReaderProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.RELIABLE)
+                        dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, this.GetBootstrap());
+                    else if (dataReaderProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.BEST_EFFORT)
+                        dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT, this.GetBootstrap());
+                    dpqMod.MaxBlockingTimeQos = new DurationImpl(this.GetBootstrap(), dataReaderProfileQos.Reliability.MaxBlockingTime);
+                    dataReaderqos.Reliability = dpqMod;
+                }
+
+                if (dataReaderProfileQos.Durability != null)
+                {
+                    DurabilityQosPolicyImpl dpqMod = new DurabilityQosPolicyImpl(this.GetBootstrap());
+                    switch (dataReaderProfileQos.Durability.Kind)
+                    {
+                        case Durability.PERSISTENT:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.PERSISTENT;
+                            break;
+                        case Durability.TRANSIENT:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT;
+                            break;
+                        case Durability.TRANSIENT_LOCAL:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT_LOCAL;
+                            break;
+                        case Durability.VOLATILE:
+                            dpqMod.KindQos = DurabilityQosPolicyKind.VOLATILE;
+                            break;
+                    }
+                    dataReaderqos.Durability = dpqMod;
+                }
+                
+                if (dataReaderProfileQos.Deadline != null)
+                {
+                    // TODO dataWriterProfileQos.Deadline
+                }
+                if (dataReaderProfileQos.LatencyBudget != null)
+                {
+                    // TODO dataReaderProfileQos.LatencyBudget
+                }
+                if (dataReaderProfileQos.Liveliness != null)
+                {
+                    // TODO dataReaderProfileQos.LatencyBudget
+                }
+                if (dataReaderProfileQos.DestinationOrder != null)
+                {
+                    // TODO dataWriterProfileQos.DestinationOrder
+                }
+                if (dataReaderProfileQos.History != null)
+                {
+                    // TODO dataReaderProfileQos.History
+                }
+                if (dataReaderProfileQos.ResourceLimits != null)
+                {
+                    // TODO dataReaderProfileQos.ResourceLimits
+                }
+                if (dataReaderProfileQos.UserData != null)
+                {
+                    // TODO dataReaderProfileQos.UserData
+                }
+                if (dataReaderProfileQos.Ownership != null)
+                {
+                    // TODO dataReaderProfileQos.Ownership
+                }
+                if (dataReaderProfileQos.TimeBasedFilter != null)
+                {
+                    // TODO dataReaderProfileQos.TimeBasedFilter
+                }
+                if (dataReaderProfileQos.ReaderDataLifecycle != null)
+                {
+                    // TODO dataReaderProfileQos.ReaderDataLifecycle
+                }
+            }
         }
 
 
@@ -198,7 +281,7 @@ namespace Doopec.Dds.Sub
 
         public void SetDefaultDataReaderQos(DataReaderQos qos)
         {
-            this.dataReaderqos = qos;
+            this.dataReaderqos = qos as DataReaderQosImpl;
         }
 
         public void SetDefaultDataReaderQos(string qosLibraryName, string qosProfileName)
