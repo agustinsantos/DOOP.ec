@@ -7,7 +7,7 @@ namespace ExampleDDS
 {
     class MainLauncher
     {
-        private const String Example = "01";
+        private const String Example = "03";
 
         public static void Main(string[] args)
         {
@@ -22,6 +22,9 @@ namespace ExampleDDS
                     break;
                 case "03":
                     app = new PubSubExample03();
+                    break;
+                case "04":
+                    app = new PubSubExample04();
                     break;
                 default:
                     app = new DiscoveryExample01();
