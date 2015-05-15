@@ -81,7 +81,9 @@ namespace Doopec.Dds.Domain
 
             DiscoveryService.Instance.RegisterParticipant(this);
         }
-
+        /// <summary>
+        /// Enable the domainParticipant
+        /// </summary>
         public override void Enable()
         {
             base.Enable();

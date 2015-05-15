@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 
 namespace ChatClient
 {
+    /// <summary>
+    /// Class to create an object that will be used as a message to be sent using the Publisher
+    /// </summary>
     public class ChatMessage
     {
         private readonly string value;
@@ -38,13 +41,18 @@ namespace ChatClient
             return this.value;
         }
     }
-
+    /// <summary>
+    ///  Main class that contains all the details of sending and receiving messages
+    /// </summary>
     class MainChat
     {
         protected static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         protected static int domainId = -1;
-
+        /// <summary>
+        /// Method running to launch the application
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 #if DEBUG
@@ -57,17 +65,18 @@ namespace ChatClient
                 string id = Console.ReadLine();
                 int.TryParse(id, out domainId);
             }
-
+            // Create the DomainFactory
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            // Create the DomainParticipant with reference to the configuration file with the domain ID
             DomainParticipant dp = factory.CreateParticipant(domainId);
             Console.WriteLine("Domain ID = {0} has been created", domainId);
             // Implicitly create TypeSupport and register type:
             Topic<ChatMessage> tp = dp.CreateTopic<ChatMessage>("Greetings Topic");
             // Create the subscriber
-            // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
+            // Create a Listener for the publishing data
             DataReaderListener<ChatMessage> ls = new MyListener();
-
+            // Create the DataReader using the topic, politics of QoS for DataReader and implemented listener
             DataReader<ChatMessage> dr = sub.CreateDataReader<ChatMessage>(tp,
                                                                             sub.GetDefaultDataReaderQos(),
                                                                             ls,
@@ -78,8 +87,9 @@ namespace ChatClient
             
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
+            // Create the DataWriter using the topic specified
             DataWriter<ChatMessage> dw = pub.CreateDataWriter(tp);
-
+            // Create a message
             String msg = "Hello, World with DDS.";
             while (msg != "quit")
             {
@@ -93,15 +103,24 @@ namespace ChatClient
             }
             dp.Close();
         }
-
+        /// <summary>
+        /// Class that inherits the type DataReaderAdapter and overrides the method OnDataAvaliable 
+        /// to read the message publisher and present this in console
+        /// </summary>
         private class MyListener : DataReaderAdapter<ChatMessage>
         {
             private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+            /// <summary>
+            /// Method is called when a new message arrives from the Publisher
+            /// </summary>
+            /// <param name="status">get data avaliable</param>
             public override void OnDataAvailable(DataAvailableStatus<ChatMessage> status)
             {
+                // Obtain the source of DataReader 
                 DataReader<ChatMessage> dr = status.GetSource();
+                // Obtain the stack of messages published
                 SampleIterator<ChatMessage> it = dr.Take();
+                // Iterator of the list of messages, to present it in console
                 foreach (Sample<ChatMessage> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
@@ -113,7 +132,9 @@ namespace ChatClient
             }
         }
 
-
+        /// <summary>
+        /// Create a file .log to register all actions of the application
+        /// </summary>
         private static void LogAssemblyInfo()
         {
             AssemblyName mainAn = Assembly.GetExecutingAssembly().GetName();
