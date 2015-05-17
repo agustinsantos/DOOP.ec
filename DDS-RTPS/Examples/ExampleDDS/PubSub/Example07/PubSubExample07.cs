@@ -19,7 +19,7 @@ using org.omg.dds.sub.modifiable;
 
 namespace ExampleDDS.PubSubExamples
 {
-    class PubSubExample04 : ExampleApp
+    class PubSubExample07 : ExampleApp
     {
         public override void RunExample(string[] args)
         {
@@ -35,10 +35,11 @@ namespace ExampleDDS.PubSubExamples
             Publisher pub = dp.CreatePublisher();
 
             ModifiableDataWriterQos qosDW = pub.GetDefaultDataWriterQos().Modify();
-            ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
-
-            dpqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
-            qosDW.SetReliability(dpqMod);
+            
+            //ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
+            ModifiableLivelinessQosPolicy dpqMod = qosDW.GetLiveliness().Modify();
+            dpqMod.SetKind(LivelinessQosPolicyKind.AUTOMATIC);
+            qosDW.SetLiveliness(dpqMod);
 
             DataWriterListener<Greeting> lis = new MyListener1();
             DataWriter<Greeting> dw = pub.CreateDataWriter(tp, qosDW, lis, null);
@@ -48,9 +49,9 @@ namespace ExampleDDS.PubSubExamples
             Subscriber sub = dp.CreateSubscriber();
 
             ModifiableDataReaderQos qosDR = sub.GetDefaultDataReaderQos().Modify();
-            ModifiableReliabilityQosPolicy dsqMod = qosDR.GetReliability().Modify();
-            dsqMod.SetKind(ReliabilityQosPolicyKind.RELIABLE);
-            qosDR.SetReliability(dsqMod);
+            ModifiableLivelinessQosPolicy dsqMod = qosDR.GetLiveliness().Modify();
+            dsqMod.SetKind(LivelinessQosPolicyKind.AUTOMATIC);
+            qosDR.SetLiveliness(dsqMod);
             DataReaderListener<Greeting> ls = new MyListener();
             DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
                                                                     qosDR,
@@ -65,7 +66,7 @@ namespace ExampleDDS.PubSubExamples
                 Greeting data = new Greeting("Hola Mundo" + i.ToString());
                 log.InfoFormat("Sending data:\"{0},{1}\"", data.Value, i);
                 dw.Write(data);
-                dr.WaitForHistoricalData(1000, TimeUnit.MILLISECONDS);
+                dr.WaitForHistoricalData(10000, TimeUnit.MILLISECONDS);
             }
 
 

@@ -1,3 +1,1 @@
-﻿This is the second DDS DCPS test.
-It shows that the DomainParticipant, Topic, Publisher, Subscriber,
-DataReader and DataWriter can do a work with state.
+﻿is the a Qos Policy Test, Specifically it test the Destination Order with by source timestamp

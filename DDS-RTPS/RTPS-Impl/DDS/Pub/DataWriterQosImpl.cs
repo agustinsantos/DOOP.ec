@@ -35,6 +35,11 @@ namespace Doopec.Dds.Pub
         {
             this.Reliability = reliability;
         }
+        public DataWriterQosImpl(DestinationOrderQosPolicy destinationOrder, Bootstrap boostrap)
+            : base(boostrap)
+        {
+            this.DestinationOrder = destinationOrder;
+        }
         
        
 

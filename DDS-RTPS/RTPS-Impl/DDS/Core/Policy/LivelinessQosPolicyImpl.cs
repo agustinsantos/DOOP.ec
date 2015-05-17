@@ -15,7 +15,7 @@ namespace Doopec.Dds.Core.Policy
     {
       
         public LivelinessQosPolicyKind KindQos { get; protected internal set; }
-        public Duration GetLeaseDurationQos { get; protected internal set; }
+        public Duration LeaseDurationQos { get; protected internal set; }
 
         public LivelinessQosPolicyImpl(Bootstrap boostrap)
             : base(boostrap)
@@ -25,8 +25,14 @@ namespace Doopec.Dds.Core.Policy
             :base(boostrap)
         {
             this.KindQos  = kind;
-            this.GetLeaseDurationQos = getLeaseDuration;
+            this.LeaseDurationQos = getLeaseDuration;
 
+        }
+
+        public LivelinessQosPolicyImpl(LivelinessQosPolicyKind kind, Bootstrap boostrap)
+            : this(boostrap)
+        {
+            this.KindQos = kind;
         }
         public LivelinessQosPolicyKind GetKind()
         {
@@ -35,7 +41,7 @@ namespace Doopec.Dds.Core.Policy
 
         public Duration GetLeaseDuration()
         {
-            return GetLeaseDurationQos;
+            return LeaseDurationQos;
         }
 
         

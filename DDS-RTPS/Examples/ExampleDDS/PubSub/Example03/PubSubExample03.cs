@@ -36,6 +36,7 @@ namespace ExampleDDS.PubSubExamples
 
             ModifiableDataWriterQos qosDW = pub.GetDefaultDataWriterQos().Modify();
             ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
+            
             dpqMod.SetKind(ReliabilityQosPolicyKind.BEST_EFFORT);
             qosDW.SetReliability(dpqMod);
 
@@ -54,14 +55,22 @@ namespace ExampleDDS.PubSubExamples
             DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
                                                                     qosDR,
                                                                     ls, null /* all status changes */);
-
+            int i = 0;
             // Now Publish some piece of data
-            Greeting data = new Greeting("Hello, World with DDS");
-            log.InfoFormat("Sending data:\"{0}\"", data.Value);
-            dw.Write(data);
+            //Greeting data = new Greeting("Hola Mundo"+ i.ToString());
+            //log.InfoFormat("Sending data:\"{0}\"", data.Value);
+
+            for ( i = 0; i < 10;i++ )
+            {
+                Greeting data = new Greeting("Hola Mundo" + i.ToString());
+                log.InfoFormat("Sending data:\"{0},{1}\"", data.Value,i);
+                dw.Write(data);
+                dr.WaitForHistoricalData(1000, TimeUnit.MILLISECONDS);
+            }
+                
 
             //and check that the reader has this data
-            dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
+            //dr.WaitForHistoricalData(10000, TimeUnit.SECONDS);
 
             dp.Close();
         }
@@ -69,18 +78,20 @@ namespace ExampleDDS.PubSubExamples
         private class MyListener : DataReaderAdapter<Greeting>
         {
             private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+            int j = 0;
             public override void OnDataAvailable(DataAvailableStatus<Greeting> status)
             {
                 DataReader<Greeting> dr = status.GetSource();
                 SampleIterator<Greeting> it = dr.Take();
+                
                 foreach (Sample<Greeting> smp in it)
                 {
                     // SampleInfo stuff is built into Sample:
                     // InstanceHandle inst = smp.GetInstanceHandle();
                     // Data accessible from Sample; null if invalid:
                     Greeting dt = smp.GetData();
-                    log.InfoFormat("Received data:\"{0}\"", dt.Value);
+                    log.InfoFormat("Received data:\"{0},{1}\"", dt.Value,j);
+                    j = j + 1;
                 }
             }
         }

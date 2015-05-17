@@ -130,12 +130,15 @@ namespace Doopec.Dds.Sub
                     switch (dataReaderProfileQos.DestinationOrder.Kind)
                     {
                         case DestinationOrder.BY_RECEPTION_TIMESTAMP:
-                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_RECEPTION_TIMESTAMP;
+                            dpqMod = new DestinationOrderQosPolicyImpl(DestinationOrderQosPolicyKind.BY_RECEPTION_TIMESTAMP, this.GetBootstrap());
                             break;
                         case DestinationOrder.BY_SOURCE_TIMESTAMP:
-                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_SOURCE_TIMESTAMP;
+                            dpqMod = new DestinationOrderQosPolicyImpl(DestinationOrderQosPolicyKind.BY_SOURCE_TIMESTAMP, this.GetBootstrap());
                             break;
-                     }
+
+
+                    }
+
                     dataReaderqos.DestinationOrder = dpqMod;
                 }
                 if (dataReaderProfileQos.History != null)

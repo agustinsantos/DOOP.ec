@@ -31,7 +31,7 @@ namespace Doopec.Dds.Core.Policy.modifiable
 
         public ModifiableLivelinessQosPolicy SetLeaseDuration(Duration leaseDuration)
         {
-            this.GetLeaseDurationQos =leaseDuration ;
+            this.LeaseDurationQos =leaseDuration ;
             return this;
         }
 

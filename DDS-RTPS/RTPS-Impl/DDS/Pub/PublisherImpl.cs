@@ -97,6 +97,7 @@ namespace Doopec.Dds.Pub
                             dpqMod.HistoryQosPolicyKind = HistoryQosPolicyKind.KEEP_LAST;
                             break;
                     }
+                    
                 }
                 if (dataWriterProfileQos.LatencyBudget != null)
                 {
@@ -112,16 +113,19 @@ namespace Doopec.Dds.Pub
                     switch (dataWriterProfileQos.Liveliness.Kind)
                     {
                         case Liveliness.AUTOMATIC:
-                            dpqMod.KindQos = LivelinessQosPolicyKind.AUTOMATIC;
+                            dpqMod = new LivelinessQosPolicyImpl( LivelinessQosPolicyKind.AUTOMATIC,this.GetBootstrap());
                             break;
                         case Liveliness.MANUAL_BY_PARTICIPANT:
-                            dpqMod.KindQos = LivelinessQosPolicyKind.MANUAL_BY_PARTICIPANT;
+                            dpqMod =new LivelinessQosPolicyImpl( LivelinessQosPolicyKind.MANUAL_BY_PARTICIPANT,this.GetBootstrap());
                             break;
                         case Liveliness.MANUAL_BY_TOPIC:
-                            dpqMod.KindQos = LivelinessQosPolicyKind.MANUAL_BY_TOPIC;
+                            dpqMod = new LivelinessQosPolicyImpl(LivelinessQosPolicyKind.MANUAL_BY_TOPIC,this.GetBootstrap());
                             break;
 
                     }
+                    dpqMod.LeaseDurationQos = new DurationImpl(this.GetBootstrap(), dataWriterProfileQos.Liveliness.LeaseDuration);
+                    dataWriterqos.Liveliness = dpqMod;
+                   
 
                 }
                 if (dataWriterProfileQos.DestinationOrder != null)
@@ -131,14 +135,16 @@ namespace Doopec.Dds.Pub
                     switch (dataWriterProfileQos.DestinationOrder.Kind)
                     {
                         case DestinationOrder.BY_RECEPTION_TIMESTAMP:
-                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_RECEPTION_TIMESTAMP;
+                            dpqMod =new DestinationOrderQosPolicyImpl( DestinationOrderQosPolicyKind.BY_RECEPTION_TIMESTAMP,this.GetBootstrap());
                             break;
                         case DestinationOrder.BY_SOURCE_TIMESTAMP:
-                            dpqMod.KindQos = DestinationOrderQosPolicyKind.BY_SOURCE_TIMESTAMP;
+                            dpqMod =new DestinationOrderQosPolicyImpl( DestinationOrderQosPolicyKind.BY_SOURCE_TIMESTAMP,this.GetBootstrap());
                             break;
 
 
                     }
+                    
+                    dataWriterqos.DestinationOrder = dpqMod;
                 }
                 if (dataWriterProfileQos.History != null)
                 {
