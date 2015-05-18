@@ -75,18 +75,19 @@ namespace Doopec.Dds.Sub
                     switch (dataReaderProfileQos.Durability.Kind)
                     {
                         case Durability.PERSISTENT:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.PERSISTENT;
+                            dpqMod = new DurabilityQosPolicyImpl(DurabilityQosPolicyKind.PERSISTENT,this.GetBootstrap());
                             break;
                         case Durability.TRANSIENT:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT;
+                            dpqMod= new DurabilityQosPolicyImpl( DurabilityQosPolicyKind.TRANSIENT,this.GetBootstrap());
                             break;
                         case Durability.TRANSIENT_LOCAL:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT_LOCAL;
+                            dpqMod =new DurabilityQosPolicyImpl( DurabilityQosPolicyKind.TRANSIENT_LOCAL,this.GetBootstrap());
                             break;
                         case Durability.VOLATILE:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.VOLATILE;
+                            dpqMod =new DurabilityQosPolicyImpl( DurabilityQosPolicyKind.VOLATILE,this.GetBootstrap());
                             break;
                     }
+                    
                     dataReaderqos.Durability = dpqMod;
                 }
 
@@ -186,6 +187,11 @@ namespace Doopec.Dds.Sub
                 {
                     // TODO dataReaderProfileQos.TimeBasedFilter
                     TimeBasedFilterQosPolicyImpl dpqMod = new TimeBasedFilterQosPolicyImpl(this.GetBootstrap());
+
+                    dpqMod.MinimumSeparationQos = new DurationImpl(this.GetBootstrap(), dataReaderProfileQos.TimeBasedFilter.MinimumSeparation);
+                  
+
+                    dataReaderqos.TimeBasedFilter = dpqMod;
                 }
                 if (dataReaderProfileQos.ReaderDataLifecycle != null)
                 {

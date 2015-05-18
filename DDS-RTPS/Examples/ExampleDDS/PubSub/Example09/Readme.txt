@@ -1,0 +1,1 @@
+﻿is the a Qos Policy Test, Specifically it test the Liveliness with automatic kind

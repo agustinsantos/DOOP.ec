@@ -62,18 +62,19 @@ namespace Doopec.Dds.Pub
                     switch (dataWriterProfileQos.Durability.Kind)
                     {
                         case Durability.PERSISTENT:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.PERSISTENT;
+                            dpqMod = new DurabilityQosPolicyImpl(DurabilityQosPolicyKind.PERSISTENT, this.GetBootstrap());
                             break;
                         case Durability.TRANSIENT:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT;
+                            dpqMod = new DurabilityQosPolicyImpl(DurabilityQosPolicyKind.TRANSIENT, this.GetBootstrap());
                             break;
                         case Durability.TRANSIENT_LOCAL:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.TRANSIENT_LOCAL;
+                            dpqMod = new DurabilityQosPolicyImpl(DurabilityQosPolicyKind.TRANSIENT_LOCAL, this.GetBootstrap());
                             break;
                         case Durability.VOLATILE:
-                            dpqMod.KindQos = DurabilityQosPolicyKind.VOLATILE;
+                            dpqMod = new DurabilityQosPolicyImpl(DurabilityQosPolicyKind.VOLATILE, this.GetBootstrap());
                             break;
                     }
+
                     dataWriterqos.Durability = dpqMod;
                 }
                 if (dataWriterProfileQos.Deadline != null)
@@ -159,6 +160,7 @@ namespace Doopec.Dds.Pub
                             dpqMod.KindQos = HistoryQosPolicyKind.KEEP_LAST;
                             break;
                     }
+                    dataWriterqos.History = dpqMod;
                 }
                 if (dataWriterProfileQos.ResourceLimits != null)
                 {
@@ -170,6 +172,7 @@ namespace Doopec.Dds.Pub
                 {
                     // TODO dataWriterProfileQos.UserData
                     UserDataQosPolicyImpl dpqMod = new UserDataQosPolicyImpl(this.GetBootstrap());
+                   
                 }
                 if (dataWriterProfileQos.Ownership != null)
                 {
@@ -178,13 +181,15 @@ namespace Doopec.Dds.Pub
                     switch(dataWriterProfileQos.Ownership.Kind)
                     {
                         case Ownership.EXCLUSIVE:
-                            dpqMod.KindQos = OwnershipQosPolicyKind.EXCLUSIVE;
+                            dpqMod = new OwnershipQosPolicyImpl(OwnershipQosPolicyKind.EXCLUSIVE,this.GetBootstrap());
                             break;
                         case Ownership.SHARED:
-                            dpqMod.KindQos = OwnershipQosPolicyKind.SHARED;
+                            dpqMod =new OwnershipQosPolicyImpl( OwnershipQosPolicyKind.SHARED,this.GetBootstrap());
                             break;
 
                     }
+
+                    
                     
                 }
                 if (dataWriterProfileQos.Lifespan != null)
