@@ -33,10 +33,7 @@ namespace ExampleDDS.PubSubExamples
 
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
-
             ModifiableDataWriterQos qosDW = pub.GetDefaultDataWriterQos().Modify();
-            
-            //ModifiableReliabilityQosPolicy dpqMod = qosDW.GetReliability().Modify();
             ModifiableLivelinessQosPolicy dpqMod = qosDW.GetLiveliness().Modify();
             dpqMod.SetKind(LivelinessQosPolicyKind.AUTOMATIC);
             qosDW.SetLiveliness(dpqMod);
@@ -63,6 +60,7 @@ namespace ExampleDDS.PubSubExamples
 
             for (i = 0; i < 10; i++)
             {
+                
                 Greeting data = new Greeting("Hola Mundo" + i.ToString());
                 log.InfoFormat("Sending data:\"{0},{1}\"", data.Value, i);
                 dw.Write(data);

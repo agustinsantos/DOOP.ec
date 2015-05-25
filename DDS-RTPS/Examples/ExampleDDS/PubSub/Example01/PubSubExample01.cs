@@ -27,29 +27,51 @@ namespace ExampleDDS.PubSubExamples
 
             // Create the publisher
             Publisher pub = dp.CreatePublisher();
-            DataWriter<Greeting> dw = pub.CreateDataWriter(tp);
+           /* DataWriter<Greeting> dw = pub.CreateDataWriter(tp);
 
+*/
+           
+            DataWriter<Greeting> dw = pub.CreateDataWriter<Greeting>(tp,
+                                                                    pub.GetDefaultDataWriterQos(),null,  null);
             // Create the subscriber
             Subscriber sub = dp.CreateSubscriber();
             DataReaderListener<Greeting> ls = new MyListener();
+            /*DataReader<Greeting> dr = sub.CreateDataReader(tp);*/
+
             DataReader<Greeting> dr = sub.CreateDataReader<Greeting>(tp,
                                                                     sub.GetDefaultDataReaderQos(),
                                                                     ls,
-                                                                    null /* all status changes */);
-
+                                                                    null  );
+            /*
             // Now Publish some piece of data
             Greeting data = new Greeting("Hello, World with DDS.");
             Console.WriteLine("Sending data:\"{0}\"", data.Value);
             dw.Write(data);
             //and check that the reader has this data
             dr.WaitForHistoricalData(10, TimeUnit.SECONDS);
-           
-            
-           
+
+            */
+            int i = 0;
+            // Now Publish some piece of data
+            //Greeting data = new Greeting("Hola Mundo"+ i.ToString());
+            //log.InfoFormat("Sending data:\"{0}\"", data.Value);
+
+            for (i = 0; i < 10; i++)
+            {
+                Greeting data = new Greeting("Hola Mundo" + i.ToString());
+                log.InfoFormat("Sending data:\"{0},{1}\"", data.Value, i);
+                dw.Write(data);
+                dr.WaitForHistoricalData(1000, TimeUnit.MILLISECONDS);
+            }
+
+
+            //and check that the reader has this data
+            //dr.WaitForHistoricalData(10000, TimeUnit.SECONDS);
+
+            dp.Close();
         
 
 
-            dp.Close();
         }
 
         private class MyListener : DataReaderAdapter<Greeting>

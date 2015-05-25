@@ -1,6 +1,7 @@
 ﻿using Doopec.DDS.Sub;
 using org.omg.dds.core;
 using org.omg.dds.core.policy;
+using org.omg.dds.sub;
 using org.omg.dds.sub.modifiable;
 using System;
 using System.Collections.Generic;
@@ -139,17 +140,17 @@ namespace Doopec.Dds.Sub.modifiable
             throw new NotImplementedException();
         }
 
-        public POLICY put<POLICY>(org.omg.dds.core.policy.QosPolicyId key, POLICY value) where POLICY : org.omg.dds.core.policy.QosPolicy
+        public POLICY put<POLICY>(QosPolicyId key, POLICY value) where POLICY : QosPolicy
         {
             throw new NotImplementedException();
         }
 
-        public ModifiableDataReaderQos CopyFrom(org.omg.dds.sub.DataReaderQos other)
+        public ModifiableDataReaderQos CopyFrom(DataReaderQos other)
         {
             return new ModifiableDataReaderQosImpl(other.GetBootstrap());
         }
 
-        public org.omg.dds.sub.DataReaderQos FinishModification()
+        public DataReaderQos FinishModification()
         {
             return new DataReaderQosImpl(this.GetBootstrap());
         }

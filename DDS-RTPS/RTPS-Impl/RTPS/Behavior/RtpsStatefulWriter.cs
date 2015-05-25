@@ -35,7 +35,7 @@ namespace Doopec.Rtps.Behavior
             discoveryModule.RegisterEndpoint(this);
             discoveryModule.EndpointDiscovery += OnDiscoveryEndpoints;
             AddReaders(discoveryModule);
-
+            
             //TODO Andres. Revisar esta direccion. Deberia venir de alguna configuracion
             //TODO use configuration for host and port
             trans = new UDPTransmitter(new Uri("udp://224.0.1.111:9999"), 256);
@@ -117,6 +117,7 @@ namespace Doopec.Rtps.Behavior
         {
             // Create a Message with InfoSource
             Message msg = new Message();
+            
             EntityId readerId = EntityId.ENTITYID_UNKNOWN;
             EntityId writerId = change.WriterGuid.EntityId; 
             SerializedPayload payload = new SerializedPayload();
@@ -140,7 +141,7 @@ namespace Doopec.Rtps.Behavior
             payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
             Data data = new Data(readerId, writerId, change.SequenceNumber.LongValue, null, payload);
             msg.SubMessages.Add(data);
-
+            
             Heartbeat heartbeat = new Heartbeat();
             heartbeat.readerId = readerId;
             heartbeat.writerId = writerId;

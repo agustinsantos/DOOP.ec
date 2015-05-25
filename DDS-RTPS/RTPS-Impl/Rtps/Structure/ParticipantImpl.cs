@@ -52,7 +52,7 @@ namespace Doopec.Rtps.Structure
             //spdpReader.Close();
             //spdpWriter.Close();
             RtpsEngineFactory.Instance.DiscoveryModule.UnregisterParticipant(this);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Dispose()

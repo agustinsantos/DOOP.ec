@@ -65,7 +65,7 @@ namespace ExampleDDS.PubSubExamples
                 Greeting data = new Greeting("Hola Mundo" + i.ToString());
                 log.InfoFormat("Sending data:\"{0},{1}\"", data.Value,i);
                 dw.Write(data);
-                dr.WaitForHistoricalData(1000, TimeUnit.MILLISECONDS);
+                dr.WaitForHistoricalData(500, TimeUnit.MILLISECONDS);
             }
                 
 

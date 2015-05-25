@@ -85,7 +85,7 @@ namespace Doopec.Rtps.Behavior
 
             Heartbeat heartbeat = new Heartbeat();
             EntityId id1 = EntityId.ENTITYID_UNKNOWN;
-            EntityId id2 = EntityId.ENTITYID_UNKNOWN;
+            EntityId id2 = EntityId.ENTITYID_PARTICIPANT;
 
             heartbeat.readerId = id1;
             heartbeat.writerId = id2;
