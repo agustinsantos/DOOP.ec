@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Doopec.Utils.Transport.RTPSMessageEventArgs">
+    <Position X="1.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAAAA=</HashCode>
+      <FileName>Transport\UDPReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Utils.Transport.UDPReceiver" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQSAIAAEAAAAASAAAAAAAgAAAAIAAAACAQAA=</HashCode>
+      <FileName>Transport\UDPReceiver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Utils.Transport.UDPTransmitter" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAIAAEAACEACAAAAAAAgAAAEIAAAACAQAA=</HashCode>
+      <FileName>Transport\UDPTransmitter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Object">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Mina.Core.Session.IoSessionEventArgs">
+    <Position X="1.25" Y="3" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Doopec.Utils.Transport.IReceiver">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Transport\IReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Doopec.Utils.Transport.ITransmitter">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAAAAACAAAAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Transport\ITransmitter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

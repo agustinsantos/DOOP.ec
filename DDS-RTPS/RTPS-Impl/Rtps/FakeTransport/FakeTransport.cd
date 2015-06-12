@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Doopec.Rtps.SharedMem.DiscoveryEventArgs">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Rtps\FakeTransport\FakeDiscovery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.SharedMem.FakeDiscovery" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAIAAgAQAAAAEBACQAAAAAAIAAAACAQQAAAAAA=</HashCode>
+      <FileName>Rtps\FakeTransport\FakeDiscovery.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Object">
+    <Position X="10.5" Y="2" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.EventArgs">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Doopec.Rtps.SharedMem.FakeEngine">
+    <Position X="7.75" Y="0.5" Width="2" />
+    <InheritanceLine Type="System.Object" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="2" />
+        <Point X="11.5" Y="0.846" />
+        <Point X="9.75" Y="0.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAA=</HashCode>
+      <FileName>Rtps\FakeTransport\FakeEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Doopec.Rtps.SharedMem.EventReason">
+    <Position X="0.5" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgCAAAAAAAAAAAAAAAAAABAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\FakeTransport\FakeDiscovery.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

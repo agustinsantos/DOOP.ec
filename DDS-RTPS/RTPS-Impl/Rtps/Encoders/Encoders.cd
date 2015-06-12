@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Doopec.Rtps.Encoders.AckNackEncoder">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\AckNackEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.DataFragEncoder">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\DataFragEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.DataSubMessageEncoder">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAA=</HashCode>
+      <FileName>Rtps\Encoders\DataSubMessageEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.EncapsulationSchemeEncoder">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\EncapsulationSchemeEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.EntityIdEncoder">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAgAAAAAEAAAAAAAAgAAAA=</HashCode>
+      <FileName>Rtps\Encoders\EntityIdEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.EntityIdSerializer" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.EntityIdSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\EntityIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.EntityIdSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\EntityIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\EntityIdEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.GapEncoder">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\GapEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.GUIDEncoder">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAQAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAA=</HashCode>
+      <FileName>Rtps\Encoders\GuidEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.GUIDSerializer" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.GUIDSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\GuidEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.GUIDSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\GuidEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\GuidEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.GuidPrefixEncoder">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\GuidPrefixEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.GuidPrefixSerializer" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.GuidPrefixSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\GuidPrefixEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.GuidPrefixSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\GuidPrefixEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\GuidPrefixEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.HeaderEncoder">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Rtps\Encoders\HeaderEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.HeartbeatEncoder">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\HeartbeatEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.HeartbeatFragEncoder">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\HeartbeatFragEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.InfoDestinationEncoder">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\InfoDestinationEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.InfoReplyEncoder">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\InfoReplyEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.InfoReplyIp4Encoder">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\InfoReplyIp4Encoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.InfoSourceEncoder">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Rtps\Encoders\InfoSourceEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.InfoTimestampEncoder">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\InfoTimestampEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.LocatorEncoder">
+    <Position X="14.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAQAAACAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\LocatorEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.LocatorSerializer" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.LocatorSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\LocatorEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.LocatorSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\LocatorEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\LocatorEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.LocatorUDPv4Encoder">
+    <Position X="3.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\LocatorUDPv4Encoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.MessageEncoder" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\MessageEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.MessageDecoder">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\MessageEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.MessageCodecFactory" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAQAAAQA=</HashCode>
+      <FileName>Rtps\Encoders\MessageEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.MessageStaticEncoder">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\MessageStaticEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.NackFragEncoder">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\NackFragEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.PadEncoder">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\PadEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ParameterEncoder">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\ParameterEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ParameterListEncoder">
+    <Position X="12.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAACAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\ParameterListEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ProtocolIdEncoder">
+    <Position X="14.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAAAgAIAAAA=</HashCode>
+      <FileName>Rtps\Encoders\ProtocolIdEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ProtocolIdSerializer" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.ProtocolIdSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\ProtocolIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.ProtocolIdSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\ProtocolIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\ProtocolIdEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ProtocolVersionEncoder">
+    <Position X="9" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAggAA=</HashCode>
+      <FileName>Rtps\Encoders\ProtocolVersionEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.ProtocolVersionSerializer" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="7.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.ProtocolVersionSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\ProtocolVersionEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.ProtocolVersionSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\ProtocolVersionEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\ProtocolVersionEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.SequenceNumberEncoder">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\SequenceNumberEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.SequenceNumberSetEncoder">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Rtps\Encoders\SequenceNumberSetEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.StatusInfoEncoder">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Rtps\Encoders\StatusInfoEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.SubMessageEncoder">
+    <Position X="0.5" Y="8.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAACAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\SubMessageEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.SubMessageHeaderEncoder">
+    <Position X="0.5" Y="7.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Rtps\Encoders\SubMessageHeaderEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.TimeEncoder">
+    <Position X="9.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\TimeEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.VendorIdEncoder">
+    <Position X="5.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAACAAAAAAAAAAAAAAEQAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\VendorIdEncoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Encoders.VendorIdSerializer" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Encoders.VendorIdSerializer.WriterDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\VendorIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Doopec.Rtps.Encoders.VendorIdSerializer.ReaderDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Encoders\VendorIdEncoder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\VendorIdEncoder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Encoders.RTPS.Sentinel">
+    <Position X="3.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Encoders\Sentinel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

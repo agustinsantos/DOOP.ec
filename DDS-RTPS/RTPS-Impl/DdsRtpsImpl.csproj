@@ -254,7 +254,14 @@
     <None Include="Configuration\ConfigurationSection.csd.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Rtps\Behavior\Behavior.cd" />
+    <None Include="Rtps\Discovery\Discovery.cd" />
+    <None Include="Rtps\Encoders\Encoders.cd" />
+    <None Include="Rtps\FakeTransport\FakeTransport.cd" />
+    <None Include="Rtps\Messages\Messages.cd" />
+    <None Include="Rtps\RtpsTransport\RTPSTransport.cd" />
     <None Include="SQL-DDS\SqlDDSGrammar.g4" />
+    <None Include="Transport\UDPTransport.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />

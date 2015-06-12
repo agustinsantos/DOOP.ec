@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Doopec.Rtps.Behavior.FakeRtpsReader&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAABACAAAAAAAAAACAAAAAAAIAAAAABCAAAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\FakeRtpsReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.FakeRtpsWriter&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAADACAQAAACAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\FakeRtpsWriter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.RtpsStatefulReader&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAABACAAAAAAEAIACAAAAAAAIAAAAABCAAAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\RtpsStatefulReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.RtpsStatefulWriter&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEDAKAQAAACAAABCAAAAAAAAAEAAAAAAEAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\RtpsStatefulWriter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.RtpsStatelessReader&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACAAAAAAEAAAKAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\RtpsStatelessReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.RtpsStatelessWriter&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAAKAQAAAAAAABCAAEAAAAAAEAAACAAAAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\RtpsStatelessWriter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Behavior.WriterWorker">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Doopec.Rtps.Behavior.WriterWorker.PeriodicWorkDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Rtps\Behavior\WriterWorker.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAACAAAAAAAAAAAQAABAAAAAAA=</HashCode>
+      <FileName>Rtps\Behavior\WriterWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rtps.Behavior.StatefulReader&lt;T&gt;">
+    <Position X="1.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Rtps.Behavior.StatefulWriter&lt;T&gt;">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Rtps.Behavior.StatelessReader&lt;T&gt;">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Rtps.Behavior.StatelessWriter&lt;T&gt;">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Doopec.Rtps.Utils.PeriodicWorker">
+    <Position X="13" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAACAAAABAAAAAQAQAAAAQAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Rtps\Utils\PeriodicWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.DDSConfigurationSection" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgAAAABCABEAAAQAAQCAAAAAAAAAAJBRAAAUACAEAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.RTPSConfigurationSection" Collapsed="true">
+    <Position X="25.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAAAQAAAAABAAAgAAAAAAQAAAgACAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.Transport" Collapsed="true">
+    <Position X="20" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAQSAAAAAQAAAAQAAAAAAQAAAAAAAACARAAEAAAAAQ=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.Transports" Collapsed="true">
+    <Position X="23.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAISAAAAAAAAYAAQCAAABAAAAAABAAAAAIIAAAAAAAQ=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.Discovery" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCBAAgIhAACMAIAQAAAQAAYSAEQA4ACACCASgAIAAAE=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.ResendPeriod" Collapsed="true">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.PortBase" Collapsed="true">
+    <Position X="25.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.PortGain" Collapsed="true">
+    <Position X="27" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.OffsetUnicast" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.OffsetMulticast" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.UseSedpMulticast" Collapsed="true">
+    <Position X="27" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.LocatorAddrs" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.TTL" Collapsed="true">
+    <Position X="25.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.RtpsWriter" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAQAEAQAAAAAAUAAAAAAAAAAAAAAIAAAAAgCAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.RtpsReader" Collapsed="true">
+    <Position X="27" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAABCAAAAAAAAAAAAAAAgABAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.PushMode" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.HeartbeatPeriod" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.ResponseDelay" Collapsed="true">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.SuppressionDuration" Collapsed="true">
+    <Position X="18.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Rtps.Generic_TODO" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.Domains" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAISAAAAAAAAIAAQCAAABAAAAAABAAAAAIIAAAgAAAQ=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.DomainParticipant" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAKEAQAAAAAAIAYAAAAAAQAAAAQBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.Log4NetLevel" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAgAAQAAAAAACAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoS" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.DomainParticipantQoS" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAQAAAAAAAAAAAAQAAAAAAAAAAIgAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QosData" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSEntityFactory" Collapsed="true">
+    <Position X="27" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.PublisherQoS" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAQAQACAAAAAAIACAQABAAAAAAAAAgAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSPresentation" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAEAAAAAAAAUAAAAAAAAgAAAAAAAAAABAAAAAgA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.SubscriberQoS" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAQAQACAAAAAAIACAQABAAAAAAAAAgAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSProfilePolicy" Collapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAEgAAAwQCAAAQACAAgAQAAAAgIEAAAAACEAAAACA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.TopicQoS" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQAAAQAQCAQAICAAAgAgAAAAEAgFAGTEBAUIAI=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSDurability" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.DataWriterQoS" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAQAQCAQAICAAIgAgAAAQGAgEAHTEBAcIAI=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.DataReaderQoS" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAUQAQAACAAAgAgAAAQEAgEAGTEBIcIAI=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSReability" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAIAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSTransportPriority" Collapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSHistory" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAQAAAAAAAAAAAAABAgAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSLifespan" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSOwnership" Collapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSOwnershipStrength" Collapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSWriterDataLifecycle" Collapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQBAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSReaderDataLifecycle" Collapsed="true">
+    <Position X="25.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAQAAAAAAAIAAABAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSLatencyBudget" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSDeadline" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSTimeBasedFilter" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAQAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSPartition" Collapsed="true">
+    <Position X="27" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSLiveliness" Collapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSResourceLimits" Collapsed="true">
+    <Position X="27" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAQYAAAEAAAQAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSDurabilityService" Collapsed="true">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAQAgAAQYAAAEAAAQAAACAAQAAIAAAAEAgA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSDestinationOrder" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.DomainParticipantFactoryQoS" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.TransportProfile" Collapsed="true">
+    <Position X="21.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.BoostrapType" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSProfiles" Collapsed="true">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAISAAAIAIAAIAAQCAAABAAAAAABAAAAAIIAAAAAAAQ=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.QoSProfile" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Configuration.Dds.GuiKind" Collapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAAAQAAAAAAAAgAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Doopec.Configuration.LogLevel" Collapsed="true">
+    <Position X="16.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACBgAAAAAAAAAAAAgAAAQAAAAAAAAQABAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.Durability" Collapsed="true">
+    <Position X="21.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAQAAAAAAgEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.Reliability" Collapsed="true">
+    <Position X="20" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.History" Collapsed="true">
+    <Position X="25.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.DataRepresentation" Collapsed="true">
+    <Position X="18.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.DestinationOrder" Collapsed="true">
+    <Position X="20" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.Liveliness" Collapsed="true">
+    <Position X="27" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAIAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.Ownership" Collapsed="true">
+    <Position X="18.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.AccessScope" Collapsed="true">
+    <Position X="16.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.TypeConsistencyEnforcement" Collapsed="true">
+    <Position X="21.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Doopec.Configuration.GuiKind" Collapsed="true">
+    <Position X="23.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEABEAAAAAAAABAAIA=</HashCode>
+      <FileName>Configuration\ConfigurationSection.csd.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

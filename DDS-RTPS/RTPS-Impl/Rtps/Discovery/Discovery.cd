@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Doopec.Rtps.Discovery.DiscoveredReaderData">
+    <Position X="8.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAhAIAAAAAAAQSQAAAAAAAAAKACQQhAAAQERAJgMCAI=</HashCode>
+      <FileName>Rtps\Discovery\DiscoveredReaderData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.DiscoveredTopicData">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhAIAQAAAQAQCQAAAAAAAQAAAAQAhAAAQETAJgUAAI=</HashCode>
+      <FileName>Rtps\Discovery\DiscoveredTopicData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.DiscoveredWriterData">
+    <Position X="0.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAhAIAQAAAAAQCQAAAAAAAAAKACQQhAAAQERAJgcCBI=</HashCode>
+      <FileName>Rtps\Discovery\DiscoveredWriterData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.DiscoveryImpl" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAJAAQCAQAAAAACAAAAAAAAAAAAACAAAAAEAAAQA=</HashCode>
+      <FileName>Rtps\Discovery\DiscoveryImpl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.AddDomainStatus">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Rtps\Discovery\DiscoveryImpl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.Sedp">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\Sedp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinPublicationsReader">
+    <Position X="6" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinPublicationsReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinPublicationsWriter">
+    <Position X="5" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinPublicationsWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinSubscriptionsReader">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinSubscriptionsReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinSubscriptionsWriter">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinSubscriptionsWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinTopicsReader">
+    <Position X="6" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinTopicsReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SEDPbuiltinTopicsWriter">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SEDPbuiltinTopicsWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.Spdp">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\Spdp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SPDPbuiltinParticipantReaderImpl">
+    <Position X="4" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SPDPbuiltinParticipantReaderImpl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SPDPbuiltinParticipantWriterImpl">
+    <Position X="6" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SPDPbuiltinParticipantWriterImpl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SPDPPublicationBuiltinTopicData">
+    <Position X="2.5" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SPDPPublicationBuiltinTopicData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SPDPSubscriptionBuiltinTopicData">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SPDPSubscriptionBuiltinTopicData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doopec.Rtps.Discovery.SPDPTopicBuiltinTopicData">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rtps\Discovery\SPDPTopicBuiltinTopicData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
