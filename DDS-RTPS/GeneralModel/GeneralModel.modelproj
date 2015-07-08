@@ -50,6 +50,34 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\Read Message\ReadMessage.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="SubscriptionProcess\Subscription Interaction\StatelessReader.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -61,6 +89,7 @@
     <Content Include="ModelDefinition\GeneralModel.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="RTPS Process\RTPS Interaction" />
     <Folder Include="SubscriptionProcess" />
     <Folder Include="RTPS Process" />
     <Folder Include="PublicationProcess" />
