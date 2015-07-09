@@ -78,6 +78,27 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="SubscriptionProcess\Subscription Interaction\StatelessReader.sequencediagram">
       <SubType>Content</SubType>
     </Content>
