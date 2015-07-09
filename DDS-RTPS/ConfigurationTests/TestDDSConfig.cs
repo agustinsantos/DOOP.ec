@@ -169,6 +169,39 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultDomainParticipantQoS", qosProfile.DomainParticipantQos.Name);
         }
         /// <summary>
+        /// <domainParticipantQos name="defaultDomainParticipantQoS">
+        /// <entityFactory autoenableCreatedEntities="true"/>
+        /// <userData  value=""/>
+        /// </domainParticipantQos>
+        /// </summary>
+        [TestMethod]
+        public void TestExistDomainParticipantQos_NUEVO()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DomainParticipantQos);
+            Assert.AreEqual("defaultDomainParticipantQoS", qosProfile.DomainParticipantQos.Name);
+            Assert.AreEqual("", qosProfile.DomainParticipantQos.UserData);
+        }
+        /// <summary>
+        /// <domainParticipantQos name="defaultDomainParticipantQoS">
+        /// <entityFactory autoenableCreatedEntities="true"/>
+        /// <userData  value=""/>
+        /// </domainParticipantQos>
+        /// </summary>
+        [TestMethod]
+        public void TestExistDomainParticipantQos_NUEVO1()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DomainParticipantQos);
+            Assert.AreEqual("DomainParticipantQoS01", qosProfile.DomainParticipantQos.Name);
+            Assert.AreEqual("user data sample", qosProfile.DomainParticipantQos.UserData);
+        }
+
+        /// <summary>
         /// <topicQoS name="defaultTopicQoS">
         /// <topicData value=""/>
         /// <deadline  period="100"/>
@@ -201,6 +234,25 @@ namespace ConfigurationTests
             Assert.IsNotNull(qosProfile.PublisherQoS);
             Assert.AreEqual("defaultPublisherQoS", qosProfile.PublisherQoS.Name);
         }
+
+        [TestMethod]
+        public void TestExistPublisherQoS_seriepruebas2()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.PublisherQoS);
+            Assert.AreEqual("defaultPublisherQoS", qosProfile.PublisherQoS.Name);
+
+            Assert.IsTrue(qosProfile.PublisherQoS.EntityFactory.AutoenableCreatedEntities);
+            Assert.AreEqual("", qosProfile.PublisherQoS.GroupData.Value);
+            Assert.AreEqual("", qosProfile.PublisherQoS.Partition.Value);
+            Assert.AreEqual(AccessScope.INSTANCE, qosProfile.PublisherQoS.Presentation.AccessScope);
+            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.OrderedAccess);
+            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.CoherentAccess);
+        }
+
+
         /// <summary>
         /// <subscriberQoS name="defaultSubscriberQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>

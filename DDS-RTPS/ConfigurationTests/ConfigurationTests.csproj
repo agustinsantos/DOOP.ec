@@ -51,11 +51,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DomainParticipantFactory.cs" />
+    <Compile Include="TestDDSConfigCreatingObject.cs" />
     <Compile Include="TestRTPSConfig.cs" />
     <Compile Include="TestDDSConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDS\API-DDS.csproj">
+      <Project>{69644a78-9bd8-4074-8ea8-2c7d1a96d15c}</Project>
+      <Name>API-DDS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RTPS-Impl\DdsRtpsImpl.csproj">
       <Project>{51bb643c-96ed-472e-b80b-723254599bc3}</Project>
       <Name>DdsRtpsImpl</Name>
