@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="25_ deserialize_data.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="25_ deserialize_data.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>25_ deserialize_data.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="PublicationProcess\Publication Interaction\PublicationInteractionModel.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -50,54 +57,68 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\Read Message\ReadMessage.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEY.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram.layout">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEY.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
+      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram.layout">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
+      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYCommunicationError.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatelesslReaderWriterKEY_NOKEY.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
+    <Content Include="RTPS Process\RTPS Interaction\BestEffortStatelesslReaderWriterKEY_NOKEY.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\ReliableReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+      <DependentUpon>RTPS Process\RTPS Interaction\BestEffortStatelesslReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram">
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEY.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram.layout">
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEY.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>RTPS Process\RTPS Interaction\ReliableWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYCommunicationError.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYCommunicationError.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYCommunicationError.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
     <Content Include="SubscriptionProcess\Subscription Interaction\StatelessReader.sequencediagram">
       <SubType>Content</SubType>
