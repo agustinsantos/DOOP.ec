@@ -601,7 +601,7 @@
         <umlExecutionSpecificationShapeMoniker Id="1fa5dc33-2ec6-4028-8431-08559f7a9e95" />
       </nodes>
     </asyncMessageConnector>
-    <commentShape Id="80533d4a-0401-481f-8684-2662d6fb6a75" absoluteBounds="8.375, 11.25, 1.25, 0.375" customColor="251, 247, 200">
+    <commentShape Id="80533d4a-0401-481f-8684-2662d6fb6a75" absoluteBounds="8.375, 11.875, 0.875, 2.625" customColor="251, 247, 200">
       <commentMoniker Id="f78ae139-7c46-4067-9729-84fd76e4b5cb" />
       <relativeChildShapes />
     </commentShape>
@@ -903,7 +903,7 @@
         <lifelineShapeMoniker Id="785ca181-4277-4232-a885-d05ce9e86b4e" />
       </nodes>
     </returnMessageConnector>
-    <commentShape Id="5e6453e8-932d-44ff-a23f-1ef821893cbe" absoluteBounds="8.25, 15.5, 1.25, 0.25" customColor="251, 247, 200">
+    <commentShape Id="5e6453e8-932d-44ff-a23f-1ef821893cbe" absoluteBounds="8.25, 16, 1.25, 11.625" customColor="251, 247, 200">
       <commentMoniker Id="c57ea5c7-c22f-49a4-8a5b-ec9e4ef90e86" />
       <relativeChildShapes />
     </commentShape>
