@@ -120,6 +120,13 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="SubscriptionProcess\Subscription Interaction\StatelessReader.sequencediagram">
       <SubType>Content</SubType>
     </Content>

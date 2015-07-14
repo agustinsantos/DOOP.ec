@@ -188,18 +188,6 @@
         </umlExecutionSpecificationShape>
       </relativeChildShapes>
     </lifelineShape>
-    <lifelineShape Id="1403af66-cc0a-48f4-be4c-894fa7748cc5" absoluteBounds="22.752083333333328, 1, 0.15, 13.020833293596912" visible="true" visualStyleMode="Modified">
-      <lifelineMoniker Id="b1e5bbaa-9003-408d-a183-1c5bd4e5fcb7" LastKnownName="WriterProxy" />
-      <relativeChildShapes>
-        <lifelineHoverShape Id="757df4fd-6b36-4beb-bb8c-bb263228d2c3" absoluteBounds="22.752083333333328, 1, 0, 13">
-          <lifelineMoniker Id="b1e5bbaa-9003-408d-a183-1c5bd4e5fcb7" LastKnownName="WriterProxy" />
-        </lifelineHoverShape>
-        <umlLifelineHeadShape Id="f1cefe9e-ba8d-4c12-b78b-e0560d3df0bf" absoluteBounds="22.327083333333327, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
-          <lifelineMoniker Id="b1e5bbaa-9003-408d-a183-1c5bd4e5fcb7" LastKnownName="WriterProxy" />
-          <relativeChildShapes />
-        </umlLifelineHeadShape>
-      </relativeChildShapes>
-    </lifelineShape>
     <lifelineShape Id="b11e04f1-7117-40c3-8f2f-ae9019919cd6" absoluteBounds="24.152083333333326, 1, 0.15, 14.129166626930246" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="cd12e2e8-f76e-4344-81db-542ebd867803" LastKnownName="StatelessReader" />
       <relativeChildShapes>
