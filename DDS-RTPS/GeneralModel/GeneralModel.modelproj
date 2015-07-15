@@ -78,6 +78,13 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\RTPS Interaction\BestEffortStatelesslReaderWriterKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\RTPS Interaction\DiscoveryProcessDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\DiscoveryProcessDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\DiscoveryProcessDiagram.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEY.sequencediagram">
       <SubType>Content</SubType>
     </Content>
