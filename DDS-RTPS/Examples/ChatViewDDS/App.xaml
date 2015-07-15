@@ -1,0 +1,92 @@
+﻿<Application x:Class="ChatView.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Resources scoped at the Application level should be defined here. -->
+        <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" StartPoint="0,0" MappingMode="Absolute">
+            <GradientStop Color="#ABADB3" Offset="0.05"/>
+            <GradientStop Color="#E2E3EA" Offset="0.07"/>
+            <GradientStop Color="#E3E9EF" Offset="1"/>
+        </LinearGradientBrush>
+        <Style x:Key="roundedTextBox" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Name="Border" CornerRadius="10" Padding="2" BorderThickness="1" Background="#FFEBECC2">
+
+                            <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnGlassy" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Border>
+                                <Grid>
+                                    <Ellipse x:Name="Ellipse" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFFF9463" Fill="#FFF68508"/>
+                                    <Path x:Name="Path" Stretch="Fill" Data="F1 M 241.778,329.676C 260.279,329.676 276.889,308.943 276.889,327.445C 276.889,345.946 260.279,360.833 241.778,360.833C 223.276,360.833 207.111,345.724 207.111,327.222C 207.111,308.721 223.276,329.676 241.778,329.676 Z " Margin="1.833,30.758,1.389,0.999">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.47243,0.904592" EndPoint="0.47243,0.18258">
+                                                <GradientStop Color="#B6FFF4DD" Offset="0"/>
+                                                <GradientStop Color="#00FF9722" Offset="0.977169"/>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                    <Path x:Name="Path_Copy" Stretch="Fill" Data="F1 M 241.778,290.833C 259.175,290.833 273.278,304.936 273.278,322.333C 273.278,339.73 259.175,319.093 241.778,319.093C 224.381,319.093 210.278,339.73 210.278,322.333C 210.278,304.936 224.381,290.833 241.778,290.833 Z " Margin="5,2,5,32.527" Opacity="0.85">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.521163,-0.324904" EndPoint="0.521163,2.03173">
+                                                <GradientStop Color="#BFFFFFFF" Offset="0"/>
+                                                <GradientStop Color="#00FFFFFF" Offset="0.977169"/>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" x:Name="contentPresenter"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Fill" TargetName="Path">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.47243,0.18258" StartPoint="0.47243,0.904592">
+                                            <GradientStop Color="#EEFFF4DD" Offset="0"/>
+                                            <GradientStop Color="#00FFD422" Offset="0.977169"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Cursor" TargetName="contentPresenter" Value="Hand"/>
+                                <Setter Property="Cursor" TargetName="Ellipse" Value="Hand"/>
+                                <Setter Property="Cursor" TargetName="grid" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Ellipse" Value="#FFC76B05"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Yellow" Color="#FFB9A702"/>
+    </Application.Resources>
+</Application>

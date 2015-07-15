@@ -106,6 +106,13 @@
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYPacketFailure.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYWithFrag.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYWithFrag.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatefulReaderWriterKEY_NOKEYWithFrag.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="RTPS Process\RTPS Interaction\ReliableStatefulWriterBesteffortReaderKEY_NOKEY.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -126,6 +133,13 @@
     <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatelessWriterBesteffortReaderKEY_NOKEY.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RTPS Process\RTPS Interaction\ReliableStatelessWriterReliableStatefulReaderKEY_NOKEY.sequencediagram</DependentUpon>
     </Content>
     <Content Include="SubscriptionProcess\Subscription Interaction\StatelessReader.sequencediagram">
       <SubType>Content</SubType>
