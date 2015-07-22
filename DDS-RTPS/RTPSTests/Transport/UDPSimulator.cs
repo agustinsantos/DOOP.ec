@@ -8,9 +8,10 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Rtps.Tests.Transport
 {
+   [TestClass]
     public class UDPSimulator
     {
         public void SendUDPPacket(string fileName, string host, int port)

@@ -14,7 +14,8 @@ using Data = Rtps.Messages.Submessages.Data;
 
 namespace Rtps.Tests.Transport
 {
-    class RTPSPacketDetector
+    [TestClass]
+    public class RTPSPacketDetector
     {
 
         //private static string Host = "localhost"; //192.168.4.111";

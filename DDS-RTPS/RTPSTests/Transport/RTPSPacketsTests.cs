@@ -23,14 +23,14 @@ namespace Rtps.Tests.Transport
         private const int Port = 7400;
 
         private UDPSimulator simulator;
-
+        
         [TestInitialize]
         public void SetUp()
         {
             simulator = new UDPSimulator();
         }
 
-        [TestMethod]
+        
         public void TestPublishPacket1()
         {
             object key = new object();
@@ -77,10 +77,10 @@ namespace Rtps.Tests.Transport
 
             rec.Start();
 
-            simulator.SendUDPPacket("SamplePackets/packet1.dat", Host, Port);
+            simulator.SendUDPPacket("SamplePackets/packet01.dat", Host, Port);
             lock (key)
             {
-                Assert.IsTrue(Monitor.Wait(key, 5000), "Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
@@ -134,12 +134,12 @@ namespace Rtps.Tests.Transport
             simulator.SendUDPPacket("SamplePackets/packet3.dat", Host, Port);
             lock (key)
             {
-                Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
 
-        [TestMethod]
+        
         public void TestDiscoveryPacket()
         {
             object key = new object();
@@ -188,7 +188,7 @@ namespace Rtps.Tests.Transport
             simulator.SendUDPPacket("SamplePackets/DiscoveryPacketSample.dat", Host, Port);
             lock (key)
             {
-                Assert.IsTrue(Monitor.Wait(key, 2000), "Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
@@ -427,7 +427,7 @@ namespace Rtps.Tests.Transport
             simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet04.dat", Host, Port);
             lock (key)
             {
-                Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
@@ -533,7 +533,7 @@ namespace Rtps.Tests.Transport
             simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet01.dat", Host, Port);
             lock (key)
             {
-                Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
+                Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
             }
             rec.Close();
         }
@@ -617,7 +617,7 @@ namespace Rtps.Tests.Transport
              simulator.SendUDPPacket("SamplePackets/TestOpenDDS_rtps_reliability_runtest_local/Packet02.dat", Host, Port);
              lock (key)
              {
-                 Assert.IsTrue(Monitor.Wait(key, 1000), "Time-out. Message has not arrived or there is an error on it.");
+                 Assert.IsTrue(Monitor.Wait(key, 10000), "Time-out. Message has not arrived or there is an error on it.");
              }
              rec.Close();
          }

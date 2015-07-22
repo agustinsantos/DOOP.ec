@@ -2,6 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Doopec.Rtps.Config;
 using System.Configuration;
+using Rtps;
+using RTPS;
+
 
 namespace Rtps.Tests.Utils
 {
@@ -11,21 +14,21 @@ namespace Rtps.Tests.Utils
         [TestMethod]
         public void TestRtpsExists()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            Doopec.Rtps.Config.RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.IsNotNull(rtpsConfig);
         }
 
         [TestMethod]
         public void TestSPDPExists()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.IsNotNull(rtpsConfig.SPDPConfig);
         }
 
         [TestMethod]
         public void TestSPDPContent()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             /// The default rate by which SPDP periodic announcements are sent equals 30 seconds.
             Assert.AreEqual(3000, rtpsConfig.SPDPConfig.ResendDataPeriod);
             Assert.AreEqual("udp://239.255.0.1", rtpsConfig.SPDPConfig.MulticastLocatorList);
@@ -46,14 +49,14 @@ namespace Rtps.Tests.Utils
         [TestMethod]
         public void TestWriterExists()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.IsNotNull(rtpsConfig.WriterConfiguration);
         }
 
         [TestMethod]
         public void TestWriterContent()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.AreEqual(true, rtpsConfig.WriterConfiguration.PushMode);
             Assert.AreEqual(5000, rtpsConfig.WriterConfiguration.HeartbeatPeriod);
             Assert.AreEqual(200, rtpsConfig.WriterConfiguration.NackResponseDelay);
@@ -63,14 +66,14 @@ namespace Rtps.Tests.Utils
         [TestMethod]
         public void TestReaderExists()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.IsNotNull(rtpsConfig.ReaderConfiguration);
         }
 
         [TestMethod]
         public void TestReaderContent()
         {
-            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as RtpsConfigurationSectionHandler;
+            RtpsConfigurationSectionHandler rtpsConfig = ConfigurationManager.GetSection("Doopec.Rtps") as Doopec.Rtps.Config.RtpsConfigurationSectionHandler;
             Assert.AreEqual(100, rtpsConfig.ReaderConfiguration.HeartbeatResponseDelay);
             Assert.AreEqual(0, rtpsConfig.ReaderConfiguration.HeartbeatSuppressionDuration);
         }

@@ -86,7 +86,7 @@ namespace Rtps.Tests.Encoders
             // Test, that bytes1 and bytes2 are equal
             AssertArrayEquals(bytes1, bytes2);
 #endif
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /// <summary>

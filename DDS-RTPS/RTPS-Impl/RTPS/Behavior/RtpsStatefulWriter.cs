@@ -25,6 +25,7 @@ namespace Doopec.Rtps.Behavior
         private IList<Reader<T>> readers = new List<Reader<T>>();
         private WriterWorker worker;
         private UDPTransmitter trans;
+        private int countaux=0;
 
         public RtpsStatefulWriter(GUID guid)
             : base(guid)
@@ -152,7 +153,37 @@ namespace Doopec.Rtps.Behavior
 
             SendData(msg);
         }
+        /*
+        public void SendInfoDestinationAckNack(CacheChange<T> change,SequenceNumberSet sns)
+        {
 
+            countaux = countaux + 1;
+            Message msg = new Message();
+            EntityId readerId = EntityId.ENTITYID_UNKNOWN;
+            EntityId writerId = change.WriterGuid.EntityId;
+            //SerializedPayload payload = new SerializedPayload();
+            IoBuffer buff = IoBuffer.Allocate(1024);
+            //payload.DataEncapsulation = buff.EncapsuleCDRData(change.DataValue.Value, BitConverter.IsLittleEndian ? ByteOrder.LittleEndian : ByteOrder.BigEndian);
+            InfoDestination infoDest = new InfoDestination();
+            
+            msg.SubMessages.Add(infoDest);
+
+            AckNack ackNack = new AckNack();
+
+
+           
+            ackNack.ReaderId = readerId;
+            ackNack.WriterId = writerId;
+            ackNack.ReaderSNState = sns ;
+
+            ackNack.Count =  countaux;
+            msg.SubMessages.Add(ackNack);
+
+            SendData(msg);
+
+
+        }
+        */
         /// <summary>
         /// Writes a message to network 
         /// </summary>

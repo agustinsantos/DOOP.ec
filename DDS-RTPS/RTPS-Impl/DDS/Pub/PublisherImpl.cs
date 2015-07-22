@@ -49,7 +49,11 @@ namespace Doopec.Dds.Pub
                 {
                     ReliabilityQosPolicyImpl dpqMod = new ReliabilityQosPolicyImpl(this.GetBootstrap());
                     if (dataWriterProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.RELIABLE)
+                    {
                         dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.RELIABLE, this.GetBootstrap());
+
+                    }
+                        
                     else if (dataWriterProfileQos.Reliability.Kind == Doopec.Configuration.Reliability.BEST_EFFORT)
                         dpqMod = new ReliabilityQosPolicyImpl(ReliabilityQosPolicyKind.BEST_EFFORT, this.GetBootstrap());
                     dpqMod.MaxBlockingTimeQos = new DurationImpl(this.GetBootstrap(), dataWriterProfileQos.Reliability.MaxBlockingTime);

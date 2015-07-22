@@ -71,6 +71,7 @@
     <Compile Include="Transport\UDPSimulator.cs" />
     <Compile Include="Transport\UDPTransportTests.cs" />
     <Compile Include="Transport\RTPSPacketsTests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Utils\PeriodicWorkerTests.cs" />
     <Compile Include="Utils\GuidGeneratorTests.cs" />
     <Compile Include="Utils\ConfigurationTests.cs" />
