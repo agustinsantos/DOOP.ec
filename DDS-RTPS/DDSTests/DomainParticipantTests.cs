@@ -4,8 +4,12 @@ using org.omg.dds.domain;
 using org.omg.dds.core;
 using Doopec.Dds.Domain;
 using org.omg.dds.pub;
+using org.omg.dds.sub;
+using org.omg.dds.topic;
 using System.Collections.Generic;
 using Doopec.Dds.Pub;
+using Doopec.Dds.Sub;
+
 
 namespace DDSTests
 {
@@ -132,5 +136,74 @@ namespace DDSTests
         {
 
         }
+
+
+        //UTPL
+
+        /// <summary>
+        /// 2.2.2.2.1.3 create_subscriber
+        /// This operation creates a Subscriber with the desired QoS policies and attaches to it the specified PublisherListener.
+        /// </summary>
+        [TestMethod]
+        public void TestCreateSubscriber()
+        {
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Subscriber subscriber = dp.CreateSubscriber();
+            Assert.IsNotNull(subscriber);
+        }
+
+        [TestMethod]
+        public void TestCreateSubscriber02()
+        {
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            SubscriberQos qos = null;
+            SubscriberListener listener = null;
+            ICollection<Type> statuses = new List<Type>();
+            Subscriber subscriber = dp.CreateSubscriber(qos, listener, statuses);
+            Assert.IsNotNull(subscriber);
+        }
+
+        [TestMethod]
+        public void TestCreateSubscriber03()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            string qosLibrary = "Libre";
+            string qosProfile = "Saludo";
+            SubscriberListener listener = null;
+            ICollection<Type> statuses = new List<Type>();
+            Subscriber subscriber = dp.CreateSubscriber(qosLibrary, qosProfile, listener, statuses);
+            //POSTCONDITIONS
+            Assert.IsNotNull(subscriber);
+        }
+
+        [TestMethod]
+        public void TestCreateTopic()
+        {
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings");
+            Assert.IsNotNull(tp);
+            Assert.AreEqual("Greetings", tp.Name);
+        }
+
+        [TestMethod]
+        public void TestDomainId()
+        {
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant(0) as DomainParticipantImpl;
+            Assert.IsNotNull(dp);
+            Assert.AreEqual(0, dp.DomainId);
+        }
+        
+        
+
+
+
+
+
     }
 }

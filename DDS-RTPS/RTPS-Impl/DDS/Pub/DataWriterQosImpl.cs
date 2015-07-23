@@ -40,7 +40,6 @@ namespace Doopec.Dds.Pub
         {
             this.DestinationOrder = destinationOrder;
         }
-        
        
 
         public DurabilityQosPolicy GetDurability()

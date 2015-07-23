@@ -235,24 +235,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultPublisherQoS", qosProfile.PublisherQoS.Name);
         }
 
-        [TestMethod]
-        public void TestExistPublisherQoS_seriepruebas2()
-        {
-            DomainParticipant domain = ddsConfig.Domains[0];
-            Assert.IsNotNull(domain.QoSProfile.Name);
-            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
-            Assert.IsNotNull(qosProfile.PublisherQoS);
-            Assert.AreEqual("defaultPublisherQoS", qosProfile.PublisherQoS.Name);
-
-            Assert.IsTrue(qosProfile.PublisherQoS.EntityFactory.AutoenableCreatedEntities);
-            Assert.AreEqual("", qosProfile.PublisherQoS.GroupData.Value);
-            Assert.AreEqual("", qosProfile.PublisherQoS.Partition.Value);
-            Assert.AreEqual(AccessScope.INSTANCE, qosProfile.PublisherQoS.Presentation.AccessScope);
-            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.OrderedAccess);
-            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.CoherentAccess);
-        }
-
-
+        
         /// <summary>
         /// <subscriberQoS name="defaultSubscriberQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>
@@ -324,5 +307,485 @@ namespace ConfigurationTests
             Assert.IsNotNull(qosProfile.DataReaderQoS);
             Assert.AreEqual("defaultDataReaderQoS", qosProfile.DataReaderQoS.Name);
         }
+
+
+
+        /*SERIE DE PRUEBAS 2*/
+
+
+        //PRESENTATION
+
+        [TestMethod]
+        public void TestPublisherQoS_presentation()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.PublisherQoS);
+            Assert.AreEqual(AccessScope.INSTANCE, qosProfile.PublisherQoS.Presentation.AccessScope);
+            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.OrderedAccess);
+            Assert.IsTrue(qosProfile.PublisherQoS.Presentation.CoherentAccess);
+        }
+
+        [TestMethod]
+        public void TestSubscriberQoS_presentation()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.SubscriberQoS);
+            Assert.AreEqual(AccessScope.INSTANCE, qosProfile.SubscriberQoS.Presentation.AccessScope);
+            Assert.IsTrue(qosProfile.SubscriberQoS.Presentation.OrderedAccess);
+            Assert.IsTrue(qosProfile.SubscriberQoS.Presentation.CoherentAccess);
+        }
+
+        //ENTITY_FACTORY
+
+        [TestMethod]
+        public void TestDomainParticipantFactoryQoS_entityFactory()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DomainParticipantFactoryQos);
+            Assert.IsTrue(qosProfile.DomainParticipantFactoryQos.EntityFactory.AutoenableCreatedEntities);
+        }
+
+        [TestMethod]
+        public void TestDomainParticipantQoS_entityFactory()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DomainParticipantQos);
+            Assert.IsTrue(qosProfile.DomainParticipantQos.EntityFactory.AutoenableCreatedEntities);
+        }
+
+        [TestMethod]
+        public void TestPublisherQoS_entityFactory()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.PublisherQoS);
+            Assert.IsTrue(qosProfile.PublisherQoS.EntityFactory.AutoenableCreatedEntities);
+        }
+
+        [TestMethod]
+        public void TestSubscriberQoS_entityFactory()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.SubscriberQoS);
+            Assert.IsTrue(qosProfile.SubscriberQoS.EntityFactory.AutoenableCreatedEntities);
+        }
+
+        //USER_DATA
+
+        [TestMethod]
+        public void TestDomainParticipantQoS_userData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DomainParticipantQos);
+            Assert.AreEqual("", qosProfile.DomainParticipantQos.UserData.Value);
+        }
+
+        [TestMethod]
+        public void TestDataReaderQoS_userData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual("", qosProfile.DataReaderQoS.UserData.Value);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_userData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual("", qosProfile.DataWriterQoS.UserData.Value);
+        }
+
+        //TOPIC_DATA
+
+        [TestMethod]
+        public void TestTopicQoS_topicData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.TopicQoS);
+            Assert.AreEqual("", qosProfile.TopicQoS.TopicData.Value);
+        }
+
+        //DEADLINE
+
+        [TestMethod]
+        public void TestTopicQoS_deadline()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.TopicQoS);
+            Assert.AreEqual(100, qosProfile.TopicQoS.Deadline.Period);
+        }
+
+        [TestMethod]
+        public void TestDataReaderQoS_deadline()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(1, qosProfile.DataReaderQoS.Deadline.Period);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_deadline()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.Deadline.Period);
+        }
+
+        //DURABILITY
+
+        [TestMethod]
+        public void TestTopicQoS_durability()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.TopicQoS);
+            Assert.AreEqual(Durability.VOLATILE, qosProfile.TopicQoS.Durability.Kind + "");
+        }
+
+        [TestMethod]
+        public void TestDataReaderQoS_durability()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(Durability.VOLATILE, qosProfile.DataReaderQoS.Durability.Kind + "");
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_durability()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(Durability.VOLATILE, qosProfile.DataWriterQoS.Durability.Kind);
+        }
+
+        //GROUP_DATA
+
+        [TestMethod]
+        public void TestPublisherQoS_groupData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.PublisherQoS);
+            Assert.AreEqual("", qosProfile.PublisherQoS.GroupData.Value);
+        }
+
+        [TestMethod]
+        public void TestSubscriberQoS_groupData()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.SubscriberQoS);
+            Assert.AreEqual("", qosProfile.SubscriberQoS.GroupData.Value);
+        }
+
+        //PARTITION
+
+        [TestMethod]
+        public void TestPublisherQoS_partition()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.PublisherQoS);
+            Assert.AreEqual("", qosProfile.PublisherQoS.Partition.Value);
+        }
+
+        [TestMethod]
+        public void TestSubscriberQoS_partition()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.SubscriberQoS);
+            Assert.AreEqual("", qosProfile.SubscriberQoS.Partition.Value);
+        }
+
+        //DESTINATION_ORDER
+
+        [TestMethod]
+        public void TestDataReaderQoS_destinationOrder()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(DestinationOrder.BY_SOURCE_TIMESTAMP, qosProfile.DataReaderQoS.DestinationOrder.Kind);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_destinationOrder()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(DestinationOrder.BY_SOURCE_TIMESTAMP, qosProfile.DataWriterQoS.DestinationOrder.Kind );
+        }
+
+        //HISTORY
+
+        [TestMethod]
+        public void TestDataReaderQoS_history()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(History.KEEP_LAST, qosProfile.DataReaderQoS.History.Kind);
+            Assert.AreEqual(1, qosProfile.DataReaderQoS.History.Depth);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_history()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(History.KEEP_LAST, qosProfile.DataWriterQoS.History.Kind);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.History.Depth);
+        }
+
+        //LATENCY_BUDGET
+
+        [TestMethod]
+        public void TestDataReaderQoS_latencyBudget()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(100, qosProfile.DataReaderQoS.LatencyBudget.Duration);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_latencyBudget()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(100, qosProfile.DataWriterQoS.LatencyBudget.Duration);
+        }
+
+        //LIVELINESS
+
+        [TestMethod]
+        public void TestDataReaderQoS_liveliness()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(Liveliness.AUTOMATIC, qosProfile.DataReaderQoS.Liveliness.Kind);
+            Assert.AreEqual(100, qosProfile.DataReaderQoS.Liveliness.LeaseDuration);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_liveliness()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(Liveliness.AUTOMATIC, qosProfile.DataWriterQoS.Liveliness.Kind);
+            Assert.AreEqual(100, qosProfile.DataWriterQoS.Liveliness.LeaseDuration);
+        }
+
+        //OWNERSHIP
+
+        [TestMethod]
+        public void TestDataReaderQoS_ownership()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(Ownership.SHARED, qosProfile.DataReaderQoS.Ownership.Kind);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_ownership()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(Ownership.SHARED, qosProfile.DataWriterQoS.Ownership.Kind);
+        }
+
+        //RELIABILITY
+
+        [TestMethod]
+        public void TestDataReaderQoS_reliability()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(Reliability.BEST_EFFORT, qosProfile.DataReaderQoS.Reliability.Kind);
+            Assert.AreEqual(1000, qosProfile.DataReaderQoS.Reliability.MaxBlockingTime);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_reliability()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(Reliability.BEST_EFFORT, qosProfile.DataWriterQoS.Reliability.Kind);
+            Assert.AreEqual(1000, qosProfile.DataWriterQoS.Reliability.MaxBlockingTime);
+        }
+
+        //RESOURCE_LIMITS
+
+        [TestMethod]
+        public void TestDataReaderQoS_resourceLimits()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(1, qosProfile.DataReaderQoS.ResourceLimits.MaxInstances);
+            Assert.AreEqual(1, qosProfile.DataReaderQoS.ResourceLimits.MaxSamples);
+            Assert.AreEqual(1, qosProfile.DataReaderQoS.ResourceLimits.MaxSamplesPerInstance);
+        }
+
+        [TestMethod]
+        public void TestDataWriterQoS_resourceLimits()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.ResourceLimits.MaxInstances);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.ResourceLimits.MaxSamples);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.ResourceLimits.MaxSamplesPerInstance);
+        }
+
+        //READER_DATA_LIFECYCLE
+
+        [TestMethod]
+        public void TestDataReaderQoS_readerDataLifecycle()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(1000, qosProfile.DataReaderQoS.ReaderDataLifecycle.AutopurgeDisposedSamplesDelay);
+            Assert.AreEqual(1000, qosProfile.DataReaderQoS.ReaderDataLifecycle.AutopurgeNowriterSamplesDelay);
+        }
+
+        //TIME_BASED_FILTER
+
+        [TestMethod]
+        public void TestDataReaderQoS_timeBasedFilter()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataReaderQoS);
+            Assert.AreEqual(1000, qosProfile.DataReaderQoS.TimeBasedFilter.MinimumSeparation);
+        }
+
+        //DURABILITY_SERVICE
+
+        [TestMethod]
+        public void TestDataWriterQoS_durabilityService()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(0, qosProfile.DataWriterQoS.DurabilityService.HistoryDepth);
+            Assert.AreEqual(History.KEEP_LAST, qosProfile.DataWriterQoS.DurabilityService.HistoryKind);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.DurabilityService.MaxInstances);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.DurabilityService.MaxSamples);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.DurabilityService.MaxSamplesPerInstance);
+            Assert.AreEqual(100, qosProfile.DataWriterQoS.DurabilityService.ServiceCleanupDelay);
+        }
+
+        //WRITER_DATA_LIFECYCLE
+
+        [TestMethod]
+        public void TestDataWriterQoS_readerDataLifecycle()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(true, qosProfile.DataWriterQoS.WriterDataLifecycle.AutodisposeUnregisteredInstances);
+        }
+
+        //LIFESPAN
+
+        [TestMethod]
+        public void TestDataWriterQoS_lifespan()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(100, qosProfile.DataWriterQoS.Lifespan.Duration);
+        }
+
+        //OWNERSHIP_STRENGTH
+
+        [TestMethod]
+        public void TestDataWriterQoS_ownershipStrength()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(100, qosProfile.DataWriterQoS.OwnershipStrength.Value);
+        }
+
+        //TRANSPORT_PRIORITY
+
+        [TestMethod]
+        public void TestDataWriterQoS_transportPriority()
+        {
+            DomainParticipant domain = ddsConfig.Domains[0];
+            Assert.IsNotNull(domain.QoSProfile.Name);
+            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
+            Assert.IsNotNull(qosProfile.DataWriterQoS);
+            Assert.AreEqual(1, qosProfile.DataWriterQoS.TransportPriority.Value);
+        }
+
     }
 }
