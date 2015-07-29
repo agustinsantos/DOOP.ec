@@ -71,7 +71,8 @@ namespace DDSTests
             DataWriter<Type> dw = publisher.CreateDataWriter(tp);
             DataWriterQosImpl dwqos = new DataWriterQosImpl(new DurabilityQosPolicyImpl(Bootstrap.CreateInstance()), Bootstrap.CreateInstance());
             dw.SetQos(dwqos);
-            
+            Assert.AreEqual(dwqos.GetDurability(), dw.GetQos().GetDurability());
+            Assert.IsNotNull(dw.GetQos());
         }
 
 
