@@ -37,7 +37,7 @@ namespace ConfigurationTests
             Assert.AreEqual(new Version(2, 1), Version.Parse(ddsConfig.Version));
         }
         /// <summary>
-        /// 
+        /// Check that DDS configuration has the correct values
         /// <boostrapType name="default" type="Doopec.Dds.Core.BootstrapImpl, Doopec"/>
         /// </summary>
         [TestMethod]
@@ -47,7 +47,7 @@ namespace ConfigurationTests
             Assert.IsNotNull(ddsConfig.BoostrapType);
             Assert.AreEqual("default", ddsConfig.BoostrapType.Name);
             Assert.AreEqual("Doopec.Dds.Core.BootstrapImpl, Doopec", ddsConfig.BoostrapType.Type);
-         }
+        }
         /// <summary>
         /// Check that domain configuration is correct.
         /// <domain name="Main" id="0">
@@ -64,6 +64,7 @@ namespace ConfigurationTests
             Assert.AreEqual(0, ddsConfig.Domains[0].Id);
         }
         /// <summary>
+        /// Check that QoS Profiles configuration is correct.
         /// <domain name="Main" id="0">
         /// <transportProfile name="defaultRtps"/>
         /// <qoSProfile name="defaultQoS"/>
@@ -80,6 +81,7 @@ namespace ConfigurationTests
         }
 
         /// <summary>
+        /// Check that Transport configuration is correct.
         /// <domain name="Main" id="0">
         /// <transportProfile name="defaultRtps"/>
         /// <qoSProfile name="defaultQoS"/>
@@ -94,6 +96,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultRtps", domain.TransportProfile.Name);
         }
         /// <summary>
+        /// Check that QoS Profile exist.
         /// <domain name="Main" id="0">
         /// <transportProfile name="defaultRtps"/>
         /// <qoSProfile name="defaultQoS"/>
@@ -108,6 +111,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultQoS", domain.QoSProfile.Name);
         }
         /// <summary>
+        /// Check that Gui Kind configuration exist and is correct.
         /// <domain name="Main" id="0">
         /// <transportProfile name="defaultRtps"/>
         /// <qoSProfile name="defaultQoS"/>
@@ -123,6 +127,7 @@ namespace ConfigurationTests
             Assert.AreEqual("7F294ABE-33F2-40B9-BFF5-7D9376EA061C", domain.Guid.Val);
         }
         /// <summary>
+        /// Check that QoS Profie Policy configuration exist.
         /// <domain name="Main" id="0">
         /// <transportProfile name="defaultRtps"/>
         /// <qoSProfile name="defaultQoS"/>
@@ -139,6 +144,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultQoS", qosProfile.Name);
         }
         /// <summary>
+        /// Check that policy of Domain Participant Factory configuration is correct.
         /// <qoSProfileDef name="defaultQoS">
         /// <domainParticipantFactoryQos name="defaultDomainParticipantFactoryQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>
@@ -154,6 +160,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultDomainParticipantFactoryQoS", qosProfile.DomainParticipantFactoryQos.Name);
         }
         /// <summary>
+        /// Check that policy of QoS of domain participant configuration is correct.
         /// <domainParticipantQos name="defaultDomainParticipantQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>
         /// <userData  value=""/>
@@ -167,41 +174,11 @@ namespace ConfigurationTests
             QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
             Assert.IsNotNull(qosProfile.DomainParticipantQos);
             Assert.AreEqual("defaultDomainParticipantQoS", qosProfile.DomainParticipantQos.Name);
-        }
-        /// <summary>
-        /// <domainParticipantQos name="defaultDomainParticipantQoS">
-        /// <entityFactory autoenableCreatedEntities="true"/>
-        /// <userData  value=""/>
-        /// </domainParticipantQos>
-        /// </summary>
-        [TestMethod]
-        public void TestExistDomainParticipantQos_NUEVO()
-        {
-            DomainParticipant domain = ddsConfig.Domains[0];
-            Assert.IsNotNull(domain.QoSProfile.Name);
-            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
-            Assert.IsNotNull(qosProfile.DomainParticipantQos);
-            Assert.AreEqual("defaultDomainParticipantQoS", qosProfile.DomainParticipantQos.Name);
             Assert.AreEqual("", qosProfile.DomainParticipantQos.UserData);
-        }
-        /// <summary>
-        /// <domainParticipantQos name="defaultDomainParticipantQoS">
-        /// <entityFactory autoenableCreatedEntities="true"/>
-        /// <userData  value=""/>
-        /// </domainParticipantQos>
-        /// </summary>
-        [TestMethod]
-        public void TestExistDomainParticipantQos_NUEVO1()
-        {
-            DomainParticipant domain = ddsConfig.Domains[0];
-            Assert.IsNotNull(domain.QoSProfile.Name);
-            QoSProfilePolicy qosProfile = ddsConfig.QoSProfiles[domain.QoSProfile.Name];
-            Assert.IsNotNull(qosProfile.DomainParticipantQos);
-            Assert.AreEqual("DomainParticipantQoS01", qosProfile.DomainParticipantQos.Name);
-            Assert.AreEqual("user data sample", qosProfile.DomainParticipantQos.UserData);
         }
 
         /// <summary>
+        /// Check that policy of QoS of topic configuration is correct.
         /// <topicQoS name="defaultTopicQoS">
         /// <topicData value=""/>
         /// <deadline  period="100"/>
@@ -218,6 +195,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultTopicQoS", qosProfile.TopicQoS.Name);
         }
         /// <summary>
+        /// Check that policy of QoS of publisher configuration is correct.
         /// <publisherQoS name="defaultPublisherQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>
         /// <groupData value=""/>
@@ -235,8 +213,9 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultPublisherQoS", qosProfile.PublisherQoS.Name);
         }
 
-        
+
         /// <summary>
+        /// Check that policy of QoS of Subscriber configuration is correct.
         /// <subscriberQoS name="defaultSubscriberQoS">
         /// <entityFactory autoenableCreatedEntities="true"/>
         /// <groupData value=""/>
@@ -255,6 +234,7 @@ namespace ConfigurationTests
         }
 
         /// <summary>
+        /// Check that policy of QoS of DataWriter configuration is correct.
         /// <dataWriterQoS name="defaultDataWriterQoS">
         /// <deadline period="1"/>
         /// <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -283,6 +263,7 @@ namespace ConfigurationTests
             Assert.AreEqual("defaultDataWriterQoS", qosProfile.DataWriterQoS.Name);
         }
         /// <summary>
+        /// Check that policy of QoS of DataReader configuration is correct.
         /// <dataReaderQoS name="defaultDataReaderQoS">
         /// <deadline period="1"/>
         /// <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -307,6 +288,7 @@ namespace ConfigurationTests
             Assert.IsNotNull(qosProfile.DataReaderQoS);
             Assert.AreEqual("defaultDataReaderQoS", qosProfile.DataReaderQoS.Name);
         }
+
 
 
 
