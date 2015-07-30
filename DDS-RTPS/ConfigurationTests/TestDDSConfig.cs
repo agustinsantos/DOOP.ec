@@ -313,7 +313,7 @@ namespace ConfigurationTests
         /*SERIE DE PRUEBAS 2*/
 
 
-        ///PRESENTATION
+        ///2.2.3.6 PRESENTATION
         ///This QoS policy controls the extent to which changes to data-instances can be 
         ///made dependent on each other and also the kind of dependencies that can be 
         ///propagated and maintained by the Service. Pag. 103
@@ -835,12 +835,12 @@ namespace ConfigurationTests
             Assert.IsTrue(qosProfile.SubscriberQoS.Presentation.CoherentAccess);
         }
 
-        ///ENTITY_FACTORY
+        ///2.2.3.20 ENTITY_FACTORY
         ///This policy controls the behavior of the Entity as a factory for other entities.
         ///This policy concerns only DomainParticipant (as factory for Publisher, Subscriber, and Topic), 
         ///Publisher (as factory for DataWriter), and Subscriber (as factory for DataReader).
         ///This policy is mutable. A change in the policy affects only the entities created after the change; 
-        ///not the previously created entities.
+        ///not the previously created entities. Pag.110
 
         ///<summary>
         ///Check that the ENTITY_FACTORY QoS policies are configured correctly by DomainParticipantFactory.
@@ -991,10 +991,10 @@ namespace ConfigurationTests
             Assert.IsFalse(qosProfile.SubscriberQoS.EntityFactory.AutoenableCreatedEntities);
         }
 
-        ///USER_DATA
+        ///2.2.3.1 USER_DATA
         ///The purpose of this QoS is to allow the application to attach additional information 
         ///to the created Entity objects such that when a remote application discovers their 
-        ///existence it can access that information and use it for its own purposes.
+        ///existence it can access that information and use it for its own purposes. Pag. 101
 
         ///<summary>
         ///Check that the USER_DATA QoS policies are configured correctly by DomainParticipant.
@@ -1073,10 +1073,10 @@ namespace ConfigurationTests
             Assert.AreEqual("", qosProfile.DataWriterQoS.UserData.Value);
         }
 
-        //TOPIC_DATA
+        //2.2.3.2 TOPIC_DATA
         ///The purpose of this QoS is to allow the application to attach additional information 
         ///to the created Topic such that when a remote application discovers their existence 
-        ///it can examine the information and use it in an application-defined way.
+        ///it can examine the information and use it in an application-defined way. Pag. 102
 
         ///<summary>
         ///Check that the TOPIC_DATA QoS policies are configured correctly by Topic.
@@ -1097,7 +1097,7 @@ namespace ConfigurationTests
             Assert.AreEqual("", qosProfile.TopicQoS.TopicData.Value);
         }
 
-        //DEADLINE
+        //2.2.3.7 DEADLINE
         ///This policy is useful for cases where a Topic is expected to have each instance 
         ///updated periodically. On the publishing side this setting establishes a contract 
         ///that the application must meet. On the subscribing side the setting establishes a minimum 
@@ -1181,9 +1181,12 @@ namespace ConfigurationTests
             Assert.AreEqual(1, qosProfile.DataWriterQoS.Deadline.Period);
         }
 
-        //DURABILITY
+        ///2.2.3.4 DURABILITY
+        ///The decoupling between DataReader and DataWriter offered by the Publish/Subscribe paradigm 
+        ///allows an application to write data even if there are no current readers on the network. Pag. 102
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1202,6 +1205,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1220,6 +1224,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1238,6 +1243,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1256,6 +1262,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1283,6 +1290,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1337,6 +1345,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1364,6 +1373,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1394,6 +1404,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1424,6 +1435,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1454,6 +1466,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1483,9 +1496,13 @@ namespace ConfigurationTests
             Assert.AreEqual(Durability.PERSISTENT, qosProfile.DataWriterQoS.Durability.Kind);
         }
 
-        //GROUP_DATA
+        ///2.2.3.3 GROUP_DATA
+        ///The purpose of this QoS is to allow the application to attach additional information to the 
+        ///created Publisher or Subscriber. The value of the GROUP_DATA is available to the application 
+        ///on the DataReader and DataWriter entities and is propagated by means of the built-in topics. Pag. 102
 
         ///<summary>
+        ///Check that the GROUP_DATA QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -1505,6 +1522,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the GROUP_DATA QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -1523,9 +1541,12 @@ namespace ConfigurationTests
             Assert.AreEqual("", qosProfile.SubscriberQoS.GroupData.Value);
         }
 
-        //PARTITION
+        ///2.2.3.13 PARTITION
+        ///This policy allows the introduction of a logical partition concept inside the 
+        ///‘physical’ partition induced by a domain. Pag.107
 
         ///<summary>
+        ///Check that the PARTITION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -1545,6 +1566,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PARTITION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -1563,9 +1585,13 @@ namespace ConfigurationTests
             Assert.AreEqual("", qosProfile.SubscriberQoS.Partition.Value);
         }
 
-        //DESTINATION_ORDER
+        ///2.2.3.17 DESTINATION_ORDER
+        ///This policy controls how each subscriber resolves the final value of a data instance 
+        ///that is written by multiple DataWriter objects (which may be associated with different 
+        ///Publisher objects) running on different nodes. Pag.109
 
         ///<summary>
+        ///Check that the DESTINATION_ORDER QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1593,6 +1619,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DESTINATION_ORDER QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_RECEPTION_TIMESTAMP"/>
@@ -1620,6 +1647,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DESTINATION_ORDER QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1650,6 +1678,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DESTINATION_ORDER QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_RECEPTION_TIMESTAMP"/>
@@ -1679,9 +1708,12 @@ namespace ConfigurationTests
             Assert.AreEqual(DestinationOrder.BY_RECEPTION_TIMESTAMP, qosProfile.DataWriterQoS.DestinationOrder.Kind);
         }
 
-        //HISTORY
+        ///2.2.3.18 HISTORY
+        ///This policy controls the behavior of the Service when the value of an instance changes 
+        ///before it is finally communicated to some of its existing DataReader entities. Pag.109
 
         ///<summary>
+        ///Check that the HISTORY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1710,6 +1742,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the HISTORY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1738,6 +1771,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the HISTORY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1769,6 +1803,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the HISTORY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1799,9 +1834,13 @@ namespace ConfigurationTests
             Assert.AreEqual(1, qosProfile.DataWriterQoS.History.Depth);
         }
 
-        //LATENCY_BUDGET
+        ///2.2.3.8 LATENCY_BUDGET
+        ///This policy provides a means for the application to indicate to the middleware the 
+        ///“urgency” of the data-communication. By having a non-zero duration the Service can 
+        ///optimize its internal operation. Pag.104
 
         ///<summary>
+        ///Check that the LATENCY_BUDGET QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1829,6 +1868,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LATENCY_BUDGET QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1858,9 +1898,13 @@ namespace ConfigurationTests
             Assert.AreEqual(100, qosProfile.DataWriterQoS.LatencyBudget.Duration);
         }
 
-        //LIVELINESS
+        ///2.2.3.11 LIVELINESS
+        ///This policy controls the mechanism and parameters used by the Service to ensure that 
+        ///particular entities on the network are still “alive.” The liveliness can also affect 
+        ///the ownership of a particular instance, as determined by the OWNERSHIP QoS policy. Pag.106
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1889,6 +1933,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1917,6 +1962,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1945,6 +1991,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1976,6 +2023,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2007,6 +2055,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the LIVELINESS QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2037,9 +2086,13 @@ namespace ConfigurationTests
             Assert.AreEqual(100, qosProfile.DataWriterQoS.Liveliness.LeaseDuration);
         }
 
-        //OWNERSHIP
+        ///2.2.3.9 OWNERSHIP
+        ///This policy controls whether the Service allows multiple DataWriter objects to update 
+        ///the same instance (identified by Topic + key) of a data-object. Pag.105
+
 
         ///<summary>
+        ///Check that the OWERSHIP QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2067,6 +2120,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the OWERSHIP QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2094,6 +2148,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the OWERSHIP QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2124,6 +2179,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the OWERSHIP QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2153,9 +2209,13 @@ namespace ConfigurationTests
             Assert.AreEqual(Ownership.EXCLUSIVE, qosProfile.DataWriterQoS.Ownership.Kind);
         }
 
-        //RELIABILITY
+        ///2.2.3.14 RELIABILITY
+        ///This policy indicates the level of reliability requested by a DataReader or offered 
+        ///by a DataWriter. These levels are ordered, BEST_EFFORT being lower than RELIABLE. 
+        ///A DataWriter offering a level is implicitly offering all levels below. Pag.108
 
         ///<summary>
+        ///Check that the RELIABILITY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2184,6 +2244,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the REABILITY QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2212,6 +2273,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the RELIABILITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2243,6 +2305,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the RELIABILITY QoS policies are configured correctly by Datawriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2273,9 +2336,12 @@ namespace ConfigurationTests
             Assert.AreEqual(1000, qosProfile.DataWriterQoS.Reliability.MaxBlockingTime);
         }
 
-        //RESOURCE_LIMITS
+        ///2.2.3.19 RESOURCE_LIMITS
+        ///This policy controls the resources that the Service can use in order to meet the 
+        ///requirements imposed by the application and other QoS settings. Pag.109
 
         ///<summary>
+        ///Check that the RESOURCE_LIMITS QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2305,6 +2371,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the RESOURCE_LIMITS QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2336,9 +2403,13 @@ namespace ConfigurationTests
             Assert.AreEqual(1, qosProfile.DataWriterQoS.ResourceLimits.MaxSamplesPerInstance);
         }
 
-        //READER_DATA_LIFECYCLE
+        ///2.2.3.22 READER_DATA_LIFECYCLE 
+        ///This policy controls the behavior of the DataReader with regards to the lifecycle of the 
+        ///data-instances it manages, that is, the data-instances that have been received and for 
+        ///which the DataReader maintains some internal resources. Pag.111
 
         ///<summary>
+        ///Check that the READER_DATA_LIFECYCLE QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2366,9 +2437,13 @@ namespace ConfigurationTests
             Assert.AreEqual(1000, qosProfile.DataReaderQoS.ReaderDataLifecycle.AutopurgeNowriterSamplesDelay);
         }
 
-        //TIME_BASED_FILTER
+        ///2.2.3.12 TIME_BASED_FILTER
+        /// This policy allows a DataReader to indicate that it does not necessarily want to see all 
+        ///values of each instance published under the Topic. Rather, it wants to see at most one 
+        ///change every minimum_separation period. Pag.107
 
         ///<summary>
+        ///Check that the TIME_BASED_FILTER QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2395,9 +2470,14 @@ namespace ConfigurationTests
             Assert.AreEqual(1000, qosProfile.DataReaderQoS.TimeBasedFilter.MinimumSeparation);
         }
 
-        //DURABILITY_SERVICE
+        ///2.2.3.5 DURABILITY_SERVICE
+        ///This policy is used to configure the HISTORY QoS and the RESOURCE_LIMITS QoS used 
+        ///by the fictitious DataReader and DataWriter used by the “persistence service.” The 
+        ///“persistence service” is the one responsible for implementing the DURABILITY kinds 
+        ///TRANSIENT and PERSISTENCE. Pag.103
 
         ///<summary>
+        ///Check that the DURABILITY_SERVICE QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2433,6 +2513,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DURABILITY_SERVICE QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2467,9 +2548,14 @@ namespace ConfigurationTests
             Assert.AreEqual(100, qosProfile.DataWriterQoS.DurabilityService.ServiceCleanupDelay);
         }
 
-        //WRITER_DATA_LIFECYCLE
+        ///2.2.3.21 WRITER_DATA_LIFECYCLE
+        ///This policy controls the behavior of the DataWriter with regards to the lifecycle of the 
+        ///data-instances it manages, that is, the data-instances that have been either explicitly 
+        ///registered with the DataWriter using the register operations or implicitly by directly 
+        ///writing the data. Pag.110
 
         ///<summary>
+        ///Check that the WRITER_DATA_LIFECYCLE QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2500,6 +2586,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the WRITER_DATA_LIFECYCLE QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2529,9 +2616,11 @@ namespace ConfigurationTests
             Assert.IsFalse(qosProfile.DataWriterQoS.WriterDataLifecycle.AutodisposeUnregisteredInstances);
         }
 
-        //LIFESPAN
+        ///2.2.3.16 LIFESPAN
+        ///The purpose of this QoS is to avoid delivering “stale” data to the application. Pag.108
 
         ///<summary>
+        ///Check that the LIFESPAN QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2561,9 +2650,12 @@ namespace ConfigurationTests
             Assert.AreEqual(100, qosProfile.DataWriterQoS.Lifespan.Duration);
         }
 
-        //OWNERSHIP_STRENGTH
+        ///2.2.3.10 OWNERSHIP_STRENGTH
+        ///This QoS policy should be used in combination with the OWNERSHIP policy. It only applies
+        ///to the situation case where OWNERSHIP kind is set to EXCLUSIVE. Pag.106
 
         ///<summary>
+        ///Check that the OWNERSHIP_STRENGTH QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -2593,9 +2685,12 @@ namespace ConfigurationTests
             Assert.AreEqual(100, qosProfile.DataWriterQoS.OwnershipStrength.Value);
         }
 
-        //TRANSPORT_PRIORITY
+        ///2.2.3.15 TRANSPORT_PRIORITY
+        ///The purpose of this QoS is to allow the application to take advantage of transports 
+        ///capable of sending messages with different priorities. Pag.108
 
         ///<summary>
+        ///Check that the TRANSPORT_PRIORITY QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
