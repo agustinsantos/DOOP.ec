@@ -16,6 +16,12 @@ namespace DDSTests
     [TestClass]
     public class SubscriberTest
     {
+        /// <summary>
+        /// 2.2.2.5.2.5 create_datareader
+        /// This operation creates a DataReader. The returned DataReader 
+        /// will be attached and belong to the Subscriber. Pag. 66
+        /// Method: DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic);
+        /// </summary>
         [TestMethod]
         public void TestCreateDataReader()
         {
@@ -27,6 +33,15 @@ namespace DDSTests
             Assert.IsNotNull(dr);
         }
 
+        /// <summary>
+        /// 2.2.2.5.2.5 create_datareader
+        /// This operation creates a DataReader. The returned DataReader 
+        /// will be attached and belong to the Subscriber. Pag. 66
+        /// Method: DataReader<TYPE> CreateDataReader<TYPE>(TopicDescription<TYPE> topic,
+        ///  	                                             DataReaderQos qos,
+        ///   	                                             DataReaderListener<TYPE> listener,
+        ///   	                                             ICollection<Type> statuses);
+        /// </summary>
         [TestMethod]
         public void TestCreateDataReader02()
         {
@@ -41,6 +56,13 @@ namespace DDSTests
             Assert.IsNotNull(dr);
         }
 
+        /// <summary>
+        /// 2.2.2.5.2.16 get_default_datareader_qos
+        /// This operation retrieves the default value of the DataReader QoS, that is, the QoS policies 
+        /// which will be used for newly created DataReader entities in the case where the QoS policies 
+        /// are defaulted in the create_datareader operation. Pag. 70
+        /// Method: DataReaderQos GetDefaultDataReaderQos();
+        /// </summary>
         [TestMethod]
         public void TestGetDefaultDataReaderQoS()
         {

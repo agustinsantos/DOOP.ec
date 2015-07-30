@@ -8,12 +8,17 @@ using org.omg.dds.topic;
 using Doopec.Dds.Domain;
 using Doopec.Dds.Pub;
 using Doopec.Dds.Core.Policy;
+using System.Collections.Generic;
 
 namespace DDSTests
 {
     [TestClass]
     public class DataWriterTest
     {
+
+        /// <summary> 
+        /// Method: System.Type GetType();
+        /// </summary>
 
         [TestMethod]
         public void TestGetType()
@@ -27,6 +32,12 @@ namespace DDSTests
             Assert.IsNotNull(dw.GetType()); 
         }
 
+        /// <summary>
+        /// 2.2.2.4.2.20 get_topic
+        /// This operation returns the Topic associated with the DataWriter. 
+        /// This is the same Topic that was used to create the DataWriter. Pag. 55
+        /// Method: Topic<TYPE> GetTopic();
+        /// </summary>
         [TestMethod]
         public void TestGetTopic()
         {
@@ -39,6 +50,9 @@ namespace DDSTests
             Assert.AreEqual("Greetings", dw.GetTopic().Name);
         }
 
+        /// <summary>
+        /// PARENT GetParent();
+        /// </summary>
         [TestMethod]
         public void TestGetParent()
         {
@@ -74,7 +88,6 @@ namespace DDSTests
             Assert.AreEqual(dwqos.GetDurability(), dw.GetQos().GetDurability());
             Assert.IsNotNull(dw.GetQos());
         }
-
 
     }
 }

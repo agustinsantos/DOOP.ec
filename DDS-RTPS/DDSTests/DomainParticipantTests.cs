@@ -142,7 +142,9 @@ namespace DDSTests
 
         /// <summary>
         /// 2.2.2.2.1.3 create_subscriber
-        /// This operation creates a Subscriber with the desired QoS policies and attaches to it the specified PublisherListener.
+        /// This operation creates a Subscriber with the desired QoS policies and 
+        /// attaches to it the specified PublisherListener. Pag. 24
+        /// Method: Subscriber CreateSubscriber();
         /// </summary>
         [TestMethod]
         public void TestCreateSubscriber()
@@ -153,33 +155,30 @@ namespace DDSTests
             Assert.IsNotNull(subscriber);
         }
 
+        /// <summary>
+        /// 2.2.2.2.1.3 create_subscriber
+        /// This operation creates a Subscriber with the desired QoS policies and 
+        /// attaches to it the specified PublisherListener. Pag. 24
+        /// Method: Subscriber CreateSubscriber();
+        /// </summary>
         [TestMethod]
         public void TestCreateSubscriber02()
         {
-            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
-            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
-            SubscriberQos qos = null;
-            SubscriberListener listener = null;
-            ICollection<Type> statuses = new List<Type>();
-            Subscriber subscriber = dp.CreateSubscriber(qos, listener, statuses);
-            Assert.IsNotNull(subscriber);
+            throw new NotImplementedException();
         }
 
         [TestMethod]
         public void TestCreateSubscriber03()
         {
-            //PRECONDITIONS
-            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
-            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
-            string qosLibrary = "Libre";
-            string qosProfile = "Saludo";
-            SubscriberListener listener = null;
-            ICollection<Type> statuses = new List<Type>();
-            Subscriber subscriber = dp.CreateSubscriber(qosLibrary, qosProfile, listener, statuses);
-            //POSTCONDITIONS
-            Assert.IsNotNull(subscriber);
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 2.2.2.2.1.5 create_topic
+        /// This operation creates a Topic with the desired QoS policies 
+        /// and attaches to it the specified TopicListener. Pag. 24
+        /// Method: Subscriber CreateSubscriber();
+        /// </summary>
         [TestMethod]
         public void TestCreateTopic()
         {
@@ -190,6 +189,12 @@ namespace DDSTests
             Assert.AreEqual("Greetings", tp.Name);
         }
 
+        /// <summary>
+        /// 2.2.2.2.1.26 get_domain_id
+        /// This operation retrieves the domain_id used to create the DomainParticipant. 
+        /// The domain_id identifies the DDS domain to which the DomainParticipant belongs. Pag. 30
+        /// Method: int DomainId { get; }
+        /// </summary>
         [TestMethod]
         public void TestDomainId()
         {
@@ -199,11 +204,5 @@ namespace DDSTests
             Assert.AreEqual(0, dp.DomainId);
         }
         
-        
-
-
-
-
-
     }
 }
