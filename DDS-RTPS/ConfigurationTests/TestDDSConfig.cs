@@ -313,9 +313,13 @@ namespace ConfigurationTests
         /*SERIE DE PRUEBAS 2*/
 
 
-        //PRESENTATION
+        ///PRESENTATION
+        ///This QoS policy controls the extent to which changes to data-instances can be 
+        ///made dependent on each other and also the kind of dependencies that can be 
+        ///propagated and maintained by the Service. Pag. 103
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -336,6 +340,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -356,6 +361,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -376,6 +382,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -396,6 +403,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -416,6 +424,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -436,6 +445,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -456,6 +466,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -476,6 +487,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -496,6 +508,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -516,6 +529,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -536,6 +550,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -556,6 +571,8 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///
+        /// Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -577,6 +594,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -598,6 +616,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -619,6 +638,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -640,6 +660,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -661,6 +682,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -682,6 +704,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -703,6 +726,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -724,6 +748,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -745,6 +770,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -766,6 +792,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -787,6 +814,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the PRESENTATION QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -807,14 +835,19 @@ namespace ConfigurationTests
             Assert.IsTrue(qosProfile.SubscriberQoS.Presentation.CoherentAccess);
         }
 
-        //ENTITY_FACTORY
+        ///ENTITY_FACTORY
+        ///This policy controls the behavior of the Entity as a factory for other entities.
+        ///This policy concerns only DomainParticipant (as factory for Publisher, Subscriber, and Topic), 
+        ///Publisher (as factory for DataWriter), and Subscriber (as factory for DataReader).
+        ///This policy is mutable. A change in the policy affects only the entities created after the change; 
+        ///not the previously created entities.
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by DomainParticipantFactory.
         ///<domainParticipantFactoryQos name="defaultDomainParticipantFactoryQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///</domainParticipantFactoryQos>
         ///</summary>
-
         [TestMethod]
         public void TestDomainParticipantFactoryQoS_entityFactory()
         {
@@ -826,6 +859,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by DomainParticipantFactory.
         ///<domainParticipantFactoryQos name="defaultDomainParticipantFactoryQoS">
         ///  <entityFactory autoenableCreatedEntities="false"/>
         ///</domainParticipantFactoryQos>
@@ -842,6 +876,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by DomainParticipant.
         ///<domainParticipantQos name="defaultDomainParticipantQoS">
         ///   <entityFactory autoenableCreatedEntities="true"/>
         ///   <userData  value=""/>
@@ -859,6 +894,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by DomainParticipant.
         ///<domainParticipantQos name="defaultDomainParticipantQoS">
         ///   <entityFactory autoenableCreatedEntities="false"/>
         ///   <userData  value=""/>
@@ -876,6 +912,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -895,6 +932,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by Publisher.
         ///<publisherQoS name="defaultPublisherQoS">
         ///  <entityFactory autoenableCreatedEntities="false"/>
         ///  <groupData value=""/>
@@ -914,6 +952,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="true"/>
         ///  <groupData value=""/>
@@ -933,6 +972,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the ENTITY_FACTORY QoS policies are configured correctly by Subscriber.
         ///<subscriberQoS name="defaultSubscriberQoS">
         ///  <entityFactory autoenableCreatedEntities="false"/>
         ///  <groupData value=""/>
@@ -951,9 +991,13 @@ namespace ConfigurationTests
             Assert.IsFalse(qosProfile.SubscriberQoS.EntityFactory.AutoenableCreatedEntities);
         }
 
-        //USER_DATA
+        ///USER_DATA
+        ///The purpose of this QoS is to allow the application to attach additional information 
+        ///to the created Entity objects such that when a remote application discovers their 
+        ///existence it can access that information and use it for its own purposes.
 
         ///<summary>
+        ///Check that the USER_DATA QoS policies are configured correctly by DomainParticipant.
         ///<domainParticipantQos name="defaultDomainParticipantQoS">
         ///   <entityFactory autoenableCreatedEntities="true"/>
         ///   <userData  value=""/>
@@ -971,6 +1015,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the USER_DATA QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -998,6 +1043,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the USER_DATA QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1028,8 +1074,12 @@ namespace ConfigurationTests
         }
 
         //TOPIC_DATA
+        ///The purpose of this QoS is to allow the application to attach additional information 
+        ///to the created Topic such that when a remote application discovers their existence 
+        ///it can examine the information and use it in an application-defined way.
 
         ///<summary>
+        ///Check that the TOPIC_DATA QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1048,8 +1098,13 @@ namespace ConfigurationTests
         }
 
         //DEADLINE
-
+        ///This policy is useful for cases where a Topic is expected to have each instance 
+        ///updated periodically. On the publishing side this setting establishes a contract 
+        ///that the application must meet. On the subscribing side the setting establishes a minimum 
+        ///requirement for the remote publishers that are expected to supply the data values. Pag. 104
+        
         ///<summary>
+        ///Check that the DEADLINE QoS policies are configured correctly by Topic.
         ///<topicQoS name="defaultTopicQoS">
         ///  <topicData value=""/>
         ///  <deadline  period="100"/>
@@ -1068,6 +1123,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DEADLINE QoS policies are configured correctly by DataReader.
         ///<dataReaderQoS name="defaultDataReaderQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
@@ -1095,6 +1151,7 @@ namespace ConfigurationTests
         }
 
         ///<summary>
+        ///Check that the DEADLINE QoS policies are configured correctly by DataWriter.
         ///<dataWriterQoS name="defaultDataWriterQoS">
         ///  <deadline period="1"/>
         ///  <destinationOrder  kind="BY_SOURCE_TIMESTAMP"/>
