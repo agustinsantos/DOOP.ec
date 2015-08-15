@@ -1,20 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using org.omg.dds.domain;
+using org.omg.dds.core;
 using Doopec.Dds.Domain;
 using org.omg.dds.pub;
-using org.omg.dds.core;
 using org.omg.dds.core.policy;
 
 namespace ConfigurationTests
 {
-     [TestClass]
-    class TestDDSConfigCreatingObject
+    [TestClass]
+    public class TestDDSConfigCreatingObject
     {
+
         [TestMethod]
         public void QoSPublisherTest01()
         {
@@ -78,5 +75,6 @@ namespace ConfigurationTests
             bool isOrderedAccess = qos.GetPresentation().IsOrderedAccess();
             Assert.IsTrue(isOrderedAccess);
         }
+
     }
 }

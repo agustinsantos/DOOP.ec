@@ -14,6 +14,8 @@ using org.omg.dds.sub;
 using org.omg.dds.sub.modifiable;
 using org.omg.dds.topic.modifiable;
 using Doopec.Dds.Core.Policy;
+using System.Collections.Generic;
+using DDS.ConversionUtils;
 
 namespace DDSTests
 {
@@ -684,5 +686,425 @@ namespace DDSTests
             Assert.AreEqual(userValue[0], userdataVal[0]);
         }
 
+        /// <summary>
+        /// Set quality of service DEADLINE on a Topic
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void DeadlineTopicTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Assert.IsNotNull(tp);
+            ModifiableTopicQos qos = tp.GetQos().Modify();
+            Duration topicValue = qos.GetDeadline().GetPeriod();
+            ModifiableDeadlineQosPolicy topicDeadline=new DeadlineQosPolicyImpl(topicValue, tp.GetBootstrap()).Modify();
+            
+            qos.SetDeadline(topicDeadline);
+            tp.SetQos(qos);
+
+            Assert.IsNotNull(tp.GetQos());
+            Assert.IsNotNull(tp.GetQos().GetDeadline());
+        }
+
+        /// <summary>
+        /// Set the quality of service of DEADLINE on DataReader 
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void DeadlineDataReaderTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Subscriber sub = dp.CreateSubscriber();
+            DataReader<Type> dr = sub.CreateDataReader(tp);
+            Assert.IsNotNull(dr);
+            ModifiableDataReaderQos qos = dr.GetQos().Modify();
+
+            ModifiableDeadlineQosPolicy deadline = new DeadlineQosPolicyImpl(dr.GetBootstrap()).Modify();
+            Duration deadlineValue = qos.GetDeadline().GetPeriod();
+            deadline.SetPeriod(deadlineValue);
+            qos.SetDeadline(deadline);
+            dr.SetQos(qos);
+
+            Assert.IsNotNull(dr.GetQos());
+            Assert.IsNotNull(dr.GetQos().GetDeadline());
+        }
+
+        /// <summary>
+        /// Set the quality of service of DEADLINE on DataWriter 
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void DeadlineDataWriterTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Publisher pub = dp.CreatePublisher();
+            DataWriter<Type> dw = pub.CreateDataWriter(tp);
+            Assert.IsNotNull(dw);
+            ModifiableDataWriterQos qos = dw.GetQos().Modify();
+
+            ModifiableDeadlineQosPolicy deadline = new DeadlineQosPolicyImpl(dw.GetBootstrap()).Modify();
+            Duration deadlineValue = qos.GetDeadline().GetPeriod();
+            deadline.SetPeriod(deadlineValue);
+            qos.SetDeadline(deadline);
+            dw.SetQos(qos);
+
+            Assert.IsNotNull(dw.GetQos());
+            Assert.IsNotNull(dw.GetQos().GetDeadline());
+        }
+
+        /// <summary>
+        /// Set quality of service LATENCY_BUDGET on a Topic
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void LatencyBudgetTopicTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Assert.IsNotNull(tp);
+            ModifiableTopicQos qos = tp.GetQos().Modify();
+            Duration topicValue = qos.GetLatencyBudget().GetDuration();
+            ModifiableLatencyBudgetQosPolicy topicLatencyBudget = new LatencyBudgetQosPolicyImpl(topicValue, tp.GetBootstrap()).Modify();
+
+            qos.SetLatencyBudget(topicLatencyBudget);
+            tp.SetQos(qos);
+
+            Assert.IsNotNull(tp.GetQos());
+            Assert.IsNotNull(tp.GetQos().GetLatencyBudget());
+        }
+
+        /// <summary>
+        /// Set the quality of service of LATENCY_BUDGET on DataReader 
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void LatencyBadgetDataReaderTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Subscriber sub = dp.CreateSubscriber();
+            DataReader<Type> dr = sub.CreateDataReader(tp);
+            Assert.IsNotNull(dr);
+            ModifiableDataReaderQos qos = dr.GetQos().Modify();
+
+            ModifiableLatencyBudgetQosPolicy latencyBudget = new LatencyBudgetQosPolicyImpl(dr.GetBootstrap()).Modify();
+            Duration latencyBudgetValue = qos.GetLatencyBudget().GetDuration();
+            latencyBudget.SetDuration(latencyBudgetValue);
+            qos.SetLatencyBudget(latencyBudget);
+            dr.SetQos(qos);
+
+            Assert.IsNotNull(dr.GetQos());
+            Assert.IsNotNull(dr.GetQos().GetLatencyBudget());
+        }
+
+        /// <summary>
+        /// Set the quality of service of LATENCY_BUDGET on DataWriter 
+        /// Table of Qos Policy supported by DDS. Page 95
+        /// </summary>
+        [TestMethod]
+        public void LatencyBudgetDataWriterTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Publisher pub = dp.CreatePublisher();
+            DataWriter<Type> dw = pub.CreateDataWriter(tp);
+            Assert.IsNotNull(dw);
+            ModifiableDataWriterQos qos = dw.GetQos().Modify();
+
+            ModifiableLatencyBudgetQosPolicy latencyBudget = new LatencyBudgetQosPolicyImpl(dw.GetBootstrap()).Modify();
+            Duration latencyBudgetValue = qos.GetLatencyBudget().GetDuration();
+            latencyBudget.SetDuration(latencyBudgetValue);
+            qos.SetLatencyBudget(latencyBudget);
+            dw.SetQos(qos);
+
+            Assert.IsNotNull(dw.GetQos());
+            Assert.IsNotNull(dw.GetQos().GetLatencyBudget());
+        }
+
+        /// <summary>
+        /// Set the quality of service of OWNERSHIP_STRENGTH on DataWriter 
+        /// Table of Qos Policy supported by DDS. Page 96
+        /// </summary>
+        [TestMethod]
+        public void OwnershipStrengthDataWriterTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Publisher pub = dp.CreatePublisher();
+            DataWriter<Type> dw = pub.CreateDataWriter(tp);
+            Assert.IsNotNull(dw);
+            ModifiableDataWriterQos qos = dw.GetQos().Modify();
+
+            ModifiableOwnershipStrengthQosPolicy ownershipStrength = new OwnershipStrengthQosPolicyImpl(dw.GetBootstrap()).Modify();
+            ownershipStrength.SetValue(0);
+            qos.SetOwnershipStrength(ownershipStrength);
+            dw.SetQos(qos);
+
+            Assert.IsNotNull(dw.GetQos());
+            Assert.IsNotNull(dw.GetQos().GetOwnershipStrength());
+        }
+
+        /// <summary>
+        /// Set the quality of service of TIME_BASED_FILTER on DataReader 
+        /// Table of Qos Policy supported by DDS. Page 97
+        /// </summary>
+        [TestMethod]
+        public void TimeBasedFilterDataReaderTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Subscriber sub = dp.CreateSubscriber();
+            DataReader<Type> dr = sub.CreateDataReader(tp);
+            Assert.IsNotNull(dr);
+            ModifiableDataReaderQos qos = dr.GetQos().Modify();
+
+            ModifiableTimeBasedFilterQosPolicy timeBasedFilter = new TimeBasedFilterQosPolicyImpl(dr.GetBootstrap()).Modify();
+            Duration timeBasedFilterValue = qos.GetTimeBasedFilter().GetMinimumSeparation();
+            timeBasedFilter.SetMinimumSeparation(timeBasedFilterValue);
+            qos.SetTimeBasedFilter(timeBasedFilter);
+            dr.SetQos(qos);
+
+            Assert.IsNotNull(dr.GetQos());
+            Assert.IsNotNull(dr.GetQos().GetTimeBasedFilter());
+        }
+
+        /// <summary>
+        /// Set quality of service PARTITION on a Publisher
+        /// Table of Qos Policy supported by DDS. Page 97
+        /// </summary>
+        [TestMethod]
+        public void PartitionPublisherTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Publisher pub = dp.CreatePublisher();
+            Assert.IsNotNull(pub);
+            ModifiablePublisherQos qos = pub.GetQos().Modify();
+
+            ModifiablePartitionQosPolicy partition = new PartitionQosPolicyImpl(pub.GetBootstrap()).Modify();
+            ICollection<string> partitionValue = new List<string>();
+            partitionValue.Add("");
+            partition.SetName(partitionValue);
+            qos.SetPartition(partition);
+            pub.SetQos(qos);
+
+            Assert.IsNotNull(pub.GetQos());
+            Assert.IsNotNull(pub.GetQos().GetPartition());
+
+        }
+        /// <summary>
+        /// Set quality of service PARTITION on a Subscriber
+        /// Table of Qos Policy supported by DDS. Page 97
+        /// </summary>
+        [TestMethod]
+        public void PartitionSubscriberTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Subscriber sub = dp.CreateSubscriber();
+            Assert.IsNotNull(sub);
+            ModifiableSubscriberQos qos = sub.GetQos().Modify();
+
+            ModifiablePartitionQosPolicy partition = new PartitionQosPolicyImpl(sub.GetBootstrap()).Modify();
+            ICollection<string> partitionValue = new List<string>();
+            partitionValue.Add("");
+            partition.SetName(partitionValue);
+            qos.SetPartition(partition);
+            sub.SetQos(qos);
+
+            Assert.IsNotNull(sub.GetQos());
+            Assert.IsNotNull(sub.GetQos().GetPartition());
+        }
+
+        /// <summary>
+        /// Set the quality of service of LIFESPAN on DataWriter 
+        /// Table of Qos Policy supported by DDS. Page 98
+        /// </summary>
+
+        [TestMethod]
+        public void LifeSpanDataWriterTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Publisher pub = dp.CreatePublisher();
+            DataWriter<Type> dw = pub.CreateDataWriter(tp);
+            Assert.IsNotNull(dw);
+            ModifiableDataWriterQos qos = dw.GetQos().Modify();
+            Duration lifeSpanValue = qos.GetLifespan().GetDuration();
+            ModifiableLifespanQosPolicy lifeSpan = new LifespanQosPolicyImpl(dw.GetBootstrap()).Modify();
+            lifeSpan.SetDuration(lifeSpanValue);
+            qos.SetLifespan(lifeSpan);
+            dw.SetQos(qos);
+
+            Assert.IsNotNull(dw.GetQos());
+            Assert.IsNotNull(dw.GetQos().GetLifespan());
+        }
+
+        /// <summary>
+        /// Set quality of service LIFESPAN on a Topic
+        /// Table of Qos Policy supported by DDS. Page 98
+        /// </summary>
+        [TestMethod]
+        public void LifeSpanTopicTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Assert.IsNotNull(tp);
+            ModifiableTopicQos qos = tp.GetQos().Modify();
+            Duration lifeSpanValue = qos.GetLifespan().GetDuration();
+            ModifiableLifespanQosPolicy lifeSpan = new LifespanQosPolicyImpl(tp.GetBootstrap()).Modify();
+            lifeSpan.SetDuration(lifeSpanValue);
+            qos.SetLifespan(lifeSpan);
+            tp.SetQos(qos);
+
+            Assert.IsNotNull(tp.GetQos());
+            Assert.IsNotNull(tp.GetQos().GetTransportPriority());
+        }
+
+        /// <summary>
+        /// Check that QoS Policy ENTITY_FACTORY configuration exist at DomainParticipantFactory
+        /// Table of Qos Policy supported by DDS. Page 100
+        /// </summary>
+        [TestMethod]
+        public void EntityFactoryDomainParticipant()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Assert.IsNotNull(dp);
+            ModifiableDomainParticipantQos qos = dp.GetQos().Modify();
+            ModifiableEntityFactoryQosPolicy entityFactory = new EntityFactoryQosPolicyImpl(dp.GetBootstrap()).Modify();
+            entityFactory.SetAutoEnableCreatedEntities(true);
+            qos.SetEntityFactory(entityFactory);
+            dp.SetQos(qos);
+
+            Assert.IsNotNull(dp.GetQos());
+            Assert.IsNotNull(dp.GetQos().GetEntityFactory());
+
+        }
+
+        /// <summary>
+        /// Set quality of service ENTITY_FACTORY on a Publisher
+        /// Table of Qos Policy supported by DDS. Page 100
+        /// </summary>
+        [TestMethod]
+        public void EntityFactoryPublisherTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Publisher pub = dp.CreatePublisher();
+            Assert.IsNotNull(pub);
+            ModifiablePublisherQos qos = pub.GetQos().Modify();
+
+            ModifiableEntityFactoryQosPolicy entityFactory = new EntityFactoryQosPolicyImpl(pub.GetBootstrap()).Modify();
+            entityFactory.SetAutoEnableCreatedEntities(true);
+            qos.SetEntityFactory(entityFactory);
+            pub.SetQos(qos);
+
+            Assert.IsNotNull(pub.GetQos());
+            Assert.IsNotNull(pub.GetQos().GetEntityFactory());
+
+        }
+        /// <summary>
+        /// Set quality of service ENTITY_FACTORY on a Subscriber
+        /// Table of Qos Policy supported by DDS. Page 100
+        /// </summary>
+        [TestMethod]
+        public void EntityFactorySubscriberTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Subscriber sub = dp.CreateSubscriber();
+            Assert.IsNotNull(sub);
+            ModifiableSubscriberQos qos = sub.GetQos().Modify();
+
+            ModifiableEntityFactoryQosPolicy entityFactory = new EntityFactoryQosPolicyImpl(sub.GetBootstrap()).Modify();
+            entityFactory.SetAutoEnableCreatedEntities(true);
+            qos.SetEntityFactory(entityFactory);
+            sub.SetQos(qos);
+
+            Assert.IsNotNull(sub.GetQos());
+            Assert.IsNotNull(sub.GetQos().GetEntityFactory());
+        }
+
+        /// <summary>
+        /// Set the quality of service of WRITER_DATA_LIFECYCLE on DataWriter 
+        /// Table of Qos Policy supported by DDS. Page 98
+        /// </summary>
+
+        [TestMethod]
+        public void WriterDataLifeCycleDataWriterTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Publisher pub = dp.CreatePublisher();
+            DataWriter<Type> dw = pub.CreateDataWriter(tp);
+            Assert.IsNotNull(dw);
+            ModifiableDataWriterQos qos = dw.GetQos().Modify();
+            Duration lifeSpanValue = qos.GetLifespan().GetDuration();
+            ModifiableWriterDataLifecycleQosPolicy writerDataLifeCycle = new WriterDataLifecycleQosPolicyImpl(dw.GetBootstrap()).Modify();
+            writerDataLifeCycle.SetAutDisposeUnregisteredInstances(true);
+            qos.SetWriterDataLifecycle(writerDataLifeCycle);
+            dw.SetQos(qos);
+
+            Assert.IsNotNull(dw.GetQos());
+            Assert.IsNotNull(dw.GetQos().GetWriterDataLifecycle());
+        }
+
+        /// <summary>
+        /// Set the quality of service of READER_DATA_LIFECYCLE on DataReader 
+        /// Table of Qos Policy supported by DDS. Page 101
+        /// </summary>
+        [TestMethod]
+        public void ReaderDataLifecycleDataReaderTest01()
+        {
+            //PRECONDITIONS
+            DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
+            DomainParticipantImpl dp = factory.CreateParticipant() as DomainParticipantImpl;
+            Topic<Type> tp = dp.CreateTopic<Type>("Greetings Topic");
+            Subscriber sub = dp.CreateSubscriber();
+            DataReader<Type> dr = sub.CreateDataReader(tp);
+            Assert.IsNotNull(dr);
+            ModifiableDataReaderQos qos = dr.GetQos().Modify();
+            TimeUnit unit=new TimeUnit();
+            Duration readerDataLifecycleValue = qos.GetReaderDataLifecycle().GetAutoPurgeDisposedSamplesDelay();
+            ModifiableReaderDataLifecycleQosPolicy readerDataLifecycle = new ReaderDataLifecycleQosPolicyImpl(dr.GetBootstrap()).Modify();
+            readerDataLifecycle.SetAutoPurgeDisposedSamplesDelay(readerDataLifecycleValue);
+            readerDataLifecycle.SetAutoPurgeNoWriterSamplesDelay(5, unit);
+            qos.SetReaderDataLifecycle(readerDataLifecycle);
+            dr.SetQos(qos);
+
+            Assert.IsNotNull(dr.GetQos());
+            Assert.IsNotNull(dr.GetQos().GetReaderDataLifecycle());
+        }
     }
 }
