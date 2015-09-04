@@ -161,13 +161,7 @@ namespace Doopec.Utils.Transport
             if (isMultiCastAddr)
                 acceptor.Bind(new IPEndPoint(IPAddress.Any, locator.Port));
             else
-            {
-                this.Close();
-                this.Start();
-                
-                //acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
-            }
-                
+                acceptor.Bind(new IPEndPoint(locator.SocketAddress, locator.Port));
             log.DebugFormat("Listening on udp://{0}:{1} for {2}", locator.SocketAddress, locator.Port, IsDiscovery ? "IsDiscovery traffic" : "user traffic");
         }
 
@@ -176,7 +170,7 @@ namespace Doopec.Utils.Transport
             if (acceptor != null)
             {
                 log.DebugFormat("Closing {0}", acceptor.LocalEndPoint);
-                
+
                 acceptor.Dispose();
             }
         }

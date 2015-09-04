@@ -102,7 +102,6 @@ namespace ChatClient
                 //and check that the reader has this data
             }
             dp.Close();
-           
         }
         /// <summary>
         /// Class that inherits the type DataReaderAdapter and overrides the method OnDataAvaliable 

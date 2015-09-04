@@ -78,7 +78,6 @@ namespace ChatViewDDS
                 ChatMessage dt = smp.GetData();
                 this.backgroundWorker1.RunWorkerAsync(dt);
             }
-            
         }
     }
     #endregion
@@ -125,9 +124,7 @@ namespace ChatViewDDS
             int.TryParse(id, out domainId);
             factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             dp = factory.CreateParticipant(domainId);
-            
             tp = dp.CreateTopic<ChatMessage>("Greetings Topic");
-          
             sub = dp.CreateSubscriber();
             ls = new MyListener(backgroundWorker1);
             dr = sub.CreateDataReader<ChatMessage>(tp, sub.GetDefaultDataReaderQos(), ls, null);

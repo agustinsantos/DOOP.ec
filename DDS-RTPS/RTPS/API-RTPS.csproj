@@ -140,11 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Behavior\Behavior.cd" />
-    <None Include="Discovery\Discovery.cd" />
-    <None Include="Messages\Messager.cd" />
-    <None Include="Structure\Structure.cd" />
-    <None Include="Utils\Util.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Discovery\Sedp\" />
