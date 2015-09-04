@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RTPS.Utils.ArrayEqualityComparer&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIABAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\ArrayEqualityComparer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RTPS.Utils.NumberSet&lt;E&gt;">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAAAAAAAEAAYAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\NumberSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RTPS.Utils.RTPSConfigSection">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACDAAAEAAAAAAAAAAAEACAAAAAAAAgAAEAABAAAAA=</HashCode>
+      <FileName>Utils\RTPSConfigSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RTPS.Utils.Diff&lt;E&gt;">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Utils\NumberSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

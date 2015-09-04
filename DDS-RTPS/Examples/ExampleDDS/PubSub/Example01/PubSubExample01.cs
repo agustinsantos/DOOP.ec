@@ -21,7 +21,7 @@ namespace ExampleDDS.PubSubExamples
 
             DomainParticipantFactory factory = DomainParticipantFactory.GetInstance(Bootstrap.CreateInstance());
             DomainParticipant dp = factory.CreateParticipant();
-
+         
             // Implicitly create TypeSupport and register type:
             Topic<Greeting> tp = dp.CreateTopic<Greeting>("Greetings Topic");
 
@@ -89,6 +89,7 @@ namespace ExampleDDS.PubSubExamples
                     // Data accessible from Sample; null if invalid:
                     Greeting dt = smp.GetData();
                     Console.WriteLine("Received data:\"{0}\"", dt.Value);
+                   
                 }
             }
         }
