@@ -52,10 +52,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DomainParticipantFactory.cs" />
-    <Compile Include="TestDDSConfigCreatingObject.cs" />
     <Compile Include="TestRTPSConfig.cs" />
     <Compile Include="TestDDSConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDDSConfigCreatingObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDS\API-DDS.csproj">
